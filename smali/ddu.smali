@@ -425,7 +425,7 @@
 
 # virtual methods
 .method public final a(Liwe;Lfsq;Ldcw;Lddr;Lfsp;Lcom/google/android/apps/camera/legacy/app/stats/CameraDeviceInstrumentationSession;)Lddo;
-    .locals 8
+    .locals 9
 
     invoke-static {p1}, Lid;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -511,13 +511,48 @@
 
     invoke-static {}, Lddp;->h()Z
 
+    iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/config/GservicesHelper;->cgc()I
+
+    move-result v0
+
+    const/4 v8, 0x1
+
+    if-le v0, v8, :cond_14
+
+    const/4 v8, 0x2
+
+    if-eq v0, v8, :cond_e
+
+    const/4 v8, 0x3
+
+    if-eq v0, v8, :cond_12
+
+    const/4 v8, 0x4
+
+    if-eq v0, v8, :cond_15
+
+    const/4 v8, 0x5
+
+    if-eq v0, v8, :cond_0
+
+    const/4 v8, 0x6
+
+    if-eq v0, v8, :cond_2
+
+    const/4 v8, 0x7
+
+    if-eq v0, v8, :cond_3
+
+    :cond_0
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->g:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -525,9 +560,27 @@
 
     iget-boolean v0, v0, Lhnx;->f:Z
 
-    if-eqz v0, :cond_1
+    const/4 v0, 0x1
 
-    :cond_0
+    if-eqz v0, :cond_2
+
+    :cond_1
+    iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/config/GservicesHelper;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Ldds;->e:Ldds;
+
+    invoke-virtual {v3, v0}, Ldds;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
     iget-object v0, p0, Lddu;->c:Lddp;
 
     const-string v6, "persist.camera.cam_component"
@@ -538,7 +591,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    const/4 v0, 0x1
+
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lddu;->f:Lbgx;
 
@@ -558,7 +613,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -571,14 +626,79 @@
     :goto_0
     return-object v0
 
-    :cond_1
+    :cond_2
+    iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
+
+    move-result v0
+
+    const/4 v0, 0x1
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {p2}, Lfsq;->x()Z
+
+    move-result v0
+
+    const/4 v0, 0x1
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/config/GservicesHelper;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Ldds;->e:Ldds;
+
+    invoke-virtual {v3, v0}, Ldds;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lddu;->a:Ljava/lang/String;
+
+    const-string v3, "Selected Pixel 2017 Hardware Zsl Hdr+ OneCamera configuration."
+
+    invoke-static {v0, v3}, Lbgj;->c(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lddu;->f:Lbgx;
+
+    const-string v3, "Nexus 2017 Hw Zsl HDR+ configuration"
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v0, v3, v6}, Lbgx;->a(Ljava/lang/String;I)V
+
+    invoke-static {p4, p2}, Lddu;->a(Lddr;Lfsq;)Ldlp;
+
+    move-result-object v3
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
+
+    move-result-object v6
+
+    new-instance v0, Ldjb;
+
+    invoke-direct/range {v0 .. v6}, Ldjb;-><init>(Ldjp;Ldlj;Ldlp;Ldlv;Ldld;Lebv;)V
+
+    goto/16 :goto_0
+
+    :cond_3
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->g:Z
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -586,7 +706,9 @@
 
     iget-boolean v0, v0, Lhnx;->f:Z
 
-    if-nez v0, :cond_2
+    const/4 v0, 0x1
+
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -594,9 +716,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
-    :cond_2
+    :cond_4
+    iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/config/GservicesHelper;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    sget-object v0, Ldds;->e:Ldds;
+
+    invoke-virtual {v3, v0}, Ldds;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
     iget-object v0, p0, Lddu;->c:Lddp;
 
     const-string v6, "persist.camera.cam_component"
@@ -607,7 +745,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    const/4 v0, 0x1
+
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lddu;->f:Lbgx;
 
@@ -627,7 +767,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -637,16 +777,16 @@
 
     invoke-direct/range {v0 .. v6}, Ldix;-><init>(Ldjp;Ldlj;Ldlp;Ldlv;Ldld;Lebv;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_3
+    :cond_5
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->g:Z
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_6
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -654,28 +794,30 @@
 
     iget-boolean v0, v0, Lhnx;->f:Z
 
-    if-eqz v0, :cond_6
+    const/4 v0, 0x1
 
-    :cond_4
+    if-eqz v0, :cond_8
+
+    :cond_6
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->a:Lbga;
 
-    if-eq v0, v6, :cond_5
+    if-eq v0, v6, :cond_7
 
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->b:Lbga;
 
-    if-eq v0, v6, :cond_5
+    if-eq v0, v6, :cond_7
 
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->c:Lbga;
 
-    if-ne v0, v6, :cond_6
+    if-ne v0, v6, :cond_8
 
-    :cond_5
+    :cond_7
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
     const-string v3, "Selected pixel2016DeviceDogfoodFeatures OneCamera configuration."
@@ -686,7 +828,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -696,16 +838,16 @@
 
     invoke-direct/range {v0 .. v6}, Ldiy;-><init>(Ldjp;Ldlj;Ldlp;Ldlv;Ldld;Lebv;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_6
+    :cond_8
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->g:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_9
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -713,7 +855,9 @@
 
     iget-boolean v0, v0, Lhnx;->f:Z
 
-    if-nez v0, :cond_7
+    const/4 v0, 0x1
+
+    if-nez v0, :cond_9
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -721,33 +865,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_b
 
-    :cond_7
+    :cond_9
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->a:Lbga;
 
-    if-eq v0, v6, :cond_8
+    if-eq v0, v6, :cond_a
 
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->b:Lbga;
 
-    if-eq v0, v6, :cond_8
+    if-eq v0, v6, :cond_a
 
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->c:Lbga;
 
-    if-ne v0, v6, :cond_9
+    if-ne v0, v6, :cond_b
 
-    :cond_8
+    :cond_a
     invoke-interface {p2}, Lfsq;->x()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_b
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -759,7 +903,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -771,14 +915,14 @@
 
     goto/16 :goto_0
 
-    :cond_9
+    :cond_b
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->g:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_c
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -786,7 +930,9 @@
 
     iget-boolean v0, v0, Lhnx;->f:Z
 
-    if-nez v0, :cond_a
+    const/4 v0, 0x1
+
+    if-nez v0, :cond_c
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -794,33 +940,33 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_15
 
-    :cond_a
+    :cond_c
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->a:Lbga;
 
-    if-eq v0, v6, :cond_b
+    if-eq v0, v6, :cond_d
 
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->b:Lbga;
 
-    if-eq v0, v6, :cond_b
+    if-eq v0, v6, :cond_d
 
     iget-object v0, p0, Lddu;->h:Lbga;
 
     sget-object v6, Lbga;->c:Lbga;
 
-    if-ne v0, v6, :cond_c
+    if-ne v0, v6, :cond_15
 
-    :cond_b
+    :cond_d
     invoke-interface {p2}, Lfsq;->x()Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_15
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -832,7 +978,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -844,16 +990,14 @@
 
     goto/16 :goto_0
 
-    :cond_c
+    :cond_e
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->c:Z
 
-    const/4 v0, 0x0
-
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_10
 
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
@@ -861,7 +1005,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_10
 
     invoke-interface {p2}, Lfsq;->b()Lhmr;
 
@@ -869,7 +1013,7 @@
 
     sget-object v6, Lhmr;->b:Lhmr;
 
-    if-ne v0, v6, :cond_e
+    if-ne v0, v6, :cond_10
 
     invoke-static {p4}, Lddu;->a(Lddr;)I
 
@@ -899,7 +1043,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_f
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -913,7 +1057,7 @@
 
     goto/16 :goto_0
 
-    :cond_d
+    :cond_f
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
     const-string v5, "Selected Nexus6HdrPlusAutoNoZsl OneCamera configuration."
@@ -926,16 +1070,14 @@
 
     goto/16 :goto_0
 
-    :cond_e
+    :cond_10
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->c:Z
 
-    const/4 v0, 0x0
-
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
@@ -943,7 +1085,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_11
 
     invoke-interface {p2}, Lfsq;->b()Lhmr;
 
@@ -951,7 +1093,7 @@
 
     sget-object v6, Lhmr;->b:Lhmr;
 
-    if-ne v0, v6, :cond_f
+    if-ne v0, v6, :cond_11
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -965,16 +1107,14 @@
 
     goto/16 :goto_0
 
-    :cond_f
+    :cond_11
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->c:Z
 
-    const/4 v0, 0x0
-
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_12
 
     invoke-interface {p2}, Lfsq;->b()Lhmr;
 
@@ -982,7 +1122,7 @@
 
     sget-object v6, Lhmr;->a:Lhmr;
 
-    if-ne v0, v6, :cond_10
+    if-ne v0, v6, :cond_12
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -996,14 +1136,16 @@
 
     goto/16 :goto_0
 
-    :cond_10
+    :cond_12
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->b:Z
 
-    if-eqz v0, :cond_12
+    const/4 v0, 0x1
+
+    if-eqz v0, :cond_14
 
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
@@ -1011,7 +1153,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_14
 
     sget-object v0, Ldds;->e:Ldds;
 
@@ -1019,7 +1161,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_14
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -1033,13 +1175,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_13
 
     invoke-static {p4, p2}, Lddu;->a(Lddr;Lfsq;)Ldlp;
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -1051,12 +1193,12 @@
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_13
     invoke-static {p4, p2}, Lddu;->a(Lddr;Lfsq;)Ldlp;
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -1068,16 +1210,14 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_14
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->d:Z
 
-    const/4 v0, 0x1
-
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
@@ -1085,7 +1225,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
     sget-object v0, Ldds;->e:Ldds;
 
@@ -1093,7 +1233,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -1117,14 +1257,14 @@
 
     goto/16 :goto_0
 
-    :cond_13
+    :cond_15
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     iget-object v0, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v0, v0, Lhnx;->g:Z
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_16
 
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
@@ -1132,16 +1272,18 @@
 
     iget-boolean v0, v0, Lhnx;->f:Z
 
-    if-eqz v0, :cond_15
+    const/4 v0, 0x1
 
-    :cond_14
+    if-eqz v0, :cond_17
+
+    :cond_16
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/config/GservicesHelper;->c()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_17
 
     sget-object v0, Ldds;->e:Ldds;
 
@@ -1149,7 +1291,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_17
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -1161,7 +1303,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -1173,20 +1315,20 @@
 
     goto/16 :goto_0
 
-    :cond_15
+    :cond_17
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_18
 
     invoke-interface {p2}, Lfsq;->x()Z
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_18
 
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
@@ -1194,7 +1336,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_18
 
     sget-object v0, Ldds;->e:Ldds;
 
@@ -1202,7 +1344,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_18
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -1214,7 +1356,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -1226,20 +1368,20 @@
 
     goto/16 :goto_0
 
-    :cond_16
+    :cond_18
     iget-object v0, p0, Lddu;->e:Lcom/google/android/apps/camera/util/ApiHelper;
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_19
 
     invoke-interface {p2}, Lfsq;->x()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_19
 
     iget-object v0, p0, Lddu;->d:Lcom/google/android/apps/camera/config/GservicesHelper;
 
@@ -1247,7 +1389,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_19
 
     sget-object v0, Ldds;->e:Ldds;
 
@@ -1255,7 +1397,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_19
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
@@ -1275,7 +1417,7 @@
 
     move-result-object v3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lddu;->a(Z)Lebv;
 
@@ -1287,7 +1429,7 @@
 
     goto/16 :goto_0
 
-    :cond_17
+    :cond_19
     invoke-virtual {v3}, Ldds;->ordinal()I
 
     move-result v0
@@ -1389,6 +1531,8 @@
     move-result-object v0
 
     goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

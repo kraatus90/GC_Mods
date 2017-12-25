@@ -647,7 +647,11 @@
     <string name="zoom_minus_desc">Віддалити</string>
     <string name="zoom_plus_desc">Наблизити</string>
     <string name="pref_config_camera__title">Конфіг модуля камери</string>
-    <string name="pref_config_camera_N6P">Nexus6P</string>
-    <string name="pref_config_camera_N5X">Nexus5X</string>
-    <string name="pref_config_camera_Exp2017">NexusExp2017</string>
+    <string name="pref_config_camera_N6P">Конфіг Nexus6P</string>
+    <string name="pref_config_camera_N5X">Конфіг Nexus5X</string>
+    <string name="pref_config_camera_Exp2017">Конфіг NexusExp2017</string>
+    <string name="pref_config_camera_Exp2016">Конфіг NexusExp2016</string>
+    <string name="pref_config_camera_PixelXL">Конфіг PixelXL</string>
+    <string name="pref_config_camera_N6">Конфіг Nexus6</string>
+    <string name="pref_config_camera_ExpPixelXL">Конфіг ExpPixelXL</string>
 </resources>

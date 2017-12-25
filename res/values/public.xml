@@ -3444,6 +3444,10 @@
     <public type="string" name="pref_config_camera_N6P" id="0x7f1102e5" />
     <public type="string" name="pref_config_camera_N5X" id="0x7f1102e6" />
     <public type="string" name="pref_config_camera_Exp2017" id="0x7f1102e7" />
+    <public type="string" name="pref_config_camera_Exp2016" id="0x7f1102e8" />
+    <public type="string" name="pref_config_camera_PixelXL" id="0x7f1102e9" />
+    <public type="string" name="pref_config_camera_N6" id="0x7f1102ea" />
+    <public type="string" name="pref_config_camera_ExpPixelXL" id="0x7f1102eb" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f120000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f120001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f120002" />

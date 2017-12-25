@@ -757,4 +757,8 @@ Move device slowly"</string>
     <string name="pref_config_camera_N6P">Nexus6P</string>
     <string name="pref_config_camera_N5X">Nexus5X</string>
     <string name="pref_config_camera_Exp2017">NexusExp2017</string>
+    <string name="pref_config_camera_Exp2016">NexusExp2016</string>
+    <string name="pref_config_camera_PixelXL">PixelXL</string>
+    <string name="pref_config_camera_N6">Nexus6</string>
+    <string name="pref_config_camera_ExpPixelXL">ExpPixelXL</string>
 </resources>
