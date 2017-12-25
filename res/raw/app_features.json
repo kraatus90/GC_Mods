@@ -1,0 +1,45 @@
+{
+    "devices": [
+        {
+            "device": "sanders",
+            "features": [
+                {"feature": "ALWAYS_AWARE_BCR"},
+                {"feature": "CDS_DEFAULT_ON"},
+                {"feature": "CDS_EARLY_CAPTURE"},
+                {"feature": "HOLD_CAMERA_STEADY"},
+                {"feature": "PRO_MODE"}
+            ]
+        },
+        {
+            "device": "payton",
+            "features": [
+                {"feature": "ALWAYS_AWARE_BCR"},
+                {"feature": "CDS_DEFAULT_ON"},
+                {"feature": "ARSELFIE"},
+                {"feature": "PRO_MODE"},
+                {"feature": "QCFA"},
+                {"feature": "WIDE_SELFIE"},
+                {"feature": "ZOOM_SWITCH"},
+                {"feature": "AMAZON_PRODUCT_SEARCH", "region": "us"},
+                {"feature": "SELECTIVE_COLOR"},
+                {"feature": "LANDMARK_DETECTION"},
+                {"feature": "OBJECT_DETECTION"}
+            ]
+        },
+        {
+            "device": "nash",
+            "features": [
+                {"feature": "ALWAYS_AWARE_BCR"},
+                {"feature": "AUTO_NIGHT_DUAL_CAM"},
+                {"feature": "MONO_MODE"},
+                {"feature": "PRO_MODE"}
+            ]
+        },
+        {
+            "device": "EXAMPLE",
+            "features": [
+                {"feature": "EXAMPLE", "api": "1", "region": "us,br"}
+            ]
+        }
+    ]
+}

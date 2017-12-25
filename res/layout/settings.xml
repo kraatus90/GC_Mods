@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/settings_submenu" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingLeft="24.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layoutDirection="locale">
+        <TextView android:textSize="16.5sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/listtitle" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif" />
+        <View android:id="@id/listtitleborder" android:background="@color/settings_list_line_divider_color" android:layout_width="100.0dip" android:layout_height="1.0dip" />
+        <ListView android:id="@id/buttonlist" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/button_list_background_selector" android:divider="@null" android:dividerHeight="0.0dip" />
+    </LinearLayout>
+</FrameLayout>

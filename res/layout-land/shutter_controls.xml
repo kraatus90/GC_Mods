@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.motorola.camera.ui.widgets.RotateImageView android:id="@id/btn_shutter" android:background="@drawable/btn_shutter_bg" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_shutter" android:layout_centerVertical="true" />
+    <LinearLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/btn_shutter" android:layout_alignRight="@id/btn_shutter">
+        <com.motorola.camera.ui.widgets.RotateImageView android:layout_gravity="center" android:id="@id/btn_photo_switch" android:background="@drawable/btn_bg" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_camera" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/btn_shutter" android:layout_alignRight="@id/btn_shutter">
+        <com.motorola.camera.ui.widgets.RotateImageView android:layout_gravity="center" android:id="@id/btn_video_switch" android:background="@drawable/btn_bg" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_video_mode" />
+    </LinearLayout>
+</RelativeLayout>

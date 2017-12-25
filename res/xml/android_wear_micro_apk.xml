@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wearableApp package="com.motorola.camera2">
+    <versionCode>70000100</versionCode>
+    <versionName>7.0.1</versionName>
+    <rawPathResId>android_wear_micro_apk</rawPathResId>
+</wearableApp>

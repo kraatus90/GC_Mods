@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@id/selected" android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="750" android:drawable="@drawable/gesture_front" />
+    <item android:duration="250" android:drawable="@drawable/gesture_back" />
+    <item android:duration="250" android:drawable="@drawable/gesture_front" />
+    <item android:duration="250" android:drawable="@drawable/gesture_back" />
+    <item android:duration="1500" android:drawable="@drawable/gesture_front" />
+</animation-list>

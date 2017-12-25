@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="OtherSettingItemSummary">
+        <item name="android:textSize">@dimen/setting_item_summary_text_size</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="OtherSettingItemTitle">
+        <item name="android:textSize">@dimen/setting_item_text_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

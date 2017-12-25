@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.motorola.camera.ui.widgets.RotateLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/setting_menu_category_padding_left" android:layout_width="@dimen/setting_menu_sub_list_item_width" android:layout_height="wrap_content">
+        <ListView android:id="@id/popup_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@null" />
+    </LinearLayout>
+</com.motorola.camera.ui.widgets.RotateLayout>

@@ -1,0 +1,69 @@
+{
+                              //rear bayer | front | rear aux/mono
+  "nash" : {
+    "buffer-config" : {
+      "inputBufferCnt" :        [ 14,         14,        14 ],
+      "outputBufferCnt" :       [  8,         12,         3 ]
+    },
+    "dual-buffer-config" : {
+      "inputBufferCnt" :        [ 14,         14,        14 ],
+      "outputBufferCnt" :       [  8,         12,         6 ]
+    },
+    "depth-dual-buffer-config" : {
+      "inputBufferCnt" :        [  8,         14,         6 ],
+      "outputBufferCnt" :       [  6,         12,         1 ]
+    },
+    "max-concurrent-jobs" : {
+      "dual-cam-mode" :               [  2  ],
+      "dual-depth-cam-mode" :         [  2  ]
+    },
+    "remosaic-config" : {
+      "analog-gain-threshold" : [  2.0  ]
+    },
+    "dual-primary-camera" :     0
+  },
+  "payton" : {
+    "buffer-config" : {
+      "inputBufferCnt" :        [ 12,         12,        12 ],
+      "outputBufferCnt" :       [  5,          5,         5 ]
+    },
+    "dual-buffer-config" : {
+      "inputBufferCnt" :        [ 12,         12,        12 ],
+      "outputBufferCnt" :       [  4,          5,         1 ]
+    },
+    "depth-dual-buffer-config" : {
+      "inputBufferCnt" :        [  8,         12,         6 ],
+      "outputBufferCnt" :       [  6,          5,         1 ]
+    },
+    "max-concurrent-jobs" : {
+      "dual-cam-mode" :               [  2  ],
+      "dual-depth-cam-mode" :         [  2  ]
+    },
+    "remosaic-config" : {
+      "analog-gain-threshold" : [  2.0  ]
+    },
+    "dual-primary-camera" :     2
+  },
+  "sanders" : {
+    "buffer-config" : {
+      "inputBufferCnt" :        [ 14,         14,        14 ],
+      "outputBufferCnt" :       [  5,         12,         3 ]
+    },
+    "dual-buffer-config" : {
+      "inputBufferCnt" :        [ 10,         12,         8 ],
+      "outputBufferCnt" :       [  5,         12,         4 ]
+    },
+    "depth-dual-buffer-config" : {
+      "inputBufferCnt" :        [  8,         12,         6 ],
+      "outputBufferCnt" :       [  6,          5,         1 ]
+    },
+    "max-concurrent-jobs" : {
+      "dual-cam-mode" :               [  1  ],
+      "dual-depth-cam-mode" :         [  2  ]
+    },
+    "remosaic-config" : {
+      "analog-gain-threshold" : [  2.0  ]
+    },
+    "dual-primary-camera" :     0
+  }
+}

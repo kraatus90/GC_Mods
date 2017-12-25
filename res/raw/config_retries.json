@@ -1,0 +1,8 @@
+{
+  "sanders" : {
+    "retry-config" : {
+      "retryNum" : 8,
+      "retryDelaySeconds" : [0, 1, 2, 2, 5, 10, 15, 20]
+    }
+  }
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="photos_plugin_configs">
+        <item>badge</item>
+        <item>badge</item>
+        <item>badge</item>
+        <item>badge</item>
+        <item>badge</item>
+        <item>edit</item>
+        <item>interact</item>
+        <item>interact</item>
+    </string-array>
+    <string-array name="photos_plugin_descriptions">
+        <item></item>
+        <item></item>
+        <item>@string/best_shot_desc</item>
+        <item>@string/original_shot_desc</item>
+        <item></item>
+        <item>@string/photos_depth_desc</item>
+        <item>@string/image_360_desc</item>
+        <item>@string/video_360_desc</item>
+    </string-array>
+    <string-array name="photos_plugin_edit_class">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>com.android.gallery3d.filtershow.FilterShowActivity</item>
+        <item>com.motorola.cameramod.edit360.image.Image360EditorActivity</item>
+        <item>com.motorola.cameramod.edit360.video.Video360EditorActivity</item>
+    </string-array>
+    <string-array name="photos_plugin_edit_pkg">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>com.motorola.photoeditor</item>
+        <item>com.motorola.cameramod</item>
+        <item>com.motorola.cameramod</item>
+    </string-array>
+    <array name="photos_plugin_icons">
+        <item>-1</item>
+        <item>-1</item>
+        <item>@drawable/ic_just_shot_18dp</item>
+        <item>@drawable/ic_just_shot_18dp</item>
+        <item>-1</item>
+        <item>@drawable/ic_depth_photo</item>
+        <item>@drawable/ic_immersive</item>
+        <item>@drawable/ic_play</item>
+    </array>
+    <string-array name="photos_plugin_interact_class">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>com.motorola.cameramod.edit360.image.Image360InteractActivity</item>
+        <item>com.motorola.cameramod.edit360.video.Video360InteractActivity</item>
+    </string-array>
+    <string-array name="photos_plugin_interact_pkg">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item>com.motorola.cameramod</item>
+        <item>com.motorola.cameramod</item>
+    </string-array>
+    <string-array name="photos_plugin_names">
+        <item></item>
+        <item></item>
+        <item>@string/best_shot_name</item>
+        <item>@string/original_shot_name</item>
+        <item></item>
+        <item>@string/photos_depth_name</item>
+        <item>@string/image_360_name</item>
+        <item>@string/video_360_name</item>
+    </string-array>
+    <string-array name="trusted_certificates">
+        <item>24BB24C05E47E0AEFA68A58A766179D9B613A600</item>
+        <item>53BE24215F9E678DAF70F429CD1635758AAA9401</item>
+    </string-array>
+</resources>

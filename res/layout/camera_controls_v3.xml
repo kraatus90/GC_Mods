@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/controls" android:layout_width="fill_parent" android:layout_height="fill_parent" android:splitMotionEvents="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.motorola.camera.ui.widgets.RotateImageView android:id="@id/btn_ff_switch" android:background="@drawable/btn_bg" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/bottom_button_padding" android:layout_marginBottom="@dimen/bottom_button_padding" android:src="@drawable/btn_ff_switch" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+    <com.motorola.camera.ui.widgets.RotateImageView android:id="@id/btn_mode_switch" android:background="@drawable/btn_bg" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/bottom_button_padding" android:layout_marginBottom="@dimen/bottom_button_padding" android:src="@drawable/btn_mode" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <RelativeLayout android:id="@id/shutter_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/shutter_btn_margin" android:layout_toLeftOf="@id/btn_mode_switch" android:layout_toRightOf="@id/btn_ff_switch" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <include layout="@layout/shutter_controls" />
+    </RelativeLayout>
+    <ViewStub android:id="@id/developer_menu_stub" android:layout="@layout/developer_menu" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ViewStub android:id="@id/setting_pro_wheel_stub" android:layout="@layout/camera_setting_bigwheel_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/mod_splash" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_mod_splash_hasselblad" android:layout_centerInParent="true" android:rotation="0.0" />
+</RelativeLayout>
