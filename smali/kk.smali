@@ -2562,6 +2562,8 @@
 
     move-result v1
 
+    const/4 v1, 0x1
+
     if-eqz v1, :cond_1
 
     :cond_0

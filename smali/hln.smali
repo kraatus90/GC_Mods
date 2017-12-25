@@ -24,14 +24,33 @@
 
 # virtual methods
 .method public final a(I)Lhon;
-    .locals 2
+    .locals 6
 
     :try_start_0
     new-instance v0, Lhon;
 
+    move v2, p1
+
+    new-instance v3, Landroid/hardware/Camera$CameraInfo;
+
+    invoke-direct {v3}, Landroid/hardware/Camera$CameraInfo;-><init>()V
+
+    iget v3, v3, Landroid/hardware/Camera$CameraInfo;->facing:I
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_0
+
+    const/4 v5, 0x4
+
+    if-lt v2, v5, :cond_0
+
+    const/4 v2, 0x2
+
+    :cond_0
     iget-object v1, p0, Lhln;->a:Landroid/hardware/camera2/CameraDevice;
 
-    invoke-virtual {v1, p1}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
+    invoke-virtual {v1, v2}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
 
     move-result-object v1
 

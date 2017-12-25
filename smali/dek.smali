@@ -66,6 +66,8 @@
 
     iget-boolean v3, v3, Lhnx;->d:Z
 
+    const/4 v3, 0x0
+
     if-nez v3, :cond_0
 
     iget-object v3, v0, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
@@ -83,6 +85,8 @@
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_1
 

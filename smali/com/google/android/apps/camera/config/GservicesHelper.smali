@@ -52,6 +52,8 @@
 
     iget-boolean v1, v1, Lhnx;->c:Z
 
+    const/4 v1, 0x0
+
     if-eqz v1, :cond_0
 
     const-string v0, "2592x1458"
@@ -121,6 +123,8 @@
 
     move-result v0
 
+    const/4 v0, 0x1
+
     if-eqz v0, :cond_1
 
     :cond_0
@@ -172,6 +176,8 @@
 
     iget-boolean v0, v0, Lhnx;->d:Z
 
+    const/4 v0, 0x0
+
     if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/google/android/apps/camera/config/GservicesHelper;->b:Lcom/google/android/apps/camera/util/ApiHelper;
@@ -203,6 +209,8 @@
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_1
 
@@ -237,6 +245,8 @@
 
     iget-boolean v3, v3, Lhnx;->c:Z
 
+    const/4 v3, 0x0
+
     if-eqz v3, :cond_0
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/config/GservicesHelper;->h()Z
@@ -254,6 +264,8 @@
     iget-object v3, v3, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v3, v3, Lhnx;->d:Z
+
+    const/4 v3, 0x0
 
     if-eqz v3, :cond_6
 
@@ -279,6 +291,8 @@
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_2
 
@@ -368,6 +382,8 @@
 
     iget-boolean v2, v2, Lhnx;->d:Z
 
+    const/4 v2, 0x0
+
     if-nez v2, :cond_0
 
     iget-object v2, p0, Lcom/google/android/apps/camera/config/GservicesHelper;->b:Lcom/google/android/apps/camera/util/ApiHelper;
@@ -391,6 +407,8 @@
     invoke-virtual {v2}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v2
+
+    const/4 v2, 0x1
 
     if-nez v2, :cond_0
 
@@ -435,6 +453,8 @@
 
     iget-boolean v1, v1, Lhnx;->d:Z
 
+    const/4 v1, 0x0
+
     if-eqz v1, :cond_2
 
     mul-int/lit8 v0, v0, 0x3
@@ -470,6 +490,8 @@
 
     move-result v1
 
+    const/4 v1, 0x1
+
     if-eqz v1, :cond_0
 
     shl-int/lit8 v0, v0, 0x2
@@ -484,7 +506,7 @@
 
     const-string v1, "camera:zsl_enabled"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/apps/camera/config/GservicesHelper;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 

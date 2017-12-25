@@ -117,6 +117,8 @@
 
     iget-boolean v9, v9, Lhnx;->d:Z
 
+    const/4 v9, 0x0
+
     if-nez v9, :cond_0
 
     iget-object v9, v0, Lbge;->a:Lcom/google/android/apps/camera/util/ApiHelper;
@@ -158,6 +160,8 @@
     iget-object v9, v9, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v9, v9, Lhnx;->d:Z
+
+    const/4 v9, 0x0
 
     if-nez v9, :cond_1
 
@@ -252,6 +256,8 @@
 
     iget-boolean v9, v9, Lhnx;->d:Z
 
+    const/4 v9, 0x0
+
     if-nez v9, :cond_6
 
     iget-object v9, v0, Lbge;->a:Lcom/google/android/apps/camera/util/ApiHelper;
@@ -293,6 +299,8 @@
     iget-object v9, v9, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v9, v9, Lhnx;->d:Z
+
+    const/4 v9, 0x0
 
     if-nez v9, :cond_8
 
@@ -356,5 +364,5 @@
     :cond_d
     sget-object v0, Leaz;->c:Leaz;
 
-    goto :goto_4
+    goto/16 :goto_4
 .end method

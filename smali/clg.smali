@@ -1279,6 +1279,8 @@
 
     iget-boolean v1, v1, Lhnx;->c:Z
 
+    const/4 v1, 0x0
+
     if-eqz v1, :cond_0
 
     iget-object v1, p0, Lclg;->n:Lhip;

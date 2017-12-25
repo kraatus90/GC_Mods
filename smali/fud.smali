@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public final a(Lhop;)V
+.method public final a(Lhop;Leks;)V
     .locals 6
 
     const/16 v4, 0x23

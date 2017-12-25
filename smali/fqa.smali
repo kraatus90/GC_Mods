@@ -140,6 +140,8 @@
 
     iget-boolean v2, v2, Lhnx;->c:Z
 
+    const/4 v2, 0x0
+
     if-eqz v2, :cond_3
 
     const/16 v0, 0x244
@@ -152,6 +154,8 @@
     iget-object v2, v2, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v2, v2, Lhnx;->d:Z
+
+    const/4 v2, 0x0
 
     if-nez v2, :cond_1
 
@@ -190,6 +194,8 @@
 
     move-result v2
 
+    const/4 v2, 0x1
+
     if-nez v2, :cond_1
 
     move v0, v1
@@ -225,5 +231,5 @@
 
     int-to-long v0, v0
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method

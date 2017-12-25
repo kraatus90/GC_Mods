@@ -100,6 +100,8 @@
 
     iget-boolean v0, v0, Lhnx;->d:Z
 
+    const/4 v0, 0x0
+
     if-nez v0, :cond_2
 
     iget-object v0, p0, Lddj;->b:Lcom/google/android/apps/camera/util/ApiHelper;
@@ -143,6 +145,8 @@
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_6
 
@@ -206,6 +210,8 @@
     iget-object v1, v1, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v1, v1, Lhnx;->c:Z
+
+    const/4 v1, 0x0
 
     if-nez v1, :cond_a
 
@@ -290,6 +296,8 @@
     move-result-object v0
 
     sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v2, "muskie"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

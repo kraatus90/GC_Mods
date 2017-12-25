@@ -470,6 +470,8 @@
 
     iget-boolean v2, v2, Lhnx;->d:Z
 
+    const/4 v2, 0x0
+
     if-eqz v2, :cond_3
 
     const/4 v1, 0x6
@@ -2275,6 +2277,8 @@
 
     iget-boolean v2, v2, Lhnx;->d:Z
 
+    const/4 v2, 0x0
+
     if-nez v2, :cond_0
 
     iget-object v2, v1, Lcom/google/android/apps/camera/config/GservicesHelper;->b:Lcom/google/android/apps/camera/util/ApiHelper;
@@ -2298,6 +2302,8 @@
     invoke-virtual {v2}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v2
+
+    const/4 v2, 0x1
 
     if-eqz v2, :cond_1
 

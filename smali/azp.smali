@@ -328,6 +328,8 @@
 
     move-result v5
 
+    const/4 v5, 0x1
+
     if-eqz v5, :cond_3
 
     :cond_0
@@ -589,6 +591,8 @@
     invoke-virtual {v5}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v5
+
+    const/4 v5, 0x1
 
     if-eqz v5, :cond_3
 

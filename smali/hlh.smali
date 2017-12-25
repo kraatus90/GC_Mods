@@ -191,11 +191,15 @@
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v1, "Google"
+
     invoke-direct {p0, v0, v1}, Lhlh;->a(ILjava/lang/Object;)V
 
     sget v0, Lcom/google/android/libraries/camera/exif/ExifInterface;->e:I
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "Pixel XL2"
 
     invoke-direct {p0, v0, v1}, Lhlh;->a(ILjava/lang/Object;)V
 

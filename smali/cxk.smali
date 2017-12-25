@@ -789,6 +789,8 @@
 
     iget-boolean v8, v8, Lhnx;->d:Z
 
+    const/4 v8, 0x0
+
     if-nez v8, :cond_3
 
     move-object/from16 v0, p0
@@ -828,6 +830,8 @@
     invoke-virtual {v8}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v8
+
+    const/4 v8, 0x1
 
     if-eqz v8, :cond_4
 
