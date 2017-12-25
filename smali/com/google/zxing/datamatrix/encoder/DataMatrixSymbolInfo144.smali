@@ -9,6 +9,8 @@
 
     const/16 v4, 0x16
 
+    const/4 v1, 0x0
+
     const/16 v2, 0x616
 
     const/16 v3, 0x26c
@@ -18,8 +20,6 @@
     const/4 v7, -0x1
 
     const/16 v8, 0x3e
-
-    const/4 v1, 0x0
 
     move-object v0, p0
 

@@ -53,8 +53,6 @@
 .method public constructor <init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;J)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/zxing/Result;->text:Ljava/lang/String;
@@ -64,6 +62,8 @@
     iput-object p3, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
     iput-object p4, p0, Lcom/google/zxing/Result;->format:Lcom/google/zxing/BarcodeFormat;
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
@@ -75,13 +75,13 @@
 
 # virtual methods
 .method public addResultPoints([Lcom/google/zxing/ResultPoint;)V
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
+    iget-object v0, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     if-nez p1, :cond_2
 
@@ -95,29 +95,29 @@
     goto :goto_0
 
     :cond_2
+    array-length v1, p1
+
+    if-lez v1, :cond_0
+
+    array-length v1, v0
+
     array-length v2, p1
 
-    if-lez v2, :cond_0
+    add-int/2addr v1, v2
 
-    array-length v2, v1
+    new-array v1, v1, [Lcom/google/zxing/ResultPoint;
 
-    array-length v3, p1
+    array-length v2, v0
 
-    add-int/2addr v2, v3
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    new-array v0, v2, [Lcom/google/zxing/ResultPoint;
+    array-length v0, v0
 
-    array-length v2, v1
+    array-length v2, p1
 
-    invoke-static {v1, v4, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v3, v1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    array-length v2, v1
-
-    array-length v3, p1
-
-    invoke-static {p1, v4, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iput-object v0, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
+    iput-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
     goto :goto_0
 .end method

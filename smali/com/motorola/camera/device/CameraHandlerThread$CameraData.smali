@@ -35,6 +35,8 @@
 
 .field public mDisplayOrientation:I
 
+.field public mMediaRecorderSurface:Landroid/view/Surface;
+
 .field public mPlayer:Landroid/media/MediaPlayer;
 
 .field public mRecorder:Landroid/media/MediaRecorder;

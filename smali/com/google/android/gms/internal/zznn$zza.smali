@@ -235,11 +235,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/google/android/gms/internal/zznn$zza;->name:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zznn$zza;->name:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/internal/zznn$zza;->zzaNb:Lcom/google/android/gms/internal/zznn$zza$zza;
 
@@ -251,11 +251,11 @@
     return-void
 
     :cond_0
-    const/4 v0, 0x2
+    iget-object v0, p0, Lcom/google/android/gms/internal/zznn$zza;->zzaNb:Lcom/google/android/gms/internal/zznn$zza$zza;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zznn$zza;->zzaNb:Lcom/google/android/gms/internal/zznn$zza$zza;
+    const/4 v1, 0x2
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zznr;->zza(ILcom/google/android/gms/internal/zzny;)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/zznr;->zza(ILcom/google/android/gms/internal/zzny;)V
 
     goto :goto_0
 .end method
@@ -282,11 +282,11 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/internal/zznn$zza;->name:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza;->name:Ljava/lang/String;
+    const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
+    invoke-static {v2, v1}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
 
     move-result v1
 
@@ -300,11 +300,11 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/internal/zznn$zza;->zzaNb:Lcom/google/android/gms/internal/zznn$zza$zza;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza;->zzaNb:Lcom/google/android/gms/internal/zznn$zza$zza;
+    const/4 v2, 0x2
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/zznr;->zzc(ILcom/google/android/gms/internal/zzny;)I
+    invoke-static {v2, v1}, Lcom/google/android/gms/internal/zznr;->zzc(ILcom/google/android/gms/internal/zzny;)I
 
     move-result v1
 

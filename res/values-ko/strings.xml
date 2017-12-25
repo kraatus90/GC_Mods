@@ -148,7 +148,7 @@
     <string name="cancel">취소</string>
     <string name="capture_failure">촬영하지 못했습니다. 다시 시도하십시오.</string>
     <string name="checkbox_do_not_show">다시 표시하지 않음</string>
-    <string name="cloudsight_terms">이미지는 CloudSight로 전송되어 검색 결과를 제공합니다. &lt;br/>&lt;br/> 계속하면 CloudSight의 &lt;a href=%1$s>개인정보 보호정책&lt;/a>에 동의하는 것입니다.</string>
+    <string name="cloudsight_terms">대상 인식을 사용할 때마다 이미지와 위치(활성화된 경우)가 검색 결과를 제공하기 위해 제3자에게 전송됩니다.&lt;br/>&lt;br/> 계속하게 되면 &lt;a href=%1$s>개인정보 보호정책&lt;/a>에 동의하는 것입니다.</string>
     <string name="dailog_panorama_failed">파노라마에 실패했습니다. 다시 시도하세요.</string>
     <string name="dailog_panorama_not_taken">파노라마 사진을 촬영하지 못했습니다.</string>
     <string name="dialog_access_sd_fail">미디어를 캡처할 수 없음. SD 카드에 액세스하지 못했습니다.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">지원되지 않는 기기</string>
     <string name="dialog_disagree">동의 안함</string>
     <string name="dialog_dismiss">다시 표시 안함</string>
+    <string name="dialog_download">다운로드</string>
     <string name="dialog_external_sd_missing">사진을 캡처할 수 없습니다. SD 카드에 액세스할 수 없습니다. 내부 저장소로 전환 중</string>
     <string name="dialog_first_time_set_pure_raw_message">"이 처리되지 않은 파일 형식은 전문적으로 사진을 편집하는 데 사용됩니다.
 
@@ -193,7 +194,7 @@
     <string name="dialog_multiWindow_not_supported">분할 화면 기능이 없는 카메라</string>
     <string name="dialog_no_active_data_connection">인터넷에 연결되지 않음</string>
     <string name="dialog_no_storage">미디어를 캡처할 수 없음. 사용 전에 메모리 기기를 삽입하세요.</string>
-    <string name="dialog_no_thanks">괜찮습니다</string>
+    <string name="dialog_no_thanks">지금 사용 안 함</string>
     <string name="dialog_not_enough_storage">%1$s의 공간이 부족합니다. 일부 이미지 또는 기타 파일을 삭제하십시오.</string>
     <string name="dialog_not_now">나중에</string>
     <string name="dialog_ok">확인</string>
@@ -247,6 +248,7 @@
     <string name="help_next">다음</string>
     <string name="image_360_desc">360 사진입니다. 이 사진은 Moto 360 편집기로 편집할 수 있습니다.</string>
     <string name="image_360_name">360 사진</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d(%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d(%3$s%4$s)</string>
     <string name="indicate_mode_depth">심도 활성화됨</string>
     <string name="indicate_mode_mono">진정한 흑백(B&amp;W)</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">초광각</string>
     <string name="indicate_mode_video">동영상</string>
     <string name="indicate_mode_wide_angle">광각</string>
+    <string name="indicate_mode_wide_angle_selfie">광각 셀프카메라</string>
     <string name="internal_storage">내부 저장소</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">랜드마크 인식은 세계 유명 랜드마크의 정보를 제공합니다.&lt;br/>&lt;br/>랜드마크 인식을 설치하여 이 기능을 활성화할 수 있습니다.</string>
-    <string name="landmark_install_over_data">랜드마크 인식의 다운로드 크기는 92MB입니다. 모바일 데이터를 사용하여 설치하는 경우 추가 데이터 요금이 발생할 수 있습니다.</string>
-    <string name="landmark_notification_downloading">랜드마크 인식 다운로드 중</string>
-    <string name="landmark_notification_install">랜드마크 인식 설치 중</string>
-    <string name="landmark_notification_install_complete">랜드마크 인식 설치가 완료되었습니다</string>
-    <string name="landmark_notification_install_failed">랜드마크 인식을 설치하지 못했습니다.</string>
+    <string name="landmark_install_message">랜드마크 인식은 세계 유명 랜드마크의 정보를 제공합니다.&lt;br/>&lt;br/>랜드마크 데이터베이스를 다운로드하여 이 기능을 활성화할 수 있습니다.</string>
+    <string name="landmark_install_over_data">랜드마크 데이터베이스의 다운로드 크기는 92Mb입니다. 모바일 데이터를 사용하여 다운로드하는 경우 추가 데이터 요금이 발생할 수 있습니다.</string>
+    <string name="landmark_notification_downloading">랜드마크 데이터베이스 다운로드 중</string>
+    <string name="landmark_notification_install">랜드마크 데이터베이스 설치 중</string>
+    <string name="landmark_notification_install_complete">랜드마크 데이터베이스 설치가 완료되었습니다.</string>
+    <string name="landmark_notification_install_failed">랜드마크 데이터베이스를 설치하지 못했습니다.</string>
     <string name="landmark_notification_install_invalid_url">랜드마크 데이터베이스를 사용할 수 없습니다. 최신 카메라 버전으로 업데이트하십시오.</string>
-    <string name="landmark_notification_install_out_of_space">랜드마크 인식을 설치하는 데 사용할 수 있는 저장소 공간이 부족합니다.</string>
+    <string name="landmark_notification_install_out_of_space">랜드마크 데이터베이스를 설치하는 데 사용할 수 있는 저장소 공간이 부족합니다.</string>
+    <string name="landmark_notification_paused">인터넷을 사용할 수 있으면 랜드마크 데이터베이스의 다운로드를 계속합니다.</string>
+    <string name="landmark_notification_queued">인터넷을 사용할 수 있으면 랜드마크 데이터베이스의 다운로드를 시작합니다.</string>
     <string name="main_setting_amz_barcode">Amazon 바코드 스캐너</string>
     <string name="main_setting_amz_privacy">Amazon 개인정보 보호 공지</string>
     <string name="main_setting_amz_terms">사용 약관</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">사진 크기(후면)</string>
     <string name="main_setting_image_ratio_front">사진 크기(전면)</string>
     <string name="main_setting_landmark_detection">랜드마크 인식</string>
+    <string name="main_setting_landmark_version_current">데이터베이스 버전: %s</string>
+    <string name="main_setting_landmark_version_not_installed">데이터베이스가 설치되지 않았습니다.</string>
     <string name="main_setting_licenses">오픈 소스 라이선스</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">권한 필요</string>
     <string name="photos_depth_desc">심도 편집기를 사용하여 초점을 선택하고, 배경을 바꾸거나 흑백으로 변경할 영역을 선택할 수 있습니다.</string>
     <string name="photos_depth_name">심도 활성화됨</string>
+    <string name="photos_notification_desc">Google 포토로 무제한 저장소 확보</string>
+    <string name="photos_notification_title">Google 포토에 백업</string>
+    <string name="qcfa_resolution_description">저조도 자동 조절</string>
     <string name="retake">다시 촬영</string>
     <string name="second_10">10초</string>
     <string name="second_3">3초</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">슬로 모션</string>
     <string name="setting_mode_ultra_wide">초광각</string>
     <string name="setting_mode_video">동영상</string>
+    <string name="setting_mode_wide_angle_selfie">광각 셀프카메라</string>
     <string name="setting_off">끄기</string>
     <string name="setting_on">켜기</string>
     <string name="setting_persist">대기</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">타이머</string>
     <string name="setting_torch">토치</string>
     <string name="setting_true">맞음</string>
+    <string name="shortcut_desc_depth">깊이 사진</string>
+    <string name="shortcut_desc_selfie">셀프카메라</string>
+    <string name="shortcut_desc_video">동영상</string>
     <string name="smartcam_landmark_notification_title">스마트 카메라</string>
+    <string name="smartcam_no_detections">저장된 대상 및 랜드마크 없음</string>
     <string name="storage_location_external">SD 카드</string>
     <string name="storage_location_internal">휴대전화</string>
     <string name="storage_unavailable">사용할 수 없는 메모리</string>
+    <string name="toast_battery_saver">현재 절전 모드이며 일부 기능이 제한될 수 있습니다.</string>
     <string name="toast_geotag_message_1">위치 저장을 하려면 위치 권한을 허용해야 합니다.</string>
     <string name="toast_geotag_message_2">위치 설정은 시스템 위치 설정이 켜져 있는 경우에만 적용됩니다.</string>
     <string name="tooltip_camera_switch_360">다른 카메라 옵션으로 변경해 보십시오.</string>
     <string name="tooltip_capture_360">이 셔터 버튼을 탭하여 360° 사진이나 동영상을 촬영해 보십시오.</string>
     <string name="tooltip_capture_key_360">Mod 뒤에 있는 셔터 버튼으로도 촬영해 보십시오.</string>
-    <string name="tooltip_dual_camera_depth_photo">특별 편집 기능을 활성화하려면 추가 정보와 함께 사진을 촬영합니다.</string>
     <string name="tooltip_first_use_zoom_button">광각으로 전환하려면 여기를 탭하세요.</string>
     <string name="tooltip_gallery_360">왼쪽으로 밀어서 360° 사진이나 동영상이 어떻게 나타나는지 확인하십시오.</string>
     <string name="tooltip_minimap_viewfinder">아래 이미지를 왼쪽이나 오른쪽으로 회전하십시오.</string>
     <string name="tooltip_mode_switch_360">다른 모드에서 360°를 촬영해 보십시오!</string>
+    <string name="tooltip_modes_list">사진을 촬영하는 새로운 방법을 알아보십시오.</string>
     <string name="tooltip_smart_camera">탭하여 대상에 대해 더 알아보십시오.</string>
     <string name="tooltip_smart_camera_disable">설정에서 끌 수 있습니다.</string>
     <string name="tooltip_spherical_viewfinder">회전 또는 확대 및 축소로 화면을 제어할 수 있습니다.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">전체화면</string>
     <string name="zoom_hint_wide">와이드 스크린</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">타임랩스</string>
+    <string name="setting_mode_timelapse">타임랩스</string>
+    <string name="timelapse_config_16x">16배</string>
+    <string name="timelapse_config_32x">32배</string>
+    <string name="timelapse_config_4x">4배</string>
+    <string name="timelapse_config_8x">8배</string>
 </resources>

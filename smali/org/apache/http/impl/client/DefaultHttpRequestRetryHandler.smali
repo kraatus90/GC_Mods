@@ -49,11 +49,11 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v0, 0x3
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/client/DefaultHttpRequestRetryHandler;-><init>(IZ)V
+    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/client/DefaultHttpRequestRetryHandler;-><init>(IZ)V
 
     return-void
 .end method
@@ -65,29 +65,29 @@
 
     new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v1, 0x0
+    const-class v1, Ljava/io/InterruptedIOException;
 
-    const-class v2, Ljava/io/InterruptedIOException;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-class v1, Ljava/net/UnknownHostException;
 
-    const-class v2, Ljava/net/UnknownHostException;
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-class v1, Ljava/net/ConnectException;
 
-    const-class v2, Ljava/net/ConnectException;
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    const-class v1, Ljavax/net/ssl/SSLException;
 
-    const-class v2, Ljavax/net/ssl/SSLException;
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 

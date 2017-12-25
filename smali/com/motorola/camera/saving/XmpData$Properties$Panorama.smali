@@ -27,6 +27,14 @@
 
 .field private static final FULL_WIDTH:Ljava/lang/String; = "FullPanoWidthPixels"
 
+.field private static final INITIAL_VIEW_HEADING_DEGREES:Ljava/lang/String; = "InitialViewHeadingDegrees"
+
+.field private static final INITIAL_VIEW_PITCH_DEGREES:Ljava/lang/String; = "InitialViewPitchDegrees"
+
+.field private static final POSE_HEADING_DEGREES:Ljava/lang/String; = "PoseHeadingDegrees"
+
+.field private static final POSE_PITCH_DEGREES:Ljava/lang/String; = "PosePitchDegrees"
+
 .field private static final PROJECTION:Ljava/lang/String; = "ProjectionType"
 
 .field private static final USE_VIEWER:Ljava/lang/String; = "UsePanoramaViewer"

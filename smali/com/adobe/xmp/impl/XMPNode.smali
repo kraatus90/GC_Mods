@@ -461,15 +461,15 @@
     goto :goto_6
 
     :cond_c
-    const-string/jumbo v3, "xml:lang"
+    aget-object v3, v0, v1
 
-    aget-object v4, v0, v1
+    invoke-virtual {v3}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v4
+    const-string/jumbo v4, "xml:lang"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -481,15 +481,15 @@
     goto :goto_4
 
     :cond_e
-    const-string/jumbo v3, "rdf:type"
+    aget-object v3, v0, v1
 
-    aget-object v4, v0, v1
+    invoke-virtual {v3}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v4
+    const-string/jumbo v4, "rdf:type"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -647,11 +647,11 @@
 .method private isLanguageNode()Z
     .locals 2
 
-    const-string/jumbo v0, "xml:lang"
+    iget-object v0, p0, Lcom/adobe/xmp/impl/XMPNode;->name:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/adobe/xmp/impl/XMPNode;->name:Ljava/lang/String;
+    const-string/jumbo v1, "xml:lang"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -661,11 +661,11 @@
 .method private isTypeNode()Z
     .locals 2
 
-    const-string/jumbo v0, "rdf:type"
+    iget-object v0, p0, Lcom/adobe/xmp/impl/XMPNode;->name:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/adobe/xmp/impl/XMPNode;->name:Ljava/lang/String;
+    const-string/jumbo v1, "rdf:type"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -821,9 +821,7 @@
 .end method
 
 .method protected cleanupChildren()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     iget-object v0, p0, Lcom/adobe/xmp/impl/XMPNode;->children:Ljava/util/List;
 
@@ -837,7 +835,9 @@
     return-void
 
     :cond_0
-    iput-object v1, p0, Lcom/adobe/xmp/impl/XMPNode;->children:Ljava/util/List;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/adobe/xmp/impl/XMPNode;->children:Ljava/util/List;
 
     goto :goto_0
 .end method
@@ -1401,9 +1401,7 @@
 .end method
 
 .method public removeQualifier(Lcom/adobe/xmp/impl/XMPNode;)V
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v2, 0x0
 
@@ -1454,15 +1452,15 @@
     :cond_2
     invoke-virtual {v0, v2}, Lcom/adobe/xmp/options/PropertyOptions;->setHasQualifiers(Z)Lcom/adobe/xmp/options/PropertyOptions;
 
-    iput-object v3, p0, Lcom/adobe/xmp/impl/XMPNode;->qualifier:Ljava/util/List;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/adobe/xmp/impl/XMPNode;->qualifier:Ljava/util/List;
 
     goto :goto_1
 .end method
 
 .method public removeQualifiers()V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x0
 
@@ -1476,7 +1474,9 @@
 
     invoke-virtual {v0, v1}, Lcom/adobe/xmp/options/PropertyOptions;->setHasType(Z)Lcom/adobe/xmp/options/PropertyOptions;
 
-    iput-object v2, p0, Lcom/adobe/xmp/impl/XMPNode;->qualifier:Ljava/util/List;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/adobe/xmp/impl/XMPNode;->qualifier:Ljava/util/List;
 
     return-void
 .end method
@@ -1639,15 +1639,15 @@
     goto :goto_2
 
     :cond_3
-    const-string/jumbo v3, "xml:lang"
+    aget-object v3, v0, v1
 
-    aget-object v4, v0, v1
+    invoke-virtual {v3}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v4
+    const-string/jumbo v4, "xml:lang"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -1663,15 +1663,15 @@
     goto :goto_0
 
     :cond_5
-    const-string/jumbo v3, "rdf:type"
+    aget-object v3, v0, v1
 
-    aget-object v4, v0, v1
+    invoke-virtual {v3}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    invoke-virtual {v4}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v4
+    const-string/jumbo v4, "rdf:type"
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 

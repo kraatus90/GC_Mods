@@ -33,23 +33,23 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "EEE, dd MMM yyyy HH:mm:ss zzz"
 
-    const-string/jumbo v2, "EEE, dd MMM yyyy HH:mm:ss zzz"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "EEE, dd-MMM-yy HH:mm:ss zzz"
 
-    const-string/jumbo v2, "EEE, dd-MMM-yy HH:mm:ss zzz"
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "EEE MMM d HH:mm:ss yyyy"
 
-    const-string/jumbo v2, "EEE MMM d HH:mm:ss yyyy"
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/http/impl/cookie/RFC2109Spec;->DATE_PATTERNS:[Ljava/lang/String;
 
@@ -59,17 +59,17 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
-    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;-><init>([Ljava/lang/String;Z)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;-><init>([Ljava/lang/String;Z)V
 
     return-void
 .end method
 
 .method public constructor <init>([Ljava/lang/String;Z)V
-    .locals 3
+    .locals 2
 
     invoke-direct {p0}, Lorg/apache/http/impl/cookie/CookieSpecBase;-><init>()V
 
@@ -82,63 +82,63 @@
 
     iput-boolean p2, p0, Lorg/apache/http/impl/cookie/RFC2109Spec;->oneHeader:Z
 
-    const-string/jumbo v0, "version"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2109VersionHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2109VersionHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2109VersionHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2109VersionHandler;-><init>()V
+    const-string/jumbo v1, "version"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "path"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicPathHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicPathHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicPathHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicPathHandler;-><init>()V
+    const-string/jumbo v1, "path"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "domain"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2109DomainHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2109DomainHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2109DomainHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2109DomainHandler;-><init>()V
+    const-string/jumbo v1, "domain"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "max-age"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;-><init>()V
+    const-string/jumbo v1, "max-age"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "secure"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicSecureHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicSecureHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicSecureHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicSecureHandler;-><init>()V
+    const-string/jumbo v1, "secure"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "comment"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicCommentHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicCommentHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicCommentHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicCommentHandler;-><init>()V
+    const-string/jumbo v1, "comment"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "expires"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicExpiresHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicExpiresHandler;
+    iget-object v1, p0, Lorg/apache/http/impl/cookie/RFC2109Spec;->datepatterns:[Ljava/lang/String;
 
-    iget-object v2, p0, Lorg/apache/http/impl/cookie/RFC2109Spec;->datepatterns:[Ljava/lang/String;
+    invoke-direct {v0, v1}, Lorg/apache/http/impl/cookie/BasicExpiresHandler;-><init>([Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Lorg/apache/http/impl/cookie/BasicExpiresHandler;-><init>([Ljava/lang/String;)V
+    const-string/jumbo v1, "expires"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2109Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
     return-void
 
@@ -446,13 +446,13 @@
 
     invoke-virtual {p1, v0}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
-    const-string/jumbo v0, "$Path"
-
     invoke-interface {p2}, Lorg/apache/http/cookie/Cookie;->getPath()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, p1, v0, v1, p3}, Lorg/apache/http/impl/cookie/RFC2109Spec;->a(Lorg/apache/http/util/CharArrayBuffer;Ljava/lang/String;Ljava/lang/String;I)V
+    const-string/jumbo v1, "$Path"
+
+    invoke-virtual {p0, p1, v1, v0, p3}, Lorg/apache/http/impl/cookie/RFC2109Spec;->a(Lorg/apache/http/util/CharArrayBuffer;Ljava/lang/String;Ljava/lang/String;I)V
 
     goto :goto_0
 
@@ -477,13 +477,13 @@
 
     invoke-virtual {p1, v0}, Lorg/apache/http/util/CharArrayBuffer;->append(Ljava/lang/String;)V
 
-    const-string/jumbo v0, "$Domain"
-
     invoke-interface {p2}, Lorg/apache/http/cookie/Cookie;->getDomain()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, p1, v0, v1, p3}, Lorg/apache/http/impl/cookie/RFC2109Spec;->a(Lorg/apache/http/util/CharArrayBuffer;Ljava/lang/String;Ljava/lang/String;I)V
+    const-string/jumbo v1, "$Domain"
+
+    invoke-virtual {p0, p1, v1, v0, p3}, Lorg/apache/http/impl/cookie/RFC2109Spec;->a(Lorg/apache/http/util/CharArrayBuffer;Ljava/lang/String;Ljava/lang/String;I)V
 
     goto :goto_1
 .end method

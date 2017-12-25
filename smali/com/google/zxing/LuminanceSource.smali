@@ -109,95 +109,99 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 8
+    .locals 7
 
-    iget v6, p0, Lcom/google/zxing/LuminanceSource;->width:I
+    const/4 v1, 0x0
 
-    new-array v3, v6, [B
+    iget v0, p0, Lcom/google/zxing/LuminanceSource;->width:I
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-array v0, v0, [B
 
-    iget v6, p0, Lcom/google/zxing/LuminanceSource;->height:I
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    iget v7, p0, Lcom/google/zxing/LuminanceSource;->width:I
+    iget v2, p0, Lcom/google/zxing/LuminanceSource;->height:I
 
-    add-int/lit8 v7, v7, 0x1
+    iget v3, p0, Lcom/google/zxing/LuminanceSource;->width:I
 
-    mul-int/2addr v6, v7
+    add-int/lit8 v3, v3, 0x1
 
-    invoke-direct {v2, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+    mul-int/2addr v2, v3
 
-    const/4 v5, 0x0
+    invoke-direct {v5, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    move-object v2, v0
+
+    move v0, v1
 
     :goto_0
-    iget v6, p0, Lcom/google/zxing/LuminanceSource;->height:I
+    iget v3, p0, Lcom/google/zxing/LuminanceSource;->height:I
 
-    if-lt v5, v6, :cond_0
+    if-lt v0, v3, :cond_0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    return-object v6
+    return-object v0
 
     :cond_0
-    invoke-virtual {p0, v5, v3}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
+    invoke-virtual {p0, v0, v2}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
 
-    move-result-object v3
+    move-result-object v2
 
-    const/4 v4, 0x0
+    move v3, v1
 
     :goto_1
-    iget v6, p0, Lcom/google/zxing/LuminanceSource;->width:I
+    iget v4, p0, Lcom/google/zxing/LuminanceSource;->width:I
 
-    if-lt v4, v6, :cond_1
+    if-lt v3, v4, :cond_1
 
-    const/16 v6, 0xa
+    const/16 v3, 0xa
 
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    aget-byte v6, v3, v4
+    aget-byte v4, v2, v3
 
-    and-int/lit16 v1, v6, 0xff
+    and-int/lit16 v4, v4, 0xff
 
     const/16 v6, 0x40
 
-    if-lt v1, v6, :cond_2
+    if-lt v4, v6, :cond_2
 
     const/16 v6, 0x80
 
-    if-lt v1, v6, :cond_3
+    if-lt v4, v6, :cond_3
 
     const/16 v6, 0xc0
 
-    if-lt v1, v6, :cond_4
+    if-lt v4, v6, :cond_4
 
-    const/16 v0, 0x20
+    const/16 v4, 0x20
 
     :goto_2
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_2
-    const/16 v0, 0x23
+    const/16 v4, 0x23
 
     goto :goto_2
 
     :cond_3
-    const/16 v0, 0x2b
+    const/16 v4, 0x2b
 
     goto :goto_2
 
     :cond_4
-    const/16 v0, 0x2e
+    const/16 v4, 0x2e
 
     goto :goto_2
 .end method

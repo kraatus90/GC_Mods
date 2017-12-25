@@ -2,19 +2,8 @@
 .super Lcom/motorola/camera/ui/widgets/gl/textures/Texture;
 .source "GooglePlacesContentTexture.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$FetchDataTask;,
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$Geometry;,
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$Location;,
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$PlacesDetailsQueryResponse;,
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$PlacesDetailsResult;,
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$PlacesSearchQueryResponse;,
-        Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$PlacesSearchResult;
-    }
-.end annotation
+# interfaces
+.implements Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlaceInfoTaskCallback;
 
 
 # static fields
@@ -28,33 +17,13 @@
 
 .field private static final BYLINE_COLOR:I
 
-.field private static final HMAC_SHA1:Ljava/lang/String; = "HmacSHA1"
-
-.field private static final KEY_QUERY_FMT:Ljava/lang/String; = "%1$s&key=%2$s"
-
-.field private static final LOCATION_FMT:Ljava/lang/String; = "%1$f,%2$f"
-
-.field private static final MAPS_API_BASE_URL:Ljava/lang/String; = "https://maps.googleapis.com"
-
-.field private static final MAPS_URL_FMT:Ljava/lang/String; = "/maps/api/staticmap?center=%1$s&zoom=17&size=%2$dx%3$d&scale=2&markers=%1$s"
-
-.field private static final PLACES_API_KEY:Ljava/lang/String;
-
-.field private static final PLACES_DETAILS_URL_FMT:Ljava/lang/String; = "/maps/api/place/details/json?placeid=%1$s"
-
-.field private static final PLACES_TEXT_REQUEST_URL_FMT:Ljava/lang/String; = "/maps/api/place/textsearch/json?query=%1$s"
-
 .field private static final ROUNDING_RADIUS:F = 0.2f
 
 .field private static final SIDES_PADDING:F = 16.0f
 
-.field private static final SIGNATURE_QUERY_FMT:Ljava/lang/String; = "%1$s&signature=%2$s"
-
 .field private static final SPACE:Ljava/lang/String; = " "
 
 .field private static final SPACING:F = 4.0f
-
-.field private static final STATUS_OK:Ljava/lang/String; = "OK"
 
 .field private static final TAG:Ljava/lang/String;
 
@@ -65,8 +34,6 @@
 .field private static final TITLE_TEXT_SIZE:F = 14.0f
 
 .field private static final TOP_PADDING:F = 16.0f
-
-.field private static final URL_SIGNING_SECRET:[B
 
 
 # instance fields
@@ -90,112 +57,8 @@
 
 
 # direct methods
-.method static synthetic -get0()Ljava/lang/String;
-    .locals 1
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic -get1(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mBitmapTexture:Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
-
-    return-object v0
-.end method
-
-.method static synthetic -get2(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)F
-    .locals 1
-
-    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mDensity:F
-
-    return v0
-.end method
-
-.method static synthetic -get3(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mDetailsText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    return-object v0
-.end method
-
-.method static synthetic -get4(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)Landroid/graphics/PointF;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mLayoutSize:Landroid/graphics/PointF;
-
-    return-object v0
-.end method
-
-.method static synthetic -get5(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
-
-    return-object v0
-.end method
-
-.method static synthetic -get6(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mTitleText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    return-object v0
-.end method
-
-.method static synthetic -get7(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;)Lcom/motorola/camera/PreviewSize;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    return-object v0
-.end method
-
-.method static synthetic -set0(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-    .locals 0
-
-    iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mAction:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-
-    return-object p1
-.end method
-
-.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;Ljava/lang/String;II)Ljava/lang/String;
-    .locals 1
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getMapsUrl(Ljava/lang/String;II)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic -wrap1(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getPlacesDetailsUrl(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic -wrap2(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getPlacesTextRequestUrl(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const-class v0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;
 
@@ -204,32 +67,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->TAG:Ljava/lang/String;
-
-    new-instance v0, Ljava/lang/String;
-
-    const-string/jumbo v1, "QUl6YVN5RGNkNGpmazA1dkpQcV9QOS0zLTJ1eVZCekRRWGdsek5r"
-
-    invoke-static {v1, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
-
-    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->PLACES_API_KEY:Ljava/lang/String;
-
-    const-string/jumbo v0, "RjI0Q2FGZlp6c0pFSzhiQTZfU19nRWQtbEp3PQ=="
-
-    invoke-static {v0, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v0
-
-    const/16 v1, 0x8
-
-    invoke-static {v0, v1}, Landroid/util/Base64;->decode([BI)[B
-
-    move-result-object v0
-
-    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->URL_SIGNING_SECRET:[B
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -336,263 +173,6 @@
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mBitmapTexture:Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
 
     return-void
-.end method
-
-.method private getMapsUrl(Ljava/lang/String;II)Ljava/lang/String;
-    .locals 5
-
-    const-string/jumbo v0, "https://maps.googleapis.com"
-
-    const-string/jumbo v1, "/maps/api/staticmap?center=%1$s&zoom=17&size=%2$dx%3$d&scale=2&markers=%1$s"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    aput-object v3, v2, v4
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    const/4 v4, 0x2
-
-    aput-object v3, v2, v4
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getSignedUrl(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getPathAndQueryWithKey(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
-
-    const-string/jumbo v0, "%1$s&key=%2$s"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    sget-object v2, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->PLACES_API_KEY:Ljava/lang/String;
-
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getPlacesDetailsUrl(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
-
-    const-string/jumbo v0, "https://maps.googleapis.com"
-
-    const-string/jumbo v1, "/maps/api/place/details/json?placeid=%1$s"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getUnsignedUrl(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getPlacesTextRequestUrl(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
-
-    const-string/jumbo v0, "https://maps.googleapis.com"
-
-    const-string/jumbo v1, "/maps/api/place/textsearch/json?query=%1$s"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getUnsignedUrl(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getSignedUrl(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 6
-
-    invoke-direct {p0, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getPathAndQueryWithKey(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    :try_start_0
-    new-instance v0, Ljavax/crypto/spec/SecretKeySpec;
-
-    sget-object v2, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->URL_SIGNING_SECRET:[B
-
-    const-string/jumbo v3, "HmacSHA1"
-
-    invoke-direct {v0, v2, v3}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
-
-    const-string/jumbo v2, "HmacSHA1"
-
-    invoke-static {v2}, Ljavax/crypto/Mac;->getInstance(Ljava/lang/String;)Ljavax/crypto/Mac;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljavax/crypto/Mac;->init(Ljava/security/Key;)V
-
-    invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljavax/crypto/Mac;->doFinal([B)[B
-
-    move-result-object v0
-
-    const/16 v2, 0x8
-
-    invoke-static {v0, v2}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "%1$s&signature=%2$s"
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    aput-object v1, v4, v5
-
-    const/4 v5, 0x1
-
-    aput-object v0, v4, v5
-
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/security/InvalidKeyException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v2, :cond_0
-
-    sget-object v2, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v3, "Error signing URL"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getUnsignedUrl(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-direct {p0, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->getPathAndQueryWithKey(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
@@ -724,6 +304,192 @@
 .method public onClick(Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;)V
     .locals 0
 
+    return-void
+.end method
+
+.method public onComplete(Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;)V
+    .locals 6
+
+    const-wide v4, -0x3f70bf3333333333L    # -1000.1
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->name:Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mTitleText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setText(Ljava/lang/String;)V
+
+    :cond_1
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->bitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mBitmapTexture:Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->bitmap:Landroid/graphics/Bitmap;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;->setBitmap(Landroid/graphics/Bitmap;Z)V
+
+    :cond_2
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->formatted_address:Ljava/lang/String;
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->formatted_address:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/16 v2, 0xa
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mDetailsText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setText(Ljava/lang/String;)V
+
+    new-instance v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;
+
+    invoke-direct {v0}, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;-><init>()V
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->geometry:Lcom/motorola/camera/detector/FetchPlaceInfoTask$Geometry;
+
+    iget-object v1, v1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Geometry;->location:Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;
+
+    iget-object v1, v1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lat:Ljava/lang/Double;
+
+    iput-object v1, v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lat:Ljava/lang/Double;
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->geometry:Lcom/motorola/camera/detector/FetchPlaceInfoTask$Geometry;
+
+    iget-object v1, v1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Geometry;->location:Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;
+
+    iget-object v1, v1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lng:Ljava/lang/Double;
+
+    iput-object v1, v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lng:Ljava/lang/Double;
+
+    iget-object v1, v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lat:Ljava/lang/Double;
+
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v2
+
+    cmpl-double v1, v2, v4
+
+    if-nez v1, :cond_4
+
+    iget-object v1, v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lng:Ljava/lang/Double;
+
+    invoke-virtual {v1}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v2
+
+    cmpl-double v1, v2, v4
+
+    if-eqz v1, :cond_6
+
+    :cond_4
+    new-instance v1, Landroid/content/Intent;
+
+    const-string/jumbo v2, "android.intent.action.VIEW"
+
+    iget-object v3, p1, Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlacesDetailsResult;->url:Ljava/lang/String;
+
+    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    invoke-static {v1}, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;->isSupported(Landroid/content/Intent;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    new-instance v2, Lcom/motorola/camera/detector/results/tidbit/actions/IntentAction;
+
+    sget-object v3, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;->LOCATION:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;
+
+    invoke-direct {v2, v3, v1}, Lcom/motorola/camera/detector/results/tidbit/actions/IntentAction;-><init>(Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Landroid/content/Intent;)V
+
+    iput-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mAction:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
+
+    :cond_5
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_6
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "latitude: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lat:Ljava/lang/Double;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ", longitude: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v0, v0, Lcom/motorola/camera/detector/FetchPlaceInfoTask$Location;->lng:Ljava/lang/Double;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_6
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->updateTranslations()V
+
+    invoke-virtual {p0, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->onResultReady(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+
+    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onDirty()V
+
+    :cond_7
     return-void
 .end method
 
@@ -863,13 +629,11 @@
 .end method
 
 .method public setContentAsync(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Z
-    .locals 6
+    .locals 7
 
-    const/4 v3, 0x0
+    const/4 v6, 0x1
 
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     iget v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mSource:I
 
@@ -877,7 +641,7 @@
 
     if-eq v0, v1, :cond_0
 
-    return v4
+    return v5
 
     :cond_0
     iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
@@ -909,7 +673,7 @@
     if-eqz v1, :cond_2
 
     :cond_1
-    return v4
+    return v5
 
     :cond_2
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mTitleText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
@@ -930,17 +694,27 @@
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setTextColor(I)V
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$FetchDataTask;
+    new-instance v1, Lcom/motorola/camera/detector/FetchPlaceInfoTask;
 
-    invoke-direct {v1, p0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$FetchDataTask;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$FetchDataTask;)V
+    new-instance v2, Landroid/util/Size;
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
+
+    const/16 v4, 0x258
+
+    invoke-direct {v2, v3, v4}, Landroid/util/Size;-><init>(II)V
+
+    invoke-direct {v1, p0, v2}, Lcom/motorola/camera/detector/FetchPlaceInfoTask;-><init>(Lcom/motorola/camera/detector/FetchPlaceInfoTask$PlaceInfoTaskCallback;Landroid/util/Size;)V
 
     sget-object v2, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    new-array v3, v5, [Ljava/lang/String;
+    new-array v3, v6, [Ljava/lang/String;
 
-    aput-object v0, v3, v4
+    aput-object v0, v3, v5
 
-    invoke-virtual {v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture$FetchDataTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v2, v3}, Lcom/motorola/camera/detector/FetchPlaceInfoTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->updateTranslations()V
 
@@ -953,7 +727,7 @@
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onDirty()V
 
     :cond_3
-    return v5
+    return v6
 .end method
 
 .method public setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V

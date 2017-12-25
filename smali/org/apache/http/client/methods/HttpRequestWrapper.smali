@@ -29,9 +29,7 @@
 
 # direct methods
 .method private constructor <init>(Lorg/apache/http/HttpRequest;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Lorg/apache/http/message/AbstractHttpMessage;-><init>()V
 
@@ -65,7 +63,9 @@
 
     if-nez v0, :cond_0
 
-    iput-object v1, p0, Lorg/apache/http/client/methods/HttpRequestWrapper;->uri:Ljava/net/URI;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/client/methods/HttpRequestWrapper;->uri:Ljava/net/URI;
 
     :goto_0
     invoke-interface {p1}, Lorg/apache/http/HttpRequest;->getAllHeaders()[Lorg/apache/http/Header;

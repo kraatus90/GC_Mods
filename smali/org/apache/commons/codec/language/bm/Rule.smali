@@ -227,23 +227,23 @@
     :cond_3
     const-string/jumbo v0, "common"
 
+    invoke-static {v6, v10, v0}, Lorg/apache/commons/codec/language/bm/Rule;->createScanner(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;)Ljava/util/Scanner;
+
+    move-result-object v0
+
     const-string/jumbo v12, "common"
 
-    invoke-static {v6, v10, v12}, Lorg/apache/commons/codec/language/bm/Rule;->createScanner(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;)Ljava/util/Scanner;
+    invoke-static {v6, v10, v12}, Lorg/apache/commons/codec/language/bm/Rule;->createResourceName(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
 
-    const-string/jumbo v13, "common"
+    invoke-static {v0, v12}, Lorg/apache/commons/codec/language/bm/Rule;->parseRules(Ljava/util/Scanner;Ljava/lang/String;)Ljava/util/List;
 
-    invoke-static {v6, v10, v13}, Lorg/apache/commons/codec/language/bm/Rule;->createResourceName(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v13
+    const-string/jumbo v12, "common"
 
-    invoke-static {v12, v13}, Lorg/apache/commons/codec/language/bm/Rule;->parseRules(Ljava/util/Scanner;Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v12
-
-    invoke-interface {v11, v0, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v11, v12, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
 .end method
@@ -372,35 +372,35 @@
 .end method
 
 .method private static createResourceName(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    const-string/jumbo v0, "org/apache/commons/codec/language/bm/%s_%s_%s.txt"
+    const/4 v0, 0x3
 
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-virtual {p0}, Lorg/apache/commons/codec/language/bm/NameType;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v1, v2
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    aput-object v1, v0, v2
 
     invoke-virtual {p1}, Lorg/apache/commons/codec/language/bm/RuleType;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v1, v2
+    const/4 v2, 0x1
 
-    const/4 v2, 0x2
+    aput-object v1, v0, v2
 
-    aput-object p2, v1, v2
+    const/4 v1, 0x2
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object p2, v0, v1
+
+    const-string/jumbo v1, "org/apache/commons/codec/language/bm/%s_%s_%s.txt"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -410,17 +410,17 @@
 .method private static createScanner(Ljava/lang/String;)Ljava/util/Scanner;
     .locals 4
 
-    const-string/jumbo v0, "org/apache/commons/codec/language/bm/%s.txt"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    aput-object p0, v0, v1
 
-    aput-object p0, v1, v2
+    const-string/jumbo v1, "org/apache/commons/codec/language/bm/%s.txt"
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -582,7 +582,7 @@
 .end method
 
 .method public static getInstance(Lorg/apache/commons/codec/language/bm/NameType;Lorg/apache/commons/codec/language/bm/RuleType;Ljava/lang/String;)Ljava/util/List;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -624,33 +624,33 @@
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "No rules found for %s, %s, %s."
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {p0}, Lorg/apache/commons/codec/language/bm/NameType;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    aput-object v2, v1, v3
 
     invoke-virtual {p1}, Lorg/apache/commons/codec/language/bm/RuleType;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x1
 
-    const/4 v3, 0x2
+    aput-object v2, v1, v3
 
-    aput-object p2, v2, v3
+    const/4 v2, 0x2
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object p2, v1, v2
+
+    const-string/jumbo v2, "No rules found for %s, %s, %s."
+
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -814,15 +814,15 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v2, 0x1
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    invoke-virtual {p0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 v3, 0x1
+
+    invoke-virtual {p0, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
@@ -848,11 +848,11 @@
     :cond_1
     new-instance v0, Lorg/apache/commons/codec/language/bm/Rule$Phoneme;
 
-    const-string/jumbo v2, ""
+    sget-object v2, Lorg/apache/commons/codec/language/bm/Languages;->ANY_LANGUAGE:Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;
 
-    sget-object v3, Lorg/apache/commons/codec/language/bm/Languages;->ANY_LANGUAGE:Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;
+    const-string/jumbo v3, ""
 
-    invoke-direct {v0, v2, v3}, Lorg/apache/commons/codec/language/bm/Rule$Phoneme;-><init>(Ljava/lang/CharSequence;Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;)V
+    invoke-direct {v0, v3, v2}, Lorg/apache/commons/codec/language/bm/Rule$Phoneme;-><init>(Ljava/lang/CharSequence;Lorg/apache/commons/codec/language/bm/Languages$LanguageSet;)V
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

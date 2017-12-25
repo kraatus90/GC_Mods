@@ -51,9 +51,9 @@
 .method public static zzq(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/zzu$zza;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/common/internal/zzu$zza;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lcom/google/android/gms/common/internal/zzu$zza;-><init>(Ljava/lang/Object;Lcom/google/android/gms/common/internal/zzu$1;)V
 

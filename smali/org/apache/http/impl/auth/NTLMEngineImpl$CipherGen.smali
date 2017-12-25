@@ -436,13 +436,13 @@
 
     invoke-static {v0, v3, v2, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/16 v0, 0x8
+    array-length v0, v2
 
-    array-length v3, v2
+    const/16 v3, -0x43
 
-    const/16 v4, -0x43
+    const/16 v4, 0x8
 
-    invoke-static {v2, v0, v3, v4}, Ljava/util/Arrays;->fill([BIIB)V
+    invoke-static {v2, v4, v0, v3}, Ljava/util/Arrays;->fill([BIIB)V
 
     const/4 v0, 0x0
 
@@ -460,13 +460,13 @@
 
     new-array v3, v3, [B
 
-    const/4 v4, 0x0
+    array-length v4, v3
 
     const/4 v5, 0x0
 
-    array-length v6, v3
+    const/4 v6, 0x0
 
-    invoke-static {v1, v4, v3, v5, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v5, v3, v6, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     const-string/jumbo v1, "DES/ECB/NoPadding"
 
@@ -502,25 +502,25 @@
 
     iput-object v2, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$CipherGen;->z:[B
 
-    const/4 v2, 0x0
+    iget-object v2, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$CipherGen;->z:[B
 
-    iget-object v3, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$CipherGen;->z:[B
+    array-length v3, v0
 
     const/4 v4, 0x0
 
-    array-length v5, v0
+    const/4 v5, 0x0
 
-    invoke-static {v0, v2, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v4, v2, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v2, 0x0
-
-    iget-object v3, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$CipherGen;->z:[B
+    iget-object v2, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$CipherGen;->z:[B
 
     array-length v0, v0
 
-    array-length v4, v1
+    array-length v3, v1
 
-    invoke-static {v1, v2, v3, v0, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    const/4 v4, 0x0
+
+    invoke-static {v1, v4, v2, v0, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

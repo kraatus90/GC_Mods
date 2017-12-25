@@ -126,7 +126,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800b3
+    const v2, 0x7f0800b4
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 

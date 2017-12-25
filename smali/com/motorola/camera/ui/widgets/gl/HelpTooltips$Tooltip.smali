@@ -45,30 +45,6 @@
 
 
 # direct methods
-.method constructor <init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;Z)V
-    .locals 11
-
-    const/4 v9, 0x0
-
-    move-object v1, p0
-
-    move-wide v2, p1
-
-    move v4, p3
-
-    move v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move/from16 v8, p7
-
-    invoke-direct/range {v1 .. v9}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;ZZ)V
-
-    return-void
-.end method
-
 .method constructor <init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;ZZ)V
     .locals 1
 
@@ -199,6 +175,14 @@
     invoke-virtual {v0, v3, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->set(FFF)V
 
     iput v3, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;->mArrowPosition:F
+
+    return-void
+.end method
+
+.method updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;I)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;->updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)V
 
     return-void
 .end method

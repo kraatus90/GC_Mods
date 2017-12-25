@@ -44,9 +44,9 @@
 .method private onStatus(Lcom/motorola/camera/device/callables/MediaStatusListener$Status;)V
     .locals 1
 
-    new-instance v0, Lcom/motorola/camera/device/callables/-$Lambda$135;
+    new-instance v0, Lcom/motorola/camera/device/callables/-$Lambda$z-ti2SJGamJygutDv1fsiCp8yEQ;
 
-    invoke-direct {v0, p0, p1}, Lcom/motorola/camera/device/callables/-$Lambda$135;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p0, p1}, Lcom/motorola/camera/device/callables/-$Lambda$z-ti2SJGamJygutDv1fsiCp8yEQ;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-static {v0}, Lcom/motorola/camera/device/callables/RecorderStartCallable;->runOnUiThread(Ljava/lang/Runnable;)V
 
@@ -55,7 +55,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_device_callables_RecorderStartCallable$MediaStatusWrapper_lambda$1(Lcom/motorola/camera/device/callables/MediaStatusListener$Status;)V
+.method synthetic lambda$-com_motorola_camera_device_callables_RecorderStartCallable$MediaStatusWrapper_2879(Lcom/motorola/camera/device/callables/MediaStatusListener$Status;)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/device/callables/RecorderStartCallable$MediaStatusWrapper;->mListener:Lcom/motorola/camera/device/callables/MediaStatusListener;

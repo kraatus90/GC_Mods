@@ -30,6 +30,8 @@
 
 .field private mMinimum:F
 
+.field private mRangeChange:Z
+
 .field private mRangeMaximumTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
 .field private mRangeMinimumTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
@@ -62,6 +64,8 @@
     const v0, 0x7f7fffff    # Float.MAX_VALUE
 
     iput v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMinimum:F
+
+    iput-boolean v5, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mRangeChange:Z
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -679,31 +683,13 @@
 .method public onValue(F)V
     .locals 3
 
-    const/4 v1, 0x1
+    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setMinimum(F)V
 
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setMaximum(F)V
 
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMinimum:F
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mRangeChange:Z
 
-    cmpg-float v2, p1, v2
-
-    if-gez v2, :cond_0
-
-    iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMinimum:F
-
-    move v0, v1
-
-    :cond_0
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMaximum:F
-
-    cmpl-float v2, p1, v2
-
-    if-lez v2, :cond_2
-
-    iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMaximum:F
-
-    :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mRangeMinimumTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -763,7 +749,11 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->positionRange()V
 
-    :cond_1
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mRangeChange:Z
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mCurrentValueTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -793,11 +783,6 @@
     invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartLineTexture;->onValue(F)V
 
     return-void
-
-    :cond_2
-    move v1, v0
-
-    goto :goto_0
 .end method
 
 .method public declared-synchronized setAlpha(F)V
@@ -1045,6 +1030,44 @@
         0xb4 -> :sswitch_2
         0x10e -> :sswitch_3
     .end sparse-switch
+.end method
+
+.method public setMaximum(F)V
+    .locals 1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMaximum:F
+
+    cmpl-float v0, p1, v0
+
+    if-lez v0, :cond_0
+
+    iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMaximum:F
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mRangeChange:Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public setMinimum(F)V
+    .locals 1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMinimum:F
+
+    cmpg-float v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mMinimum:F
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->mRangeChange:Z
+
+    :cond_0
+    return-void
 .end method
 
 .method public setTitle(Ljava/lang/String;)V

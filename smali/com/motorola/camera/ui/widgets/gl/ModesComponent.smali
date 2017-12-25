@@ -9,7 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/motorola/camera/ui/widgets/gl/ModesComponent$1;
+        Lcom/motorola/camera/ui/widgets/gl/ModesComponent$1;,
+        Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;
     }
 .end annotation
 
@@ -93,6 +94,8 @@
     .end annotation
 .end field
 
+.field mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
 
 # direct methods
 .method static synthetic -get0()Ljava/util/List;
@@ -157,6 +160,14 @@
     iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mListTextureWidth:F
 
     return p1
+.end method
+
+.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->initAllowedTextures()V
+
+    return-void
 .end method
 
 .method static constructor <clinit>()V
@@ -326,6 +337,12 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
 
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
@@ -400,9 +417,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/SelectableListTexture;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/SelectableListTexture;->setOnItemClickListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$OnItemClickListener;)V
 
@@ -649,9 +666,9 @@
 
     iget-object v2, v0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$104;
+    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$kVWx9BV7CrwrXiSDMl3mmkB4ETg$1;
 
-    invoke-direct {v3, v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$104;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$kVWx9BV7CrwrXiSDMl3mmkB4ETg$1;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
@@ -792,9 +809,9 @@
 
     iget-object v2, v0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$105;
+    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$kVWx9BV7CrwrXiSDMl3mmkB4ETg$2;
 
-    invoke-direct {v3, v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$105;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v3, v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$kVWx9BV7CrwrXiSDMl3mmkB4ETg$2;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
@@ -803,13 +820,29 @@
 .end method
 
 .method private isHighlightMode(I)Z
-    .locals 2
+    .locals 3
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getAppFeatures()Lcom/motorola/camera/AppFeatures;
+
+    move-result-object v1
 
     const/4 v0, 0x6
 
     if-ne p1, v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/AppFeatures$Feature;->HIGHLIGHT_DEPTH_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/AppFeatures;->supports(Lcom/motorola/camera/AppFeatures$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FIRST_TIME_USE_DEPTH_PHOTO:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -829,7 +862,7 @@
 
     if-eqz v0, :cond_0
 
-    return v1
+    return v2
 
     :cond_0
     const/4 v0, 0x7
@@ -841,6 +874,14 @@
     if-ne p1, v0, :cond_2
 
     :cond_1
+    sget-object v0, Lcom/motorola/camera/AppFeatures$Feature;->HIGHLIGHT_MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/AppFeatures;->supports(Lcom/motorola/camera/AppFeatures$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FIRST_TIME_USE_MONO_PHOTO:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
@@ -859,7 +900,7 @@
 
     if-eqz v0, :cond_2
 
-    return v1
+    return v2
 
     :cond_2
     const/4 v0, 0x0
@@ -867,7 +908,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_ModesComponent_lambda$2(Ljava/util/Set;)V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_ModesComponent_22017(Ljava/util/Set;)V
     .locals 0
 
     invoke-static {p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->unloadModeTextures(Ljava/util/Collection;)V
@@ -875,7 +916,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_ModesComponent_lambda$3(Ljava/util/Set;)V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_ModesComponent_22845(Ljava/util/Set;)V
     .locals 0
 
     invoke-static {p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->loadModeTextures(Ljava/util/Collection;)V
@@ -1309,11 +1350,11 @@
 
     new-instance v15, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;
 
-    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$5;
+    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$6;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v3, v0, v12, v14}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$5;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;II)V
+    invoke-direct {v3, v0, v12, v14}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;II)V
 
     invoke-virtual {v10}, Lcom/motorola/camera/ui/widgets/gl/textures/ModeItemTexture;->getPostTranslation()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
@@ -1337,11 +1378,11 @@
 
     new-instance v2, Lcom/motorola/camera/ui/widgets/gl/animations/FadeAnimation;
 
-    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$6;
+    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$7;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v3, v0, v12}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;I)V
+    invoke-direct {v3, v0, v12}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$7;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;I)V
 
     sub-int v4, v14, v12
 
@@ -1692,11 +1733,11 @@
 
     new-instance v17, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$3;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$4;
 
     move-object/from16 v3, p0
 
-    invoke-direct/range {v2 .. v7}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;ILcom/motorola/camera/ui/widgets/gl/textures/ModeItemTexture;Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
+    invoke-direct/range {v2 .. v7}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$4;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;ILcom/motorola/camera/ui/widgets/gl/textures/ModeItemTexture;Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
     move-object/from16 v0, v17
 
@@ -1714,11 +1755,11 @@
 
     new-instance v6, Lcom/motorola/camera/ui/widgets/gl/animations/FadeAnimation;
 
-    new-instance v7, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$4;
+    new-instance v7, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$5;
 
     move-object/from16 v0, p0
 
-    invoke-direct {v7, v0, v4}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$4;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;I)V
+    invoke-direct {v7, v0, v4}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$5;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent;I)V
 
     add-int/lit8 v3, v4, 0x1
 
@@ -1941,7 +1982,7 @@
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_OPEN_CAMERA_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x1
 
@@ -2025,6 +2066,12 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setVisibility(Z)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
     const/4 v0, 0x1
 
@@ -2360,7 +2407,7 @@
     goto :goto_0
 
     :cond_2
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_OPEN_CAMERA_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 
@@ -2647,6 +2694,12 @@
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mBackgroundTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->unloadTexture()V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

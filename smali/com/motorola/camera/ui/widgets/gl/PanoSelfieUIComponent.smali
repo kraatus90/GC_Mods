@@ -665,95 +665,95 @@
     :pswitch_0
     if-ne p2, v2, :cond_0
 
-    const/16 v0, 0xdb
+    const/16 v0, 0xdc
 
     return v0
 
     :cond_0
     if-ne p2, v3, :cond_1
 
-    const/16 v0, 0xdc
+    const/16 v0, 0xdd
 
     return v0
 
     :cond_1
-    const/16 v0, 0xda
+    const/16 v0, 0xdb
 
     return v0
 
     :pswitch_1
     if-ne p2, v2, :cond_2
 
-    const/16 v0, 0xe1
+    const/16 v0, 0xe2
 
     return v0
 
     :cond_2
     if-ne p2, v3, :cond_3
 
-    const/16 v0, 0xe2
+    const/16 v0, 0xe3
 
     return v0
 
     :cond_3
-    const/16 v0, 0xe0
+    const/16 v0, 0xe1
 
     return v0
 
     :pswitch_2
     if-ne p2, v2, :cond_4
 
-    const/16 v0, 0xe4
+    const/16 v0, 0xe5
 
     return v0
 
     :cond_4
     if-ne p2, v3, :cond_5
 
-    const/16 v0, 0xe5
+    const/16 v0, 0xe6
 
     return v0
 
     :cond_5
-    const/16 v0, 0xe3
+    const/16 v0, 0xe4
 
     return v0
 
     :pswitch_3
     if-ne p2, v2, :cond_6
 
-    const/16 v0, 0xde
+    const/16 v0, 0xdf
 
     return v0
 
     :cond_6
     if-ne p2, v3, :cond_7
 
-    const/16 v0, 0xdf
+    const/16 v0, 0xe0
 
     return v0
 
     :cond_7
-    const/16 v0, 0xdd
+    const/16 v0, 0xde
 
     return v0
 
     :pswitch_4
     if-ne p2, v2, :cond_8
 
-    const/16 v0, 0xe7
+    const/16 v0, 0xe8
 
     return v0
 
     :cond_8
     if-ne p2, v3, :cond_9
 
-    const/16 v0, 0xe8
+    const/16 v0, 0xe9
 
     return v0
 
     :cond_9
-    const/16 v0, 0xe6
+    const/16 v0, 0xe7
 
     return v0
 
@@ -4231,6 +4231,14 @@
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PanoSelfieUIComponent;->mSelfieLivePreviewTexture:Lcom/motorola/camera/ui/widgets/gl/textures/SelfieLivePreviewTexture;
 
     invoke-virtual {v0, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/SelfieLivePreviewTexture;->setClosing(Z)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PanoSelfieUIComponent;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->cancelAnimations()V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PanoSelfieUIComponent;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->clearAnimations()V
 
     goto/16 :goto_1
 .end method

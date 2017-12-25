@@ -157,7 +157,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00ab
+    const v1, 0x7f0a00c8
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -167,13 +167,13 @@
 
     sput v0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->OFFSET_LEFT:F
 
-    const/16 v0, 0xe9
+    const/16 v0, 0xea
 
-    const/16 v1, 0xea
+    const/16 v1, 0xeb
 
-    const/16 v2, 0xeb
+    const/16 v2, 0xec
 
-    const/16 v3, 0xec
+    const/16 v3, 0xed
 
     filled-new-array {v0, v1, v2, v3}, [I
 
@@ -358,9 +358,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$171;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$QqKahwPGsOzkmtmDE73V1loA2rc$2;
 
-    invoke-direct {v1, p1, p2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$171;-><init>(ZZLjava/lang/Object;)V
+    invoke-direct {v1, p1, p2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$QqKahwPGsOzkmtmDE73V1loA2rc$2;-><init>(ZZLjava/lang/Object;)V
 
     invoke-virtual {v0, v1, p3, p4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -548,9 +548,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$114;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$QqKahwPGsOzkmtmDE73V1loA2rc;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$114;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$QqKahwPGsOzkmtmDE73V1loA2rc;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -1129,7 +1129,7 @@
 
     if-eqz v0, :cond_2
 
-    const/16 v0, 0xc8
+    const/16 v0, 0xc9
 
     :goto_0
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mWideBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
@@ -1144,7 +1144,7 @@
     return-void
 
     :cond_2
-    const/16 v0, 0xd8
+    const/16 v0, 0xd9
 
     goto :goto_0
 .end method
@@ -1871,7 +1871,19 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_ZoomComponent_lambda$1(Z)V
+.method public isWideAngleButtonVisible()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mWideBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->isVisible()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_ZoomComponent_15875(Z)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mZoomTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ZoomTexture;
@@ -1885,7 +1897,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_ZoomComponent_lambda$3(ZZ)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_ZoomComponent_27820(ZZ)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mZoomTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ZoomTexture;
@@ -1955,9 +1967,9 @@
 
     const/4 v2, 0x7
 
-    const/16 v3, 0xc8
+    const/16 v3, 0xc9
 
-    const/16 v4, 0xc8
+    const/16 v4, 0xc9
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setButtonResources(IIII)V
 
@@ -2009,13 +2021,13 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mSceneIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xed
+    const/16 v1, 0xee
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mFlashIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xec
+    const/16 v1, 0xed
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
@@ -2900,9 +2912,9 @@
     :try_start_2
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$170;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$QqKahwPGsOzkmtmDE73V1loA2rc$1;
 
-    invoke-direct {v2, v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$170;-><init>(ZLjava/lang/Object;)V
+    invoke-direct {v2, v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$QqKahwPGsOzkmtmDE73V1loA2rc$1;-><init>(ZLjava/lang/Object;)V
 
     const-wide/16 v4, 0xc8
 

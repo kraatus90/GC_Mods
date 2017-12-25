@@ -20,17 +20,15 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v4/content/Loader;)V
-    .locals 2
-
-    move-object v0, p0
+    .locals 1
 
     iput-object p1, p0, Landroid/support/v4/content/Loader$ForceLoadContentObserver;->this$0:Landroid/support/v4/content/Loader;
 
-    new-instance v1, Landroid/os/Handler;
+    new-instance v0, Landroid/os/Handler;
 
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    invoke-direct {p0, v1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
 .end method
@@ -38,23 +36,19 @@
 
 # virtual methods
 .method public deliverSelfNotifications()Z
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    return v1
+    return v0
 .end method
 
 .method public onChange(Z)V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/content/Loader$ForceLoadContentObserver;->this$0:Landroid/support/v4/content/Loader;
 
-    iget-object v1, p0, Landroid/support/v4/content/Loader$ForceLoadContentObserver;->this$0:Landroid/support/v4/content/Loader;
-
-    invoke-virtual {v1}, Landroid/support/v4/content/Loader;->onContentChanged()V
+    invoke-virtual {v0}, Landroid/support/v4/content/Loader;->onContentChanged()V
 
     return-void
 .end method

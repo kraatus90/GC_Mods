@@ -50,12 +50,12 @@
     const-wide/16 v0, 0x0
 
     :goto_0
-    const/4 v3, 0x0
-
     :try_start_0
-    array-length v4, v2
+    array-length v3, v2
 
-    invoke-virtual {p0, v2, v3, v4}, Ljava/io/InputStream;->read([BII)I
+    const/4 v4, 0x0
+
+    invoke-virtual {p0, v2, v4, v3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v3
 

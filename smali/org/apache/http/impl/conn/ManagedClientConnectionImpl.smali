@@ -202,9 +202,9 @@
 .method b()Lorg/apache/http/impl/conn/HttpPoolEntry;
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Lorg/apache/http/impl/conn/ManagedClientConnectionImpl;->poolEntry:Lorg/apache/http/impl/conn/HttpPoolEntry;
+
+    const/4 v1, 0x0
 
     iput-object v1, p0, Lorg/apache/http/impl/conn/ManagedClientConnectionImpl;->poolEntry:Lorg/apache/http/impl/conn/HttpPoolEntry;
 
@@ -262,9 +262,7 @@
 .end method
 
 .method public getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-direct {p0}, Lorg/apache/http/impl/conn/ManagedClientConnectionImpl;->ensureConnection()Lorg/apache/http/conn/OperatedClientConnection;
 
@@ -274,7 +272,9 @@
 
     if-nez v1, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     check-cast v0, Lorg/apache/http/protocol/HttpContext;
@@ -389,11 +389,11 @@
 .method public getSSLSession()Ljavax/net/ssl/SSLSession;
     .locals 3
 
-    const/4 v1, 0x0
-
     invoke-direct {p0}, Lorg/apache/http/impl/conn/ManagedClientConnectionImpl;->ensureConnection()Lorg/apache/http/conn/OperatedClientConnection;
 
     move-result-object v0
+
+    const/4 v1, 0x0
 
     invoke-interface {v0}, Lorg/apache/http/conn/OperatedClientConnection;->getSocket()Ljava/net/Socket;
 
@@ -915,9 +915,7 @@
 .end method
 
 .method public removeAttribute(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-direct {p0}, Lorg/apache/http/impl/conn/ManagedClientConnectionImpl;->ensureConnection()Lorg/apache/http/conn/OperatedClientConnection;
 
@@ -927,7 +925,9 @@
 
     if-nez v1, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     check-cast v0, Lorg/apache/http/protocol/HttpContext;

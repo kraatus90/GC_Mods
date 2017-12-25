@@ -81,11 +81,11 @@
 .method private constructor <init>()V
     .locals 15
 
-    const v14, 0x7f0801e2
+    const v14, 0x7f0801f9
 
-    const v13, 0x7f0801de
+    const v13, 0x7f0801f5
 
-    const v12, 0x7f0801d4
+    const v12, 0x7f0801eb
 
     const/4 v9, 0x1
 
@@ -119,7 +119,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const v2, 0x7f0801d2
+    const v2, 0x7f0801e9
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -131,7 +131,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    const v2, 0x7f0801e8
+    const v2, 0x7f0801ff
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -143,7 +143,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    const v2, 0x7f0801b6
+    const v2, 0x7f0801ca
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -155,7 +155,7 @@
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    const v2, 0x7f080229
+    const v2, 0x7f080240
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -179,7 +179,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801d1
+    const v1, 0x7f0801e8
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -209,7 +209,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801d3
+    const v1, 0x7f0801ea
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -239,7 +239,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801ea
+    const v1, 0x7f080201
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -269,7 +269,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801f8
+    const v1, 0x7f08020f
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -299,7 +299,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801d5
+    const v1, 0x7f0801ec
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -355,7 +355,7 @@
 
     move-result-object v7
 
-    const v2, 0x7f0801d8
+    const v2, 0x7f0801ef
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     move-result-object v7
 
-    const v2, 0x7f0801f7
+    const v2, 0x7f08020e
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -415,7 +415,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f08021d
+    const v1, 0x7f080234
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -445,7 +445,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f08021f
+    const v1, 0x7f080236
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -475,7 +475,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f08021e
+    const v1, 0x7f080235
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -509,7 +509,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v3, 0x7f0801b4
+    const v3, 0x7f0801c8
 
     invoke-virtual {v11, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -519,7 +519,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f080222
+    const v3, 0x7f080239
 
     invoke-virtual {v11, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -557,7 +557,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801b2
+    const v1, 0x7f0801c6
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -587,7 +587,7 @@
 
     move-result-object v2
 
-    const v1, 0x7f0801b3
+    const v1, 0x7f0801c7
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -603,7 +603,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/instrumentreport/DebugReportDisplayStrings;->mTranslateObjectMap:Ljava/util/HashMap;
 
-    const v1, 0x7f080228
+    const v1, 0x7f08023f
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -611,13 +611,13 @@
 
     new-instance v5, Lcom/motorola/camera/instrumentreport/DebugReportDisplayStrings$TranslateObject;
 
-    const v2, 0x7f080228
+    const v2, 0x7f08023f
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const v2, 0x7f080228
+    const v2, 0x7f08023f
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -633,7 +633,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/instrumentreport/DebugReportDisplayStrings;->mTranslateObjectMap:Ljava/util/HashMap;
 
-    const v1, 0x7f080227
+    const v1, 0x7f08023e
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -641,13 +641,13 @@
 
     new-instance v5, Lcom/motorola/camera/instrumentreport/DebugReportDisplayStrings$TranslateObject;
 
-    const v2, 0x7f080227
+    const v2, 0x7f08023e
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const v2, 0x7f080227
+    const v2, 0x7f08023e
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -663,7 +663,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/instrumentreport/DebugReportDisplayStrings;->mTranslateObjectMap:Ljava/util/HashMap;
 
-    const v1, 0x7f08021b
+    const v1, 0x7f080232
 
     invoke-virtual {v11, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -671,13 +671,13 @@
 
     new-instance v5, Lcom/motorola/camera/instrumentreport/DebugReportDisplayStrings$ShotToShotTranslateObject;
 
-    const v2, 0x7f08021b
+    const v2, 0x7f080232
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v7
 
-    const v2, 0x7f08021b
+    const v2, 0x7f080232
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -779,7 +779,7 @@
 
     move-result-object v7
 
-    const v2, 0x7f080226
+    const v2, 0x7f08023d
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -809,7 +809,7 @@
 
     move-result-object v7
 
-    const v2, 0x7f0801dd
+    const v2, 0x7f0801f4
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -839,7 +839,7 @@
 
     move-result-object v7
 
-    const v2, 0x7f0801db
+    const v2, 0x7f0801f2
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -869,7 +869,7 @@
 
     move-result-object v7
 
-    const v2, 0x7f0801dc
+    const v2, 0x7f0801f3
 
     invoke-virtual {v11, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

@@ -41,14 +41,12 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Float;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
-
-    const/4 v2, 0x0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
@@ -73,7 +71,9 @@
     :cond_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
@@ -92,7 +92,7 @@
 .end method
 
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -105,9 +105,9 @@
 
     move-result v0
 
-    float-to-double v2, v0
+    float-to-double v0, v0
 
-    invoke-static {v2, v3}, Lcom/google/gson/Gson;->checkValidFloatingPoint(D)V
+    invoke-static {v0, v1}, Lcom/google/gson/Gson;->checkValidFloatingPoint(D)V
 
     invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
 

@@ -33,11 +33,11 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
-    invoke-direct {p0, p1, v0, v1}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {p0, p1, v1, v0}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -81,9 +81,9 @@
 
     const-string/jumbo v0, "http"
 
-    :goto_0
     iput-object v0, p0, Lorg/apache/http/HttpHost;->d:Ljava/lang/String;
 
+    :goto_0
     iput p2, p0, Lorg/apache/http/HttpHost;->c:I
 
     iput-object v1, p0, Lorg/apache/http/HttpHost;->e:Ljava/net/InetAddress;
@@ -97,17 +97,19 @@
 
     move-result-object v0
 
+    iput-object v0, p0, Lorg/apache/http/HttpHost;->d:Ljava/lang/String;
+
     goto :goto_0
 .end method
 
 .method public constructor <init>(Ljava/net/InetAddress;)V
     .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
-    invoke-direct {p0, p1, v0, v1}, Lorg/apache/http/HttpHost;-><init>(Ljava/net/InetAddress;ILjava/lang/String;)V
+    invoke-direct {p0, p1, v1, v0}, Lorg/apache/http/HttpHost;-><init>(Ljava/net/InetAddress;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -157,9 +159,9 @@
 
     const-string/jumbo v0, "http"
 
-    :goto_0
     iput-object v0, p0, Lorg/apache/http/HttpHost;->d:Ljava/lang/String;
 
+    :goto_0
     iput p2, p0, Lorg/apache/http/HttpHost;->c:I
 
     return-void
@@ -170,6 +172,8 @@
     invoke-virtual {p3, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
+
+    iput-object v0, p0, Lorg/apache/http/HttpHost;->d:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -311,11 +315,11 @@
 .method public hashCode()I
     .locals 2
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/HttpHost;->b:Ljava/lang/String;
+    iget-object v0, p0, Lorg/apache/http/HttpHost;->b:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 

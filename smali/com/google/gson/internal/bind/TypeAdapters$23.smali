@@ -50,14 +50,12 @@
 .end method
 
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/net/InetAddress;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
-
-    const/4 v2, 0x0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
@@ -80,7 +78,9 @@
     :cond_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V

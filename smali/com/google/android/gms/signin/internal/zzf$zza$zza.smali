@@ -312,9 +312,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -332,11 +332,13 @@
     if-nez p1, :cond_0
 
     :goto_0
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     invoke-virtual {v2, p2}, Landroid/os/Parcel;->writeInt(I)V
 
     if-nez p3, :cond_1
+
+    move v0, v1
 
     :goto_1
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeInt(I)V
@@ -365,7 +367,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 

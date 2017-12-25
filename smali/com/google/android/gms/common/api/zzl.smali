@@ -235,9 +235,7 @@
 .end method
 
 .method private zzlg()V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -247,7 +245,9 @@
 
     iput v1, p0, Lcom/google/android/gms/common/api/zzl;->zzRb:I
 
-    iput-object v2, p0, Lcom/google/android/gms/common/api/zzl;->zzRc:Lcom/google/android/gms/common/ConnectionResult;
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/google/android/gms/common/api/zzl;->zzRc:Lcom/google/android/gms/common/ConnectionResult;
 
     move v1, v0
 
@@ -384,15 +384,15 @@
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     iget v0, p0, Lcom/google/android/gms/common/api/zzl;->zzRb:I
 
     new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v2, 0xd
+    const/4 v2, 0x0
 
-    invoke-direct {v1, v2, v3}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    const/16 v3, 0xd
+
+    invoke-direct {v1, v3, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/gms/common/api/zzl;->zza(ILcom/google/android/gms/common/ConnectionResult;)V
 
@@ -463,11 +463,11 @@
 
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    const-string/jumbo v0, "resolving_error"
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/zzl;->zzRa:Z
 
-    iget-boolean v1, p0, Lcom/google/android/gms/common/api/zzl;->zzRa:Z
+    const-string/jumbo v1, "resolving_error"
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     iget v0, p0, Lcom/google/android/gms/common/api/zzl;->zzRb:I
 
@@ -477,31 +477,31 @@
     return-void
 
     :cond_0
-    const-string/jumbo v0, "failed_client_id"
+    iget v0, p0, Lcom/google/android/gms/common/api/zzl;->zzRb:I
 
-    iget v1, p0, Lcom/google/android/gms/common/api/zzl;->zzRb:I
+    const-string/jumbo v1, "failed_client_id"
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    const-string/jumbo v0, "failed_status"
+    iget-object v0, p0, Lcom/google/android/gms/common/api/zzl;->zzRc:Lcom/google/android/gms/common/ConnectionResult;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/zzl;->zzRc:Lcom/google/android/gms/common/ConnectionResult;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->getErrorCode()I
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/ConnectionResult;->getErrorCode()I
+    move-result v0
 
-    move-result v1
+    const-string/jumbo v1, "failed_status"
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    const-string/jumbo v0, "failed_resolution"
+    iget-object v0, p0, Lcom/google/android/gms/common/api/zzl;->zzRc:Lcom/google/android/gms/common/ConnectionResult;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/zzl;->zzRc:Lcom/google/android/gms/common/ConnectionResult;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->getResolution()Landroid/app/PendingIntent;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/ConnectionResult;->getResolution()Landroid/app/PendingIntent;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "failed_resolution"
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     goto :goto_0
 .end method

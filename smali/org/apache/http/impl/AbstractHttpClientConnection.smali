@@ -112,9 +112,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Lorg/apache/http/impl/io/DefaultHttpResponseParser;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1, p2, p3}, Lorg/apache/http/impl/io/DefaultHttpResponseParser;-><init>(Lorg/apache/http/io/SessionInputBuffer;Lorg/apache/http/message/LineParser;Lorg/apache/http/HttpResponseFactory;Lorg/apache/http/params/HttpParams;)V
 
@@ -136,9 +136,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Lorg/apache/http/impl/io/HttpRequestWriter;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1, p2}, Lorg/apache/http/impl/io/HttpRequestWriter;-><init>(Lorg/apache/http/io/SessionOutputBuffer;Lorg/apache/http/message/LineFormatter;Lorg/apache/http/params/HttpParams;)V
 

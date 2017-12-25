@@ -166,35 +166,35 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Address:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Address:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Name:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Name:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Company:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Company:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Job:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Job:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Text:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->Text:Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;->$VALUES:[Lcom/abbyy/mobile/ocr4/layout/MocrBcrFieldType;
 

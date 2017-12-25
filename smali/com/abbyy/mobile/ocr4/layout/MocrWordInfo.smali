@@ -179,67 +179,67 @@
 .end method
 
 .method public clone()Ljava/lang/Object;
-    .locals 5
+    .locals 3
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;
 
-    invoke-direct {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;-><init>()V
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;-><init>()V
 
-    iget-object v3, v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_wordVariants:Ljava/util/ArrayList;
+    iget-object v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_wordVariants:Ljava/util/ArrayList;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_wordVariants:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_wordVariants:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v2
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->ensureCapacity(I)V
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->ensureCapacity(I)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_wordVariants:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_wordVariants:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    iget v3, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_attributes:I
-
-    iput v3, v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_attributes:I
-
-    new-instance v3, Landroid/graphics/Rect;
-
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_rect:Landroid/graphics/Rect;
-
-    invoke-direct {v3, v4}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
-
-    iput-object v3, v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_rect:Landroid/graphics/Rect;
-
-    iget v3, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_smallLetterHeight:I
-
-    iput v3, v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_smallLetterHeight:I
-
-    return-object v0
-
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;->clone()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v3
+    if-nez v0, :cond_0
 
-    check-cast v3, Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;
+    iget v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_attributes:I
 
-    invoke-virtual {v0, v3}, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->addWordVariant(Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;)V
+    iput v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_attributes:I
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_rect:Landroid/graphics/Rect;
+
+    invoke-direct {v0, v2}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    iput-object v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_rect:Landroid/graphics/Rect;
+
+    iget v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_smallLetterHeight:I
+
+    iput v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->_smallLetterHeight:I
+
+    return-object v1
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;
+
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;
+
+    invoke-virtual {v1, v0}, Lcom/abbyy/mobile/ocr4/layout/MocrWordInfo;->addWordVariant(Lcom/abbyy/mobile/ocr4/layout/MocrWordVariant;)V
 
     goto :goto_0
 .end method

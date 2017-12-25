@@ -4,6 +4,10 @@
 
 
 # annotations
+.annotation build Landroid/support/annotation/RequiresApi;
+    value = 0x18
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/support/v4/media/session/MediaControllerCompat;
 .end annotation
@@ -39,25 +43,25 @@
 
 # virtual methods
 .method public getTransportControls()Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
-    .locals 3
+    .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v2, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi24;->mControllerObj:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaControllerCompat$MediaControllerImplApi24;->mControllerObj:Ljava/lang/Object;
 
-    invoke-static {v2}, Landroid/support/v4/media/session/MediaControllerCompatApi21;->getTransportControls(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Landroid/support/v4/media/session/MediaControllerCompatApi21;->getTransportControls(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     :goto_0
-    return-object v1
+    return-object v0
 
     :cond_0
-    new-instance v1, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi24;
+    new-instance v0, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi24;
 
-    invoke-direct {v1, v0}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi24;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, v1}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi24;-><init>(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method

@@ -244,11 +244,11 @@
 
     aput-byte v3, v0, v1
 
-    const/16 v1, 0x2f
+    const/16 v1, 0x3f
 
-    const/16 v2, 0x3f
+    const/16 v2, 0x2f
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x30
 
@@ -258,41 +258,41 @@
 
     aput-byte v3, v0, v1
 
-    const/16 v1, 0x32
+    const/16 v1, 0x1a
 
-    const/16 v2, 0x1a
+    const/16 v2, 0x32
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x33
+    const/16 v1, 0x1b
 
-    const/16 v2, 0x1b
+    const/16 v2, 0x33
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x34
+    const/16 v1, 0x1c
 
-    const/16 v2, 0x1c
+    const/16 v2, 0x34
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x35
+    const/16 v1, 0x1d
 
-    const/16 v2, 0x1d
+    const/16 v2, 0x35
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x36
+    const/16 v1, 0x1e
 
-    const/16 v2, 0x1e
+    const/16 v2, 0x36
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x37
+    const/16 v1, 0x1f
 
-    const/16 v2, 0x1f
+    const/16 v2, 0x37
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x38
 
@@ -342,141 +342,141 @@
 
     aput-byte v6, v0, v1
 
-    const/16 v1, 0x44
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const/16 v2, 0x44
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x45
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const/16 v2, 0x45
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x46
+    const/4 v1, 0x5
 
-    const/4 v2, 0x5
+    const/16 v2, 0x46
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x47
+    const/4 v1, 0x6
 
-    const/4 v2, 0x6
+    const/16 v2, 0x47
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x48
+    const/4 v1, 0x7
 
-    const/4 v2, 0x7
+    const/16 v2, 0x48
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x49
+    const/16 v1, 0x8
 
-    const/16 v2, 0x8
+    const/16 v2, 0x49
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4a
+    const/16 v1, 0x9
 
-    const/16 v2, 0x9
+    const/16 v2, 0x4a
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x4b
 
     aput-byte v7, v0, v1
 
-    const/16 v1, 0x4c
+    const/16 v1, 0xb
 
-    const/16 v2, 0xb
+    const/16 v2, 0x4c
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4d
+    const/16 v1, 0xc
 
-    const/16 v2, 0xc
+    const/16 v2, 0x4d
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4e
+    const/16 v1, 0xd
 
-    const/16 v2, 0xd
+    const/16 v2, 0x4e
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4f
+    const/16 v1, 0xe
 
-    const/16 v2, 0xe
+    const/16 v2, 0x4f
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x50
+    const/16 v1, 0xf
 
-    const/16 v2, 0xf
+    const/16 v2, 0x50
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x51
+    const/16 v1, 0x10
 
-    const/16 v2, 0x10
+    const/16 v2, 0x51
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x52
+    const/16 v1, 0x11
 
-    const/16 v2, 0x11
+    const/16 v2, 0x52
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x53
+    const/16 v1, 0x12
 
-    const/16 v2, 0x12
+    const/16 v2, 0x53
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x54
+    const/16 v1, 0x13
 
-    const/16 v2, 0x13
+    const/16 v2, 0x54
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x55
+    const/16 v1, 0x14
 
-    const/16 v2, 0x14
+    const/16 v2, 0x55
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x56
+    const/16 v1, 0x15
 
-    const/16 v2, 0x15
+    const/16 v2, 0x56
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x57
+    const/16 v1, 0x16
 
-    const/16 v2, 0x16
+    const/16 v2, 0x57
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x58
+    const/16 v1, 0x17
 
-    const/16 v2, 0x17
+    const/16 v2, 0x58
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x59
+    const/16 v1, 0x18
 
-    const/16 v2, 0x18
+    const/16 v2, 0x59
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x5a
+    const/16 v1, 0x19
 
-    const/16 v2, 0x19
+    const/16 v2, 0x5a
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/Base32;->DECODE_TABLE:[B
 
@@ -496,177 +496,177 @@
 
     aput-byte v1, v0, v6
 
-    const/4 v1, 0x3
+    const/16 v1, 0x44
 
-    const/16 v2, 0x44
+    const/4 v2, 0x3
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x4
+    const/16 v1, 0x45
 
-    const/16 v2, 0x45
+    const/4 v2, 0x4
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x5
+    const/16 v1, 0x46
 
-    const/16 v2, 0x46
+    const/4 v2, 0x5
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x6
+    const/16 v1, 0x47
 
-    const/16 v2, 0x47
+    const/4 v2, 0x6
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x7
+    const/16 v1, 0x48
 
-    const/16 v2, 0x48
+    const/4 v2, 0x7
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x8
+    const/16 v1, 0x49
 
-    const/16 v2, 0x49
+    const/16 v2, 0x8
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x9
+    const/16 v1, 0x4a
 
-    const/16 v2, 0x4a
+    const/16 v2, 0x9
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x4b
 
     aput-byte v1, v0, v7
 
-    const/16 v1, 0xb
+    const/16 v1, 0x4c
 
-    const/16 v2, 0x4c
+    const/16 v2, 0xb
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xc
+    const/16 v1, 0x4d
 
-    const/16 v2, 0x4d
+    const/16 v2, 0xc
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xd
+    const/16 v1, 0x4e
 
-    const/16 v2, 0x4e
+    const/16 v2, 0xd
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xe
+    const/16 v1, 0x4f
 
-    const/16 v2, 0x4f
+    const/16 v2, 0xe
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xf
+    const/16 v1, 0x50
 
-    const/16 v2, 0x50
+    const/16 v2, 0xf
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x10
+    const/16 v1, 0x51
 
-    const/16 v2, 0x51
+    const/16 v2, 0x10
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x11
+    const/16 v1, 0x52
 
-    const/16 v2, 0x52
+    const/16 v2, 0x11
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x12
+    const/16 v1, 0x53
 
-    const/16 v2, 0x53
+    const/16 v2, 0x12
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x13
+    const/16 v1, 0x54
 
-    const/16 v2, 0x54
+    const/16 v2, 0x13
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x14
+    const/16 v1, 0x55
 
-    const/16 v2, 0x55
+    const/16 v2, 0x14
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x15
+    const/16 v1, 0x56
 
-    const/16 v2, 0x56
+    const/16 v2, 0x15
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x16
+    const/16 v1, 0x57
 
-    const/16 v2, 0x57
+    const/16 v2, 0x16
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x17
+    const/16 v1, 0x58
 
-    const/16 v2, 0x58
+    const/16 v2, 0x17
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x18
+    const/16 v1, 0x59
 
-    const/16 v2, 0x59
+    const/16 v2, 0x18
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x19
+    const/16 v1, 0x5a
 
-    const/16 v2, 0x5a
+    const/16 v2, 0x19
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1a
+    const/16 v1, 0x32
 
-    const/16 v2, 0x32
+    const/16 v2, 0x1a
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1b
+    const/16 v1, 0x33
 
-    const/16 v2, 0x33
+    const/16 v2, 0x1b
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1c
+    const/16 v1, 0x34
 
-    const/16 v2, 0x34
+    const/16 v2, 0x1c
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1d
+    const/16 v1, 0x35
 
-    const/16 v2, 0x35
+    const/16 v2, 0x1d
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1e
+    const/16 v1, 0x36
 
-    const/16 v2, 0x36
+    const/16 v2, 0x1e
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1f
+    const/16 v1, 0x37
 
-    const/16 v2, 0x37
+    const/16 v2, 0x1f
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/Base32;->ENCODE_TABLE:[B
 
@@ -854,11 +854,11 @@
 
     aput-byte v3, v0, v1
 
-    const/16 v1, 0x2f
+    const/16 v1, 0x3f
 
-    const/16 v2, 0x3f
+    const/16 v2, 0x2f
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x30
 
@@ -872,47 +872,47 @@
 
     aput-byte v6, v0, v1
 
-    const/16 v1, 0x33
+    const/4 v1, 0x3
 
-    const/4 v2, 0x3
+    const/16 v2, 0x33
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x34
+    const/4 v1, 0x4
 
-    const/4 v2, 0x4
+    const/16 v2, 0x34
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x35
+    const/4 v1, 0x5
 
-    const/4 v2, 0x5
+    const/16 v2, 0x35
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x36
+    const/4 v1, 0x6
 
-    const/4 v2, 0x6
+    const/16 v2, 0x36
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x37
+    const/4 v1, 0x7
 
-    const/4 v2, 0x7
+    const/16 v2, 0x37
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x38
+    const/16 v1, 0x8
 
-    const/16 v2, 0x8
+    const/16 v2, 0x38
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x39
+    const/16 v1, 0x9
 
-    const/16 v2, 0x9
+    const/16 v2, 0x39
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x3a
 
@@ -946,137 +946,137 @@
 
     aput-byte v7, v0, v1
 
-    const/16 v1, 0x42
+    const/16 v1, 0xb
 
-    const/16 v2, 0xb
+    const/16 v2, 0x42
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x43
+    const/16 v1, 0xc
 
-    const/16 v2, 0xc
+    const/16 v2, 0x43
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x44
+    const/16 v1, 0xd
 
-    const/16 v2, 0xd
+    const/16 v2, 0x44
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x45
+    const/16 v1, 0xe
 
-    const/16 v2, 0xe
+    const/16 v2, 0x45
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x46
+    const/16 v1, 0xf
 
-    const/16 v2, 0xf
+    const/16 v2, 0x46
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x47
+    const/16 v1, 0x10
 
-    const/16 v2, 0x10
+    const/16 v2, 0x47
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x48
+    const/16 v1, 0x11
 
-    const/16 v2, 0x11
+    const/16 v2, 0x48
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x49
+    const/16 v1, 0x12
 
-    const/16 v2, 0x12
+    const/16 v2, 0x49
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4a
+    const/16 v1, 0x13
 
-    const/16 v2, 0x13
+    const/16 v2, 0x4a
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4b
+    const/16 v1, 0x14
 
-    const/16 v2, 0x14
+    const/16 v2, 0x4b
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4c
+    const/16 v1, 0x15
 
-    const/16 v2, 0x15
+    const/16 v2, 0x4c
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4d
+    const/16 v1, 0x16
 
-    const/16 v2, 0x16
+    const/16 v2, 0x4d
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4e
+    const/16 v1, 0x17
 
-    const/16 v2, 0x17
+    const/16 v2, 0x4e
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x4f
+    const/16 v1, 0x18
 
-    const/16 v2, 0x18
+    const/16 v2, 0x4f
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x50
+    const/16 v1, 0x19
 
-    const/16 v2, 0x19
+    const/16 v2, 0x50
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x51
+    const/16 v1, 0x1a
 
-    const/16 v2, 0x1a
+    const/16 v2, 0x51
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x52
+    const/16 v1, 0x1b
 
-    const/16 v2, 0x1b
+    const/16 v2, 0x52
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x53
+    const/16 v1, 0x1c
 
-    const/16 v2, 0x1c
+    const/16 v2, 0x53
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x54
+    const/16 v1, 0x1d
 
-    const/16 v2, 0x1d
+    const/16 v2, 0x54
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x55
+    const/16 v1, 0x1e
 
-    const/16 v2, 0x1e
+    const/16 v2, 0x55
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x56
+    const/16 v1, 0x1f
 
-    const/16 v2, 0x1f
+    const/16 v2, 0x56
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x57
+    const/16 v1, 0x20
 
-    const/16 v2, 0x20
+    const/16 v2, 0x57
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/Base32;->HEX_DECODE_TABLE:[B
 
@@ -1096,177 +1096,177 @@
 
     aput-byte v1, v0, v6
 
-    const/4 v1, 0x3
+    const/16 v1, 0x33
 
-    const/16 v2, 0x33
+    const/4 v2, 0x3
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x4
+    const/16 v1, 0x34
 
-    const/16 v2, 0x34
+    const/4 v2, 0x4
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x5
+    const/16 v1, 0x35
 
-    const/16 v2, 0x35
+    const/4 v2, 0x5
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x6
+    const/16 v1, 0x36
 
-    const/16 v2, 0x36
+    const/4 v2, 0x6
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x7
+    const/16 v1, 0x37
 
-    const/16 v2, 0x37
+    const/4 v2, 0x7
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x8
+    const/16 v1, 0x38
 
-    const/16 v2, 0x38
+    const/16 v2, 0x8
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x9
+    const/16 v1, 0x39
 
-    const/16 v2, 0x39
+    const/16 v2, 0x9
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     const/16 v1, 0x41
 
     aput-byte v1, v0, v7
 
-    const/16 v1, 0xb
+    const/16 v1, 0x42
 
-    const/16 v2, 0x42
+    const/16 v2, 0xb
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xc
+    const/16 v1, 0x43
 
-    const/16 v2, 0x43
+    const/16 v2, 0xc
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xd
+    const/16 v1, 0x44
 
-    const/16 v2, 0x44
+    const/16 v2, 0xd
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xe
+    const/16 v1, 0x45
 
-    const/16 v2, 0x45
+    const/16 v2, 0xe
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0xf
+    const/16 v1, 0x46
 
-    const/16 v2, 0x46
+    const/16 v2, 0xf
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x10
+    const/16 v1, 0x47
 
-    const/16 v2, 0x47
+    const/16 v2, 0x10
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x11
+    const/16 v1, 0x48
 
-    const/16 v2, 0x48
+    const/16 v2, 0x11
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x12
+    const/16 v1, 0x49
 
-    const/16 v2, 0x49
+    const/16 v2, 0x12
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x13
+    const/16 v1, 0x4a
 
-    const/16 v2, 0x4a
+    const/16 v2, 0x13
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x14
+    const/16 v1, 0x4b
 
-    const/16 v2, 0x4b
+    const/16 v2, 0x14
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x15
+    const/16 v1, 0x4c
 
-    const/16 v2, 0x4c
+    const/16 v2, 0x15
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x16
+    const/16 v1, 0x4d
 
-    const/16 v2, 0x4d
+    const/16 v2, 0x16
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x17
+    const/16 v1, 0x4e
 
-    const/16 v2, 0x4e
+    const/16 v2, 0x17
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x18
+    const/16 v1, 0x4f
 
-    const/16 v2, 0x4f
+    const/16 v2, 0x18
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x19
+    const/16 v1, 0x50
 
-    const/16 v2, 0x50
+    const/16 v2, 0x19
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1a
+    const/16 v1, 0x51
 
-    const/16 v2, 0x51
+    const/16 v2, 0x1a
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1b
+    const/16 v1, 0x52
 
-    const/16 v2, 0x52
+    const/16 v2, 0x1b
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1c
+    const/16 v1, 0x53
 
-    const/16 v2, 0x53
+    const/16 v2, 0x1c
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1d
+    const/16 v1, 0x54
 
-    const/16 v2, 0x54
+    const/16 v2, 0x1d
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1e
+    const/16 v1, 0x55
 
-    const/16 v2, 0x55
+    const/16 v2, 0x1e
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/16 v1, 0x1f
+    const/16 v1, 0x56
 
-    const/16 v2, 0x56
+    const/16 v2, 0x1f
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/Base32;->HEX_ENCODE_TABLE:[B
 
@@ -1306,9 +1306,9 @@
 .method public constructor <init>(I[BZ)V
     .locals 5
 
-    const/16 v4, 0x8
+    const/4 v4, 0x0
 
-    const/4 v3, 0x0
+    const/16 v3, 0x8
 
     const/4 v1, 0x0
 
@@ -1319,7 +1319,7 @@
     array-length v0, p2
 
     :goto_0
-    invoke-direct {p0, v2, v4, p1, v0}, Lorg/apache/commons/codec/binary/BaseNCodec;-><init>(IIII)V
+    invoke-direct {p0, v2, v3, p1, v0}, Lorg/apache/commons/codec/binary/BaseNCodec;-><init>(IIII)V
 
     if-nez p3, :cond_1
 
@@ -1334,9 +1334,9 @@
 
     if-gtz p1, :cond_2
 
-    iput v4, p0, Lorg/apache/commons/codec/binary/Base32;->encodeSize:I
+    iput v3, p0, Lorg/apache/commons/codec/binary/Base32;->encodeSize:I
 
-    iput-object v3, p0, Lorg/apache/commons/codec/binary/Base32;->lineSeparator:[B
+    iput-object v4, p0, Lorg/apache/commons/codec/binary/Base32;->lineSeparator:[B
 
     :goto_2
     iget v0, p0, Lorg/apache/commons/codec/binary/Base32;->encodeSize:I
@@ -1460,11 +1460,11 @@
 .method public constructor <init>(Z)V
     .locals 2
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0, v1, p1}, Lorg/apache/commons/codec/binary/Base32;-><init>(I[BZ)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v1, v0, p1}, Lorg/apache/commons/codec/binary/Base32;-><init>(I[BZ)V
 
     return-void
 .end method

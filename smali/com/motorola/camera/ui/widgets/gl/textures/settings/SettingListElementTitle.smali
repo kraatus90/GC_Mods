@@ -148,7 +148,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c004c
+    const v1, 0x7f0c004e
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -204,7 +204,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f08010b
+    const v4, 0x7f080111
 
     invoke-virtual {v2, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -224,7 +224,7 @@
 
     move-result-object v2
 
-    const v4, 0x7f080113
+    const v4, 0x7f080119
 
     invoke-virtual {v2, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -645,7 +645,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f08011f
+    const v3, 0x7f080127
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -707,7 +707,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f08011e
+    const v3, 0x7f080126
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 

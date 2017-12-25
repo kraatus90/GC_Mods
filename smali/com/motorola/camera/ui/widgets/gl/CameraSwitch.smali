@@ -1122,7 +1122,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->mButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
@@ -1136,7 +1136,7 @@
 
     iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->mSwitchAllowed:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_a
 
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->animateShow()V
 
@@ -1145,13 +1145,18 @@
     goto/16 :goto_1
 
     :cond_a
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->hide()V
+
+    goto/16 :goto_1
+
+    :cond_b
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/Main;->CLOSE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->mSwitchAllowed:Z
 
@@ -1163,14 +1168,14 @@
 
     goto/16 :goto_1
 
-    :cond_b
+    :cond_c
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CHANGE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->mButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
@@ -1180,14 +1185,14 @@
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_d
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_DRAG_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->hide()V
 
@@ -1195,14 +1200,14 @@
 
     goto/16 :goto_1
 
-    :cond_d
+    :cond_e
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_CONFIGURE_CAPTURE_REQUEST_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_RESUMING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1210,9 +1215,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
-    :cond_e
+    :cond_f
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;->VIDEO_PAUSE:Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->setButtonState(Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;)V
@@ -1223,23 +1228,8 @@
 
     goto/16 :goto_1
 
-    :cond_f
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;->VIDEO_PAUSED:Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->setButtonState(Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;)V
-
-    goto/16 :goto_1
-
     :cond_10
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
@@ -1247,36 +1237,29 @@
 
     if-eqz v0, :cond_11
 
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;->CAMERA_SWITCH:Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;->VIDEO_PAUSED:Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->setButtonState(Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;)V
 
     goto/16 :goto_1
 
     :cond_11
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_SETTINGS_LIST_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
-
-    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->mSwitchAllowed:Z
-
     if-eqz v0, :cond_12
 
-    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->animateShow()V
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;->CAMERA_SWITCH:Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;
 
-    :cond_12
-    invoke-virtual {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->enableClick(Z)V
-
-    invoke-virtual {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->enableLongClick(Z)V
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->setButtonState(Lcom/motorola/camera/ui/widgets/gl/CameraSwitch$ButtonState;)V
 
     goto/16 :goto_1
 
-    :cond_13
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SHOW_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    :cond_12
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_SETTINGS_LIST_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
@@ -1284,6 +1267,13 @@
 
     if-eqz v0, :cond_14
 
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->mSwitchAllowed:Z
+
+    if-eqz v0, :cond_13
+
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->animateShow()V
+
+    :cond_13
     invoke-virtual {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->enableClick(Z)V
 
     invoke-virtual {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->enableLongClick(Z)V
@@ -1291,13 +1281,28 @@
     goto/16 :goto_1
 
     :cond_14
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SHOW_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_15
+
+    invoke-virtual {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->enableClick(Z)V
+
+    invoke-virtual {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->enableLongClick(Z)V
+
+    goto/16 :goto_1
+
+    :cond_15
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CAMERA_SELECT_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_16
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_MONO_PHOTO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1307,7 +1312,7 @@
 
     if-eqz v0, :cond_1
 
-    :cond_15
+    :cond_16
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraSwitch;->hide()V
 
     goto/16 :goto_1

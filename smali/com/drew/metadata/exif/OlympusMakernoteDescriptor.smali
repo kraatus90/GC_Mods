@@ -312,9 +312,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v4, 0x2
-
     const/4 v2, 0x0
+
+    const/4 v4, 0x2
 
     const/4 v3, 0x1
 

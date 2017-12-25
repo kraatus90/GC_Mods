@@ -35,6 +35,13 @@
 
 .method constructor <init>(Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;",
+            ")V"
+        }
+    .end annotation
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/settings/PersistBehavior;-><init>(Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
 

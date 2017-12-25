@@ -43,11 +43,11 @@
 
     move-result-object v1
 
+    iget-object v3, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+
+    iget-object v6, v3, Landroid/support/v7/widget/ToolbarWidgetWrapper;->mTitle:Ljava/lang/CharSequence;
+
     const v3, 0x102002c
-
-    iget-object v4, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
-
-    iget-object v6, v4, Landroid/support/v7/widget/ToolbarWidgetWrapper;->mTitle:Ljava/lang/CharSequence;
 
     move v4, v2
 

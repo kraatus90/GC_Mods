@@ -63,83 +63,78 @@
 
 # virtual methods
 .method public checkRtl(Ljava/lang/CharSequence;II)I
-    .locals 6
+    .locals 5
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
+    add-int v3, p2, p3
 
-    move v2, p2
-
-    add-int v0, p2, p3
+    move v0, v2
 
     :goto_0
-    if-lt v2, v0, :cond_0
+    if-lt p2, v3, :cond_0
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
-    const/4 v3, 0x2
+    const/4 v0, 0x2
 
-    return v3
+    return v0
 
     :cond_0
-    invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Ljava/lang/Character;->getDirectionality(C)B
+    invoke-static {v4}, Ljava/lang/Character;->getDirectionality(C)B
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->isRtlText(I)I
+    invoke-static {v4}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->isRtlText(I)I
 
-    move-result v5
+    move-result v4
 
-    packed-switch v5, :pswitch_data_0
+    packed-switch v4, :pswitch_data_0
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 p2, p2, 0x1
 
     goto :goto_0
 
     :pswitch_0
-    iget-boolean v5, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
-    const/4 v1, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_1
-    return v3
+    return v2
 
     :pswitch_1
-    iget-boolean v5, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
-    const/4 v1, 0x1
+    move v0, v1
 
     goto :goto_1
 
     :cond_2
-    return v4
+    return v1
 
     :cond_3
-    iget-boolean v5, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
 
-    if-nez v5, :cond_4
+    if-nez v0, :cond_4
 
-    :goto_2
-    return v3
+    move v1, v2
 
     :cond_4
-    move v3, v4
-
-    goto :goto_2
+    return v1
 
     nop
 

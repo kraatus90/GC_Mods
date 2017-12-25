@@ -3,6 +3,24 @@
 .source "R.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/support/coreui/R$attr;,
+        Landroid/support/coreui/R$bool;,
+        Landroid/support/coreui/R$color;,
+        Landroid/support/coreui/R$dimen;,
+        Landroid/support/coreui/R$drawable;,
+        Landroid/support/coreui/R$id;,
+        Landroid/support/coreui/R$integer;,
+        Landroid/support/coreui/R$layout;,
+        Landroid/support/coreui/R$string;,
+        Landroid/support/coreui/R$style;,
+        Landroid/support/coreui/R$styleable;
+    }
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0

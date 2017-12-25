@@ -69,89 +69,89 @@
 .end method
 
 .method private static checkChecksum(Ljava/lang/CharSequence;)Z
-    .locals 6
+    .locals 5
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    move v0, v1
+
+    move v2, v1
 
     :goto_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
-    move-result v4
+    move-result v3
 
-    if-lt v2, v4, :cond_0
+    if-lt v0, v3, :cond_0
 
-    const/16 v4, 0x8
+    const/16 v0, 0x8
 
-    invoke-interface {p0, v4}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
-    rem-int/lit8 v4, v3, 0xb
+    rem-int/lit8 v2, v2, 0xb
 
-    invoke-static {v4}, Lcom/google/zxing/client/result/VINResultParser;->checkChar(I)C
+    invoke-static {v2}, Lcom/google/zxing/client/result/VINResultParser;->checkChar(I)C
 
-    move-result v1
+    move-result v2
 
-    if-eq v0, v1, :cond_1
-
-    const/4 v4, 0x0
+    if-eq v0, v2, :cond_1
 
     :goto_1
-    return v4
+    return v1
 
     :cond_0
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v3, v0, 0x1
 
-    invoke-static {v4}, Lcom/google/zxing/client/result/VINResultParser;->vinPositionWeight(I)I
+    invoke-static {v3}, Lcom/google/zxing/client/result/VINResultParser;->vinPositionWeight(I)I
+
+    move-result v3
+
+    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
 
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-static {v4}, Lcom/google/zxing/client/result/VINResultParser;->vinCharValue(C)I
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Lcom/google/zxing/client/result/VINResultParser;->vinCharValue(C)I
+    mul-int/2addr v3, v4
 
-    move-result v5
+    add-int/2addr v2, v3
 
-    mul-int/2addr v4, v5
-
-    add-int/2addr v3, v4
-
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
     goto :goto_1
 .end method
 
 .method private static countryCode(Ljava/lang/CharSequence;)Ljava/lang/String;
-    .locals 8
+    .locals 7
 
-    const/16 v7, 0x45
+    const/16 v6, 0x45
 
-    const/16 v6, 0x39
+    const/16 v5, 0x39
 
-    const/16 v5, 0x33
+    const/16 v4, 0x33
 
-    const/16 v4, 0x52
+    const/16 v3, 0x52
 
-    const/16 v3, 0x41
+    const/16 v2, 0x41
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v1
 
@@ -160,165 +160,165 @@
     :cond_0
     :goto_0
     :pswitch_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    return-object v2
+    return-object v0
 
     :pswitch_1
-    const-string/jumbo v2, "US"
+    const-string/jumbo v0, "US"
 
-    return-object v2
+    return-object v0
 
     :pswitch_2
-    const-string/jumbo v2, "CA"
+    const-string/jumbo v0, "CA"
 
-    return-object v2
+    return-object v0
 
     :pswitch_3
-    if-lt v1, v3, :cond_0
+    if-lt v1, v2, :cond_0
 
-    const/16 v2, 0x57
+    const/16 v0, 0x57
 
-    if-gt v1, v2, :cond_0
+    if-gt v1, v0, :cond_0
 
-    const-string/jumbo v2, "MX"
+    const-string/jumbo v0, "MX"
 
-    return-object v2
+    return-object v0
 
     :pswitch_4
-    if-ge v1, v3, :cond_2
+    if-ge v1, v2, :cond_2
 
     :cond_1
-    if-lt v1, v5, :cond_0
+    if-lt v1, v4, :cond_0
 
-    if-gt v1, v6, :cond_0
+    if-gt v1, v5, :cond_0
 
     :goto_1
-    const-string/jumbo v2, "BR"
+    const-string/jumbo v0, "BR"
 
-    return-object v2
+    return-object v0
 
     :cond_2
-    if-gt v1, v7, :cond_1
+    if-gt v1, v6, :cond_1
 
     goto :goto_1
 
     :pswitch_5
-    if-lt v1, v3, :cond_0
+    if-lt v1, v2, :cond_0
 
-    const/16 v2, 0x54
+    const/16 v0, 0x54
 
-    if-gt v1, v2, :cond_0
+    if-gt v1, v0, :cond_0
 
-    const-string/jumbo v2, "JP"
+    const-string/jumbo v0, "JP"
 
-    return-object v2
+    return-object v0
 
     :pswitch_6
-    const/16 v2, 0x4c
+    const/16 v0, 0x4c
 
-    if-lt v1, v2, :cond_0
+    if-lt v1, v0, :cond_0
 
-    if-gt v1, v4, :cond_0
+    if-gt v1, v3, :cond_0
 
-    const-string/jumbo v2, "KO"
+    const-string/jumbo v0, "KO"
 
-    return-object v2
+    return-object v0
 
     :pswitch_7
-    const-string/jumbo v2, "CN"
+    const-string/jumbo v0, "CN"
 
-    return-object v2
+    return-object v0
 
     :pswitch_8
-    if-lt v1, v3, :cond_0
+    if-lt v1, v2, :cond_0
 
-    if-gt v1, v7, :cond_0
+    if-gt v1, v6, :cond_0
 
-    const-string/jumbo v2, "IN"
+    const-string/jumbo v0, "IN"
 
-    return-object v2
+    return-object v0
 
     :pswitch_9
-    if-ge v1, v3, :cond_4
+    if-ge v1, v2, :cond_4
 
     :cond_3
-    const/16 v2, 0x4e
+    const/16 v0, 0x4e
 
-    if-lt v1, v2, :cond_0
+    if-lt v1, v0, :cond_0
 
-    const/16 v2, 0x54
+    const/16 v0, 0x54
 
-    if-gt v1, v2, :cond_0
+    if-gt v1, v0, :cond_0
 
-    const-string/jumbo v2, "DE"
+    const-string/jumbo v0, "DE"
 
-    return-object v2
+    return-object v0
 
     :cond_4
-    const/16 v2, 0x4d
+    const/16 v0, 0x4d
 
-    if-gt v1, v2, :cond_3
+    if-gt v1, v0, :cond_3
 
-    const-string/jumbo v2, "UK"
+    const-string/jumbo v0, "UK"
 
-    return-object v2
+    return-object v0
 
     :pswitch_a
-    const/16 v2, 0x46
+    const/16 v0, 0x46
 
-    if-ge v1, v2, :cond_6
+    if-ge v1, v0, :cond_6
 
     :cond_5
-    const/16 v2, 0x53
+    const/16 v0, 0x53
 
-    if-lt v1, v2, :cond_0
+    if-lt v1, v0, :cond_0
 
-    const/16 v2, 0x57
+    const/16 v0, 0x57
 
-    if-gt v1, v2, :cond_0
+    if-gt v1, v0, :cond_0
 
-    const-string/jumbo v2, "ES"
+    const-string/jumbo v0, "ES"
 
-    return-object v2
+    return-object v0
 
     :cond_6
-    if-gt v1, v4, :cond_5
+    if-gt v1, v3, :cond_5
 
-    const-string/jumbo v2, "FR"
+    const-string/jumbo v0, "FR"
 
-    return-object v2
+    return-object v0
 
     :pswitch_b
-    const-string/jumbo v2, "DE"
+    const-string/jumbo v0, "DE"
 
-    return-object v2
+    return-object v0
 
     :pswitch_c
-    const/16 v2, 0x30
+    const/16 v0, 0x30
 
-    if-ne v1, v2, :cond_8
+    if-ne v1, v0, :cond_8
 
     :cond_7
-    const-string/jumbo v2, "RU"
+    const-string/jumbo v0, "RU"
 
-    return-object v2
+    return-object v0
 
     :cond_8
-    if-lt v1, v5, :cond_0
+    if-lt v1, v4, :cond_0
 
-    if-le v1, v6, :cond_7
+    if-le v1, v5, :cond_7
 
     goto :goto_0
 
     :pswitch_d
-    if-lt v1, v3, :cond_0
+    if-lt v1, v2, :cond_0
 
-    if-gt v1, v4, :cond_0
+    if-gt v1, v3, :cond_0
 
-    const-string/jumbo v2, "IT"
+    const-string/jumbo v0, "IT"
 
-    return-object v2
+    return-object v0
 
     nop
 
@@ -623,31 +623,31 @@
 .end method
 
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/VINParsedResult;
-    .locals 12
+    .locals 11
 
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     invoke-virtual {p1}, Lcom/google/zxing/Result;->getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
 
     move-result-object v0
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
 
-    if-ne v0, v3, :cond_0
+    if-ne v0, v1, :cond_0
 
     invoke-virtual {p1}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v0, Lcom/google/zxing/client/result/VINResultParser;->IOQ:Ljava/util/regex/Pattern;
+    sget-object v1, Lcom/google/zxing/client/result/VINResultParser;->IOQ:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
-    const-string/jumbo v3, ""
+    const-string/jumbo v1, ""
 
-    invoke-virtual {v0, v3}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -676,19 +676,19 @@
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x3
+    const/4 v2, 0x3
 
-    invoke-virtual {v1, v0, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
     new-instance v0, Lcom/google/zxing/client/result/VINParsedResult;
 
-    const/4 v3, 0x3
+    const/16 v3, 0x9
 
-    const/16 v4, 0x9
+    const/4 v4, 0x3
 
-    invoke-virtual {v1, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 
@@ -741,16 +741,16 @@
     return-object v0
 
     :cond_0
-    return-object v11
+    return-object v10
 
     :cond_1
-    return-object v11
+    return-object v10
 
     :cond_2
-    return-object v11
+    return-object v10
 
     :catch_0
-    move-exception v10
+    move-exception v0
 
-    return-object v11
+    return-object v10
 .end method

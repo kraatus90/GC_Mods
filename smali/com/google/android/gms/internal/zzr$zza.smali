@@ -68,11 +68,11 @@
         }
     .end annotation
 
+    const/4 v1, 0x0
+
     const/4 v5, 0x0
 
     const/4 v4, 0x1
-
-    const/4 v1, 0x0
 
     sparse-switch p1, :sswitch_data_0
 

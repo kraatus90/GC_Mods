@@ -44,9 +44,9 @@
 
     sget-object v7, Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;->LEFT:Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;
 
-    const v4, 0x7f080184
+    const v4, 0x7f080199
 
-    const v5, 0x7f0800b2
+    const v5, 0x7f0800b3
 
     const/4 v8, 0x0
 
@@ -160,15 +160,29 @@
 .end method
 
 .method shouldShow(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)Z
-    .locals 1
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->ZOOM_INDICATOR:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
+
+    invoke-interface {p1, v0}, Lcom/motorola/camera/ui/widgets/gl/iTextureManager;->getComponent(Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;)Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;
 
     invoke-super {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamSecondLaunchTooltip;->shouldShow(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isZoomButtonAllowed()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/ZoomComponent;->isWideAngleButtonVisible()Z
 
     move-result v0
 

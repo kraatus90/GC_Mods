@@ -410,21 +410,21 @@
 
     sget-object v4, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string/jumbo v10, "= %s - %s =%n"
+    const/4 v10, 0x2
 
-    const/4 v11, 0x2
+    new-array v10, v10, [Ljava/lang/Object;
 
-    new-array v11, v11, [Ljava/lang/Object;
+    const/4 v11, 0x0
 
-    const/4 v12, 0x0
-
-    aput-object v3, v11, v12
+    aput-object v3, v10, v11
 
     const/4 v3, 0x1
 
-    aput-object v0, v11, v3
+    aput-object v0, v10, v3
 
-    invoke-virtual {v4, v10, v11}, Ljava/io/PrintStream;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+    const-string/jumbo v0, "= %s - %s =%n"
+
+    invoke-virtual {v4, v0, v10}, Ljava/io/PrintStream;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
 
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
@@ -432,31 +432,31 @@
 
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string/jumbo v3, "<a href=\"http://metadata-extractor.googlecode.com/svn/sample-images/%s\">%n"
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    new-array v3, v3, [Ljava/lang/Object;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    const/4 v10, 0x0
+    aput-object v2, v3, v4
 
-    aput-object v2, v4, v10
+    const-string/jumbo v4, "<a href=\"http://metadata-extractor.googlecode.com/svn/sample-images/%s\">%n"
 
-    invoke-virtual {v0, v3, v4}, Ljava/io/PrintStream;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+    invoke-virtual {v0, v4, v3}, Ljava/io/PrintStream;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
 
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string/jumbo v3, "<img src=\"http://metadata-extractor.googlecode.com/svn/sample-images/%s\" width=\"300\"/><br/>%n"
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    new-array v3, v3, [Ljava/lang/Object;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    const/4 v10, 0x0
+    aput-object v2, v3, v4
 
-    aput-object v2, v4, v10
+    const-string/jumbo v2, "<img src=\"http://metadata-extractor.googlecode.com/svn/sample-images/%s\" width=\"300\"/><br/>%n"
 
-    invoke-virtual {v0, v3, v4}, Ljava/io/PrintStream;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+    invoke-virtual {v0, v2, v3}, Ljava/io/PrintStream;->printf(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
 
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
@@ -829,11 +829,11 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-static {p0}, Lcom/drew/imaging/ImageMetadataReader;->readMagicNumber(Ljava/io/BufferedInputStream;)I
 
     move-result v0
+
+    const/4 v1, 0x0
 
     invoke-static {p0, v1, v0, p1}, Lcom/drew/imaging/ImageMetadataReader;->readMetadata(Ljava/io/BufferedInputStream;Ljava/io/File;IZ)Lcom/drew/metadata/Metadata;
 
@@ -858,8 +858,6 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
-
     new-instance v0, Ljava/io/BufferedInputStream;
 
     new-instance v1, Ljava/io/FileInputStream;
@@ -879,7 +877,9 @@
 
     const/4 v0, 0x0
 
-    invoke-static {v2, p0, v1, v0}, Lcom/drew/imaging/ImageMetadataReader;->readMetadata(Ljava/io/BufferedInputStream;Ljava/io/File;IZ)Lcom/drew/metadata/Metadata;
+    const/4 v2, 0x0
+
+    invoke-static {v0, p0, v1, v2}, Lcom/drew/imaging/ImageMetadataReader;->readMetadata(Ljava/io/BufferedInputStream;Ljava/io/File;IZ)Lcom/drew/metadata/Metadata;
 
     move-result-object v0
 

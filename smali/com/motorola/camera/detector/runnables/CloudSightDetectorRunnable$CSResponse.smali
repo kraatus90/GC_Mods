@@ -19,6 +19,8 @@
 
 .field name:Ljava/lang/String;
 
+.field reason:Ljava/lang/String;
+
 .field status:Ljava/lang/String;
 
 .field final synthetic this$0:Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;

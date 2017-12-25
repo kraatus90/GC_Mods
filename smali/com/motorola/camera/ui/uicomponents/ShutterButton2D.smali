@@ -93,7 +93,7 @@
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/uicomponents/ShutterButton2D;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e00cb
+    const v1, 0x7f0e00d9
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -105,7 +105,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/uicomponents/ShutterButton2D;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e00cc
+    const v1, 0x7f0e00da
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -117,7 +117,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/uicomponents/ShutterButton2D;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e00cd
+    const v1, 0x7f0e00db
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -127,9 +127,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/uicomponents/ShutterButton2D;->mVideoSwitchView:Lcom/motorola/camera/ui/widgets/RotateImageView;
 
-    const v1, 0x7f0200ad
+    const v1, 0x7f0200b6
 
-    const v0, 0x7f02005f
+    const v0, 0x7f020062
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
 
@@ -192,9 +192,9 @@
 
     invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/RotateImageView;->setVisibility(I)V
 
-    const v1, 0x7f020061
+    const v1, 0x7f020064
 
-    const v0, 0x7f020062
+    const v0, 0x7f020065
 
     goto :goto_0
 

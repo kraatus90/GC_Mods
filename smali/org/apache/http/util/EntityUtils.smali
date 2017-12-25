@@ -116,9 +116,9 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v3, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v3, 0x0
 
     const-string/jumbo v1, "Entity"
 
@@ -159,11 +159,11 @@
 .method public static toByteArray(Lorg/apache/http/HttpEntity;)[B
     .locals 10
 
+    const/4 v5, 0x0
+
     const/16 v1, 0x1000
 
     const/4 v0, 0x1
-
-    const/4 v5, 0x0
 
     const/4 v2, 0x0
 

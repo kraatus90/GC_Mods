@@ -25,77 +25,91 @@
 .end method
 
 .method public static parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
-    .locals 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/gson/JsonParseException;
         }
     .end annotation
 
-    const/4 v4, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     :try_start_0
     invoke-virtual {p0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
-
-    const/4 v4, 0x0
-
-    sget-object v5, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
-
-    invoke-virtual {v5, p0}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/gson/JsonElement;
     :try_end_0
     .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_3
 
-    return-object v5
+    :try_start_1
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters;->JSON_ELEMENT:Lcom/google/gson/TypeAdapter;
+
+    invoke-virtual {v0, p0}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/gson/JsonElement;
+    :try_end_1
+    .catch Ljava/io/EOFException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_3
+
+    return-object v0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    if-nez v4, :cond_0
+    move v1, v2
 
-    new-instance v5, Lcom/google/gson/JsonSyntaxException;
+    :goto_0
+    if-nez v1, :cond_0
 
-    invoke-direct {v5, v1}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+    new-instance v1, Lcom/google/gson/JsonSyntaxException;
 
-    throw v5
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 
     :cond_0
-    sget-object v5, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+    sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
 
-    return-object v5
+    return-object v0
 
     :catch_1
     move-exception v0
 
-    new-instance v5, Lcom/google/gson/JsonSyntaxException;
+    new-instance v1, Lcom/google/gson/JsonSyntaxException;
 
-    invoke-direct {v5, v0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v5
+    throw v1
 
     :catch_2
-    move-exception v2
+    move-exception v0
 
-    new-instance v5, Lcom/google/gson/JsonIOException;
+    new-instance v1, Lcom/google/gson/JsonIOException;
 
-    invoke-direct {v5, v2}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v5
+    throw v1
 
     :catch_3
-    move-exception v3
+    move-exception v0
 
-    new-instance v5, Lcom/google/gson/JsonSyntaxException;
+    new-instance v1, Lcom/google/gson/JsonSyntaxException;
 
-    invoke-direct {v5, v3}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v5
+    throw v1
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_0
 .end method
 
 .method public static write(Lcom/google/gson/JsonElement;Lcom/google/gson/stream/JsonWriter;)V

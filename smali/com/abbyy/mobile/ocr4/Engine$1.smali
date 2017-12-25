@@ -45,69 +45,67 @@
 
 # virtual methods
 .method public apply(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Z
-    .locals 8
+    .locals 7
 
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
-    sget-object v5, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Undefined:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Undefined:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    if-eq p1, v5, :cond_1
+    if-eq p1, v0, :cond_1
 
-    iget-object v5, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
 
-    invoke-static {v5, p1}, Lcom/abbyy/mobile/ocr4/Engine;->access$000(Lcom/abbyy/mobile/ocr4/Engine;Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Z
+    invoke-static {v0, p1}, Lcom/abbyy/mobile/ocr4/Engine;->access$000(Lcom/abbyy/mobile/ocr4/Engine;Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->isLanguagesGroup()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_3
+    if-nez v0, :cond_3
 
     invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->hasDictionary()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_6
+    if-nez v0, :cond_6
 
     :cond_0
-    const/4 v5, 0x1
+    const/4 v0, 0x1
 
-    return v5
+    return v0
 
     :cond_1
-    return v7
+    return v1
 
     :cond_2
-    return v7
+    return v1
 
     :cond_3
     invoke-static {p1}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->getDictionaryLanguagesForGroup(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)[Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    move-result-object v1
+    move-result-object v2
 
-    move-object v0, v1
+    array-length v3, v2
 
-    array-length v4, v0
-
-    const/4 v3, 0x0
+    move v0, v1
 
     :goto_0
-    if-ge v3, v4, :cond_0
+    if-ge v0, v3, :cond_0
 
-    aget-object v2, v0, v3
+    aget-object v4, v2, v0
 
-    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->hasDictionary()Z
+    invoke-virtual {v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->hasDictionary()Z
 
     move-result v5
 
     if-nez v5, :cond_5
 
     :cond_4
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
@@ -116,34 +114,34 @@
 
     iget-object v6, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
 
-    invoke-static {v6, v2}, Lcom/abbyy/mobile/ocr4/Engine;->access$100(Lcom/abbyy/mobile/ocr4/Engine;Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Ljava/lang/String;
+    invoke-static {v6, v4}, Lcom/abbyy/mobile/ocr4/Engine;->access$100(Lcom/abbyy/mobile/ocr4/Engine;Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v5, v6}, Lcom/abbyy/mobile/ocr4/Engine;->dataFileExists(Ljava/lang/String;)Z
+    invoke-virtual {v5, v4}, Lcom/abbyy/mobile/ocr4/Engine;->dataFileExists(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_4
+    if-nez v4, :cond_4
 
-    return v7
+    return v1
 
     :cond_6
-    iget-object v5, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
 
-    iget-object v6, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/Engine$1;->this$0:Lcom/abbyy/mobile/ocr4/Engine;
 
-    invoke-static {v6, p1}, Lcom/abbyy/mobile/ocr4/Engine;->access$100(Lcom/abbyy/mobile/ocr4/Engine;Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Ljava/lang/String;
+    invoke-static {v2, p1}, Lcom/abbyy/mobile/ocr4/Engine;->access$100(Lcom/abbyy/mobile/ocr4/Engine;Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v5, v6}, Lcom/abbyy/mobile/ocr4/Engine;->dataFileExists(Ljava/lang/String;)Z
+    invoke-virtual {v0, v2}, Lcom/abbyy/mobile/ocr4/Engine;->dataFileExists(Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    return v7
+    return v1
 .end method
 
 .method public bridge synthetic apply(Ljava/lang/Object;)Z

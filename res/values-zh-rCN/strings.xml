@@ -69,7 +69,7 @@
     <string name="aware_action_event">将事件添加至日历</string>
     <string name="aware_action_location">地图</string>
     <string name="aware_action_search">搜索</string>
-    <string name="aware_action_share">分享</string>
+    <string name="aware_action_share">共享</string>
     <string name="aware_action_sms">发送信息</string>
     <string name="aware_action_web">查看网站</string>
     <string name="aware_action_wifi">连接至网络</string>
@@ -148,7 +148,7 @@
     <string name="cancel">取消</string>
     <string name="capture_failure">拍摄失败。请重试。</string>
     <string name="checkbox_do_not_show">不再显示</string>
-    <string name="cloudsight_terms">您的图像将发送至 CloudSight 以提供搜索结果。&lt;br/>&lt;br/>如您继续，则视为您同意 CloudSight &lt;a href=%1$s>隐私政策&lt;/a>。</string>
+    <string name="cloudsight_terms">每次您使用对象识别时，图像和位置（如果已启用）将发送到第三方以提供搜索结果。&lt;br/>&lt;br/>继续操作，即表示您同意&lt;a href=%1$s>隐私政策&lt;/a>。</string>
     <string name="dailog_panorama_failed">全景拍摄失败。请重试。</string>
     <string name="dailog_panorama_not_taken">未拍摄全景照片。</string>
     <string name="dialog_access_sd_fail">无法拍摄媒体。无法获得 SD 卡。</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">设备不受支持</string>
     <string name="dialog_disagree">不同意</string>
     <string name="dialog_dismiss">不再显示</string>
+    <string name="dialog_download">下载</string>
     <string name="dialog_external_sd_missing">无法拍摄图片。无法访问 SD 卡正在切换到手机闪存</string>
     <string name="dialog_first_time_set_pure_raw_message">"该未经处理的文件类型用于专业照片编辑。
 
@@ -247,6 +248,7 @@
     <string name="help_next">下一步</string>
     <string name="image_360_desc">这是 360 照片，您可以使用 Moto 360 编辑器对该照片进行编辑。</string>
     <string name="image_360_name">360 照片</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">启用景深</string>
     <string name="indicate_mode_mono">真正黑白风格</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">超宽角度</string>
     <string name="indicate_mode_video">视频</string>
     <string name="indicate_mode_wide_angle">广角</string>
+    <string name="indicate_mode_wide_angle_selfie">广角自拍</string>
     <string name="internal_storage">内存</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">地标识别提供有关世界上流行的标志性建筑的信息。&lt;br/>&lt;br/>安装以启用此功能。</string>
-    <string name="landmark_install_over_data">地标识别下载大小为 92 MB。通过移动数据安装它可能会导致额外的数据费用。</string>
-    <string name="landmark_notification_downloading">正在下载地标识别</string>
-    <string name="landmark_notification_install">正在安装地标识别</string>
-    <string name="landmark_notification_install_complete">地标识别安装完成</string>
-    <string name="landmark_notification_install_failed">地标识别安装失败</string>
+    <string name="landmark_install_message">地标识别提供有关世界上流行的标志性建筑的信息。&lt;br/>&lt;br/>请下载地标数据库以启用此功能。</string>
+    <string name="landmark_install_over_data">地标数据库下载大小为 92 MB。通过移动数据下载它可能会导致额外的数据费用。</string>
+    <string name="landmark_notification_downloading">正在下载地标数据库</string>
+    <string name="landmark_notification_install">正在安装地标数据库</string>
+    <string name="landmark_notification_install_complete">地标数据库安装完成</string>
+    <string name="landmark_notification_install_failed">地标数据库安装失败</string>
     <string name="landmark_notification_install_invalid_url">地标数据库不可用，请更新至最新的相机版本</string>
-    <string name="landmark_notification_install_out_of_space">没有足够的存储空间来安装地标识别</string>
+    <string name="landmark_notification_install_out_of_space">没有足够的存储空间来安装地标数据库</string>
+    <string name="landmark_notification_paused">当互联网可用时地标数据库将继续下载</string>
+    <string name="landmark_notification_queued">当互联网可用时地标数据库将开始下载</string>
     <string name="main_setting_amz_barcode">亚马逊条码扫描器</string>
     <string name="main_setting_amz_privacy">亚马逊隐私声明</string>
     <string name="main_setting_amz_terms">使用条件</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">照片尺寸（后）</string>
     <string name="main_setting_image_ratio_front">照片尺寸（前）</string>
     <string name="main_setting_landmark_detection">地标识别</string>
+    <string name="main_setting_landmark_version_current">数据库版本：%s</string>
+    <string name="main_setting_landmark_version_not_installed">数据库未安装</string>
     <string name="main_setting_licenses">开放源代码许可</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera）"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">需要权限</string>
     <string name="photos_depth_desc">使用深度编辑器选择对焦，更换背景或选择区域，以更改为黑白。</string>
     <string name="photos_depth_name">启用景深</string>
+    <string name="photos_notification_desc">使用 Google 相册获得不受限制的存储空间</string>
+    <string name="photos_notification_title">备份到 Google 相册</string>
+    <string name="qcfa_resolution_description">弱光自适应</string>
     <string name="retake">重拍</string>
     <string name="second_10">10 秒</string>
     <string name="second_3">3 秒</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">慢动作</string>
     <string name="setting_mode_ultra_wide">超宽角度</string>
     <string name="setting_mode_video">视频</string>
+    <string name="setting_mode_wide_angle_selfie">广角自拍</string>
     <string name="setting_off">关闭</string>
     <string name="setting_on">打开</string>
     <string name="setting_persist">保持</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">计时器</string>
     <string name="setting_torch">照明</string>
     <string name="setting_true">正确</string>
+    <string name="shortcut_desc_depth">深度照片</string>
+    <string name="shortcut_desc_selfie">自拍</string>
+    <string name="shortcut_desc_video">视频</string>
     <string name="smartcam_landmark_notification_title">智能相机</string>
+    <string name="smartcam_no_detections">没有保存的对象或地标</string>
     <string name="storage_location_external">SD 卡</string>
     <string name="storage_location_internal">手机</string>
     <string name="storage_unavailable">存储设备不可用</string>
+    <string name="toast_battery_saver">您目前在省电模式下，一些功能可能受限制</string>
     <string name="toast_geotag_message_1">您必须授予位置权限，以启用保存位置。</string>
     <string name="toast_geotag_message_2">只有系统位置打开时，“位置”设置方能生效。</string>
     <string name="tooltip_camera_switch_360">尝试切换到不同的相机选项。</string>
     <string name="tooltip_capture_360">通过点按此快门按钮尝试拍摄 360° 照片或视频。</string>
-    <string name="tooltip_capture_key_360">此外，尝试使用 Mod 背面上的快门按钮进行拍摄。</string>
-    <string name="tooltip_dual_camera_depth_photo">拍摄照片以及获取额外信息，以启用特殊编辑功能。</string>
+    <string name="tooltip_capture_key_360">此外，请尝试使用 Mod 背面上的快门按钮进行拍摄。</string>
     <string name="tooltip_first_use_zoom_button">点按此处以切换到广角。</string>
     <string name="tooltip_gallery_360">通过向左滑动来查看如何拍摄 360° 照片或视频。</string>
     <string name="tooltip_minimap_viewfinder">向左或向右平移图像底部。</string>
     <string name="tooltip_mode_switch_360">尝试以不同模式进行 360° 拍摄！</string>
+    <string name="tooltip_modes_list">发现拍照的新方式。</string>
     <string name="tooltip_smart_camera">点按可查看有关对象的更多信息。</string>
     <string name="tooltip_smart_camera_disable">您可以在 \"设置\" 中关闭此选项。</string>
     <string name="tooltip_spherical_viewfinder">平移或缩放以控制视图。</string>
@@ -419,5 +435,10 @@
     <string name="zoom_hint_full">FULL</string>
     <string name="zoom_hint_wide">WIDE</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">弱光自适应</string>
+    <string name="indicate_mode_timelapse">延时</string>
+    <string name="setting_mode_timelapse">延时</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

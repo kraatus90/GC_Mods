@@ -22,9 +22,9 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/motorola/camera/mcf/Mcf;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Lcom/motorola/camera/mcf/Mcf;-><init>(Lcom/motorola/camera/mcf/Mcf$1;)V
 

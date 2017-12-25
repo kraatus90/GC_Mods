@@ -68,21 +68,21 @@
 
     invoke-virtual {v1, v0, p2}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->addTextBody(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
-    const-string/jumbo v0, "query_metadata"
-
     invoke-static {}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getInstance()Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getDeviceInfoAsJSON()Lorg/json/JSONObject;
+    invoke-virtual {v0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getDeviceInfoAsJSON()Lorg/json/JSONObject;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v0, v2}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->addTextBody(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    const-string/jumbo v2, "query_metadata"
+
+    invoke-virtual {v1, v2, v0}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->addTextBody(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

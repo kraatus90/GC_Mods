@@ -141,11 +141,11 @@
 
     iget-object v2, p0, Lcom/google/android/gms/common/api/zzm$zzc;->zzRn:Lcom/google/android/gms/common/api/zzm;
 
-    const/4 v3, 0x2
+    iget-object v3, p0, Lcom/google/android/gms/common/api/zzm$zzc;->zzRn:Lcom/google/android/gms/common/api/zzm;
 
-    iget-object v4, p0, Lcom/google/android/gms/common/api/zzm$zzc;->zzRn:Lcom/google/android/gms/common/api/zzm;
+    const/4 v4, 0x2
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->showErrorDialogFragment(ILandroid/app/Activity;Landroid/support/v4/app/Fragment;ILandroid/content/DialogInterface$OnCancelListener;)Z
+    invoke-static {v0, v1, v2, v4, v3}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->showErrorDialogFragment(ILandroid/app/Activity;Landroid/support/v4/app/Fragment;ILandroid/content/DialogInterface$OnCancelListener;)Z
 
     goto :goto_0
 .end method

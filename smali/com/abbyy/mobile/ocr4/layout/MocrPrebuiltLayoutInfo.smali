@@ -52,41 +52,41 @@
 .end method
 
 .method public clone()Ljava/lang/Object;
-    .locals 4
+    .locals 3
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;
 
-    invoke-direct {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;-><init>()V
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;-><init>()V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;->_textBlocks:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;->_textBlocks:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    return-object v0
-
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;->clone()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v3
+    if-nez v0, :cond_0
 
-    check-cast v3, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;
+    return-object v1
 
-    invoke-virtual {v0, v3}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;->addTextBlock(Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;)V
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;
+
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;
+
+    invoke-virtual {v1, v0}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltLayoutInfo;->addTextBlock(Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextBlockInfo;)V
 
     goto :goto_0
 .end method

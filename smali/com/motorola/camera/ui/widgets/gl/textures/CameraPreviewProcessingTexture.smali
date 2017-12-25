@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final BLUR_RADIUS:F = 10.0f
-
 .field private static final NUM_BUFFERS:I = 0x2
 
 .field private static final TAG:Ljava/lang/String;
@@ -14,8 +12,6 @@
 
 
 # instance fields
-.field private mBlurEnable:Z
-
 .field private mFbo:Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
 .field private final mIdentityMtx:[F
@@ -29,6 +25,8 @@
 .field private mProcessingEnable:Z
 
 .field private mSetupFbo:Z
+
+.field private mTimestamp:J
 
 .field private mYuvTex:Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;
 
@@ -69,9 +67,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mIdentityMtx:[F
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$23;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$7xqpuNHFSd4nMvpHPINQf976zVg;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$23;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$7xqpuNHFSd4nMvpHPINQf976zVg;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mOnImageAvailable:Landroid/media/ImageReader$OnImageAvailableListener;
 
@@ -192,6 +190,14 @@
     monitor-exit p0
 
     throw v0
+.end method
+
+.method public getTimestamp()J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mTimestamp:J
+
+    return-wide v0
 .end method
 
 .method protected getTransformMatrix()V
@@ -371,7 +377,7 @@
     throw v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_CameraPreviewProcessingTexture_lambda$1(Landroid/media/ImageReader;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_CameraPreviewProcessingTexture_2562(Landroid/media/ImageReader;)V
     .locals 8
 
     const/4 v4, 0x1
@@ -469,6 +475,12 @@
     move-result v0
 
     invoke-virtual {v6, v5, v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;->setYuvData(Landroid/media/Image;II)V
+
+    invoke-virtual {v5}, Landroid/media/Image;->getTimestamp()J
+
+    move-result-wide v6
+
+    iput-wide v6, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mTimestamp:J
 
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->getFirstFrameCallback()Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
     :try_end_2
@@ -725,12 +737,187 @@
     throw v0
 .end method
 
-.method public setBlurEnable(Z)V
-    .locals 0
+.method public setDefaultVerticesData()V
+    .locals 1
 
-    iput-boolean p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mBlurEnable:Z
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mYuvTex:Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;->setDefaultVerticesData()V
 
     return-void
+.end method
+
+.method public declared-synchronized setFrameData(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/McfDepthMap;)V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "setFrameData "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mYuvTex:Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v3, 0x0
+
+    invoke-static {v3, v1, v0}, Lcom/motorola/camera/Util;->correctOrientationRelativeToSensor(III)I
+
+    move-result v0
+
+    invoke-virtual {v2, p2, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;->setYuvData(Lcom/motorola/camera/mcf/McfDepthMap;II)V
+
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    iget-wide v0, v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->mTimeStamp:J
+
+    iput-wide v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mTimestamp:J
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mUpdateAvailable:Z
+
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mEnabled:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->onFrameUpdate()V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderSurface()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public setInstaPrintVerticesData(Z)V
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v2, v3, v0}, Lcom/motorola/camera/Util;->correctOrientationRelativeToSensor(III)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/16 v3, 0xb4
+
+    if-ne v0, v3, :cond_1
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mYuvTex:Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;
+
+    invoke-static {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/InstaPrintViewfinder;->getVerticesData(ZZ)[F
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;->setVerticesData([F)V
+
+    return-void
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
 .end method
 
 .method public setProcessingEnable(Z)V
@@ -742,9 +929,15 @@
 .end method
 
 .method public declared-synchronized setSizes(Lcom/motorola/camera/PreviewSize;Lcom/motorola/camera/PreviewSize;)V
-    .locals 5
+    .locals 9
 
-    const/high16 v4, 0x40000000    # 2.0f
+    const/16 v6, 0x10e
+
+    const/16 v5, 0x5a
+
+    const/high16 v8, 0x40000000    # 2.0f
+
+    const/high16 v1, 0x3f800000    # 1.0f
 
     monitor-enter p0
 
@@ -777,58 +970,161 @@
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v0
+    move-result v3
 
-    const/16 v1, 0x5a
+    new-instance v4, Lcom/motorola/camera/PreviewSize;
 
-    if-eq v0, v1, :cond_1
+    if-eq v3, v5, :cond_1
 
-    const/16 v1, 0x10e
-
-    if-ne v0, v1, :cond_2
+    if-ne v3, v6, :cond_4
 
     :cond_1
-    new-instance v0, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->height:I
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v2, v2, Lcom/motorola/camera/PreviewSize;->width:I
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    :goto_0
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget v2, v0, Lcom/motorola/camera/PreviewSize;->width:I
-
-    if-lt v1, v2, :cond_3
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->height:I
-
-    iget v2, v0, Lcom/motorola/camera/PreviewSize;->height:I
-
-    if-lt v1, v2, :cond_3
-
-    iget v1, v0, Lcom/motorola/camera/PreviewSize;->width:I
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
 
     iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
 
-    :goto_1
-    int-to-float v1, v1
+    move v2, v0
 
-    div-float/2addr v1, v4
+    :goto_0
+    if-eq v3, v5, :cond_2
+
+    if-ne v3, v6, :cond_5
+
+    :cond_2
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    :goto_1
+    invoke-direct {v4, v2, v0}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
+
+    iget v0, p1, Lcom/motorola/camera/PreviewSize;->height:I
 
     int-to-float v0, v0
 
-    div-float/2addr v0, v4
+    iget v2, p1, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v2, v2
+
+    div-float v2, v0, v2
+
+    iget v0, v4, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v0, v0
+
+    iget v3, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v3, v3
+
+    div-float v3, v0, v3
+
+    const v0, 0x3cf5c28f    # 0.03f
+
+    sub-float v0, v2, v0
+
+    cmpg-float v0, v3, v0
+
+    if-gez v0, :cond_6
+
+    div-float v0, v3, v2
+
+    :goto_2
+    sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v5, :cond_3
+
+    sget-object v5, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->TAG:Ljava/lang/String;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "viewSize:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, " previewSize:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string/jumbo v7, " pSize:"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string/jumbo v6, " viewRatio:"
+
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v4, " previewRatio:"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " hAspect:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v5, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
+    iget v2, p1, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v8
+
+    mul-float/2addr v1, v2
+
+    iget v2, p1, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v8
+
+    mul-float/2addr v0, v2
 
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -840,23 +1136,29 @@
 
     return-void
 
-    :cond_2
+    :cond_4
     :try_start_2
-    new-instance v0, Lcom/motorola/camera/PreviewSize;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
 
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->width:I
+    move v2, v0
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+    goto/16 :goto_0
 
-    iget v2, v2, Lcom/motorola/camera/PreviewSize;->height:I
+    :cond_5
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_0
+    goto/16 :goto_1
+
+    :cond_6
+    move v0, v1
+
+    goto :goto_2
 
     :catchall_0
     move-exception v0
@@ -864,71 +1166,20 @@
     monitor-exit p0
 
     throw v0
+.end method
 
-    :cond_3
-    :try_start_3
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+.method public setUltraWideVerticesData(Z)V
+    .locals 2
 
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->width:I
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mYuvTex:Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;
 
-    iget v2, v0, Lcom/motorola/camera/PreviewSize;->width:I
+    invoke-static {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->getVerticesData(Z)[F
 
-    if-ge v1, v2, :cond_4
+    move-result-object v1
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/YuvTexture;->setVerticesData([F)V
 
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget v2, v0, Lcom/motorola/camera/PreviewSize;->height:I
-
-    int-to-float v2, v2
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
-
-    int-to-float v3, v3
-
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
-
-    int-to-float v0, v0
-
-    div-float v0, v3, v0
-
-    mul-float/2addr v0, v2
-
-    float-to-int v0, v0
-
-    goto :goto_1
-
-    :cond_4
-    iget v1, v0, Lcom/motorola/camera/PreviewSize;->width:I
-
-    int-to-float v1, v1
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v2, v2, Lcom/motorola/camera/PreviewSize;->height:I
-
-    int-to-float v2, v2
-
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
-
-    int-to-float v0, v0
-
-    div-float v0, v2, v0
-
-    mul-float/2addr v0, v1
-
-    float-to-int v1, v0
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    goto :goto_1
+    return-void
 .end method
 
 .method public declared-synchronized unloadTexture()V

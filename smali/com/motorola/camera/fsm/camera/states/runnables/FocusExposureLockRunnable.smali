@@ -223,11 +223,7 @@
 
     iput-boolean p2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
 
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/motorola/camera/JsonConfig;->parseDualPrimaryCamera(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->getDualPrimaryCamera()Ljava/lang/String;
 
     move-result-object v0
 
@@ -891,23 +887,138 @@
 
     const/4 v3, 0x0
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    return v2
+    return v0
 
     :cond_0
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_NOT_REQUIRED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    return v0
+
+    :cond_1
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_PRETRIG_NOT_REQUIRED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    return v0
+
+    :cond_2
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    return v3
+
+    :cond_3
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_AFTER_EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_AFTER_EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
+
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_UNLOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
+
+    iput-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mExposureLock:Z
+
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v1
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    invoke-direct {p0, v1, p2, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
+
+    invoke-virtual {p0, v1, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setRepeating(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
     invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v0
@@ -918,112 +1029,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    :cond_4
+    return v0
 
-    return v2
-
-    :cond_1
+    :cond_5
     invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    return v3
-
-    :cond_2
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_AFTER_EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_AFTER_EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
-
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_UNLOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
-
-    iput-boolean v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mExposureLock:Z
-
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
-
-    move-result-object v0
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {p1, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    invoke-direct {p0, v0, p2, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
-
-    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setRepeating(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
-
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
+    if-eqz v1, :cond_6
 
     return v0
 
-    :cond_3
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    return v2
-
-    :cond_4
+    :cond_6
     return v3
 .end method
 
@@ -1249,9 +1273,10 @@
 
     const/4 v1, 0x4
 
-    if-ne v0, v1, :cond_1
+    if-ne v0, v1, :cond_4
 
     :cond_3
+    :goto_1
     invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v0
@@ -1261,6 +1286,17 @@
     invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
 
     goto :goto_0
+
+    :cond_4
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_1
+
+    goto :goto_1
 .end method
 
 .method private handleFocusState(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;ZZ)V
@@ -1472,31 +1508,6 @@
     goto :goto_0
 .end method
 
-.method private isAeLocked(Lcom/motorola/camera/fsm/camera/FsmContext;Z)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getAeState(Lcom/motorola/camera/fsm/camera/FsmContext;Z)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    if-ne v1, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
-.end method
-
 .method private isAfLocked(Lcom/motorola/camera/fsm/camera/FsmContext;Z)Z
     .locals 3
 
@@ -1547,7 +1558,7 @@
 
     iget-object v7, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$172;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$qWaTduHaAjHn8p_CXZynkVu6QNA$2;
 
     move v1, p3
 
@@ -1559,7 +1570,7 @@
 
     move-object v6, p1
 
-    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$172;-><init>(ZZILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$qWaTduHaAjHn8p_CXZynkVu6QNA$2;-><init>(ZZILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v7, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -1636,7 +1647,9 @@
 .end method
 
 .method private setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x0
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;->CAPTURE:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
@@ -1660,19 +1673,9 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
 
-    const/4 v0, 0x0
-
-    return v0
+    return v2
 
     :cond_0
-    iget-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mExposureLock:Z
-
-    invoke-direct {p0, p1, p3}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->isAeLocked(Lcom/motorola/camera/fsm/camera/FsmContext;Z)Z
-
-    move-result v1
-
-    if-eq v0, v1, :cond_4
-
     invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v1
@@ -1692,28 +1695,22 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_NOT_REQUIRED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+    iget-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mExposureLock:Z
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
 
     :goto_1
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
 
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_NOT_REQUIRED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
+    const/4 v0, 0x1
 
     return v0
 
@@ -1723,27 +1720,11 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v1
-
-    iget-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mExposureLock:Z
-
-    if-eqz v0, :cond_3
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    :goto_2
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_UNLOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
 
     goto :goto_1
 
     :cond_3
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_UNLOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    goto :goto_2
-
-    :cond_4
     invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v0
@@ -1752,7 +1733,7 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
 
-    goto :goto_1
+    return v2
 .end method
 
 .method private setupFocusListener(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Ljava/lang/String;)V
@@ -1892,6 +1873,14 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
 
+    invoke-static {p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->FOCUS_UNLOCKED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
+
     goto :goto_1
 
     :cond_2
@@ -1927,146 +1916,139 @@
 .method private setupFullFrame(Lcom/motorola/camera/fsm/camera/FsmContext;ZLjava/lang/String;)V
     .locals 5
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, p2, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getBuilder(Lcom/motorola/camera/fsm/camera/FsmContext;ZZ)Landroid/hardware/camera2/CaptureRequest$Builder;
+    invoke-virtual {p0, p1, p2, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getBuilder(Lcom/motorola/camera/fsm/camera/FsmContext;ZZ)Landroid/hardware/camera2/CaptureRequest$Builder;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSurfaceManager()Lcom/motorola/camera/fsm/camera/SurfaceManager;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz p2, :cond_4
+    if-eqz p2, :cond_3
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;->FULL_YUV:Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;
 
     :goto_0
-    invoke-virtual {v3, v0}, Lcom/motorola/camera/fsm/camera/SurfaceManager;->getSurface(Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;)Landroid/view/Surface;
+    invoke-virtual {v2, v0}, Lcom/motorola/camera/fsm/camera/SurfaceManager;->getSurface(Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;)Landroid/view/Surface;
 
-    move-result-object v3
-
-    if-eqz v3, :cond_3
-
-    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getSceneMode(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/mcf/Mcf$SceneMode;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mDualPrimaryCamera:Ljava/lang/String;
-
-    if-ne v0, p3, :cond_5
-
-    const/4 v0, 0x1
-
-    :goto_1
-    sget-object v1, Lcom/motorola/camera/mcf/Mcf$SceneMode;->LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
-
-    if-ne v1, v4, :cond_0
-
-    xor-int/lit8 v1, p2, 0x1
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    sget-object v1, Lcom/motorola/camera/mcf/Mcf$SceneMode;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$SceneMode;
-
-    if-ne v1, v4, :cond_3
-
-    xor-int/lit8 v0, v0, 0x1
-
-    if-eqz v0, :cond_3
-
-    :cond_1
-    iget-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
-
-    if-eqz v0, :cond_6
-
-    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+    move-result-object v0
 
     if-eqz v0, :cond_2
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->TAG:Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getSceneMode(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v3, Lcom/motorola/camera/mcf/Mcf$SceneMode;->LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    if-ne v3, v2, :cond_2
+
+    const/4 v2, 0x3
+
+    invoke-static {v2}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->isDualFusionStreaming()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_0
+    xor-int/lit8 v2, p2, 0x1
+
+    if-eqz v2, :cond_2
+
+    iget-boolean v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
+
+    if-eqz v2, :cond_4
+
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v2, :cond_1
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v4, "setupFullFrame(cameraId="
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
     const-string/jumbo v4, ") add target"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    invoke-virtual {v1, v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
     :cond_2
-    invoke-virtual {v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
-
-    :cond_3
-    :goto_2
+    :goto_1
     return-void
 
-    :cond_4
+    :cond_3
     sget-object v0, Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;->SLV_FULL_YUV:Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;
 
     goto :goto_0
 
-    :cond_5
-    move v0, v1
+    :cond_4
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    goto :goto_1
+    if-eqz v2, :cond_5
 
-    :cond_6
-    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->TAG:Ljava/lang/String;
 
-    if-eqz v0, :cond_7
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->TAG:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string/jumbo v4, "setupFullFrame(cameraId="
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
     const-string/jumbo v4, ") remove target"
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_7
-    invoke-virtual {v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
+    :cond_5
+    invoke-virtual {v1, v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->removeTarget(Landroid/view/Surface;)V
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method private setupMaster(Lcom/motorola/camera/fsm/camera/FsmContext;)V
@@ -2094,23 +2076,21 @@
 
     invoke-direct {p0, p1, v0, v7}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupFocusLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
 
-    invoke-direct {p0, p1, v0, v7}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
-
     invoke-direct {p0, p1, v0, v7}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupPreTrigger(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
 
     iget-boolean v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mPreTrigger:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_4
 
     iget-boolean v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_4
 
     sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;->CAPTURE:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
     iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockType:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
-    if-ne v2, v3, :cond_1
+    if-ne v2, v3, :cond_4
 
     sget-object v2, Lcom/motorola/camera/mcf/Mcf$SceneMode;->LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
@@ -2118,18 +2098,9 @@
 
     sget-object v2, Lcom/motorola/camera/mcf/Mcf$SceneMode;->FUSION:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    if-ne v2, v1, :cond_4
+    if-ne v2, v1, :cond_3
 
     :cond_0
-    :goto_0
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_NOT_REQUIRED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
-
     invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v1
@@ -2138,7 +2109,7 @@
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
 
-    :cond_1
+    :goto_0
     invoke-virtual {p0, v7}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getCameraId(Z)Ljava/lang/String;
 
     move-result-object v1
@@ -2147,7 +2118,7 @@
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_1
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getTag()Ljava/lang/String;
 
@@ -2181,7 +2152,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
+    :cond_1
     invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v1
@@ -2192,7 +2163,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
@@ -2204,7 +2175,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
@@ -2216,7 +2187,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockMap:Ljava/util/LinkedHashMap;
 
@@ -2226,17 +2197,20 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_3
+    :cond_2
     return-void
 
-    :cond_4
+    :cond_3
     sget-object v2, Lcom/motorola/camera/mcf/Mcf$SceneMode;->FUSION_LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
     if-eq v2, v1, :cond_0
 
     sget-object v2, Lcom/motorola/camera/mcf/Mcf$SceneMode;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    if-ne v2, v1, :cond_1
+    if-eq v2, v1, :cond_0
+
+    :cond_4
+    invoke-direct {p0, p1, v0, v7}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
 
     goto :goto_0
 .end method
@@ -2482,12 +2456,6 @@
 
     move-result v0
 
-    invoke-direct {p0, p1, v2, v8}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
-
-    move-result v4
-
-    or-int/2addr v0, v4
-
     invoke-direct {p0, p1, v2, v8}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupPreTrigger(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
 
     move-result v4
@@ -2496,48 +2464,40 @@
 
     iget-boolean v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mPreTrigger:Z
 
-    if-eqz v4, :cond_6
+    or-int/2addr v0, v4
 
-    iget-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
+    iget-boolean v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mPreTrigger:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v4, :cond_9
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;->CAPTURE:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
+    iget-boolean v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
 
-    iget-object v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockType:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
+    if-eqz v4, :cond_9
 
-    if-ne v0, v4, :cond_5
+    sget-object v4, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;->CAPTURE:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
-    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+    iget-object v5, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockType:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
-    if-eq v0, v3, :cond_4
+    if-ne v4, v5, :cond_9
 
-    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->FUSION:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$SceneMode;->LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    if-ne v0, v3, :cond_a
+    if-eq v4, v3, :cond_4
+
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$SceneMode;->FUSION:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    if-ne v4, v3, :cond_8
 
     :cond_4
+    invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_AFTER_EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
+
+    invoke-virtual {v3, v4}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
+
     :goto_0
-    invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v3, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_NOT_REQUIRED:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v3}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
-
-    invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
-
-    move-result-object v0
-
-    sget-object v3, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;->EXPOSURE_LOCK_AFTER_EXPOSURE_READY:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$Flag;
-
-    invoke-virtual {v0, v3}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
-
-    :cond_5
-    move v0, v1
-
-    :cond_6
     invoke-virtual {p0, v8}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getCameraId(Z)Ljava/lang/String;
 
     move-result-object v3
@@ -2546,13 +2506,13 @@
 
     iget-boolean v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLock:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_5
 
     sget-object v3, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;->CAPTURE:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
     iget-object v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockType:Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockType;
 
-    if-ne v3, v4, :cond_7
+    if-ne v3, v4, :cond_5
 
     invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
@@ -2564,10 +2524,10 @@
 
     move v0, v1
 
-    :cond_7
+    :cond_5
     sget-boolean v3, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_6
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getTag()Ljava/lang/String;
 
@@ -2599,7 +2559,7 @@
 
     invoke-static {v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
+    :cond_6
     invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
     move-result-object v1
@@ -2610,7 +2570,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
@@ -2622,7 +2582,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
@@ -2634,7 +2594,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)Lcom/motorola/camera/utility/Flags;
 
@@ -2648,7 +2608,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockMap:Ljava/util/LinkedHashMap;
 
@@ -2658,17 +2618,24 @@
 
     invoke-virtual {v1, v2}, Ljava/util/LinkedHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_9
+    :cond_7
     return v0
 
-    :cond_a
-    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->FUSION_LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+    :cond_8
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$SceneMode;->FUSION_LOW_LIGHT:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    if-eq v0, v3, :cond_4
+    if-eq v4, v3, :cond_4
 
-    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$SceneMode;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    if-ne v0, v3, :cond_5
+    if-eq v4, v3, :cond_4
+
+    :cond_9
+    invoke-direct {p0, p1, v2, v8}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupExposureLock(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Z)Z
+
+    move-result v3
+
+    or-int/2addr v0, v3
 
     goto/16 :goto_0
 .end method
@@ -2721,7 +2688,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_FocusExposureLockRunnable_lambda$1(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;IZZLjava/lang/String;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_FocusExposureLockRunnable_7622(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;IZZLjava/lang/String;)V
     .locals 1
 
     invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;->-get6(Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)I
@@ -2740,26 +2707,18 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_FocusExposureLockRunnable_lambda$2(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Landroid/hardware/camera2/CaptureResult;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_FocusExposureLockRunnable_8327(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Landroid/hardware/camera2/CaptureResult;)V
     .locals 2
 
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/device/CameraStateManager;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$Status;
 
     move-result-object v0
 
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    invoke-virtual {v0, p1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
     if-ne v0, v1, :cond_0
 
@@ -2780,26 +2739,18 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_FocusExposureLockRunnable_lambda$3(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Landroid/hardware/camera2/TotalCaptureResult;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_FocusExposureLockRunnable_9109(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 2
 
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/device/CameraStateManager;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$Status;
 
     move-result-object v0
 
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    invoke-virtual {v0, p1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
     if-ne v0, v1, :cond_0
 
@@ -2853,9 +2804,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$162;
+    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$qWaTduHaAjHn8p_CXZynkVu6QNA;
 
-    invoke-direct {v2, p0, p1, v0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$162;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, p1, v0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$qWaTduHaAjHn8p_CXZynkVu6QNA;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2890,9 +2841,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$163;
+    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$qWaTduHaAjHn8p_CXZynkVu6QNA$1;
 
-    invoke-direct {v2, p0, p1, v0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$163;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, p1, v0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$qWaTduHaAjHn8p_CXZynkVu6QNA$1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -3003,15 +2954,15 @@
 
     invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->setupSlave(Lcom/motorola/camera/fsm/camera/FsmContext;)Z
 
-    move-result v0
-
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockMap:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v2}, Ljava/util/LinkedHashMap;->isEmpty()Z
-
     move-result v2
 
-    if-eqz v2, :cond_9
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockMap:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCamera()Z
 
@@ -3213,22 +3164,36 @@
 
     invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->sendCapture(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
 
-    if-eqz v0, :cond_a
+    if-eqz v2, :cond_a
 
     invoke-direct {p0, p2, v3}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->sendCapture(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
 
     :cond_a
     invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getAutoFocus(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-virtual {p0, p2, v1, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getBuilder(Lcom/motorola/camera/fsm/camera/FsmContext;ZZ)Landroid/hardware/camera2/CaptureRequest$Builder;
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;->clearAfTrigger(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-virtual {v0, v4}, Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;->clearAfTrigger(Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
-    if-eqz v0, :cond_b
+    invoke-virtual {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getCameraId(Z)Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockMap:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v0, v4}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;
+
+    invoke-direct {p0, v4, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->checkLockComplete(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)V
+
+    if-eqz v2, :cond_b
 
     invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getAutoFocus(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;
 
@@ -3239,6 +3204,20 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;->clearAfTrigger(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+
+    invoke-virtual {p0, v3}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->getCameraId(Z)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->mLockMap:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;
+
+    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable;->checkLockComplete(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/states/runnables/FocusExposureLockRunnable$LockHolder;)V
 
     :cond_b
     return-void

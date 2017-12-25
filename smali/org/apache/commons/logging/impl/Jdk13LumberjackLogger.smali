@@ -274,13 +274,13 @@
 .method public debug(Ljava/lang/Object;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     sget-object v0, Ljava/util/logging/Level;->FINE:Ljava/util/logging/Level;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/commons/logging/impl/Jdk13LumberjackLogger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -304,13 +304,13 @@
 .method public error(Ljava/lang/Object;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     sget-object v0, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/commons/logging/impl/Jdk13LumberjackLogger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -334,13 +334,13 @@
 .method public fatal(Ljava/lang/Object;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     sget-object v0, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/commons/logging/impl/Jdk13LumberjackLogger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -388,13 +388,13 @@
 .method public info(Ljava/lang/Object;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     sget-object v0, Ljava/util/logging/Level;->INFO:Ljava/util/logging/Level;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/commons/logging/impl/Jdk13LumberjackLogger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -514,13 +514,13 @@
 .method public trace(Ljava/lang/Object;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     sget-object v0, Ljava/util/logging/Level;->FINEST:Ljava/util/logging/Level;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/commons/logging/impl/Jdk13LumberjackLogger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -544,13 +544,13 @@
 .method public warn(Ljava/lang/Object;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     sget-object v0, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v0, v1, v2}, Lorg/apache/commons/logging/impl/Jdk13LumberjackLogger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 

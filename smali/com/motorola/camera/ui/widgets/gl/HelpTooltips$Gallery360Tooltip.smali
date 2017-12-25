@@ -36,7 +36,9 @@
 .end method
 
 .method constructor <init>()V
-    .locals 9
+    .locals 10
+
+    const/4 v8, 0x1
 
     sget-object v6, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->SIZE:Landroid/util/SizeF;
 
@@ -44,15 +46,15 @@
 
     const-wide/16 v2, 0x20
 
-    const v4, 0x7f080185
+    const v4, 0x7f08019a
 
-    const v5, 0x7f0800dc
-
-    const/4 v8, 0x1
+    const v5, 0x7f0800dd
 
     move-object v1, p0
 
-    invoke-direct/range {v1 .. v8}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip360;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;Z)V
+    move v9, v8
+
+    invoke-direct/range {v1 .. v9}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip360;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;ZZ)V
 
     return-void
 .end method
@@ -81,8 +83,10 @@
     return v0
 .end method
 
-.method updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)V
-    .locals 7
+.method updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;I)V
+    .locals 8
+
+    const/high16 v7, 0x40800000    # 4.0f
 
     const/high16 v6, 0x40000000    # 2.0f
 
@@ -96,15 +100,19 @@
 
     move-result-object v0
 
+    sparse-switch p3, :sswitch_data_0
+
+    :goto_0
+    return-void
+
+    :sswitch_0
     new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
     iget v2, v0, Landroid/graphics/Point;->x:I
 
     int-to-float v2, v2
 
-    const/high16 v3, 0x40800000    # 4.0f
-
-    div-float/2addr v2, v3
+    div-float/2addr v2, v7
 
     iget v3, v0, Landroid/graphics/Point;->y:I
 
@@ -113,6 +121,14 @@
     invoke-direct {v1, v2, v3, v5}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
 
     iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientSize:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    const/high16 v2, 0x43340000    # 180.0f
+
+    invoke-direct {v1, v2, v4, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/Rotation;-><init>(FFFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientRotation:Lcom/motorola/camera/ui/widgets/gl/Rotation;
 
     new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
@@ -132,13 +148,156 @@
 
     iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientPosition:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/Rotation;
+    goto :goto_0
 
-    const/high16 v1, 0x43340000    # 180.0f
+    :sswitch_1
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
-    invoke-direct {v0, v1, v4, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/Rotation;-><init>(FFFF)V
+    iget v2, v0, Landroid/graphics/Point;->x:I
 
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientRotation:Lcom/motorola/camera/ui/widgets/gl/Rotation;
+    int-to-float v2, v2
 
-    return-void
+    div-float/2addr v2, v7
+
+    iget v3, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v3, v3
+
+    invoke-direct {v1, v2, v3, v5}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientSize:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    invoke-direct {v1, v4, v4, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/Rotation;-><init>(FFFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientRotation:Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    iget v2, v0, Landroid/graphics/Point;->x:I
+
+    neg-int v2, v2
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v6
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v6
+
+    invoke-direct {v1, v2, v0, v4}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientPosition:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    goto :goto_0
+
+    :sswitch_2
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    iget v2, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v2, v2
+
+    iget v3, v0, Landroid/graphics/Point;->x:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v7
+
+    invoke-direct {v1, v2, v3, v5}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientSize:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    const/high16 v2, 0x43870000    # 270.0f
+
+    invoke-direct {v1, v2, v4, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/Rotation;-><init>(FFFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientRotation:Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    iget v2, v0, Landroid/graphics/Point;->x:I
+
+    neg-int v2, v2
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v6
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v6
+
+    invoke-direct {v1, v2, v0, v4}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientPosition:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    goto :goto_0
+
+    :sswitch_3
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    iget v2, v0, Landroid/graphics/Point;->x:I
+
+    int-to-float v2, v2
+
+    iget v3, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v7
+
+    invoke-direct {v1, v2, v3, v5}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientSize:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    const/high16 v2, 0x42b40000    # 90.0f
+
+    invoke-direct {v1, v2, v4, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/Rotation;-><init>(FFFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientRotation:Lcom/motorola/camera/ui/widgets/gl/Rotation;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    iget v2, v0, Landroid/graphics/Point;->x:I
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v6
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v6
+
+    invoke-direct {v1, v2, v0, v4}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;->mGradientPosition:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    goto/16 :goto_0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x5a -> :sswitch_2
+        0xb4 -> :sswitch_1
+        0x10e -> :sswitch_3
+    .end sparse-switch
 .end method

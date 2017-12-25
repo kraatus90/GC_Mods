@@ -428,7 +428,7 @@
 
 # virtual methods
 .method protected a(Lcom/android/volley/NetworkResponse;)Lcom/android/volley/Response;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -461,33 +461,33 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v2, "Caught OOM for %d byte image, url=%s"
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
+    new-array v2, v2, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    iget-object v3, p1, Lcom/android/volley/NetworkResponse;->data:[B
+
+    array-length v3, v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
 
     const/4 v4, 0x0
 
-    iget-object v5, p1, Lcom/android/volley/NetworkResponse;->data:[B
-
-    array-length v5, v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
+    aput-object v3, v2, v4
 
     invoke-virtual {p0}, Lcom/android/volley/toolbox/ImageRequest;->getUrl()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v3, v4
+    const/4 v4, 0x1
 
-    invoke-static {v2, v3}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v2, v4
+
+    const-string/jumbo v3, "Caught OOM for %d byte image, url=%s"
+
+    invoke-static {v3, v2}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v2, Lcom/android/volley/ParseError;
 

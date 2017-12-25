@@ -121,12 +121,12 @@
     <string name="aware_info_failed">Không thành công</string>
     <string name="aware_info_geo">Vị trí</string>
     <string name="aware_info_landmark">Điểm mốc</string>
-    <string name="aware_info_landmark_loading">Máy ảnh đang nhận diện cột mốc</string>
+    <string name="aware_info_landmark_loading">Máy ảnh đang nhận diện điểm mốc</string>
     <string name="aware_info_message">Thư</string>
     <string name="aware_info_more_wikipedia">Xem thêm trên Wikipedia</string>
     <string name="aware_info_no_results">Không tìm thấy kết quả</string>
     <string name="aware_info_object">Đối tượng</string>
-    <string name="aware_info_object_loading">Máy ảnh đang nhận diện đối tượng</string>
+    <string name="aware_info_object_loading">Máy ảnh đang nhận dạng đối tượng</string>
     <string name="aware_info_processing">Đang xử lý</string>
     <string name="aware_info_product">Sản phẩm</string>
     <string name="aware_info_search_amazon">Tìm kiếm trên Amazon</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Hủy</string>
     <string name="capture_failure">Chụp ảnh không thành công. Vui lòng thử lại.</string>
     <string name="checkbox_do_not_show">Không hiển thị lại</string>
-    <string name="cloudsight_terms">Ảnh của bạn sẽ được gửi đến CloudSight để cung cấp kết quả tìm kiếm. &lt;br/>&lt;br/> Bằng cách tiếp tục, bạn đồng ý với &lt;a href=%1$s>Chính sách bảo mật&lt;/a> của CloudSight.</string>
+    <string name="cloudsight_terms">Mỗi lần bạn sử dụng nhận dạng đối tượng, ảnh và vị trí (nếu được bật) sẽ được gửi tới bên thứ ba nhằm cung cấp kết quả tìm kiếm.&lt;br/>&lt;br/> Bằng cách tiếp tục, bạn đồng ý với&lt;a href=%1$s>Chính sách bảo mật&lt;/a>.</string>
     <string name="dailog_panorama_failed">Không lấy được toàn cảnh. Hãy thử lại.</string>
     <string name="dailog_panorama_not_taken">Không chụp được ảnh toàn cảnh.</string>
     <string name="dialog_access_sd_fail">Không thể tìm thấy phương tiện. Không thể truy cập thẻ SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Thiết bị không được hỗ trợ</string>
     <string name="dialog_disagree">Không đồng ý</string>
     <string name="dialog_dismiss">Không hiện lại</string>
+    <string name="dialog_download">Tải về</string>
     <string name="dialog_external_sd_missing">Không thể chụp ảnh. Không thể truy cập thẻ SD. Chuyển sang bộ nhớ trong của điện thoại</string>
     <string name="dialog_first_time_set_pure_raw_message">"Loại tệp chưa xử lý này được dùng để chỉnh sửa ảnh chuyên nghiệp.
 
@@ -222,7 +223,7 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="help_desc_dual_result">Phải đảm bảo bạn đang ở trong phạm vi 1,5 mét (5 feet) so với đối tượng. Tốt nhất là không có vật cản ở giữa và đối tượng phải nổi bật.</string>
     <string name="help_desc_quick">Xoay hai lần để mở hoặc chuyển giữa máy ảnh trước và sau.</string>
     <string name="help_desc_quick_double_tap_pwr">Bấm đúp nút nguồn để mở máy ảnh.</string>
-    <string name="help_desc_smart_camera">Máy ảnh của bạn nhận ra các đối tượng và ranh giới. Máy ảnh cũng quét mã QR, danh thiếp và mã vạch.</string>
+    <string name="help_desc_smart_camera">Máy ảnh của bạn nhận ra các đối tượng và điểm mốc. Máy ảnh cũng có thể quét mã QR, danh thiếp và mã vạch.</string>
     <string name="help_desc_smart_camera_landmark_only">Máy ảnh của bạn nhận ra các cột mốc. Máy ảnh cũng quét mã QR, danh thiếp và mã vạch.</string>
     <string name="help_desc_zoom">Kéo lên và xuống để thu phóng.</string>
     <string name="help_done">Xong</string>
@@ -247,6 +248,7 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="help_next">Tiếp</string>
     <string name="image_360_desc">Đây là ứng dụng ảnh 360. Bạn có thể chỉnh sửa ảnh này bằng Trình chỉnh sửa Moto 360.</string>
     <string name="image_360_name">Ảnh 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ĐÃ BẬT TÍNH NĂNG CHIỀU SÂU</string>
     <string name="indicate_mode_mono">ĐEN&amp;TRẮNG CHÂN THỰC</string>
@@ -258,16 +260,19 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="indicate_mode_ultra_wide">GÓC SIÊU RỘNG</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">GÓC RỘNG</string>
+    <string name="indicate_mode_wide_angle_selfie">SELFIE GÓC RỘNG</string>
     <string name="internal_storage">Bộ nhớ trong</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">Nhận dạng cột mốc cung cấp thông tin về các cột mốc nổi tiếng trên thế giới. &lt;br/>&lt;br/>Cài đặt để bật tính năng này.</string>
-    <string name="landmark_install_over_data">Kích cỡ tải về tính năng nhận dạng cột mốc là 92MB. Cài đặt tính năng qua dữ liệu di động có thể phát sinh thêm phí dữ liệu.</string>
-    <string name="landmark_notification_downloading">Tải về Nhận dạng cột mốc</string>
-    <string name="landmark_notification_install">Cài đặt Nhận dạng cột mốc</string>
-    <string name="landmark_notification_install_complete">Hoàn tất cài đặt Nhận dạng cột mốc</string>
-    <string name="landmark_notification_install_failed">Cài đặt Nhận dạng cột mốc thất bại</string>
+    <string name="landmark_install_message">Nhận dạng cột mốc cung cấp thông tin về các cột mốc nổi tiếng trên thế giới.&lt;br/>&lt;br/>Tải cơ sở dữ liệu Cột mốc về để bật tính năng này.</string>
+    <string name="landmark_install_over_data">Kích cỡ tải về cơ sở dữ liệu cột mốc là 92MB. Tải về qua dữ liệu di động có thể phát sinh thêm phí dữ liệu.</string>
+    <string name="landmark_notification_downloading">Đang tải về cơ sở dữ liệu Cột mốc</string>
+    <string name="landmark_notification_install">Đang cài đặt cơ sở dữ liệu Cột mốc</string>
+    <string name="landmark_notification_install_complete">Hoàn tất cài đặt cơ sở dữ liệu Cột mốc</string>
+    <string name="landmark_notification_install_failed">Cài đặt cơ sở dữ liệu Cột mốc thất bại</string>
     <string name="landmark_notification_install_invalid_url">Cơ sở dữ liệu cột mốc không khả dụng, vui lòng cập nhật phiên bản Máy ảnh mới nhất</string>
-    <string name="landmark_notification_install_out_of_space">Không đủ dung lượng bộ nhớ có sẵn để cài đặt Nhận dạng cột mốc</string>
+    <string name="landmark_notification_install_out_of_space">Không đủ dung lượng bộ nhớ có sẵn để cài đặt cơ sở dữ liệu Cột mốc</string>
+    <string name="landmark_notification_paused">Cơ sở dữ liệu Cột mốc sẽ tiếp tục tải về khi có kết nối internet</string>
+    <string name="landmark_notification_queued">Cơ sở dữ liệu Cột mốc sẽ bắt đầu tải về khi có kết nối internet</string>
     <string name="main_setting_amz_barcode">Máy quét mã vạch Amazon</string>
     <string name="main_setting_amz_privacy">Thông báo bảo mật của Amazon</string>
     <string name="main_setting_amz_terms">Điều khoản sử dụng</string>
@@ -289,7 +294,9 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="main_setting_help_ui">Phát lại hướng dẫn</string>
     <string name="main_setting_image_ratio">Kích thước ảnh (sau)</string>
     <string name="main_setting_image_ratio_front">Kích thước ảnh (trước)</string>
-    <string name="main_setting_landmark_detection">Nhận dạng cột mốc</string>
+    <string name="main_setting_landmark_detection">Nhận dạng điểm mốc</string>
+    <string name="main_setting_landmark_version_current">Phiên bản cơ sở dữ liệu: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Chưa cài đặt cơ sở dữ liệu</string>
     <string name="main_setting_licenses">Giấy phép nguồn mở</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="perm_required_alert_title">Cần cấp phép</string>
     <string name="photos_depth_desc">Sử dụng trình chỉnh sửa chất lượng ảnh để chọn lấy nét, thay thế nền hoặc chọn vùng để đổi sang trắng đen.</string>
     <string name="photos_depth_name">Đã bật tính năng Chiều sâu</string>
+    <string name="photos_notification_desc">Nhận bộ nhớ không giới hạn với Google Photos</string>
+    <string name="photos_notification_title">Sao lưu vào Google Photos</string>
+    <string name="qcfa_resolution_description">Thích ứng với thiếu sáng</string>
     <string name="retake">Chụp lại</string>
     <string name="second_10">10 giây</string>
     <string name="second_3">3 giây</string>
@@ -367,6 +377,7 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="setting_mode_slow_motion">Chuyển động chậm</string>
     <string name="setting_mode_ultra_wide">Góc siêu rộng</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Selfie góc rộng</string>
     <string name="setting_off">Tắt</string>
     <string name="setting_on">Bật</string>
     <string name="setting_persist">Giữ</string>
@@ -383,20 +394,25 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="setting_timer_dialog_title">HẸN GIỜ</string>
     <string name="setting_torch">Đèn pin</string>
     <string name="setting_true">true</string>
+    <string name="shortcut_desc_depth">Ảnh có chiều sâu</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Máy ảnh thông minh</string>
+    <string name="smartcam_no_detections">Không có đối tượng hoặc các cột mốc</string>
     <string name="storage_location_external">Thẻ SD</string>
     <string name="storage_location_internal">Điện thoại</string>
     <string name="storage_unavailable">Bộ nhớ không khả dụng</string>
+    <string name="toast_battery_saver">Bạn hiện đang ở chế độ tiết kiệm pin, một số tính năng có thể bị hạn chế</string>
     <string name="toast_geotag_message_1">Bạn phải cấp quyền truy cập vị trí để bật vị trí lưu.</string>
     <string name="toast_geotag_message_2">Cài đặt vị trí chỉ có hiệu lực sau khi đã bật cài đặt vị trí hệ thống.</string>
     <string name="tooltip_camera_switch_360">Thử chuyển sang các tùy chọn máy ảnh khác.</string>
     <string name="tooltip_capture_360">Thử chụp ảnh hoặc quay video 360° bằng cách chạm vào nút chụp này.</string>
-    <string name="tooltip_capture_key_360">Bạn cũng có thể thử chụp bằng nút chụp ở phía sau của mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Chụp ảnh với thông tin bổ sung để bật các tính năng chỉnh sửa đặc biệt.</string>
+    <string name="tooltip_capture_key_360">Bạn cũng có thể thử chụp bằng nút chụp ở phía sau của Mod.</string>
     <string name="tooltip_first_use_zoom_button">Bấm vào đây để chuyển sang góc rộng.</string>
     <string name="tooltip_gallery_360">Xem ảnh hoặc video 360° của bạn trông như thế nào bằng cách trượt sang trái.</string>
     <string name="tooltip_minimap_viewfinder">Lia ảnh ở cuối sang trái hoặc phải.</string>
     <string name="tooltip_mode_switch_360">Thử chụp 360° ở các chế độ khác nhau!</string>
+    <string name="tooltip_modes_list">Khám phá những cách mới để chụp ảnh.</string>
     <string name="tooltip_smart_camera">Bấm để tìm hiểu thềm về đối tượng.</string>
     <string name="tooltip_smart_camera_disable">Bạn có thể tắt tính năng này trong Cài đặt.</string>
     <string name="tooltip_spherical_viewfinder">Lia hoặc phóng to &amp; thu nhỏ để điều khiển dạng xem.</string>
@@ -419,4 +435,10 @@ Hãy đồng ý bên dưới rồi bật Vị trí trong Cài đặt."</string>
     <string name="zoom_hint_full">ĐẦY</string>
     <string name="zoom_hint_wide">MỞ RỘNG</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">TUA NHANH THỜI GIAN</string>
+    <string name="setting_mode_timelapse">Tua nhanh thời gian</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

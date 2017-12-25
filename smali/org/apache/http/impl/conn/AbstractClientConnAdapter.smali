@@ -231,9 +231,7 @@
 .end method
 
 .method public getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-virtual {p0}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->b()Lorg/apache/http/conn/OperatedClientConnection;
 
@@ -245,7 +243,9 @@
 
     if-nez v1, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     check-cast v0, Lorg/apache/http/protocol/HttpContext;
@@ -381,9 +381,7 @@
 .end method
 
 .method public getSocket()Ljava/net/Socket;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-virtual {p0}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->b()Lorg/apache/http/conn/OperatedClientConnection;
 
@@ -404,7 +402,9 @@
     return-object v0
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public getSocketTimeout()I
@@ -600,9 +600,7 @@
 .end method
 
 .method public removeAttribute(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-virtual {p0}, Lorg/apache/http/impl/conn/AbstractClientConnAdapter;->b()Lorg/apache/http/conn/OperatedClientConnection;
 
@@ -614,7 +612,9 @@
 
     if-nez v1, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     check-cast v0, Lorg/apache/http/protocol/HttpContext;

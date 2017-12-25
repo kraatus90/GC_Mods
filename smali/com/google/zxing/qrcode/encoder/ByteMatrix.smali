@@ -49,39 +49,41 @@
 
 # virtual methods
 .method public clear(B)V
-    .locals 4
+    .locals 5
 
     const/4 v1, 0x0
+
+    move v0, v1
 
     :goto_0
     iget v2, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
 
-    if-lt v1, v2, :cond_0
+    if-lt v0, v2, :cond_0
 
     return-void
 
     :cond_0
-    const/4 v0, 0x0
+    move v2, v1
 
     :goto_1
-    iget v2, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
+    iget v3, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
-    if-lt v0, v2, :cond_1
+    if-lt v2, v3, :cond_1
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
+    iget-object v3, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
 
-    aget-object v2, v2, v1
+    aget-object v3, v3, v0
 
-    int-to-byte v3, p1
+    int-to-byte v4, p1
 
-    aput-byte v3, v2, v0
+    aput-byte v4, v3, v2
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 .end method
@@ -181,82 +183,82 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    iget v3, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
-
-    mul-int/lit8 v3, v3, 0x2
-
-    iget v4, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
-
-    mul-int/2addr v3, v4
-
-    add-int/lit8 v3, v3, 0x2
-
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const/4 v2, 0x0
-
-    :goto_0
-    iget v3, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
-
-    if-lt v2, v3, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    return-object v3
-
-    :cond_0
     const/4 v1, 0x0
 
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    iget v0, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
+
+    mul-int/lit8 v0, v0, 0x2
+
+    iget v2, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
+
+    mul-int/2addr v0, v2
+
+    add-int/lit8 v0, v0, 0x2
+
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    move v0, v1
+
+    :goto_0
+    iget v2, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->height:I
+
+    if-lt v0, v2, :cond_0
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    move v2, v1
+
     :goto_1
-    iget v3, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
+    iget v4, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->width:I
 
-    if-lt v1, v3, :cond_1
+    if-lt v2, v4, :cond_1
 
-    const/16 v3, 0xa
+    const/16 v2, 0xa
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    iget-object v3, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
+    iget-object v4, p0, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->bytes:[[B
 
-    aget-object v3, v3, v2
+    aget-object v4, v4, v0
 
-    aget-byte v3, v3, v1
+    aget-byte v4, v4, v2
 
-    packed-switch v3, :pswitch_data_0
+    packed-switch v4, :pswitch_data_0
 
-    const-string/jumbo v3, "  "
+    const-string/jumbo v4, "  "
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :goto_2
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :pswitch_0
-    const-string/jumbo v3, " 0"
+    const-string/jumbo v4, " 0"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
     :pswitch_1
-    const-string/jumbo v3, " 1"
+    const-string/jumbo v4, " 1"
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_2
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

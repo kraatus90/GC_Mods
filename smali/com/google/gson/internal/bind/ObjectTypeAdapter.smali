@@ -48,34 +48,32 @@
 
 # virtual methods
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .locals 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v5, 0x0
-
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v3, Lcom/google/gson/internal/bind/ObjectTypeAdapter$2;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v1, Lcom/google/gson/internal/bind/ObjectTypeAdapter$2;->$SwitchMap$com$google$gson$stream$JsonToken:[I
 
-    invoke-virtual {v2}, Lcom/google/gson/stream/JsonToken;->ordinal()I
+    invoke-virtual {v0}, Lcom/google/gson/stream/JsonToken;->ordinal()I
 
-    move-result v4
+    move-result v0
 
-    aget v3, v3, v4
+    aget v0, v1, v0
 
-    packed-switch v3, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v3, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v3}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v3
+    throw v0
 
     :pswitch_0
     new-instance v0, Ljava/util/ArrayList;
@@ -87,9 +85,9 @@
     :goto_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
 
@@ -98,76 +96,78 @@
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :pswitch_1
-    new-instance v1, Lcom/google/gson/internal/LinkedTreeMap;
+    new-instance v0, Lcom/google/gson/internal/LinkedTreeMap;
 
-    invoke-direct {v1}, Lcom/google/gson/internal/LinkedTreeMap;-><init>()V
+    invoke-direct {v0}, Lcom/google/gson/internal/LinkedTreeMap;-><init>()V
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginObject()V
 
     :goto_1
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_1
+    if-nez v1, :cond_1
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endObject()V
 
-    return-object v1
+    return-object v0
 
     :cond_1
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-interface {v1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
     :pswitch_2
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :pswitch_3
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextDouble()D
 
-    move-result-wide v4
+    move-result-wide v0
 
-    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :pswitch_4
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextBoolean()Z
 
-    move-result v3
+    move-result v0
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :pswitch_5
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    return-object v5
+    const/4 v0, 0x0
+
+    return-object v0
 
     nop
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -192,13 +192,13 @@
 
     if-eqz p2, :cond_0
 
-    iget-object v1, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->gson:Lcom/google/gson/Gson;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/ObjectTypeAdapter;->gson:Lcom/google/gson/Gson;
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Lcom/google/gson/Gson;->getAdapter(Ljava/lang/Class;)Lcom/google/gson/TypeAdapter;
+    invoke-virtual {v0, v1}, Lcom/google/gson/Gson;->getAdapter(Ljava/lang/Class;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
 

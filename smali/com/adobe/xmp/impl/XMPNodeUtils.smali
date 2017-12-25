@@ -78,11 +78,11 @@
 
     invoke-virtual {v0, v1}, Lcom/adobe/xmp/impl/XMPNode;->addQualifier(Lcom/adobe/xmp/impl/XMPNode;)V
 
-    const-string/jumbo v2, "x-default"
-
     invoke-virtual {v1}, Lcom/adobe/xmp/impl/XMPNode;->getValue()Ljava/lang/String;
 
     move-result-object v1
+
+    const-string/jumbo v2, "x-default"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -113,9 +113,9 @@
 
     const/16 v10, 0x66
 
-    const/4 v9, 0x2
-
     const/4 v0, 0x0
+
+    const/4 v9, 0x2
 
     const/4 v8, 0x1
 
@@ -242,17 +242,17 @@
     throw v0
 
     :cond_5
-    const-string/jumbo v6, "xml:lang"
-
     invoke-virtual {v0, v8}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v7, "xml:lang"
+
+    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
@@ -642,29 +642,27 @@
 .end method
 
 .method private static findIndexedItem(Lcom/adobe/xmp/impl/XMPNode;Ljava/lang/String;Z)I
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/adobe/xmp/XMPException;
         }
     .end annotation
 
-    const/4 v5, 0x0
+    const/16 v3, 0x66
 
-    const/16 v4, 0x66
-
-    const/4 v3, 0x1
-
-    const/4 v0, 0x1
+    const/4 v4, 0x1
 
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
@@ -672,7 +670,7 @@
 
     move-result v0
 
-    if-lt v0, v3, :cond_1
+    if-lt v0, v4, :cond_1
 
     if-nez p2, :cond_2
 
@@ -700,7 +698,7 @@
 
     const-string/jumbo v1, "Array index not digits."
 
-    invoke-direct {v0, v1, v4}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
@@ -717,9 +715,11 @@
 
     const-string/jumbo v2, "[]"
 
-    invoke-direct {v1, v2, v5}, Lcom/adobe/xmp/impl/XMPNode;-><init>(Ljava/lang/String;Lcom/adobe/xmp/options/PropertyOptions;)V
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v3}, Lcom/adobe/xmp/impl/XMPNode;->setImplicit(Z)V
+    invoke-direct {v1, v2, v3}, Lcom/adobe/xmp/impl/XMPNode;-><init>(Ljava/lang/String;Lcom/adobe/xmp/options/PropertyOptions;)V
+
+    invoke-virtual {v1, v4}, Lcom/adobe/xmp/impl/XMPNode;->setImplicit(Z)V
 
     invoke-virtual {p0, v1}, Lcom/adobe/xmp/impl/XMPNode;->addChild(Lcom/adobe/xmp/impl/XMPNode;)V
 
@@ -1162,11 +1162,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
-
     const/4 v3, 0x0
 
     const/4 v4, 0x1
+
+    const/4 v0, 0x0
 
     invoke-virtual {p1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;->getKind()I
 
@@ -1492,17 +1492,17 @@
     goto :goto_0
 
     :cond_3
-    const-string/jumbo v3, "xml:lang"
-
     invoke-virtual {v2, v1}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v4, "xml:lang"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -1533,9 +1533,9 @@
         }
     .end annotation
 
-    const/4 v0, 0x1
-
     const/4 v5, 0x0
+
+    const/4 v0, 0x1
 
     const-string/jumbo v1, "xml:lang"
 
@@ -1699,17 +1699,17 @@
     goto :goto_0
 
     :cond_4
-    const-string/jumbo v3, "x-default"
-
     invoke-virtual {v2, v5}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Lcom/adobe/xmp/impl/XMPNode;->getValue()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/adobe/xmp/impl/XMPNode;->getValue()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v4, "x-default"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -1920,13 +1920,13 @@
     return-void
 
     :cond_1
-    const-string/jumbo v1, "xml:lang"
-
     invoke-virtual {p0}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "xml:lang"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 

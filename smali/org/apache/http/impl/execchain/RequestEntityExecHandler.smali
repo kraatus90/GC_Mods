@@ -22,24 +22,24 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 3
+
+    const/4 v0, 0x1
 
     :try_start_0
-    const-class v0, Lorg/apache/http/HttpEntity;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const-string/jumbo v1, "writeTo"
+    const-class v1, Ljava/io/OutputStream;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Class;
+    aput-object v1, v0, v2
 
-    const/4 v3, 0x0
+    const-class v1, Lorg/apache/http/HttpEntity;
 
-    const-class v4, Ljava/io/OutputStream;
+    const-string/jumbo v2, "writeTo"
 
-    aput-object v4, v2, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 

@@ -324,7 +324,7 @@
 
 .field public static final IC_OOBE_CHECK_ON:I = 0xa0
 
-.field public static final IC_OOBE_MAP_PORT:I = 0xa1
+.field public static final IC_OOBE_MAP:I = 0xa1
 
 .field public static final IC_OOBE_RADIO_OFF:I = 0xa2
 
@@ -358,189 +358,195 @@
 
 .field public static final IC_PLAY:I = 0xb1
 
-.field public static final IC_PROCESSING:I = 0xb4
+.field public static final IC_PRINT:I = 0xb2
 
-.field public static final IC_PRO_FOLD:I = 0xb2
+.field public static final IC_PROCESSING:I = 0xb5
 
-.field public static final IC_PRO_MF_START:I = 0xb3
+.field public static final IC_PRO_FOLD:I = 0xb3
 
-.field public static final IC_QRCODE:I = 0xb5
+.field public static final IC_PRO_MF_START:I = 0xb4
 
-.field public static final IC_QUICKDRAW:I = 0xb6
+.field public static final IC_QRCODE:I = 0xb6
 
-.field public static final IC_RAW:I = 0xb7
+.field public static final IC_QUICKDRAW:I = 0xb7
 
-.field public static final IC_RESET:I = 0xb8
+.field public static final IC_RAW:I = 0xb8
 
-.field public static final IC_RESET_SMALL:I = 0xb9
+.field public static final IC_RESET:I = 0xb9
 
-.field public static final IC_SEARCH:I = 0xba
+.field public static final IC_RESET_SMALL:I = 0xba
 
-.field public static final IC_SHARE:I = 0xbb
+.field public static final IC_SEARCH:I = 0xbb
 
-.field public static final IC_SHUTTER:I = 0xbc
+.field public static final IC_SHARE:I = 0xbc
 
-.field public static final IC_SHUTTER_PRESS:I = 0xbd
+.field public static final IC_SHUTTER:I = 0xbd
 
-.field public static final IC_SHUTTER_SOUND:I = 0xbe
+.field public static final IC_SHUTTER_PRESS:I = 0xbe
 
-.field public static final IC_SIDE_BAR_EXP:I = 0xbf
+.field public static final IC_SHUTTER_SOUND:I = 0xbf
 
-.field public static final IC_SIDE_BAR_ISO:I = 0xc0
+.field public static final IC_SIDE_BAR_EXP:I = 0xc0
 
-.field public static final IC_SIDE_BAR_MF:I = 0xc1
+.field public static final IC_SIDE_BAR_ISO:I = 0xc1
 
-.field public static final IC_SIDE_BAR_SHUTTER:I = 0xc2
+.field public static final IC_SIDE_BAR_MF:I = 0xc2
 
-.field public static final IC_SIDE_BAR_WB:I = 0xc3
+.field public static final IC_SIDE_BAR_SHUTTER:I = 0xc3
 
-.field public static final IC_SPORTS_NORMAL_57DP:I = 0xc4
+.field public static final IC_SIDE_BAR_WB:I = 0xc4
 
-.field public static final IC_SPORTS_SELECTED_57DP:I = 0xc5
+.field public static final IC_SPORTS_NORMAL_57DP:I = 0xc5
 
-.field public static final IC_SPOT_COLOR_DESATURATE:I = 0xc6
+.field public static final IC_SPORTS_SELECTED_57DP:I = 0xc6
 
-.field public static final IC_SPOT_COLOR_SATURATE:I = 0xc7
+.field public static final IC_SPOT_COLOR_DESATURATE:I = 0xc7
 
-.field public static final IC_STANDARD_VIEW:I = 0xc8
+.field public static final IC_SPOT_COLOR_SATURATE:I = 0xc8
 
-.field public static final IC_STATUS_FLASH_ON:I = 0xc9
+.field public static final IC_STANDARD_VIEW:I = 0xc9
 
-.field public static final IC_STORAGE:I = 0xca
+.field public static final IC_STATUS_FLASH_ON:I = 0xca
 
-.field public static final IC_SWATCH_EYEDROPPER:I = 0xcc
+.field public static final IC_STORAGE:I = 0xcb
 
-.field public static final IC_SW_FLASH_MASK:I = 0xcb
+.field public static final IC_SWATCH_EYEDROPPER:I = 0xcd
 
-.field public static final IC_TIMER_10S:I = 0xcf
+.field public static final IC_SW_FLASH_MASK:I = 0xcc
 
-.field public static final IC_TIMER_10S_SELECTED:I = 0xd0
+.field public static final IC_TIMER_10S:I = 0xd0
 
-.field public static final IC_TIMER_3S:I = 0xcd
+.field public static final IC_TIMER_10S_SELECTED:I = 0xd1
 
-.field public static final IC_TIMER_3S_SELECTED:I = 0xce
+.field public static final IC_TIMER_3S:I = 0xce
 
-.field public static final IC_TIMER_OFF:I = 0xd1
+.field public static final IC_TIMER_3S_SELECTED:I = 0xcf
 
-.field public static final IC_TIMER_OFF_SELECTED:I = 0xd2
+.field public static final IC_TIMER_OFF:I = 0xd2
 
-.field public static final IC_WB_AUTO:I = 0xd3
+.field public static final IC_TIMER_OFF_SELECTED:I = 0xd3
 
-.field public static final IC_WB_CLOUD:I = 0xd4
+.field public static final IC_WB_AUTO:I = 0xd4
 
-.field public static final IC_WB_FILAMENT_LAMP:I = 0xd5
+.field public static final IC_WB_CLOUD:I = 0xd5
 
-.field public static final IC_WB_FLUORESCENT:I = 0xd6
+.field public static final IC_WB_FILAMENT_LAMP:I = 0xd6
 
-.field public static final IC_WB_SUN:I = 0xd7
+.field public static final IC_WB_FLUORESCENT:I = 0xd7
 
-.field public static final IC_WIDE_ANGLE:I = 0xd8
+.field public static final IC_WB_SUN:I = 0xd8
 
-.field public static final IC_WIFI:I = 0xd9
+.field public static final IC_WIDE_ANGLE:I = 0xd9
 
-.field public static final IC_WS_CENTER:I = 0xda
+.field public static final IC_WIFI:I = 0xda
 
-.field public static final IC_WS_CENTER_270:I = 0xdc
+.field public static final IC_WS_CENTER:I = 0xdb
 
-.field public static final IC_WS_CENTER_90:I = 0xdb
+.field public static final IC_WS_CENTER_270:I = 0xdd
 
-.field public static final IC_WS_DOWN:I = 0xdd
+.field public static final IC_WS_CENTER_90:I = 0xdc
 
-.field public static final IC_WS_DOWN_270:I = 0xdf
+.field public static final IC_WS_DOWN:I = 0xde
 
-.field public static final IC_WS_DOWN_90:I = 0xde
+.field public static final IC_WS_DOWN_270:I = 0xe0
 
-.field public static final IC_WS_LEFT:I = 0xe0
+.field public static final IC_WS_DOWN_90:I = 0xdf
 
-.field public static final IC_WS_LEFT_270:I = 0xe2
+.field public static final IC_WS_LEFT:I = 0xe1
 
-.field public static final IC_WS_LEFT_90:I = 0xe1
+.field public static final IC_WS_LEFT_270:I = 0xe3
 
-.field public static final IC_WS_RIGHT:I = 0xe3
+.field public static final IC_WS_LEFT_90:I = 0xe2
 
-.field public static final IC_WS_RIGHT_270:I = 0xe5
+.field public static final IC_WS_RIGHT:I = 0xe4
 
-.field public static final IC_WS_RIGHT_90:I = 0xe4
+.field public static final IC_WS_RIGHT_270:I = 0xe6
 
-.field public static final IC_WS_UP:I = 0xe6
+.field public static final IC_WS_RIGHT_90:I = 0xe5
 
-.field public static final IC_WS_UP_270:I = 0xe8
+.field public static final IC_WS_UP:I = 0xe7
 
-.field public static final IC_WS_UP_90:I = 0xe7
+.field public static final IC_WS_UP_270:I = 0xe9
 
-.field public static final IND_FLASH_1:I = 0xe9
+.field public static final IC_WS_UP_90:I = 0xe8
 
-.field public static final IND_FLASH_2:I = 0xea
+.field public static final IND_FLASH_1:I = 0xea
 
-.field public static final IND_FLASH_3:I = 0xeb
+.field public static final IND_FLASH_2:I = 0xeb
 
-.field public static final IND_FLASH_4:I = 0xec
+.field public static final IND_FLASH_3:I = 0xec
 
-.field public static final IND_SCENE_AUTO:I = 0xed
+.field public static final IND_FLASH_4:I = 0xed
 
-.field public static final IND_SCENE_BACKLIGHT:I = 0xee
+.field public static final IND_SCENE_AUTO:I = 0xee
 
-.field public static final IND_SCENE_DAY_LANDSCAPE:I = 0xef
+.field public static final IND_SCENE_BACKLIGHT:I = 0xef
 
-.field public static final IND_SCENE_NIGHT_LANDSCAPE:I = 0xf0
+.field public static final IND_SCENE_DAY_LANDSCAPE:I = 0xf0
 
-.field public static final IND_SCENE_NIGHT_PORTRAIT:I = 0xf1
+.field public static final IND_SCENE_NIGHT_LANDSCAPE:I = 0xf1
 
-.field public static final IND_SCENE_SPORT_MODE:I = 0xf2
+.field public static final IND_SCENE_NIGHT_PORTRAIT:I = 0xf2
 
-.field public static final PANO_TRACK_BG_H:I = 0xf3
+.field public static final IND_SCENE_SPORT_MODE:I = 0xf3
 
-.field public static final PANO_TRACK_BG_V:I = 0xf4
+.field public static final PANO_TRACK_BG_H:I = 0xf4
 
-.field public static final PIC_BW_JPEG_57DP:I = 0xf5
+.field public static final PANO_TRACK_BG_V:I = 0xf5
 
-.field public static final PIC_COLOR_JPEG_57DP:I = 0xf6
+.field public static final PIC_BW_JPEG_57DP:I = 0xf6
 
-.field public static final PIC_COLOR_RAW_JPEG_90DP:I = 0xf7
+.field public static final PIC_COLOR_JPEG_57DP:I = 0xf7
 
-.field public static final PLACEHOLDER_EMPTY:I = 0xf8
+.field public static final PIC_COLOR_RAW_JPEG_90DP:I = 0xf8
 
-.field public static final PLACEHOLDER_LOCKED:I = 0xf9
+.field public static final PLACEHOLDER_EMPTY:I = 0xf9
 
-.field public static final RECORD_INDICATOR:I = 0xfb
+.field public static final PLACEHOLDER_LOCKED:I = 0xfa
 
-.field public static final REC_OVERLAY:I = 0xfa
+.field public static final RECORD_INDICATOR:I = 0xfc
 
-.field public static final ROTATE_360_ARROWS:I = 0xfc
+.field public static final REC_OVERLAY:I = 0xfb
 
-.field public static final ROTATE_360_DEVICE:I = 0xfd
+.field public static final ROTATE_360_ARROWS:I = 0xfd
 
-.field public static final RT_ARROW_BLACK:I = 0xfe
+.field public static final ROTATE_360_DEVICE:I = 0xfe
 
-.field public static final RT_ARROW_BLUE:I = 0xff
+.field public static final RT_ARROW_BLACK:I = 0xff
 
-.field public static final SHUTTER_1:I = 0x100
+.field public static final RT_ARROW_BLUE:I = 0x100
 
-.field public static final SHUTTER_2:I = 0x101
+.field public static final SHUTTER_1:I = 0x101
 
-.field public static final SHUTTER_3:I = 0x102
+.field public static final SHUTTER_2:I = 0x102
 
-.field public static final SHUTTER_4:I = 0x103
+.field public static final SHUTTER_3:I = 0x103
 
-.field public static final SHUTTER_5:I = 0x104
+.field public static final SHUTTER_4:I = 0x104
 
-.field public static final SHUTTER_6:I = 0x105
+.field public static final SHUTTER_5:I = 0x105
 
-.field public static final SHUTTER_7:I = 0x106
+.field public static final SHUTTER_6:I = 0x106
 
-.field public static final SPINNER_BLUE:I = 0x107
+.field public static final SHUTTER_7:I = 0x107
 
-.field public static final SPINNER_WHITE_16:I = 0x108
+.field public static final SPINNER_BLUE:I = 0x108
 
-.field public static final SWITCH_OFF:I = 0x109
+.field public static final SPINNER_WHITE_16:I = 0x109
 
-.field public static final SWITCH_ON:I = 0x10a
+.field public static final SWITCH_OFF:I = 0x10a
 
-.field public static final VF_MINIMAP:I = 0x10b
+.field public static final SWITCH_OFF_DISABLED:I = 0x10b
 
-.field public static final VF_SPHERICAL:I = 0x10c
+.field public static final SWITCH_ON:I = 0x10c
 
-.field public static final VF_SPLIT_SCREEN:I = 0x10d
+.field public static final SWITCH_ON_DISABLED:I = 0x10d
+
+.field public static final VF_MINIMAP:I = 0x10e
+
+.field public static final VF_SPHERICAL:I = 0x10f
+
+.field public static final VF_SPLIT_SCREEN:I = 0x110
 
 
 # direct methods

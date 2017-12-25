@@ -38,42 +38,42 @@
 
     const v4, 0xfffffff
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/lang/String;
+    new-instance v0, Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/String;-><init>()V
+    invoke-direct {v0}, Ljava/lang/String;-><init>()V
 
-    iput-object v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->_translation:Ljava/lang/String;
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->_translation:Ljava/lang/String;
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->quadrangle:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->quadrangle:Ljava/util/ArrayList;
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_0
-    const/4 v1, 0x4
+    const/4 v2, 0x4
 
-    if-lt v0, v1, :cond_0
+    if-lt v0, v2, :cond_0
 
-    iput v3, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->smallLetterHeight:I
+    iput v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->smallLetterHeight:I
 
-    new-instance v1, Landroid/graphics/Point;
+    new-instance v0, Landroid/graphics/Point;
 
-    invoke-direct {v1, v3, v3}, Landroid/graphics/Point;-><init>(II)V
+    invoke-direct {v0, v1, v1}, Landroid/graphics/Point;-><init>(II)V
 
-    iput-object v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->baseLineBegin:Landroid/graphics/Point;
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->baseLineBegin:Landroid/graphics/Point;
 
-    new-instance v1, Landroid/graphics/Point;
+    new-instance v0, Landroid/graphics/Point;
 
-    invoke-direct {v1, v3, v3}, Landroid/graphics/Point;-><init>(II)V
+    invoke-direct {v0, v1, v1}, Landroid/graphics/Point;-><init>(II)V
 
-    iput-object v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->baseLineEnd:Landroid/graphics/Point;
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->baseLineEnd:Landroid/graphics/Point;
 
     iput v4, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->_textColor:I
 
@@ -82,13 +82,13 @@
     return-void
 
     :cond_0
-    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->quadrangle:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrTranslationSegment;->quadrangle:Ljava/util/ArrayList;
 
-    new-instance v2, Landroid/graphics/Point;
+    new-instance v3, Landroid/graphics/Point;
 
-    invoke-direct {v2, v3, v3}, Landroid/graphics/Point;-><init>(II)V
+    invoke-direct {v3, v1, v1}, Landroid/graphics/Point;-><init>(II)V
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v0, v0, 0x1
 

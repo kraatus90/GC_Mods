@@ -183,215 +183,237 @@
 
 .field public static final bg_pressed:I = 0x7f020053
 
-.field public static final btn_bg:I = 0x7f020054
+.field public static final bg_smartcam_card:I = 0x7f020054
 
-.field public static final btn_bg_selector:I = 0x7f020055
+.field public static final bg_smartcam_chip:I = 0x7f020055
 
-.field public static final btn_camera:I = 0x7f020056
+.field public static final bg_smartcam_gradient:I = 0x7f020056
 
-.field public static final btn_cling_normal:I = 0x7f020057
+.field public static final btn_bg:I = 0x7f020057
 
-.field public static final btn_cling_pressed:I = 0x7f020058
+.field public static final btn_bg_selector:I = 0x7f020058
 
-.field public static final btn_ff_switch:I = 0x7f020059
+.field public static final btn_camera:I = 0x7f020059
 
-.field public static final btn_holo_selector:I = 0x7f02005a
+.field public static final btn_cling_normal:I = 0x7f02005a
 
-.field public static final btn_mode:I = 0x7f02005b
+.field public static final btn_cling_pressed:I = 0x7f02005b
 
-.field public static final btn_panorama:I = 0x7f02005c
+.field public static final btn_ff_switch:I = 0x7f02005c
 
-.field public static final btn_play:I = 0x7f02005d
+.field public static final btn_holo_selector:I = 0x7f02005d
 
-.field public static final btn_pro:I = 0x7f02005e
+.field public static final btn_mode:I = 0x7f02005e
 
-.field public static final btn_shutter_bg:I = 0x7f02005f
+.field public static final btn_panorama:I = 0x7f02005f
 
-.field public static final btn_slow_motion:I = 0x7f020060
+.field public static final btn_play:I = 0x7f020060
 
-.field public static final btn_video:I = 0x7f020061
+.field public static final btn_pro:I = 0x7f020061
 
-.field public static final btn_video_bg:I = 0x7f020062
+.field public static final btn_shutter_bg:I = 0x7f020062
 
-.field public static final btn_video_mode:I = 0x7f020063
+.field public static final btn_slow_motion:I = 0x7f020063
 
-.field public static final button_list_background_selector:I = 0x7f020064
+.field public static final btn_video:I = 0x7f020064
 
-.field public static final camera_pro_setting_flag_auto:I = 0x7f020065
+.field public static final btn_video_bg:I = 0x7f020065
 
-.field public static final camera_pro_setting_flag_m:I = 0x7f020066
+.field public static final btn_video_mode:I = 0x7f020066
 
-.field public static final camera_pro_setting_flag_mf_infinity:I = 0x7f020067
+.field public static final button_list_background_selector:I = 0x7f020067
 
-.field public static final camera_prosetting__auto_floag:I = 0x7f020068
+.field public static final camera_pro_setting_flag_auto:I = 0x7f020068
 
-.field public static final camera_prosetting__mf_infinity:I = 0x7f020069
+.field public static final camera_pro_setting_flag_m:I = 0x7f020069
 
-.field public static final camera_prosetting__mf_start:I = 0x7f02006a
+.field public static final camera_pro_setting_flag_mf_infinity:I = 0x7f02006a
 
-.field public static final camera_prosetting__mf_start_flag:I = 0x7f02006b
+.field public static final camera_prosetting__auto_floag:I = 0x7f02006b
 
-.field public static final camera_prosetting__shutter_auto:I = 0x7f02006c
+.field public static final camera_prosetting__mf_infinity:I = 0x7f02006c
 
-.field public static final camera_prosetting_wb_cloudy:I = 0x7f02006d
+.field public static final camera_prosetting__mf_start:I = 0x7f02006d
 
-.field public static final camera_prosetting_wb_daylight:I = 0x7f02006e
+.field public static final camera_prosetting__mf_start_flag:I = 0x7f02006e
 
-.field public static final camera_prosetting_wb_fluorescent:I = 0x7f02006f
+.field public static final camera_prosetting__shutter_auto:I = 0x7f02006f
 
-.field public static final camera_prosetting_wb_incandescent:I = 0x7f020070
+.field public static final camera_prosetting_wb_cloudy:I = 0x7f020070
 
-.field public static final camera_setting_big_wheel_cloudy:I = 0x7f020071
+.field public static final camera_prosetting_wb_daylight:I = 0x7f020071
 
-.field public static final camera_setting_big_wheel_daylight:I = 0x7f020072
+.field public static final camera_prosetting_wb_fluorescent:I = 0x7f020072
 
-.field public static final camera_setting_big_wheel_fluorescent:I = 0x7f020073
+.field public static final camera_prosetting_wb_incandescent:I = 0x7f020073
 
-.field public static final camera_setting_big_wheel_incandescent:I = 0x7f020074
+.field public static final camera_setting_big_wheel_cloudy:I = 0x7f020074
 
-.field public static final camera_setting_big_wheel_reset:I = 0x7f020075
+.field public static final camera_setting_big_wheel_daylight:I = 0x7f020075
 
-.field public static final camera_setting_big_wheel_reset_press:I = 0x7f020076
+.field public static final camera_setting_big_wheel_fluorescent:I = 0x7f020076
 
-.field public static final camera_setting_big_wheel_reset_selector:I = 0x7f020077
+.field public static final camera_setting_big_wheel_incandescent:I = 0x7f020077
 
-.field public static final camera_setting_big_wheel_t_exposure:I = 0x7f020078
+.field public static final camera_setting_big_wheel_reset:I = 0x7f020078
 
-.field public static final camera_setting_big_wheel_t_exposure_hi:I = 0x7f020079
+.field public static final camera_setting_big_wheel_reset_press:I = 0x7f020079
 
-.field public static final camera_setting_big_wheel_t_iso:I = 0x7f02007a
+.field public static final camera_setting_big_wheel_reset_selector:I = 0x7f02007a
 
-.field public static final camera_setting_big_wheel_t_iso_hi:I = 0x7f02007b
+.field public static final camera_setting_big_wheel_t_exposure:I = 0x7f02007b
 
-.field public static final camera_setting_big_wheel_t_mf:I = 0x7f02007c
+.field public static final camera_setting_big_wheel_t_exposure_hi:I = 0x7f02007c
 
-.field public static final camera_setting_big_wheel_t_mf_hi:I = 0x7f02007d
+.field public static final camera_setting_big_wheel_t_iso:I = 0x7f02007d
 
-.field public static final camera_setting_big_wheel_t_shutter:I = 0x7f02007e
+.field public static final camera_setting_big_wheel_t_iso_hi:I = 0x7f02007e
 
-.field public static final camera_setting_big_wheel_t_shutter_hi:I = 0x7f02007f
+.field public static final camera_setting_big_wheel_t_mf:I = 0x7f02007f
 
-.field public static final camera_setting_big_wheel_t_wb:I = 0x7f020080
+.field public static final camera_setting_big_wheel_t_mf_hi:I = 0x7f020080
 
-.field public static final camera_setting_big_wheel_t_wb_hi:I = 0x7f020081
+.field public static final camera_setting_big_wheel_t_shutter:I = 0x7f020081
 
-.field public static final common_full_open_on_phone:I = 0x7f020082
+.field public static final camera_setting_big_wheel_t_shutter_hi:I = 0x7f020082
 
-.field public static final common_ic_googleplayservices:I = 0x7f020083
+.field public static final camera_setting_big_wheel_t_wb:I = 0x7f020083
 
-.field public static final common_signin_btn_icon_dark:I = 0x7f020084
+.field public static final camera_setting_big_wheel_t_wb_hi:I = 0x7f020084
 
-.field public static final common_signin_btn_icon_disabled_dark:I = 0x7f020085
+.field public static final checkable_item_bg_selector:I = 0x7f020085
 
-.field public static final common_signin_btn_icon_disabled_focus_dark:I = 0x7f020086
+.field public static final common_full_open_on_phone:I = 0x7f020086
 
-.field public static final common_signin_btn_icon_disabled_focus_light:I = 0x7f020087
+.field public static final common_ic_googleplayservices:I = 0x7f020087
 
-.field public static final common_signin_btn_icon_disabled_light:I = 0x7f020088
+.field public static final common_signin_btn_icon_dark:I = 0x7f020088
 
-.field public static final common_signin_btn_icon_focus_dark:I = 0x7f020089
+.field public static final common_signin_btn_icon_disabled_dark:I = 0x7f020089
 
-.field public static final common_signin_btn_icon_focus_light:I = 0x7f02008a
+.field public static final common_signin_btn_icon_disabled_focus_dark:I = 0x7f02008a
 
-.field public static final common_signin_btn_icon_light:I = 0x7f02008b
+.field public static final common_signin_btn_icon_disabled_focus_light:I = 0x7f02008b
 
-.field public static final common_signin_btn_icon_normal_dark:I = 0x7f02008c
+.field public static final common_signin_btn_icon_disabled_light:I = 0x7f02008c
 
-.field public static final common_signin_btn_icon_normal_light:I = 0x7f02008d
+.field public static final common_signin_btn_icon_focus_dark:I = 0x7f02008d
 
-.field public static final common_signin_btn_icon_pressed_dark:I = 0x7f02008e
+.field public static final common_signin_btn_icon_focus_light:I = 0x7f02008e
 
-.field public static final common_signin_btn_icon_pressed_light:I = 0x7f02008f
+.field public static final common_signin_btn_icon_light:I = 0x7f02008f
 
-.field public static final common_signin_btn_text_dark:I = 0x7f020090
+.field public static final common_signin_btn_icon_normal_dark:I = 0x7f020090
 
-.field public static final common_signin_btn_text_disabled_dark:I = 0x7f020091
+.field public static final common_signin_btn_icon_normal_light:I = 0x7f020091
 
-.field public static final common_signin_btn_text_disabled_focus_dark:I = 0x7f020092
+.field public static final common_signin_btn_icon_pressed_dark:I = 0x7f020092
 
-.field public static final common_signin_btn_text_disabled_focus_light:I = 0x7f020093
+.field public static final common_signin_btn_icon_pressed_light:I = 0x7f020093
 
-.field public static final common_signin_btn_text_disabled_light:I = 0x7f020094
+.field public static final common_signin_btn_text_dark:I = 0x7f020094
 
-.field public static final common_signin_btn_text_focus_dark:I = 0x7f020095
+.field public static final common_signin_btn_text_disabled_dark:I = 0x7f020095
 
-.field public static final common_signin_btn_text_focus_light:I = 0x7f020096
+.field public static final common_signin_btn_text_disabled_focus_dark:I = 0x7f020096
 
-.field public static final common_signin_btn_text_light:I = 0x7f020097
+.field public static final common_signin_btn_text_disabled_focus_light:I = 0x7f020097
 
-.field public static final common_signin_btn_text_normal_dark:I = 0x7f020098
+.field public static final common_signin_btn_text_disabled_light:I = 0x7f020098
 
-.field public static final common_signin_btn_text_normal_light:I = 0x7f020099
+.field public static final common_signin_btn_text_focus_dark:I = 0x7f020099
 
-.field public static final common_signin_btn_text_pressed_dark:I = 0x7f02009a
+.field public static final common_signin_btn_text_focus_light:I = 0x7f02009a
 
-.field public static final common_signin_btn_text_pressed_light:I = 0x7f02009b
+.field public static final common_signin_btn_text_light:I = 0x7f02009b
 
-.field public static final drawable_atlas_texture:I = 0x7f02009c
+.field public static final common_signin_btn_text_normal_dark:I = 0x7f02009c
 
-.field public static final gesture_back:I = 0x7f02009d
+.field public static final common_signin_btn_text_normal_light:I = 0x7f02009d
 
-.field public static final gesture_front:I = 0x7f02009e
+.field public static final common_signin_btn_text_pressed_dark:I = 0x7f02009e
 
-.field public static final ic_badge_360:I = 0x7f02009f
+.field public static final common_signin_btn_text_pressed_light:I = 0x7f02009f
 
-.field public static final ic_delete:I = 0x7f0200a0
+.field public static final drawable_atlas_texture:I = 0x7f0200a0
 
-.field public static final ic_depth_photo:I = 0x7f0200a1
+.field public static final gesture_back:I = 0x7f0200a1
 
-.field public static final ic_immersive:I = 0x7f0200a2
+.field public static final gesture_front:I = 0x7f0200a2
 
-.field public static final ic_just_shot_18dp:I = 0x7f0200a3
+.field public static final ic_badge_360:I = 0x7f0200a3
 
-.field public static final ic_menu_cancel_holo_light:I = 0x7f0200a4
+.field public static final ic_camera_quick_action_depth:I = 0x7f0200a4
 
-.field public static final ic_mod_splash_360:I = 0x7f0200a5
+.field public static final ic_camera_quick_action_selfie:I = 0x7f0200a5
 
-.field public static final ic_mod_splash_hasselblad:I = 0x7f0200a6
+.field public static final ic_camera_quick_action_video:I = 0x7f0200a6
 
-.field public static final ic_play:I = 0x7f0200a7
+.field public static final ic_copy:I = 0x7f0200a7
 
-.field public static final ic_plusone_medium_off_client:I = 0x7f0200a8
+.field public static final ic_delete:I = 0x7f0200a8
 
-.field public static final ic_plusone_small_off_client:I = 0x7f0200a9
+.field public static final ic_depth_photo:I = 0x7f0200a9
 
-.field public static final ic_plusone_standard_off_client:I = 0x7f0200aa
+.field public static final ic_immersive:I = 0x7f0200aa
 
-.field public static final ic_plusone_tall_off_client:I = 0x7f0200ab
+.field public static final ic_just_shot_18dp:I = 0x7f0200ab
 
-.field public static final ic_save:I = 0x7f0200ac
+.field public static final ic_menu_cancel_holo_light:I = 0x7f0200ac
 
-.field public static final ic_shutter:I = 0x7f0200ad
+.field public static final ic_mod_splash_360:I = 0x7f0200ad
 
-.field public static final list_pressed_holo_light:I = 0x7f0200ae
+.field public static final ic_mod_splash_hasselblad:I = 0x7f0200ae
 
-.field public static final notification_action_background:I = 0x7f0200af
+.field public static final ic_play:I = 0x7f0200af
 
-.field public static final notification_bg:I = 0x7f0200b0
+.field public static final ic_plusone_medium_off_client:I = 0x7f0200b0
 
-.field public static final notification_bg_low:I = 0x7f0200b1
+.field public static final ic_plusone_small_off_client:I = 0x7f0200b1
 
-.field public static final notification_bg_low_normal:I = 0x7f0200b2
+.field public static final ic_plusone_standard_off_client:I = 0x7f0200b2
 
-.field public static final notification_bg_low_pressed:I = 0x7f0200b3
+.field public static final ic_plusone_tall_off_client:I = 0x7f0200b3
 
-.field public static final notification_bg_normal:I = 0x7f0200b4
+.field public static final ic_save:I = 0x7f0200b4
 
-.field public static final notification_bg_normal_pressed:I = 0x7f0200b5
+.field public static final ic_search:I = 0x7f0200b5
 
-.field public static final notification_icon_background:I = 0x7f0200b6
+.field public static final ic_shutter:I = 0x7f0200b6
 
-.field public static final notification_template_icon_bg:I = 0x7f0200bb
+.field public static final list_pressed_holo_light:I = 0x7f0200b7
 
-.field public static final notification_template_icon_low_bg:I = 0x7f0200bc
+.field public static final notification_action_background:I = 0x7f0200b8
 
-.field public static final notification_tile_bg:I = 0x7f0200b7
+.field public static final notification_bg:I = 0x7f0200b9
 
-.field public static final notify_panel_notification_icon_bg:I = 0x7f0200b8
+.field public static final notification_bg_low:I = 0x7f0200ba
 
-.field public static final quickdraw_dialog_anim:I = 0x7f0200b9
+.field public static final notification_bg_low_normal:I = 0x7f0200bb
 
-.field public static final toast_frame:I = 0x7f0200ba
+.field public static final notification_bg_low_pressed:I = 0x7f0200bc
+
+.field public static final notification_bg_normal:I = 0x7f0200bd
+
+.field public static final notification_bg_normal_pressed:I = 0x7f0200be
+
+.field public static final notification_icon_background:I = 0x7f0200bf
+
+.field public static final notification_template_icon_bg:I = 0x7f0200c6
+
+.field public static final notification_template_icon_low_bg:I = 0x7f0200c7
+
+.field public static final notification_tile_bg:I = 0x7f0200c0
+
+.field public static final notify_panel_notification_icon_bg:I = 0x7f0200c1
+
+.field public static final quickdraw_dialog_anim:I = 0x7f0200c2
+
+.field public static final toast_frame:I = 0x7f0200c3
+
+.field public static final tooltip_frame_dark:I = 0x7f0200c4
+
+.field public static final tooltip_frame_light:I = 0x7f0200c5
 
 
 # direct methods

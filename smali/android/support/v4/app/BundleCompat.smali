@@ -3,6 +3,14 @@
 .source "BundleCompat.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/support/v4/app/BundleCompat$BundleCompatBaseImpl;
+    }
+.end annotation
+
+
 # direct methods
 .method private constructor <init>()V
     .locals 0
@@ -21,14 +29,14 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-static {p0, p1}, Landroid/support/v4/app/BundleCompatGingerbread;->getBinder(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-static {p0, p1}, Landroid/support/v4/app/BundleCompat$BundleCompatBaseImpl;->getBinder(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
     return-object v0
 
     :cond_0
-    invoke-static {p0, p1}, Landroid/support/v4/app/BundleCompatJellybeanMR2;->getBinder(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
+    invoke-virtual {p0, p1}, Landroid/os/Bundle;->getBinder(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
@@ -44,13 +52,13 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-static {p0, p1, p2}, Landroid/support/v4/app/BundleCompatGingerbread;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+    invoke-static {p0, p1, p2}, Landroid/support/v4/app/BundleCompat$BundleCompatBaseImpl;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {p0, p1, p2}, Landroid/support/v4/app/BundleCompatJellybeanMR2;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->putBinder(Ljava/lang/String;Landroid/os/IBinder;)V
 
     goto :goto_0
 .end method

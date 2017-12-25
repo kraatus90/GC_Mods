@@ -318,6 +318,50 @@
     return v0
 .end method
 
+.method public get360ViewPointBundle()Landroid/os/Bundle;
+    .locals 4
+
+    const/4 v3, 0x0
+
+    invoke-super {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/Base360Viewfinder;->get360ViewPointBundle()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/MinimapViewfinder;->mScrollOffset:F
+
+    const/high16 v2, 0x3f000000    # 0.5f
+
+    sub-float/2addr v0, v2
+
+    const/high16 v2, 0x43b40000    # 360.0f
+
+    mul-float/2addr v0, v2
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    :goto_0
+    if-gez v0, :cond_0
+
+    add-int/lit16 v0, v0, 0x168
+
+    goto :goto_0
+
+    :cond_0
+    rem-int/lit16 v0, v0, 0x168
+
+    new-instance v2, Lcom/motorola/camera/saving/ViewPoint;
+
+    invoke-direct {v2, v0, v3}, Lcom/motorola/camera/saving/ViewPoint;-><init>(II)V
+
+    const-string/jumbo v0, "INITIAL_VIEWPOINT"
+
+    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+
+    return-object v1
+.end method
+
 .method public hasHighlight()Z
     .locals 1
 

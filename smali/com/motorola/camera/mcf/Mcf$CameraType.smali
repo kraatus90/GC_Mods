@@ -157,12 +157,8 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :goto_0
-    return v0
-
     :pswitch_0
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return v0
 
     :pswitch_1
     const/4 v0, 0x1

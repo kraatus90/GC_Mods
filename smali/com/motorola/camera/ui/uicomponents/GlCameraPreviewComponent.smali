@@ -42,7 +42,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/uicomponents/GlCameraPreviewComponent;->mHandler:Landroid/os/Handler;
 
-    const v0, 0x7f0e0072
+    const v0, 0x7f0e0086
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -219,6 +219,16 @@
     return-void
 .end method
 
+.method public registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/uicomponents/GlCameraPreviewComponent;->mEventHandler:Lcom/motorola/camera/EventListener;
+
+    invoke-interface {v0, p1}, Lcom/motorola/camera/EventListener;->registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    return-void
+.end method
+
 .method public resume()V
     .locals 1
 
@@ -358,6 +368,16 @@
     iget-object v0, p0, Lcom/motorola/camera/ui/uicomponents/GlCameraPreviewComponent;->mEventHandler:Lcom/motorola/camera/EventListener;
 
     invoke-interface {v0, p1}, Lcom/motorola/camera/EventListener;->unregisterStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    return-void
+.end method
+
+.method public unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/uicomponents/GlCameraPreviewComponent;->mEventHandler:Lcom/motorola/camera/EventListener;
+
+    invoke-interface {v0, p1}, Lcom/motorola/camera/EventListener;->unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
 
     return-void
 .end method

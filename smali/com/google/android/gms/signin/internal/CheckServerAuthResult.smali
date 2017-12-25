@@ -83,13 +83,13 @@
         }
     .end annotation
 
-    const/4 v0, 0x1
-
     invoke-static {p2}, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->zzf(Ljava/util/Set;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p0, v0, p1, v1}, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;-><init>(IZLjava/util/List;)V
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v1, p1, v0}, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;-><init>(IZLjava/util/List;)V
 
     return-void
 .end method

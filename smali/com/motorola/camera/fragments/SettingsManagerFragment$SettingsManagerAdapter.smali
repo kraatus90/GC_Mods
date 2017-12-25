@@ -81,7 +81,7 @@
 .method private inflateViewType(ILandroid/view/ViewGroup;)Landroid/view/View;
     .locals 3
 
-    const v1, 0x7f04004d
+    const v1, 0x7f040050
 
     const/4 v2, 0x0
 
@@ -105,7 +105,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f04004a
+    const v1, 0x7f04004d
 
     invoke-virtual {v0, v1, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -120,7 +120,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f04004c
+    const v1, 0x7f04004f
 
     invoke-virtual {v0, v1, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

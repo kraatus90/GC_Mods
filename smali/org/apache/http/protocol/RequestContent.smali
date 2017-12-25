@@ -200,17 +200,17 @@
     :goto_4
     if-eqz v0, :cond_2
 
-    const-string/jumbo v0, "Content-Length"
-
     invoke-interface {v3}, Lorg/apache/http/HttpEntity;->getContentLength()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {p1, v0, v1}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "Content-Length"
+
+    invoke-interface {p1, v1, v0}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2
 

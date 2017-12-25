@@ -304,13 +304,13 @@
 .end method
 
 .method public consumeJson()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Lcom/motorola/camera/mcf/McfParameters;->terminateJsonString()V
 
-    iget-object v1, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -700,13 +700,13 @@
 .method public setBarcodeMode(Lcom/motorola/camera/mcf/McfParameters$Modes;)V
     .locals 2
 
-    const-string/jumbo v0, "BarcodeMode"
-
     invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfParameters$Modes;->getJsonValue()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "BarcodeMode"
+
+    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -990,13 +990,13 @@
 .method public setFlashMode(Lcom/motorola/camera/mcf/McfParameters$Modes;)V
     .locals 2
 
-    const-string/jumbo v0, "FlashMode"
-
     invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfParameters$Modes;->getJsonValue()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "FlashMode"
+
+    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1078,13 +1078,13 @@
 .method public setHdrMode(Lcom/motorola/camera/mcf/McfParameters$Modes;)V
     .locals 2
 
-    const-string/jumbo v0, "HdrMode"
-
     invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfParameters$Modes;->getJsonValue()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "HdrMode"
+
+    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -1172,6 +1172,68 @@
     iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, p6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    const-string/jumbo v1, "}}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x2c
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+.end method
+
+.method public setLandmarkLocation(FF)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    iget-boolean v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mIsEmpty:Z
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    iput-boolean v2, p0, Lcom/motorola/camera/mcf/McfParameters;->mIsEmpty:Z
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    const-string/jumbo v1, "{\""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    const-string/jumbo v1, "MotLandmarkLocation"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    const-string/jumbo v1, "\":{\"latitude\":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    const-string/jumbo v1, ",\"longitude\":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     iget-object v0, p0, Lcom/motorola/camera/mcf/McfParameters;->mJsonString:Ljava/lang/StringBuilder;
 
@@ -1370,13 +1432,13 @@
 .method public setRTBokehMode(Lcom/motorola/camera/mcf/McfParameters$Modes;)V
     .locals 2
 
-    const-string/jumbo v0, "RTBokehMode"
-
     invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfParameters$Modes;->getJsonValue()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "RTBokehMode"
+
+    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/mcf/McfParameters;->addJsonObject(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2103,4 +2165,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_0
+.end method
+
+.method public unsetLandmarkLocation()V
+    .locals 1
+
+    const/high16 v0, 0x43b40000    # 360.0f
+
+    invoke-virtual {p0, v0, v0}, Lcom/motorola/camera/mcf/McfParameters;->setLandmarkLocation(FF)V
+
+    return-void
 .end method

@@ -50,58 +50,58 @@
 .end method
 
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/net/URI;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
-    move-result-object v3
+    move-result-object v1
 
-    sget-object v4, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    sget-object v2, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    if-eq v3, v4, :cond_1
+    if-eq v1, v2, :cond_1
 
     :try_start_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string/jumbo v3, "null"
+    const-string/jumbo v2, "null"
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
-    new-instance v2, Ljava/net/URI;
+    new-instance v0, Ljava/net/URI;
 
-    invoke-direct {v2, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_0
-    return-object v2
+    return-object v0
 
     :cond_1
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    return-object v2
+    return-object v0
 
     :catch_0
     move-exception v0
 
-    new-instance v2, Lcom/google/gson/JsonIOException;
+    new-instance v1, Lcom/google/gson/JsonIOException;
 
-    invoke-direct {v2, v0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v1
 .end method
 
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V

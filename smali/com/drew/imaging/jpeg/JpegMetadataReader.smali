@@ -23,7 +23,7 @@
 .end method
 
 .method public static extractMetadataFromJpegSegmentReader(Lcom/drew/imaging/jpeg/JpegSegmentData;)Lcom/drew/metadata/Metadata;
-    .locals 10
+    .locals 9
     .param p0    # Lcom/drew/imaging/jpeg/JpegSegmentData;
         .annotation build Lcom/drew/lang/annotations/NotNull;
         .end annotation
@@ -31,11 +31,11 @@
     .annotation build Lcom/drew/lang/annotations/NotNull;
     .end annotation
 
-    const/4 v9, 0x3
+    const/4 v8, 0x3
 
-    const/16 v8, 0xc
+    const/16 v7, 0xc
 
-    const/4 v7, 0x4
+    const/4 v6, 0x4
 
     const/4 v2, 0x0
 
@@ -152,7 +152,7 @@
     return-object v3
 
     :cond_4
-    if-ne v1, v7, :cond_6
+    if-ne v1, v6, :cond_6
 
     :cond_5
     add-int/lit8 v0, v1, 0x1
@@ -164,7 +164,7 @@
     goto :goto_0
 
     :cond_6
-    if-eq v1, v8, :cond_5
+    if-eq v1, v7, :cond_5
 
     add-int/lit8 v0, v1, -0x40
 
@@ -214,11 +214,11 @@
 
     array-length v4, v0
 
-    if-le v4, v9, :cond_0
+    if-le v4, v8, :cond_0
 
     new-instance v4, Ljava/lang/String;
 
-    invoke-direct {v4, v0, v2, v7}, Ljava/lang/String;-><init>([BII)V
+    invoke-direct {v4, v0, v2, v6}, Ljava/lang/String;-><init>([BII)V
 
     const-string/jumbo v5, "JFIF"
 
@@ -245,7 +245,7 @@
 
     array-length v4, v0
 
-    if-gt v4, v9, :cond_b
+    if-gt v4, v8, :cond_b
 
     :cond_a
     :goto_8
@@ -255,15 +255,15 @@
 
     if-le v4, v5, :cond_1
 
-    const-string/jumbo v4, "http://ns.adobe.com/xap/1.0/"
+    new-instance v4, Ljava/lang/String;
 
-    new-instance v5, Ljava/lang/String;
+    const/16 v5, 0x1c
 
-    const/16 v6, 0x1c
+    invoke-direct {v4, v0, v2, v5}, Ljava/lang/String;-><init>([BII)V
 
-    invoke-direct {v5, v0, v2, v6}, Ljava/lang/String;-><init>([BII)V
+    const-string/jumbo v5, "http://ns.adobe.com/xap/1.0/"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -278,13 +278,13 @@
     goto/16 :goto_4
 
     :cond_b
-    const-string/jumbo v4, "EXIF"
+    new-instance v4, Ljava/lang/String;
 
-    new-instance v5, Ljava/lang/String;
+    invoke-direct {v4, v0, v2, v6}, Ljava/lang/String;-><init>([BII)V
 
-    invoke-direct {v5, v0, v2, v7}, Ljava/lang/String;-><init>([BII)V
+    const-string/jumbo v5, "EXIF"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v4
 
@@ -331,13 +331,13 @@
 
     new-array v4, v4, [B
 
-    const/16 v5, 0xe
+    array-length v5, v0
 
-    array-length v6, v0
+    add-int/lit8 v5, v5, -0xe
 
-    add-int/lit8 v6, v6, -0xe
+    const/16 v6, 0xe
 
-    invoke-static {v0, v5, v4, v2, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v6, v4, v2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     new-instance v0, Lcom/drew/metadata/icc/IccReader;
 
@@ -356,7 +356,7 @@
 
     array-length v4, v0
 
-    if-gt v4, v8, :cond_f
+    if-gt v4, v7, :cond_f
 
     :cond_e
     new-instance v4, Lcom/drew/metadata/iptc/IptcReader;
@@ -368,15 +368,15 @@
     goto/16 :goto_6
 
     :cond_f
-    const-string/jumbo v4, "Photoshop 3.0"
+    new-instance v4, Ljava/lang/String;
 
-    new-instance v5, Ljava/lang/String;
+    const/16 v5, 0xd
 
-    const/16 v6, 0xd
+    invoke-direct {v4, v0, v2, v5}, Ljava/lang/String;-><init>([BII)V
 
-    invoke-direct {v5, v0, v2, v6}, Ljava/lang/String;-><init>([BII)V
+    const-string/jumbo v5, "Photoshop 3.0"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    invoke-virtual {v5, v4}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result v4
 
@@ -399,17 +399,17 @@
 
     array-length v4, v0
 
-    if-ne v4, v8, :cond_3
+    if-ne v4, v7, :cond_3
 
-    const-string/jumbo v4, "Adobe"
+    new-instance v4, Ljava/lang/String;
 
-    new-instance v5, Ljava/lang/String;
+    const/4 v5, 0x5
 
-    const/4 v6, 0x5
+    invoke-direct {v4, v0, v2, v5}, Ljava/lang/String;-><init>([BII)V
 
-    invoke-direct {v5, v0, v2, v6}, Ljava/lang/String;-><init>([BII)V
+    const-string/jumbo v5, "Adobe"
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    invoke-virtual {v5, v4}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result v4
 

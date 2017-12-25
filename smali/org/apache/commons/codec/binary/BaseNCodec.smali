@@ -112,17 +112,17 @@
 
     const/4 v0, 0x0
 
-    iput-object v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->f:[B
+    iput-object v0, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->f:[B
 
-    iput v0, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->g:I
+    iput v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->g:I
 
-    iput v0, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->readPos:I
+    iput v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->readPos:I
 
-    iput v0, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->i:I
+    iput v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->i:I
 
-    iput v0, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->j:I
+    iput v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->j:I
 
-    iput-boolean v0, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->h:Z
+    iput-boolean v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->h:Z
 
     return-void
 .end method
@@ -302,9 +302,9 @@
 .method c([BII)I
     .locals 4
 
-    const/4 v0, 0x0
-
     const/4 v3, 0x0
+
+    const/4 v0, 0x0
 
     iget-object v1, p0, Lorg/apache/commons/codec/binary/BaseNCodec;->f:[B
 

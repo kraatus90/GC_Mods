@@ -46,9 +46,9 @@
 .method public constructor <init>(I)V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
@@ -78,9 +78,9 @@
 .method public constructor <init>(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 6
 
-    const/4 v2, 0x0
-
     const/4 v4, 0x0
+
+    const/4 v2, 0x0
 
     const/4 v1, 0x1
 

@@ -50,6 +50,8 @@
 .method public execute(Lorg/apache/http/conn/routing/HttpRoute;Lorg/apache/http/client/methods/HttpRequestWrapper;Lorg/apache/http/client/protocol/HttpClientContext;Lorg/apache/http/client/methods/HttpExecutionAware;)Lorg/apache/http/client/methods/CloseableHttpResponse;
     .locals 2
 
+    const/4 v1, 0x0
+
     const-string/jumbo v0, "HTTP route"
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -77,7 +79,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
 
     iget-object v1, p0, Lorg/apache/http/impl/execchain/BackoffStrategyExec;->backoffManager:Lorg/apache/http/client/BackoffManager;
 
@@ -89,26 +91,29 @@
     :catch_0
     move-exception v0
 
+    if-nez v1, :cond_0
+
+    :goto_1
     iget-object v1, p0, Lorg/apache/http/impl/execchain/BackoffStrategyExec;->connectionBackoffStrategy:Lorg/apache/http/client/ConnectionBackoffStrategy;
 
     invoke-interface {v1, v0}, Lorg/apache/http/client/ConnectionBackoffStrategy;->shouldBackoff(Ljava/lang/Throwable;)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
-
-    :goto_1
-    instance-of v1, v0, Ljava/lang/RuntimeException;
-
     if-nez v1, :cond_1
 
-    instance-of v1, v0, Lorg/apache/http/HttpException;
+    :goto_2
+    instance-of v1, v0, Ljava/lang/RuntimeException;
 
     if-nez v1, :cond_2
 
-    instance-of v1, v0, Ljava/io/IOException;
+    instance-of v1, v0, Lorg/apache/http/HttpException;
 
     if-nez v1, :cond_3
+
+    instance-of v1, v0, Ljava/io/IOException;
+
+    if-nez v1, :cond_4
 
     new-instance v1, Ljava/lang/reflect/UndeclaredThrowableException;
 
@@ -117,28 +122,33 @@
     throw v1
 
     :cond_0
-    iget-object v1, p0, Lorg/apache/http/impl/execchain/BackoffStrategyExec;->backoffManager:Lorg/apache/http/client/BackoffManager;
-
-    invoke-interface {v1, p1}, Lorg/apache/http/client/BackoffManager;->backOff(Lorg/apache/http/conn/routing/HttpRoute;)V
+    invoke-interface {v1}, Lorg/apache/http/client/methods/CloseableHttpResponse;->close()V
 
     goto :goto_1
 
     :cond_1
+    iget-object v1, p0, Lorg/apache/http/impl/execchain/BackoffStrategyExec;->backoffManager:Lorg/apache/http/client/BackoffManager;
+
+    invoke-interface {v1, p1}, Lorg/apache/http/client/BackoffManager;->backOff(Lorg/apache/http/conn/routing/HttpRoute;)V
+
+    goto :goto_2
+
+    :cond_2
     check-cast v0, Ljava/lang/RuntimeException;
 
     throw v0
 
-    :cond_2
+    :cond_3
     check-cast v0, Lorg/apache/http/HttpException;
 
     throw v0
 
-    :cond_3
+    :cond_4
     check-cast v0, Ljava/io/IOException;
 
     throw v0
 
-    :cond_4
+    :cond_5
     iget-object v1, p0, Lorg/apache/http/impl/execchain/BackoffStrategyExec;->backoffManager:Lorg/apache/http/client/BackoffManager;
 
     invoke-interface {v1, p1}, Lorg/apache/http/client/BackoffManager;->backOff(Lorg/apache/http/conn/routing/HttpRoute;)V

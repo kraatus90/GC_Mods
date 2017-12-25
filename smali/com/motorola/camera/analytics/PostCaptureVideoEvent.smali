@@ -108,7 +108,7 @@
     return-object v0
 .end method
 
-.method protected postProcessData(Landroid/os/Bundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+.method protected postProcessData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
     .locals 7
 
     const/4 v6, 0x0
@@ -191,7 +191,7 @@
 
     const-string/jumbo v0, "ZOOM"
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -201,7 +201,7 @@
 
     const-string/jumbo v1, "ZOOM"
 
-    invoke-virtual {p1, v1, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v1, v6}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
@@ -209,7 +209,7 @@
 
     const-string/jumbo v0, "ZOOM"
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->remove(Ljava/lang/String;)V
 
     :cond_0
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureVideoEvent;->VIDEO_FPS:Lcom/motorola/camera/analytics/Attributes/iAttribute;

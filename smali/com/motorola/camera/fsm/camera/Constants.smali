@@ -52,6 +52,10 @@
 
 .field public static final DEPTH_PHOTO_STATES:Ljava/lang/String; = "DEPTH_PHOTO_STATES"
 
+.field public static final DEST_CAM:Ljava/lang/String; = "DEST_CAM"
+
+.field public static final DEST_MODE:Ljava/lang/String; = "DEST_MODE"
+
 .field public static final DIRECTION:Ljava/lang/String; = "DIRECTION"
 
 .field public static final ENABLE:Ljava/lang/String; = "ENABLE"
@@ -83,6 +87,8 @@
 .field public static final FRONT_FLASH:Ljava/lang/String; = "FRONT_FLASH"
 
 .field public static final HISTORY_STATE:Ljava/lang/String; = "HISTORY_STATE"
+
+.field public static final INITIAL_VIEWPOINT:Ljava/lang/String; = "INITIAL_VIEWPOINT"
 
 .field public static final INIT_CHARACTERISTICS:Ljava/lang/String; = "INIT_CHARACTERISTICS"
 
@@ -206,6 +212,8 @@
 
 .field public static final SCROLL_ZOOM:Ljava/lang/String; = "SCROLL_ZOOM"
 
+.field public static final SDCARD_MOUNTED:Ljava/lang/String; = "SDCARD_MOUNTED"
+
 .field public static final SEQ_ID:Ljava/lang/String; = "SEQ_ID"
 
 .field public static final SETTING:Ljava/lang/String; = "SETTING"
@@ -219,6 +227,12 @@
 .field public static final SHUTTER_CB_TIME:Ljava/lang/String; = "SHUTTER_CB_TIME"
 
 .field public static final SNAPSHOT_COUNT:Ljava/lang/String; = "SNAPSHOT_COUNT"
+
+.field public static final SRC_CAM:Ljava/lang/String; = "SRC_CAM"
+
+.field public static final SRC_MODE:Ljava/lang/String; = "SRC_MODE"
+
+.field public static final STATE_LISTENER_REGISTERED:Ljava/lang/String; = "STATE_LISTENER_REGISTERED"
 
 .field public static final SURFACE_HEIGHT:Ljava/lang/String; = "SURFACE_HEIGHT"
 

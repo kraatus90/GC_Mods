@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public call()Lcom/motorola/camera/device/callables/CallableReturn;
-    .locals 4
+    .locals 5
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
@@ -112,7 +112,25 @@
 
     sget-object v0, Lcom/motorola/camera/device/callables/AddOrRemoveAvailabilityListenerCallable;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v2, "Registered Camera Availability Callback."
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Registered Camera Availability Callback "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/motorola/camera/device/callables/AddOrRemoveAvailabilityListenerCallable;->mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -131,9 +149,9 @@
     :cond_1
     iget-object v0, v2, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
-    iget-object v2, v2, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
+    iget-object v3, v2, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 
-    invoke-virtual {v0, v2}, Landroid/hardware/camera2/CameraManager;->unregisterAvailabilityCallback(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V
+    invoke-virtual {v0, v3}, Landroid/hardware/camera2/CameraManager;->unregisterAvailabilityCallback(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -141,7 +159,25 @@
 
     sget-object v0, Lcom/motorola/camera/device/callables/AddOrRemoveAvailabilityListenerCallable;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v2, "Unregistered Camera Availability Callback."
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Unregistered Camera Availability Callback "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v2, v2, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mAvailabilityCallback:Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 

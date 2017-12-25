@@ -32,28 +32,28 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 3
+
+    const/4 v0, 0x1
 
     :try_start_0
+    new-array v0, v0, [Ljava/lang/Class;
+
+    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
     const-class v1, Landroid/widget/PopupWindow;
 
     const-string/jumbo v2, "setTouchModal"
 
-    const/4 v3, 0x1
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    new-array v3, v3, [Ljava/lang/Class;
+    move-result-object v0
 
-    const/4 v4, 0x0
-
-    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    aput-object v5, v3, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v1
-
-    sput-object v1, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
+    sput-object v0, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -63,11 +63,11 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v1, "MenuPopupWindow"
+    const-string/jumbo v0, "MenuPopupWindow"
 
-    const-string/jumbo v2, "Could not find method setTouchModal() on PopupWindow. Oh well."
+    const-string/jumbo v1, "Could not find method setTouchModal() on PopupWindow. Oh well."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method
@@ -199,34 +199,34 @@
 .end method
 
 .method public setTouchModal(Z)V
-    .locals 6
+    .locals 5
 
-    sget-object v1, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
+    sget-object v0, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
     :try_start_0
-    sget-object v1, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
+    sget-object v0, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
 
-    iget-object v2, p0, Landroid/support/v7/widget/MenuPopupWindow;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v1, p0, Landroid/support/v7/widget/MenuPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v3, v4
+    const/4 v4, 0x0
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object v3, v2, v4
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -235,11 +235,11 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v1, "MenuPopupWindow"
+    const-string/jumbo v0, "MenuPopupWindow"
 
-    const-string/jumbo v2, "Could not invoke setTouchModal() on PopupWindow. Oh well."
+    const-string/jumbo v1, "Could not invoke setTouchModal() on PopupWindow. Oh well."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

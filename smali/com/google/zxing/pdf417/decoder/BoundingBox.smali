@@ -326,26 +326,34 @@
 
 # virtual methods
 .method addMissingRows(IIZ)Lcom/google/zxing/pdf417/decoder/BoundingBox;
-    .locals 12
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
         }
     .end annotation
 
-    iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topLeft:Lcom/google/zxing/ResultPoint;
+    const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomLeft:Lcom/google/zxing/ResultPoint;
+    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topLeft:Lcom/google/zxing/ResultPoint;
+
+    iget-object v6, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomLeft:Lcom/google/zxing/ResultPoint;
 
     iget-object v4, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topRight:Lcom/google/zxing/ResultPoint;
 
     iget-object v5, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomRight:Lcom/google/zxing/ResultPoint;
 
-    if-gtz p1, :cond_0
+    if-gtz p1, :cond_2
 
+    move-object v2, v3
+
+    :cond_0
     :goto_0
-    if-gtz p2, :cond_4
+    if-gtz p2, :cond_5
 
+    move-object v3, v6
+
+    :cond_1
     :goto_1
     invoke-direct {p0}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->calculateMinMaxValues()V
 
@@ -357,113 +365,107 @@
 
     return-object v0
 
-    :cond_0
-    if-nez p3, :cond_1
-
-    iget-object v11, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topRight:Lcom/google/zxing/ResultPoint;
-
-    :goto_2
-    invoke-virtual {v11}, Lcom/google/zxing/ResultPoint;->getY()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    sub-int v9, v0, p1
-
-    if-ltz v9, :cond_2
-
-    :goto_3
-    new-instance v10, Lcom/google/zxing/ResultPoint;
-
-    invoke-virtual {v11}, Lcom/google/zxing/ResultPoint;->getX()F
-
-    move-result v0
-
-    int-to-float v1, v9
-
-    invoke-direct {v10, v0, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
+    :cond_2
     if-nez p3, :cond_3
 
-    move-object v4, v10
+    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topRight:Lcom/google/zxing/ResultPoint;
+
+    :goto_2
+    invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getY()F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    sub-int/2addr v1, p1
+
+    if-ltz v1, :cond_4
+
+    :goto_3
+    new-instance v2, Lcom/google/zxing/ResultPoint;
+
+    invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getX()F
+
+    move-result v0
+
+    int-to-float v1, v1
+
+    invoke-direct {v2, v0, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+
+    if-nez p3, :cond_0
+
+    move-object v4, v2
+
+    move-object v2, v3
 
     goto :goto_0
 
-    :cond_1
-    iget-object v11, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topLeft:Lcom/google/zxing/ResultPoint;
+    :cond_3
+    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->topLeft:Lcom/google/zxing/ResultPoint;
 
     goto :goto_2
 
-    :cond_2
-    const/4 v9, 0x0
+    :cond_4
+    move v1, v2
 
     goto :goto_3
 
-    :cond_3
-    move-object v2, v10
+    :cond_5
+    if-nez p3, :cond_6
 
-    goto :goto_0
-
-    :cond_4
-    if-nez p3, :cond_5
-
-    iget-object v6, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomRight:Lcom/google/zxing/ResultPoint;
+    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomRight:Lcom/google/zxing/ResultPoint;
 
     :goto_4
-    invoke-virtual {v6}, Lcom/google/zxing/ResultPoint;->getY()F
+    invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getY()F
 
-    move-result v0
+    move-result v1
 
-    float-to-int v0, v0
+    float-to-int v1, v1
 
-    add-int v8, v0, p2
+    add-int/2addr v1, p2
 
-    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->image:Lcom/google/zxing/common/BitMatrix;
+    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->image:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
-    move-result v0
+    move-result v3
 
-    if-ge v8, v0, :cond_6
+    if-ge v1, v3, :cond_7
 
     :goto_5
-    new-instance v7, Lcom/google/zxing/ResultPoint;
+    new-instance v3, Lcom/google/zxing/ResultPoint;
 
-    invoke-virtual {v6}, Lcom/google/zxing/ResultPoint;->getX()F
+    invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v0
 
-    int-to-float v1, v8
+    int-to-float v1, v1
 
-    invoke-direct {v7, v0, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v3, v0, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    if-nez p3, :cond_7
+    if-nez p3, :cond_1
 
-    move-object v5, v7
+    move-object v5, v3
+
+    move-object v3, v6
 
     goto :goto_1
 
-    :cond_5
-    iget-object v6, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomLeft:Lcom/google/zxing/ResultPoint;
+    :cond_6
+    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->bottomLeft:Lcom/google/zxing/ResultPoint;
 
     goto :goto_4
 
-    :cond_6
-    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->image:Lcom/google/zxing/common/BitMatrix;
+    :cond_7
+    iget-object v1, p0, Lcom/google/zxing/pdf417/decoder/BoundingBox;->image:Lcom/google/zxing/common/BitMatrix;
 
-    invoke-virtual {v0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+    invoke-virtual {v1}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
-    move-result v0
+    move-result v1
 
-    add-int/lit8 v8, v0, -0x1
+    add-int/lit8 v1, v1, -0x1
 
     goto :goto_5
-
-    :cond_7
-    move-object v3, v7
-
-    goto :goto_1
 .end method
 
 .method getBottomLeft()Lcom/google/zxing/ResultPoint;

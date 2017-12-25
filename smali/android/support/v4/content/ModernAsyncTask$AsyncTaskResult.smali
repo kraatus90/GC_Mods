@@ -37,7 +37,7 @@
 
 # direct methods
 .method varargs constructor <init>(Landroid/support/v4/content/ModernAsyncTask;[Ljava/lang/Object;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,8 +45,6 @@
             "[TData;)V"
         }
     .end annotation
-
-    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

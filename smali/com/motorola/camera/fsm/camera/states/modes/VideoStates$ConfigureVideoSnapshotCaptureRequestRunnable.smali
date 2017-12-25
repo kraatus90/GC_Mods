@@ -90,9 +90,9 @@
 
     const-string/jumbo v2, "SEQ_ID"
 
-    iget v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     return-void
 .end method

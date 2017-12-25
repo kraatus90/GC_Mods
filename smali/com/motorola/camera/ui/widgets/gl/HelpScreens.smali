@@ -404,7 +404,7 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v2, 0x7f0800ef
+    const v2, 0x7f0800f0
 
     invoke-virtual {v9, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -549,9 +549,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$96;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$7;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$96;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$7;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
 
@@ -566,9 +566,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$97;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$8;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$97;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$8;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
 
@@ -627,9 +627,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$98;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$9;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$98;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$9;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
 
@@ -673,7 +673,7 @@
 .end method
 
 .method private getCommonTutorialScreenList()Ljava/util/ArrayList;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -727,19 +727,19 @@
 
     move-result v4
 
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCharacteristics()Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v5
-
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->isInitialized()Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_0
+    if-eqz v5, :cond_0
 
-    sget-object v0, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_BARCODE_MODES:Lcom/motorola/camera/mcf/Mcf$CapKey;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraSensorName()Ljava/lang/String;
 
-    invoke-static {v5, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    move-result-object v0
+
+    sget-object v5, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_BARCODE_MODES:Lcom/motorola/camera/mcf/Mcf$CapKey;
+
+    invoke-static {v0, v5}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1050,7 +1050,7 @@
 
     iput v0, v1, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v0, 0x7f0200b9
+    const v0, 0x7f0200c2
 
     iput v0, v1, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->animDrawable:I
 
@@ -1080,37 +1080,37 @@
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$50;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$50;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800c9
+    const v2, 0x7f0800ca
 
     invoke-virtual {v1, v2, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setNegativeButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$51;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$51;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$1;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800ca
+    const v2, 0x7f0800cb
 
     invoke-virtual {v1, v2, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
     :goto_0
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$57;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$5;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$57;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$5;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setOnDismissListener(Lcom/motorola/camera/ui/widgets/AlertPopup$OnDismissListener;)V
 
     return-object v1
 
     :cond_0
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$52;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$2;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$52;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$2;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800b2
+    const v2, 0x7f0800b3
 
     invoke-virtual {v1, v2, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
@@ -2329,9 +2329,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$167;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$14;
 
-    invoke-direct {v1, p2, p0, p5, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$167;-><init>(ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p2, p0, p5, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$14;-><init>(ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1, p3, p4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -2777,7 +2777,7 @@
 
     if-ge p2, v0, :cond_c
 
-    const v0, 0x7f0800ef
+    const v0, 0x7f0800f0
 
     :goto_6
     invoke-virtual {v6, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
@@ -2869,7 +2869,7 @@
     goto :goto_5
 
     :cond_c
-    const v0, 0x7f0800b2
+    const v0, 0x7f0800b3
 
     goto :goto_6
 .end method
@@ -2881,27 +2881,27 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;-><init>()V
 
-    const v1, 0x7f0800b1
+    const v1, 0x7f0800b2
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v1, 0x7f0800ae
+    const v1, 0x7f0800af
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$53;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$53;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$3;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800b8
+    const v2, 0x7f0800b9
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$54;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$4;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$54;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$4;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800be
+    const v2, 0x7f0800bf
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setNegativeButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
@@ -3271,7 +3271,145 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$10()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_23780(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+    .locals 2
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$10;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$10;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_23846()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_23996(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->QUICK_DRAW:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$11;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$11;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_24131()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_24299(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+    .locals 2
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$12;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$12;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_24365()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_24499()V
+    .locals 2
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$13;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$13;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_24558()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_31111()V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -3287,7 +3425,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$11()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_31316()V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -3303,7 +3441,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$12(Lcom/motorola/camera/ui/widgets/gl/HelpScreens$ScreenConfig;[Lcom/motorola/camera/ui/widgets/gl/animations/Animation;I)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_53846(Lcom/motorola/camera/ui/widgets/gl/HelpScreens$ScreenConfig;[Lcom/motorola/camera/ui/widgets/gl/animations/Animation;I)V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mCurrentScreenConfig:[Lcom/motorola/camera/ui/widgets/gl/HelpScreens$ScreenConfig;
@@ -3347,7 +3485,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$13()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_55567()V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -3363,7 +3501,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$14(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_56031(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
     .locals 2
 
     const/4 v0, 0x0
@@ -3391,7 +3529,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$15(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_56298(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -3407,144 +3545,6 @@
     iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mCurrentScreenIdx:I
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->checkFirstTutorialNext(I)V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$2(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
-    .locals 2
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$99;
-
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$99;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$3()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$4(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
-    .locals 2
-
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->QUICK_DRAW:Lcom/motorola/camera/settings/SettingsManager$Key;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$100;
-
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$100;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$5()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$6(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
-    .locals 2
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$101;
-
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$101;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$7()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$8()V
-    .locals 2
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$102;
-
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$102;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens_lambda$9()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->DIALOG_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
 
     return-void
 .end method

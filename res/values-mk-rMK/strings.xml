@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">Движи се кон дома</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">Движи се нагоре</string>
-    <string name="abc_action_menu_overflow_description">Повеќе опции</string>
-    <string name="abc_action_mode_done">Готово</string>
-    <string name="abc_activity_chooser_view_see_all">Види ги сите</string>
-    <string name="abc_activitychooserview_choose_application">Избери апликација</string>
-    <string name="abc_capital_off">ИСКЛУЧЕНО</string>
-    <string name="abc_capital_on">ВКЛУЧЕНО</string>
-    <string name="abc_search_hint">Пребарување…</string>
-    <string name="abc_searchview_description_clear">Исчисти барање</string>
-    <string name="abc_searchview_description_query">Пребарај барање</string>
-    <string name="abc_searchview_description_search">Пребарај</string>
-    <string name="abc_searchview_description_submit">Поднеси барање</string>
-    <string name="abc_searchview_description_voice">Гласовно пребарување</string>
-    <string name="abc_shareactionprovider_share_with">Сподели со</string>
-    <string name="abc_toolbar_collapse_description">Собери</string>
     <string name="common_android_wear_notification_needs_update_text">Една апликација бара ажурирање на апликацијата Android Wear.</string>
     <string name="common_android_wear_update_text">Апликацијата нема да работи ако не ја ажурирате апликацијата Android Wear.</string>
     <string name="common_android_wear_update_title">Ажурирај Android Wear</string>
@@ -48,8 +31,6 @@
     <string name="common_signin_button_text">Најави се</string>
     <string name="common_signin_button_text_long">Најави се со Google</string>
     <string name="commono_google_play_services_api_unavailable_text">Оваа апликација бара една или повеќе услуги на Google Play што во моментов не се достапни. Контактирајте со програмерот за помош.</string>
-    <string name="search_menu_title">Пребарај</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="act_name_camcorder">Видео камера</string>
     <string name="act_name_camera">Камера</string>
     <string name="action_licenses">Лиценци за отворен код</string>
@@ -146,7 +127,7 @@
     <string name="cancel">Откажи</string>
     <string name="capture_failure">Снимањето е неуспешно. Обидете се повторно.</string>
     <string name="checkbox_do_not_show">Не покажувај повторно</string>
-    <string name="cloudsight_terms">Вашите слики ќе бидат испратени на CloudSight за да се обезбедат резултати од пребарувањето. &lt;br/>&lt;br/> Со продолжувањето, се согласувате на &lt;a href=%1$s>Политиката за приватност&lt;/a> на CloudSight.</string>
+    <string name="cloudsight_terms">Секогаш кога ја користите функцијата за препознавање објекти, сликата и локацијата (ако е овозможена) ќе бидат испратени до трета страна која ќе обезбеди резултати од пребарувањето.&lt;br/>&lt;br/> Ако продолжите, се согласувате со&lt;a href=%1$s>Политиката за приватност&lt;/a>.</string>
     <string name="dailog_panorama_failed">Неуспешно снимање панорама. Обидете се повторно.</string>
     <string name="dailog_panorama_not_taken">Панорамска слика не е снимена.</string>
     <string name="dialog_access_sd_fail">Не може да се снимат медиумски содржини. Не може да се пристапи до SD-картичката.</string>
@@ -168,6 +149,7 @@
     <string name="dialog_device_not_supported">Уредот не е поддржан</string>
     <string name="dialog_disagree">Не се согласувам</string>
     <string name="dialog_dismiss">Не покажувај повторно</string>
+    <string name="dialog_download">Преземи</string>
     <string name="dialog_external_sd_missing">Не може да се сними слика. SD-картичката не е достапна. Префрлување на внатрешниот простор за складирање на телефонот</string>
     <string name="dialog_first_time_set_pure_raw_message">"Овој необработен тип на датотека се користи за професионално уредување на фотографии.
 
@@ -217,11 +199,11 @@
     <string name="help_desc_anywhere">Допрете каде било за да направите фотографија или допрете и задржете за да направите повеќе фотографии.</string>
     <string name="help_desc_dual_depth">Снимете дополнителни податоци што ќе ви овозможат да ја замените заднината, да додадете ефекти со боја, па дури и да го промените фокусот откако сте ја снимиле фотографијата.</string>
     <string name="help_desc_dual_mono">Снимајте фотографии со професионален изглед со камерата создадена специјално за црно-бело снимање.</string>
-    <string name="help_desc_dual_result">Погрижете се да се наоѓате на околу 1,5 метри (5 стапки) од објектот. Најдобро е ништо да не ви го попречува видикот, а објектот да се истакнува.</string>
+    <string name="help_desc_dual_result">Погрижете се да се наоѓате на околу 1,5 метри од предметот. Најдобро е ништо да не ви го попречува видикот, а предметот да се истакнува.</string>
     <string name="help_desc_quick">Завртете двапати за да ја отворите или да се префрлувате помеѓу предната или задната камера.</string>
     <string name="help_desc_quick_double_tap_pwr">Допрете го копчето за вклучување двапати за да ја отворите камерата.</string>
-    <string name="help_desc_smart_camera">Вашата камера препознава предмети и знаменитости. Таа исто така може да скенира QR кодови, деловни картички и бар-кодови.</string>
-    <string name="help_desc_smart_camera_landmark_only">Вашата камера препознава знаменитости. Таа исто така може да скенира QR кодови, деловни картички и бар-кодови.</string>
+    <string name="help_desc_smart_camera">Вашата камера препознава предмети и знаменитости. Таа исто така може да скенира QR-кодови, деловни картички и бар-кодови.</string>
+    <string name="help_desc_smart_camera_landmark_only">Вашата камера препознава знаменитости. Таа исто така може да скенира QR-кодови, деловни картички и бар-кодови.</string>
     <string name="help_desc_zoom">Повлечете нагоре и надолу за да зумирате.</string>
     <string name="help_done">Завршено</string>
     <string name="help_dtfe_focus_header">Промена на фокусот и експозицијата</string>
@@ -245,7 +227,8 @@
     <string name="help_next">Следно</string>
     <string name="image_360_desc">Ова е фотографија во 360 степени. Може да ја уредувате фотографијата со Уредувачот на Moto 360.</string>
     <string name="image_360_name">Фотографија во 360 степени</string>
-    <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
+    <string name="image_ratio_res_summary">%1$d:%2$d (%3$s %4$s)</string>
     <string name="indicate_mode_depth">ОВОЗМОЖЕНА ДЛАБОЧИНА</string>
     <string name="indicate_mode_mono">ВИСТИНСКО ЦРНО-БЕЛО</string>
     <string name="indicate_mode_normal">ФОТОГРАФИЈА</string>
@@ -256,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">НЕВЕРОЈАТНО ШИРОК АГОЛ</string>
     <string name="indicate_mode_video">ВИДЕО</string>
     <string name="indicate_mode_wide_angle">ШИРОКОАГОЛНО</string>
+    <string name="indicate_mode_wide_angle_selfie">ШИРОКОАГОЛЕН АВТОПОРТРЕТ</string>
     <string name="internal_storage">внатрешна меморија</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Препознавањето на знаменитости нуди информации за популарните знаменитости низ светот.&lt;br/>&lt;br/>Инсталирајте за да ја овозможите оваа функција.</string>
-    <string name="landmark_install_over_data">Големината на преземањето на препознавањето на знаменитостите е 92 MB. Инсталирањето преку мобилен интернет може да предизвика дополнителни трошоци за податоците.</string>
-    <string name="landmark_notification_downloading">Преземање на Препознавање на знаменитости</string>
-    <string name="landmark_notification_install">Инсталирање на Препознавање на знаменитости</string>
-    <string name="landmark_notification_install_complete">Инсталирањето на Препознавањето на знаменитостите е завршено</string>
-    <string name="landmark_notification_install_failed">Инсталирањето на Препознавањето на знаменитостите е неуспешно</string>
+    <string name="landmark_install_message">Препознавањето на знаменитости нуди информации за популарните знаменитости низ светот.&lt;br/>&lt;br/>Преземете ја базата на податоци за знаменитости за да ја овозможите оваа функција.</string>
+    <string name="landmark_install_over_data">Големината на преземањето на базата на податоци за знаменитости е 92 MB. Преземањето преку мобилен интернет може да предизвика дополнителни трошоци за податоците.</string>
+    <string name="landmark_notification_downloading">Преземање на базата на податоци за знаменитости</string>
+    <string name="landmark_notification_install">Инсталирање на базата на податоци за знаменитости</string>
+    <string name="landmark_notification_install_complete">Инсталирањето на базата на податоци за знаменитости е завршено</string>
+    <string name="landmark_notification_install_failed">Инсталирањето на базата на податоци за знаменитости е неуспешно</string>
     <string name="landmark_notification_install_invalid_url">Базата на податоци за знаменитостите не е достапна, извршете ажурирање на најновата верзија за камерата</string>
-    <string name="landmark_notification_install_out_of_space">Нема доволно простор за инсталирање на Препознавање на знаменитости</string>
+    <string name="landmark_notification_install_out_of_space">Нема доволно простор за инсталирање на базата на податоци за знаменитости</string>
+    <string name="landmark_notification_paused">Базата на податоци за знаменитости ќе продолжи да се презема кога ќе има достапна интернет-врска</string>
+    <string name="landmark_notification_queued">Базата на податоци за знаменитости ќе започне да се презема кога ќе има достапна интернет-врска</string>
     <string name="main_setting_amz_barcode">Скенирање на бар-код на Amazon</string>
     <string name="main_setting_amz_privacy">Известување за приватност на Amazon</string>
     <string name="main_setting_amz_terms">Услови за користење</string>
@@ -287,16 +273,18 @@
     <string name="main_setting_help_ui">Повторно пушти го упатството</string>
     <string name="main_setting_image_ratio">Големина на фотографија (задна)</string>
     <string name="main_setting_image_ratio_front">Големина на фотографија (предна)</string>
-    <string name="main_setting_landmark_detection">Препознавање на знаменитост</string>
+    <string name="main_setting_landmark_detection">Препознавање знаменитост</string>
+    <string name="main_setting_landmark_version_current">Верзија на базата на податоци: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Базата на податоци не е инсталирана</string>
     <string name="main_setting_licenses">Лиценци за отворен код</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
-    <string name="main_setting_object_detect">Препознавање на предмет</string>
+    <string name="main_setting_object_detect">Препознавање предмет</string>
     <string name="main_setting_object_privacy">Политика за приватност</string>
     <string name="main_setting_post_capture_review">Прегледување по снимањето</string>
     <string name="main_setting_quick_launch">Брзо снимање</string>
     <string name="main_setting_quick_launch_double_tap_pwr_summary">Допрете го копчето за вклучување двапати за да ја отворите камерата</string>
-    <string name="main_setting_quick_launch_summary">Завртете двапати за да ја отворите или да се префрлувате помеѓу предната или задната камера</string>
+    <string name="main_setting_quick_launch_summary">Завртете двапати за отворање или префрлање помеѓу предната и задната камера</string>
     <string name="main_setting_slow_motion_size">Големина на забавена снимка (задна)</string>
     <string name="main_setting_slow_motion_size_front">Големина на забавена снимка (предна)</string>
     <string name="main_setting_smart_camera_about">Информации за паметната камера</string>
@@ -313,7 +301,7 @@
     <string name="main_setting_video_size_front">Големина на видео (предна)</string>
     <string name="mcf_bg_processing">СЕ ЗАЧУВУВА…</string>
     <string name="mega_bytes">" MB"</string>
-    <string name="mega_pixels">MP</string>
+    <string name="mega_pixels">" MP"</string>
     <string name="original_shot_desc">Има и друга снимка. Снимивме подобра фотографија за овој момент.</string>
     <string name="original_shot_name">Оригинална снимка</string>
     <string name="perm_control_camera_desc">Дозволете ѝ на апликацијата да ја контролира камерата на Motorola.</string>
@@ -323,6 +311,9 @@
     <string name="perm_required_alert_title">Потребни дозволи</string>
     <string name="photos_depth_desc">Користете го уредувачот на длабочина за да го избирате фокусот, да ја менувате заднината или да изберете област што ќе добие црно-бел ефект.</string>
     <string name="photos_depth_name">Овозможена длабочина</string>
+    <string name="photos_notification_desc">Добијте неограничен простор за складирање со Google Photos</string>
+    <string name="photos_notification_title">Направи резервна копија на Google Photos</string>
+    <string name="qcfa_resolution_description">За слаба осветленост</string>
     <string name="retake">Повтори</string>
     <string name="second_10">10 сек.</string>
     <string name="second_3">3 сек.</string>
@@ -361,10 +352,11 @@
     <string name="setting_mode_normal">Фотографија</string>
     <string name="setting_mode_panorama">Панорама</string>
     <string name="setting_mode_pro">Професионален режим</string>
-    <string name="setting_mode_select_color">Боја на мастило</string>
+    <string name="setting_mode_select_color">Истакната боја</string>
     <string name="setting_mode_slow_motion">Забавено движење</string>
     <string name="setting_mode_ultra_wide">Неверојатно широк агол</string>
     <string name="setting_mode_video">Видео</string>
+    <string name="setting_mode_wide_angle_selfie">Широкоаголен автопортрет</string>
     <string name="setting_off">Исклучено</string>
     <string name="setting_on">Вклучено</string>
     <string name="setting_persist">Почекај</string>
@@ -381,22 +373,27 @@
     <string name="setting_timer_dialog_title">ТАЈМЕР</string>
     <string name="setting_torch">Светилка</string>
     <string name="setting_true">точно</string>
+    <string name="shortcut_desc_depth">Длаб. фото.</string>
+    <string name="shortcut_desc_selfie">Автопорт.</string>
+    <string name="shortcut_desc_video">Видео</string>
     <string name="smartcam_landmark_notification_title">Паметна камера</string>
+    <string name="smartcam_no_detections">Нема зачувани објекти или знаменитости</string>
     <string name="storage_location_external">SD-картичка</string>
     <string name="storage_location_internal">Телефон</string>
     <string name="storage_unavailable">Просторот за складирање не е достапен</string>
+    <string name="toast_battery_saver">Во моментов сте во режим на заштеда на енергија, одредени функции може да бидат ограничени</string>
     <string name="toast_geotag_message_1">Мора да ја одобрите дозволата за локација за да овозможите зачувување на локацијата.</string>
     <string name="toast_geotag_message_2">Поставката за локација се активира само откако ќе ја вклучите поставката за локација на системот.</string>
     <string name="tooltip_camera_switch_360">Пробајте ги различните опции на камерата.</string>
     <string name="tooltip_capture_360">Снимете фотографија или видео од 360° со допирање на ова копче за блендата.</string>
-    <string name="tooltip_capture_key_360">Снимајте и со помош на копчето за блендата на задниот дел на Mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Снимајте фотографии со повеќе информации за специјалните функции за уредување.</string>
+    <string name="tooltip_capture_key_360">Може да се обидете да снимите и со копчето за бленда на задниот дел на Mod.</string>
     <string name="tooltip_first_use_zoom_button">Допрете овде за да се префрлите во широкоаголен режим.</string>
     <string name="tooltip_gallery_360">Повлечете налево за да ја видите фотографијата или видеото од 360°.</string>
     <string name="tooltip_minimap_viewfinder">Вртете ја долната слика панорамски налево или надесно.</string>
     <string name="tooltip_mode_switch_360">Пробајте да снимате во 360° во различни режими.</string>
+    <string name="tooltip_modes_list">Откријте нови начини за фотографирање.</string>
     <string name="tooltip_smart_camera">Допрете за да дознаете повеќе за предметот.</string>
-    <string name="tooltip_smart_camera_disable">Ова поставување можете да го исклучите во \"Поставки\".</string>
+    <string name="tooltip_smart_camera_disable">Ова може да го исклучите во „Поставки“.</string>
     <string name="tooltip_spherical_viewfinder">Вртете панорамски или зумирајте и одзумирајте за да го контролирате приказот.</string>
     <string name="tooltip_viewfinder_switch">Допрете овде за поинаков приказ на екранот.</string>
     <string name="video_360_desc">Ова е видео во 360 степени. Може да го уредувате видеото со Уредувачот на Moto 360.</string>
@@ -408,7 +405,7 @@
     <string name="video_res_QHD">qHD %1$sp (%2$sfps)</string>
     <string name="video_res_SD">%1$sp (%2$sfps)</string>
     <string name="video_res_UHD_4K">4K Ultra HD (%1$s рамки/секунда)</string>
-    <string name="video_res_VGA">VGA %1$sp (%2$sfps)</string>
+    <string name="video_res_VGA">VGA %1$s пиксели (%2$s рамки/секунда)</string>
     <string name="warning_lenses_cover">Не може да се сними фотографија со длабочина ако едниот или двата објективи на камерата се покриени. Ќе се сними нормална фотографија.</string>
     <string name="warning_obj_too_close">Објектите се преблиску за да се сними фотографија со длабочина. Ќе се сними нормална фотографија.</string>
     <string name="warning_obj_too_far">Објектите се предалеку за да се сними фотографија со длабочина. Ќе се сними нормална фотографија.</string>
@@ -417,6 +414,10 @@
     <string name="zoom_hint_full">ЦЕЛОСНО</string>
     <string name="zoom_hint_wide">ШИРОКО</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">За слаба осветленост</string>
+    <string name="indicate_mode_timelapse">ЗАБАВЕНО СНИМАЊЕ</string>
+    <string name="setting_mode_timelapse">Забавено снимање</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

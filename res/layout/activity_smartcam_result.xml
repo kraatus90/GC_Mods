@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/frame_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/smartcam_cards_ctn" android:background="@drawable/bg_smartcam_gradient" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.motorola.camera.detector.SmartCamResultCards android:id="@id/smartcam_cards" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="@dimen/smartcam_card_margin" android:layout_marginEnd="@dimen/smartcam_card_margin" />
+    </FrameLayout>
+</FrameLayout>

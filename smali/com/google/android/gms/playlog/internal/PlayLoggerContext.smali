@@ -69,11 +69,9 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Z)V
-    .locals 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
-
-    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -93,7 +91,9 @@
 
     iput p3, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayC:I
 
-    iput-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayG:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayG:Ljava/lang/String;
 
     iput-object p4, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayD:Ljava/lang/String;
 
@@ -221,69 +221,69 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->packageName:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->packageName:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayB:I
 
-    iget v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayB:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    iget v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayC:I
 
-    iget v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayC:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayG:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayG:Ljava/lang/String;
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayD:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayD:Ljava/lang/String;
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayE:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayE:Ljava/lang/String;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    iget-boolean v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayF:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayF:Z
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    iget-boolean v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayH:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayH:Z
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

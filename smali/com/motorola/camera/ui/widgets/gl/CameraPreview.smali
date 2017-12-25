@@ -2,6 +2,9 @@
 .super Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 .source "CameraPreview.java"
 
+# interfaces
+.implements Lcom/motorola/camera/Notifier$Listener;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -39,6 +42,8 @@
 
 .field public static final COLOR_MINIMAP_BG:[I
 
+.field private static final FULL_ALPHA:F = 1.0f
+
 .field private static final HIGHLIGHT_HEIGHT:F = 150.0f
 
 .field private static final HIGHLIGHT_HEIGHT_BOX:F = 138.0f
@@ -52,6 +57,10 @@
 .field private static final IMAGE_RATIO_ANIM:I = 0x19
 
 .field private static final IMAGE_RATIO_ANIM_DURATION:J = 0xc8L
+
+.field private static final MULTISHOT_ALPHA:F = 0.75f
+
+.field private static final NO_ALPHA:F = 0.0f
 
 .field private static final OFF_SCREEN_SCALE:F = 0.5f
 
@@ -345,7 +354,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c004a
+    const v1, 0x7f0c004c
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -449,9 +458,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewSlaveTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$63;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$63;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U$1;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFirstFrameCallback:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
 
@@ -566,11 +575,18 @@
 
     invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/CameraPreview;)V
 
+    sget-object v2, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->MULTI:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCaptureType:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
+
+    if-ne v2, v3, :cond_0
+
+    const/high16 v4, 0x3f400000    # 0.75f
+
+    :goto_0
     sget-object v6, Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;->RESTART:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
 
     const-wide/16 v2, 0xc8
-
-    const/4 v4, 0x0
 
     const/high16 v5, 0x3f800000    # 1.0f
 
@@ -605,6 +621,11 @@
     monitor-exit p0
 
     return-void
+
+    :cond_0
+    const/4 v4, 0x0
+
+    goto :goto_0
 
     :catchall_0
     move-exception v0
@@ -1878,9 +1899,9 @@
 .method private declared-synchronized enableFpsReporting()V
     .locals 6
 
-    const/4 v1, 0x1
-
     const/4 v2, 0x0
+
+    const/4 v1, 0x1
 
     monitor-enter p0
 
@@ -1911,8 +1932,29 @@
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v3
+    move-result v0
 
+    if-nez v0, :cond_1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    move v3, v0
+
+    :goto_0
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
@@ -1943,18 +1985,18 @@
 
     const/4 v5, 0x2
 
-    if-ne v5, v0, :cond_1
+    if-ne v5, v0, :cond_2
 
     move v0, v1
 
-    :goto_0
+    :goto_1
     iget-object v5, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
 
-    if-nez v3, :cond_2
+    if-nez v3, :cond_3
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
-    :goto_1
+    :goto_2
     invoke-virtual {v5, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->reportFps(Z)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1964,19 +2006,24 @@
     return-void
 
     :cond_1
-    move v0, v2
+    move v3, v1
 
     goto :goto_0
 
     :cond_2
-    move v0, v1
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
+    move v0, v1
+
+    goto :goto_2
+
+    :cond_4
     move v0, v2
 
-    goto :goto_1
+    goto :goto_2
 
     :catchall_0
     move-exception v0
@@ -2210,9 +2257,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$94;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$94;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U$3;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
@@ -2229,7 +2276,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview_lambda$2()V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview_24233()V
     .locals 2
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
@@ -2355,7 +2402,9 @@
 .end method
 
 .method private updateViewfinder()V
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x0
 
     const/4 v0, 0x5
 
@@ -2386,6 +2435,17 @@
     invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setViewfinderSetting(I)V
 
     :goto_0
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setInstaPrintVerticesData(Z)V
+
+    :goto_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->resetPosition()V
@@ -2415,11 +2475,16 @@
     :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setViewfinderSetting(I)V
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setViewfinderSetting(I)V
 
     goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setDefaultVerticesData()V
+
+    goto :goto_1
 .end method
 
 
@@ -2493,7 +2558,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x15
+    const/16 v1, 0x16
 
     new-array v1, v1, [Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2569,57 +2634,63 @@
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_HELP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_OPEN_PHOTO_WAIT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xc
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_HELP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xd
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xe
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xf
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_UPDATE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x10
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_UPDATE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x11
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_CAPTURING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x12
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_CAPTURING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x13
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_SNAP_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x14
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_SNAP_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x15
 
     aput-object v2, v1, v3
 
@@ -2642,94 +2713,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview_lambda$1()V
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$PreviewHolder;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$PreviewHolder;-><init>(Lcom/motorola/camera/PreviewSize;Lcom/motorola/camera/PreviewSize;)V
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->applyPreviewChange(Lcom/motorola/camera/ui/widgets/gl/CameraPreview$PreviewHolder;)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->CAMERA_SWITCH_PREVIEW_END:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;Ljava/lang/Object;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mTextureManager:Lcom/motorola/camera/ui/widgets/gl/iTextureManager;
-
-    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/iTextureManager$Projection;->ORTHO:Lcom/motorola/camera/ui/widgets/gl/iTextureManager$Projection;
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iTextureManager;->setProjection(Lcom/motorola/camera/ui/widgets/gl/iTextureManager$Projection;)V
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
-
-    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->ANIMATE_FOR_ZOOM_SWITCH:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->animateViewfinderChange(Z)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
-
-    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->ANIMATE_FOR_ZOOM_SWITCH:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
-
-    sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/CameraKpi$KPI;->VIDEO_COMPLETION:Lcom/motorola/camera/CameraKpi$KPI;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->endKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview_lambda$3()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview_34953()V
     .locals 5
 
     monitor-enter p0
@@ -2803,6 +2787,107 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview_8897()V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->isTexInitialized()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$PreviewHolder;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$PreviewHolder;-><init>(Lcom/motorola/camera/PreviewSize;Lcom/motorola/camera/PreviewSize;)V
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->applyPreviewChange(Lcom/motorola/camera/ui/widgets/gl/CameraPreview$PreviewHolder;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->CAMERA_SWITCH_PREVIEW_END:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v2, v3}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;Ljava/lang/Object;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mTextureManager:Lcom/motorola/camera/ui/widgets/gl/iTextureManager;
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/iTextureManager$Projection;->ORTHO:Lcom/motorola/camera/ui/widgets/gl/iTextureManager$Projection;
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iTextureManager;->setProjection(Lcom/motorola/camera/ui/widgets/gl/iTextureManager$Projection;)V
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->ANIMATE_FOR_ZOOM_SWITCH:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->animateViewfinderChange(Z)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->ANIMATE_FOR_ZOOM_SWITCH:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/CameraKpi$KPI;->VIDEO_COMPLETION:Lcom/motorola/camera/CameraKpi$KPI;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->endKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_1
     monitor-exit p0
 
     return-void
@@ -3273,11 +3358,9 @@
 .end method
 
 .method public declared-synchronized onDrawFbo([F[F[F)V
-    .locals 9
+    .locals 11
 
-    const/high16 v8, -0x40800000    # -1.0f
-
-    const/high16 v5, 0x40000000    # 2.0f
+    const/high16 v10, 0x40000000    # 2.0f
 
     monitor-enter p0
 
@@ -3310,6 +3393,30 @@
 
     move-result-object v1
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFrameCopyRequest:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;->-get2(Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;)Landroid/graphics/Rect;
+
+    move-result-object v8
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getMaxSurfaceSize()Landroid/graphics/Point;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/graphics/Point;->x:I
+
+    int-to-float v0, v0
+
+    invoke-virtual {v8}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    div-float v9, v0, v2
+
     const/16 v0, 0x10
 
     new-array v0, v0, [F
@@ -3320,13 +3427,13 @@
 
     int-to-float v2, v2
 
-    div-float/2addr v2, v5
+    div-float/2addr v2, v10
 
     iget v3, v1, Landroid/graphics/Point;->x:I
 
     int-to-float v3, v3
 
-    div-float/2addr v3, v5
+    div-float/2addr v3, v10
 
     iget v4, v1, Landroid/graphics/Point;->y:I
 
@@ -3334,13 +3441,13 @@
 
     int-to-float v4, v4
 
-    div-float/2addr v4, v5
+    div-float/2addr v4, v10
 
     iget v1, v1, Landroid/graphics/Point;->y:I
 
     int-to-float v1, v1
 
-    div-float v5, v1, v5
+    div-float v5, v1, v10
 
     const/4 v1, 0x0
 
@@ -3362,15 +3469,41 @@
 
     invoke-static {p1, v2, v1, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v2, 0x0
+    invoke-virtual {v8}, Landroid/graphics/Rect;->exactCenterX()F
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
+    move-result v2
 
-    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->getPreviewOffset()F
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v3}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getSurfaceSize()Landroid/graphics/Point;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/graphics/Point;->x:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v10
+
+    sub-float/2addr v2, v3
+
+    invoke-virtual {v8}, Landroid/graphics/Rect;->exactCenterY()F
 
     move-result v3
 
-    mul-float/2addr v3, v8
+    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v4}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getSurfaceSize()Landroid/graphics/Point;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/graphics/Point;->y:I
+
+    int-to-float v4, v4
+
+    div-float/2addr v4, v10
+
+    sub-float/2addr v3, v4
 
     const/4 v4, 0x0
 
@@ -3388,6 +3521,10 @@
 
     invoke-static {v1, v2, v3, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->rotate([FFFFF)V
 
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-static {v1, v9, v9, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->scale([FFFF)V
+
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFrameCopyRequest:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;
 
     invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;->-get1(Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
@@ -3396,7 +3533,7 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFrameCopyRequest:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;
 
-    invoke-static {v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;->-get2(Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;)F
+    invoke-static {v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;->-get3(Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;)F
 
     move-result v3
 
@@ -3892,6 +4029,14 @@
     throw v0
 .end method
 
+.method public onUpdate(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->animateCapture()V
+
+    return-void
+.end method
+
 .method public onViewfinderTooltipHide()V
     .locals 1
 
@@ -3912,7 +4057,7 @@
     return-void
 .end method
 
-.method public declared-synchronized requestFrameCopy(Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;FLcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyCallback;)V
+.method public declared-synchronized requestFrameCopy(Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;FLcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyCallback;Landroid/graphics/Rect;)V
     .locals 1
 
     monitor-enter p0
@@ -3920,7 +4065,7 @@
     :try_start_0
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;
 
-    invoke-direct {v0, p1, p2, p3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;FLcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyCallback;)V
+    invoke-direct {v0, p1, p2, p3, p4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;FLcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyCallback;Landroid/graphics/Rect;)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFrameCopyRequest:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$FrameCopyRequest;
     :try_end_0
@@ -4131,9 +4276,9 @@
         }
     .end annotation
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -4170,7 +4315,7 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
+    invoke-virtual {p0, v4, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
 
@@ -4267,6 +4412,14 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->onInitStartPreviewExit()V
 
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHUTTER:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->addListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
     goto :goto_0
 
     :cond_6
@@ -4276,7 +4429,7 @@
 
     if-eqz v0, :cond_7
 
-    invoke-virtual {p0, v4, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
+    invoke-virtual {p0, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
 
     goto :goto_0
 
@@ -4304,7 +4457,7 @@
     if-eqz v0, :cond_9
 
     :cond_8
-    iput-boolean v4, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mEnableUiEvent:Z
+    iput-boolean v3, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mEnableUiEvent:Z
 
     goto :goto_0
 
@@ -4326,7 +4479,7 @@
     if-eqz v0, :cond_b
 
     :cond_a
-    invoke-direct {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
+    invoke-direct {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
 
     goto/16 :goto_0
 
@@ -4341,7 +4494,7 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->enableFpsReporting()V
 
-    invoke-direct {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
+    invoke-direct {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
 
     goto/16 :goto_0
 
@@ -4411,7 +4564,7 @@
 
     if-eqz v0, :cond_f
 
-    invoke-virtual {p0, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
+    invoke-virtual {p0, v4, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
 
     :cond_f
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -4449,7 +4602,7 @@
 
     if-eqz v0, :cond_13
 
-    invoke-direct {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
+    invoke-direct {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
 
     goto/16 :goto_0
 
@@ -4462,7 +4615,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
+    invoke-virtual {p0, v4, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
 
     goto/16 :goto_0
 
@@ -4473,7 +4626,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -4487,7 +4640,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
 
@@ -4501,7 +4654,7 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->enableFpsReporting()V
 
-    invoke-virtual {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraClosing(Z)V
+    invoke-virtual {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraClosing(Z)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
 
@@ -4511,22 +4664,31 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_15
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderSurface()V
 
+    :cond_15
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U;
+
+    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U;-><init>()V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setFirstFrameCallback(Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;)V
+
     goto/16 :goto_1
 
-    :cond_15
+    :cond_16
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CLOSE_CAPTURE_SESSION_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_18
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -4540,11 +4702,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_17
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->cameraSwitchDarken()V
 
-    :cond_16
+    :cond_17
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->SET_REPEATING_COMPLETE:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
@@ -4559,18 +4721,18 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->storePreviewSize()V
 
-    invoke-virtual {p0, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
+    invoke-virtual {p0, v4, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
 
     goto/16 :goto_1
 
-    :cond_17
+    :cond_18
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1a
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->checkPreviewSizeForAnim()V
 
@@ -4588,17 +4750,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_19
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->m360HighlightTex:Lcom/motorola/camera/ui/widgets/gl/textures/RectangleTexture;
 
-    invoke-virtual {v0, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/RectangleTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/RectangleTexture;->setVisibility(Z)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mMinimapBgTex:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
-    invoke-virtual {v0, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setVisibility(Z)V
 
-    :cond_18
+    :cond_19
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
     move-result-object v0
@@ -4643,33 +4805,6 @@
 
     goto/16 :goto_1
 
-    :cond_19
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/Constants$UseCase;->CAMERA_SWITCH:Lcom/motorola/camera/fsm/camera/Constants$UseCase;
-
-    invoke-static {v0, v1}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->isUseCase(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/Constants$UseCase;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->cameraSwitchLockTexture()V
-
-    goto/16 :goto_1
-
     :cond_1a
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -4685,7 +4820,7 @@
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/Constants$UseCase;->MODE_SWITCH:Lcom/motorola/camera/fsm/camera/Constants$UseCase;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/Constants$UseCase;->CAMERA_SWITCH:Lcom/motorola/camera/fsm/camera/Constants$UseCase;
 
     invoke-static {v0, v1}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->isUseCase(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/Constants$UseCase;)Z
 
@@ -4693,219 +4828,18 @@
 
     if-eqz v0, :cond_1b
 
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->updateViewfinder()V
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->cameraSwitchLockTexture()V
 
     goto/16 :goto_1
 
     :cond_1b
-    invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringIdle(Lcom/motorola/camera/fsm/ChangeEvent;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1c
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_CAPTURING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1c
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1d
-
-    :cond_1c
-    iput-boolean v3, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mEnableUiEvent:Z
-
-    goto/16 :goto_1
-
-    :cond_1d
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->SINGLE:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCaptureType(Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
-
-    goto/16 :goto_1
-
-    :cond_1e
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1f
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->MULTI:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCaptureType(Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
-
-    goto/16 :goto_1
-
-    :cond_1f
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->VIDEO:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCaptureType(Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
-
-    goto/16 :goto_1
-
-    :cond_20
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_21
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_21
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_WAIT_FOR_MEMORY_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    :cond_21
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
-
-    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->CAPTURE_ACTIVE:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
-
-    goto/16 :goto_1
-
-    :cond_22
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_23
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->clearAnimations()V
-
-    invoke-direct {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
-
-    goto/16 :goto_1
-
-    :cond_23
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_HELP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_24
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/DebugUiState;->DEBUG_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_24
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_INTRO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_25
-
-    :cond_24
-    invoke-direct {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
-
-    goto/16 :goto_1
-
-    :cond_25
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_SNAP_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_26
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->animateCapture()V
-
-    goto/16 :goto_1
-
-    :cond_26
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/Main;->CLOSE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_27
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->clearRotation()V
-
-    goto/16 :goto_1
-
-    :cond_27
-    invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringAppClosing(Lcom/motorola/camera/fsm/ChangeEvent;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_28
-
-    invoke-virtual {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraClosing(Z)V
-
-    goto/16 :goto_1
-
-    :cond_28
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_29
-
-    sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
-
-    if-eqz v0, :cond_2
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -4919,26 +4853,288 @@
 
     move-result v0
 
+    if-nez v0, :cond_1c
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/Constants$UseCase;->MODE_SWITCH:Lcom/motorola/camera/fsm/camera/Constants$UseCase;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->isUseCase(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/Constants$UseCase;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    :cond_1c
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->updateViewfinder()V
+
+    goto/16 :goto_1
+
+    :cond_1d
+    invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringIdle(Lcom/motorola/camera/fsm/ChangeEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1e
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_CAPTURING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1e
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1f
+
+    :cond_1e
+    iput-boolean v4, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mEnableUiEvent:Z
+
+    goto/16 :goto_1
+
+    :cond_1f
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_20
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->SINGLE:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCaptureType(Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->VIEWFINDER:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v2, v0, Lcom/motorola/camera/settings/SettingsManager$Key;->mName:Ljava/lang/String;
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->VIEWFINDER:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->get360ViewPointBundle()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    goto/16 :goto_1
+
+    :cond_20
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_21
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->MULTI:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCaptureType(Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
+
+    goto/16 :goto_1
+
+    :cond_21
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_22
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;->VIDEO:Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCaptureType(Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
+
+    goto/16 :goto_1
+
+    :cond_22
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_23
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_23
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_WAIT_FOR_MEMORY_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    :cond_23
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->CAPTURE_ACTIVE:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->add(Ljava/lang/Enum;)Z
+
+    goto/16 :goto_1
+
+    :cond_24
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_25
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->clearAnimations()V
+
+    invoke-direct {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
+
+    goto/16 :goto_1
+
+    :cond_25
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_HELP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_26
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/DebugUiState;->DEBUG_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_26
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_INTRO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_27
+
+    :cond_26
+    invoke-direct {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->darkenPreview(Z)V
+
+    goto/16 :goto_1
+
+    :cond_27
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_SNAP_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_28
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->animateCapture()V
+
+    goto/16 :goto_1
+
+    :cond_28
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/Main;->CLOSE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_29
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
+
     if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mCameraPreviewTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$6;
-
-    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$6;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setFirstFrameCallback(Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;)V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->clearRotation()V
 
     goto/16 :goto_1
 
     :cond_29
+    invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringAppClosing(Lcom/motorola/camera/fsm/ChangeEvent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2a
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHUTTER:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->removeListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    invoke-virtual {p0, v4}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraClosing(Z)V
+
+    goto/16 :goto_1
+
+    :cond_2a
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2b
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
 
@@ -4948,20 +5144,33 @@
 
     goto/16 :goto_1
 
-    :cond_2a
+    :cond_2b
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_2c
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mFlags:Lcom/motorola/camera/utility/Flags;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;->PHOTO_ROLL_STATE:Lcom/motorola/camera/ui/widgets/gl/CameraPreview$Flag;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/utility/Flags;->remove(Ljava/lang/Object;)Z
+
+    goto/16 :goto_1
+
+    :cond_2c
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_OPEN_PHOTO_WAIT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->setCameraView(ZZ)V
 
     goto/16 :goto_1
 .end method

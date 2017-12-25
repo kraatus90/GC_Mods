@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>(Lcom/motorola/camera/settings/SettingsManager$Key;II)V
-    .locals 9
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,13 +72,15 @@
 
     const/4 v8, 0x0
 
+    const/4 v9, 0x1
+
     move-object v1, p0
 
     move v4, p2
 
     move v5, p3
 
-    invoke-direct/range {v1 .. v8}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;Z)V
+    invoke-direct/range {v1 .. v9}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;ZZ)V
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mFirstTimeSetting:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -232,12 +234,10 @@
     goto :goto_0
 .end method
 
-.method updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)V
-    .locals 7
+.method updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;I)V
+    .locals 6
 
-    const/high16 v6, 0x40000000    # 2.0f
-
-    const/4 v5, 0x0
+    const/high16 v5, 0x40000000    # 2.0f
 
     invoke-super {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;->updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)V
 
@@ -255,47 +255,80 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ButtonTexture;->getPostTranslation()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
-    move-result-object v1
+    move-result-object v2
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ButtonTexture;->getLayoutSize()Landroid/graphics/PointF;
 
-    move-result-object v0
+    move-result-object v3
 
     invoke-interface {p1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getSurfaceDensity()F
 
-    move-result v2
+    move-result v0
 
-    const/high16 v3, 0x41a00000    # 20.0f
+    const/high16 v1, 0x41a00000    # 20.0f
 
-    mul-float/2addr v2, v3
+    mul-float v4, v1, v0
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mTexturePosition:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    iget v1, v2, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
 
-    iget v4, v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
+    iget v0, v2, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
 
-    iget v1, v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
+    iget v2, v3, Landroid/graphics/PointF;->y:F
 
-    iget v0, v0, Landroid/graphics/PointF;->y:F
+    div-float/2addr v2, v5
 
-    div-float/2addr v0, v6
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mTextureSize:Lcom/motorola/camera/PreviewSize;
 
-    add-float/2addr v0, v1
+    iget v3, v3, Lcom/motorola/camera/PreviewSize;->height:I
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mTextureSize:Lcom/motorola/camera/PreviewSize;
+    int-to-float v3, v3
 
-    iget v1, v1, Lcom/motorola/camera/PreviewSize;->height:I
+    div-float/2addr v3, v5
 
-    int-to-float v1, v1
+    add-float/2addr v2, v3
 
-    div-float/2addr v1, v6
+    add-float/2addr v2, v4
 
-    add-float/2addr v0, v1
+    sparse-switch p3, :sswitch_data_0
 
-    add-float/2addr v0, v2
+    :goto_0
+    sget-object v2, Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;->BOTTOM:Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;
 
-    invoke-virtual {v3, v4, v0, v5}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->set(FFF)V
+    iput-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mArrowDirection:Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;
 
-    iput v5, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mArrowPosition:F
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;->mTexturePosition:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v1, v0, v3}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->set(FFF)V
 
     return-void
+
+    :sswitch_0
+    add-float/2addr v0, v2
+
+    goto :goto_0
+
+    :sswitch_1
+    sub-float/2addr v1, v2
+
+    goto :goto_0
+
+    :sswitch_2
+    sub-float/2addr v0, v2
+
+    goto :goto_0
+
+    :sswitch_3
+    add-float/2addr v1, v2
+
+    goto :goto_0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x5a -> :sswitch_1
+        0xb4 -> :sswitch_2
+        0x10e -> :sswitch_3
+    .end sparse-switch
 .end method

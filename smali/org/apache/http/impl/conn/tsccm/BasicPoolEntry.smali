@@ -21,9 +21,9 @@
 .method public constructor <init>(Lorg/apache/http/conn/ClientConnectionOperator;Lorg/apache/http/conn/routing/HttpRoute;)V
     .locals 7
 
-    const-wide/16 v4, -0x1
-
     sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v4, -0x1
 
     move-object v1, p0
 

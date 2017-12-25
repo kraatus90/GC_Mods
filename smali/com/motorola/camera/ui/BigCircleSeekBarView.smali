@@ -1851,7 +1851,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020068
+    const v2, 0x7f02006b
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -1867,7 +1867,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02006a
+    const v2, 0x7f02006d
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -1883,7 +1883,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020069
+    const v2, 0x7f02006c
 
     invoke-static {v1, v2}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -1899,7 +1899,7 @@
 .method private initPaint()V
     .locals 5
 
-    const v4, 0x7f0c0017
+    const v4, 0x7f0c0018
 
     const/4 v3, 0x1
 
@@ -1937,7 +1937,7 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/BigCircleSeekBarView;->mResources:Landroid/content/res/Resources;
 
-    const v2, 0x7f0c0015
+    const v2, 0x7f0c0016
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2041,7 +2041,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0801e3
+    const v4, 0x7f0801fa
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

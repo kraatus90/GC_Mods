@@ -4,19 +4,11 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xd
-.end annotation
-
-.annotation build Landroid/support/annotation/RequiresApi;
-    value = 0xd
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/support/v13/view/inputmethod/InputConnectionCompat$Api25InputContentInfoCompatImpl;,
-        Landroid/support/v13/view/inputmethod/InputConnectionCompat$BaseInputContentInfoCompatImpl;,
         Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;,
+        Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputContentInfoCompatApi25Impl;,
+        Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputContentInfoCompatBaseImpl;,
         Landroid/support/v13/view/inputmethod/InputConnectionCompat$OnCommitContentListener;
     }
 .end annotation
@@ -32,17 +24,15 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const/4 v1, 0x0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastNMR1()Z
+    const/16 v1, 0x19
 
-    move-result v0
+    if-ge v0, v1, :cond_0
 
-    if-nez v0, :cond_0
+    new-instance v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputContentInfoCompatBaseImpl;
 
-    new-instance v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat$BaseInputContentInfoCompatImpl;
-
-    invoke-direct {v0}, Landroid/support/v13/view/inputmethod/InputConnectionCompat$BaseInputContentInfoCompatImpl;-><init>()V
+    invoke-direct {v0}, Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputContentInfoCompatBaseImpl;-><init>()V
 
     sput-object v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat;->IMPL:Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;
 
@@ -54,9 +44,11 @@
     return-void
 
     :cond_0
-    new-instance v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat$Api25InputContentInfoCompatImpl;
+    new-instance v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputContentInfoCompatApi25Impl;
 
-    invoke-direct {v0, v1}, Landroid/support/v13/view/inputmethod/InputConnectionCompat$Api25InputContentInfoCompatImpl;-><init>(Landroid/support/v13/view/inputmethod/InputConnectionCompat$1;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputContentInfoCompatApi25Impl;-><init>(Landroid/support/v13/view/inputmethod/InputConnectionCompat$1;)V
 
     sput-object v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat;->IMPL:Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;
 
@@ -72,7 +64,7 @@
 .end method
 
 .method public static commitContent(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/support/v13/view/inputmethod/InputContentInfoCompat;ILandroid/os/Bundle;)Z
-    .locals 8
+    .locals 6
     .param p0    # Landroid/view/inputmethod/InputConnection;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -90,56 +82,56 @@
         .end annotation
     .end param
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p2}, Landroid/support/v13/view/inputmethod/InputContentInfoCompat;->getDescription()Landroid/content/ClipDescription;
 
-    move-result-object v0
-
-    const/4 v2, 0x0
+    move-result-object v2
 
     invoke-static {p1}, Landroid/support/v13/view/inputmethod/EditorInfoCompat;->getContentMimeTypes(Landroid/view/inputmethod/EditorInfo;)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    array-length v6, v5
+    array-length v4, v3
 
-    move v3, v4
+    move v0, v1
 
     :goto_0
-    if-lt v3, v6, :cond_0
+    if-lt v0, v4, :cond_0
+
+    move v0, v1
 
     :goto_1
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
-    sget-object v3, Landroid/support/v13/view/inputmethod/InputConnectionCompat;->IMPL:Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;
+    sget-object v0, Landroid/support/v13/view/inputmethod/InputConnectionCompat;->IMPL:Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;
 
-    invoke-interface {v3, p0, p2, p3, p4}, Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;->commitContent(Landroid/view/inputmethod/InputConnection;Landroid/support/v13/view/inputmethod/InputContentInfoCompat;ILandroid/os/Bundle;)Z
+    invoke-interface {v0, p0, p2, p3, p4}, Landroid/support/v13/view/inputmethod/InputConnectionCompat$InputConnectionCompatImpl;->commitContent(Landroid/view/inputmethod/InputConnection;Landroid/support/v13/view/inputmethod/InputContentInfoCompat;ILandroid/os/Bundle;)Z
 
-    move-result v3
+    move-result v0
 
-    return v3
+    return v0
 
     :cond_0
-    aget-object v1, v5, v3
+    aget-object v5, v3, v0
 
-    invoke-virtual {v0, v1}, Landroid/content/ClipDescription;->hasMimeType(Ljava/lang/String;)Z
+    invoke-virtual {v2, v5}, Landroid/content/ClipDescription;->hasMimeType(Ljava/lang/String;)Z
 
-    move-result v7
+    move-result v5
 
-    if-nez v7, :cond_1
+    if-nez v5, :cond_1
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 
     :cond_2
-    return v4
+    return v1
 .end method
 
 .method public static createWrapper(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/support/v13/view/inputmethod/InputConnectionCompat$OnCommitContentListener;)Landroid/view/inputmethod/InputConnection;

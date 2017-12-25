@@ -127,7 +127,7 @@
 
     if-lez v0, :cond_0
 
-    const v0, 0x7f0801f3
+    const v0, 0x7f08020a
 
     :goto_0
     invoke-virtual {p0, v0}, Lcom/motorola/camera/fragments/SettingDialogFragment;->getString(I)Ljava/lang/String;
@@ -164,7 +164,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0801f5
+    const v0, 0x7f08020c
 
     goto :goto_0
 
@@ -311,7 +311,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040042
+    const v2, 0x7f040045
 
     invoke-direct {v0, v1, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
@@ -329,9 +329,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/SettingDialogFragment;->mValueList:Landroid/widget/ListView;
 
-    new-instance v1, Lcom/motorola/camera/fragments/-$Lambda$32;
+    new-instance v1, Lcom/motorola/camera/fragments/-$Lambda$BY31c10q51grr4boDLdp2UkuMNY$2;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fragments/-$Lambda$32;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fragments/-$Lambda$BY31c10q51grr4boDLdp2UkuMNY$2;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
@@ -381,7 +381,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fragments_SettingDialogFragment_lambda$1(Landroid/content/DialogInterface;I)V
+.method synthetic lambda$-com_motorola_camera_fragments_SettingDialogFragment_2766(Landroid/content/DialogInterface;I)V
     .locals 3
 
     invoke-virtual {p0}, Lcom/motorola/camera/fragments/SettingDialogFragment;->getTargetFragment()Landroid/app/Fragment;
@@ -422,7 +422,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fragments_SettingDialogFragment_lambda$2(Landroid/content/DialogInterface;I)V
+.method synthetic lambda$-com_motorola_camera_fragments_SettingDialogFragment_3175(Landroid/content/DialogInterface;I)V
     .locals 1
 
     invoke-virtual {p0}, Lcom/motorola/camera/fragments/SettingDialogFragment;->getDialog()Landroid/app/Dialog;
@@ -434,7 +434,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fragments_SettingDialogFragment_lambda$3(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method synthetic lambda$-com_motorola_camera_fragments_SettingDialogFragment_5267(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/SettingDialogFragment;->mEditText:Landroid/widget/EditText;
@@ -519,7 +519,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f040040
+    const v2, 0x7f040043
 
     const/4 v3, 0x0
 
@@ -527,7 +527,7 @@
 
     move-result-object v2
 
-    const v0, 0x7f0e00be
+    const v0, 0x7f0e00cc
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -537,7 +537,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fragments/SettingDialogFragment;->mEditText:Landroid/widget/EditText;
 
-    const v0, 0x7f0e00bf
+    const v0, 0x7f0e00cd
 
     invoke-virtual {v2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -551,21 +551,21 @@
 
     move-result-object v0
 
-    new-instance v2, Lcom/motorola/camera/fragments/-$Lambda$20;
+    new-instance v2, Lcom/motorola/camera/fragments/-$Lambda$BY31c10q51grr4boDLdp2UkuMNY;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/fragments/-$Lambda$20;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, p0}, Lcom/motorola/camera/fragments/-$Lambda$BY31c10q51grr4boDLdp2UkuMNY;-><init>(Ljava/lang/Object;)V
 
-    const v3, 0x7f0801f4
+    const v3, 0x7f08020b
 
     invoke-virtual {v0, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    new-instance v2, Lcom/motorola/camera/fragments/-$Lambda$21;
+    new-instance v2, Lcom/motorola/camera/fragments/-$Lambda$BY31c10q51grr4boDLdp2UkuMNY$1;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/fragments/-$Lambda$21;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, p0}, Lcom/motorola/camera/fragments/-$Lambda$BY31c10q51grr4boDLdp2UkuMNY$1;-><init>(Ljava/lang/Object;)V
 
-    const v3, 0x7f0801f2
+    const v3, 0x7f080209
 
     invoke-virtual {v0, v3, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

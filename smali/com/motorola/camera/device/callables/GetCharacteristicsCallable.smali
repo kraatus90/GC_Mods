@@ -49,7 +49,7 @@
 
 # virtual methods
 .method public call()Lcom/motorola/camera/device/callables/CallableReturn;
-    .locals 9
+    .locals 11
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
@@ -66,7 +66,7 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     new-instance v3, Ljava/util/HashMap;
 
@@ -81,9 +81,9 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "camera"
+    const-string/jumbo v2, "camera"
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -91,120 +91,121 @@
 
     iput-object v0, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
-    iget-object v0, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraInfoMap:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
-
     iget-object v0, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraManager:Landroid/hardware/camera2/CameraManager;
 
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v5
 
     const/4 v0, 0x0
 
-    array-length v5, v1
+    array-length v6, v5
+
+    move v2, v0
 
     :goto_0
-    if-ge v0, v5, :cond_0
+    if-ge v2, v6, :cond_1
 
-    aget-object v6, v1, v0
-
-    iget-object v7, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraInfoMap:Ljava/util/Map;
-
-    new-instance v8, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;
-
-    invoke-direct {v8}, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;-><init>()V
-
-    invoke-interface {v7, v6, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraInfoMap:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :goto_1
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    iget-object v1, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraInfoMap:Ljava/util/Map;
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;
-
-    iget-object v6, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraManager:Landroid/hardware/camera2/CameraManager;
-
-    invoke-virtual {v6, v0}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object v6
-
-    iput-object v6, v1, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
-
-    iget-object v1, v1, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
-
-    invoke-interface {v3, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    aget-object v7, v5, v2
     :try_end_0
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_1
-
-    if-nez v2, :cond_2
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_2
 
     :try_start_1
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    new-instance v0, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;
+
+    invoke-direct {v0}, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;-><init>()V
+
+    iget-object v8, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraManager:Landroid/hardware/camera2/CameraManager;
+
+    invoke-virtual {v8, v7}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+
+    move-result-object v8
+
+    iput-object v8, v0, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
+
+    iget-object v8, v0, Lcom/motorola/camera/device/CameraHandlerThread$CameraInfo;->mCameraCharacteristics:Landroid/hardware/camera2/CameraCharacteristics;
+
+    invoke-interface {v3, v7, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v8, v4, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mCameraInfoMap:Ljava/util/Map;
+
+    invoke-interface {v8, v7, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_1 .. :try_end_1} :catch_2
+
+    if-nez v1, :cond_0
+
+    :try_start_2
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
 
-    const/4 v1, 0x1
+    const/4 v8, 0x1
 
-    invoke-static {v0, v1}, Landroid/media/CamcorderProfile;->get(II)Landroid/media/CamcorderProfile;
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_1 .. :try_end_1} :catch_1
+    invoke-static {v0, v8}, Landroid/media/CamcorderProfile;->get(II)Landroid/media/CamcorderProfile;
+    :try_end_2
+    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_2 .. :try_end_2} :catch_2
 
     move-result-object v0
 
-    :goto_2
-    move-object v2, v0
+    :goto_1
+    add-int/lit8 v1, v2, 0x1
 
-    goto :goto_1
+    move v2, v1
+
+    move-object v1, v0
+
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    move-object v0, v2
+    :cond_0
+    move-object v0, v1
 
-    goto :goto_2
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    :try_start_3
+    sget-object v8, Lcom/motorola/camera/device/callables/GetCharacteristicsCallable;->TAG:Ljava/lang/String;
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v10, "Exception getting characteristics for camera with id "
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v8, v7, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move-object v0, v1
+
+    goto :goto_1
 
     :cond_1
-    :try_start_2
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraApp;->setCamcorderProfile(Landroid/media/CamcorderProfile;)V
-    :try_end_2
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_2 .. :try_end_2} :catch_1
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->setCamcorderProfile(Landroid/media/CamcorderProfile;)V
+    :try_end_3
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_3 .. :try_end_3} :catch_2
 
     new-instance v0, Lcom/motorola/camera/device/callables/CallableReturn;
 
@@ -212,7 +213,7 @@
 
     return-object v0
 
-    :catch_1
+    :catch_2
     move-exception v0
 
     new-instance v1, Lcom/motorola/camera/device/callables/CallableReturn;
@@ -220,11 +221,6 @@
     invoke-direct {v1, v0}, Lcom/motorola/camera/device/callables/CallableReturn;-><init>(Ljava/lang/Exception;)V
 
     return-object v1
-
-    :cond_2
-    move-object v0, v2
-
-    goto :goto_2
 .end method
 
 .method public getTag()Ljava/lang/String;

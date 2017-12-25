@@ -13,7 +13,7 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "CameraKpiTag"
+.field public static final TAG:Ljava/lang/String; = "CameraKpiTag"
 
 
 # instance fields
@@ -68,7 +68,7 @@
 .method private printLog(Lcom/motorola/camera/CameraKpi$KPI;J)V
     .locals 4
 
-    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
     if-eqz v0, :cond_0
 
@@ -102,7 +102,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
     return-void

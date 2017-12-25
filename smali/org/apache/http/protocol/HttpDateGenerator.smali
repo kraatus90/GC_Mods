@@ -51,23 +51,23 @@
 .method public constructor <init>()V
     .locals 3
 
-    const/4 v2, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lorg/apache/http/protocol/HttpDateGenerator;->dateAsLong:J
 
-    iput-object v2, p0, Lorg/apache/http/protocol/HttpDateGenerator;->dateAsText:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/protocol/HttpDateGenerator;->dateAsText:Ljava/lang/String;
 
     new-instance v0, Ljava/text/SimpleDateFormat;
 
-    const-string/jumbo v1, "EEE, dd MMM yyyy HH:mm:ss zzz"
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    const-string/jumbo v2, "EEE, dd MMM yyyy HH:mm:ss zzz"
 
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
     iput-object v0, p0, Lorg/apache/http/protocol/HttpDateGenerator;->dateformat:Ljava/text/DateFormat;
 

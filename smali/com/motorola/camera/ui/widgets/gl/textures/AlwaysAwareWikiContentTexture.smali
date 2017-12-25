@@ -2,13 +2,8 @@
 .super Lcom/motorola/camera/ui/widgets/gl/textures/Texture;
 .source "AlwaysAwareWikiContentTexture.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture$FetchWikiTitleTask;
-    }
-.end annotation
+# interfaces
+.implements Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiInfoTaskCallback;
 
 
 # static fields
@@ -16,13 +11,7 @@
 
 .field public static final EMPTY_STRING:Ljava/lang/String; = ""
 
-.field private static final ENCODING_DEFAULT:Ljava/lang/String;
-
 .field private static final LINE_WIDTH:F = 0.5f
-
-.field private static final MAX_DESC_LENGTH:I = 0xaf
-
-.field private static final MAX_TITLE_LENGTH:I = 0x1e
 
 .field private static final PADDING:F = 16.0f
 
@@ -39,12 +28,6 @@
 .field private static final TITLE_COLOR:I
 
 .field private static final TITLE_TEXT_SIZE:F = 14.0f
-
-.field private static final URL_PAGE_DETAILS:Ljava/lang/String; = "/w/api.php?action=query&format=json&prop=info%7Cextracts%7Cpageimages&exsentences=1&exlimit=1&piprop=original%7Cname%7Cthumbnail&inprop=url&titles="
-
-.field private static final URL_PAGE_SEARCH:Ljava/lang/String; = "/w/api.php?action=query&list=search&format=json&srprop=&srsearch="
-
-.field private static final WIKI_BASE_URL:Ljava/lang/String; = "https://%s.wikipedia.org"
 
 .field private static mThumbSize:I
 
@@ -72,106 +55,6 @@
 
 
 # direct methods
-.method static synthetic -get0()Ljava/lang/String;
-    .locals 1
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->ENCODING_DEFAULT:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic -get1()Ljava/lang/String;
-    .locals 1
-
-    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic -get2(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mAction:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-
-    return-object v0
-.end method
-
-.method static synthetic -get3(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mBitmapTexture:Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
-
-    return-object v0
-.end method
-
-.method static synthetic -get4(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mDescription:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    return-object v0
-.end method
-
-.method static synthetic -get5(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
-
-    return-object v0
-.end method
-
-.method static synthetic -get6(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mPageTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    return-object v0
-.end method
-
-.method static synthetic -get7()I
-    .locals 1
-
-    sget v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mThumbSize:I
-
-    return v0
-.end method
-
-.method static synthetic -get8(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mTitle:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic -set0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-    .locals 0
-
-    iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mAction:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-
-    return-object p1
-.end method
-
-.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Ljava/lang/String;
-    .locals 1
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->getPageDetailsUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic -wrap1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;)Ljava/lang/String;
-    .locals 1
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->getPageSearchUrl()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method static constructor <clinit>()V
     .locals 2
 
@@ -206,14 +89,6 @@
     move-result v0
 
     sput v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->BYLINE_COLOR:I
-
-    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    invoke-virtual {v0}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->ENCODING_DEFAULT:Ljava/lang/String;
 
     return-void
 .end method
@@ -298,88 +173,71 @@
     return-void
 .end method
 
-.method private getBaseUrl()Ljava/lang/String;
+.method private updateContent(Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;)V
     .locals 4
 
-    const-string/jumbo v0, "https://%s.wikipedia.org"
+    const/4 v3, 0x1
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mPageTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->title:Ljava/lang/String;
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
+    const/16 v2, 0x1e
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getPageDetailsUrl()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->getBaseUrl()Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/motorola/camera/Util;->truncateText(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setText(Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->extract:Ljava/lang/String;
 
-    const-string/jumbo v1, "/w/api.php?action=query&format=json&prop=info%7Cextracts%7Cpageimages&exsentences=1&exlimit=1&piprop=original%7Cname%7Cthumbnail&inprop=url&titles="
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mDescription:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
-    move-result-object v0
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->extract:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private getPageSearchUrl()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->getBaseUrl()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v2, 0xaf
+
+    invoke-static {v1, v2}, Lcom/motorola/camera/Util;->truncateText(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setText(Ljava/lang/String;)V
+
+    :cond_0
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->thumbnail:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mBitmapTexture:Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
+
+    iget-object v1, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->thumbnail:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0, v1, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;->setBitmap(Landroid/graphics/Bitmap;Z)V
+
+    :cond_1
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->url:Ljava/lang/String;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->url:Ljava/lang/String;
+
+    sget-object v1, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;->WIKIPEDIA:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;
+
+    invoke-static {v0, v1, v3}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUrl(Ljava/lang/String;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Z)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
 
     move-result-object v0
 
-    const-string/jumbo v1, "/w/api.php?action=query&list=search&format=json&srprop=&srsearch="
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mAction:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :cond_2
+    return-void
 .end method
 
 
@@ -488,6 +346,45 @@
     return-void
 .end method
 
+.method public onComplete(Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;->title:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->responseApplies(Ljava/lang/String;)Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    return-void
+
+    :cond_1
+    invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->updateContent(Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiData;)V
+
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->updateTranslations()V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mAction:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
+
+    invoke-virtual {p0, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->onResponse(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+
+    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onDirty()V
+
+    :cond_2
+    return-void
+.end method
+
 .method protected onDraw([F[F)V
     .locals 2
 
@@ -570,6 +467,74 @@
     return-void
 .end method
 
+.method public responseApplies(Ljava/lang/String;)Z
+    .locals 7
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mTitle:Ljava/lang/String;
+
+    const-string/jumbo v2, " "
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v2
+
+    array-length v3, v2
+
+    move v0, v1
+
+    :goto_0
+    if-ge v0, v3, :cond_1
+
+    aget-object v4, v2, v0
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    const/4 v6, 0x2
+
+    if-lt v5, v6, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v2, "Response does not apply"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    return v1
+.end method
+
 .method public declared-synchronized setAlpha(F)V
     .locals 1
 
@@ -619,8 +584,6 @@
 
 .method public setContentAsync(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Z
     .locals 6
-
-    const/4 v5, 0x0
 
     const/4 v1, 0x1
 
@@ -704,9 +667,9 @@
 
     invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;->setVisibility(Z)V
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture$FetchWikiTitleTask;
+    new-instance v0, Lcom/motorola/camera/detector/FetchWikiInfoTask;
 
-    invoke-direct {v0, p0, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture$FetchWikiTitleTask;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture$FetchWikiTitleTask;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/detector/FetchWikiInfoTask;-><init>(Lcom/motorola/camera/detector/FetchWikiInfoTask$WikiInfoTaskCallback;)V
 
     sget-object v3, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
@@ -716,7 +679,7 @@
 
     aput-object v5, v4, v2
 
-    invoke-virtual {v0, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture$FetchWikiTitleTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v0, v3, v4}, Lcom/motorola/camera/detector/FetchWikiInfoTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 

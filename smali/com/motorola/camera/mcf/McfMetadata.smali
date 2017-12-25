@@ -376,21 +376,21 @@
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v0, "eng"
+    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    sget-object v3, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    const-string/jumbo v3, "eng"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     sput-boolean v0, Lcom/motorola/camera/mcf/McfMetadata;->ENG_BUILD:Z
 
-    const-string/jumbo v0, "userdebug"
+    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    sget-object v3, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    const-string/jumbo v3, "userdebug"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -448,171 +448,171 @@
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.aeExposureCompensation"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.aeExposureCompensation"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_AE_EXPOSURE_COMPENSATION:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.aeLock"
+    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.aeLock"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_AE_LOCK:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.aeMode"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.aeMode"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_AE_MODE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.afMode"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.afMode"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_AF_MODE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.awbLock"
+    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.awbLock"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_AWB_LOCK:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.awbMode"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.awbMode"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_AWB_MODE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.mode"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.mode"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_MODE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.edge.mode"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.edge.mode"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->EDGE_MODE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.jpeg.quality"
+    sget-object v1, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.jpeg.quality"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->JPEG_QUALITY:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.jpeg.thumbnailQuality"
+    sget-object v1, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.jpeg.thumbnailQuality"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->JPEG_THUMBNAIL_QUALITY:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.lens.focusDistance"
+    sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.lens.focusDistance"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->LENS_FOCUS_DISTANCE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.noiseReduction.mode"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.noiseReduction.mode"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->NOISE_REDUCTION_MODE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.sensor.exposureTime"
+    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.sensor.exposureTime"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->SENSOR_EXPOSURE_TIME:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.sensor.frameDuration"
+    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.sensor.frameDuration"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->SENSOR_FRAME_DURATION:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.control.postRawSensitivityBoost"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.control.postRawSensitivityBoost"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->CONTROL_POST_RAW_SENSITIVITY_BOOST:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.sensor.sensitivity"
+    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.sensor.sensitivity"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->SENSOR_SENSITIVITY:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "android.reprocess.effectiveExposureFactor"
+    sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "android.reprocess.effectiveExposureFactor"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->REPROCESS_EFFECTIVE_EXPOSURE_FACTOR:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
@@ -678,31 +678,31 @@
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "com.lenovo.moto.control.asf_type"
+    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "com.lenovo.moto.control.asf_type"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->REPROCESS_ALG_ASF_TYPE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "com.lenovo.moto.control.wnr_type"
+    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "com.lenovo.moto.control.wnr_type"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->REPROCESS_ALG_WNR_TYPE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
     new-instance v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    const-string/jumbo v1, "org.codeaurora.qcamera3.jpeg_encode_crop.enable"
+    sget-object v1, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    sget-object v2, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    const-string/jumbo v2, "org.codeaurora.qcamera3.jpeg_encode_crop.enable"
 
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v1}, Lcom/motorola/camera/mcf/McfMetadata$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/motorola/camera/mcf/McfMetadata;->QCAMERA3_JPEG_ENCODE_CROP_ENABLE:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
@@ -777,7 +777,7 @@
 
 # virtual methods
 .method public get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -788,13 +788,13 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lcom/motorola/camera/mcf/McfMetadata;->mMetadataMap:Ljava/util/Map;
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfMetadata;->mMetadataMap:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -802,17 +802,17 @@
 
     if-nez v0, :cond_1
 
-    return-object v2
+    return-object v1
 
     :cond_0
-    return-object v2
+    return-object v1
 
     :cond_1
     invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public getKeys()Ljava/util/Collection;
@@ -852,9 +852,9 @@
         }
     .end annotation
 
-    iget-object v1, p0, Lcom/motorola/camera/mcf/McfMetadata;->mMetadataMap:Ljava/util/Map;
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfMetadata;->mMetadataMap:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

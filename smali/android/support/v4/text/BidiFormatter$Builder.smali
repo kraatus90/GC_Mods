@@ -108,8 +108,6 @@
 .method public build()Landroid/support/v4/text/BidiFormatter;
     .locals 5
 
-    const/4 v4, 0x0
-
     iget v0, p0, Landroid/support/v4/text/BidiFormatter$Builder;->mFlags:I
 
     const/4 v1, 0x2
@@ -124,6 +122,8 @@
     iget v2, p0, Landroid/support/v4/text/BidiFormatter$Builder;->mFlags:I
 
     iget-object v3, p0, Landroid/support/v4/text/BidiFormatter$Builder;->mTextDirectionHeuristicCompat:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+
+    const/4 v4, 0x0
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/support/v4/text/BidiFormatter;-><init>(ZILandroid/support/v4/text/TextDirectionHeuristicCompat;Landroid/support/v4/text/BidiFormatter$1;)V
 

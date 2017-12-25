@@ -28,8 +28,6 @@
 
 .field public static final enum AUTO_FOCUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
-.field public static final enum CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
 .field public static final enum DEBUG:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
 .field public static final enum ENV_INFO:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
@@ -73,17 +71,9 @@
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
-    const-string/jumbo v1, "CAMERA_STATUS"
-
-    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    new-instance v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
     const-string/jumbo v1, "DEBUG"
 
-    invoke-direct {v0, v1, v5}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->DEBUG:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
@@ -91,7 +81,7 @@
 
     const-string/jumbo v1, "ENV_INFO"
 
-    invoke-direct {v0, v1, v6}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v5}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ENV_INFO:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
@@ -99,7 +89,7 @@
 
     const-string/jumbo v1, "EXPOSURE"
 
-    invoke-direct {v0, v1, v7}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v6}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->EXPOSURE:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
@@ -107,9 +97,7 @@
 
     const-string/jumbo v1, "FACE_DETECT"
 
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v7}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->FACE_DETECT:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
@@ -117,7 +105,7 @@
 
     const-string/jumbo v1, "MCF"
 
-    const/4 v2, 0x6
+    const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
@@ -127,7 +115,7 @@
 
     const-string/jumbo v1, "MULTI_FOCUS"
 
-    const/4 v2, 0x7
+    const/4 v2, 0x6
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
@@ -137,7 +125,7 @@
 
     const-string/jumbo v1, "MULTISHOT"
 
-    const/16 v2, 0x8
+    const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
@@ -147,7 +135,7 @@
 
     const-string/jumbo v1, "ROI"
 
-    const/16 v2, 0x9
+    const/16 v2, 0x8
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
@@ -157,13 +145,13 @@
 
     const-string/jumbo v1, "ZOOM"
 
-    const/16 v2, 0xa
+    const/16 v2, 0x9
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ZOOM:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
-    const/16 v0, 0xb
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
@@ -171,55 +159,49 @@
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->DEBUG:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->DEBUG:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ENV_INFO:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ENV_INFO:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->EXPOSURE:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->EXPOSURE:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->FACE_DETECT:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     aput-object v1, v0, v7
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->FACE_DETECT:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MCF:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MCF:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MULTI_FOCUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MULTI_FOCUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MULTISHOT:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MULTISHOT:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ROI:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ROI:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ZOOM:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
-    const/16 v2, 0xa
+    const/16 v2, 0x9
 
     aput-object v1, v0, v2
 

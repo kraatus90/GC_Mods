@@ -54,8 +54,6 @@
 
     invoke-static {v3}, Lcom/motorola/camera/utility/FileUtility;->delete(Ljava/io/File;)Z
 
-    invoke-virtual {v3}, Ljava/io/File;->delete()Z
-
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0

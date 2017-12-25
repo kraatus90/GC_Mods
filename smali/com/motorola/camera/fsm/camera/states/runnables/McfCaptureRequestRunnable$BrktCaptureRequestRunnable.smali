@@ -28,13 +28,13 @@
 
 .field private final mCameraId:Ljava/lang/String;
 
-.field private final mSeqId:I
+.field private final mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
 .field final synthetic this$0:Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;
 
 
 # direct methods
-.method private constructor <init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Ljava/lang/String;Ljava/util/List;I)V
+.method private constructor <init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Ljava/lang/String;Ljava/util/List;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,7 +43,9 @@
             "Ljava/util/List",
             "<",
             "Landroid/hardware/camera2/CaptureRequest$Builder;",
-            ">;I)V"
+            ">;",
+            "Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;",
+            ")V"
         }
     .end annotation
 
@@ -53,17 +55,17 @@
 
     iput-object p3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->mBuilders:Ljava/util/List;
 
-    iput p4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->mSeqId:I
+    iput-object p4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     iput-object p2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->mCameraId:Ljava/lang/String;
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Ljava/lang/String;Ljava/util/List;ILcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;)V
+.method synthetic constructor <init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Ljava/lang/String;Ljava/util/List;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Ljava/lang/String;Ljava/util/List;I)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Ljava/lang/String;Ljava/util/List;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
 
     return-void
 .end method
@@ -164,9 +166,9 @@
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;
 
-    iget v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->mSeqId:I
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->-wrap7(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;I)V
+    invoke-static {v0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->-wrap8(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
 
     return-void
 

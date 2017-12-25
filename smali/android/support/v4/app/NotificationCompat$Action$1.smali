@@ -28,8 +28,8 @@
 
 
 # virtual methods
-.method public build(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;Z)Landroid/support/v4/app/NotificationCompatBase$Action;
-    .locals 7
+.method public build(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;Z)Landroid/support/v4/app/NotificationCompatBase$Action;
+    .locals 8
 
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action;
 
@@ -39,6 +39,12 @@
 
     check-cast v5, [Landroid/support/v4/app/RemoteInput;
 
+    check-cast p6, [Landroid/support/v4/app/RemoteInput;
+
+    move-object v6, p6
+
+    check-cast v6, [Landroid/support/v4/app/RemoteInput;
+
     move v1, p1
 
     move-object v2, p2
@@ -47,9 +53,9 @@
 
     move-object v4, p4
 
-    move v6, p6
+    move v7, p7
 
-    invoke-direct/range {v0 .. v6}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;Z)V
+    invoke-direct/range {v0 .. v7}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;[Landroid/support/v4/app/RemoteInput;Z)V
 
     return-object v0
 .end method

@@ -13,9 +13,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/apache/http/HttpEntity;)V
-    .locals 7
-
-    const/4 v6, 0x0
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -53,7 +51,9 @@
     :cond_2
     if-eqz v0, :cond_0
 
-    iput-object v6, p0, Lorg/apache/http/entity/BufferedHttpEntity;->buffer:[B
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/entity/BufferedHttpEntity;->buffer:[B
 
     goto :goto_0
 .end method

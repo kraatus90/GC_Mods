@@ -34,19 +34,17 @@
 .end method
 
 .method private static generateCacheKey(ILandroid/graphics/PorterDuff$Mode;)I
-    .locals 3
-
-    const/4 v0, 0x1
+    .locals 2
 
     add-int/lit8 v0, p0, 0x1f
 
-    mul-int/lit8 v1, v0, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
     invoke-virtual {p1}, Landroid/graphics/PorterDuff$Mode;->hashCode()I
 
-    move-result v2
+    move-result v1
 
-    add-int v0, v1, v2
+    add-int/2addr v0, v1
 
     return v0
 .end method

@@ -14,7 +14,7 @@
 
 
 # virtual methods
-.method protected postProcessData(Landroid/os/Bundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+.method protected postProcessData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
     .locals 6
 
     const/4 v4, 0x0

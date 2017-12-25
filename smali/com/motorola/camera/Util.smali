@@ -52,6 +52,8 @@
 
 .field public static final KPI:Z
 
+.field private static final MEBIBYTE:I = 0x100000
+
 .field private static final MUSIC_COMMAND_INTENT:Ljava/lang/String; = "com.android.music.musicservicecommand"
 
 .field private static final PAUSE:Ljava/lang/String; = "pause"
@@ -75,15 +77,19 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 5
+
+    const/4 v4, 0x3
+
+    const/4 v2, 0x1
 
     const/4 v1, 0x0
 
     const-string/jumbo v0, "eng"
 
-    sget-object v2, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    sget-object v3, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -91,9 +97,9 @@
 
     const-string/jumbo v0, "userdebug"
 
-    sget-object v2, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    sget-object v3, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -101,7 +107,7 @@
 
     sget-boolean v0, Lcom/motorola/camera/Util;->ENG_BUILD:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     sget-boolean v0, Lcom/motorola/camera/Util;->USERDEBUG_BUILD:Z
 
@@ -112,9 +118,9 @@
 
     sget-object v0, Landroid/os/Build;->TAGS:Ljava/lang/String;
 
-    const-string/jumbo v2, "test-keys"
+    const-string/jumbo v3, "test-keys"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
@@ -133,13 +139,11 @@
 
     sget-boolean v0, Lcom/motorola/camera/Util;->USER_BUILD:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget-object v0, Lcom/motorola/camera/CameraApp;->TAG:Ljava/lang/String;
 
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
     move-result v0
 
@@ -158,9 +162,16 @@
 
     sget-boolean v0, Lcom/motorola/camera/Util;->USER_SIGNED_BUILD:Z
 
-    xor-int/lit8 v0, v0, 0x1
+    if-eqz v0, :cond_1
 
-    sput-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
+    const-string/jumbo v0, "CameraKpiTag"
+
+    invoke-static {v0, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v2
+
+    :cond_1
+    sput-boolean v2, Lcom/motorola/camera/Util;->KPI:Z
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -214,13 +225,13 @@
     :goto_2
     return-void
 
-    :cond_1
+    :cond_2
     move v0, v1
 
     goto :goto_0
 
-    :cond_2
-    const/4 v0, 0x1
+    :cond_3
+    move v0, v2
 
     goto :goto_1
 
@@ -1016,23 +1027,25 @@
 
     invoke-static {p0, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const-string/jumbo v1, " tag:0x%08x"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v2, v0, [Ljava/lang/Object;
+    const-string/jumbo v1, " tag:"
 
-    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureRequest;->getTag()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureRequest;->getTag()Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    move-result-object v1
 
-    aput-object v0, v2, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2139,6 +2152,81 @@
     return-wide v0
 .end method
 
+.method public static getTotalRAMMiB()I
+    .locals 4
+
+    const/4 v1, 0x0
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "activity"
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/ActivityManager;
+
+    new-instance v2, Landroid/app/ActivityManager$MemoryInfo;
+
+    invoke-direct {v2}, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, v2}, Landroid/app/ActivityManager;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
+
+    iget-wide v0, v2, Landroid/app/ActivityManager$MemoryInfo;->totalMem:J
+
+    const-wide/32 v2, 0x100000
+
+    div-long/2addr v0, v2
+
+    long-to-int v0, v0
+
+    :goto_0
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_0
+
+    const-string/jumbo v1, "MotoCameraUtil"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Total RAM: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "MiB"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+.end method
+
 .method public static getUriForFile(Landroid/content/Intent;Ljava/io/File;)Landroid/net/Uri;
     .locals 4
 
@@ -2280,91 +2368,6 @@
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public static isInternetConnected()Z
-    .locals 2
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "connectivity"
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/ConnectivityManager;
-
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static isMobileDataConnected()Z
-    .locals 3
-
-    const/4 v1, 0x0
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "connectivity"
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/ConnectivityManager;
-
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->getType()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    goto :goto_0
 .end method
 
 .method public static isValidPackage(Ljava/lang/String;Landroid/content/Context;)Z

@@ -123,11 +123,11 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/common/images/zza$zzc;->zzSg:Lcom/google/android/gms/common/images/zza$zza;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/images/zza$zzc;->zzSg:Lcom/google/android/gms/common/images/zza$zza;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

@@ -139,17 +139,17 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$RateControl;->SKIP_3:Lcom/motorola/camera/mcf/Mcf$RateControl;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$RateControl;->SKIP_3:Lcom/motorola/camera/mcf/Mcf$RateControl;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$RateControl;->SMART:Lcom/motorola/camera/mcf/Mcf$RateControl;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$RateControl;->SMART:Lcom/motorola/camera/mcf/Mcf$RateControl;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/camera/mcf/Mcf$RateControl;->$VALUES:[Lcom/motorola/camera/mcf/Mcf$RateControl;
 

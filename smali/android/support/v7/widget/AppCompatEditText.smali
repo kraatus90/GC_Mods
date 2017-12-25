@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
+.field private final mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
-.field private mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
+.field private final mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
 
 # direct methods

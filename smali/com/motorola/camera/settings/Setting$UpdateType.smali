@@ -27,16 +27,52 @@
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/settings/Setting$UpdateType;
 
 .field public static final enum NONE:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PARAM:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PARAM_AND_RESTART:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PARAM_AND_ROI:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PARAM_ROI_AND_CLOSE:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PERMISSION_CHECK:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

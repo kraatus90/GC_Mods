@@ -48,7 +48,7 @@
 
     const/4 v1, 0x3
 
-    invoke-static {v0, v1, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+    invoke-static {v0, p1, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
 
     return-void
 .end method

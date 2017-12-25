@@ -18,9 +18,6 @@
 .method public abstract requestPermissions(Landroid/app/Fragment;[Ljava/lang/String;I)V
 .end method
 
-.method public abstract setMenuVisibility(Landroid/app/Fragment;Z)V
-.end method
-
 .method public abstract setUserVisibleHint(Landroid/app/Fragment;Z)V
 .end method
 

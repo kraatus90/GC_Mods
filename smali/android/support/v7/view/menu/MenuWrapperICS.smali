@@ -7,10 +7,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xe
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0xe
 .end annotation
@@ -110,7 +106,7 @@
 .end method
 
 .method public addIntentOptions(IIILandroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I[Landroid/view/MenuItem;)I
-    .locals 13
+    .locals 10
 
     const/4 v9, 0x0
 
@@ -125,11 +121,11 @@
 
     move v3, p2
 
-    move/from16 v4, p3
+    move v4, p3
 
-    move-object/from16 v5, p4
+    move-object v5, p4
 
-    move-object/from16 v6, p5
+    move-object v6, p5
 
     move-object/from16 v7, p6
 
@@ -137,12 +133,12 @@
 
     invoke-interface/range {v1 .. v9}, Landroid/support/v4/internal/view/SupportMenu;->addIntentOptions(IIILandroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I[Landroid/view/MenuItem;)I
 
-    move-result v11
+    move-result v2
 
     if-nez v9, :cond_2
 
     :cond_0
-    return v11
+    return v2
 
     :cond_1
     move-object/from16 v0, p8
@@ -154,22 +150,22 @@
     goto :goto_0
 
     :cond_2
-    const/4 v10, 0x0
+    const/4 v1, 0x0
 
-    array-length v12, v9
+    array-length v3, v9
 
     :goto_1
-    if-ge v10, v12, :cond_0
+    if-ge v1, v3, :cond_0
 
-    aget-object v1, v9, v10
+    aget-object v4, v9, v1
 
-    invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/MenuWrapperICS;->getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+    invoke-virtual {p0, v4}, Landroid/support/v7/view/menu/MenuWrapperICS;->getMenuItemWrapper(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
-    move-result-object v1
+    move-result-object v4
 
-    aput-object v1, p8, v10
+    aput-object v4, p8, v1
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 .end method

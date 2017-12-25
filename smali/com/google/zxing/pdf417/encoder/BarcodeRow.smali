@@ -55,13 +55,13 @@
 .method getScaledRow(I)[B
     .locals 4
 
-    iget-object v2, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->row:[B
+    iget-object v0, p0, Lcom/google/zxing/pdf417/encoder/BarcodeRow;->row:[B
 
-    array-length v2, v2
+    array-length v0, v0
 
-    mul-int/2addr v2, p1
+    mul-int/2addr v0, p1
 
-    new-array v1, v2, [B
+    new-array v1, v0, [B
 
     const/4 v0, 0x0
 

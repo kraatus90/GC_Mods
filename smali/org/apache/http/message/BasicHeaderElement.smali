@@ -159,13 +159,13 @@
 .method public getParameterByName(Ljava/lang/String;)Lorg/apache/http/NameValuePair;
     .locals 6
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
 
-    const-string/jumbo v2, "Name"
+    const-string/jumbo v0, "Name"
 
-    invoke-static {p1, v2}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    const/4 v0, 0x0
 
     iget-object v3, p0, Lorg/apache/http/message/BasicHeaderElement;->parameters:[Lorg/apache/http/NameValuePair;
 
@@ -239,11 +239,11 @@
 .method public hashCode()I
     .locals 5
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/message/BasicHeaderElement;->name:Ljava/lang/String;
+    iget-object v0, p0, Lorg/apache/http/message/BasicHeaderElement;->name:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 

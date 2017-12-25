@@ -44,7 +44,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$6;->this$0:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->-get6(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;)Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->-get6(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;)Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     move-result-object v0
 
@@ -52,7 +52,7 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {v0, v1, v2, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPreRotation(FFFF)V
+    invoke-virtual {v0, v1, v2, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setPreRotation(FFFF)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$6;->this$0:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;
 

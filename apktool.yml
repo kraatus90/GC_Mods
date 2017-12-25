@@ -1,10 +1,9 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: MotCamera_7.0.61.17_Debug.apk
+apkFileName: MotCamera_7.1.0.12.apk
 compressionType: false
 doNotCompress:
 - arsc
 - license
-- so
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
@@ -678,5 +677,5 @@ usesFramework:
   tag: null
 version: 2.3.0
 versionInfo:
-  versionCode: '70006117'
-  versionName: 7.0.61.17
+  versionCode: '70100012'
+  versionName: 7.1.0.12

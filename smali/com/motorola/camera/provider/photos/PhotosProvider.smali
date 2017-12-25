@@ -806,7 +806,7 @@
     if-ne p2, v6, :cond_4
 
     :cond_1
-    const v1, 0x7f02009f
+    const v1, 0x7f0200a3
 
     move v8, v0
 
@@ -992,7 +992,7 @@
     goto/16 :goto_0
 
     :cond_4
-    const v0, 0x7f0a0074
+    const v0, 0x7f0a0079
 
     move v8, v0
 

@@ -41,9 +41,9 @@
 .method protected defineOptionName(I)Ljava/lang/String;
     .locals 1
 
-    const/4 v0, 0x0
-
     sparse-switch p1, :sswitch_data_0
+
+    const/4 v0, 0x0
 
     return-object v0
 

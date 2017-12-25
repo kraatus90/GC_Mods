@@ -145,11 +145,7 @@
 
     move-result v7
 
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/motorola/camera/JsonConfig;->parseAnalogGainThreshold(Landroid/content/Context;)F
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->getAnalogGainThreshold()F
 
     move-result v8
 
@@ -269,7 +265,7 @@
     :cond_4
     move v0, v3
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_5
     move v5, v3

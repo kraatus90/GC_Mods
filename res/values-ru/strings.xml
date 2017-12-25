@@ -99,7 +99,7 @@
     <string name="aware_copy_msg_subject">Тема</string>
     <string name="aware_copy_number">Номер</string>
     <string name="aware_copy_type">" (%1$s)"</string>
-    <string name="aware_copy_wifi_hidden">Скрытое</string>
+    <string name="aware_copy_wifi_hidden">Скрытая сеть</string>
     <string name="aware_copy_wifi_hidden_no">нет</string>
     <string name="aware_copy_wifi_hidden_yes">да</string>
     <string name="aware_copy_wifi_password">Пароль</string>
@@ -124,7 +124,7 @@
     <string name="aware_info_landmark_loading">Камера распознает достопримечательность</string>
     <string name="aware_info_message">Сообщение</string>
     <string name="aware_info_more_wikipedia">Подробнее см. на Википедии</string>
-    <string name="aware_info_no_results">Результатов не найдено</string>
+    <string name="aware_info_no_results">Ничего не найдено</string>
     <string name="aware_info_object">Объект</string>
     <string name="aware_info_object_loading">Камера распознает объект</string>
     <string name="aware_info_processing">Обработка</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Отмена</string>
     <string name="capture_failure">Ошибка при съемке. Повторите попытку.</string>
     <string name="checkbox_do_not_show">Не отображать в дальнейшем</string>
-    <string name="cloudsight_terms">Ваши изображения будут отправлены в CloudSight для получения результатов поиска. &lt;br/>&lt;br/> Продолжая, вы соглашаетесь с &lt;a href=%1$s>Политикой конфиденциальности&lt;/a> CloudSight.</string>
+    <string name="cloudsight_terms">При распознавании объектов изображение и данные о местоположении (если функция включена) будут отправляться сторонней организации для получения результатов поиска.&lt;br/>&lt;br/> Продолжая использование, вы соглашаетесь с &lt;a href=%1$s>Политикой конфиденциальности&lt;/a>.</string>
     <string name="dailog_panorama_failed">Ошибка. Попробуйте еще раз.</string>
     <string name="dailog_panorama_not_taken">Съемка панорамы не выполнена.</string>
     <string name="dialog_access_sd_fail">Невозможно сделать снимок мультимедиа. Не удалось получить доступ к MicroSD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Устройство не поддерживается</string>
     <string name="dialog_disagree">Не принимаю</string>
     <string name="dialog_dismiss">Не показывать снова</string>
+    <string name="dialog_download">Скачать</string>
     <string name="dialog_external_sd_missing">Не удалось сделать снимок. MicroSD недоступна. Переключение на внутреннюю память</string>
     <string name="dialog_first_time_set_pure_raw_message">"Этот формат используется для профессионального редактирования изображений.
 
@@ -223,7 +224,7 @@
     <string name="help_desc_quick">Дважды поверните телефон, чтобы открыть камеру или переключиться с одной камеры на другую.</string>
     <string name="help_desc_quick_double_tap_pwr">Откройте камеру, дважды нажав кнопку питания.</string>
     <string name="help_desc_smart_camera">Ваша камера распознает объекты и достопримечательности. Она также может сканировать QR-коды, визитные карточки и штрих-коды.</string>
-    <string name="help_desc_smart_camera_landmark_only">Ваша камера распознает достопримечательности. Она также может сканировать QR-коды, визитные карточки и штрих-коды.</string>
+    <string name="help_desc_smart_camera_landmark_only">Ваша камера распознает достопримечательности, сканирует визитки, штрих- и QR-коды.</string>
     <string name="help_desc_zoom">Проведите по экрану вверх или вниз для масштабирования.</string>
     <string name="help_done">ОК</string>
     <string name="help_dtfe_focus_header">Настройка фокусировки и экспозиции</string>
@@ -241,12 +242,13 @@
     <string name="help_header_dual_mono">Снимайте как профессионал</string>
     <string name="help_header_dual_result">Для наилучших результатов</string>
     <string name="help_header_quick">Быстрая съемка</string>
-    <string name="help_header_smart_camera">Более интеллектуальная камера</string>
+    <string name="help_header_smart_camera">Умная камера</string>
     <string name="help_header_zoom">Масштаб</string>
     <string name="help_location_description">Да, добавить тег местоположения.</string>
     <string name="help_next">Далее</string>
     <string name="image_360_desc">Это 360-градусная фотография. Вы можете редактировать эту фотографию с помощью графического редактора Moto 360.</string>
     <string name="image_360_name">360-градусная фотография</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">РЕЖИМ ГЛУБИНЫ ИЗОБРАЖЕНИЯ</string>
     <string name="indicate_mode_mono">ЧЕРНО-БЕЛЫЙ РЕЖИМ</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">СВЕРХШИРОКОУГОЛЬНЫЙ ОБЪЕКТИВ</string>
     <string name="indicate_mode_video">ВИДЕО</string>
     <string name="indicate_mode_wide_angle">ШИРОКОУГОЛЬНАЯ СЪЕМКА</string>
+    <string name="indicate_mode_wide_angle_selfie">ШИРОКОУГОЛЬНОЕ СЕЛФИ</string>
     <string name="internal_storage">внутренняя память</string>
     <string name="kilo_bytes">" КБ"</string>
-    <string name="landmark_install_message">Функция распознавания достопримечательности предоставляет информацию об известных достопримечательностях со всего мира.&lt;br/>&lt;br/>Установите, чтобы добавить эту функцию.</string>
-    <string name="landmark_install_over_data">Размер скачивания функции распознавания достопримечательности составляет 92 МБ. За скачивание с использованием мобильного Интернета может взиматься дополнительная плата.</string>
-    <string name="landmark_notification_downloading">Скачивание функции распознавания достопримечательности</string>
-    <string name="landmark_notification_install">Установка функции распознавания достопримечательности</string>
-    <string name="landmark_notification_install_complete">Установка функции распознавания достопримечательности завершена</string>
-    <string name="landmark_notification_install_failed">Ошибка при установке функции распознавания достопримечательности</string>
+    <string name="landmark_install_message">Эта функция предоставляет информацию об известных мировых достопримечательностях.&lt;br/>&lt;br/>Чтобы включить функцию, скачайте базу данных достопримечательностей.</string>
+    <string name="landmark_install_over_data">Размер базы данных достопримечательностей составляет 92 МБ. За скачивание по мобильному Интернету может взиматься дополнительная плата.</string>
+    <string name="landmark_notification_downloading">Скачивание базы данных достопримечательностей</string>
+    <string name="landmark_notification_install">Установка базы данных достопримечательностей</string>
+    <string name="landmark_notification_install_complete">Установка базы данных достопримечательностей завершена</string>
+    <string name="landmark_notification_install_failed">Ошибка при установке базы данных достопримечательностей</string>
     <string name="landmark_notification_install_invalid_url">База данных достопримечательностей недоступна, обновите приложение \"Камера\" до последней версии</string>
-    <string name="landmark_notification_install_out_of_space">Недостаточно свободного места для установки функции распознавания достопримечательности</string>
+    <string name="landmark_notification_install_out_of_space">Недостаточно свободного места для установки базы данных достопримечательностей</string>
+    <string name="landmark_notification_paused">Скачивание базы данных достопримечательностей продолжится при наличии интернет-подключения</string>
+    <string name="landmark_notification_queued">Скачивание базы данных достопримечательностей начнется при наличии интернет-подключения</string>
     <string name="main_setting_amz_barcode">Сканер штрих-кодов Amazon</string>
     <string name="main_setting_amz_privacy">Уведомление о конфиденциальности Amazon</string>
     <string name="main_setting_amz_terms">Условия использования</string>
@@ -276,7 +281,7 @@
     <string name="main_setting_category_general">Общие</string>
     <string name="main_setting_category_help">Справка</string>
     <string name="main_setting_category_photo">Фото</string>
-    <string name="main_setting_category_smart_camera">Интеллектуальная камера</string>
+    <string name="main_setting_category_smart_camera">Умная камера</string>
     <string name="main_setting_category_video">Видео</string>
     <string name="main_setting_debug_ui">Выполнить отладку</string>
     <string name="main_setting_digital_zoom">Цифровое увеличение</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">Размер фото (основная камера)</string>
     <string name="main_setting_image_ratio_front">Размер фото (фронтальная камера)</string>
     <string name="main_setting_landmark_detection">Распознавание достопримечательности</string>
+    <string name="main_setting_landmark_version_current">Версия базы данных: %s</string>
+    <string name="main_setting_landmark_version_not_installed">База данных не установлена</string>
     <string name="main_setting_licenses">Лицензии открытого ПО</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -301,7 +308,7 @@
     <string name="main_setting_quick_launch_summary">Дважды поверните телефон, чтобы открыть камеру или переключиться с одной камеры на другую.</string>
     <string name="main_setting_slow_motion_size">Замедленная съемка (основная)</string>
     <string name="main_setting_slow_motion_size_front">Замедление (фронтальная)</string>
-    <string name="main_setting_smart_camera_about">Об интеллектуальной камере</string>
+    <string name="main_setting_smart_camera_about">Об умной камере</string>
     <string name="main_setting_sound_effect">Звук затвора</string>
     <string name="main_setting_storage">Память</string>
     <string name="main_setting_sub_item_mod_camera_button_only">Только кнопка камеры</string>
@@ -325,10 +332,13 @@
     <string name="perm_required_alert_title">Необходимы разрешения</string>
     <string name="photos_depth_desc">Используйте редактор глубины изображения, чтобы настроить фокус, изменить фон или выбрать область фотографии, на которой нужно использовать черно-белый фильтр.</string>
     <string name="photos_depth_name">Режим глубины изображения</string>
+    <string name="photos_notification_desc">Получить неограниченное пространство для хранения файлов с помощью Google Фото</string>
+    <string name="photos_notification_title">Резервное копирование в Google Фото</string>
+    <string name="qcfa_resolution_description">Адапт. к освещению</string>
     <string name="retake">Другой снимок</string>
     <string name="second_10">10 с</string>
     <string name="second_3">3 с</string>
-    <string name="select_color_use_tip">Коснитесь в любом месте экрана, чтобы выбрать цвет.</string>
+    <string name="select_color_use_tip">Коснитесь любого места экрана, чтобы выбрать цвет.</string>
     <string name="setting_auto">Авто</string>
     <string name="setting_auto_flash">Автовспышка</string>
     <string name="setting_auto_flash_off">Вспышка выкл.</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">Замедленная съемка</string>
     <string name="setting_mode_ultra_wide">Сверхширокоугольный объектив</string>
     <string name="setting_mode_video">Видео</string>
+    <string name="setting_mode_wide_angle_selfie">Широкоугольное селфи</string>
     <string name="setting_off">Выкл.</string>
     <string name="setting_on">Вкл.</string>
     <string name="setting_persist">Удерживать</string>
@@ -383,22 +394,27 @@
     <string name="setting_timer_dialog_title">ТАЙМЕР</string>
     <string name="setting_torch">Фонарик</string>
     <string name="setting_true">да</string>
-    <string name="smartcam_landmark_notification_title">Интеллектуальная камера</string>
+    <string name="shortcut_desc_depth">Глубина изображения</string>
+    <string name="shortcut_desc_selfie">Селфи</string>
+    <string name="shortcut_desc_video">Видео</string>
+    <string name="smartcam_landmark_notification_title">Умная камера</string>
+    <string name="smartcam_no_detections">Нет сохраненных объектов или достопримечательностей</string>
     <string name="storage_location_external">MicroSD</string>
     <string name="storage_location_internal">Телефон</string>
     <string name="storage_unavailable">Хранилище недоступно</string>
+    <string name="toast_battery_saver">В данный момент работает режим энергосбережения – некоторые функции могут быть недоступны</string>
     <string name="toast_geotag_message_1">Чтобы сохранять информацию о том, где вы находитесь, предоставьте разрешение на определение местоположения.</string>
     <string name="toast_geotag_message_2">Чтобы сохранять место съемки, включите системную настройку местоположения.</string>
     <string name="tooltip_camera_switch_360">Попробуйте использовать другие параметры камеры.</string>
     <string name="tooltip_capture_360">Попробуйте снять 360-градусное видео или фото, коснувшись кнопки спуска затвора.</string>
-    <string name="tooltip_capture_key_360">Также попробуйте воспользоваться кнопкой спуска затвора на тыльной стороне аксессуара.</string>
-    <string name="tooltip_dual_camera_depth_photo">Снимайте фото с доп. данными, чтобы включить спец. функции редактирования.</string>
+    <string name="tooltip_capture_key_360">Также попробуйте воспользоваться кнопкой спуска затвора на тыльной стороне модуля Mod.</string>
     <string name="tooltip_first_use_zoom_button">Нажмите сюда для переключения на широкоугольную съемку.</string>
     <string name="tooltip_gallery_360">Посмотрите, каким получилось ваше 360-градусное фото или видео, проведя по экрану влево.</string>
     <string name="tooltip_minimap_viewfinder">Перемещайте нижнее изображение влево или вправо.</string>
     <string name="tooltip_mode_switch_360">Попробуйте снять 360-градусное видео или фото в других режимах!</string>
+    <string name="tooltip_modes_list">Откройте для себя новые способы съемки.</string>
     <string name="tooltip_smart_camera">Коснитесь, чтобы узнать больше о данном объекте.</string>
-    <string name="tooltip_smart_camera_disable">Это можно отключить в настройках.</string>
+    <string name="tooltip_smart_camera_disable">Эту функцию можно отключить в настройках.</string>
     <string name="tooltip_spherical_viewfinder">Для управления просмотром перемещайте телефон или масштабируйте изображение.</string>
     <string name="tooltip_viewfinder_switch">Коснитесь здесь, чтобы включить альтернативный режим экрана.</string>
     <string name="video_360_desc">Это 360-градусное видео. Вы можете редактировать это видео с помощью графического редактора Moto 360.</string>
@@ -419,5 +435,10 @@
     <string name="zoom_hint_full">ОСНОВНАЯ</string>
     <string name="zoom_hint_wide">ШИРОКОУГОЛЬНАЯ</string>
     <string name="zoom_pattern">%1$s,%2$sX</string>
-    <string name="qcfa_resolution_description">Адапт. к освещению</string>
+    <string name="indicate_mode_timelapse">ЗАМЕДЛЕННАЯ СЪЕМКА</string>
+    <string name="setting_mode_timelapse">Замедленная съемка</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

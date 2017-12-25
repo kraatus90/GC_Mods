@@ -28,10 +28,8 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
-
-    const/4 v1, 0x0
+.method constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,7 +39,9 @@
 
     iput v0, p0, Landroid/support/v4/app/NotificationManagerCompat$CancelTask;->id:I
 
-    iput-object v1, p0, Landroid/support/v4/app/NotificationManagerCompat$CancelTask;->tag:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/v4/app/NotificationManagerCompat$CancelTask;->tag:Ljava/lang/String;
 
     const/4 v0, 0x1
 
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -156,7 +156,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

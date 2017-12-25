@@ -34,9 +34,9 @@
 .method public static zzbY(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
-    const/4 v3, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v3, 0x0
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 

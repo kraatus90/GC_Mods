@@ -82,23 +82,23 @@
 
     packed-switch p6, :pswitch_data_0
 
-    const-string/jumbo v0, "Unknown format code %d for tag %d"
-
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array v0, v2, [Ljava/lang/Object;
 
     invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v1, v6
+    aput-object v1, v0, v6
 
     invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v1, v7
+    aput-object v1, v0, v7
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v1, "Unknown format code %d for tag %d"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -178,13 +178,13 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v0, "Unable to parse XMP property %s as a Rational."
+    new-array v0, v7, [Ljava/lang/Object;
 
-    new-array v1, v7, [Ljava/lang/Object;
+    aput-object p4, v0, v6
 
-    aput-object p4, v1, v6
+    const-string/jumbo v1, "Unable to parse XMP property %s as a Rational."
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -211,13 +211,13 @@
     :catch_1
     move-exception v0
 
-    const-string/jumbo v0, "Unable to parse XMP property %s as an int."
+    new-array v0, v7, [Ljava/lang/Object;
 
-    new-array v1, v7, [Ljava/lang/Object;
+    aput-object p4, v0, v6
 
-    aput-object p4, v1, v6
+    const-string/jumbo v1, "Unable to parse XMP property %s as an int."
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -244,13 +244,13 @@
     :catch_2
     move-exception v0
 
-    const-string/jumbo v0, "Unable to parse XMP property %s as an double."
+    new-array v0, v7, [Ljava/lang/Object;
 
-    new-array v1, v7, [Ljava/lang/Object;
+    aput-object p4, v0, v6
 
-    aput-object p4, v1, v6
+    const-string/jumbo v1, "Unable to parse XMP property %s as an double."
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -287,7 +287,7 @@
         .end annotation
     .end param
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     if-eqz p1, :cond_1
 
@@ -307,15 +307,15 @@
 
     if-le v0, v1, :cond_3
 
-    const-string/jumbo v0, "http://ns.adobe.com/xap/1.0/\u0000"
+    new-instance v0, Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/String;
+    const/16 v1, 0x1d
 
-    const/16 v3, 0x1d
+    invoke-direct {v0, p1, v3, v1}, Ljava/lang/String;-><init>([BII)V
 
-    invoke-direct {v1, p1, v4, v3}, Ljava/lang/String;-><init>([BII)V
+    const-string/jumbo v1, "http://ns.adobe.com/xap/1.0/\u0000"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -328,15 +328,15 @@
 
     new-array v0, v0, [B
 
-    const/16 v1, 0x1d
+    array-length v1, p1
 
-    const/4 v3, 0x0
+    add-int/lit8 v1, v1, -0x1d
 
-    array-length v4, p1
+    const/16 v3, 0x1d
 
-    add-int/lit8 v4, v4, -0x1d
+    const/4 v4, 0x0
 
-    invoke-static {p1, v1, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v3, v0, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     invoke-static {v0}, Lcom/adobe/xmp/XMPMetaFactory;->parseFromBuffer([B)Lcom/adobe/xmp/XMPMeta;
 

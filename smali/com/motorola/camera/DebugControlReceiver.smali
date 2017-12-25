@@ -12,9 +12,21 @@
 
 .field public static final ACTION_SET_CAPTURE_RESULT_PLOT_KEYS:Ljava/lang/String; = "motorola.camera.intent.action.SET_CAPTURE_RESULT_PLOT_KEYS"
 
+.field public static final ACTION_SET_LIMITER:Ljava/lang/String; = "motorola.camera.intent.action.SET_LIMITER"
+
 .field public static final ACTION_SHOW_CAPTURE_RESULT_PLOTS:Ljava/lang/String; = "motorola.camera.intent.action.SHOW_CAPTURE_RESULT_PLOTS"
 
 .field public static final EXTRA_CAPTURE_RESULT_KEYS:Ljava/lang/String; = "motorola.camera.intent.extra.CAPTURE_RESULT_KEYS"
+
+.field public static final EXTRA_ENABLE:Ljava/lang/String; = "motorola.camera.intent.extra.ENABLE"
+
+.field public static final EXTRA_NAME:Ljava/lang/String; = "motorola.camera.intent.extra.NAME"
+
+.field public static final EXTRA_PLOT_CPU_0_3:Ljava/lang/String; = "motorola.camera.intent.extra.PLOT_CPU_0_3"
+
+.field public static final EXTRA_PLOT_CPU_4_7:Ljava/lang/String; = "motorola.camera.intent.extra.PLOT_CPU_4_7"
+
+.field public static final EXTRA_PLOT_PREVIEW_RATE:Ljava/lang/String; = "motorola.camera.intent.extra.PLOT_PREVIEW_RATE"
 
 .field private static final TAG:Ljava/lang/String;
 
@@ -97,7 +109,7 @@
 
     new-instance v1, Ljava/util/HashSet;
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
 
@@ -145,7 +157,108 @@
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    const-string/jumbo v1, "motorola.camera.intent.action.SET_LIMITER"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
     return-object v0
+.end method
+
+.method private static handlePlotExtras(Landroid/os/Bundle;)V
+    .locals 3
+
+    invoke-virtual {p0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    const-string/jumbo v2, "motorola.camera.intent.extra.PLOT_CPU_0_3"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_0_3:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_1
+    const-string/jumbo v2, "motorola.camera.intent.extra.PLOT_CPU_4_7"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_4_7:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_2
+    const-string/jumbo v2, "motorola.camera.intent.extra.PLOT_PREVIEW_RATE"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_3
+    return-void
 .end method
 
 .method private static setCaptureResultKeys(Ljava/util/Set;)V
@@ -160,7 +273,7 @@
         }
     .end annotation
 
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
@@ -182,7 +295,9 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
+
+    const/4 v3, 0x0
 
     if-eqz p2, :cond_0
 
@@ -239,7 +354,7 @@
 
     if-eqz v1, :cond_4
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const/4 v1, 0x1
 
@@ -248,6 +363,12 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/motorola/camera/DebugControlReceiver;->handlePlotExtras(Landroid/os/Bundle;)V
 
     :cond_3
     :goto_0
@@ -262,11 +383,9 @@
 
     if-eqz v1, :cond_5
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
@@ -325,9 +444,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_8
 
     invoke-static {p2}, Lcom/motorola/camera/DebugControlReceiver;->getCaptureResultKeysExtra(Landroid/content/Intent;)Ljava/util/Set;
 
@@ -336,4 +455,78 @@
     invoke-static {v0}, Lcom/motorola/camera/DebugControlReceiver;->setCaptureResultKeys(Ljava/util/Set;)V
 
     goto :goto_0
+
+    :cond_8
+    const-string/jumbo v1, "motorola.camera.intent.action.SET_LIMITER"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string/jumbo v0, "motorola.camera.intent.extra.NAME"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    const-string/jumbo v1, "motorola.camera.intent.extra.ENABLE"
+
+    invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->limitFeatures(Ljava/lang/String;Z)V
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/BatterySaverHandler;->TAG:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->BATTERY_SAVER_LIMIT_OVR:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-string/jumbo v1, "motorola.camera.intent.extra.ENABLE"
+
+    invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    goto/16 :goto_0
+
+    :cond_9
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/BatteryHandler;->TAG:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->BATTERY_LIMIT_OVR:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-string/jumbo v1, "motorola.camera.intent.extra.ENABLE"
+
+    invoke-virtual {p2, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    goto/16 :goto_0
 .end method

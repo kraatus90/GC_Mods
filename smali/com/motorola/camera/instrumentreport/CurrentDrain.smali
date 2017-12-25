@@ -79,7 +79,7 @@
 
     new-instance v1, Lcom/motorola/camera/instrumentreport/CurrentMeasurementClass;
 
-    const v2, 0x7f080228
+    const v2, 0x7f08023f
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -91,7 +91,7 @@
 
     new-instance v1, Lcom/motorola/camera/instrumentreport/CurrentMeasurementClass;
 
-    const v2, 0x7f08021b
+    const v2, 0x7f080232
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -103,7 +103,7 @@
 
     new-instance v1, Lcom/motorola/camera/instrumentreport/CurrentMeasurementClass;
 
-    const v2, 0x7f0801de
+    const v2, 0x7f0801f5
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -115,7 +115,7 @@
 
     new-instance v1, Lcom/motorola/camera/instrumentreport/CurrentMeasurementClass;
 
-    const v2, 0x7f0801e2
+    const v2, 0x7f0801f9
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -127,7 +127,7 @@
 
     new-instance v1, Lcom/motorola/camera/instrumentreport/CurrentMeasurementClass;
 
-    const v2, 0x7f0801d4
+    const v2, 0x7f0801eb
 
     invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

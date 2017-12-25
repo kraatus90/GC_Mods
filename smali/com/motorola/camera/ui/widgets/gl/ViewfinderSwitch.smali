@@ -125,21 +125,21 @@
     return-void
 
     :pswitch_0
-    const/16 v0, 0x10d
+    const/16 v0, 0x110
 
     invoke-virtual {p0, v2, v3, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ViewfinderSwitch;->setButtonResources(IIII)V
 
     goto :goto_0
 
     :pswitch_1
-    const/16 v0, 0x10b
+    const/16 v0, 0x10e
 
     invoke-virtual {p0, v2, v3, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ViewfinderSwitch;->setButtonResources(IIII)V
 
     goto :goto_0
 
     :pswitch_2
-    const/16 v0, 0x10c
+    const/16 v0, 0x10f
 
     invoke-virtual {p0, v2, v3, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ViewfinderSwitch;->setButtonResources(IIII)V
 

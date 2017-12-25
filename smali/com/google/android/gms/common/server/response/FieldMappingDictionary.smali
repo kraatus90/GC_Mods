@@ -77,11 +77,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->zzzH:I
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->zzUJ:Ljava/util/ArrayList;
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Class;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -116,15 +116,15 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->zzzH:I
 
-    iput-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->zzUJ:Ljava/util/ArrayList;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->zzUJ:Ljava/util/ArrayList;
 
     new-instance v0, Ljava/util/HashMap;
 

@@ -32,6 +32,8 @@
 
 .field public static final enum FALSE_LAUNCH:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
 
+.field public static final enum LAND_DOWN:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
+
 .field public static final enum OBJECT_DETECTION:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
 
 .field public static final enum POST_CAPTURE:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
@@ -115,7 +117,17 @@
 
     sput-object v0, Lcom/motorola/camera/analytics/AnalyticsService$EventType;->OBJECT_DETECTION:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
 
-    const/4 v0, 0x7
+    new-instance v0, Lcom/motorola/camera/analytics/AnalyticsService$EventType;
+
+    const-string/jumbo v1, "LAND_DOWN"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/AnalyticsService$EventType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/AnalyticsService$EventType;->LAND_DOWN:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
+
+    const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/motorola/camera/analytics/AnalyticsService$EventType;
 
@@ -148,6 +160,12 @@
     sget-object v1, Lcom/motorola/camera/analytics/AnalyticsService$EventType;->OBJECT_DETECTION:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
 
     const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/AnalyticsService$EventType;->LAND_DOWN:Lcom/motorola/camera/analytics/AnalyticsService$EventType;
+
+    const/4 v2, 0x7
 
     aput-object v1, v0, v2
 

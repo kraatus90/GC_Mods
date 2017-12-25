@@ -46,10 +46,6 @@
 
     invoke-direct {v0}, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState$1;-><init>()V
 
-    invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->newCreator(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
-
-    move-result-object v0
-
     sput-object v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
@@ -66,47 +62,47 @@
 .method static readFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;
     .locals 4
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;
+    new-instance v2, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;
 
-    invoke-direct {v0}, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;-><init>()V
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    iput v3, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->featureId:I
+    invoke-direct {v2}, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;-><init>()V
 
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
-    if-eq v3, v2, :cond_0
+    iput v3, v2, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->featureId:I
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+
+    move-result v3
+
+    if-eq v3, v1, :cond_0
 
     :goto_0
-    iput-boolean v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->isOpen:Z
+    iput-boolean v0, v2, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->isOpen:Z
 
-    iget-boolean v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->isOpen:Z
+    iget-boolean v0, v2, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->isOpen:Z
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :goto_1
-    return-object v0
+    return-object v2
 
     :cond_0
-    move v1, v2
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
     invoke-virtual {p0, p1}, Landroid/os/Parcel;->readBundle(Ljava/lang/ClassLoader;)Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->menuState:Landroid/os/Bundle;
+    iput-object v0, v2, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState$SavedState;->menuState:Landroid/os/Bundle;
 
     goto :goto_1
 .end method

@@ -47,41 +47,43 @@
 .method public onTransitionEnd(Landroid/transition/Transition;)V
     .locals 4
 
+    const/4 v2, 0x0
+
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    iget-object v2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$2;->val$fragmentView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$2;->val$fragmentView:Landroid/view/View;
 
-    const/16 v3, 0x8
+    const/16 v1, 0x8
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object v2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$2;->val$exitingViews:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$2;->val$exitingViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v3
 
-    const/4 v0, 0x0
+    move v1, v2
 
     :goto_0
-    if-lt v0, v1, :cond_0
+    if-lt v1, v3, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v2, p0, Landroid/support/v4/app/FragmentTransitionCompat21$2;->val$exitingViews:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentTransitionCompat21$2;->val$exitingViews:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/view/View;
+    check-cast v0, Landroid/view/View;
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+    add-int/lit8 v0, v1, 0x1
 
-    add-int/lit8 v0, v0, 0x1
+    move v1, v0
 
     goto :goto_0
 .end method

@@ -22,9 +22,9 @@
 .method constructor <init>(Lcom/abbyy/mobile/ocr4/RecognitionData;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     iput-object p1, p0, Lcom/abbyy/mobile/ocr4/RecognitionData$2;->this$0:Lcom/abbyy/mobile/ocr4/RecognitionData;
+
+    const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;-><init>(Lcom/abbyy/mobile/ocr4/RecognitionData$1;)V
 

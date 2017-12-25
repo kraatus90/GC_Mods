@@ -80,6 +80,20 @@
 
     move-result v0
 
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
+
+    move-result v0
+
+    const/4 v2, 0x7
+
+    if-ne v0, v2, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isInstaPrintAttached()Z
+
+    move-result v0
+
     if-eqz v0, :cond_2
 
     :cond_1

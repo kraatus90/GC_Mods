@@ -117,7 +117,7 @@
     <string name="cancel">Cancel</string>
     <string name="capture_failure">Capture failed. Try again.</string>
     <string name="checkbox_do_not_show">Do not show again</string>
-    <string name="cloudsight_terms">"Your images will be sent to CloudSight to provide search results. &lt;br/>&lt;br/> By continuing you agree to CloudSight's&lt;a href=%1$s>Privacy Policy&lt;/a>."</string>
+    <string name="cloudsight_terms">Each time you use object recognition, the image and location (if enabled) will be sent to a third party to provide search results.&lt;br/>&lt;br/> By continuing, you agree to the&lt;a href=%1$s>Privacy Policy&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama failed. Please try again.</string>
     <string name="dailog_panorama_not_taken">Panorama picture not taken.</string>
     <string name="dialog_access_sd_fail">Unable to capture media. Could not access SD card.</string>
@@ -139,6 +139,7 @@
     <string name="dialog_device_not_supported">Device not supported</string>
     <string name="dialog_disagree">Disagree</string>
     <string name="dialog_dismiss">"Don't show again"</string>
+    <string name="dialog_download">Download</string>
     <string name="dialog_external_sd_missing">Unable to capture a picture. SD card is not accessible. Switching to internal phone storage</string>
     <string name="dialog_first_time_set_pure_raw_message">"This unprocessed file type is used to edit photos professionally.
 
@@ -210,12 +211,13 @@ Agree below and then turn on Location in Settings."</string>
     <string name="help_header_dual_mono">Shoot in B&amp;W like a pro</string>
     <string name="help_header_dual_result">For best results...</string>
     <string name="help_header_quick">Quick Capture</string>
-    <string name="help_header_smart_camera">Smarter Camera</string>
+    <string name="help_header_smart_camera">Smarter camera</string>
     <string name="help_header_zoom">Zoom</string>
     <string name="help_location_description">Yes, add location tag</string>
     <string name="help_next">Next</string>
     <string name="image_360_desc">This is a 360 photo. You can edit this photo with Moto 360 Editor.</string>
     <string name="image_360_name">360 Photo</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">DEPTH ENABLED</string>
     <string name="indicate_mode_mono">TRUE B&amp;W</string>
@@ -227,16 +229,19 @@ Agree below and then turn on Location in Settings."</string>
     <string name="indicate_mode_ultra_wide">ULTRA-WIDE ANGLE</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">WIDE ANGLE</string>
+    <string name="indicate_mode_wide_angle_selfie">WIDE ANGLE SELFIE</string>
     <string name="internal_storage">internal storage</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Landmark recognition offers information about popular landmarks around the world.&lt;br/>&lt;br/>Install to enable this feature.</string>
-    <string name="landmark_install_over_data">Landmark recognition download size is 92 MB. Installing it over mobile data may cause additional data charges.</string>
-    <string name="landmark_notification_downloading">Downloading Landmark recognition</string>
-    <string name="landmark_notification_install">Installing Landmark recognition</string>
-    <string name="landmark_notification_install_complete">Installation of Landmark recognition complete</string>
-    <string name="landmark_notification_install_failed">Installation of Landmark recognition has failed</string>
+    <string name="landmark_install_message">Landmark recognition offers information about popular landmarks around the world.&lt;br/>&lt;br/>Download the Landmark database to enable this feature.</string>
+    <string name="landmark_install_over_data">Landmark database download size is 92 MB. Downloading it over mobile data may cause additional data charges.</string>
+    <string name="landmark_notification_downloading">Downloading Landmark database</string>
+    <string name="landmark_notification_install">Installing Landmark database</string>
+    <string name="landmark_notification_install_complete">Installation of Landmark database complete</string>
+    <string name="landmark_notification_install_failed">Installation of Landmark database has failed</string>
     <string name="landmark_notification_install_invalid_url">Landmark database is not available, please update to the latest Camera version</string>
-    <string name="landmark_notification_install_out_of_space">Insufficient storage space available to install Landmark recognition</string>
+    <string name="landmark_notification_install_out_of_space">Insufficient storage space available to install Landmark database</string>
+    <string name="landmark_notification_paused">Landmark database will continue downloading when Internet is available</string>
+    <string name="landmark_notification_queued">Landmark database will begin downloading when Internet is available</string>
     <string name="main_setting_amz_barcode">Amazon barcode scanner</string>
     <string name="main_setting_amz_privacy">Amazon Privacy Notice</string>
     <string name="main_setting_amz_terms">Conditions of Use</string>
@@ -259,6 +264,8 @@ Agree below and then turn on Location in Settings."</string>
     <string name="main_setting_image_ratio">Photo size (rear)</string>
     <string name="main_setting_image_ratio_front">Photo size (front)</string>
     <string name="main_setting_landmark_detection">Landmark recognition</string>
+    <string name="main_setting_landmark_version_current">Database version: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Database not installed</string>
     <string name="main_setting_licenses">Open source licences</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -294,6 +301,9 @@ Agree below and then turn on Location in Settings."</string>
     <string name="perm_required_alert_title">Permissions required</string>
     <string name="photos_depth_desc">Use the depth editor to select focus, replace the background or select an area to change to black and white.</string>
     <string name="photos_depth_name">Depth enabled</string>
+    <string name="photos_notification_desc">Get unlimited storage with Google Photos</string>
+    <string name="photos_notification_title">Back up to Google Photos</string>
+    <string name="qcfa_resolution_description">Adaptive low light</string>
     <string name="retake">Retake</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -336,6 +346,7 @@ Agree below and then turn on Location in Settings."</string>
     <string name="setting_mode_slow_motion">Slow motion</string>
     <string name="setting_mode_ultra_wide">Ultra-wide angle</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Wide angle selfie</string>
     <string name="setting_off">Off</string>
     <string name="setting_on">On</string>
     <string name="setting_persist">Hold</string>
@@ -352,20 +363,25 @@ Agree below and then turn on Location in Settings."</string>
     <string name="setting_timer_dialog_title">Timer</string>
     <string name="setting_torch">Torch</string>
     <string name="setting_true">true</string>
+    <string name="shortcut_desc_depth">Depth photo</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Smart Camera</string>
+    <string name="smartcam_no_detections">No saved objects or landmarks</string>
     <string name="storage_location_external">SD card</string>
     <string name="storage_location_internal">Phone</string>
     <string name="storage_unavailable">Storage unavailable</string>
+    <string name="toast_battery_saver">You are currently in power save mode, some features may be limited</string>
     <string name="toast_geotag_message_1">You must grant permission to enable the location to be saved.</string>
     <string name="toast_geotag_message_2">The location is only saved when the system location setting is turned on.</string>
     <string name="tooltip_camera_switch_360">Try switching to different camera options.</string>
     <string name="tooltip_capture_360">Try capturing 360° photo or video by tapping on this shutter button.</string>
     <string name="tooltip_capture_key_360">Also try capturing with the shutter button on the back of the Mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Capture photos with extra info to enable special editing features.</string>
     <string name="tooltip_first_use_zoom_button">Tap here to switch to wide angle.</string>
     <string name="tooltip_gallery_360">See how your 360° photo or video looks by swiping to the left.</string>
     <string name="tooltip_minimap_viewfinder">Pan the bottom image left or right.</string>
     <string name="tooltip_mode_switch_360">Try capturing 360° in different modes!</string>
+    <string name="tooltip_modes_list">Discover new ways to capture your photos.</string>
     <string name="tooltip_smart_camera">Tap to find out more about the object.</string>
     <string name="tooltip_smart_camera_disable">You can turn this off in Settings.</string>
     <string name="tooltip_spherical_viewfinder">Pan or zoom in and out to control the view.</string>
@@ -388,4 +404,10 @@ Agree below and then turn on Location in Settings."</string>
     <string name="zoom_hint_full">FULL</string>
     <string name="zoom_hint_wide">WIDE</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">TIMELAPSE</string>
+    <string name="setting_mode_timelapse">Timelapse</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

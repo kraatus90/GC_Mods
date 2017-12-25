@@ -173,9 +173,9 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/commons/logging/impl/Log4JLogger;->logger:Lorg/apache/log4j/Logger;
 
@@ -252,8 +252,6 @@
 .method public debug(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/Log4JLogger;->getLogger()Lorg/apache/log4j/Logger;
 
     move-result-object v0
@@ -261,6 +259,8 @@
     sget-object v1, Lorg/apache/commons/logging/impl/Log4JLogger;->FQCN:Ljava/lang/String;
 
     sget-object v2, Lorg/apache/log4j/Level;->DEBUG:Lorg/apache/log4j/Level;
+
+    const/4 v3, 0x0
 
     invoke-virtual {v0, v1, v2, p1, v3}, Lorg/apache/log4j/Category;->log(Ljava/lang/String;Lorg/apache/log4j/Priority;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
@@ -286,8 +286,6 @@
 .method public error(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/Log4JLogger;->getLogger()Lorg/apache/log4j/Logger;
 
     move-result-object v0
@@ -295,6 +293,8 @@
     sget-object v1, Lorg/apache/commons/logging/impl/Log4JLogger;->FQCN:Ljava/lang/String;
 
     sget-object v2, Lorg/apache/log4j/Level;->ERROR:Lorg/apache/log4j/Level;
+
+    const/4 v3, 0x0
 
     invoke-virtual {v0, v1, v2, p1, v3}, Lorg/apache/log4j/Category;->log(Ljava/lang/String;Lorg/apache/log4j/Priority;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
@@ -320,8 +320,6 @@
 .method public fatal(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/Log4JLogger;->getLogger()Lorg/apache/log4j/Logger;
 
     move-result-object v0
@@ -329,6 +327,8 @@
     sget-object v1, Lorg/apache/commons/logging/impl/Log4JLogger;->FQCN:Ljava/lang/String;
 
     sget-object v2, Lorg/apache/log4j/Level;->FATAL:Lorg/apache/log4j/Level;
+
+    const/4 v3, 0x0
 
     invoke-virtual {v0, v1, v2, p1, v3}, Lorg/apache/log4j/Category;->log(Ljava/lang/String;Lorg/apache/log4j/Priority;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
@@ -401,8 +401,6 @@
 .method public info(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/Log4JLogger;->getLogger()Lorg/apache/log4j/Logger;
 
     move-result-object v0
@@ -410,6 +408,8 @@
     sget-object v1, Lorg/apache/commons/logging/impl/Log4JLogger;->FQCN:Ljava/lang/String;
 
     sget-object v2, Lorg/apache/log4j/Level;->INFO:Lorg/apache/log4j/Level;
+
+    const/4 v3, 0x0
 
     invoke-virtual {v0, v1, v2, p1, v3}, Lorg/apache/log4j/Category;->log(Ljava/lang/String;Lorg/apache/log4j/Priority;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
@@ -527,8 +527,6 @@
 .method public trace(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/Log4JLogger;->getLogger()Lorg/apache/log4j/Logger;
 
     move-result-object v0
@@ -536,6 +534,8 @@
     sget-object v1, Lorg/apache/commons/logging/impl/Log4JLogger;->FQCN:Ljava/lang/String;
 
     sget-object v2, Lorg/apache/commons/logging/impl/Log4JLogger;->traceLevel:Lorg/apache/log4j/Priority;
+
+    const/4 v3, 0x0
 
     invoke-virtual {v0, v1, v2, p1, v3}, Lorg/apache/log4j/Category;->log(Ljava/lang/String;Lorg/apache/log4j/Priority;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
@@ -561,8 +561,6 @@
 .method public warn(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     invoke-virtual {p0}, Lorg/apache/commons/logging/impl/Log4JLogger;->getLogger()Lorg/apache/log4j/Logger;
 
     move-result-object v0
@@ -570,6 +568,8 @@
     sget-object v1, Lorg/apache/commons/logging/impl/Log4JLogger;->FQCN:Ljava/lang/String;
 
     sget-object v2, Lorg/apache/log4j/Level;->WARN:Lorg/apache/log4j/Level;
+
+    const/4 v3, 0x0
 
     invoke-virtual {v0, v1, v2, p1, v3}, Lorg/apache/log4j/Category;->log(Ljava/lang/String;Lorg/apache/log4j/Priority;Ljava/lang/Object;Ljava/lang/Throwable;)V
 

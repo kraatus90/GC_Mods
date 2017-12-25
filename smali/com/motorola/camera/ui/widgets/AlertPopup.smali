@@ -13,7 +13,8 @@
         Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;,
         Lcom/motorola/camera/ui/widgets/AlertPopup$Builder;,
         Lcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;,
-        Lcom/motorola/camera/ui/widgets/AlertPopup$OnDismissListener;
+        Lcom/motorola/camera/ui/widgets/AlertPopup$OnDismissListener;,
+        Lcom/motorola/camera/ui/widgets/AlertPopup$URLSpanNoUnderline;
     }
 .end annotation
 
@@ -179,7 +180,7 @@
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_0
-    const v0, 0x7f0e0068
+    const v0, 0x7f0e007c
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -201,7 +202,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0e0069
+    const v0, 0x7f0e007d
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -226,7 +227,7 @@
 .method private setDrawable(I)V
     .locals 3
 
-    const v0, 0x7f0e0068
+    const v0, 0x7f0e007c
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -267,7 +268,7 @@
 .method private setDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 2
 
-    const v0, 0x7f0e0068
+    const v0, 0x7f0e007c
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +288,7 @@
 .method private setMessage(I)V
     .locals 2
 
-    const v0, 0x7f0e0067
+    const v0, 0x7f0e007b
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -313,7 +314,7 @@
 .method private setMessage(Ljava/lang/CharSequence;)V
     .locals 2
 
-    const v0, 0x7f0e0067
+    const v0, 0x7f0e007b
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -341,7 +342,7 @@
 
     const/4 v2, 0x0
 
-    const v0, 0x7f0e0067
+    const v0, 0x7f0e007b
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -363,13 +364,15 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->stripUnderlines(Landroid/widget/TextView;)V
+
     return-void
 .end method
 
 .method private setNegativeButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
     .locals 2
 
-    const v0, 0x7f0e006a
+    const v0, 0x7f0e007e
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -401,7 +404,7 @@
 .method private setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
     .locals 2
 
-    const v0, 0x7f0e006c
+    const v0, 0x7f0e0080
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -425,7 +428,7 @@
 .method private setTitle(I)V
     .locals 2
 
-    const v0, 0x7f0e004a
+    const v0, 0x7f0e0059
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -435,7 +438,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(I)V
 
-    const v0, 0x7f0e0049
+    const v0, 0x7f0e0058
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup;->findViewById(I)Landroid/view/View;
 
@@ -444,6 +447,70 @@
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+.end method
+
+.method private stripUnderlines(Landroid/widget/TextView;)V
+    .locals 9
+
+    const/4 v2, 0x0
+
+    new-instance v3, Landroid/text/SpannableString;
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-direct {v3, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+
+    invoke-interface {v3}, Landroid/text/Spannable;->length()I
+
+    move-result v0
+
+    const-class v1, Landroid/text/style/URLSpan;
+
+    invoke-interface {v3, v2, v0, v1}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Landroid/text/style/URLSpan;
+
+    array-length v4, v0
+
+    move v1, v2
+
+    :goto_0
+    if-ge v1, v4, :cond_0
+
+    aget-object v5, v0, v1
+
+    invoke-interface {v3, v5}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v6
+
+    invoke-interface {v3, v5}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v7
+
+    invoke-interface {v3, v5}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+
+    new-instance v8, Lcom/motorola/camera/ui/widgets/AlertPopup$URLSpanNoUnderline;
+
+    invoke-virtual {v5}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v8, p0, v5}, Lcom/motorola/camera/ui/widgets/AlertPopup$URLSpanNoUnderline;-><init>(Lcom/motorola/camera/ui/widgets/AlertPopup;Ljava/lang/String;)V
+
+    invoke-interface {v3, v8, v6, v7, v2}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
@@ -562,9 +629,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x7f0e0066 -> :sswitch_0
-        0x7f0e006a -> :sswitch_1
-        0x7f0e006c -> :sswitch_2
+        0x7f0e007a -> :sswitch_0
+        0x7f0e007e -> :sswitch_1
+        0x7f0e0080 -> :sswitch_2
     .end sparse-switch
 .end method
 

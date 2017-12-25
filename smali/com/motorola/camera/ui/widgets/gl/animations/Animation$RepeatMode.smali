@@ -27,8 +27,20 @@
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
 
 .field public static final enum RESTART:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum REVERSE:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

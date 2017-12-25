@@ -20,8 +20,6 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    const/4 v2, 0x0
-
     const/4 v4, 0x3
 
     const/16 v3, 0x8
@@ -38,327 +36,329 @@
 
     const/4 v1, 0x0
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x0
 
-    const/4 v1, 0x1
+    aput-object v1, v0, v2
 
-    new-array v2, v4, [Ljava/lang/String;
+    new-array v1, v4, [Ljava/lang/String;
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x1
 
-    const/4 v1, 0x2
+    aput-object v1, v0, v2
 
-    new-array v2, v3, [Ljava/lang/String;
+    new-array v1, v3, [Ljava/lang/String;
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
 
     new-array v1, v3, [Ljava/lang/String;
 
     aput-object v1, v0, v4
 
-    const/4 v1, 0x4
+    const/16 v1, 0x19
 
-    const/16 v2, 0x19
+    new-array v1, v1, [Ljava/lang/String;
 
-    new-array v2, v2, [Ljava/lang/String;
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    new-array v1, v3, [Ljava/lang/String;
 
-    new-array v2, v3, [Ljava/lang/String;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->REASON_PHRASES:[[Ljava/lang/String;
 
-    const/16 v0, 0xc8
+    const-string/jumbo v0, "OK"
 
-    const-string/jumbo v1, "OK"
+    const/16 v1, 0xc8
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xc9
+    const-string/jumbo v0, "Created"
 
-    const-string/jumbo v1, "Created"
+    const/16 v1, 0xc9
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xca
+    const-string/jumbo v0, "Accepted"
 
-    const-string/jumbo v1, "Accepted"
+    const/16 v1, 0xca
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xcc
+    const-string/jumbo v0, "No Content"
 
-    const-string/jumbo v1, "No Content"
+    const/16 v1, 0xcc
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x12d
+    const-string/jumbo v0, "Moved Permanently"
 
-    const-string/jumbo v1, "Moved Permanently"
+    const/16 v1, 0x12d
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x12e
+    const-string/jumbo v0, "Moved Temporarily"
 
-    const-string/jumbo v1, "Moved Temporarily"
+    const/16 v1, 0x12e
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x130
+    const-string/jumbo v0, "Not Modified"
 
-    const-string/jumbo v1, "Not Modified"
+    const/16 v1, 0x130
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x190
+    const-string/jumbo v0, "Bad Request"
 
-    const-string/jumbo v1, "Bad Request"
+    const/16 v1, 0x190
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x191
+    const-string/jumbo v0, "Unauthorized"
 
-    const-string/jumbo v1, "Unauthorized"
+    const/16 v1, 0x191
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x193
+    const-string/jumbo v0, "Forbidden"
 
-    const-string/jumbo v1, "Forbidden"
+    const/16 v1, 0x193
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x194
+    const-string/jumbo v0, "Not Found"
 
-    const-string/jumbo v1, "Not Found"
+    const/16 v1, 0x194
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1f4
+    const-string/jumbo v0, "Internal Server Error"
 
-    const-string/jumbo v1, "Internal Server Error"
+    const/16 v1, 0x1f4
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1f5
+    const-string/jumbo v0, "Not Implemented"
 
-    const-string/jumbo v1, "Not Implemented"
+    const/16 v1, 0x1f5
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1f6
+    const-string/jumbo v0, "Bad Gateway"
 
-    const-string/jumbo v1, "Bad Gateway"
+    const/16 v1, 0x1f6
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1f7
+    const-string/jumbo v0, "Service Unavailable"
 
-    const-string/jumbo v1, "Service Unavailable"
+    const/16 v1, 0x1f7
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x64
+    const-string/jumbo v0, "Continue"
 
-    const-string/jumbo v1, "Continue"
+    const/16 v1, 0x64
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x133
+    const-string/jumbo v0, "Temporary Redirect"
 
-    const-string/jumbo v1, "Temporary Redirect"
+    const/16 v1, 0x133
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x195
+    const-string/jumbo v0, "Method Not Allowed"
 
-    const-string/jumbo v1, "Method Not Allowed"
+    const/16 v1, 0x195
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x199
+    const-string/jumbo v0, "Conflict"
 
-    const-string/jumbo v1, "Conflict"
+    const/16 v1, 0x199
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x19c
+    const-string/jumbo v0, "Precondition Failed"
 
-    const-string/jumbo v1, "Precondition Failed"
+    const/16 v1, 0x19c
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x19d
+    const-string/jumbo v0, "Request Too Long"
 
-    const-string/jumbo v1, "Request Too Long"
+    const/16 v1, 0x19d
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x19e
+    const-string/jumbo v0, "Request-URI Too Long"
 
-    const-string/jumbo v1, "Request-URI Too Long"
+    const/16 v1, 0x19e
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x19f
+    const-string/jumbo v0, "Unsupported Media Type"
 
-    const-string/jumbo v1, "Unsupported Media Type"
+    const/16 v1, 0x19f
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x12c
+    const-string/jumbo v0, "Multiple Choices"
 
-    const-string/jumbo v1, "Multiple Choices"
+    const/16 v1, 0x12c
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x12f
+    const-string/jumbo v0, "See Other"
 
-    const-string/jumbo v1, "See Other"
+    const/16 v1, 0x12f
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x131
+    const-string/jumbo v0, "Use Proxy"
 
-    const-string/jumbo v1, "Use Proxy"
+    const/16 v1, 0x131
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x192
+    const-string/jumbo v0, "Payment Required"
 
-    const-string/jumbo v1, "Payment Required"
+    const/16 v1, 0x192
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x196
+    const-string/jumbo v0, "Not Acceptable"
 
-    const-string/jumbo v1, "Not Acceptable"
+    const/16 v1, 0x196
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x197
+    const-string/jumbo v0, "Proxy Authentication Required"
 
-    const-string/jumbo v1, "Proxy Authentication Required"
+    const/16 v1, 0x197
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x198
+    const-string/jumbo v0, "Request Timeout"
 
-    const-string/jumbo v1, "Request Timeout"
+    const/16 v1, 0x198
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x65
+    const-string/jumbo v0, "Switching Protocols"
 
-    const-string/jumbo v1, "Switching Protocols"
+    const/16 v1, 0x65
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xcb
+    const-string/jumbo v0, "Non Authoritative Information"
 
-    const-string/jumbo v1, "Non Authoritative Information"
+    const/16 v1, 0xcb
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xcd
+    const-string/jumbo v0, "Reset Content"
 
-    const-string/jumbo v1, "Reset Content"
+    const/16 v1, 0xcd
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xce
+    const-string/jumbo v0, "Partial Content"
 
-    const-string/jumbo v1, "Partial Content"
+    const/16 v1, 0xce
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1f8
+    const-string/jumbo v0, "Gateway Timeout"
 
-    const-string/jumbo v1, "Gateway Timeout"
+    const/16 v1, 0x1f8
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1f9
+    const-string/jumbo v0, "Http Version Not Supported"
 
-    const-string/jumbo v1, "Http Version Not Supported"
+    const/16 v1, 0x1f9
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x19a
+    const-string/jumbo v0, "Gone"
 
-    const-string/jumbo v1, "Gone"
+    const/16 v1, 0x19a
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x19b
+    const-string/jumbo v0, "Length Required"
 
-    const-string/jumbo v1, "Length Required"
+    const/16 v1, 0x19b
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a0
+    const-string/jumbo v0, "Requested Range Not Satisfiable"
 
-    const-string/jumbo v1, "Requested Range Not Satisfiable"
+    const/16 v1, 0x1a0
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a1
+    const-string/jumbo v0, "Expectation Failed"
 
-    const-string/jumbo v1, "Expectation Failed"
+    const/16 v1, 0x1a1
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x66
+    const-string/jumbo v0, "Processing"
 
-    const-string/jumbo v1, "Processing"
+    const/16 v1, 0x66
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0xcf
+    const-string/jumbo v0, "Multi-Status"
 
-    const-string/jumbo v1, "Multi-Status"
+    const/16 v1, 0xcf
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a6
+    const-string/jumbo v0, "Unprocessable Entity"
 
-    const-string/jumbo v1, "Unprocessable Entity"
+    const/16 v1, 0x1a6
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a3
+    const-string/jumbo v0, "Insufficient Space On Resource"
 
-    const-string/jumbo v1, "Insufficient Space On Resource"
+    const/16 v1, 0x1a3
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a4
+    const-string/jumbo v0, "Method Failure"
 
-    const-string/jumbo v1, "Method Failure"
+    const/16 v1, 0x1a4
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a7
+    const-string/jumbo v0, "Locked"
 
-    const-string/jumbo v1, "Locked"
+    const/16 v1, 0x1a7
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1fb
+    const-string/jumbo v0, "Insufficient Storage"
 
-    const-string/jumbo v1, "Insufficient Storage"
+    const/16 v1, 0x1fb
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
-    const/16 v0, 0x1a8
+    const-string/jumbo v0, "Failed Dependency"
 
-    const-string/jumbo v1, "Failed Dependency"
+    const/16 v1, 0x1a8
 
-    invoke-static {v0, v1}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
+    invoke-static {v1, v0}, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->setReason(ILjava/lang/String;)V
 
     return-void
 .end method
@@ -394,8 +394,6 @@
 .method public getReason(ILjava/util/Locale;)Ljava/lang/String;
     .locals 4
 
-    const/4 v1, 0x0
-
     const/16 v0, 0x64
 
     if-ge p1, v0, :cond_1
@@ -404,41 +402,41 @@
     const/4 v0, 0x0
 
     :goto_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Unknown category for status code "
+    const-string/jumbo v2, "Unknown category for status code "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v0, v2}, Lorg/apache/http/util/Args;->check(ZLjava/lang/String;)V
+    invoke-static {v0, v1}, Lorg/apache/http/util/Args;->check(ZLjava/lang/String;)V
 
-    div-int/lit8 v0, p1, 0x64
+    div-int/lit8 v1, p1, 0x64
 
-    mul-int/lit8 v2, v0, 0x64
+    mul-int/lit8 v0, v1, 0x64
 
-    sub-int v2, p1, v2
+    sub-int v2, p1, v0
+
+    const/4 v0, 0x0
 
     sget-object v3, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->REASON_PHRASES:[[Ljava/lang/String;
 
-    aget-object v3, v3, v0
+    aget-object v3, v3, v1
 
     array-length v3, v3
 
     if-gt v3, v2, :cond_2
-
-    move-object v0, v1
 
     :goto_1
     return-object v0
@@ -453,9 +451,9 @@
     goto :goto_0
 
     :cond_2
-    sget-object v1, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->REASON_PHRASES:[[Ljava/lang/String;
+    sget-object v0, Lorg/apache/http/impl/EnglishReasonPhraseCatalog;->REASON_PHRASES:[[Ljava/lang/String;
 
-    aget-object v0, v1, v0
+    aget-object v0, v0, v1
 
     aget-object v0, v0, v2
 

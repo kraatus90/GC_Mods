@@ -82,9 +82,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$123;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$Y83ynkftmA231ulH8PVMFLOAdeQ;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$123;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$Y83ynkftmA231ulH8PVMFLOAdeQ;-><init>(Ljava/lang/Object;)V
 
     const-wide/16 v2, 0x3e8
 
@@ -120,7 +120,7 @@
     goto :goto_0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_ShutterButtonTexture$1_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_ShutterButtonTexture$1_3172()V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;

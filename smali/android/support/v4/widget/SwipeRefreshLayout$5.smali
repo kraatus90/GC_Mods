@@ -37,8 +37,6 @@
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout$5;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     iget-boolean v0, v0, Landroid/support/v4/widget/SwipeRefreshLayout;->mScale:Z
@@ -50,6 +48,8 @@
 
     :cond_0
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout$5;->this$0:Landroid/support/v4/widget/SwipeRefreshLayout;
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->startScaleDownAnimation(Landroid/view/animation/Animation$AnimationListener;)V
 

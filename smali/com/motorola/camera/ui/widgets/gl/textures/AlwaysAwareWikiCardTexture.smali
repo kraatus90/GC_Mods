@@ -133,7 +133,7 @@
 
     const-string/jumbo v2, " "
 
-    const/16 v3, 0xff
+    const/16 v3, 0x100
 
     invoke-direct {v0, p0, v1, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiCardTexture$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiCardTexture;Lcom/motorola/camera/ui/widgets/gl/iRenderer;ILjava/lang/String;)V
 

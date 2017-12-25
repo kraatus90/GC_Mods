@@ -54,11 +54,9 @@
 .end method
 
 .method private updateRadialGradient(I)V
-    .locals 8
+    .locals 7
 
-    const/4 v5, 0x0
-
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     new-instance v0, Landroid/graphics/RadialGradient;
 
@@ -80,15 +78,17 @@
 
     new-array v4, v4, [I
 
-    const/high16 v6, 0x3d000000    # 0.03125f
+    const/high16 v5, 0x3d000000    # 0.03125f
 
-    aput v6, v4, v7
+    aput v5, v4, v6
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    aput v7, v4, v6
+    aput v6, v4, v5
 
     sget-object v6, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    const/4 v5, 0x0
 
     invoke-direct/range {v0 .. v6}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
@@ -108,27 +108,27 @@
 .method public draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
     .locals 6
 
-    iget-object v2, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->this$0:Landroid/support/v4/widget/CircleImageView;
+    iget-object v0, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->this$0:Landroid/support/v4/widget/CircleImageView;
 
-    invoke-virtual {v2}, Landroid/support/v4/widget/CircleImageView;->getWidth()I
-
-    move-result v1
-
-    iget-object v2, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->this$0:Landroid/support/v4/widget/CircleImageView;
-
-    invoke-virtual {v2}, Landroid/support/v4/widget/CircleImageView;->getHeight()I
+    invoke-virtual {v0}, Landroid/support/v4/widget/CircleImageView;->getWidth()I
 
     move-result v0
 
-    div-int/lit8 v2, v1, 0x2
+    iget-object v1, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->this$0:Landroid/support/v4/widget/CircleImageView;
+
+    invoke-virtual {v1}, Landroid/support/v4/widget/CircleImageView;->getHeight()I
+
+    move-result v1
+
+    div-int/lit8 v2, v0, 0x2
 
     int-to-float v2, v2
 
-    div-int/lit8 v3, v0, 0x2
+    div-int/lit8 v3, v1, 0x2
 
     int-to-float v3, v3
 
-    div-int/lit8 v4, v1, 0x2
+    div-int/lit8 v4, v0, 0x2
 
     int-to-float v4, v4
 
@@ -136,25 +136,25 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    div-int/lit8 v2, v1, 0x2
+    div-int/lit8 v2, v0, 0x2
 
     int-to-float v2, v2
 
-    div-int/lit8 v3, v0, 0x2
+    div-int/lit8 v1, v1, 0x2
 
-    int-to-float v3, v3
+    int-to-float v1, v1
 
-    div-int/lit8 v4, v1, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    iget-object v5, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->this$0:Landroid/support/v4/widget/CircleImageView;
+    iget-object v3, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->this$0:Landroid/support/v4/widget/CircleImageView;
 
-    iget v5, v5, Landroid/support/v4/widget/CircleImageView;->mShadowRadius:I
+    iget v3, v3, Landroid/support/v4/widget/CircleImageView;->mShadowRadius:I
 
-    sub-int/2addr v4, v5
+    sub-int/2addr v0, v3
 
-    int-to-float v4, v4
+    int-to-float v0, v0
 
-    invoke-virtual {p1, v2, v3, v4, p2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v2, v1, v0, p2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     return-void
 .end method

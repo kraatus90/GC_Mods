@@ -17,6 +17,10 @@
 # instance fields
 .field mEndTime:J
 
+.field mKpiTime:J
+
+.field mMcfQueue:I
+
 .field mMode:Ljava/lang/String;
 
 .field mStartTime:J
@@ -33,6 +37,8 @@
     iput-wide v0, p0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mStartTime:J
 
     iput-wide v0, p0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mEndTime:J
+
+    iput-wide v0, p0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mKpiTime:J
 
     return-void
 .end method

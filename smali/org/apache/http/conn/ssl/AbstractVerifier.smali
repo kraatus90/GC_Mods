@@ -26,89 +26,89 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "ac"
 
-    const-string/jumbo v2, "ac"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "co"
 
-    const-string/jumbo v2, "co"
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "com"
 
-    const-string/jumbo v2, "com"
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "ed"
 
-    const-string/jumbo v2, "ed"
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "edu"
 
-    const-string/jumbo v2, "edu"
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "go"
 
-    const-string/jumbo v2, "go"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "gouv"
 
-    const-string/jumbo v2, "gouv"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "gov"
 
-    const-string/jumbo v2, "gov"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "info"
 
-    const-string/jumbo v2, "info"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "lg"
 
-    const-string/jumbo v2, "lg"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "ne"
 
-    const-string/jumbo v2, "ne"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "net"
 
-    const-string/jumbo v2, "net"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "or"
 
-    const-string/jumbo v2, "or"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "org"
 
-    const-string/jumbo v2, "org"
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/http/conn/ssl/AbstractVerifier;->BAD_COUNTRY_2LDS:[Ljava/lang/String;
 
@@ -226,9 +226,7 @@
 .end method
 
 .method public static getCNs(Ljava/security/cert/X509Certificate;)[Ljava/lang/String;
-    .locals 8
-
-    const/4 v7, 0x0
+    .locals 7
 
     const/4 v6, 0x3
 
@@ -266,7 +264,9 @@
 
     if-eqz v1, :cond_2
 
-    return-object v7
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     invoke-virtual {v2}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
@@ -330,9 +330,9 @@
 .method private static getSubjectAlts(Ljava/security/cert/X509Certificate;Ljava/lang/String;)[Ljava/lang/String;
     .locals 7
 
-    const/4 v6, 0x0
-
     const/4 v3, 0x0
+
+    const/4 v6, 0x0
 
     invoke-static {p1}, Lorg/apache/http/conn/ssl/AbstractVerifier;->isIPAddress(Ljava/lang/String;)Z
 

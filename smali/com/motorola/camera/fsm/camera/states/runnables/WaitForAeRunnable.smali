@@ -63,7 +63,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_WaitForAeRunnable_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_WaitForAeRunnable_1065()V
     .locals 1
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/WaitForAeRunnable;->getExposureStateMachine()Lcom/motorola/camera/fsm/camera/subfsms/ExposureStateMachine;
@@ -112,9 +112,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/WaitForAeRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$78;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$9E6GfbRIrB7RLKNPKDDOaCk-yFU;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$78;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$9E6GfbRIrB7RLKNPKDDOaCk-yFU;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

@@ -57,43 +57,44 @@
 
 # virtual methods
 .method public cancel()V
-    .locals 4
+    .locals 3
 
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v2, p0, Landroid/support/v4/os/CancellationSignal;->mIsCanceled:Z
+    iget-boolean v0, p0, Landroid/support/v4/os/CancellationSignal;->mIsCanceled:Z
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_1
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v2, p0, Landroid/support/v4/os/CancellationSignal;->mIsCanceled:Z
+    iput-boolean v0, p0, Landroid/support/v4/os/CancellationSignal;->mIsCanceled:Z
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v2, p0, Landroid/support/v4/os/CancellationSignal;->mCancelInProgress:Z
+    iput-boolean v0, p0, Landroid/support/v4/os/CancellationSignal;->mCancelInProgress:Z
 
-    iget-object v0, p0, Landroid/support/v4/os/CancellationSignal;->mOnCancelListener:Landroid/support/v4/os/CancellationSignal$OnCancelListener;
+    iget-object v1, p0, Landroid/support/v4/os/CancellationSignal;->mOnCancelListener:Landroid/support/v4/os/CancellationSignal$OnCancelListener;
 
-    iget-object v1, p0, Landroid/support/v4/os/CancellationSignal;->mCancellationSignalObj:Ljava/lang/Object;
+    iget-object v0, p0, Landroid/support/v4/os/CancellationSignal;->mCancellationSignalObj:Ljava/lang/Object;
 
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_1
-
-    :goto_0
     if-nez v1, :cond_2
 
+    :goto_0
+    if-nez v0, :cond_3
+
+    :cond_0
     :goto_1
     monitor-enter p0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :try_start_1
-    iput-boolean v2, p0, Landroid/support/v4/os/CancellationSignal;->mCancelInProgress:Z
+    iput-boolean v0, p0, Landroid/support/v4/os/CancellationSignal;->mCancelInProgress:Z
 
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
@@ -103,38 +104,38 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     :try_start_2
     monitor-exit p0
 
     return-void
 
     :catchall_0
-    move-exception v2
+    move-exception v0
 
     monitor-exit p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    throw v2
+    throw v0
 
-    :cond_1
+    :cond_2
     :try_start_3
-    invoke-interface {v0}, Landroid/support/v4/os/CancellationSignal$OnCancelListener;->onCancel()V
+    invoke-interface {v1}, Landroid/support/v4/os/CancellationSignal$OnCancelListener;->onCancel()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_0
 
     :catchall_1
-    move-exception v2
+    move-exception v0
 
     monitor-enter p0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     :try_start_4
-    iput-boolean v3, p0, Landroid/support/v4/os/CancellationSignal;->mCancelInProgress:Z
+    iput-boolean v1, p0, Landroid/support/v4/os/CancellationSignal;->mCancelInProgress:Z
 
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
@@ -142,35 +143,43 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    throw v2
+    throw v0
 
-    :cond_2
+    :cond_3
     :try_start_5
-    invoke-static {v1}, Landroid/support/v4/os/CancellationSignalCompatJellybean;->cancel(Ljava/lang/Object;)V
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x10
+
+    if-lt v1, v2, :cond_0
+
+    check-cast v0, Landroid/os/CancellationSignal;
+
+    invoke-virtual {v0}, Landroid/os/CancellationSignal;->cancel()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     goto :goto_1
 
     :catchall_2
-    move-exception v2
+    move-exception v0
 
     :try_start_6
     monitor-exit p0
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    throw v2
+    throw v0
 
     :catchall_3
-    move-exception v2
+    move-exception v0
 
     :try_start_7
     monitor-exit p0
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
-    throw v2
+    throw v0
 .end method
 
 .method public getCancellationSignalObject()Ljava/lang/Object;
@@ -203,9 +212,9 @@
     return-object v2
 
     :cond_2
-    invoke-static {}, Landroid/support/v4/os/CancellationSignalCompatJellybean;->create()Ljava/lang/Object;
+    new-instance v0, Landroid/os/CancellationSignal;
 
-    move-result-object v0
+    invoke-direct {v0}, Landroid/os/CancellationSignal;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/os/CancellationSignal;->mCancellationSignalObj:Ljava/lang/Object;
 
@@ -215,7 +224,9 @@
 
     iget-object v0, p0, Landroid/support/v4/os/CancellationSignal;->mCancellationSignalObj:Ljava/lang/Object;
 
-    invoke-static {v0}, Landroid/support/v4/os/CancellationSignalCompatJellybean;->cancel(Ljava/lang/Object;)V
+    check-cast v0, Landroid/os/CancellationSignal;
+
+    invoke-virtual {v0}, Landroid/os/CancellationSignal;->cancel()V
 
     goto :goto_0
 

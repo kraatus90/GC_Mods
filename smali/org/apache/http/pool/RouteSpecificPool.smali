@@ -123,14 +123,14 @@
 .end method
 
 .method public free(Lorg/apache/http/pool/PoolEntry;Z)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;Z)V"
         }
     .end annotation
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const-string/jumbo v0, "Pool entry"
 
@@ -142,15 +142,15 @@
 
     move-result v0
 
-    const-string/jumbo v1, "Entry %s has not been leased from this pool"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    aput-object p1, v1, v2
 
-    aput-object p1, v2, v3
+    const-string/jumbo v2, "Entry %s has not been leased from this pool"
 
-    invoke-static {v0, v1, v2}, Lorg/apache/http/util/Asserts;->check(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2, v1}, Lorg/apache/http/util/Asserts;->check(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-nez p2, :cond_0
 
@@ -297,14 +297,12 @@
 .end method
 
 .method public getLastUsed()Lorg/apache/http/pool/PoolEntry;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
         }
     .end annotation
-
-    const/4 v1, 0x0
 
     iget-object v0, p0, Lorg/apache/http/pool/RouteSpecificPool;->available:Ljava/util/LinkedList;
 
@@ -314,7 +312,9 @@
 
     if-eqz v0, :cond_0
 
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     iget-object v0, p0, Lorg/apache/http/pool/RouteSpecificPool;->available:Ljava/util/LinkedList;

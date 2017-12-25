@@ -222,9 +222,7 @@
 .end method
 
 .method public zzAi()Lcom/google/android/gms/internal/zzoc$zze;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const-string/jumbo v0, ""
 
@@ -234,7 +232,9 @@
 
     iput-object v0, p0, Lcom/google/android/gms/internal/zzoc$zze;->value:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/google/android/gms/internal/zzoc$zze;->zzaNI:Lcom/google/android/gms/internal/zznu;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzoc$zze;->zzaNI:Lcom/google/android/gms/internal/zznu;
 
     const/4 v0, -0x1
 
@@ -333,20 +333,20 @@
     return-void
 
     :cond_0
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzoc$zze;->zzgk:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zzoc$zze;->zzgk:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
 
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x2
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzoc$zze;->value:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zzoc$zze;->value:Ljava/lang/String;
+    const/4 v1, 0x2
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
 
     goto :goto_1
 .end method
@@ -398,11 +398,11 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzoc$zze;->zzgk:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzoc$zze;->zzgk:Ljava/lang/String;
+    const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
+    invoke-static {v2, v1}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
 
     move-result v1
 
@@ -411,11 +411,11 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzoc$zze;->value:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzoc$zze;->value:Ljava/lang/String;
+    const/4 v2, 0x2
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
+    invoke-static {v2, v1}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
 
     move-result v1
 

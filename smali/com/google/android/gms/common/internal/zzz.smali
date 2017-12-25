@@ -110,6 +110,8 @@
 .method private zzb(Landroid/content/res/Resources;II)V
     .locals 3
 
+    const/4 v2, -0x1
+
     packed-switch p2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -146,9 +148,7 @@
     move-result v0
 
     :goto_0
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
+    if-eq v0, v2, :cond_0
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -188,8 +188,6 @@
 
 .method private zzc(Landroid/content/res/Resources;II)V
     .locals 3
-
-    const/4 v2, 0x0
 
     sget v0, Lcom/google/android/gms/R$color;->common_signin_btn_text_dark:I
 
@@ -255,7 +253,9 @@
     goto :goto_0
 
     :pswitch_2
-    invoke-virtual {p0, v2}, Lcom/google/android/gms/common/internal/zzz;->setText(Ljava/lang/CharSequence;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/zzz;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 
@@ -272,7 +272,7 @@
 
 # virtual methods
 .method public zza(Landroid/content/res/Resources;II)V
-    .locals 6
+    .locals 5
 
     const/4 v1, 0x1
 
@@ -284,17 +284,17 @@
     move v0, v2
 
     :goto_0
-    const-string/jumbo v3, "Unknown button size %d"
-
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v3, v1, [Ljava/lang/Object;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v2
+    aput-object v4, v3, v2
 
-    invoke-static {v0, v3, v4}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v4, "Unknown button size %d"
+
+    invoke-static {v0, v4, v3}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-gez p3, :cond_3
 
@@ -302,17 +302,17 @@
     move v0, v2
 
     :goto_1
-    const-string/jumbo v3, "Unknown color scheme %s"
-
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v1, v2
+    aput-object v3, v1, v2
 
-    invoke-static {v0, v3, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v2, "Unknown color scheme %s"
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/internal/zzz;->zza(Landroid/content/res/Resources;)V
 

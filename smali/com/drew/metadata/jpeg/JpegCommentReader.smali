@@ -35,13 +35,13 @@
 
     check-cast v0, Lcom/drew/metadata/jpeg/JpegCommentDirectory;
 
-    const/4 v1, 0x0
+    new-instance v1, Ljava/lang/String;
 
-    new-instance v2, Ljava/lang/String;
+    invoke-direct {v1, p1}, Ljava/lang/String;-><init>([B)V
 
-    invoke-direct {v2, p1}, Ljava/lang/String;-><init>([B)V
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/drew/metadata/jpeg/JpegCommentDirectory;->setString(ILjava/lang/String;)V
+    invoke-virtual {v0, v2, v1}, Lcom/drew/metadata/jpeg/JpegCommentDirectory;->setString(ILjava/lang/String;)V
 
     return-void
 .end method

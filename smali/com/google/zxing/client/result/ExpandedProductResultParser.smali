@@ -13,132 +13,132 @@
 .end method
 
 .method private static findAIvalue(ILjava/lang/String;)Ljava/lang/String;
-    .locals 7
+    .locals 6
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
-    const/16 v5, 0x28
+    const/16 v1, 0x28
 
-    if-ne v1, v5, :cond_0
+    if-ne v0, v1, :cond_0
 
-    add-int/lit8 v5, p0, 0x1
+    add-int/lit8 v0, p0, 0x1
 
-    invoke-virtual {p1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v5
+    move-result v3
 
-    if-lt v3, v5, :cond_1
+    if-lt v0, v3, :cond_1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    return-object v5
+    return-object v0
 
     :cond_0
-    return-object v6
-
-    :cond_1
-    invoke-interface {v4, v3}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    const/16 v5, 0x29
-
-    if-eq v2, v5, :cond_3
-
-    const/16 v5, 0x30
-
-    if-ge v2, v5, :cond_4
-
-    :cond_2
-    return-object v6
-
-    :cond_3
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
     return-object v5
 
+    :cond_1
+    invoke-interface {v1, v0}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v3
+
+    const/16 v4, 0x29
+
+    if-eq v3, v4, :cond_3
+
+    const/16 v4, 0x30
+
+    if-ge v3, v4, :cond_4
+
+    :cond_2
+    return-object v5
+
+    :cond_3
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
     :cond_4
-    const/16 v5, 0x39
+    const/16 v4, 0x39
 
-    if-gt v2, v5, :cond_2
+    if-gt v3, v4, :cond_2
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
 
 .method private static findValue(ILjava/lang/String;)Ljava/lang/String;
-    .locals 6
+    .locals 5
 
-    const/16 v5, 0x28
+    const/16 v4, 0x28
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p1, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v3
 
-    if-lt v2, v4, :cond_1
+    if-lt v0, v3, :cond_1
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    return-object v4
+    return-object v0
 
     :cond_1
-    invoke-virtual {v3, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v2, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v3
 
-    if-eq v1, v5, :cond_2
+    if-eq v3, v4, :cond_2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v2, v3}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->findAIvalue(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->findAIvalue(ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 .end method
@@ -146,17 +146,15 @@
 
 # virtual methods
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ExpandedProductParsedResult;
-    .locals 24
+    .locals 23
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/Result;->getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
 
-    move-result-object v20
+    move-result-object v3
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
 
-    move-object/from16 v0, v20
-
-    if-ne v0, v3, :cond_0
+    if-ne v3, v4, :cond_0
 
     invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
@@ -192,16 +190,16 @@
 
     invoke-direct/range {v18 .. v18}, Ljava/util/HashMap;-><init>()V
 
-    const/16 v21, 0x0
+    const/4 v3, 0x0
 
     :goto_0
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v19
 
-    move/from16 v0, v21
+    move/from16 v0, v19
 
-    if-lt v0, v3, :cond_1
+    if-lt v3, v0, :cond_1
 
     new-instance v3, Lcom/google/zxing/client/result/ExpandedProductParsedResult;
 
@@ -215,51 +213,47 @@
     return-object v3
 
     :cond_1
-    move/from16 v0, v21
+    invoke-static {v3, v4}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->findAIvalue(ILjava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v0, v4}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->findAIvalue(ILjava/lang/String;)Ljava/lang/String;
+    move-result-object v21
+
+    if-eqz v21, :cond_3
+
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/String;->length()I
+
+    move-result v19
+
+    add-int/lit8 v19, v19, 0x2
+
+    add-int v3, v3, v19
+
+    invoke-static {v3, v4}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->findValue(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v19
 
-    if-eqz v19, :cond_3
-
     invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v20
 
-    add-int/lit8 v3, v3, 0x2
+    add-int v3, v3, v20
 
-    add-int v21, v21, v3
+    const/16 v20, -0x1
 
-    move/from16 v0, v21
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/String;->hashCode()I
 
-    invoke-static {v0, v4}, Lcom/google/zxing/client/result/ExpandedProductResultParser;->findValue(ILjava/lang/String;)Ljava/lang/String;
+    move-result v22
 
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    add-int v21, v21, v3
-
-    const/4 v3, -0x1
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->hashCode()I
-
-    move-result v23
-
-    sparse-switch v23, :sswitch_data_0
+    sparse-switch v22, :sswitch_data_0
 
     :cond_2
     :goto_1
-    packed-switch v3, :pswitch_data_0
+    packed-switch v20, :pswitch_data_0
 
     move-object/from16 v0, v18
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v21
 
-    move-object/from16 v2, v22
+    move-object/from16 v2, v19
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -271,714 +265,578 @@
     return-object v3
 
     :sswitch_0
-    const-string/jumbo v23, "00"
+    const-string/jumbo v22, "00"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x0
+    const/16 v20, 0x0
 
     goto :goto_1
 
     :sswitch_1
-    const-string/jumbo v23, "01"
+    const-string/jumbo v22, "01"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x1
+    const/16 v20, 0x1
 
     goto :goto_1
 
     :sswitch_2
-    const-string/jumbo v23, "10"
+    const-string/jumbo v22, "10"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x2
+    const/16 v20, 0x2
 
     goto :goto_1
 
     :sswitch_3
-    const-string/jumbo v23, "11"
+    const-string/jumbo v22, "11"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x3
+    const/16 v20, 0x3
 
     goto :goto_1
 
     :sswitch_4
-    const-string/jumbo v23, "13"
+    const-string/jumbo v22, "13"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x4
+    const/16 v20, 0x4
 
     goto :goto_1
 
     :sswitch_5
-    const-string/jumbo v23, "15"
+    const-string/jumbo v22, "15"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x5
+    const/16 v20, 0x5
 
     goto :goto_1
 
     :sswitch_6
-    const-string/jumbo v23, "17"
+    const-string/jumbo v22, "17"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x6
+    const/16 v20, 0x6
 
     goto :goto_1
 
     :sswitch_7
-    const-string/jumbo v23, "3100"
+    const-string/jumbo v22, "3100"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
+    const/16 v20, 0x7
 
-    if-eqz v23, :cond_2
-
-    const/4 v3, 0x7
-
-    goto/16 :goto_1
+    goto :goto_1
 
     :sswitch_8
-    const-string/jumbo v23, "3101"
+    const-string/jumbo v22, "3101"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
+    const/16 v20, 0x8
 
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x8
-
-    goto/16 :goto_1
+    goto :goto_1
 
     :sswitch_9
-    const-string/jumbo v23, "3102"
+    const-string/jumbo v22, "3102"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x9
+    const/16 v20, 0x9
 
     goto/16 :goto_1
 
     :sswitch_a
-    const-string/jumbo v23, "3103"
+    const-string/jumbo v22, "3103"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0xa
+    const/16 v20, 0xa
 
     goto/16 :goto_1
 
     :sswitch_b
-    const-string/jumbo v23, "3104"
+    const-string/jumbo v22, "3104"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0xb
+    const/16 v20, 0xb
 
     goto/16 :goto_1
 
     :sswitch_c
-    const-string/jumbo v23, "3105"
+    const-string/jumbo v22, "3105"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0xc
+    const/16 v20, 0xc
 
     goto/16 :goto_1
 
     :sswitch_d
-    const-string/jumbo v23, "3106"
+    const-string/jumbo v22, "3106"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0xd
+    const/16 v20, 0xd
 
     goto/16 :goto_1
 
     :sswitch_e
-    const-string/jumbo v23, "3107"
+    const-string/jumbo v22, "3107"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0xe
+    const/16 v20, 0xe
 
     goto/16 :goto_1
 
     :sswitch_f
-    const-string/jumbo v23, "3108"
+    const-string/jumbo v22, "3108"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0xf
+    const/16 v20, 0xf
 
     goto/16 :goto_1
 
     :sswitch_10
-    const-string/jumbo v23, "3109"
+    const-string/jumbo v22, "3109"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x10
+    const/16 v20, 0x10
 
     goto/16 :goto_1
 
     :sswitch_11
-    const-string/jumbo v23, "3200"
+    const-string/jumbo v22, "3200"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x11
+    const/16 v20, 0x11
 
     goto/16 :goto_1
 
     :sswitch_12
-    const-string/jumbo v23, "3201"
+    const-string/jumbo v22, "3201"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x12
+    const/16 v20, 0x12
 
     goto/16 :goto_1
 
     :sswitch_13
-    const-string/jumbo v23, "3202"
+    const-string/jumbo v22, "3202"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x13
+    const/16 v20, 0x13
 
     goto/16 :goto_1
 
     :sswitch_14
-    const-string/jumbo v23, "3203"
+    const-string/jumbo v22, "3203"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x14
+    const/16 v20, 0x14
 
     goto/16 :goto_1
 
     :sswitch_15
-    const-string/jumbo v23, "3204"
+    const-string/jumbo v22, "3204"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x15
+    const/16 v20, 0x15
 
     goto/16 :goto_1
 
     :sswitch_16
-    const-string/jumbo v23, "3205"
+    const-string/jumbo v22, "3205"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x16
+    const/16 v20, 0x16
 
     goto/16 :goto_1
 
     :sswitch_17
-    const-string/jumbo v23, "3206"
+    const-string/jumbo v22, "3206"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x17
+    const/16 v20, 0x17
 
     goto/16 :goto_1
 
     :sswitch_18
-    const-string/jumbo v23, "3207"
+    const-string/jumbo v22, "3207"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x18
+    const/16 v20, 0x18
 
     goto/16 :goto_1
 
     :sswitch_19
-    const-string/jumbo v23, "3208"
+    const-string/jumbo v22, "3208"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x19
+    const/16 v20, 0x19
 
     goto/16 :goto_1
 
     :sswitch_1a
-    const-string/jumbo v23, "3209"
+    const-string/jumbo v22, "3209"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x1a
+    const/16 v20, 0x1a
 
     goto/16 :goto_1
 
     :sswitch_1b
-    const-string/jumbo v23, "3920"
+    const-string/jumbo v22, "3920"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x1b
+    const/16 v20, 0x1b
 
     goto/16 :goto_1
 
     :sswitch_1c
-    const-string/jumbo v23, "3921"
+    const-string/jumbo v22, "3921"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x1c
+    const/16 v20, 0x1c
 
     goto/16 :goto_1
 
     :sswitch_1d
-    const-string/jumbo v23, "3922"
+    const-string/jumbo v22, "3922"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x1d
+    const/16 v20, 0x1d
 
     goto/16 :goto_1
 
     :sswitch_1e
-    const-string/jumbo v23, "3923"
+    const-string/jumbo v22, "3923"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x1e
+    const/16 v20, 0x1e
 
     goto/16 :goto_1
 
     :sswitch_1f
-    const-string/jumbo v23, "3930"
+    const-string/jumbo v22, "3930"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x1f
+    const/16 v20, 0x1f
 
     goto/16 :goto_1
 
     :sswitch_20
-    const-string/jumbo v23, "3931"
+    const-string/jumbo v22, "3931"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x20
+    const/16 v20, 0x20
 
     goto/16 :goto_1
 
     :sswitch_21
-    const-string/jumbo v23, "3932"
+    const-string/jumbo v22, "3932"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x21
+    const/16 v20, 0x21
 
     goto/16 :goto_1
 
     :sswitch_22
-    const-string/jumbo v23, "3933"
+    const-string/jumbo v22, "3933"
 
-    move-object/from16 v0, v19
+    invoke-virtual/range {v21 .. v22}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v23
+    move-result v22
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v22, :cond_2
 
-    move-result v23
-
-    if-eqz v23, :cond_2
-
-    const/16 v3, 0x22
+    const/16 v20, 0x22
 
     goto/16 :goto_1
 
     :pswitch_0
-    move-object/from16 v6, v22
+    move-object/from16 v6, v19
 
     goto/16 :goto_0
 
     :pswitch_1
-    move-object/from16 v5, v22
+    move-object/from16 v5, v19
 
     goto/16 :goto_0
 
     :pswitch_2
-    move-object/from16 v7, v22
+    move-object/from16 v7, v19
 
     goto/16 :goto_0
 
     :pswitch_3
-    move-object/from16 v8, v22
+    move-object/from16 v8, v19
 
     goto/16 :goto_0
 
     :pswitch_4
-    move-object/from16 v9, v22
+    move-object/from16 v9, v19
 
     goto/16 :goto_0
 
     :pswitch_5
-    move-object/from16 v10, v22
+    move-object/from16 v10, v19
 
     goto/16 :goto_0
 
     :pswitch_6
-    move-object/from16 v11, v22
+    move-object/from16 v11, v19
 
     goto/16 :goto_0
 
     :pswitch_7
-    move-object/from16 v12, v22
-
     const-string/jumbo v13, "KG"
 
-    const/4 v3, 0x3
+    const/4 v12, 0x3
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v21
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v14
+
+    move-object/from16 v12, v19
 
     goto/16 :goto_0
 
     :pswitch_8
-    move-object/from16 v12, v22
-
     const-string/jumbo v13, "LB"
 
-    const/4 v3, 0x3
+    const/4 v12, 0x3
 
-    move-object/from16 v0, v19
+    move-object/from16 v0, v21
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v14
+
+    move-object/from16 v12, v19
 
     goto/16 :goto_0
 
     :pswitch_9
-    move-object/from16 v15, v22
+    const/4 v15, 0x3
 
-    const/4 v3, 0x3
+    move-object/from16 v0, v21
 
-    move-object/from16 v0, v19
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v15}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v16
+
+    move-object/from16 v15, v19
 
     goto/16 :goto_0
 
     :pswitch_a
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/String;->length()I
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v15
 
-    const/16 v23, 0x4
+    const/16 v16, 0x4
 
-    move/from16 v0, v23
+    move/from16 v0, v16
 
-    if-lt v3, v0, :cond_4
+    if-lt v15, v0, :cond_4
 
-    const/4 v3, 0x3
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v15
-
-    const/4 v3, 0x0
-
-    const/16 v23, 0x3
-
-    move-object/from16 v0, v22
-
-    move/from16 v1, v23
-
-    invoke-virtual {v0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v17
-
-    const/4 v3, 0x3
+    const/4 v15, 0x3
 
     move-object/from16 v0, v19
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v15}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v15
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x3
+
+    move-object/from16 v0, v19
+
+    move/from16 v1, v16
+
+    move/from16 v2, v17
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v17
+
+    const/16 v16, 0x3
+
+    move-object/from16 v0, v21
+
+    move/from16 v1, v16
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v16
 

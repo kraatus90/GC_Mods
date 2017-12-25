@@ -69,7 +69,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0801c8
+    const v3, 0x7f0801dc
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -118,7 +118,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0801c7
+    const v3, 0x7f0801db
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -167,7 +167,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0801c9
+    const v3, 0x7f0801dd
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -216,7 +216,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0801ca
+    const v3, 0x7f0801de
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -246,7 +246,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0801c6
+    const v1, 0x7f0801da
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 

@@ -112,7 +112,9 @@
 .end method
 
 .method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
-    .locals 3
+    .locals 4
+
+    const/16 v3, 0x610
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/StateChangeListener;-><init>()V
 
@@ -254,6 +256,12 @@
 
     aput-object v2, v0, v1
 
+    invoke-static {v3}, Lcom/motorola/camera/mod/ModHelper;->isModCameraAttached(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->VIEWFINDER_SWITCH:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -268,6 +276,7 @@
 
     aput-object v2, v0, v1
 
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->MODE_SWITCH:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -412,7 +421,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
@@ -442,7 +451,7 @@
 
     aput-object v2, v0, v1
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->COMPOSITION_GUIDE:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -487,13 +496,13 @@
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     sget-boolean v0, Lcom/motorola/camera/Util;->TEST_BUILD:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->CALIBRATION_ERROR_MESSAGE:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -508,7 +517,7 @@
 
     aput-object v2, v0, v1
 
-    :cond_2
+    :cond_3
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->HELP_TOOLTIPS:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -593,6 +602,22 @@
 
     aput-object v2, v0, v1
 
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getAppFeatures()Lcom/motorola/camera/AppFeatures;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->SELECTIVE_COLOR:Lcom/motorola/camera/AppFeatures$Feature;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/AppFeatures;->supports(Lcom/motorola/camera/AppFeatures$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->SELECT_COLOR_SLIDERBAR:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -607,6 +632,7 @@
 
     aput-object v2, v0, v1
 
+    :cond_4
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->RTBOKEH_SLIDERBAR:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -635,6 +661,12 @@
 
     aput-object v2, v0, v1
 
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isModCameraAttached()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->CAMERA_LIST:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -649,6 +681,7 @@
 
     aput-object v2, v0, v1
 
+    :cond_5
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->TIMER_CANCEL:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -681,15 +714,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_6
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isQcfaAllowed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_7
 
-    :cond_3
+    :cond_6
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->HOLD_STEADY:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -704,7 +737,7 @@
 
     aput-object v2, v0, v1
 
-    :cond_4
+    :cond_7
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->PICTURE_REVIEW:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -723,7 +756,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
@@ -739,7 +772,7 @@
 
     aput-object v2, v0, v1
 
-    :cond_5
+    :cond_8
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->PANO_UI_COMPONENT:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -758,7 +791,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_a
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
@@ -775,6 +808,12 @@
     aput-object v2, v0, v1
 
     :goto_0
+    invoke-static {v3}, Lcom/motorola/camera/mod/ModHelper;->isModCameraAttached(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->ROTATE_INDICATOR:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -789,9 +828,10 @@
 
     aput-object v2, v0, v1
 
+    :cond_9
     return-void
 
-    :cond_6
+    :cond_a
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;->PANO_SELFIE_UI_COMPONENT:Lcom/motorola/camera/ui/widgets/gl/TextureManager$DrawOrder;
@@ -852,9 +892,9 @@
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$2;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/TextureManager$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/TextureManager$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/TextureManager;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/TextureManager$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/TextureManager;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -983,7 +1023,7 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CREATE_CAPTURE_SESSION_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
@@ -1034,28 +1074,58 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_TextureManager_lambda$1(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
-    .locals 1
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_TextureManager_11951()V
+    .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    invoke-interface {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->registerStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->STATE_CHANGE_LISTENER_REGISTERED:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
 
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_TextureManager_lambda$2(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
-    .locals 1
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_TextureManager_12360()V
+    .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    invoke-interface {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->unregisterStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mComponents:[Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_TextureManager_9996()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->LOADING_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
 
     return-void
 .end method
 
 .method public declared-synchronized loadTextures()V
-    .locals 6
+    .locals 4
 
     monitor-enter p0
 
@@ -1129,14 +1199,6 @@
 
     :cond_2
     invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/iGlComponent;->doLoadTextures()V
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mHandler:Landroid/os/Handler;
-
-    new-instance v5, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$147;
-
-    invoke-direct {v5, p0, v3}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$147;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v4, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -1150,6 +1212,17 @@
     throw v0
 
     :cond_3
+    :try_start_2
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$R3DvGcZqvBpVeSXZiOUvjklYkUI;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$R3DvGcZqvBpVeSXZiOUvjklYkUI;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
     monitor-exit p0
 
     return-void
@@ -1312,9 +1385,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/TextureManager$1;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$R3DvGcZqvBpVeSXZiOUvjklYkUI$1;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/ui/widgets/gl/TextureManager$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/TextureManager;)V
+    invoke-direct {v2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$R3DvGcZqvBpVeSXZiOUvjklYkUI$1;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
 
@@ -1441,7 +1514,7 @@
     return-void
 .end method
 
-.method public onKeyEvent(ILandroid/view/KeyEvent;)Z
+.method onKeyEvent(ILandroid/view/KeyEvent;)Z
     .locals 4
 
     const/4 v0, 0x0
@@ -1916,7 +1989,7 @@
     return-void
 .end method
 
-.method public setValidContext(Z)V
+.method setValidContext(Z)V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mFlags:Lcom/motorola/camera/utility/Flags;
@@ -1985,7 +2058,7 @@
         }
     .end annotation
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CREATE_CAPTURE_SESSION_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
@@ -2020,7 +2093,7 @@
 .end method
 
 .method public declared-synchronized unloadTextures()V
-    .locals 6
+    .locals 4
 
     monitor-enter p0
 
@@ -2045,14 +2118,6 @@
 
     :cond_0
     invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/iGlComponent;->doUnloadTextures()V
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mHandler:Landroid/os/Handler;
-
-    new-instance v5, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$148;
-
-    invoke-direct {v5, p0, v3}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$148;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v4, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2067,6 +2132,14 @@
 
     :cond_1
     :try_start_1
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$R3DvGcZqvBpVeSXZiOUvjklYkUI$2;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$R3DvGcZqvBpVeSXZiOUvjklYkUI$2;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
     invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/ShaderFactory;->clearShaders()V
 
     const/4 v0, 0x0

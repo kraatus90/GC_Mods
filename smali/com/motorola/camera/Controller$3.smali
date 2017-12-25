@@ -41,11 +41,11 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;-><init>()V
 
-    const v1, 0x7f08013d
+    const v1, 0x7f080145
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v1, 0x7f08013c
+    const v1, 0x7f080144
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
@@ -53,7 +53,7 @@
 
     invoke-direct {v1, p0}, Lcom/motorola/camera/Controller$3$1;-><init>(Lcom/motorola/camera/Controller$3;)V
 
-    const v2, 0x7f08013b
+    const v2, 0x7f080143
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 

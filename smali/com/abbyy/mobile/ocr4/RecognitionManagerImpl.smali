@@ -122,7 +122,7 @@
 .end method
 
 .method public findTextOnPhoto(Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -133,13 +133,13 @@
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->getContext()Lcom/abbyy/mobile/ocr4/RecognitionContext;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_recognitionConfiguration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_recognitionConfiguration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_timersListener:Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_timersListener:Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;
 
-    invoke-virtual {v1, v2, p1, p2, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->findTextOnPhoto(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
+    invoke-virtual {v0, v1, p1, p2, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->findTextOnPhoto(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
 
     move-result-object v0
 
@@ -147,7 +147,7 @@
 .end method
 
 .method public findTextOnVideo(Lcom/abbyy/mobile/ocr4/NV21Image;ZLcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -173,9 +173,9 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->findTextOnVideo(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;ZLcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
 
-    move-result-object v6
+    move-result-object v0
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public getRecognitionConfiguration()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
@@ -187,7 +187,7 @@
 .end method
 
 .method public hasTextOnVideo(Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;)Landroid/graphics/Rect;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -199,13 +199,13 @@
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->getContext()Lcom/abbyy/mobile/ocr4/RecognitionContext;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_recognitionConfiguration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_recognitionConfiguration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_timersListener:Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl;->_timersListener:Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;
 
-    invoke-virtual {v1, v2, p1, p2, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->hasTextOnVideo(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Landroid/graphics/Rect;
+    invoke-virtual {v0, v1, p1, p2, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->hasTextOnVideo(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Landroid/graphics/Rect;
 
     move-result-object v0
 

@@ -66,17 +66,17 @@
     if-ne v0, v1, :cond_1
 
     :cond_0
-    iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$33;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$33;->val$typeAdapter:Lcom/google/gson/TypeAdapter;
 
     :goto_0
-    return-object v1
+    return-object v0
 
     :cond_1
     iget-object v1, p0, Lcom/google/gson/internal/bind/TypeAdapters$33;->val$boxed:Ljava/lang/Class;
 
     if-eq v0, v1, :cond_0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

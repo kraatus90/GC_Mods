@@ -367,131 +367,131 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->HDR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->HDR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEAUTIFICATION_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEAUTIFICATION_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->SELECTIVE_COLOR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->SELECTIVE_COLOR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->TEMPORAL_NR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->TEMPORAL_NR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->SPATIAL_NR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->SPATIAL_NR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->DUALCAM_FUSION_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->DUALCAM_FUSION_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->FLASH_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->FLASH_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->FLASH_EYE_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->FLASH_EYE_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEST_SHOT_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEST_SHOT_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->MCF_TEST_BLUR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->MCF_TEST_BLUR_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->ACTION_SHOT_VIDEO:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->ACTION_SHOT_VIDEO:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEAUTIFICATION_LIMIT_FPS_NEED:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEAUTIFICATION_LIMIT_FPS_NEED:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEAUTIFICATION_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->BEAUTIFICATION_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_RESOLUTION:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_RESOLUTION:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_PIXEL_CAPABILITY:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_PIXEL_CAPABILITY:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->DUALCAM_DEPTH_RENDER_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->DUALCAM_DEPTH_RENDER_MODES:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x17
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_MAX_LEVELS:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_MAX_LEVELS:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x17
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x18
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_DEF_LEVEL:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->REALTIME_BOKEH_DEF_LEVEL:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x18
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x19
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$CapTags;->SELECTIVE_COLOR_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapTags;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$CapTags;->SELECTIVE_COLOR_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapTags;
+    const/16 v2, 0x19
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/camera/mcf/Mcf$CapTags;->$VALUES:[Lcom/motorola/camera/mcf/Mcf$CapTags;
 

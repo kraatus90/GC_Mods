@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-    .locals 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -43,19 +43,17 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
-
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-class v2, Ljava/sql/Timestamp;
+    const-class v1, Ljava/sql/Timestamp;
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
-    const-class v1, Ljava/util/Date;
+    const-class v0, Ljava/util/Date;
 
-    invoke-virtual {p1, v1}, Lcom/google/gson/Gson;->getAdapter(Ljava/lang/Class;)Lcom/google/gson/TypeAdapter;
+    invoke-virtual {p1, v0}, Lcom/google/gson/Gson;->getAdapter(Ljava/lang/Class;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
 
@@ -66,5 +64,7 @@
     return-object v1
 
     :cond_0
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

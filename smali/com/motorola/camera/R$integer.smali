@@ -21,13 +21,15 @@
 
 .field public static final cancel_button_image_alpha:I = 0x7f0f0002
 
-.field public static final google_play_services_version:I = 0x7f0f0003
+.field public static final config_tooltipAnimTime:I = 0x7f0f0003
 
-.field public static final setting_inactivity_long_timeout_value:I = 0x7f0f0004
+.field public static final google_play_services_version:I = 0x7f0f0004
 
-.field public static final setting_inactivity_timeout_value:I = 0x7f0f0005
+.field public static final setting_inactivity_long_timeout_value:I = 0x7f0f0005
 
-.field public static final status_bar_notification_info_maxnum:I = 0x7f0f0006
+.field public static final setting_inactivity_timeout_value:I = 0x7f0f0006
+
+.field public static final status_bar_notification_info_maxnum:I = 0x7f0f0007
 
 
 # direct methods

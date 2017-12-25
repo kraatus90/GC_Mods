@@ -169,9 +169,9 @@
 .method protected a([BLorg/ietf/jgss/Oid;Ljava/lang/String;)[B
     .locals 6
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
     const/4 v3, 0x0
 
@@ -210,13 +210,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p2, v4, v3}, Lorg/ietf/jgss/GSSManager;->createContext(Lorg/ietf/jgss/GSSName;Lorg/ietf/jgss/Oid;Lorg/ietf/jgss/GSSCredential;I)Lorg/ietf/jgss/GSSContext;
+    invoke-virtual {v0, v1, p2, v5, v3}, Lorg/ietf/jgss/GSSManager;->createContext(Lorg/ietf/jgss/GSSName;Lorg/ietf/jgss/Oid;Lorg/ietf/jgss/GSSCredential;I)Lorg/ietf/jgss/GSSContext;
 
     move-result-object v0
 
-    invoke-interface {v0, v5}, Lorg/ietf/jgss/GSSContext;->requestMutualAuth(Z)V
+    invoke-interface {v0, v4}, Lorg/ietf/jgss/GSSContext;->requestMutualAuth(Z)V
 
-    invoke-interface {v0, v5}, Lorg/ietf/jgss/GSSContext;->requestCredDeleg(Z)V
+    invoke-interface {v0, v4}, Lorg/ietf/jgss/GSSContext;->requestCredDeleg(Z)V
 
     array-length v1, p1
 

@@ -225,9 +225,9 @@
 .method public static final encodeQuotedPrintable(Ljava/util/BitSet;[B)[B
     .locals 5
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 

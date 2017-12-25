@@ -12,7 +12,9 @@
 
 
 # static fields
-.field private static final EVENT_VERSION:Ljava/lang/String; = "1.6"
+.field private static final EVENT_VERSION:Ljava/lang/String; = "1.7"
+
+.field static final MCFQUEUE:Ljava/lang/String; = "MCFQUEUE"
 
 .field static final SERVICEMODE:Ljava/lang/String; = "SERVICEMODE"
     .annotation runtime Ljava/lang/Deprecated;
@@ -53,7 +55,7 @@
 
 
 # virtual methods
-.method addData(Landroid/os/Bundle;Landroid/os/Bundle;Ljava/lang/Object;)V
+.method addData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Ljava/lang/Object;)V
     .locals 6
 
     const/4 v3, 0x0
@@ -119,15 +121,35 @@
 
     const-string/jumbo v1, "SHOTTIME"
 
+    iget-wide v2, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mKpiTime:J
+
+    const-wide/16 v4, -0x1
+
+    cmp-long v2, v2, v4
+
+    if-eqz v2, :cond_1
+
+    iget-wide v2, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mKpiTime:J
+
+    :goto_0
+    invoke-virtual {p2, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    const-string/jumbo v1, "MCFQUEUE"
+
+    iget v0, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mMcfQueue:I
+
+    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    return-void
+
+    :cond_1
     iget-wide v2, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mEndTime:J
 
     iget-wide v4, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mStartTime:J
 
     sub-long/2addr v2, v4
 
-    invoke-virtual {p2, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    return-void
+    goto :goto_0
 .end method
 
 .method public areRequirementsMet(Lcom/motorola/camera/analytics/ShotToShotEvent$Record;)Z
@@ -173,9 +195,34 @@
 .method getEventVersion()Ljava/lang/String;
     .locals 1
 
-    const-string/jumbo v0, "1.6"
+    const-string/jumbo v0, "1.7"
 
     return-object v0
+.end method
+
+.method public setShotToShotKpi(JJ)V
+    .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/analytics/ShotToShotEvent;->mSessionMap:Ljava/util/Map;
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iput-wide p3, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mKpiTime:J
+
+    return-void
 .end method
 
 .method public setShotToShotMode(JLjava/lang/String;)Z
@@ -209,7 +256,7 @@
     return v0
 .end method
 
-.method public startShotToShotSession(Lcom/motorola/camera/ShotType;J)V
+.method public startShotToShotSession(Lcom/motorola/camera/ShotType;JI)V
     .locals 4
 
     new-instance v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;
@@ -223,6 +270,8 @@
     move-result-wide v2
 
     iput-wide v2, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mStartTime:J
+
+    iput p4, v0, Lcom/motorola/camera/analytics/ShotToShotEvent$Record;->mMcfQueue:I
 
     sget-object v1, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
 

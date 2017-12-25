@@ -90,11 +90,11 @@
 
     aput-object v4, v3, v10
 
-    const/4 v4, 0x5
+    const-string/jumbo v4, "von"
 
-    const-string/jumbo v5, "von"
+    const/4 v5, 0x5
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -138,71 +138,71 @@
 
     aput-object v4, v3, v10
 
-    const/4 v4, 0x5
+    const-string/jumbo v4, "del"
 
-    const-string/jumbo v5, "del"
+    const/4 v5, 0x5
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/4 v4, 0x6
+    const-string/jumbo v4, "dela"
 
-    const-string/jumbo v5, "dela"
+    const/4 v5, 0x6
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/4 v4, 0x7
+    const-string/jumbo v4, "de la"
 
-    const-string/jumbo v5, "de la"
+    const/4 v5, 0x7
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0x8
+    const-string/jumbo v4, "della"
 
-    const-string/jumbo v5, "della"
+    const/16 v5, 0x8
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0x9
+    const-string/jumbo v4, "des"
 
-    const-string/jumbo v5, "des"
+    const/16 v5, 0x9
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xa
+    const-string/jumbo v4, "di"
 
-    const-string/jumbo v5, "di"
+    const/16 v5, 0xa
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xb
+    const-string/jumbo v4, "do"
 
-    const-string/jumbo v5, "do"
+    const/16 v5, 0xb
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xc
+    const-string/jumbo v4, "dos"
 
-    const-string/jumbo v5, "dos"
+    const/16 v5, 0xc
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xd
+    const-string/jumbo v4, "du"
 
-    const-string/jumbo v5, "du"
+    const/16 v5, 0xd
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xe
+    const-string/jumbo v4, "van"
 
-    const-string/jumbo v5, "van"
+    const/16 v5, 0xe
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xf
+    const-string/jumbo v4, "von"
 
-    const-string/jumbo v5, "von"
+    const/16 v5, 0xf
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -246,59 +246,59 @@
 
     aput-object v4, v3, v10
 
-    const/4 v4, 0x5
+    const-string/jumbo v4, "de la"
 
-    const-string/jumbo v5, "de la"
+    const/4 v5, 0x5
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/4 v4, 0x6
+    const-string/jumbo v4, "della"
 
-    const-string/jumbo v5, "della"
+    const/4 v5, 0x6
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/4 v4, 0x7
+    const-string/jumbo v4, "des"
 
-    const-string/jumbo v5, "des"
+    const/4 v5, 0x7
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0x8
+    const-string/jumbo v4, "di"
 
-    const-string/jumbo v5, "di"
+    const/16 v5, 0x8
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0x9
+    const-string/jumbo v4, "do"
 
-    const-string/jumbo v5, "do"
+    const/16 v5, 0x9
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xa
+    const-string/jumbo v4, "dos"
 
-    const-string/jumbo v5, "dos"
+    const/16 v5, 0xa
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xb
+    const-string/jumbo v4, "du"
 
-    const-string/jumbo v5, "du"
+    const/16 v5, 0xb
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xc
+    const-string/jumbo v4, "van"
 
-    const-string/jumbo v5, "van"
+    const/16 v5, 0xc
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
-    const/16 v4, 0xd
+    const-string/jumbo v4, "von"
 
-    const-string/jumbo v5, "von"
+    const/16 v5, 0xd
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v5
 
     invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 

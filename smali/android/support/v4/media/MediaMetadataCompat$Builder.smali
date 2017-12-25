@@ -50,173 +50,131 @@
 .end method
 
 .method public constructor <init>(Landroid/support/v4/media/MediaMetadataCompat;I)V
-    .locals 7
+    .locals 4
     .annotation build Landroid/support/annotation/RestrictTo;
         value = {
             .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
         }
     .end annotation
 
-    const/4 v6, 0x0
-
     invoke-direct {p0, p1}, Landroid/support/v4/media/MediaMetadataCompat$Builder;-><init>(Landroid/support/v4/media/MediaMetadataCompat;)V
 
-    iget-object v3, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
+    iget-object v0, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
 
-    invoke-virtual {v3}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+    invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v2
 
     :cond_0
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_1
+    if-nez v0, :cond_1
 
     return-void
 
     :cond_1
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-object v1, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/String;
+    instance-of v3, v1, Landroid/graphics/Bitmap;
 
-    iget-object v4, p0, Landroid/support/v4/media/MediaMetadataCompat$Builder;->mBundle:Landroid/os/Bundle;
+    if-eqz v3, :cond_0
 
-    invoke-virtual {v4, v1}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+    check-cast v1, Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    if-eqz v2, :cond_0
+    move-result v3
 
-    instance-of v4, v2, Landroid/graphics/Bitmap;
-
-    if-eqz v4, :cond_0
-
-    move-object v0, v2
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    if-le v4, p2, :cond_3
+    if-le v3, p2, :cond_3
 
     :cond_2
-    invoke-direct {p0, v0, p2}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->scaleBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+    invoke-direct {p0, v1, p2}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->scaleBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {p0, v1, v4}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
+    invoke-virtual {p0, v0, v1}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
 
     goto :goto_0
 
     :cond_3
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v4
+    move-result v3
 
-    if-gt v4, p2, :cond_2
-
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v5, 0xe
-
-    if-lt v4, v5, :cond_0
-
-    const-string/jumbo v4, "android.media.metadata.ART"
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_5
-
-    :cond_4
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v4, v6}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
-
-    move-result-object v4
-
-    invoke-virtual {p0, v1, v4}, Landroid/support/v4/media/MediaMetadataCompat$Builder;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/support/v4/media/MediaMetadataCompat$Builder;
-
-    goto :goto_0
-
-    :cond_5
-    const-string/jumbo v4, "android.media.metadata.ALBUM_ART"
-
-    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_4
+    if-gt v3, p2, :cond_2
 
     goto :goto_0
 .end method
 
 .method private scaleBitmap(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
-    .locals 7
+    .locals 3
 
-    int-to-float v2, p2
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    div-float v5, v2, v6
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    div-float v1, v2, v6
-
-    invoke-static {v5, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float/2addr v6, v3
-
-    float-to-int v0, v6
+    int-to-float v0, p2
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v6
+    move-result v1
 
-    int-to-float v6, v6
+    int-to-float v1, v1
 
-    mul-float/2addr v6, v3
+    div-float v1, v0, v1
 
-    float-to-int v4, v6
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    const/4 v6, 0x1
+    move-result v2
 
-    invoke-static {p1, v4, v0, v6}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+    int-to-float v2, v2
 
-    move-result-object v6
+    div-float/2addr v0, v2
 
-    return-object v6
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(FF)F
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    mul-float/2addr v1, v0
+
+    float-to-int v1, v1
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v0, v2
+
+    float-to-int v0, v0
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, v0, v1, v2}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 

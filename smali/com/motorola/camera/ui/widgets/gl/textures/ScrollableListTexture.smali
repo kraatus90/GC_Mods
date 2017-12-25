@@ -316,7 +316,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0c001e
+    const v3, 0x7f0c001f
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -881,9 +881,9 @@
 .end method
 
 .method protected declared-synchronized doLayout()V
-    .locals 6
+    .locals 7
 
-    const/high16 v5, -0x40000000    # -2.0f
+    const/high16 v6, -0x40000000    # -2.0f
 
     const/4 v0, 0x1
 
@@ -949,37 +949,45 @@
     iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mResizeFbo:Z
 
     :cond_1
-    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getLayoutSize()Landroid/graphics/PointF;
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getOnScreenSize()Landroid/graphics/Point;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mGlowTex:Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getLayoutSize()Landroid/graphics/PointF;
 
-    iget v2, v0, Landroid/graphics/PointF;->x:F
+    move-result-object v1
 
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mDensity:F
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mGlowTex:Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;
 
-    const/high16 v4, 0x42480000    # 50.0f
+    iget v3, v0, Landroid/graphics/Point;->x:I
 
-    mul-float/2addr v3, v4
+    int-to-float v3, v3
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mDensity:F
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;->setPreScale(FFF)V
+    const/high16 v5, 0x42480000    # 50.0f
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mGlowTex:Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;
+    mul-float/2addr v4, v5
 
-    iget v2, v0, Landroid/graphics/PointF;->x:F
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    div-float/2addr v2, v5
+    invoke-virtual {v2, v3, v4, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;->setPreScale(FFF)V
 
-    iget v0, v0, Landroid/graphics/PointF;->y:F
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->mGlowTex:Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;
 
-    div-float/2addr v0, v5
+    iget v0, v0, Landroid/graphics/Point;->x:I
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v6
+
+    iget v1, v1, Landroid/graphics/PointF;->y:F
+
+    div-float/2addr v1, v6
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;->setTranslation(FFF)V
+    invoke-virtual {v2, v0, v1, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/GradientTexture;->setTranslation(FFF)V
 
     const/4 v0, 0x0
 
@@ -1376,6 +1384,77 @@
     invoke-super {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->onSurfaceChanged(Lcom/motorola/camera/PreviewSize;)V
 
     return-void
+.end method
+
+.method public onUiEvent(Landroid/view/MotionEvent;)Z
+    .locals 6
+
+    const/high16 v5, 0x40000000    # 2.0f
+
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getOnScreenSize()Landroid/graphics/Point;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/RectWrapper;
+
+    iget v2, v0, Landroid/graphics/Point;->x:I
+
+    neg-int v2, v2
+
+    int-to-float v2, v2
+
+    div-float/2addr v2, v5
+
+    iget v3, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v5
+
+    iget v4, v0, Landroid/graphics/Point;->x:I
+
+    int-to-float v4, v4
+
+    div-float/2addr v4, v5
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v5
+
+    invoke-direct {v1, v2, v3, v4, v0}, Lcom/motorola/camera/ui/widgets/gl/RectWrapper;-><init>(FFFF)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->undoMotionEventTransforms(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v3
+
+    invoke-virtual {v2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v4
+
+    invoke-virtual {v1, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/RectWrapper;->contains(FF)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-super {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->onUiEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    :cond_0
+    invoke-virtual {v2}, Landroid/view/MotionEvent;->recycle()V
+
+    return v0
 .end method
 
 .method public scrollTo(F)V

@@ -50,50 +50,48 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 4
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     if-eq p0, p1, :cond_0
 
-    instance-of v3, p1, Lcom/google/gson/internal/LazilyParsedNumber;
+    instance-of v2, p1, Lcom/google/gson/internal/LazilyParsedNumber;
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
-    return v1
+    return v0
 
     :cond_0
-    return v2
-
-    :cond_1
-    move-object v0, p1
-
-    check-cast v0, Lcom/google/gson/internal/LazilyParsedNumber;
-
-    iget-object v3, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
-
-    iget-object v4, v0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
-
-    if-ne v3, v4, :cond_3
-
-    :cond_2
-    move v1, v2
-
-    :goto_0
     return v1
 
+    :cond_1
+    check-cast p1, Lcom/google/gson/internal/LazilyParsedNumber;
+
+    iget-object v2, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+
+    if-ne v2, v3, :cond_3
+
+    :cond_2
+    move v0, v1
+
+    :goto_0
+    return v0
+
     :cond_3
-    iget-object v3, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    iget-object v4, v0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v3, p1, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_2
+    if-nez v2, :cond_2
 
     goto :goto_0
 .end method
@@ -123,79 +121,79 @@
 .end method
 
 .method public intValue()I
-    .locals 4
+    .locals 2
 
     :try_start_0
-    iget-object v2, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v2
+    move-result v0
 
-    return v2
+    return v0
 
     :catch_0
     move-exception v0
 
     :try_start_1
-    iget-object v2, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
     :try_end_1
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
 
-    move-result-wide v2
+    move-result-wide v0
 
-    long-to-int v2, v2
+    long-to-int v0, v0
 
-    return v2
+    return v0
 
     :catch_1
-    move-exception v1
+    move-exception v0
 
-    new-instance v2, Ljava/math/BigDecimal;
+    new-instance v0, Ljava/math/BigDecimal;
 
-    iget-object v3, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    invoke-direct {v2, v3}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Ljava/math/BigDecimal;->intValue()I
+    invoke-virtual {v0}, Ljava/math/BigDecimal;->intValue()I
 
-    move-result v2
+    move-result v0
 
-    return v2
+    return v0
 .end method
 
 .method public longValue()J
-    .locals 4
+    .locals 2
 
     :try_start_0
-    iget-object v1, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-wide v2
+    move-result-wide v0
 
-    return-wide v2
+    return-wide v0
 
     :catch_0
     move-exception v0
 
-    new-instance v1, Ljava/math/BigDecimal;
+    new-instance v0, Ljava/math/BigDecimal;
 
-    iget-object v2, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/gson/internal/LazilyParsedNumber;->value:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/math/BigDecimal;->longValue()J
+    invoke-virtual {v0}, Ljava/math/BigDecimal;->longValue()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    return-wide v2
+    return-wide v0
 .end method
 
 .method public toString()Ljava/lang/String;

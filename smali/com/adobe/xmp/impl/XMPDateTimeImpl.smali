@@ -401,53 +401,53 @@
 
     invoke-virtual {v0, v1}, Ljava/util/GregorianCalendar;->setTimeZone(Ljava/util/TimeZone;)V
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->year:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->year:I
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
-    const/4 v1, 0x2
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->month:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->month:I
+    add-int/lit8 v1, v1, -0x1
 
-    add-int/lit8 v2, v2, -0x1
+    const/4 v2, 0x2
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
-    const/4 v1, 0x5
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->day:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->day:I
+    const/4 v2, 0x5
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
-    const/16 v1, 0xb
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->hour:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->hour:I
+    const/16 v2, 0xb
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
-    const/16 v1, 0xc
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->minute:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->minute:I
+    const/16 v2, 0xc
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
-    const/16 v1, 0xd
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->second:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->second:I
+    const/16 v2, 0xd
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
-    const/16 v1, 0xe
+    iget v1, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->nanoSeconds:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/XMPDateTimeImpl;->nanoSeconds:I
+    const v2, 0xf4240
 
-    const v3, 0xf4240
+    div-int/2addr v1, v2
 
-    div-int/2addr v2, v3
+    const/16 v2, 0xe
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/GregorianCalendar;->set(II)V
+    invoke-virtual {v0, v2, v1}, Ljava/util/GregorianCalendar;->set(II)V
 
     return-object v0
 .end method

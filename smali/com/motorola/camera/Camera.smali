@@ -12,13 +12,17 @@
         Lcom/motorola/camera/Camera$1;,
         Lcom/motorola/camera/Camera$2;,
         Lcom/motorola/camera/Camera$3;,
-        Lcom/motorola/camera/Camera$MyRemoteCallback;
+        Lcom/motorola/camera/Camera$4;
     }
 .end annotation
 
 
 # static fields
 .field private static final synthetic -com-motorola-camera-Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODESwitchesValues:[I = null
+
+.field public static final ACTION_MOD_DETACH:Ljava/lang/String; = "com.motorola.mod.action.MOD_DETACH"
+
+.field public static final ACTION_MOD_ENUMERATION_DONE:Ljava/lang/String; = "com.motorola.mod.action.MOD_ENUMERATION_DONE"
 
 .field private static final AMP_UP_SCREEN_BRIGHTNESS:F = 0.5f
 
@@ -30,6 +34,10 @@
 
 .field private static final LOW_PROFILE_DELAY:J = 0xbb8L
 
+.field private static final METHOD_POWER_MGR_AUTO_BRIGHTNESS:Ljava/lang/String; = "getAutomaticScreenBrightness"
+
+.field public static final MODMANAGER_PERMISSION:Ljava/lang/String; = "com.motorola.mod.permission.MOD_INTERNAL"
+
 .field private static final MOT_CAMERA:Ljava/lang/String; = "motcamera"
 
 .field private static final OSS_LICENSE_TEXT:Ljava/lang/String; = "file:///android_asset/open_source_licenses.html"
@@ -38,7 +46,19 @@
 
 .field private static final SCREEN_BRIGHTNESS:Ljava/lang/String; = "autoBrightnessAdjustment"
 
+.field public static final SHORTCUT_ID_DEPTH:Ljava/lang/String; = "Depth"
+
+.field public static final SHORTCUT_ID_SELFIE:Ljava/lang/String; = "Selfie"
+
+.field public static final SHORTCUT_ID_VIDEO:Ljava/lang/String; = "Video"
+
 .field private static final TAG:Ljava/lang/String; = "MotoCamera"
+
+.field public static final VM_REQUEST_DURATION_MS:I = 0xdac
+
+.field public static final VM_REQUEST_EXTRA_FREE_KBYTES:I = 0x30d40
+
+.field public static final VM_REQUEST_SWAPPINESS:I = 0xa
 
 .field private static final mCameraButtonIntentFilter:Landroid/content/IntentFilter;
 
@@ -74,7 +94,11 @@
 
 .field private mHandler:Landroid/os/Handler;
 
+.field private mKillAllBgRunning:Z
+
 .field private mLastActivityRequest:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;
+
+.field private final mModBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
 .field private mOrientation:I
 
@@ -125,7 +149,7 @@
 
     aput v2, v0, v1
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_9
 
     :goto_0
     :try_start_1
@@ -139,7 +163,7 @@
 
     aput v2, v0, v1
     :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_8
 
     :goto_1
     :try_start_2
@@ -153,7 +177,7 @@
 
     aput v2, v0, v1
     :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_7
 
     :goto_2
     :try_start_3
@@ -167,7 +191,7 @@
 
     aput v2, v0, v1
     :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_6
 
     :goto_3
     :try_start_4
@@ -181,7 +205,7 @@
 
     aput v2, v0, v1
     :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_5
 
     :goto_4
     :try_start_5
@@ -195,11 +219,11 @@
 
     aput v2, v0, v1
     :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_4
 
     :goto_5
     :try_start_6
-    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->SETTINGS_LOCATION:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
+    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->PRINTER:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
     invoke-virtual {v1}, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->ordinal()I
 
@@ -209,11 +233,11 @@
 
     aput v2, v0, v1
     :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_3
 
     :goto_6
     :try_start_7
-    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->STORAGE_PERM:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
+    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->SETTINGS_LOCATION:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
     invoke-virtual {v1}, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->ordinal()I
 
@@ -223,11 +247,11 @@
 
     aput v2, v0, v1
     :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_2
 
     :goto_7
     :try_start_8
-    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->VIDEO_PLAYER:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
+    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->STORAGE_PERM:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
     invoke-virtual {v1}, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->ordinal()I
 
@@ -237,9 +261,23 @@
 
     aput v2, v0, v1
     :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_1
 
     :goto_8
+    :try_start_9
+    sget-object v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->VIDEO_PLAYER:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
+
+    invoke-virtual {v1}, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xa
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_0
+
+    :goto_9
     sput-object v0, Lcom/motorola/camera/Camera;->-com-motorola-camera-Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODESwitchesValues:[I
 
     return-object v0
@@ -247,47 +285,60 @@
     :catch_0
     move-exception v1
 
-    goto :goto_8
+    goto :goto_9
 
     :catch_1
     move-exception v1
 
-    goto :goto_7
+    goto :goto_8
 
     :catch_2
     move-exception v1
 
-    goto :goto_6
+    goto :goto_7
 
     :catch_3
     move-exception v1
 
-    goto :goto_5
+    goto :goto_6
 
     :catch_4
     move-exception v1
 
-    goto :goto_4
+    goto :goto_5
 
     :catch_5
     move-exception v1
 
-    goto :goto_3
+    goto :goto_4
 
     :catch_6
     move-exception v1
 
-    goto :goto_2
+    goto :goto_3
 
     :catch_7
     move-exception v1
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_8
     move-exception v1
 
+    goto :goto_1
+
+    :catch_9
+    move-exception v1
+
     goto :goto_0
+.end method
+
+.method static synthetic -set0(Lcom/motorola/camera/Camera;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/motorola/camera/Camera;->mKillAllBgRunning:Z
+
+    return p1
 .end method
 
 .method static synthetic -wrap0(Lcom/motorola/camera/Camera;)V
@@ -367,6 +418,8 @@
 
     iput-object v2, p0, Lcom/motorola/camera/Camera;->mLastActivityRequest:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;
 
+    iput-boolean v1, p0, Lcom/motorola/camera/Camera;->mKillAllBgRunning:Z
+
     new-instance v0, Lcom/motorola/camera/Camera$1;
 
     invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$1;-><init>(Lcom/motorola/camera/Camera;)V
@@ -384,6 +437,12 @@
     invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$3;-><init>(Lcom/motorola/camera/Camera;)V
 
     iput-object v0, p0, Lcom/motorola/camera/Camera;->mFeatureLimiterListener:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;
+
+    new-instance v0, Lcom/motorola/camera/Camera$4;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$4;-><init>(Lcom/motorola/camera/Camera;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/Camera;->mModBroadcastReceiver:Landroid/content/BroadcastReceiver;
 
     return-void
 .end method
@@ -411,7 +470,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    const v0, 0x7f0e0071
+    const v0, 0x7f0e0085
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -433,7 +492,29 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    const v0, 0x7f0e0073
+    const v0, 0x7f0e0087
+
+    invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iget v3, v2, Landroid/graphics/Point;->x:I
+
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    iget v3, v2, Landroid/graphics/Point;->y:I
+
+    iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    const v0, 0x7f0e00e5
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -623,7 +704,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0800b9
+    const v1, 0x7f0800ba
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->showToast(I)V
 
@@ -800,7 +881,48 @@
 .end method
 
 .method private disableWindowRotation()Z
-    .locals 2
+    .locals 5
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "accelerometer_rotation"
+
+    invoke-static {v0, v3}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+    :try_end_0
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v0
+
+    if-ne v0, v1, :cond_1
+
+    move v0, v1
+
+    :goto_0
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/motorola/camera/CameraApp;->getAppFeatures()Lcom/motorola/camera/AppFeatures;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/motorola/camera/AppFeatures$Feature;->DISABLE_JUMPCUT_ROTATION:Lcom/motorola/camera/AppFeatures$Feature;
+
+    invoke-virtual {v3, v4}, Lcom/motorola/camera/AppFeatures;->supports(Lcom/motorola/camera/AppFeatures$Feature;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    :goto_1
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getWindow()Landroid/view/Window;
 
@@ -810,19 +932,50 @@
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
+    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
 
     invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getWindow()Landroid/view/Window;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v2, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    const/4 v0, 0x1
+    :cond_0
+    return v1
 
-    return v0
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_3
+
+    const-string/jumbo v0, "MotoCamera"
+
+    const-string/jumbo v3, "Can\'t get ACCELEROMETER_ROTATION setting"
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_3
+    move v0, v2
+
+    goto :goto_0
 .end method
 
 .method private getActivityAnimationBundle()Landroid/os/Bundle;
@@ -858,9 +1011,9 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    new-instance v1, Lcom/motorola/camera/Camera$6;
+    new-instance v1, Lcom/motorola/camera/Camera$7;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/Camera$6;-><init>(Lcom/motorola/camera/Camera;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/Camera$7;-><init>(Lcom/motorola/camera/Camera;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
 
@@ -982,7 +1135,7 @@
 
 
 # virtual methods
-.method public checkIntent(Landroid/content/Intent;)V
+.method public checkIntent(Landroid/content/Intent;Z)V
     .locals 3
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
@@ -1002,6 +1155,8 @@
 
     invoke-static {v1, v0}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
+    if-eqz p2, :cond_1
+
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-virtual {v0}, Lcom/motorola/camera/settings/CaptureIntent;->getMatchingMode()I
@@ -1014,6 +1169,7 @@
 
     invoke-static {v1, v2}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
+    :cond_1
     const-string/jumbo v1, "motorola.camera.intent.action.TAKE_SELFIE"
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -1024,8 +1180,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-nez v1, :cond_2
 
+    const-string/jumbo v1, "motorola.camera.intent.action.FRONT_CAMERA"
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    :cond_2
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_FACING:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const/4 v2, 0x0
@@ -1036,7 +1205,7 @@
 
     invoke-static {v1, v2}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
-    :cond_1
+    :cond_3
     const-string/jumbo v1, "motorola.intent.category.QUICK_LAUNCH"
 
     invoke-virtual {p1, v1}, Landroid/content/Intent;->hasCategory(Ljava/lang/String;)Z
@@ -1132,6 +1301,197 @@
     goto :goto_0
 .end method
 
+.method public createQuickLaunchShortcuts()V
+    .locals 7
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0x19
+    .end annotation
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x19
+
+    if-ge v0, v1, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    const-class v1, Landroid/content/pm/ShortcutManager;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/pm/ShortcutManager;
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v2, Landroid/content/pm/ShortcutInfo$Builder;
+
+    const-string/jumbo v3, "Video"
+
+    invoke-direct {v2, p0, v3}, Landroid/content/pm/ShortcutInfo$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v3
+
+    const v4, 0x7f080189
+
+    invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/content/pm/ShortcutInfo$Builder;->setShortLabel(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v2
+
+    const v3, 0x7f0200a6
+
+    invoke-static {p0, v3}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/content/pm/ShortcutInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v2
+
+    new-instance v3, Landroid/content/Intent;
+
+    const-string/jumbo v4, "android.media.action.VIDEO_CAMERA"
+
+    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v3}, Landroid/content/pm/ShortcutInfo$Builder;->setIntent(Landroid/content/Intent;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/pm/ShortcutInfo$Builder;->build()Landroid/content/pm/ShortcutInfo;
+
+    move-result-object v2
+
+    new-instance v3, Landroid/content/pm/ShortcutInfo$Builder;
+
+    const-string/jumbo v4, "Selfie"
+
+    invoke-direct {v3, p0, v4}, Landroid/content/pm/ShortcutInfo$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v4
+
+    const v5, 0x7f080188
+
+    invoke-virtual {v4, v5}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/content/pm/ShortcutInfo$Builder;->setShortLabel(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v3
+
+    const v4, 0x7f0200a5
+
+    invoke-static {p0, v4}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/content/pm/ShortcutInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v3
+
+    new-instance v4, Landroid/content/Intent;
+
+    const-string/jumbo v5, "motorola.camera.intent.action.FRONT_CAMERA"
+
+    invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v4}, Landroid/content/pm/ShortcutInfo$Builder;->setIntent(Landroid/content/Intent;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/pm/ShortcutInfo$Builder;->build()Landroid/content/pm/ShortcutInfo;
+
+    move-result-object v3
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/motorola/camera/CameraApp;->getAppFeatures()Lcom/motorola/camera/AppFeatures;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/motorola/camera/AppFeatures$Feature;->DEPTH_ENABLED:Lcom/motorola/camera/AppFeatures$Feature;
+
+    invoke-virtual {v4, v5}, Lcom/motorola/camera/AppFeatures;->supports(Lcom/motorola/camera/AppFeatures$Feature;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    new-instance v4, Landroid/content/pm/ShortcutInfo$Builder;
+
+    const-string/jumbo v5, "Depth"
+
+    invoke-direct {v4, p0, v5}, Landroid/content/pm/ShortcutInfo$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v5
+
+    const v6, 0x7f080187
+
+    invoke-virtual {v5, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/content/pm/ShortcutInfo$Builder;->setShortLabel(Ljava/lang/CharSequence;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v4
+
+    const v5, 0x7f0200a4
+
+    invoke-static {p0, v5}, Landroid/graphics/drawable/Icon;->createWithResource(Landroid/content/Context;I)Landroid/graphics/drawable/Icon;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/content/pm/ShortcutInfo$Builder;->setIcon(Landroid/graphics/drawable/Icon;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v4
+
+    new-instance v5, Landroid/content/Intent;
+
+    const-string/jumbo v6, "motorola.camera.intent.action.DEPTH_CAPTURE"
+
+    invoke-direct {v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v5}, Landroid/content/pm/ShortcutInfo$Builder;->setIntent(Landroid/content/Intent;)Landroid/content/pm/ShortcutInfo$Builder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/pm/ShortcutInfo$Builder;->build()Landroid/content/pm/ShortcutInfo;
+
+    move-result-object v4
+
+    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/ShortcutManager;->setDynamicShortcuts(Ljava/util/List;)Z
+
+    return-void
+.end method
+
 .method public displayLicensesDialog()V
     .locals 3
 
@@ -1141,7 +1501,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040025
+    const v1, 0x7f040027
 
     invoke-virtual {v0, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1167,7 +1527,7 @@
     :cond_0
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f09010f
+    const v2, 0x7f09011d
 
     invoke-direct {v1, p0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
@@ -1185,9 +1545,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/-$Lambda$19;
+    new-instance v1, Lcom/motorola/camera/-$Lambda$ZqOq5PsZxRZBUudXObyW2HxPNe0$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/-$Lambda$19;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/-$Lambda$ZqOq5PsZxRZBUudXObyW2HxPNe0$1;-><init>(Ljava/lang/Object;)V
 
     const v2, 0x104000a
 
@@ -1195,9 +1555,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/-$Lambda$18;
+    new-instance v1, Lcom/motorola/camera/-$Lambda$ZqOq5PsZxRZBUudXObyW2HxPNe0;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/-$Lambda$18;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/-$Lambda$ZqOq5PsZxRZBUudXObyW2HxPNe0;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1212,7 +1572,127 @@
     goto :goto_0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_Camera_lambda$1(Landroid/content/DialogInterface;I)V
+.method public getAutoBrightness()F
+    .locals 5
+
+    const-string/jumbo v0, "power"
+
+    invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    :try_start_0
+    const-class v2, Landroid/os/PowerManager;
+
+    const-string/jumbo v3, "getAutomaticScreenBrightness"
+
+    const/4 v4, 0x0
+
+    new-array v4, v4, [Ljava/lang/Class;
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v2, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    int-to-float v1, v0
+
+    const/high16 v2, 0x437f0000    # 255.0f
+
+    div-float/2addr v1, v2
+
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v2, :cond_0
+
+    const-string/jumbo v2, "MotoCamera"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "getAutomaticScreenBrightness: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v3, " "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_0
+    :goto_0
+    return v1
+
+    :catch_0
+    move-exception v0
+
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v2, :cond_0
+
+    const-string/jumbo v2, "MotoCamera"
+
+    const-string/jumbo v3, "Exception calling getAutomaticScreenBrightness"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v0
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "MotoCamera"
+
+    const-string/jumbo v2, "getAutomaticScreenBrightness: Method not found."
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method synthetic lambda$-com_motorola_camera_Camera_28282(Landroid/content/DialogInterface;I)V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mController:Lcom/motorola/camera/Controller;
@@ -1228,7 +1708,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_Camera_lambda$2(Landroid/content/DialogInterface;)V
+.method synthetic lambda$-com_motorola_camera_Camera_28443(Landroid/content/DialogInterface;)V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mController:Lcom/motorola/camera/Controller;
@@ -1441,6 +1921,44 @@
     invoke-direct {p0}, Lcom/motorola/camera/Camera;->checkMultiWindow()V
 
     :cond_1
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_2
+
+    const-string/jumbo v0, "MotoCamera"
+
+    const-string/jumbo v1, "This is not a moto or lenovo device! exit..."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    const v1, 0x7f0800a6
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->showToast(I)V
+
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->finish()V
+
+    return-void
+
+    :cond_3
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v0
@@ -1453,9 +1971,21 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_O:Lcom/motorola/camera/CameraKpi$KPI;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
+
     sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -1489,18 +2019,6 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_O:Lcom/motorola/camera/CameraKpi$KPI;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
-
-    move-result-object v0
-
     sget-object v1, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_W_CAF_O:Lcom/motorola/camera/CameraKpi$KPI;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
@@ -1517,10 +2035,10 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->endKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
-    :cond_2
+    :cond_4
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     new-instance v0, Landroid/os/StrictMode$ThreadPolicy$Builder;
 
@@ -1566,10 +2084,10 @@
 
     invoke-static {v0}, Landroid/os/StrictMode;->setVmPolicy(Landroid/os/StrictMode$VmPolicy;)V
 
-    :cond_3
-    new-instance v0, Lcom/motorola/camera/Camera$4;
+    :cond_5
+    new-instance v0, Lcom/motorola/camera/Camera$5;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$4;-><init>(Lcom/motorola/camera/Camera;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$5;-><init>(Lcom/motorola/camera/Camera;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
@@ -1609,13 +2127,13 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->addFlags(I)V
 
-    const v0, 0x7f04001e
+    const v0, 0x7f040020
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->setContentView(I)V
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_6
 
     const-string/jumbo v0, "MotoCamera"
 
@@ -1623,12 +2141,12 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_4
+    :cond_6
     invoke-direct {p0}, Lcom/motorola/camera/Camera;->adjustLayoutToRealScreenSize()V
 
     new-instance v2, Lcom/motorola/camera/Controller;
 
-    const v0, 0x7f0e0071
+    const v0, 0x7f0e0085
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->findViewById(I)Landroid/view/View;
 
@@ -1644,6 +2162,8 @@
 
     move-result-object v0
 
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->createQuickLaunchShortcuts()V
+
     invoke-direct {p0, v0}, Lcom/motorola/camera/Camera;->disableStatusBarGesture(Landroid/view/WindowManager$LayoutParams;)V
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->clearSessionSettings()V
@@ -1652,11 +2172,13 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->checkIntent(Landroid/content/Intent;)V
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/Camera;->checkIntent(Landroid/content/Intent;Z)V
 
     sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_7
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -1670,10 +2192,10 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->endKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
-    :cond_5
+    :cond_7
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_8
 
     const-string/jumbo v0, "MotoCamera"
 
@@ -1681,7 +2203,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
+    :cond_8
     return-void
 .end method
 
@@ -1759,7 +2281,9 @@
 .end method
 
 .method protected onNewIntent(Landroid/content/Intent;)V
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x1
 
     invoke-super {p0, p1}, Lcom/motorola/camera/ActivityBase;->onNewIntent(Landroid/content/Intent;)V
 
@@ -1780,9 +2304,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/Camera;->disableKeyGuard(Landroid/view/Window;Z)V
+    invoke-direct {p0, v0, v2}, Lcom/motorola/camera/Camera;->disableKeyGuard(Landroid/view/Window;Z)V
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->clearSessionSettings()V
 
@@ -1790,7 +2312,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->checkIntent(Landroid/content/Intent;)V
+    invoke-virtual {p0, v0, v2}, Lcom/motorola/camera/Camera;->checkIntent(Landroid/content/Intent;Z)V
 
     return-void
 .end method
@@ -1836,6 +2358,12 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/Controller;->onPause()V
 
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->activityPaused()V
+
     invoke-static {p0}, Lcom/motorola/camera/wear/GoogleServicesClient;->getInstance(Landroid/content/Context;)Lcom/motorola/camera/wear/GoogleServicesClient;
 
     move-result-object v0
@@ -1853,31 +2381,52 @@
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
     :cond_2
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isCurrentVideoMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    :cond_3
     iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mGalleryReview:Z
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mExitingForPermissions:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mExitForLiveStream:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mExitForARSelfie:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     const-string/jumbo v0, "MotoCamera"
 
@@ -1885,13 +2434,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_4
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->clearSessionSettings()V
 
-    :cond_4
+    :cond_5
     iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mWindowHasFocus:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getWindow()Landroid/view/Window;
 
@@ -1899,25 +2448,25 @@
 
     invoke-direct {p0, v0, v3}, Lcom/motorola/camera/Camera;->disableKeyGuard(Landroid/view/Window;Z)V
 
-    :cond_5
+    :cond_6
     invoke-static {}, Lcom/motorola/camera/instrumentreport/DeveloperMenu;->isMenuEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mDebugControlReceiver:Lcom/motorola/camera/DebugControlReceiver;
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    :cond_6
+    :cond_7
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mFeatureLimiterListener:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;
 
     invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->unregisterListener(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;)V
 
     iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mForegroundReceiverRegistered:Z
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mActivityForegroundReceiver:Landroid/content/BroadcastReceiver;
 
@@ -1925,7 +2474,7 @@
 
     iput-boolean v3, p0, Lcom/motorola/camera/Camera;->mForegroundReceiverRegistered:Z
 
-    :cond_7
+    :cond_8
     invoke-static {p0}, Landroid/support/v4/content/LocalBroadcastManager;->getInstance(Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
 
     move-result-object v0
@@ -1936,13 +2485,13 @@
 
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mAlertDialog:Landroid/app/AlertDialog;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mAlertDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
 
-    :cond_8
+    :cond_9
     invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -1953,9 +2502,13 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
 
+    iget-object v0, p0, Lcom/motorola/camera/Camera;->mModBroadcastReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
     sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -1969,10 +2522,10 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->endKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
-    :cond_9
+    :cond_a
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
     const-string/jumbo v0, "MotoCamera"
 
@@ -1980,7 +2533,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_a
+    :cond_b
     return-void
 .end method
 
@@ -2071,7 +2624,9 @@
 .end method
 
 .method protected onResume()V
-    .locals 5
+    .locals 6
+
+    const/4 v5, 0x1
 
     const/4 v4, 0x0
 
@@ -2106,9 +2661,38 @@
     invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
     :cond_0
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_O:Lcom/motorola/camera/CameraKpi$KPI;
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraKpi;->contains(Lcom/motorola/camera/CameraKpi$KPI;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_O:Lcom/motorola/camera/CameraKpi$KPI;
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
+
+    :cond_1
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "MotoCamera"
 
@@ -2146,40 +2730,11 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_1
+    :cond_2
     sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
     if-eqz v0, :cond_4
 
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_O:Lcom/motorola/camera/CameraKpi$KPI;
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraKpi;->contains(Lcom/motorola/camera/CameraKpi$KPI;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getCameraKpi()Lcom/motorola/camera/CameraKpi;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/motorola/camera/CameraKpi$KPI;->TOTAL_STARTUP_O:Lcom/motorola/camera/CameraKpi$KPI;
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
-
-    :cond_2
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v0
@@ -2229,6 +2784,20 @@
     invoke-virtual {v0, p0}, Lcom/motorola/camera/PermissionsManager;->updatePermissions(Landroid/app/Activity;)V
 
     invoke-super {p0}, Lcom/motorola/camera/ActivityBase;->onResume()V
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->activityResumed()V
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v2, Lcom/motorola/camera/service/CameraBgService;
+
+    invoke-direct {v0, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    invoke-virtual {p0, v0}, Lcom/motorola/camera/Camera;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
     const-string/jumbo v0, "keyguard"
 
@@ -2293,9 +2862,7 @@
 
     move-result-object v0
 
-    const/4 v2, 0x1
-
-    invoke-direct {p0, v0, v2}, Lcom/motorola/camera/Camera;->disableKeyGuard(Landroid/view/Window;Z)V
+    invoke-direct {p0, v0, v5}, Lcom/motorola/camera/Camera;->disableKeyGuard(Landroid/view/Window;Z)V
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -2340,11 +2907,11 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/motorola/camera/Camera;->mActivityForegroundReceiver:Landroid/content/BroadcastReceiver;
+    iget-object v2, p0, Lcom/motorola/camera/Camera;->mActivityForegroundReceiver:Landroid/content/BroadcastReceiver;
 
-    sget-object v2, Lcom/motorola/camera/Camera;->mCameraButtonIntentFilter:Landroid/content/IntentFilter;
+    sget-object v3, Lcom/motorola/camera/Camera;->mCameraButtonIntentFilter:Landroid/content/IntentFilter;
 
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/content/LocalBroadcastManager;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
+    invoke-virtual {v0, v2, v3}, Landroid/support/v4/content/LocalBroadcastManager;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isVideoServiceMode()Z
 
@@ -2356,9 +2923,9 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "/notification/show"
+    const-string/jumbo v2, "/notification/show"
 
-    invoke-virtual {v0, v1, v4}, Lcom/motorola/camera/wear/GoogleServicesClient;->sendMsgWhenConnected(Ljava/lang/String;[B)V
+    invoke-virtual {v0, v2, v4}, Lcom/motorola/camera/wear/GoogleServicesClient;->sendMsgWhenConnected(Ljava/lang/String;[B)V
 
     :cond_8
     iget-object v0, p0, Lcom/motorola/camera/Camera;->mFeatureLimiterListener:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;
@@ -2386,11 +2953,44 @@
 
     invoke-static {}, Lcom/motorola/camera/DebugControlReceiver;->getIntentFilter()Landroid/content/IntentFilter;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/Camera;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, v2}, Lcom/motorola/camera/Camera;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     :cond_a
+    new-instance v0, Landroid/content/IntentFilter;
+
+    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+
+    const-string/jumbo v2, "com.motorola.mod.action.MOD_ENUMERATION_DONE"
+
+    invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    const-string/jumbo v2, "com.motorola.mod.action.MOD_DETACH"
+
+    invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    iget-object v2, p0, Lcom/motorola/camera/Camera;->mModBroadcastReceiver:Landroid/content/BroadcastReceiver;
+
+    const-string/jumbo v3, "com.motorola.mod.permission.MOD_INTERNAL"
+
+    invoke-virtual {p0, v2, v0, v3, v4}, Lcom/motorola/camera/Camera;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isInstaPrintAttached()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    :goto_1
     sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
     if-eqz v0, :cond_b
@@ -2425,6 +3025,17 @@
     move v0, v1
 
     goto/16 :goto_0
+
+    :cond_e
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    goto :goto_1
 .end method
 
 .method protected onStart()V
@@ -2441,15 +3052,19 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    iget-boolean v0, p0, Lcom/motorola/camera/Camera;->mKillAllBgRunning:Z
+
+    if-nez v0, :cond_1
+
     invoke-static {}, Lcom/motorola/camera/Camera;->isMemPressureExpected()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    new-instance v0, Lcom/motorola/camera/Camera$5;
+    new-instance v0, Lcom/motorola/camera/Camera$6;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$5;-><init>(Lcom/motorola/camera/Camera;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/Camera$6;-><init>(Lcom/motorola/camera/Camera;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
@@ -2469,6 +3084,14 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/analytics/AnalyticsHelper;->setCallingActivity(Landroid/content/ComponentName;)V
+
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/Camera;->checkIntent(Landroid/content/Intent;Z)V
 
     invoke-static {}, Lcom/motorola/camera/PermissionsManager;->getInstance()Lcom/motorola/camera/PermissionsManager;
 
@@ -2614,132 +3237,6 @@
     return-void
 .end method
 
-.method public declared-synchronized requestUnlock(Landroid/content/Context;Landroid/os/IBinder;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    monitor-enter p0
-
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_1
-
-    if-eqz p2, :cond_1
-
-    :try_start_0
-    new-instance v1, Landroid/content/Intent;
-
-    const-string/jumbo v2, "com.motorola.internal.policy.impl.REQUEST_UNLOCK"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v2, "callback"
-
-    invoke-static {v1, v2, p2}, Lcom/motorola/camera/env/IntentReflection;->putExtra(Landroid/content/Intent;Ljava/lang/String;Landroid/os/IBinder;)V
-
-    const-string/jumbo v2, "collapse"
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    const-string/jumbo v2, "dismiss"
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    invoke-virtual {p1, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    :goto_0
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v1, :cond_0
-
-    const-string/jumbo v1, "MotoCamera"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "requestUnlock() request sent = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return v0
-
-    :cond_1
-    :try_start_1
-    const-string/jumbo v0, "MotoCamera"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "requestUnlock() -- ctx="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "  OR cbBinder="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " NULL"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
 .method public startActivity(Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;)V
     .locals 5
 
@@ -2795,6 +3292,18 @@
 
     move-result-object v0
 
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/motorola/camera/CameraApp;->getAnalytics()Lcom/motorola/camera/analytics/AnalyticsHelper;
+
+    move-result-object v1
+
+    iget-object v2, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->requestCode:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/analytics/AnalyticsHelper;->setExitType(Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;)V
+
     invoke-static {}, Lcom/motorola/camera/Camera;->-getcom-motorola-camera-Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODESwitchesValues()[I
 
     move-result-object v1
@@ -2833,33 +3342,18 @@
 
     sget-object v2, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->LIVE_STREAM:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
-    if-ne v1, v2, :cond_5
+    if-ne v1, v2, :cond_4
 
     iput-boolean v3, p0, Lcom/motorola/camera/Camera;->mExitForLiveStream:Z
 
     :cond_3
     :goto_1
     :try_start_1
-    iget-boolean v1, p0, Lcom/motorola/camera/Camera;->mSecureLaunch:Z
-
-    if-eqz v1, :cond_4
-
-    new-instance v1, Lcom/motorola/camera/Camera$MyRemoteCallback;
-
-    invoke-direct {v1, p0}, Lcom/motorola/camera/Camera$MyRemoteCallback;-><init>(Lcom/motorola/camera/Camera;)V
-
-    invoke-virtual {v1}, Lcom/motorola/camera/Camera$MyRemoteCallback;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    invoke-virtual {p0, p0, v1}, Lcom/motorola/camera/Camera;->requestUnlock(Landroid/content/Context;Landroid/os/IBinder;)Z
-
-    :cond_4
     iget-object v1, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->requestCode:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
     sget-object v2, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->ARSELFIE:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_5
 
     iget-object v1, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->intent:Landroid/content/Intent;
 
@@ -2892,7 +3386,7 @@
 
     goto :goto_0
 
-    :cond_5
+    :cond_4
     iget-object v1, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->requestCode:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
     sget-object v2, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->ARSELFIE:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
@@ -2903,7 +3397,7 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_5
     :try_start_2
     iget-object v1, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->intent:Landroid/content/Intent;
 
@@ -2919,6 +3413,21 @@
     :try_start_3
     iget-object v1, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->intent:Landroid/content/Intent;
 
+    invoke-virtual {p0}, Lcom/motorola/camera/Camera;->getAutoBrightness()F
+
+    move-result v2
+
+    const/high16 v3, -0x40800000    # -1.0f
+
+    cmpl-float v3, v2, v3
+
+    if-lez v3, :cond_6
+
+    const-string/jumbo v3, "brightness"
+
+    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;F)Landroid/content/Intent;
+
+    :cond_6
     iget v2, p1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;->orientation:I
 
     if-eqz v2, :cond_7
@@ -2936,20 +3445,6 @@
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     :cond_7
-    iget-boolean v2, p0, Lcom/motorola/camera/Camera;->mSecureLaunch:Z
-
-    if-eqz v2, :cond_8
-
-    new-instance v2, Lcom/motorola/camera/Camera$MyRemoteCallback;
-
-    invoke-direct {v2, p0}, Lcom/motorola/camera/Camera$MyRemoteCallback;-><init>(Lcom/motorola/camera/Camera;)V
-
-    invoke-virtual {v2}, Lcom/motorola/camera/Camera$MyRemoteCallback;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-virtual {p0, p0, v2}, Lcom/motorola/camera/Camera;->requestUnlock(Landroid/content/Context;Landroid/os/IBinder;)Z
-
     invoke-virtual {p0, v1, v0}, Lcom/motorola/camera/Camera;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
     :try_end_3
     .catch Landroid/content/ActivityNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
@@ -2971,15 +3466,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/Notifier;->notify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
 
-    goto/16 :goto_0
-
-    :cond_8
-    :try_start_4
-    invoke-virtual {p0, v1, v0}, Lcom/motorola/camera/Camera;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
-    :try_end_4
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
-
-    goto/16 :goto_0
+    goto :goto_0
 
     :catch_2
     move-exception v0
@@ -2997,6 +3484,8 @@
     invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/Notifier;->notify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
 
     goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

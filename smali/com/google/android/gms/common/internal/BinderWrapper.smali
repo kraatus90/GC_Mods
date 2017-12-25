@@ -38,9 +38,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/BinderWrapper;->zzSU:Landroid/os/IBinder;
 
@@ -50,9 +50,9 @@
 .method public constructor <init>(Landroid/os/IBinder;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/BinderWrapper;->zzSU:Landroid/os/IBinder;
 
@@ -64,9 +64,9 @@
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/BinderWrapper;->zzSU:Landroid/os/IBinder;
 

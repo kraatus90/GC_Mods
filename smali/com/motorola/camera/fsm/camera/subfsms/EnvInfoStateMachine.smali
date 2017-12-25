@@ -179,6 +179,85 @@
     return v0
 .end method
 
+.method private setFloatValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/hardware/camera2/CaptureResult;",
+            "Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey",
+            "<",
+            "Ljava/lang/Float;",
+            ">;)Z"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0, p1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getFloat(Ljava/lang/String;)F
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    :goto_0
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method private setIntValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -260,6 +339,85 @@
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private setIntValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/hardware/camera2/CaptureResult;",
+            "Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;)Z"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0, p1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    :goto_0
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    goto :goto_0
 
     :cond_1
     const/4 v0, 0x0
@@ -355,6 +513,85 @@
     return v0
 .end method
 
+.method private setLongValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/hardware/camera2/CaptureResult;",
+            "Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)Z"
+        }
+    .end annotation
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0, p1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    :goto_0
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->mBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 
 # virtual methods
 .method public declared-synchronized onCaptureCompleted(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)V
@@ -381,39 +618,39 @@
 
     :cond_0
     :try_start_1
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_CCT_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_CCT_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v0}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v0}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v0
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_DECISION_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_DECISION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
-
-    move-result v1
-
-    or-int/2addr v0, v1
-
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LENS_POSITION_KEY:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v1
 
     or-int/2addr v0, v1
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_STANDARD_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LENS_POSITION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v1
 
     or-int/2addr v0, v1
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_IDX_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_STANDARD_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_IDX_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
+
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v1
 
@@ -435,9 +672,9 @@
 
     or-int/2addr v0, v1
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v1
 
@@ -459,17 +696,17 @@
 
     or-int/2addr v0, v1
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LINECOUNT_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LINECOUNT_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setIntValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v1
 
     or-int/2addr v0, v1
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ANALOG_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ANALOG_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Z
+    invoke-direct {p0, p2, v1}, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;->setFloatValue(Landroid/hardware/camera2/CaptureResult;Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;)Z
 
     move-result v1
 

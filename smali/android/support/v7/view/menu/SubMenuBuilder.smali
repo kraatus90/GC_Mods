@@ -91,9 +91,9 @@
 .method public getActionViewStatesKey()Ljava/lang/String;
     .locals 3
 
-    const/4 v0, 0x0
-
     const/4 v2, 0x0
+
+    const/4 v0, 0x0
 
     iget-object v1, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
@@ -122,18 +122,18 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
+    iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
 
     move-result v0
 

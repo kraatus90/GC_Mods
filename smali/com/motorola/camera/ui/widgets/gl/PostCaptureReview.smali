@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;,
         Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
     }
 .end annotation
@@ -21,9 +22,11 @@
 
 .field private static final FRAME_COLOR:I = -0x1
 
-.field private static MARGIN_X:F
+.field private static MARGIN_X:F = 0.0f
 
-.field private static PADDING_BUTTON:F
+.field private static PADDING_BUTTON:F = 0.0f
+
+.field private static final PRINT_ASPECT_RATIO:F = 0.6666667f
 
 .field private static final TAG:Ljava/lang/String;
 
@@ -61,6 +64,10 @@
 
 .field private mPreviewTexture:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
 
+.field private mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+.field mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
 .field private mReviewState:Z
 
 .field private mShowPlay:Z
@@ -77,7 +84,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get1(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Ljava/lang/String;
+.method static synthetic -get1(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+
+    return-object v0
+.end method
+
+.method static synthetic -get2(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mMimeType:Ljava/lang/String;
@@ -85,7 +100,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get2(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+.method static synthetic -get3(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOffScreenTexture:Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
@@ -93,7 +108,7 @@
     return-object v0
 .end method
 
-.method static synthetic -get3(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Landroid/net/Uri;
+.method static synthetic -get4(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Landroid/net/Uri;
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mUri:Landroid/net/Uri;
@@ -182,13 +197,19 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$108;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$108;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$30LadhacAhL4rLPJKXCgSO7zg8g;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$30LadhacAhL4rLPJKXCgSO7zg8g;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDismissRunnable:Ljava/lang/Runnable;
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
@@ -196,7 +217,7 @@
 
     move-result-object v2
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;[IZ)V
+    invoke-direct {v0, p0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;[IZ)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
@@ -220,21 +241,13 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewTexture:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    invoke-direct {v0, p0, v1, p0, v5}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
-
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
-
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$3;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
     invoke-direct {v0, p0, v1, p0, v5}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
 
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$4;
 
@@ -242,7 +255,23 @@
 
     invoke-direct {v0, p0, v1, p0, v5}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$4;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
 
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-direct {v0, p0, v1, p0, v5}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
+
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPlayBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$6;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-direct {v0, p0, v1, p0, v5}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
@@ -337,13 +366,17 @@
 
     invoke-virtual {v0, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setVisibility(Z)V
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setVisibility(Z)V
+
     const-wide/16 v2, 0xc8
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/animations/GeneralAnimation;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$7;
 
-    invoke-direct {v1, p0, v6}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Z)V
+    invoke-direct {v1, p0, v6}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$7;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Z)V
 
     sget-object v6, Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;->RESTART:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
 
@@ -417,11 +450,15 @@
 
     invoke-virtual {v0, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setVisibility(Z)V
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setVisibility(Z)V
+
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/animations/GeneralAnimation;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$6;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$8;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$8;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)V
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOffScreenTexture:Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
@@ -486,7 +523,9 @@
 .end method
 
 .method private copyFrameForPhotoRoll([F)V
-    .locals 3
+    .locals 4
+
+    const/4 v3, 0x0
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -518,7 +557,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;
 
-    invoke-virtual {v0, v1, p1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->onPostView(Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;[F)V
+    invoke-virtual {v0, v1, p1, v3}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->onPostView(Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;[FLcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;)V
 
     return-void
 
@@ -566,7 +605,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isVideoServiceMode()Z
 
@@ -574,7 +613,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -592,7 +631,30 @@
 
     move-result v0
 
-    if-lez v0, :cond_0
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isInstaPrintAttached()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    :cond_0
+    if-lez v0, :cond_1
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mHandler:Landroid/os/Handler;
 
@@ -604,7 +666,7 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -632,118 +694,233 @@
     return-void
 .end method
 
+.method private processKeyEvent(I)V
+    .locals 3
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_INTENT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/settings/CaptureIntent;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CaptureIntent;->isCTSMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sparse-switch p1, :sswitch_data_0
+
+    return-void
+
+    :sswitch_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->KEY:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    return-void
+
+    :cond_0
+    return-void
+
+    :sswitch_data_0
+    .sparse-switch
+        0x17 -> :sswitch_0
+        0x1b -> :sswitch_0
+    .end sparse-switch
+.end method
+
 .method private setButtonPositions(Z)V
-    .locals 7
+    .locals 8
 
-    const/high16 v6, 0x40000000    # 2.0f
+    const/high16 v7, 0x40000000    # 2.0f
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->getLayoutSize()Landroid/graphics/PointF;
 
-    move-result-object v0
+    move-result-object v1
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->getPostTranslation()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    move-result-object v2
-
-    iget v2, v2, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
-
-    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->getPostScale()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->getPostTranslation()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
     move-result-object v3
 
+    if-nez p1, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isInstaPrintAttached()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/LaunchPrinterTask;->canHandlePrintOpt(Landroid/content/Context;)Z
+
+    move-result v0
+
+    :goto_0
     iget v3, v3, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
 
-    sub-float/2addr v2, v3
+    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
-    sget v3, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->BUTTON_INSET:F
+    invoke-virtual {v4}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->getPostScale()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
-    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
+    move-result-object v4
 
-    mul-float/2addr v3, v4
+    iget v4, v4, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
 
-    add-float/2addr v2, v3
+    sub-float/2addr v3, v4
 
-    iget v3, v0, Landroid/graphics/PointF;->y:F
+    sget v4, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->BUTTON_INSET:F
 
-    div-float/2addr v3, v6
+    iget v5, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
 
-    add-float/2addr v2, v3
-
-    sget v3, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->PADDING_BUTTON:F
-
-    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
-
-    mul-float/2addr v3, v4
-
-    iget v4, v0, Landroid/graphics/PointF;->x:F
-
-    div-float/2addr v4, v6
+    mul-float/2addr v4, v5
 
     add-float/2addr v3, v4
 
-    if-eqz p1, :cond_0
+    iget v4, v1, Landroid/graphics/PointF;->y:F
 
-    iget v0, v0, Landroid/graphics/PointF;->x:F
+    div-float/2addr v4, v7
 
-    div-float/2addr v0, v6
+    add-float/2addr v3, v4
 
-    :goto_0
-    add-float/2addr v0, v3
+    sget v4, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->PADDING_BUTTON:F
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+    iget v5, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
 
-    invoke-virtual {v3, v0, v2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
+    mul-float/2addr v4, v5
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPlayBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+    iget v5, v1, Landroid/graphics/PointF;->x:F
 
-    invoke-virtual {v3, v1, v2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
+    div-float/2addr v5, v7
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+    add-float/2addr v4, v5
 
-    neg-float v0, v0
+    if-nez p1, :cond_0
 
-    invoke-virtual {v3, v0, v2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
+    if-eqz v0, :cond_2
+
+    :cond_0
+    iget v1, v1, Landroid/graphics/PointF;->x:F
+
+    div-float/2addr v1, v7
+
+    :goto_1
+    add-float/2addr v1, v4
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, v1, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
-
-    int-to-float v2, v2
-
-    invoke-virtual {v0, v2, v1, v1, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPlayBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
-
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
-
-    int-to-float v2, v2
-
-    invoke-virtual {v0, v2, v1, v1, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
+    invoke-virtual {v0, v2, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
+    neg-float v1, v1
 
-    int-to-float v2, v2
+    invoke-virtual {v0, v1, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
 
-    invoke-virtual {v0, v2, v1, v1, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
+    :goto_2
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1, v2, v2, v6}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPlayBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1, v2, v2, v6}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1, v2, v2, v6}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1, v2, v2, v6}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPreRotation(FFFF)V
 
     return-void
 
-    :cond_0
-    move v0, v1
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
+
+    :cond_2
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mAcceptBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, v1, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPlayBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, v2, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    neg-float v1, v1
+
+    invoke-virtual {v0, v1, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setPostTranslation(FFF)V
+
+    goto :goto_2
 .end method
 
 .method private declared-synchronized setCameraClosing(Z)V
@@ -776,13 +953,15 @@
 .end method
 
 .method private setFrameSizes()V
-    .locals 9
+    .locals 10
 
-    const v4, 0x3fe38e39
+    const v5, 0x3fe38e39
 
-    const/4 v8, 0x0
+    const v1, 0x3f2aaaab
 
-    const/high16 v7, 0x40000000    # 2.0f
+    const/4 v9, 0x0
+
+    const/high16 v8, 0x40000000    # 2.0f
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
@@ -790,7 +969,7 @@
 
     move-result-object v0
 
-    iget v1, v0, Landroid/graphics/PointF;->y:F
+    iget v2, v0, Landroid/graphics/PointF;->y:F
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mViewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -798,47 +977,47 @@
 
     int-to-float v0, v0
 
-    sub-float/2addr v0, v1
+    sub-float/2addr v0, v2
 
-    const/high16 v2, 0x41100000    # 9.0f
-
-    mul-float/2addr v0, v2
-
-    const/high16 v2, 0x41800000    # 16.0f
-
-    div-float/2addr v0, v2
-
-    sget v2, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->MARGIN_X:F
-
-    mul-float/2addr v2, v7
-
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
-
-    mul-float/2addr v2, v3
-
-    sub-float v2, v0, v2
-
-    sget v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->BORDER:F
-
-    mul-float/2addr v0, v7
-
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
+    const/high16 v3, 0x41100000    # 9.0f
 
     mul-float/2addr v0, v3
 
-    sub-float v3, v2, v0
+    const/high16 v3, 0x41800000    # 16.0f
 
-    mul-float/2addr v4, v3
+    div-float/2addr v0, v3
+
+    sget v3, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->MARGIN_X:F
+
+    mul-float/2addr v3, v8
+
+    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
+
+    mul-float/2addr v3, v4
+
+    sub-float v3, v0, v3
 
     sget v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->BORDER:F
 
-    mul-float/2addr v0, v7
+    mul-float/2addr v0, v8
 
-    iget v5, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
+    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
 
-    mul-float/2addr v0, v5
+    mul-float/2addr v0, v4
 
-    add-float v5, v4, v0
+    sub-float v4, v3, v0
+
+    mul-float/2addr v5, v4
+
+    sget v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->BORDER:F
+
+    mul-float/2addr v0, v8
+
+    iget v6, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDensity:F
+
+    mul-float/2addr v0, v6
+
+    add-float v6, v5, v0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mCameraPreviewCopyTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;
 
@@ -847,43 +1026,43 @@
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mCameraPreviewCopyTex:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;
 
     :goto_0
-    iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
-    div-float/2addr v2, v7
+    div-float/2addr v3, v8
 
-    div-float/2addr v5, v7
+    div-float/2addr v6, v8
 
-    invoke-virtual {v6, v2, v5, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostScale(FFF)V
+    invoke-virtual {v7, v3, v6, v9}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostScale(FFF)V
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+
+    div-float v6, v4, v8
+
+    div-float v7, v5, v8
+
+    invoke-virtual {v3, v6, v7, v9}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostScale(FFF)V
+
+    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    div-float/2addr v2, v8
+
+    invoke-direct {v3, v9, v2, v9}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
-    div-float/2addr v3, v7
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
-    div-float/2addr v4, v7
-
-    invoke-virtual {v2, v3, v4, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostScale(FFF)V
-
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    div-float/2addr v1, v7
-
-    invoke-direct {v2, v8, v1, v8}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
-
-    invoke-virtual {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mBlackTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
-
-    invoke-virtual {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -930,6 +1109,25 @@
     goto :goto_0
 
     :cond_1
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    div-float v2, v4, v1
+
+    sub-float v2, v5, v2
+
+    div-float/2addr v2, v8
+
+    invoke-virtual {v3, v9, v2, v9}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->add(FFF)V
+
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
+
+    goto :goto_1
+
+    :cond_2
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
 
     iget v1, v1, Lcom/motorola/camera/PreviewSize;->height:I
@@ -948,9 +1146,11 @@
 .end method
 
 .method private setVisibility(ZZ)V
-    .locals 2
+    .locals 4
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/4 v1, 0x0
+
+    const/high16 v3, 0x3f800000    # 1.0f
 
     if-eqz p1, :cond_0
 
@@ -959,11 +1159,11 @@
     :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOffScreenTexture:Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
-    invoke-virtual {v0, v1, v1, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostScale(FFF)V
+    invoke-virtual {v0, v3, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostScale(FFF)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOffScreenTexture:Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setAlpha(F)V
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setAlpha(F)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOffScreenTexture:Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
@@ -993,7 +1193,118 @@
 
     invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setVisibility(Z)V
 
+    if-nez p2, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isInstaPrintAttached()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/LaunchPrinterTask;->canHandlePrintOpt(Landroid/content/Context;)Z
+
+    move-result v0
+
+    :goto_0
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    if-eqz p1, :cond_3
+
+    :goto_1
+    invoke-virtual {v2, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setVisibility(Z)V
+
+    if-eqz p1, :cond_1
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FRONT_MIRROR:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v1, :cond_4
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_4
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPrintReviewRequired()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewTexture:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    invoke-virtual {v0, v1, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;->setScale(FFF)V
+
+    :cond_1
+    :goto_2
     return-void
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewTexture:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
+
+    invoke-virtual {v0, v3, v3, v3}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;->setScale(FFF)V
+
+    goto :goto_2
 .end method
 
 
@@ -1025,7 +1336,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x6
+    const/16 v1, 0x8
 
     new-array v1, v1, [Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1035,33 +1346,45 @@
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x1
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x2
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x3
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x4
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_PRINT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x5
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/4 v3, 0x6
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/4 v3, 0x7
 
     aput-object v2, v1, v3
 
@@ -1084,7 +1407,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_PostCaptureReview_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_PostCaptureReview_22871()V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -1189,6 +1512,14 @@
 
     invoke-virtual {v0, v4, v5, v7, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setButtonResources(IIII)V
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    const/16 v2, 0xb2
+
+    const/16 v3, 0xb2
+
+    invoke-virtual {v0, v4, v5, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setButtonResources(IIII)V
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->loadTexture()V
@@ -1206,6 +1537,10 @@
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->loadTexture()V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->loadTexture()V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->loadTexture()V
 
@@ -1291,6 +1626,12 @@
 
     invoke-direct {p0, v1, v1}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->setVisibility(ZZ)V
 
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
     const/4 v0, 0x1
 
     return v0
@@ -1315,6 +1656,10 @@
     invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->draw([F[F)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPlayBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->draw([F[F)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->draw([F[F)V
     :try_end_0
@@ -1487,6 +1832,10 @@
 
     invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->onPreDraw([F[F)V
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->onPreDraw([F[F)V
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->isVisible()Z
@@ -1541,6 +1890,12 @@
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setDisplayOrientation(I)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->setDisplayOrientation(I)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mOrientation:I
 
@@ -1615,6 +1970,14 @@
     if-nez v0, :cond_0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->onUiEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->onUiEvent(Landroid/view/MotionEvent;)Z
 
@@ -1705,34 +2068,13 @@
     return-void
 
     :cond_0
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->initSurface()V
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :cond_2
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isHasselBlad()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -1740,27 +2082,49 @@
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ZOOM:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/Constants$UseCase;->CAMERA_INIT:Lcom/motorola/camera/fsm/camera/Constants$UseCase;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-static {v0, v1}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->isUseCase(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/Constants$UseCase;)Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;->addStateListener(Ljava/lang/Object;)V
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewTexture:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
+
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;->setInstaPrintVerticesData(Z)V
+
+    :cond_1
+    :goto_0
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->initSurface()V
+
+    :cond_2
+    :goto_1
+    return-void
 
     :cond_3
-    iput-boolean v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mShowPlay:Z
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPreviewTexture:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;
 
-    iput-boolean v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mReviewState:Z
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->checkState()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$CameraPreviewTextureExt;->setDefaultVerticesData()V
 
     goto :goto_0
 
     :cond_4
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
@@ -1791,6 +2155,66 @@
     invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;->addStateListener(Ljava/lang/Object;)V
 
     :cond_5
+    iput-boolean v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mShowPlay:Z
+
+    iput-boolean v3, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mReviewState:Z
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->checkState()V
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "KEY_CODE"
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->processKeyEvent(I)V
+
+    goto :goto_1
+
+    :cond_6
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isHasselBlad()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ZOOM:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;
+
+    invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;->addStateListener(Ljava/lang/Object;)V
+
+    :cond_7
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
     move-result-object v0
@@ -1845,16 +2269,16 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->checkState()V
 
-    goto :goto_0
+    goto/16 :goto_1
 
-    :cond_6
+    :cond_8
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_9
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1862,14 +2286,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_b
 
-    :cond_7
+    :cond_9
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isHasselBlad()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_a
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -1887,7 +2311,7 @@
 
     invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;->removeStateListener(Ljava/lang/Object;)V
 
-    :cond_8
+    :cond_a
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDismissRunnable:Ljava/lang/Runnable;
@@ -1898,16 +2322,16 @@
 
     invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setVisibility(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    :cond_9
+    :cond_b
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_c
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -1929,16 +2353,47 @@
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->dismissReview(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    :cond_a
+    :cond_c
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_PRINT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "REVIEW_ACCEPT"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->dismissReview(Z)V
+
+    goto/16 :goto_1
+
+    :cond_d
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_e
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -1960,9 +2415,9 @@
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->dismissReview(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    :cond_b
+    :cond_e
     invoke-static {}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->getAppClosingKeys()Ljava/util/Collection;
 
     move-result-object v0
@@ -1971,20 +2426,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_f
 
     invoke-direct {p0, v2, v2}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->setVisibility(ZZ)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    :cond_c
+    :cond_f
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CREATE_CAPTURE_SESSION_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_10
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -1998,26 +2453,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_10
 
     invoke-direct {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->setCameraClosing(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 
-    :cond_d
+    :cond_10
     invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringAppClosing(Lcom/motorola/camera/fsm/ChangeEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-direct {p0, v3}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->setCameraClosing(Z)V
 
-    goto/16 :goto_0
+    goto/16 :goto_1
 .end method
 
 .method protected declared-synchronized unloadTextures()V
-    .locals 1
+    .locals 2
 
     monitor-enter p0
 
@@ -2036,6 +2491,12 @@
 
     :cond_0
     :try_start_1
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mFrameTexture:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->unloadTexture()V
@@ -2057,6 +2518,10 @@
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->unloadTexture()V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mDeleteBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->unloadTexture()V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mPrintBtn:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->unloadTexture()V
 

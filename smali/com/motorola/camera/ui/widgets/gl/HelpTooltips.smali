@@ -13,6 +13,7 @@
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Gallery360Tooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$MinimapViewfinderTooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ModeSwitch360Tooltip;,
+        Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ModesListTooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamBaseTooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamDisableTooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamSecondLaunchTooltip;,
@@ -21,7 +22,6 @@
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip360;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip360SecondLaunch;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;,
-        Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$TooltipDualCamera;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ViewfinderSwitchTooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ViewfinderTooltip;,
         Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ZoomButtonTooltip;
@@ -183,9 +183,9 @@
 
     aput-object v1, v0, v3
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$TooltipDualCamera;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ModesListTooltip;
 
-    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$TooltipDualCamera;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ModesListTooltip;-><init>()V
 
     const/4 v2, 0x2
 
@@ -538,7 +538,7 @@
 .end method
 
 .method private setCurrentTooltip(Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;)V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips;->mCurrentTooltip:Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;
 
@@ -574,7 +574,9 @@
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips;->mTextureManager:Lcom/motorola/camera/ui/widgets/gl/iTextureManager;
 
-    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;->updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;)V
+    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips;->mOrientation:I
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;->updateDisplay(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;I)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips;->mTooltipTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture;
 
@@ -800,7 +802,27 @@
 
     new-array v1, v4, [Lcom/motorola/camera/fsm/camera/StateKey;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_ACTIONS_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    aput-object v2, v1, v3
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->add([Lcom/motorola/camera/fsm/camera/StateKey;)Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
+
+    move-result-object v0
+
+    new-array v1, v4, [Lcom/motorola/camera/fsm/camera/StateKey;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    aput-object v2, v1, v3
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->add([Lcom/motorola/camera/fsm/camera/StateKey;)Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
+
+    move-result-object v0
+
+    new-array v1, v4, [Lcom/motorola/camera/fsm/camera/StateKey;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     aput-object v2, v1, v3
 
@@ -1165,7 +1187,23 @@
 
     if-nez v0, :cond_4
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_ACTIONS_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
@@ -1197,7 +1235,7 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips;->resetTooltip360()V
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method protected declared-synchronized unloadTextures()V

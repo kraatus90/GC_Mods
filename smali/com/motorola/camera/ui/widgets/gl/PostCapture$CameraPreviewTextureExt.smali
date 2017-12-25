@@ -98,16 +98,6 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$CameraPreviewTextureExt;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$CameraPreviewTextureExt;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get2(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-wrap5(Lcom/motorola/camera/ui/widgets/gl/PostCapture;Lcom/motorola/camera/ui/widgets/gl/iGlComponent$CaptureType;)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$CameraPreviewTextureExt;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-set0(Lcom/motorola/camera/ui/widgets/gl/PostCapture;Z)Z

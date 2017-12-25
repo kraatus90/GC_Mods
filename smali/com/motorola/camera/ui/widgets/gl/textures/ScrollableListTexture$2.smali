@@ -174,6 +174,14 @@
     :goto_0
     invoke-virtual {v2, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->showLimitingGlow(ZF)V
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->-get4(Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;)Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderSurface()V
+
     return-void
 
     :cond_0
@@ -214,20 +222,6 @@
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->-get4(Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;)Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->-get2(Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;)Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderWhenDirty(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
-
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -260,20 +254,6 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->cancelAnimation(Ljava/lang/Integer;)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->-get4(Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;)Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->-get2(Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;)Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderContinuesly(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
 
     return-void
 .end method

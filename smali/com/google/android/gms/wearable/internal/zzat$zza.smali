@@ -68,9 +68,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v1, 0x0
 
     const/4 v8, 0x1
 

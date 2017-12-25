@@ -79,9 +79,9 @@
 .method private static varargs zzd([Ljava/lang/String;)Landroid/os/Bundle;
     .locals 5
 
-    const/4 v0, 0x0
-
     const/4 v2, 0x0
+
+    const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 

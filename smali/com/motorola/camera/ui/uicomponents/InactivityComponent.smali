@@ -79,7 +79,7 @@
 
     iput-boolean v1, p0, Lcom/motorola/camera/ui/uicomponents/InactivityComponent;->mTimeoutEnabled:Z
 
-    const v1, 0x7f0f0005
+    const v1, 0x7f0f0006
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -87,7 +87,7 @@
 
     iput v1, p0, Lcom/motorola/camera/ui/uicomponents/InactivityComponent;->mInactivityDelay:I
 
-    const v1, 0x7f0f0004
+    const v1, 0x7f0f0005
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -266,7 +266,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x11
+    const/16 v1, 0x14
 
     new-array v1, v1, [Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -294,81 +294,99 @@
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/DebugUiState;->DEBUG_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_NO_RESULTS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x4
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_DTFE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_TERMS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x5
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_INTRO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/DebugUiState;->DEBUG_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x6
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_TUTORIAL_FEEDBACK_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_DTFE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x7
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_EMPTY_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_INTRO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x8
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_SECURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_TUTORIAL_FEEDBACK_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x9
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_EMPTY_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xa
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_HELP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_SECURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xb
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_POPUP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xc
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_HELP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xd
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPENED_POPUP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xe
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xf
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/ProWheelStates;->PRO_WHEEL_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x10
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_PAUSED_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x11
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/VideoStates;->VIDEO_REVIEW_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x12
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/ProWheelStates;->PRO_WHEEL_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x13
 
     aput-object v2, v1, v3
 
@@ -429,6 +447,22 @@
     if-nez v0, :cond_0
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_NO_RESULTS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_TERMS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
@@ -522,6 +556,14 @@
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
     if-eqz v0, :cond_2
 
     :cond_0
@@ -587,6 +629,22 @@
     if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_NO_RESULTS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_TERMS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 
@@ -675,6 +733,14 @@
     if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/ProWheelStates;->PRO_WHEEL_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 

@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
+.field private final mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
 
 # direct methods

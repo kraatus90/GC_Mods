@@ -21,9 +21,7 @@
 
 # direct methods
 .method protected constructor <init>(Lorg/apache/http/conn/ClientConnectionOperator;Lorg/apache/http/conn/routing/HttpRoute;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,7 +39,9 @@
 
     iput-object p2, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->c:Lorg/apache/http/conn/routing/HttpRoute;
 
-    iput-object v1, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->e:Lorg/apache/http/conn/routing/RouteTracker;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->e:Lorg/apache/http/conn/routing/RouteTracker;
 
     return-void
 .end method
@@ -268,9 +268,7 @@
 .end method
 
 .method public tunnelProxy(Lorg/apache/http/HttpHost;ZLorg/apache/http/params/HttpParams;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const-string/jumbo v0, "Next proxy"
 
@@ -298,7 +296,9 @@
 
     iget-object v0, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->b:Lorg/apache/http/conn/OperatedClientConnection;
 
-    invoke-interface {v0, v2, p1, p2, p3}, Lorg/apache/http/conn/OperatedClientConnection;->update(Ljava/net/Socket;Lorg/apache/http/HttpHost;ZLorg/apache/http/params/HttpParams;)V
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1, p1, p2, p3}, Lorg/apache/http/conn/OperatedClientConnection;->update(Ljava/net/Socket;Lorg/apache/http/HttpHost;ZLorg/apache/http/params/HttpParams;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->e:Lorg/apache/http/conn/routing/RouteTracker;
 
@@ -308,9 +308,7 @@
 .end method
 
 .method public tunnelTarget(ZLorg/apache/http/params/HttpParams;)V
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -355,7 +353,9 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v3, v1, p1, p2}, Lorg/apache/http/conn/OperatedClientConnection;->update(Ljava/net/Socket;Lorg/apache/http/HttpHost;ZLorg/apache/http/params/HttpParams;)V
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v2, v1, p1, p2}, Lorg/apache/http/conn/OperatedClientConnection;->update(Ljava/net/Socket;Lorg/apache/http/HttpHost;ZLorg/apache/http/params/HttpParams;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/conn/AbstractPoolEntry;->e:Lorg/apache/http/conn/routing/RouteTracker;
 

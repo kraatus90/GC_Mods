@@ -380,9 +380,7 @@
 .end method
 
 .method private zzat(I)Z
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     iget v0, p0, Lcom/google/android/gms/common/api/zze;->zzPU:I
 
@@ -393,53 +391,55 @@
     return v0
 
     :cond_0
-    const-string/jumbo v0, "GoogleApiClientConnecting"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "GoogleApiClient connecting is in step "
 
-    const-string/jumbo v2, "GoogleApiClient connecting is in step "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    iget v1, p0, Lcom/google/android/gms/common/api/zze;->zzPU:I
 
-    iget v2, p0, Lcom/google/android/gms/common/api/zze;->zzPU:I
-
-    invoke-direct {p0, v2}, Lcom/google/android/gms/common/api/zze;->zzau(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v1}, Lcom/google/android/gms/common/api/zze;->zzau(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string/jumbo v2, " but received callback for step "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, " but received callback for step "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/zze;->zzau(I)Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "GoogleApiClientConnecting"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0x8
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1, v3}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
     invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/zze;->zzf(Lcom/google/android/gms/common/ConnectionResult;)V
 
@@ -1231,8 +1231,6 @@
 .method private zzkV()V
     .locals 6
 
-    const/4 v5, 0x0
-
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/android/gms/common/api/zze;->zzQb:Z
@@ -1282,9 +1280,11 @@
 
     new-instance v3, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v4, 0x11
+    const/4 v4, 0x0
 
-    invoke-direct {v3, v4, v5}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    const/16 v5, 0x11
+
+    invoke-direct {v3, v5, v4}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
     invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1376,9 +1376,9 @@
 .method public begin()V
     .locals 9
 
-    const/4 v5, 0x1
-
     const/4 v8, 0x0
+
+    const/4 v5, 0x1
 
     const/4 v4, 0x0
 

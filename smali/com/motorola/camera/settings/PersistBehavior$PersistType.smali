@@ -27,12 +27,36 @@
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/settings/PersistBehavior$PersistType;
 
 .field public static final enum PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PERSIST_NONE:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PERSIST_PER_CAMERA:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum PERSIST_PER_CAMERA_FACING:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

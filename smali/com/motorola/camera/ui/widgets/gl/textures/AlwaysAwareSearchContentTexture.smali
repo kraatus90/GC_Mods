@@ -12,8 +12,6 @@
 
 .field private static final BYLINE_COLOR:I
 
-.field private static final LAYOUT_HEIGHT:F = 90.0f
-
 .field private static final LINE_WIDTH:F = 0.5f
 
 .field private static final MAX_DESC_LENGTH:I = 0x50
@@ -83,7 +81,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0070
+    const v1, 0x7f0c0079
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -763,17 +761,17 @@
 .end method
 
 .method public updateTranslations()V
-    .locals 12
+    .locals 11
 
-    const/high16 v11, 0x3f000000    # 0.5f
+    const/high16 v10, 0x3f000000    # 0.5f
 
-    const/4 v10, 0x0
+    const/4 v9, 0x0
 
-    const/high16 v9, 0x40800000    # 4.0f
+    const/high16 v8, 0x40800000    # 4.0f
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    const/high16 v7, 0x40000000    # 2.0f
+    const/high16 v6, 0x40000000    # 2.0f
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -781,15 +779,15 @@
 
     int-to-float v0, v0
 
-    div-float v1, v0, v7
+    div-float v1, v0, v6
 
     iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
     const/high16 v2, 0x41800000    # 16.0f
 
-    mul-float/2addr v2, v0
+    mul-float/2addr v0, v2
 
-    new-instance v0, Landroid/graphics/PointF;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -797,43 +795,117 @@
 
     int-to-float v3, v3
 
-    mul-float v4, v7, v2
+    mul-float v4, v8, v0
 
     sub-float/2addr v3, v4
 
-    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
+    float-to-int v3, v3
 
-    const/high16 v5, 0x42b40000    # 90.0f
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
 
-    mul-float/2addr v4, v5
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultDesc:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
-    invoke-direct {v0, v3, v4}, Landroid/graphics/PointF;-><init>(FF)V
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
+    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getWordWrapWidth()I
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mBackground:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultLink:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getWordWrapWidth()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getLayoutSize()Landroid/graphics/PointF;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/graphics/PointF;->y:F
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultDesc:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getLayoutSize()Landroid/graphics/PointF;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/graphics/PointF;->y:F
+
+    add-float/2addr v2, v3
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultLink:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getLayoutSize()Landroid/graphics/PointF;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/graphics/PointF;->y:F
+
+    add-float/2addr v2, v3
+
+    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
+
+    const/high16 v4, 0x41800000    # 16.0f
+
+    mul-float/2addr v3, v4
+
+    add-float/2addr v2, v3
+
+    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
+
+    const/high16 v4, 0x41200000    # 10.0f
+
+    mul-float/2addr v3, v4
+
+    add-float/2addr v2, v3
+
+    new-instance v3, Landroid/graphics/PointF;
+
+    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v4, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v4, v4
+
+    mul-float v5, v6, v0
+
+    sub-float/2addr v4, v5
+
+    invoke-direct {v3, v4, v2}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mBackground:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
 
     iget v3, v3, Landroid/graphics/PointF;->x:F
 
-    div-float/2addr v3, v7
+    div-float/2addr v3, v6
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
 
     iget v4, v4, Landroid/graphics/PointF;->y:F
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
-    invoke-virtual {v0, v3, v4, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setPostScale(FFF)V
+    invoke-virtual {v2, v3, v4, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setPostScale(FFF)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mBackground:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mBackground:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
 
     const/4 v3, 0x1
 
-    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setVisibility(Z)V
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setVisibility(Z)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mBackground:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mBackground:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
@@ -845,55 +917,39 @@
 
     mul-float/2addr v3, v4
 
-    invoke-virtual {v0, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setAbsoluteRadius(F)V
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setAbsoluteRadius(F)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mAdBg:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mAdBg:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
 
     sget v3, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->ACTION_COLOR:I
 
-    invoke-virtual {v0, v3, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setLine(IF)V
+    invoke-virtual {v2, v3, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setLine(IF)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
 
-    iget v0, v0, Landroid/graphics/PointF;->x:F
+    iget v2, v2, Landroid/graphics/PointF;->x:F
 
-    neg-float v0, v0
+    neg-float v2, v2
 
-    div-float/2addr v0, v7
+    div-float/2addr v2, v6
 
     add-float/2addr v0, v2
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
 
-    iget v3, v3, Landroid/graphics/PointF;->y:F
+    iget v2, v2, Landroid/graphics/PointF;->y:F
 
-    div-float/2addr v3, v7
+    div-float/2addr v2, v6
 
-    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
+    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
-    const/high16 v5, 0x41200000    # 10.0f
+    const/high16 v4, 0x41200000    # 10.0f
 
-    mul-float/2addr v4, v5
+    mul-float/2addr v3, v4
 
-    sub-float/2addr v3, v4
+    sub-float/2addr v2, v3
 
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    iget-object v5, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLayoutSize:Landroid/graphics/PointF;
-
-    iget v5, v5, Landroid/graphics/PointF;->x:F
-
-    const/high16 v6, 0x40400000    # 3.0f
-
-    mul-float/2addr v2, v6
-
-    sub-float v2, v5, v2
-
-    float-to-int v2, v2
-
-    invoke-virtual {v4, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -903,7 +959,7 @@
 
     int-to-float v4, v4
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
     add-float/2addr v4, v0
 
@@ -915,37 +971,27 @@
 
     iget v5, v5, Landroid/graphics/PointF;->y:F
 
-    div-float/2addr v5, v7
+    div-float/2addr v5, v6
 
-    sub-float v5, v3, v5
+    sub-float v5, v2, v5
 
-    invoke-virtual {v2, v4, v5, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
+    invoke-virtual {v3, v4, v5, v9}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getLayoutSize()Landroid/graphics/PointF;
+    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getLayoutSize()Landroid/graphics/PointF;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget v2, v2, Landroid/graphics/PointF;->y:F
+    iget v3, v3, Landroid/graphics/PointF;->y:F
 
     iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
-    mul-float/2addr v4, v9
+    mul-float/2addr v4, v8
 
-    add-float/2addr v2, v4
+    add-float/2addr v3, v4
 
-    sub-float v2, v3, v2
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultDesc:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    invoke-virtual {v4}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getWordWrapWidth()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
+    sub-float/2addr v2, v3
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultDesc:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -957,7 +1003,7 @@
 
     int-to-float v4, v4
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
     add-float/2addr v4, v0
 
@@ -969,11 +1015,11 @@
 
     iget v5, v5, Landroid/graphics/PointF;->y:F
 
-    div-float/2addr v5, v7
+    div-float/2addr v5, v6
 
     sub-float v5, v2, v5
 
-    invoke-virtual {v3, v4, v5, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
+    invoke-virtual {v3, v4, v5, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultDesc:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -985,7 +1031,7 @@
 
     iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
-    mul-float/2addr v4, v9
+    mul-float/2addr v4, v8
 
     add-float/2addr v3, v4
 
@@ -1001,11 +1047,11 @@
 
     iget v4, v4, Landroid/graphics/PointF;->x:F
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
     iget v5, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
-    mul-float/2addr v5, v9
+    mul-float/2addr v5, v8
 
     add-float/2addr v4, v5
 
@@ -1017,9 +1063,9 @@
 
     iget v5, v5, Landroid/graphics/PointF;->y:F
 
-    div-float/2addr v5, v7
+    div-float/2addr v5, v6
 
-    invoke-virtual {v3, v4, v5, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setPostScale(FFF)V
+    invoke-virtual {v3, v4, v5, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setPostScale(FFF)V
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mAdBg:Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;
 
@@ -1029,7 +1075,7 @@
 
     move-result v4
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
     add-float/2addr v4, v0
 
@@ -1039,11 +1085,11 @@
 
     move-result v5
 
-    div-float/2addr v5, v7
+    div-float/2addr v5, v6
 
     sub-float v5, v2, v5
 
-    invoke-virtual {v3, v4, v5, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setPostTranslation(FFF)V
+    invoke-virtual {v3, v4, v5, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/RoundedRectangleTexture;->setPostTranslation(FFF)V
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mAdText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -1089,11 +1135,11 @@
 
     iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
-    mul-float/2addr v3, v9
+    mul-float/2addr v3, v8
 
     add-float/2addr v0, v3
 
-    :goto_0
+    :cond_0
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultLink:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultLink:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
@@ -1104,7 +1150,7 @@
 
     int-to-float v4, v4
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
     add-float/2addr v0, v4
 
@@ -1116,17 +1162,17 @@
 
     iget v4, v4, Landroid/graphics/PointF;->y:F
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
     sub-float/2addr v2, v4
 
-    invoke-virtual {v3, v0, v2, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
+    invoke-virtual {v3, v0, v2, v7}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mLineTexture:Lcom/motorola/camera/ui/widgets/gl/textures/LineTexture;
 
     iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mDensity:F
 
-    mul-float/2addr v2, v11
+    mul-float/2addr v2, v10
 
     invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/LineTexture;->setLineWidth(F)V
 
@@ -1150,9 +1196,9 @@
 
     neg-float v4, v4
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
-    invoke-direct {v2, v3, v4, v10}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+    invoke-direct {v2, v3, v4, v9}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
 
     new-instance v3, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
@@ -1162,24 +1208,11 @@
 
     neg-float v4, v4
 
-    div-float/2addr v4, v7
+    div-float/2addr v4, v6
 
-    invoke-direct {v3, v0, v4, v10}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
+    invoke-direct {v3, v0, v4, v9}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>(FFF)V
 
     invoke-virtual {v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/LineTexture;->setVerts(Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
     return-void
-
-    :cond_0
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultLink:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchContentTexture;->mResultTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
-
-    invoke-virtual {v4}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getWordWrapWidth()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
-
-    goto :goto_0
 .end method

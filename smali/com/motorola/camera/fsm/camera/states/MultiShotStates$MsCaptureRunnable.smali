@@ -139,11 +139,13 @@
 
     const-string/jumbo v3, "SEQ_ID"
 
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result v2
+    move-result-object v2
 
-    invoke-static {v2}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    check-cast v2, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    invoke-static {v2}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
     move-result-object v4
 
@@ -233,7 +235,7 @@
 
     cmpl-float v2, v9, v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_3
 
     sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -249,14 +251,14 @@
 
     const/4 v3, 0x2
 
-    if-ne v2, v3, :cond_2
+    if-ne v2, v3, :cond_4
 
     const/4 v2, 0x1
 
     move v3, v2
 
     :goto_0
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_5
 
     int-to-float v2, v10
 
@@ -265,7 +267,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_6
+    if-eqz v12, :cond_0
 
     invoke-virtual {v12}, Lcom/motorola/camera/saving/location/StorageLocation;->getLocation()I
 
@@ -273,12 +275,22 @@
 
     const/4 v13, 0x2
 
-    if-ne v13, v12, :cond_6
+    if-ne v13, v12, :cond_0
 
     xor-int/lit8 v3, v3, 0x1
 
-    if-eqz v3, :cond_b
+    if-nez v3, :cond_1
 
+    :cond_0
+    sget-object v3, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->MULTI_SHOT_RATE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v3}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_c
+
+    :cond_1
     const/high16 v3, 0x40400000    # 3.0f
 
     div-float/2addr v2, v3
@@ -302,7 +314,7 @@
 
     cmpl-float v2, v13, v2
 
-    if-lez v2, :cond_7
+    if-lez v2, :cond_8
 
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -313,7 +325,7 @@
 
     sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_2
 
     invoke-static {}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->-get0()Ljava/lang/String;
 
@@ -387,7 +399,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_2
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v14}, Ljava/util/ArrayList;-><init>(I)V
@@ -395,15 +407,11 @@
     const/4 v2, 0x0
 
     :goto_4
-    if-ge v2, v14, :cond_9
+    if-ge v2, v14, :cond_a
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_9
 
-    iget v9, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
+    iget-object v9, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     invoke-virtual {v5, v9}, Landroid/hardware/camera2/CaptureRequest$Builder;->setTag(Ljava/lang/Object;)V
 
@@ -424,62 +432,57 @@
 
     goto :goto_4
 
-    :cond_1
+    :cond_3
     const/4 v2, 0x1
 
     move v3, v2
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_4
     const/4 v2, 0x0
 
     move v3, v2
 
     goto/16 :goto_0
 
-    :cond_3
+    :cond_5
     const-string/jumbo v2, "sanders"
 
     invoke-static {v2, v11}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_6
 
     const/high16 v2, 0x40800000    # 4.0f
 
     goto/16 :goto_1
 
-    :cond_4
+    :cond_6
     const-string/jumbo v2, "nash"
 
     invoke-static {v2, v11}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_7
 
     const/high16 v2, 0x40c00000    # 6.0f
 
     goto/16 :goto_1
 
-    :cond_5
+    :cond_7
     const/high16 v2, 0x40a00000    # 5.0f
 
     goto/16 :goto_1
 
-    :cond_6
-    move v3, v2
-
-    goto/16 :goto_2
-
-    :cond_7
+    :cond_8
     const/4 v2, 0x0
 
     goto/16 :goto_3
 
-    :cond_8
+    :cond_9
     const/4 v9, 0x0
 
     invoke-virtual {v5, v9}, Landroid/hardware/camera2/CaptureRequest$Builder;->setTag(Ljava/lang/Object;)V
@@ -498,10 +501,10 @@
 
     goto :goto_5
 
-    :cond_9
+    :cond_a
     sget-boolean v2, Lcom/motorola/camera/Util;->KPI:Z
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -511,7 +514,7 @@
 
     iput-wide v6, v0, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsCaptureRunnable;->mShotStartTime:J
 
-    :cond_a
+    :cond_b
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v2
@@ -528,7 +531,7 @@
 
     return-void
 
-    :cond_b
+    :cond_c
     move v3, v2
 
     goto/16 :goto_2

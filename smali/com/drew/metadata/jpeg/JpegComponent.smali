@@ -43,17 +43,17 @@
 .end method
 
 .method public getComponentName()Ljava/lang/String;
-    .locals 2
+    .locals 1
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
-
-    const/4 v1, 0x0
 
     iget v0, p0, Lcom/drew/metadata/jpeg/JpegComponent;->_componentId:I
 
     packed-switch v0, :pswitch_data_0
 
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 
     :pswitch_0
     const-string/jumbo v0, "Y"

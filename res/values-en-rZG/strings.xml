@@ -96,7 +96,7 @@
     <string name="cancel">မလုပ္ေတာ့</string>
     <string name="capture_failure">ဖမ္းယူမွုမေအာင္ျမင္ပါ။ ထပ္မံႀကိဳးစားပါ</string>
     <string name="checkbox_do_not_show">ထပ္မျပပါႏွင့္</string>
-    <string name="cloudsight_terms">ရွာေဖြမွုရလဒ္မ်ားကို ပံ့ပိုးရန္ သင့္ပုံမ်ားကို CloudSight သို႔ ေပးပို႔ပါမည္။ &lt;br/>&lt;br/> ဆက္လုပ္ျခင္းျဖင့္ သင္သည္ CloudSight ၏&lt;a href=%1$s>ကိုယ္ေရးလုံျခဳံမွု မူဝါဒ&lt;/a> ကို သေဘာတူရာ ေရာက္ပါသည္။</string>
+    <string name="cloudsight_terms">အရာဝတၳဳမ်ားအားအသိအမွတ္ျပဳစနစ္အားအသုံးျပဳသည့္အခ်ိန္တိုင္း ေတြ႕ရွိရလဒ္မ်ားေပးရန္ ပုံႏွင့္ေနရာအား တတိယလူထံသို႔ ေပးပို႔ပါမည္။ (အသုံးျပဳနိုင္ေစရန္ျပဳလုပ္ထားပါက)&lt;br/> &lt;br/>ဆက္လက္လုပ္ေဆာင္ျခင္းျဖင့္ &lt;a href=%1$s>ပုဂၢိဳလ္ေရးရာေပၚလစီအား&lt;/a>သေဘာတူရမည္ျဖစ္သည္။.</string>
     <string name="dailog_panorama_failed">ျမင္ကြင္းက်ယ္ ရိုက္ကူးမွု မေအာင္ျမင္ပါ။ ျပန္ႀကိဳးစားေပးပါ။</string>
     <string name="dailog_panorama_not_taken">ျမင္ကြင္းက်ယ္ဓာတ္ပုံမရိုက္ရေသးပါ။</string>
     <string name="dialog_access_sd_fail">မီဒီယာကို မရိုက္ယူနိုင္ပါ။ SD ကတ္ကို ဝင္သုံး၍မရပါ။</string>
@@ -118,6 +118,7 @@
     <string name="dialog_device_not_supported">စက္က ပံ့ပိုးမေပးပါ</string>
     <string name="dialog_disagree">သေဘာမတူ</string>
     <string name="dialog_dismiss">ေနာက္ထပ္ မျပပါႏွင့္</string>
+    <string name="dialog_download">ေဒါင္းလုဒ္</string>
     <string name="dialog_external_sd_missing">ဓါတ္ပုံ ရိုက္လို႔ မရပါ။ SD ကတ္ကို သုံးလို႔မရပါ။ ဖုန္းထဲရွိ သိမ္းဆည္းရာေနရာသို႔ ကူးေျပာင္းေနသည္။</string>
     <string name="dialog_first_time_set_pure_raw_message">"ဓာတ္ပုံမ်ားကို ပညာရွင္အဆင့္ တည္းျဖတ္ရန္ ဤပုံၾကမ္းဖိုင္ အမ်ိဳးအစားကို အသုံးျပဳထားသည္။
 
@@ -195,6 +196,7 @@
     <string name="help_next">ေရွ႕သို႔</string>
     <string name="image_360_desc">ဤပုံသည္ 360 ဓာတ္ပုံျဖစ္သည္။ Moto 360 တည္းျဖတ္ကိရိယာကိုသုံးၿပီး ဤဓာတ္ပုံကို တည္းျဖတ္နိုင္ပါသည္။</string>
     <string name="image_360_name">360 ဓာတ္ပုံ</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">အနက္ကို ဖြင့္ထားသည္</string>
     <string name="indicate_mode_mono">B&amp;W အစစ္</string>
@@ -206,16 +208,19 @@
     <string name="indicate_mode_ultra_wide">အစြန္းက်ယ္ေသာေထာင့္</string>
     <string name="indicate_mode_video">ဗီဒီယို</string>
     <string name="indicate_mode_wide_angle">ေထာင့္က်ယ္</string>
+    <string name="indicate_mode_wide_angle_selfie">ျမင္ကြင္းက်ယ္ ဆယ္လ္ဖီ</string>
     <string name="internal_storage">စက္အတြင္းသိမ္းဆည္းရန္ေနရာ</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳမွုသည္ ကမၻာတစ္ဝွမ္း ေရပန္းစားသည့္ အထင္ကရအေဆာက္အဦမ်ားအေၾကာင္း သိေကာင္းစရာကိုေဖာ္ျပေပးသည္။&lt;br/>&lt;br/>ဤဝန္ေဆာင္မွုကိုသုံးရန္ ထည့္သြင္းပါ။</string>
-    <string name="landmark_install_over_data">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳသည့္ အက္ပ္ေဒါင္းလုဒ္သည္ 92 MB ရွိသည္။ မိုဘိုင္းေဒတာျဖင့္ ထည့္သြင္းပါက ေဒတာအသုံးျပဳခကုန္က်နိုင္သည္။</string>
-    <string name="landmark_notification_downloading">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳမွုအား ေဒါင္းလုဒ္လုပ္ေနသည္။</string>
-    <string name="landmark_notification_install">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳမွုကိုထည့္သြင္းေနပါၿပီ။</string>
-    <string name="landmark_notification_install_complete">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳမွုအား ထည့္သြင္းၿပီးပါၿပီ။</string>
-    <string name="landmark_notification_install_failed">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳမွုကိုထည့္သြင္းမွုမေအာင္ျမင္ပါ။</string>
+    <string name="landmark_install_message">အထင္ကေနရာမ်ားအသိအမွတ္ျပဳစနစ္သည္ကမၻာတဝွမ္းရွိထင္ရွားေသာေနရာမ်ားႏွင့္ပတ္သက္သည့္ သတင္းအားေပးသည္။&lt;br/>&lt;br/>ဤအဂၤါရပ္အားအသုံးျပဳနိုင္ရန္အထင္ကေနရာမ်ားသိမ္းဆည္းေပးထားသည့္ ေဒတာေဘ့စ္အားေဒါင္းလုဒ္ရယူပါ။</string>
+    <string name="landmark_install_over_data">ေဒတာေဘ့စ္ေဒါင္လုဒ္အရြယ္အစား 92 MB ရွိပါသည္။ ၄င္းအား မိုဘိုင္းေဒတာျဖင့္ ထည့္သြင္းပါက ေဒတာအသုံးျပဳခကုန္က်နိုင္သည္။</string>
+    <string name="landmark_notification_downloading">အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ေဒါင္းလုဒ္လုပ္ျခင္း</string>
+    <string name="landmark_notification_install">အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ထည့္သြင္းျခင္း</string>
+    <string name="landmark_notification_install_complete">အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ထည့္သြင္းျခင္းၿပီးဆုံးပါၿပီ။</string>
+    <string name="landmark_notification_install_failed">အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ ထည့္သြင္းျခင္းမေအာင္ျမင္ပါ။</string>
     <string name="landmark_notification_install_invalid_url">အထင္ကရအေဆာက္အဦေဒတာေဘ့စ္ကိုမရနိုင္ေသးပါ။ ေနာက္ဆုံးကင္မရာဗားရွင္းကို အပ္ဒိတ္လုပ္ပါ။</string>
-    <string name="landmark_notification_install_out_of_space">အထင္ကရအေဆာက္အဦကိုအသိအမွတ္ျပဳမွုကိုထည့္သြင္းရန္ သိုေလွာင္ခန္းေနရာမလုံေလာက္ပါ။</string>
+    <string name="landmark_notification_install_out_of_space">အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ထည့္သြင္းသိမ္းဆည္းရန္ေနရာမလုံေလာက္ပါ။</string>
+    <string name="landmark_notification_paused">အင္တာနက္ရရွိသည့္အခ်ိန္တြင္ အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ ေဒါင္းလုဒ္လုပ္ျခင္း ဆက္လက္လုပ္ေဆာင္မည္။</string>
+    <string name="landmark_notification_queued">အင္တာနက္ရရွိသည့္အခ်ိန္တြင္ အထင္ကေနရာမ်ားသိမ္းဆည္းထားသည့္ ေဒတာေဘ့စ္ အား ေဒါင္းလုဒ္ လုပ္ျခင္းစတင္မည္။</string>
     <string name="main_setting_amz_barcode">Amazon ဘားကုဒ္စကန္ဖတ္စက္</string>
     <string name="main_setting_amz_privacy">Amazon ကိုယ္ေရးလုံျခဳံမွု သတိေပးခ်က္</string>
     <string name="main_setting_amz_terms">အသုံးျပဳမွု စည္းကမ္းခ်က္မ်ား</string>
@@ -238,6 +243,8 @@
     <string name="main_setting_image_ratio">ပုံအရြယ္အစား (ေနာက္)</string>
     <string name="main_setting_image_ratio_front">ပုံအရြယ္အစား (ေရွ႕)</string>
     <string name="main_setting_landmark_detection">အထင္ကရအေဆာက္အဦအား အသိအမွတ္ျပဳမွု</string>
+    <string name="main_setting_landmark_version_current">ေဒတာေဘ့စ္အမွတ္စဥ္ %s</string>
+    <string name="main_setting_landmark_version_not_installed">ေဒတာေဘ့စ္ ထည့္သြင္းထားျခင္းမရွိပါ။</string>
     <string name="main_setting_licenses">အခမဲ့သုံး အရင္းအျမစ္လိုင္စင္မ်ား</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -273,6 +280,9 @@
     <string name="perm_required_alert_title">ခြင့္ျပဳခ်က္ လိုအပ္ပါသည္</string>
     <string name="photos_depth_desc">ဖိုးကပ္စ္ကို ေရြးရန္၊ ေနာက္ခံကို အစားထိုးရန္ (သို႔) ျဖဴ၊ မည္းသို႔ေျပာင္းမည့္ေနရာကို ေရြးရန္ အနက္တည္းျဖတ္ကိရိယာကို သုံးပါ။</string>
     <string name="photos_depth_name">အနက္ကို ဖြင့္ထားသည္</string>
+    <string name="photos_notification_desc">Google Photos တြင္ အကန္႔အသတ္မဲ့ သိုေလွာင္ခန္းကိုရယူလိုက္ပါ</string>
+    <string name="photos_notification_title">Google Photos မ်ားသို႔ အရန္သိမ္းပါ</string>
+    <string name="qcfa_resolution_description">အလိုက္သင့္ အလင္းမွိန္</string>
     <string name="retake">ျပန္ရိုက္ရန္</string>
     <string name="second_10">10စကၠန႔္</string>
     <string name="second_3">3စကၠန႔္</string>
@@ -315,6 +325,7 @@
     <string name="setting_mode_slow_motion">အေႏွး လွုပ္ရွားမွု</string>
     <string name="setting_mode_ultra_wide">အစြန္းက်ယ္ေသာေထာင့္</string>
     <string name="setting_mode_video">ဗီဒီယို</string>
+    <string name="setting_mode_wide_angle_selfie">ျမင္ကြင္းက်ယ္ ဆယ္လ္ဖီ</string>
     <string name="setting_off">ပိတ္</string>
     <string name="setting_on">ဖြင့္</string>
     <string name="setting_persist">ကိုင္ထားသည္</string>
@@ -331,20 +342,25 @@
     <string name="setting_timer_dialog_title">အခ်ိန္မွတ္စက္</string>
     <string name="setting_torch">ဓါတ္မီး</string>
     <string name="setting_true">မွန္</string>
+    <string name="shortcut_desc_depth">အတိမ္အနက္ညႊန္းၿပ ဓာတ္ပုံ</string>
+    <string name="shortcut_desc_selfie">ဆယ္လ္ဖီ</string>
+    <string name="shortcut_desc_video">ဗီဒီယို</string>
     <string name="smartcam_landmark_notification_title">စမတ္ကင္မရာ</string>
+    <string name="smartcam_no_detections">မည္သည့္အရာဝတၳဳ (သို႔) အထင္ကရေနရာကိုမွ သိမ္းမထားပါ</string>
     <string name="storage_location_external">SD ကဒ္</string>
     <string name="storage_location_internal">ဖုန္း</string>
     <string name="storage_unavailable">သိမ္းဆည္းရာေနရာကို မရနိုင္ပါ</string>
+    <string name="toast_battery_saver">ယခု ဘက္ထရီေခၽြတာေရးစနစ္အတြင္း ေရာက္ရွိေနသျဖင့္ အခ်ိဳ႕ေသာဝန္ေဆာင္မွုမ်ားအားအသုံးျပဳ၍မရပါ။</string>
     <string name="toast_geotag_message_1">တည္ေနရာသိမ္းနိုင္ရန္ တည္ေနရာကို သင္က ခြင့္ျပဳခ်က္ ေပးရမည္။</string>
     <string name="toast_geotag_message_2">စနစ္တည္ေနရာဆက္တင္ကို ဖြင့္ၿပီးမွသာ တည္ေနရာဆက္တင္ သက္ေရာက္မွုရွိပါသည္။</string>
     <string name="tooltip_camera_switch_360">မတူညီေသာ ကင္မရာေရြးခ်ယ္စရာမ်ားကို ေျပာင္းသုံးၾကည့္ပါ။</string>
     <string name="tooltip_capture_360">ဤရွပ္တာခလုတ္ေပၚ တို႔ထိျခင္းျဖင့္ ၃၆၀° ဓာတ္ပုံ (သို႔) ဗီဒီယို ရိုက္ၾကည့္ပါ။</string>
-    <string name="tooltip_capture_key_360">mod ၏ ေက်ာဘက္ေပၚရွိ ရွပ္တာခလုတ္ျဖင့္လည္း ရိုက္ကူးၾကည့္ပါ။</string>
-    <string name="tooltip_dual_camera_depth_photo">အထူး တည္းျဖတ္အဂၤါရပ္မ်ား ရနိုင္ေစရန္ ဓာတ္ပုံမ်ားကို အပိုေဒတာျဖင့္ ရိုက္ကူးပါ။</string>
+    <string name="tooltip_capture_key_360">Mod ၏ ေက်ာဘက္ေပၚရွိ ရွပ္တာခလုတ္ျဖင့္လည္း ရိုက္ကူးၾကည့္ပါ။</string>
     <string name="tooltip_first_use_zoom_button">ရွုေထာင့္အက်ယ္သို႔ ေျပာင္းရန္ ဤေနရာကို ႏွိပ္ပါ။</string>
     <string name="tooltip_gallery_360">ဘယ္ဘက္သို႔ ပြတ္ဆြဲျခင္းျဖင့္ ၃၆၀° ဓာတ္ပုံ (သို႔) ဗီဒီယိုသို႔ ေရာက္သြားပုံကို ၾကည့္ပါ။</string>
     <string name="tooltip_minimap_viewfinder">ေအာက္ေျခမွပုံကို ဘယ္ (သို႔) ညာသို႔ ေျဖးေျဖးေရႊ႕ပါ။</string>
     <string name="tooltip_mode_switch_360">၃၆၀° ကို မုဒ္မ်ိဳးစုံတြင္ ရိုက္ၾကည့္ပါ။</string>
+    <string name="tooltip_modes_list">ဓာတ္ပုံမ်ား အမိအရရိုက္ကူးရန္အတြက္ နည္းလမ္းသစ္မ်ားေဖြရွာျခင္း</string>
     <string name="tooltip_smart_camera">အရာဝတၳဳအေၾကာင္း ပိုမိုရွာေဖြရန္ ႏွိပ္ပါ။</string>
     <string name="tooltip_smart_camera_disable">ဆက္တင္မ်ားထဲတြင္ ၎ကိုပိတ္ထားနိုင္သည္။</string>
     <string name="tooltip_spherical_viewfinder">ျမင္ကြင္းကို ထိန္းခ်ဳပ္ရန္ ေျဖးေျဖးေရႊ႕ (သို႔) ခ်ဲ႕-ခ်ဳံ႕ လုပ္ပါ။</string>
@@ -367,4 +383,10 @@
     <string name="zoom_hint_full">ျပည့္</string>
     <string name="zoom_hint_wide">က်ယ္</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">အခ်ိန္ျဖတ္ေက်ာ္</string>
+    <string name="setting_mode_timelapse">အခ်ိန္ျဖတ္ေက်ာ္</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

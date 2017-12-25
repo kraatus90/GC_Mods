@@ -162,9 +162,7 @@
 .end method
 
 .method public getSSLSession()Ljavax/net/ssl/SSLSession;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-super {p0}, Lorg/apache/http/impl/DefaultBHttpClientConnection;->getSocket()Ljava/net/Socket;
 
@@ -174,7 +172,9 @@
 
     if-nez v1, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     check-cast v0, Ljavax/net/ssl/SSLSocket;

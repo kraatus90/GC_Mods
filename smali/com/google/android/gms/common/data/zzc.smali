@@ -200,31 +200,31 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lcom/google/android/gms/common/data/zzc;->zzRw:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/zzc;->zzRw:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/common/data/zzc;->zzRx:I
 
-    iget v2, p0, Lcom/google/android/gms/common/data/zzc;->zzRx:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/common/data/zzc;->zzPy:Lcom/google/android/gms/common/data/DataHolder;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/data/zzc;->zzPy:Lcom/google/android/gms/common/data/DataHolder;
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

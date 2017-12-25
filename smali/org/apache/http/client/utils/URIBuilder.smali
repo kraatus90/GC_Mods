@@ -868,9 +868,9 @@
 .method public setFragment(Ljava/lang/String;)Lorg/apache/http/client/utils/URIBuilder;
     .locals 1
 
-    const/4 v0, 0x0
-
     iput-object p1, p0, Lorg/apache/http/client/utils/URIBuilder;->fragment:Ljava/lang/String;
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/http/client/utils/URIBuilder;->encodedFragment:Ljava/lang/String;
 

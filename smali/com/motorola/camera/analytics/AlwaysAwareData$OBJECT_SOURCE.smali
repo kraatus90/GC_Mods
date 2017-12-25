@@ -50,6 +50,8 @@
 
 .field public static final enum MAXICODE:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
 
+.field public static final enum OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
+
 .field public static final enum PDF_417:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
 
 .field public static final enum QR_CODE:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
@@ -305,7 +307,19 @@
 
     sput-object v0, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;->LANDMARK:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
 
-    const/16 v0, 0x14
+    new-instance v0, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
+
+    const-string/jumbo v1, "OBJECT"
+
+    const/16 v2, 0x14
+
+    const/16 v3, 0x15
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;->OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
+
+    const/16 v0, 0x15
 
     new-array v0, v0, [Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
 
@@ -416,6 +430,12 @@
     sget-object v1, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;->LANDMARK:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
 
     const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;->OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
+
+    const/16 v2, 0x14
 
     aput-object v1, v0, v2
 

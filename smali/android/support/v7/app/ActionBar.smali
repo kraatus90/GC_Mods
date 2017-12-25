@@ -78,6 +78,19 @@
     .end annotation
 .end method
 
+.method public closeOptionsMenu()Z
+    .locals 1
+    .annotation build Landroid/support/annotation/RestrictTo;
+        value = {
+            .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public collapseActionView()Z
     .locals 1
     .annotation build Landroid/support/annotation/RestrictTo;
@@ -299,6 +312,11 @@
 
 .method requestFocus()Z
     .locals 1
+    .annotation build Landroid/support/annotation/RestrictTo;
+        value = {
+            .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
+        }
+    .end annotation
 
     const/4 v0, 0x0
 

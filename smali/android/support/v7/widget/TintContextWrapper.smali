@@ -48,13 +48,11 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 2
     .param p1    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
-
-    const/4 v2, 0x0
 
     invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
@@ -74,7 +72,9 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
 
-    iput-object v2, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     :goto_0
     return-void
@@ -165,164 +165,170 @@
 .end method
 
 .method public static wrap(Landroid/content/Context;)Landroid/content/Context;
-    .locals 6
+    .locals 5
     .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     invoke-static {p0}, Landroid/support/v7/widget/TintContextWrapper;->shouldWrap(Landroid/content/Context;)Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     return-object p0
 
     :cond_0
-    sget-object v5, Landroid/support/v7/widget/TintContextWrapper;->CACHE_LOCK:Ljava/lang/Object;
+    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->CACHE_LOCK:Ljava/lang/Object;
 
-    monitor-enter v5
+    monitor-enter v3
 
     :try_start_0
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v0
 
-    add-int/lit8 v0, v3, -0x1
+    add-int/lit8 v0, v0, -0x1
+
+    move v2, v0
 
     :goto_0
-    if-gez v0, :cond_2
+    if-gez v2, :cond_2
 
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v3
+    move-result v0
 
-    add-int/lit8 v0, v3, -0x1
+    add-int/lit8 v0, v0, -0x1
+
+    move v2, v0
 
     :goto_1
-    if-gez v0, :cond_5
+    if-gez v2, :cond_5
 
     :goto_2
-    new-instance v2, Landroid/support/v7/widget/TintContextWrapper;
+    new-instance v0, Landroid/support/v7/widget/TintContextWrapper;
 
-    invoke-direct {v2, p0}, Landroid/support/v7/widget/TintContextWrapper;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Landroid/support/v7/widget/TintContextWrapper;-><init>(Landroid/content/Context;)V
 
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v1, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    new-instance v4, Ljava/lang/ref/WeakReference;
+    new-instance v2, Ljava/lang/ref/WeakReference;
 
-    invoke-direct {v4, v2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    monitor-exit v5
+    monitor-exit v3
 
-    return-object v2
+    return-object v0
 
     :cond_1
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sput-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
     goto :goto_2
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
-    monitor-exit v5
+    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v3
+    throw v0
 
     :cond_2
     :try_start_1
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/ref/WeakReference;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-nez v1, :cond_4
+    if-nez v0, :cond_4
 
     :cond_3
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     :goto_3
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v0, v2, -0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_4
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    if-eqz v3, :cond_3
+    if-eqz v0, :cond_3
 
     goto :goto_3
 
     :cond_5
-    sget-object v3, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
+    sget-object v0, Landroid/support/v7/widget/TintContextWrapper;->sCache:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/ref/WeakReference;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-nez v1, :cond_7
+    if-nez v0, :cond_7
 
-    move-object v2, v4
+    move-object v0, v1
 
     :goto_4
-    if-nez v2, :cond_8
+    if-nez v0, :cond_8
 
     :cond_6
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 v0, v2, -0x1
+
+    move v2, v0
 
     goto :goto_1
 
     :cond_7
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/support/v7/widget/TintContextWrapper;
-
-    move-object v2, v3
+    check-cast v0, Landroid/support/v7/widget/TintContextWrapper;
 
     goto :goto_4
 
     :cond_8
-    invoke-virtual {v2}, Landroid/support/v7/widget/TintContextWrapper;->getBaseContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/support/v7/widget/TintContextWrapper;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v4
 
-    if-ne v3, p0, :cond_6
+    if-ne v4, p0, :cond_6
 
-    monitor-exit v5
+    monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    return-object v2
+    return-object v0
 .end method
 
 

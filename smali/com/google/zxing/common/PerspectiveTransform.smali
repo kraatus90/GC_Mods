@@ -51,7 +51,7 @@
 .end method
 
 .method public static quadrilateralToQuadrilateral(FFFFFFFFFFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-    .locals 3
+    .locals 2
 
     invoke-static/range {p0 .. p7}, Lcom/google/zxing/common/PerspectiveTransform;->quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
 
@@ -63,9 +63,9 @@
 
     invoke-virtual {v1, v0}, Lcom/google/zxing/common/PerspectiveTransform;->times(Lcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/PerspectiveTransform;
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public static quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
@@ -83,31 +83,31 @@
 .end method
 
 .method public static squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
-    .locals 17
+    .locals 10
 
     sub-float v0, p0, p2
 
-    add-float v0, v0, p4
+    add-float/2addr v0, p4
 
-    sub-float v13, v0, p6
+    sub-float v0, v0, p6
 
-    sub-float v0, p1, p3
+    sub-float v1, p1, p3
 
-    add-float v0, v0, p5
+    add-float/2addr v1, p5
 
-    sub-float v16, v0, p7
+    sub-float v1, v1, p7
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    cmpl-float v0, v13, v0
+    cmpl-float v2, v0, v2
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    cmpl-float v0, v16, v0
+    cmpl-float v2, v1, v2
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
     new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
 
@@ -125,44 +125,44 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    move/from16 v3, p0
+    move v3, p0
 
-    move/from16 v6, p1
+    move v6, p1
 
     invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
 
     return-object v0
 
     :cond_0
-    sub-float v11, p2, p4
+    sub-float v2, p2, p4
 
-    sub-float v12, p6, p4
+    sub-float v3, p6, p4
 
-    sub-float v14, p3, p5
+    sub-float v4, p3, p5
 
-    sub-float v15, p7, p5
+    sub-float v5, p7, p5
 
-    mul-float v0, v11, v15
+    mul-float v6, v2, v5
 
-    mul-float v1, v12, v14
+    mul-float v7, v3, v4
 
-    sub-float v10, v0, v1
+    sub-float/2addr v6, v7
 
-    mul-float v0, v13, v15
+    mul-float/2addr v5, v0
 
-    mul-float v1, v12, v16
+    mul-float/2addr v3, v1
 
-    sub-float/2addr v0, v1
+    sub-float v3, v5, v3
 
-    div-float v7, v0, v10
+    div-float v7, v3, v6
 
-    mul-float v0, v11, v16
+    mul-float/2addr v1, v2
 
-    mul-float v1, v13, v14
+    mul-float/2addr v0, v4
 
-    sub-float/2addr v0, v1
+    sub-float v0, v1, v0
 
-    div-float v8, v0, v10
+    div-float v8, v0, v6
 
     new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
 
@@ -192,9 +192,9 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    move/from16 v3, p0
+    move v3, p0
 
-    move/from16 v6, p1
+    move v6, p1
 
     invoke-direct/range {v0 .. v9}, Lcom/google/zxing/common/PerspectiveTransform;-><init>(FFFFFFFFF)V
 
@@ -548,105 +548,47 @@
 .end method
 
 .method public transformPoints([F)V
-    .locals 18
+    .locals 17
 
     move-object/from16 v0, p1
 
-    array-length v12, v0
+    array-length v2, v0
 
     move-object/from16 v0, p0
 
-    iget v1, v0, Lcom/google/zxing/common/PerspectiveTransform;->a11:F
+    iget v3, v0, Lcom/google/zxing/common/PerspectiveTransform;->a11:F
 
     move-object/from16 v0, p0
 
-    iget v2, v0, Lcom/google/zxing/common/PerspectiveTransform;->a12:F
+    iget v4, v0, Lcom/google/zxing/common/PerspectiveTransform;->a12:F
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/google/zxing/common/PerspectiveTransform;->a13:F
+    iget v5, v0, Lcom/google/zxing/common/PerspectiveTransform;->a13:F
 
     move-object/from16 v0, p0
 
-    iget v4, v0, Lcom/google/zxing/common/PerspectiveTransform;->a21:F
+    iget v6, v0, Lcom/google/zxing/common/PerspectiveTransform;->a21:F
 
     move-object/from16 v0, p0
 
-    iget v5, v0, Lcom/google/zxing/common/PerspectiveTransform;->a22:F
+    iget v7, v0, Lcom/google/zxing/common/PerspectiveTransform;->a22:F
 
     move-object/from16 v0, p0
 
-    iget v6, v0, Lcom/google/zxing/common/PerspectiveTransform;->a23:F
+    iget v8, v0, Lcom/google/zxing/common/PerspectiveTransform;->a23:F
 
     move-object/from16 v0, p0
 
-    iget v7, v0, Lcom/google/zxing/common/PerspectiveTransform;->a31:F
+    iget v9, v0, Lcom/google/zxing/common/PerspectiveTransform;->a31:F
 
     move-object/from16 v0, p0
 
-    iget v8, v0, Lcom/google/zxing/common/PerspectiveTransform;->a32:F
+    iget v10, v0, Lcom/google/zxing/common/PerspectiveTransform;->a32:F
 
     move-object/from16 v0, p0
 
-    iget v9, v0, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
-
-    const/4 v11, 0x0
-
-    :goto_0
-    if-lt v11, v12, :cond_0
-
-    return-void
-
-    :cond_0
-    aget v13, p1, v11
-
-    add-int/lit8 v15, v11, 0x1
-
-    aget v14, p1, v15
-
-    mul-float v15, v3, v13
-
-    mul-float v16, v6, v14
-
-    add-float v15, v15, v16
-
-    add-float v10, v15, v9
-
-    mul-float v15, v1, v13
-
-    mul-float v16, v4, v14
-
-    add-float v15, v15, v16
-
-    add-float/2addr v15, v7
-
-    div-float/2addr v15, v10
-
-    aput v15, p1, v11
-
-    add-int/lit8 v15, v11, 0x1
-
-    mul-float v16, v2, v13
-
-    mul-float v17, v5, v14
-
-    add-float v16, v16, v17
-
-    add-float v16, v16, v8
-
-    div-float v16, v16, v10
-
-    aput v16, p1, v15
-
-    add-int/lit8 v11, v11, 0x2
-
-    goto :goto_0
-.end method
-
-.method public transformPoints([F[F)V
-    .locals 7
-
-    array-length v2, p1
+    iget v11, v0, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
 
     const/4 v1, 0x0
 
@@ -656,31 +598,89 @@
     return-void
 
     :cond_0
-    aget v3, p1, v1
+    aget v12, p1, v1
 
-    aget v4, p2, v1
+    add-int/lit8 v13, v1, 0x1
 
-    iget v5, p0, Lcom/google/zxing/common/PerspectiveTransform;->a13:F
+    aget v13, p1, v13
+
+    mul-float v14, v5, v12
+
+    mul-float v15, v8, v13
+
+    add-float/2addr v14, v15
+
+    add-float/2addr v14, v11
+
+    mul-float v15, v3, v12
+
+    mul-float v16, v6, v13
+
+    add-float v15, v15, v16
+
+    add-float/2addr v15, v9
+
+    div-float/2addr v15, v14
+
+    aput v15, p1, v1
+
+    add-int/lit8 v15, v1, 0x1
+
+    mul-float/2addr v12, v4
+
+    mul-float/2addr v13, v7
+
+    add-float/2addr v12, v13
+
+    add-float/2addr v12, v10
+
+    div-float/2addr v12, v14
+
+    aput v12, p1, v15
+
+    add-int/lit8 v1, v1, 0x2
+
+    goto :goto_0
+.end method
+
+.method public transformPoints([F[F)V
+    .locals 7
+
+    array-length v1, p1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-lt v0, v1, :cond_0
+
+    return-void
+
+    :cond_0
+    aget v2, p1, v0
+
+    aget v3, p2, v0
+
+    iget v4, p0, Lcom/google/zxing/common/PerspectiveTransform;->a13:F
+
+    mul-float/2addr v4, v2
+
+    iget v5, p0, Lcom/google/zxing/common/PerspectiveTransform;->a23:F
 
     mul-float/2addr v5, v3
 
-    iget v6, p0, Lcom/google/zxing/common/PerspectiveTransform;->a23:F
+    add-float/2addr v4, v5
 
-    mul-float/2addr v6, v4
+    iget v5, p0, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
 
-    add-float/2addr v5, v6
-
-    iget v6, p0, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
-
-    add-float v0, v5, v6
+    add-float/2addr v4, v5
 
     iget v5, p0, Lcom/google/zxing/common/PerspectiveTransform;->a11:F
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v5, v2
 
     iget v6, p0, Lcom/google/zxing/common/PerspectiveTransform;->a21:F
 
-    mul-float/2addr v6, v4
+    mul-float/2addr v6, v3
 
     add-float/2addr v5, v6
 
@@ -688,29 +688,29 @@
 
     add-float/2addr v5, v6
 
-    div-float/2addr v5, v0
+    div-float/2addr v5, v4
 
-    aput v5, p1, v1
+    aput v5, p1, v0
 
     iget v5, p0, Lcom/google/zxing/common/PerspectiveTransform;->a12:F
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v2, v5
 
-    iget v6, p0, Lcom/google/zxing/common/PerspectiveTransform;->a22:F
+    iget v5, p0, Lcom/google/zxing/common/PerspectiveTransform;->a22:F
 
-    mul-float/2addr v6, v4
+    mul-float/2addr v3, v5
 
-    add-float/2addr v5, v6
+    add-float/2addr v2, v3
 
-    iget v6, p0, Lcom/google/zxing/common/PerspectiveTransform;->a32:F
+    iget v3, p0, Lcom/google/zxing/common/PerspectiveTransform;->a32:F
 
-    add-float/2addr v5, v6
+    add-float/2addr v2, v3
 
-    div-float/2addr v5, v0
+    div-float/2addr v2, v4
 
-    aput v5, p2, v1
+    aput v2, p2, v0
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method

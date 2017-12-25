@@ -20,8 +20,6 @@
 
 
 # static fields
-.field private static final DEFAULT_SEQ_ID:I = -0x1
-
 .field private static final MAX_DEFAULT_CPS:F = 5.0f
 
 .field private static final MAX_FPS:I = 0x1e
@@ -444,9 +442,9 @@
 .method public configure(Lcom/motorola/camera/fsm/camera/CameraFsm$Builder;)V
     .locals 9
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    const/4 v6, 0x1
+    const/4 v8, 0x1
 
     const/4 v7, 0x0
 
@@ -462,7 +460,7 @@
 
     new-instance v1, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsSetupRunnable;
 
-    invoke-direct {v1, p0, v8}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsSetupRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsSetupRunnable;)V
+    invoke-direct {v1, p0, v6}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsSetupRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsSetupRunnable;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/CameraState$Builder;->entryCode(Lcom/motorola/camera/fsm/FsmRunnable;)Lcom/motorola/camera/fsm/camera/CameraState$Builder;
 
@@ -470,7 +468,7 @@
 
     new-instance v1, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsTeardownRunnable;
 
-    invoke-direct {v1, p0, v8}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsTeardownRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsTeardownRunnable;)V
+    invoke-direct {v1, p0, v6}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsTeardownRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsTeardownRunnable;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/CameraState$Builder;->exitCode(Lcom/motorola/camera/fsm/FsmRunnable;)Lcom/motorola/camera/fsm/camera/CameraState$Builder;
 
@@ -560,7 +558,7 @@
 
     new-instance v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$LongPressStopGuardRunnable;
 
-    invoke-direct {v2, p0, v8}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$LongPressStopGuardRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$LongPressStopGuardRunnable;)V
+    invoke-direct {v2, p0, v6}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$LongPressStopGuardRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$LongPressStopGuardRunnable;)V
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->guard(Lcom/motorola/camera/fsm/GuardedTransitionRunnable;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
 
@@ -684,7 +682,7 @@
 
     new-instance v3, Lcom/motorola/camera/fsm/camera/states/runnables/guards/KeyGuardRunnable;
 
-    new-array v4, v6, [Ljava/lang/Integer;
+    new-array v4, v8, [Ljava/lang/Integer;
 
     const/16 v5, 0x1b
 
@@ -706,7 +704,7 @@
 
     sget-object v4, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->MULTI_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
 
-    invoke-direct {v3, v6, v6, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/CameraKeyStatusGuardRunnable;-><init>(ZZLcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
+    invoke-direct {v3, v8, v8, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/CameraKeyStatusGuardRunnable;-><init>(ZZLcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/GuardedTransitionListRunnable$Builder;->add(Lcom/motorola/camera/fsm/GuardedTransitionRunnable;)Lcom/motorola/camera/fsm/camera/states/runnables/guards/GuardedTransitionListRunnable$Builder;
 
@@ -838,7 +836,7 @@
 
     new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/MsLockRunnable;
 
-    invoke-direct {v2, v6}, Lcom/motorola/camera/fsm/camera/states/runnables/MsLockRunnable;-><init>(Z)V
+    invoke-direct {v2, v8}, Lcom/motorola/camera/fsm/camera/states/runnables/MsLockRunnable;-><init>(Z)V
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/CameraState$Builder;->alwaysCode(Lcom/motorola/camera/fsm/FsmRunnable;)Lcom/motorola/camera/fsm/camera/CameraState$Builder;
 
@@ -954,7 +952,7 @@
 
     new-instance v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsCaptureRunnable;
 
-    invoke-direct {v2, p0, v8}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsCaptureRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsCaptureRunnable;)V
+    invoke-direct {v2, p0, v6}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsCaptureRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates;Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MsCaptureRunnable;)V
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/CameraState$Builder;->alwaysCode(Lcom/motorola/camera/fsm/FsmRunnable;)Lcom/motorola/camera/fsm/camera/CameraState$Builder;
 
@@ -984,7 +982,7 @@
 
     new-instance v3, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MemoryNotAvailableRunnable;
 
-    invoke-direct {v3, v8}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MemoryNotAvailableRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MemoryNotAvailableRunnable;)V
+    invoke-direct {v3, v6}, Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MemoryNotAvailableRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/MultiShotStates$MemoryNotAvailableRunnable;)V
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->doBefore(Lcom/motorola/camera/fsm/FsmRunnable;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
 
@@ -1092,7 +1090,77 @@
 
     sget-object v4, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->MULTI_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
 
-    invoke-direct {v3, v7, v6, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/CameraKeyStatusGuardRunnable;-><init>(ZZLcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
+    invoke-direct {v3, v7, v8, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/CameraKeyStatusGuardRunnable;-><init>(ZZLcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->guard(Lcom/motorola/camera/fsm/GuardedTransitionRunnable;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;
+
+    invoke-direct {v3}, Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;-><init>()V
+
+    new-instance v4, Lcom/motorola/camera/fsm/camera/states/runnables/CopyCameraKeyStatusRunnable;
+
+    sget-object v5, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->MULTI_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    sget-object v6, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-direct {v4, v5, v6}, Lcom/motorola/camera/fsm/camera/states/runnables/CopyCameraKeyStatusRunnable;-><init>(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
+
+    invoke-virtual {v3, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;->add(Lcom/motorola/camera/fsm/camera/CameraRunnable;)Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;
+
+    move-result-object v3
+
+    new-instance v4, Lcom/motorola/camera/fsm/camera/states/runnables/CopyFocusRunnable;
+
+    sget-object v5, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->MULTI_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    sget-object v6, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-direct {v4, v5, v6}, Lcom/motorola/camera/fsm/camera/states/runnables/CopyFocusRunnable;-><init>(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
+
+    invoke-virtual {v3, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;->add(Lcom/motorola/camera/fsm/camera/CameraRunnable;)Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable$Builder;->build()Lcom/motorola/camera/fsm/camera/states/runnables/CameraListRunnable;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->doBefore(Lcom/motorola/camera/fsm/FsmRunnable;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->build()Lcom/motorola/camera/fsm/camera/CameraTransition;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/CameraState$Builder;->transition(Lcom/motorola/camera/fsm/camera/CameraTransition;)Lcom/motorola/camera/fsm/camera/CameraState$Builder;
+
+    move-result-object v1
+
+    invoke-static {}, Lcom/motorola/camera/fsm/camera/CameraTransition;->builder()Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/fsm/camera/Trigger$Event;->STOP_COMPLETE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->event(Lcom/motorola/camera/fsm/camera/Trigger$Event;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_LOCK_FOCUS_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->to(Lcom/motorola/camera/fsm/camera/StateKey;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/motorola/camera/fsm/camera/states/runnables/guards/CameraKeyStatusGuardRunnable;
+
+    sget-object v4, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->MULTI_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-direct {v3, v8, v8, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/CameraKeyStatusGuardRunnable;-><init>(ZZLcom/motorola/camera/fsm/camera/FsmContext$BundleType;)V
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->guard(Lcom/motorola/camera/fsm/GuardedTransitionRunnable;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
 

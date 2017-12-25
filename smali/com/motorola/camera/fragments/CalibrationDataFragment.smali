@@ -317,7 +317,7 @@
 
     const/4 v5, 0x0
 
-    const v0, 0x7f0e0092
+    const v0, 0x7f0e00a4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -367,7 +367,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0801af
+    const v3, 0x7f0801c3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -412,7 +412,7 @@
 
     const/4 v5, 0x0
 
-    const v0, 0x7f0e0093
+    const v0, 0x7f0e00a5
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -467,7 +467,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0801b1
+    const v3, 0x7f0801c5
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -505,7 +505,7 @@
 .method private setupModSwVersion(Landroid/view/View;)V
     .locals 2
 
-    const v0, 0x7f0e0094
+    const v0, 0x7f0e00a6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -529,7 +529,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 11
 
-    const v8, 0x7f0e0097
+    const v8, 0x7f0e00a9
 
     const/4 v10, 0x0
 
@@ -537,7 +537,7 @@
 
     const/4 v3, 0x0
 
-    const v0, 0x7f040026
+    const v0, 0x7f040029
 
     invoke-virtual {p1, v0, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -562,7 +562,7 @@
 
     invoke-direct {p0, v9}, Lcom/motorola/camera/fragments/CalibrationDataFragment;->setupModSwVersion(Landroid/view/View;)V
 
-    const v0, 0x7f0e0095
+    const v0, 0x7f0e00a7
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -580,7 +580,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/ExpandableListView;->setOnChildClickListener(Landroid/widget/ExpandableListView$OnChildClickListener;)V
 
-    const v0, 0x7f0e0096
+    const v0, 0x7f0e00a8
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -620,15 +620,15 @@
 
     aput-object v1, v7, v6
 
-    const v1, 0x7f0e0098
+    const v1, 0x7f0e00aa
 
     filled-new-array {v8, v1}, [I
 
     move-result-object v8
 
-    const v3, 0x7f040029
+    const v3, 0x7f04002c
 
-    const v6, 0x7f040027
+    const v6, 0x7f04002a
 
     move-object v1, p0
 

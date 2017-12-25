@@ -24,8 +24,6 @@
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 2
 
-    const/4 v1, 0x0
-
     invoke-static {p1, p2}, Landroid/support/v7/app/AppCompatDialog;->getThemeResId(Landroid/content/Context;I)I
 
     move-result v0
@@ -35,6 +33,8 @@
     invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDialog;->getDelegate()Landroid/support/v7/app/AppCompatDelegate;
 
     move-result-object v0
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/AppCompatDelegate;->onCreate(Landroid/os/Bundle;)V
 
@@ -104,6 +104,14 @@
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Landroid/view/View;",
+            ">(I)TT;"
+        }
     .end annotation
 
     invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDialog;->getDelegate()Landroid/support/v7/app/AppCompatDelegate;

@@ -27,9 +27,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/util/ArraySet;)V
-    .locals 1
-
-    move-object v0, p0
+    .locals 0
 
     iput-object p1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
@@ -41,33 +39,29 @@
 
 # virtual methods
 .method protected colClear()V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
-
-    invoke-virtual {v1}, Landroid/support/v4/util/ArraySet;->clear()V
+    invoke-virtual {v0}, Landroid/support/v4/util/ArraySet;->clear()V
 
     return-void
 .end method
 
 .method protected colGetEntry(II)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
+    iget-object v0, v0, Landroid/support/v4/util/ArraySet;->mArray:[Ljava/lang/Object;
 
-    iget-object v1, v1, Landroid/support/v4/util/ArraySet;->mArray:[Ljava/lang/Object;
+    aget-object v0, v0, p1
 
-    aget-object v1, v1, p1
-
-    return-object v1
+    return-object v0
 .end method
 
 .method protected colGetMap()Ljava/util/Map;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -76,101 +70,87 @@
         }
     .end annotation
 
-    move-object v0, p0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    const-string/jumbo v1, "not a map"
 
-    const-string/jumbo v2, "not a map"
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    throw v0
 .end method
 
 .method protected colGetSize()I
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
+    iget v0, v0, Landroid/support/v4/util/ArraySet;->mSize:I
 
-    iget v1, v1, Landroid/support/v4/util/ArraySet;->mSize:I
-
-    return v1
+    return v0
 .end method
 
 .method protected colIndexOfKey(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
+    invoke-virtual {v0, p1}, Landroid/support/v4/util/ArraySet;->indexOf(Ljava/lang/Object;)I
 
-    invoke-virtual {v1, p1}, Landroid/support/v4/util/ArraySet;->indexOf(Ljava/lang/Object;)I
+    move-result v0
 
-    move-result v1
-
-    return v1
+    return v0
 .end method
 
 .method protected colIndexOfValue(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
+    invoke-virtual {v0, p1}, Landroid/support/v4/util/ArraySet;->indexOf(Ljava/lang/Object;)I
 
-    invoke-virtual {v1, p1}, Landroid/support/v4/util/ArraySet;->indexOf(Ljava/lang/Object;)I
+    move-result v0
 
-    move-result v1
-
-    return v1
+    return v0
 .end method
 
 .method protected colPut(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;TE;)V"
         }
     .end annotation
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
-
-    invoke-virtual {v1, p1}, Landroid/support/v4/util/ArraySet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Landroid/support/v4/util/ArraySet;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
 .method protected colRemoveAt(I)V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
 
-    iget-object v1, p0, Landroid/support/v4/util/ArraySet$1;->this$0:Landroid/support/v4/util/ArraySet;
-
-    invoke-virtual {v1, p1}, Landroid/support/v4/util/ArraySet;->removeAt(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/support/v4/util/ArraySet;->removeAt(I)Ljava/lang/Object;
 
     return-void
 .end method
 
 .method protected colSetValue(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)TE;"
         }
     .end annotation
 
-    move-object v0, p0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    const-string/jumbo v1, "not a map"
 
-    const-string/jumbo v2, "not a map"
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    throw v0
 .end method

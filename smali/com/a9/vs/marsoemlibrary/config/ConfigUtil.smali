@@ -72,9 +72,7 @@
 .end method
 
 .method private static readConfigFile(Ljava/io/File;)Lcom/a9/vs/marsoemlibrary/config/ConfigurationResponse;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     :try_start_0
     sget-object v0, Lcom/a9/vs/marsoemlibrary/config/ConfigUtil;->TAG:Ljava/lang/String;
@@ -120,7 +118,9 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method private static readConfigFromFileSystem(Landroid/content/Context;Ljava/lang/String;)Lcom/a9/vs/marsoemlibrary/config/Configuration;

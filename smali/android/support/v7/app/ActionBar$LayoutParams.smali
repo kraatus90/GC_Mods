@@ -74,9 +74,9 @@
 
     iput v2, p0, Landroid/support/v7/app/ActionBar$LayoutParams;->gravity:I
 
-    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->ActionBarLayout:[I
+    sget-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionBarLayout:[I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 

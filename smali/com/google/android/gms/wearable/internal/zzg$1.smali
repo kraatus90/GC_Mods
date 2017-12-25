@@ -92,9 +92,9 @@
 .method protected zzaQ(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/wearable/CapabilityApi$GetCapabilityResult;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzg$zze;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/android/gms/wearable/internal/zzg$zze;-><init>(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/wearable/CapabilityInfo;)V
 

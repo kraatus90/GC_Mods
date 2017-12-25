@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field private mCameraType:Lcom/motorola/camera/mcf/Mcf$CameraType;
+.field private mCameraMode:Lcom/motorola/camera/mcf/Mcf$CameraMode;
 
-.field private mOutputImageReader:Landroid/media/ImageReader;
+.field private mCameraType:Lcom/motorola/camera/mcf/Mcf$CameraType;
 
 .field private mPreviewFullFrameSkipCount:I
 
@@ -27,18 +27,18 @@
 
 
 # direct methods
-.method static synthetic -get0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Lcom/motorola/camera/mcf/Mcf$CameraType;
+.method static synthetic -get0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Lcom/motorola/camera/mcf/Mcf$CameraMode;
     .locals 1
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mCameraType:Lcom/motorola/camera/mcf/Mcf$CameraType;
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mCameraMode:Lcom/motorola/camera/mcf/Mcf$CameraMode;
 
     return-object v0
 .end method
 
-.method static synthetic -get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Landroid/media/ImageReader;
+.method static synthetic -get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Lcom/motorola/camera/mcf/Mcf$CameraType;
     .locals 1
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mOutputImageReader:Landroid/media/ImageReader;
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mCameraType:Lcom/motorola/camera/mcf/Mcf$CameraType;
 
     return-object v0
 .end method
@@ -59,18 +59,18 @@
     return-object v0
 .end method
 
-.method static synthetic -set0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Lcom/motorola/camera/mcf/Mcf$CameraType;)Lcom/motorola/camera/mcf/Mcf$CameraType;
+.method static synthetic -set0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Lcom/motorola/camera/mcf/Mcf$CameraMode;)Lcom/motorola/camera/mcf/Mcf$CameraMode;
     .locals 0
 
-    iput-object p1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mCameraType:Lcom/motorola/camera/mcf/Mcf$CameraType;
+    iput-object p1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mCameraMode:Lcom/motorola/camera/mcf/Mcf$CameraMode;
 
     return-object p1
 .end method
 
-.method static synthetic -set1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Landroid/media/ImageReader;)Landroid/media/ImageReader;
+.method static synthetic -set1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Lcom/motorola/camera/mcf/Mcf$CameraType;)Lcom/motorola/camera/mcf/Mcf$CameraType;
     .locals 0
 
-    iput-object p1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mOutputImageReader:Landroid/media/ImageReader;
+    iput-object p1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->mCameraType:Lcom/motorola/camera/mcf/Mcf$CameraType;
 
     return-object p1
 .end method

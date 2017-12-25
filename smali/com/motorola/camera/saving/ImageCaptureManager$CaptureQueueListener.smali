@@ -15,8 +15,5 @@
 
 
 # virtual methods
-.method public abstract onEmpty()V
-.end method
-
-.method public abstract onJpegImageReceived(IJ)V
+.method public abstract onJpegImageReceived(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;J)V
 .end method

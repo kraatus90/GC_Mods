@@ -35,75 +35,75 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzzH:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzzH:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->getAddress()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x3
 
-    const/4 v1, 0x4
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->getType()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    const/4 v2, 0x4
 
-    const/4 v1, 0x5
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->getRole()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    const/4 v2, 0x5
 
-    const/4 v1, 0x6
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->isEnabled()Z
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
+    const/4 v2, 0x6
 
-    const/4 v1, 0x7
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->isConnected()Z
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
+    const/4 v2, 0x7
 
-    const/16 v1, 0x8
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzyV()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/16 v2, 0x8
 
-    const/16 v1, 0x9
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzyW()Z
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
+    const/16 v2, 0x9
+
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 

@@ -117,13 +117,13 @@
 
     const/4 v0, 0x0
 
-    const-string/jumbo v1, "AEIOU"
-
     invoke-virtual {p1, p2}, Ljava/lang/StringBuffer;->charAt(I)C
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->indexOf(I)I
+    const-string/jumbo v2, "AEIOU"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v1
 
@@ -547,15 +547,15 @@
 
     if-nez v2, :cond_d
 
-    const-string/jumbo v2, "EIY"
+    add-int/lit8 v2, v0, 0x1
 
-    add-int/lit8 v7, v0, 0x1
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuffer;->charAt(I)C
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuffer;->charAt(I)C
+    move-result v2
 
-    move-result v7
+    const-string/jumbo v7, "EIY"
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v7, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
@@ -571,15 +571,15 @@
     goto :goto_3
 
     :cond_12
-    const-string/jumbo v2, "EIY"
+    add-int/lit8 v2, v0, 0x1
 
-    add-int/lit8 v7, v0, 0x1
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuffer;->charAt(I)C
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuffer;->charAt(I)C
+    move-result v2
 
-    move-result v7
+    const-string/jumbo v7, "EIY"
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v7, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
@@ -652,15 +652,15 @@
 
     if-eqz v2, :cond_17
 
-    const-string/jumbo v2, "EIY"
+    add-int/lit8 v2, v0, 0x2
 
-    add-int/lit8 v7, v0, 0x2
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuffer;->charAt(I)C
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuffer;->charAt(I)C
+    move-result v2
 
-    move-result v7
+    const-string/jumbo v7, "EIY"
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v7, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
@@ -770,15 +770,15 @@
     goto :goto_9
 
     :cond_1f
-    const-string/jumbo v7, "EIY"
+    add-int/lit8 v7, v0, 0x1
 
-    add-int/lit8 v8, v0, 0x1
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuffer;->charAt(I)C
 
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuffer;->charAt(I)C
+    move-result v7
 
-    move-result v8
+    const-string/jumbo v8, "EIY"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v8, v7}, Ljava/lang/String;->indexOf(I)I
 
     move-result v7
 
@@ -815,15 +815,15 @@
     goto/16 :goto_3
 
     :cond_20
-    const-string/jumbo v2, "CSPTG"
+    add-int/lit8 v2, v0, -0x1
 
-    add-int/lit8 v7, v0, -0x1
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuffer;->charAt(I)C
 
-    invoke-virtual {v4, v7}, Ljava/lang/StringBuffer;->charAt(I)C
+    move-result v2
 
-    move-result v7
+    const-string/jumbo v7, "CSPTG"
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v7, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 

@@ -16,6 +16,8 @@
 # static fields
 .field private static final GL_SURFACE_MAX_PIXEL_SIZE:I = 0x1fa400
 
+.field private static final GL_SURFACE_REDUCED_MAX_PIXEL_SIZE:I = 0xe1000
+
 .field public static final SCALE_FACTOR_DEFAULT:F = 1.0f
 
 .field private static final SQUARE_ASPECT_OFFSET:F = 60.0f
@@ -739,9 +741,33 @@
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    :goto_0
     invoke-static {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView$SurfaceTextureRenderer;->-set0(Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView$SurfaceTextureRenderer;Z)Z
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method
 
 .method public onKeyEvent(ILandroid/view/KeyEvent;)Z

@@ -32,11 +32,11 @@
 
     new-array v0, v0, [I
 
-    const/4 v1, 0x0
+    const v1, 0x10100d4
 
-    const v2, 0x10100d4
+    const/4 v2, 0x0
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     sput-object v0, Landroid/support/v7/widget/ActivityChooserView$InnerLayout;->TINT_ATTRS:[I
 
@@ -48,9 +48,9 @@
 
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutCompat;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object v1, Landroid/support/v7/widget/ActivityChooserView$InnerLayout;->TINT_ATTRS:[I
+    sget-object v0, Landroid/support/v7/widget/ActivityChooserView$InnerLayout;->TINT_ATTRS:[I
 
-    invoke-static {p1, p2, v1}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {p1, p2, v0}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 

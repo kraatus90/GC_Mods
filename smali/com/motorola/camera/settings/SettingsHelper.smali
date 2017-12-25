@@ -104,6 +104,108 @@
     return v0
 .end method
 
+.method public static getLandmarkDownloadId()J
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_ID:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getPersistBehavior()Lcom/motorola/camera/settings/PersistBehavior;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_ID:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getLandmarkDownloadModelVersion()J
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getPersistBehavior()Lcom/motorola/camera/settings/PersistBehavior;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getLandmarkLocalModelVersion()J
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_MODEL_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getPersistBehavior()Lcom/motorola/camera/settings/PersistBehavior;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_MODEL_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
 .method public static getQcfaSize()Landroid/util/Size;
     .locals 4
 
@@ -113,11 +215,11 @@
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->QCFA_DIMENSION_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->QCFA_DIMENSION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCharacteristics(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-virtual {v2, v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -322,9 +424,9 @@
 
     const/4 v2, 0x0
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->META_DATA_AUX_BAYER_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->META_DATA_AUX_BAYER_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {p0, v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Ljava/lang/String;Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -356,9 +458,9 @@
 
     const/4 v2, 0x0
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->META_DATA_AUX_MASTER_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->META_DATA_AUX_MASTER_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {p0, v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Ljava/lang/String;Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -667,6 +769,28 @@
     return v0
 .end method
 
+.method public static isDepthMode()Z
+    .locals 2
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
+
+    move-result v0
+
+    const/4 v1, 0x6
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static isDualCamera()Z
     .locals 2
 
@@ -937,6 +1061,127 @@
     return v0
 .end method
 
+.method public static isFaceBeautyOn()Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v3, Lcom/motorola/camera/settings/SettingsManager;->FACE_BEAUTY:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Lcom/motorola/camera/settings/Setting;->getAllowedSupportedValues(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-le v0, v1, :cond_1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FACE_BEAUTY:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    move v0, v1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    goto :goto_0
+.end method
+
+.method public static isGeoAvailable()Z
+    .locals 4
+
+    const/4 v1, 0x0
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION_STATUS:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v3, 0x4
+
+    if-ne v0, v3, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    if-eqz v2, :cond_1
+
+    :goto_1
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
+.end method
+
 .method public static isGoogleFiBuild()Z
     .locals 2
 
@@ -1011,6 +1256,20 @@
     return v0
 .end method
 
+.method public static isInstaPrintLaunch()Z
+    .locals 1
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCaptureIntent()Lcom/motorola/camera/settings/CaptureIntent;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CaptureIntent;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static isLandmarkDetectionAvailable()Z
     .locals 1
 
@@ -1038,19 +1297,25 @@
 .end method
 
 .method public static isLandmarkDetectionEnabled()Z
-    .locals 1
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isLandmarkDetectionSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    .locals 2
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getPersistBehavior()Lcom/motorola/camera/settings/PersistBehavior;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isLandmarkDetectionSupported()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
 
@@ -1071,6 +1336,28 @@
     goto :goto_0
 .end method
 
+.method public static isLandmarkDetectionOverride()Z
+    .locals 1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DEBUG_OVERRIDE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static isLandmarkDetectionSupported()Z
     .locals 2
 
@@ -1088,7 +1375,37 @@
 
     move-result v0
 
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isModCamera()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static isManualFocusEnabled()Z
@@ -1374,9 +1691,9 @@
 
     const/4 v2, 0x0
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->META_DATA_MONO_ONLY_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->META_DATA_MONO_ONLY_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {p0, v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Ljava/lang/String;Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1556,6 +1873,30 @@
 
     xor-int/lit8 v0, v0, 0x1
 
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isModCamera()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
     if-nez v0, :cond_1
 
     :cond_0
@@ -1694,11 +2035,7 @@
 .end method
 
 .method public static isPostCaptureReview()Z
-    .locals 3
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+    .locals 1
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
 
@@ -1710,7 +2047,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPhotoMode()Z
 
@@ -1722,7 +2059,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     :cond_0
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW:Lcom/motorola/camera/settings/SettingsManager$Key;
@@ -1743,22 +2080,87 @@
 
     if-eqz v0, :cond_2
 
+    :cond_1
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_2
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPrintReviewRequired()Z
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public static isPrintReviewRequired()Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->isInstaPrintAttached()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPhotoMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isProPhotoMode()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
+
+    move-result v0
+
+    const/4 v3, 0x7
+
+    if-ne v0, v3, :cond_1
+
     move v0, v1
 
     :goto_0
     return v0
 
-    :cond_1
+    :cond_0
     move v0, v1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     move v0, v2
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     move v0, v2
 
     goto :goto_0
@@ -1951,7 +2353,7 @@
 .end method
 
 .method public static isQcfaSupported()Z
-    .locals 3
+    .locals 4
 
     const/4 v1, 0x0
 
@@ -1961,13 +2363,13 @@
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->QCFA_SENSOR_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v3, Lcom/motorola/camera/settings/CustomKeyHelper;->QCFA_SENSOR_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {v0, v2}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCharacteristics(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-virtual {v3, v0, v2}, Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2033,13 +2435,13 @@
     return v2
 
     :cond_0
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCharacteristics()Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraSensorName()Ljava/lang/String;
 
     move-result-object v0
 
     sget-object v1, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_REALTIME_BOKEH_MODES:Lcom/motorola/camera/mcf/Mcf$CapKey;
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2200,6 +2602,28 @@
     return v0
 .end method
 
+.method public static isSpotColorMode()Z
+    .locals 2
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
+
+    move-result v0
+
+    const/16 v1, 0xc
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static isVideoServiceMode()Z
     .locals 1
 
@@ -2222,6 +2646,14 @@
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isCurrentVideoTypeMode()Z
 
     move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v1
+
+    xor-int/lit8 v1, v1, 0x1
 
     if-eqz v1, :cond_0
 
@@ -2496,4 +2928,94 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static resetLandmarkDownloadId()V
+    .locals 4
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_ID:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-wide/16 v2, -0x1
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static resetLandmarkDownloadModelVersion()V
+    .locals 4
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static resetLandmarkLocalModelVersion()V
+    .locals 4
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_MODEL_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static saveLandmarkDownloadId(J)V
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_ID:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static saveLandmarkDownloadModelVersion(J)V
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static saveLandmarkLocalModelVersion(J)V
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_MODEL_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    return-void
 .end method

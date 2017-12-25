@@ -27,9 +27,9 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 5
 
-    const/4 v2, 0x0
-
     const/4 v4, 0x0
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -250,11 +250,11 @@
 .method public hashCode()I
     .locals 2
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/auth/NTCredentials;->principal:Lorg/apache/http/auth/NTUserPrincipal;
+    iget-object v0, p0, Lorg/apache/http/auth/NTCredentials;->principal:Lorg/apache/http/auth/NTUserPrincipal;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 

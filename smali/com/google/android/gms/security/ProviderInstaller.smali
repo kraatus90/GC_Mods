@@ -20,9 +20,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     new-instance v0, Ljava/lang/Object;
 
@@ -30,7 +28,9 @@
 
     sput-object v0, Lcom/google/android/gms/security/ProviderInstaller;->zznu:Ljava/lang/Object;
 
-    sput-object v1, Lcom/google/android/gms/security/ProviderInstaller;->zzaBA:Ljava/lang/reflect/Method;
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/google/android/gms/security/ProviderInstaller;->zzaBA:Ljava/lang/reflect/Method;
 
     return-void
 .end method
@@ -126,29 +126,29 @@
     move-exception v0
 
     :try_start_3
-    const-string/jumbo v2, "ProviderInstaller"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "Failed to install provider: "
 
-    const-string/jumbo v4, "Failed to install provider: "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v2, "ProviderInstaller"
 
     invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -221,11 +221,11 @@
 
     new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-class v2, Landroid/content/Context;
 
-    const-class v3, Landroid/content/Context;
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     const-string/jumbo v2, "insertProvider"
 

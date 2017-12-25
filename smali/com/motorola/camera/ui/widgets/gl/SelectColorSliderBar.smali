@@ -10,7 +10,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;
+        Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;,
+        Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
     }
 .end annotation
 
@@ -92,7 +93,7 @@
 
 .field private mTexture:Lcom/motorola/camera/ui/widgets/gl/textures/SelectColorSliderTexture;
 
-.field private mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+.field private mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
 .field private mTsbOffset:F
 
@@ -146,10 +147,10 @@
     return-object v0
 .end method
 
-.method static synthetic -get6(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;)Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+.method static synthetic -get6(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;)Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
     .locals 1
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     return-object v0
 .end method
@@ -177,17 +178,7 @@
 .end method
 
 .method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
-    .locals 13
-
-    const/4 v5, 0x0
-
-    const/4 v11, 0x0
-
-    const/high16 v8, 0x40000000    # 2.0f
-
-    const/high16 v12, 0x3f800000    # 1.0f
-
-    const/4 v3, -0x1
+    .locals 8
 
     invoke-direct {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/iGlComponent;-><init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
 
@@ -197,7 +188,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
 
-    iput v5, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mCurrentProgress:F
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mCurrentProgress:F
 
     const/4 v0, 0x1
 
@@ -207,7 +200,9 @@
 
     iput v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mBtnRes:I
 
-    iput v3, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mBackgroundRes:I
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mBackgroundRes:I
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -255,13 +250,17 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/SelectColorSliderTexture;
 
+    const/4 v5, 0x0
+
     iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+
+    const/4 v3, -0x1
+
+    const/4 v4, -0x1
 
     move-object v1, p0
 
     move-object v2, p2
-
-    move v4, v3
 
     move-object v7, p0
 
@@ -279,7 +278,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mColorSelectButton:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;
 
-    const/16 v1, 0xb8
+    const/16 v1, 0xb9
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;->setResource(I)V
 
@@ -299,7 +298,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mColorSelectButton:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;
 
-    invoke-virtual {v0, v11}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;->setVisibility(Z)V
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$SResourceTexture;->setVisibility(Z)V
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$2;
 
@@ -307,7 +308,9 @@
 
     sget-object v2, Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;->WHITE:Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;
 
-    invoke-direct {v0, p0, v1, v2, v11}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;Z)V
+    const/4 v3, 0x0
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;Z)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mColorSelectButtonBgOuter:Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;
 
@@ -323,7 +326,9 @@
 
     mul-float/2addr v1, v2
 
-    div-float/2addr v1, v8
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
@@ -331,13 +336,17 @@
 
     move-result v2
 
-    const/high16 v4, 0x42400000    # 48.0f
+    const/high16 v3, 0x42400000    # 48.0f
 
-    mul-float/2addr v2, v4
+    mul-float/2addr v2, v3
 
-    div-float/2addr v2, v8
+    const/high16 v3, 0x40000000    # 2.0f
 
-    invoke-virtual {v0, v1, v2, v12}, Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;->setPreScale(FFF)V
+    div-float/2addr v2, v3
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;->setPreScale(FFF)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mColorSelectButtonBgOuter:Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;
 
@@ -351,7 +360,9 @@
 
     sget-object v2, Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;->BLACK:Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;
 
-    invoke-direct {v0, p0, v1, v2, v11}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;Z)V
+    const/4 v3, 0x0
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/GlToolBox$Color;Z)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mColorSelectButtonBgInner:Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;
 
@@ -367,7 +378,9 @@
 
     mul-float/2addr v1, v2
 
-    div-float/2addr v1, v8
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
@@ -375,25 +388,31 @@
 
     move-result v2
 
-    const/high16 v4, 0x42300000    # 44.0f
+    const/high16 v3, 0x42300000    # 44.0f
 
-    mul-float/2addr v2, v4
+    mul-float/2addr v2, v3
 
-    div-float/2addr v2, v8
+    const/high16 v3, 0x40000000    # 2.0f
 
-    invoke-virtual {v0, v1, v2, v12}, Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;->setPreScale(FFF)V
+    div-float/2addr v2, v3
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;->setPreScale(FFF)V
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mProgressLeftIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mProgressLeftIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xc6
+    const/16 v1, 0xc7
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
@@ -401,43 +420,61 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mProgressRightIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mProgressRightIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xc7
+    const/16 v1, 0xc8
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
-    new-instance v6, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
-    move-result-object v0
+    move-result-object v1
 
-    const v1, 0x7f080143
+    const v3, 0x7f08014e
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    const/high16 v9, 0x41600000    # 14.0f
+    const/high16 v4, 0x41600000    # 14.0f
 
-    move v10, v3
+    const/4 v5, -0x1
 
-    invoke-direct/range {v6 .. v11}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;FII)V
+    const/4 v6, 0x0
 
-    iput-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    move-object v1, p0
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;FII)V
 
-    const/high16 v1, -0x1000000
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    invoke-virtual {v0, v12, v5, v12, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setShadowLayer(FFFI)V
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    const/4 v2, 0x0
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    const/high16 v4, -0x1000000
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setShadowLayer(FFFI)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
+
+    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
     return-void
 .end method
@@ -715,9 +752,9 @@
 
     const/high16 v2, 0x43b40000    # 360.0f
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->getPreRotation()Lcom/motorola/camera/ui/widgets/gl/Rotation;
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->getPreRotation()Lcom/motorola/camera/ui/widgets/gl/Rotation;
 
     move-result-object v0
 
@@ -761,7 +798,7 @@
 
     new-array v1, v1, [Lcom/motorola/camera/ui/widgets/gl/textures/Texture;
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     aput-object v2, v1, v7
 
@@ -787,9 +824,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->hashCode()I
+    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->hashCode()I
 
     move-result v2
 
@@ -1313,21 +1350,21 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setDisplayOrientation(I)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->loadTexture()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->loadTexture()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->SANS_SERIF_LIGHT:Landroid/graphics/Typeface;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setTypeface(Landroid/graphics/Typeface;)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mOrientation:I
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setDisplayOrientation(I)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setDisplayOrientation(I)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTexture:Lcom/motorola/camera/ui/widgets/gl/textures/SelectColorSliderTexture;
 
@@ -1406,9 +1443,9 @@
 
     invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->draw([F[F)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->draw([F[F)V
+    invoke-virtual {v0, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->draw([F[F)V
 
     return-void
 .end method
@@ -1535,7 +1572,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
@@ -1679,7 +1716,7 @@
 
     invoke-virtual {v2, v3, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setPostTranslation(FFF)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mViewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -1701,9 +1738,31 @@
 
     sub-float/2addr v2, v3
 
-    invoke-virtual {v0, v1, v2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setPostTranslation(FFF)V
+    invoke-virtual {v0, v1, v2, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setPostTranslation(FFF)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->getText()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->getText()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/motorola/camera/Util;->containsRtlChar(Ljava/lang/String;)Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mViewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -1717,11 +1776,12 @@
 
     float-to-int v1, v1
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setWordWrapWidth(I)V
-
-    return-void
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setWordWrapWidth(I)V
 
     :cond_4
+    return-void
+
+    :cond_5
     move v0, v1
 
     goto/16 :goto_0
@@ -1880,11 +1940,11 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;->setVisibility(Z)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setVisibility(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1907,11 +1967,11 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CircleTexture;->setVisibility(Z)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->setVisibility(Z)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -1952,14 +2012,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     :cond_0
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->isBarSupported()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->animateShow()V
 
@@ -1970,7 +2030,7 @@
 
     const/16 v1, 0xc
 
-    if-eq v0, v1, :cond_1
+    if-eq v0, v1, :cond_2
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->SELECTIVE_COLOR:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -2022,6 +2082,7 @@
 
     invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
+    :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTexture:Lcom/motorola/camera/ui/widgets/gl/textures/SelectColorSliderTexture;
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -2032,21 +2093,21 @@
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->setTranslucent(F)V
 
-    :cond_1
+    :cond_2
     :goto_1
     return-void
 
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->hide()V
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringAppClosing(Lcom/motorola/camera/fsm/ChangeEvent;)Z
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SHOW_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2054,7 +2115,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CAMERA_SELECT_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2062,7 +2123,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_DRAG_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2070,7 +2131,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/ErrorState;->ERROR_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2078,7 +2139,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/Main;->EXIT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2086,21 +2147,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
-    :cond_4
+    :cond_5
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->hide()V
 
     goto :goto_1
 
-    :cond_5
+    :cond_6
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPEN_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_DRAG_OPEN_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2108,15 +2169,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2124,7 +2177,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CHANGE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -2132,12 +2185,63 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_8
 
-    :cond_6
+    :cond_7
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->animateHide()V
 
     goto :goto_1
+
+    :cond_8
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->animateHide()V
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isSpotColorMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "LEVEL_SETTINGS"
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->SELECTIVE_COLOR_THRESHOLD:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    goto/16 :goto_1
 .end method
 
 .method protected unloadTextures()V
@@ -2175,9 +2279,9 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->unloadTexture()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar;->mTipText:Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->unloadTexture()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/SelectColorSliderBar$STextTexture;->unloadTexture()V
 
     return-void
 .end method

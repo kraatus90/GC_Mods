@@ -148,7 +148,7 @@
     <string name="cancel">İptal</string>
     <string name="capture_failure">Yakalama başarısız. Tekrar deneyin.</string>
     <string name="checkbox_do_not_show">Bir daha gösterme</string>
-    <string name="cloudsight_terms">"Arama sonuçları sağlamak için görüntüleriniz CloudSight'a gönderilir. &lt;br/>&lt;br/>Devam ederek CloudSight'ın &lt;a href=%1$s>Gizlilik Politikası'nı&lt;/a> kabul etmiş olursunuz."</string>
+    <string name="cloudsight_terms">"Nesne tanıma özelliğini her kullandığınızda arama sonuçları sağlamak için bir üçüncü tarafa resim ve konum bilgileri (etkinleştirilmişse) gönderilecektir.&lt;br/>&lt;br/> Devam ederseniz &lt;a href=%1$s>Gizlilik Politikası&lt;/a>'nı kabul etmiş olursunuz."</string>
     <string name="dailog_panorama_failed">Panorama başarısız. Lütfen tekrar deneyin.</string>
     <string name="dailog_panorama_not_taken">Panorama fotoğraf çekilmedi.</string>
     <string name="dialog_access_sd_fail">Medya yakalanamadı. SD karta erişilemedi.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Cihaz desteklenmiyor</string>
     <string name="dialog_disagree">Kabul etmiyorum</string>
     <string name="dialog_dismiss">Bir daha gösterme</string>
+    <string name="dialog_download">İndir</string>
     <string name="dialog_external_sd_missing">Bir resim çekilemiyor. SD karta erişilemiyor. Dahili telefon depolama alanına geçiliyor</string>
     <string name="dialog_first_time_set_pure_raw_message">"Bu işlenmeyen dosya türü, fotoğrafları profesyonel olarak düzenlemek için kullanılır.
 
@@ -247,7 +248,8 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="help_next">İleri</string>
     <string name="image_360_desc">Bu bir 360 fotoğraftır. Bu fotoğrafı Moto 360 Düzenleyici ile düzenleyebilirsiniz.</string>
     <string name="image_360_name">360 Fotoğraf</string>
-    <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
+    <string name="image_ratio_res_summary">%1$d:%2$d (%3$s %4$s)</string>
     <string name="indicate_mode_depth">DERİNLİK ETKİN</string>
     <string name="indicate_mode_mono">GERÇEK SİYAH BEYAZ</string>
     <string name="indicate_mode_normal">FOTOĞRAF</string>
@@ -258,16 +260,19 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="indicate_mode_ultra_wide">ULTRA GENİŞ AÇI</string>
     <string name="indicate_mode_video">VİDEO</string>
     <string name="indicate_mode_wide_angle">GENİŞ AÇI</string>
+    <string name="indicate_mode_wide_angle_selfie">GENİŞ AÇILI SELFIE</string>
     <string name="internal_storage">iç depo</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Şehir simgesi tanıma, popüler şehir simgeleri hakkında bilgi sağlar.&lt;br/>&lt;br/>Bu özelliği etkinleştirmek için yükleyin.</string>
-    <string name="landmark_install_over_data">"Şehir simgesi tanıma boyutu 92 MB'dir. Mobil veri üzerinden indirmek, ekstra veri ücretleri uygulanmasına neden olabilir."</string>
-    <string name="landmark_notification_downloading">Şehir simgesi tanıma indiriliyor</string>
-    <string name="landmark_notification_install">Şehir simgesi tanıma yükleniyor</string>
-    <string name="landmark_notification_install_complete">Şehir simgesi tanıma yüklemesi tamamlandı</string>
-    <string name="landmark_notification_install_failed">Şehir simgesi tanıma yüklemesi başarısız oldu</string>
+    <string name="landmark_install_message">Şehir simgesi tanıma, popüler şehir simgeleri hakkında bilgi sağlar.&lt;br/>&lt;br/>Bu özelliği etkinleştirmek için Şehir simgesi veritabanını indirin.</string>
+    <string name="landmark_install_over_data">"Şehir simgesi veritabanı indirme boyutu 92 MB'dir. Mobil veri üzerinden indirmek, ekstra veri ücretleri uygulanmasına neden olabilir."</string>
+    <string name="landmark_notification_downloading">Şehir simgesi veritabanı indiriliyor</string>
+    <string name="landmark_notification_install">Şehir simgesi veritabanı yükleniyor</string>
+    <string name="landmark_notification_install_complete">Şehir simgesi veritabanı yüklemesi tamamlandı</string>
+    <string name="landmark_notification_install_failed">Şehir simgesi veritabanı yüklemesi başarısız oldu</string>
     <string name="landmark_notification_install_invalid_url">Şehir simgesi veritabanı kullanılabilir değil. Lütfen en son Kamera sürümüne güncelleyin</string>
-    <string name="landmark_notification_install_out_of_space">Şehir simgesi tanımayı yüklemek için yeterli depolama alanı yok</string>
+    <string name="landmark_notification_install_out_of_space">Şehir simgesi veritabanını yüklemek için yeterli depolama alanı yok</string>
+    <string name="landmark_notification_paused">İnternet bağlantısı kurulduğunda, şehir simgesi veritabanı indirilmeye devam edecektir</string>
+    <string name="landmark_notification_queued">İnternet bağlantısı kurulduğunda, şehir simgesi veritabanı indirilmeye başlayacaktır</string>
     <string name="main_setting_amz_barcode">Amazon barkod tarayıcı</string>
     <string name="main_setting_amz_privacy">Amazon Gizlilik Bildirimi</string>
     <string name="main_setting_amz_terms">Kullanım Koşulları</string>
@@ -290,6 +295,8 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="main_setting_image_ratio">Fotoğraf boyutu (arka)</string>
     <string name="main_setting_image_ratio_front">Fotoğraf boyutu (ön)</string>
     <string name="main_setting_landmark_detection">Şehir simgesi tanıma</string>
+    <string name="main_setting_landmark_version_current">Veritabanı sürümü: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Veritabanı yüklü değil</string>
     <string name="main_setting_licenses">Açık kaynak lisansları</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -315,7 +322,7 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="main_setting_video_size_front">Video boyutu (ön)</string>
     <string name="mcf_bg_processing">KAYDEDİLİYOR…</string>
     <string name="mega_bytes">" MB"</string>
-    <string name="mega_pixels">MP</string>
+    <string name="mega_pixels">" MP"</string>
     <string name="original_shot_desc">Başka bir çekim daha var. Bu an için daha iyi bir fotoğraf yakaladık.</string>
     <string name="original_shot_name">Orijinal çekim</string>
     <string name="perm_control_camera_desc">Bu uygulamanın Motorola kamerasını kontrol etmesine izin verir.</string>
@@ -323,8 +330,11 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="perm_required_alert_button_app_info">Uygulama Bilgileri</string>
     <string name="perm_required_alert_msg">"Cihazınızdaki bazı öğelere erişmesi için Kamera'ya izin verilmesi gerekir. Yeniden etkinleştirmek için Uygulama bilgilerinden \"İzinler\" seçeneğini belirleyin."</string>
     <string name="perm_required_alert_title">İzin gerektirir</string>
-    <string name="photos_depth_desc">İstediğiniz yere odaklanmak, arka planı değiştirmek veya siyah-beyaza dönüştürülecek alanı seçmek için gelişmiş düzenleyiciyi kullanın.</string>
+    <string name="photos_depth_desc">İstediğiniz yere odaklanmak, arka planı değiştirmek veya siyah-beyaza dönüştürülecek alanı seçmek için derinlik düzenleyiciyi kullanın.</string>
     <string name="photos_depth_name">Derinlik etkin</string>
+    <string name="photos_notification_desc">Google Fotoğraflar ile sınırsız depolama alanına sahip olun</string>
+    <string name="photos_notification_title">"Google Fotoğraflar'a yedekle"</string>
+    <string name="qcfa_resolution_description">Uyarlanabilir Düşük Işık</string>
     <string name="retake">Tekrar çek</string>
     <string name="second_10">10 sn</string>
     <string name="second_3">3 sn</string>
@@ -367,6 +377,7 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="setting_mode_slow_motion">Yavaş çekim</string>
     <string name="setting_mode_ultra_wide">Ultra geniş açı</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Geniş açılı selfie</string>
     <string name="setting_off">Kapalı</string>
     <string name="setting_on">Açık</string>
     <string name="setting_persist">Beklet</string>
@@ -383,20 +394,25 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="setting_timer_dialog_title">SÜREÖLÇER</string>
     <string name="setting_torch">El feneri</string>
     <string name="setting_true">doğru</string>
+    <string name="shortcut_desc_depth">Derinlik fotoğrafı</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Akıllı Kamera</string>
+    <string name="smartcam_no_detections">Kayıtlı hiçbir nesne veya şehir simgesi yok</string>
     <string name="storage_location_external">SD kart</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Depolama alanı kullanılamıyor</string>
+    <string name="toast_battery_saver">Şu anda güç tasarrufu modundasınız, bazı özellikler sınırlı olabilir</string>
     <string name="toast_geotag_message_1">Konumun kaydedilebilmesi için konum izni vermeniz gerekir.</string>
     <string name="toast_geotag_message_2">Yalnızca sistem konumu ayarı açıldıktan sonra konum ayarı etkili olur.</string>
     <string name="tooltip_camera_switch_360">Farklı kamera seçeneklerine geçmeyi deneyin.</string>
     <string name="tooltip_capture_360">Bu deklanşör düğmesine dokunarak 360° fotoğraf veya video çekmeyi deneyin.</string>
     <string name="tooltip_capture_key_360">Modun arkasında bulunan deklanşör düğmesiyle de çekim yapmayı deneyin.</string>
-    <string name="tooltip_dual_camera_depth_photo">Özel düzenleme özelliklerini etkinleştirmek için ek bilgi içeren fotoğraflar çekin.</string>
     <string name="tooltip_first_use_zoom_button">Geniş açıya geçiş yapmak için buraya dokunun.</string>
     <string name="tooltip_gallery_360">Sola kaydırarak 360° fotoğraf veya videonuzun nasıl olduğunu görün.</string>
     <string name="tooltip_minimap_viewfinder">Alttaki resmi sola veya sağa kaydırın.</string>
     <string name="tooltip_mode_switch_360">Farklı modlarda 360° çekim yapmayı deneyin!</string>
+    <string name="tooltip_modes_list">Fotoğraf çekmenin yeni yollarını keşfedin.</string>
     <string name="tooltip_smart_camera">Nesne hakkında daha fazla bilgi almak için dokunun.</string>
     <string name="tooltip_smart_camera_disable">"Bu özelliği Ayarlar'dan kapatabilirsiniz."</string>
     <string name="tooltip_spherical_viewfinder">Görüntüyü kontrol etmek için kaydırın, yakınlaştırın ve uzaklaştırın.</string>
@@ -419,6 +435,10 @@ Aşağıda kabul ettiğinizi belirtin ve ardından Ayarlar'da Konum özelliğini
     <string name="zoom_hint_full">TAM</string>
     <string name="zoom_hint_wide">GENİŞ</string>
     <string name="zoom_pattern">%1$s,%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Uyarlanabilir Düşük Işık</string>
+    <string name="indicate_mode_timelapse">ZAMAN ATLAMA</string>
+    <string name="setting_mode_timelapse">Zaman Atlama</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

@@ -82,11 +82,11 @@
 .method public hashCode()I
     .locals 2
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/auth/BasicUserPrincipal;->username:Ljava/lang/String;
+    iget-object v0, p0, Lorg/apache/http/auth/BasicUserPrincipal;->username:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 

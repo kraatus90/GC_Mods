@@ -373,7 +373,7 @@
 .end method
 
 .method public getActiveFragments(Ljava/util/List;)Ljava/util/List;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -388,66 +388,29 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
 
     iget-object v0, v0, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
 
-    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->mActive:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManagerImpl;->getActiveFragments()Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    if-eqz p1, :cond_1
-
-    :goto_0
-    iget-object v0, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
-
-    iget-object v0, v0, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
-
-    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->mActive:Ljava/util/ArrayList;
-
-    invoke-interface {p1, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    return-object p1
-
-    :cond_0
-    return-object v1
-
-    :cond_1
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Landroid/support/v4/app/FragmentController;->getActiveFragmentsCount()I
-
-    move-result v0
-
-    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public getActiveFragmentsCount()I
-    .locals 2
+    .locals 1
 
-    iget-object v1, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
 
-    iget-object v1, v1, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
+    iget-object v0, v0, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
 
-    iget-object v0, v1, Landroid/support/v4/app/FragmentManagerImpl;->mActive:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManagerImpl;->getActiveFragmentCount()I
 
-    if-eqz v0, :cond_0
+    move-result v0
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -538,13 +501,13 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v2, 0x0
-
     iget-object v0, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
 
     iget-object v0, v0, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
 
     new-instance v1, Landroid/support/v4/app/FragmentManagerNonConfig;
+
+    const/4 v2, 0x0
 
     invoke-direct {v1, p2, v2}, Landroid/support/v4/app/FragmentManagerNonConfig;-><init>(Ljava/util/List;Ljava/util/List;)V
 
@@ -610,7 +573,7 @@
 .end method
 
 .method public retainNonConfig()Ljava/util/List;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -624,25 +587,25 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v2, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
+    iget-object v1, p0, Landroid/support/v4/app/FragmentController;->mHost:Landroid/support/v4/app/FragmentHostCallback;
 
-    iget-object v2, v2, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
+    iget-object v1, v1, Landroid/support/v4/app/FragmentHostCallback;->mFragmentManager:Landroid/support/v4/app/FragmentManagerImpl;
 
-    invoke-virtual {v2}, Landroid/support/v4/app/FragmentManagerImpl;->retainNonConfig()Landroid/support/v4/app/FragmentManagerNonConfig;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-object v1
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManagerNonConfig;->getFragments()Ljava/util/List;
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentManagerImpl;->retainNonConfig()Landroid/support/v4/app/FragmentManagerNonConfig;
 
     move-result-object v1
+
+    if-nez v1, :cond_0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentManagerNonConfig;->getFragments()Ljava/util/List;
+
+    move-result-object v0
 
     goto :goto_0
 .end method

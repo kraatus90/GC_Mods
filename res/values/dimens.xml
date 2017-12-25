@@ -92,6 +92,11 @@
     <dimen name="bottom_button_padding">19.0dip</dimen>
     <dimen name="camera_camcorder_switch_width">60.0dip</dimen>
     <dimen name="capture_cluster_right_offset">15.0dip</dimen>
+    <dimen name="compat_button_inset_horizontal_material">4.0dip</dimen>
+    <dimen name="compat_button_inset_vertical_material">6.0dip</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8.0dip</dimen>
+    <dimen name="compat_button_padding_vertical_material">4.0dip</dimen>
+    <dimen name="compat_control_corner_material">2.0dip</dimen>
     <item type="dimen" name="disabled_alpha_material_dark">0.3</item>
     <item type="dimen" name="disabled_alpha_material_light">0.26</item>
     <dimen name="front_beauty_bar_arrow_margin_right">4.0dip</dimen>
@@ -165,11 +170,35 @@
     <dimen name="setting_topbar_list_three_width_port">160.0dip</dimen>
     <dimen name="setting_topbar_list_top">40.0dip</dimen>
     <dimen name="shutter_btn_margin">9.0dip</dimen>
+    <dimen name="smartcam_card_desc">12.0sp</dimen>
+    <dimen name="smartcam_card_detection">20.0sp</dimen>
+    <dimen name="smartcam_card_horizontal_padding">16.0dip</dimen>
+    <dimen name="smartcam_card_margin">16.0dip</dimen>
+    <dimen name="smartcam_card_radius">10.0dip</dimen>
+    <dimen name="smartcam_card_separator">1.0dip</dimen>
+    <dimen name="smartcam_card_small_padding">7.0dip</dimen>
+    <dimen name="smartcam_card_small_spacing">10.0dip</dimen>
+    <dimen name="smartcam_card_thumbnail">100.0dip</dimen>
+    <dimen name="smartcam_card_title">14.0sp</dimen>
+    <dimen name="smartcam_card_title_spacing">2.0dip</dimen>
+    <dimen name="smartcam_card_vertical_padding">14.0dip</dimen>
+    <dimen name="smartcam_chip_padding">10.0dip</dimen>
+    <dimen name="smartcam_chip_text">16.0sp</dimen>
+    <dimen name="smartcam_grid_padding">2.0dip</dimen>
+    <dimen name="smartcam_grid_spacing">1.0dip</dimen>
     <dimen name="thumbnail_frame_padding">5.0dip</dimen>
     <dimen name="thumbnail_margin">10.0dip</dimen>
     <dimen name="thumbnail_side_length">96.0dip</dimen>
     <dimen name="toast_margin">65.0dip</dimen>
     <dimen name="toast_margin_normal">0.0dip</dimen>
+    <dimen name="tooltip_corner_radius">2.0dip</dimen>
+    <dimen name="tooltip_horizontal_padding">16.0dip</dimen>
+    <dimen name="tooltip_margin">8.0dip</dimen>
+    <dimen name="tooltip_precise_anchor_extra_offset">8.0dip</dimen>
+    <dimen name="tooltip_precise_anchor_threshold">96.0dip</dimen>
+    <dimen name="tooltip_vertical_padding">6.5dip</dimen>
+    <dimen name="tooltip_y_offset_non_touch">0.0dip</dimen>
+    <dimen name="tooltip_y_offset_touch">16.0dip</dimen>
     <dimen name="zoom_rect_line_width">1.0dip</dimen>
     <dimen name="zoom_rect_padding_left">11.0dip</dimen>
 </resources>

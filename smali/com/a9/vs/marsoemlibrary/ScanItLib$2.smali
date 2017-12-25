@@ -50,9 +50,7 @@
 
 # virtual methods
 .method protected varargs a([Ljava/lang/Void;)Ljava/lang/Void;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-static {}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getInstance()Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;
 
@@ -72,7 +70,9 @@
 
     invoke-static {v0, v1}, Lcom/a9/vs/marsoemlibrary/ScanItLib;->a(Lcom/a9/vs/marsoemlibrary/ScanItLib;Lcom/a9/vs/marsoemlibrary/listeners/ScanItInitListener;)V
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method protected synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;

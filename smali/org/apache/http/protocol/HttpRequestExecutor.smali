@@ -84,11 +84,11 @@
 
     invoke-interface {p3, v0, p2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string/jumbo v0, "http.request_sent"
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    const-string/jumbo v2, "http.request_sent"
 
-    invoke-interface {p3, v0, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {p3, v2, v0}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-interface {p2, p1}, Lorg/apache/http/HttpClientConnection;->sendRequestHeader(Lorg/apache/http/HttpRequest;)V
 
@@ -102,11 +102,11 @@
     :goto_0
     invoke-interface {p2}, Lorg/apache/http/HttpClientConnection;->flush()V
 
-    const-string/jumbo v1, "http.request_sent"
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    const-string/jumbo v2, "http.request_sent"
 
-    invoke-interface {p3, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {p3, v2, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-object v0
 
@@ -235,17 +235,17 @@
 
     const/4 v0, 0x0
 
-    const-string/jumbo v1, "HEAD"
-
     invoke-interface {p1}, Lorg/apache/http/HttpRequest;->getRequestLine()Lorg/apache/http/RequestLine;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Lorg/apache/http/RequestLine;->getMethod()Ljava/lang/String;
+    invoke-interface {v1}, Lorg/apache/http/RequestLine;->getMethod()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    const-string/jumbo v2, "HEAD"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -291,9 +291,9 @@
 .method protected b(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpClientConnection;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
     .locals 3
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     const-string/jumbo v2, "HTTP request"
 

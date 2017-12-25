@@ -4,9 +4,9 @@
 
 # direct methods
 .method public static final zzg(Landroid/content/Context;I)Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -15,32 +15,32 @@
     packed-switch p1, :pswitch_data_0
 
     :pswitch_0
-    const-string/jumbo v0, "GooglePlayServicesUtil"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "Unexpected error code "
 
-    const-string/jumbo v2, "Unexpected error code "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "GooglePlayServicesUtil"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v3
+    return-object v2
 
     :pswitch_1
-    return-object v3
+    return-object v2
 
     :pswitch_2
     sget v1, Lcom/google/android/gms/R$string;->common_google_play_services_install_title:I
@@ -115,7 +115,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v3
+    return-object v2
 
     :pswitch_9
     const-string/jumbo v0, "GooglePlayServicesUtil"
@@ -124,7 +124,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v3
+    return-object v2
 
     :pswitch_a
     const-string/jumbo v1, "GooglePlayServicesUtil"
@@ -148,7 +148,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v3
+    return-object v2
 
     :pswitch_c
     const-string/jumbo v0, "GooglePlayServicesUtil"
@@ -157,7 +157,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v3
+    return-object v2
 
     :pswitch_d
     const-string/jumbo v1, "GooglePlayServicesUtil"

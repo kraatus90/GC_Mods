@@ -30,9 +30,7 @@
 .end method
 
 .method public static declared-synchronized readFromInputStream(Ljava/io/InputStream;)Ljava/lang/String;
-    .locals 7
-
-    const/4 v6, 0x0
+    .locals 6
 
     const-class v1, Lcom/a9/vs/marsoemlibrary/config/FileUtils;
 
@@ -119,9 +117,11 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
+    const/4 v0, 0x0
+
     monitor-exit v1
 
-    return-object v6
+    return-object v0
 
     :catchall_1
     move-exception v0
@@ -132,9 +132,7 @@
 .end method
 
 .method public static declared-synchronized readFromInputStreamToByteArray(Ljava/io/InputStream;)[B
-    .locals 6
-
-    const/4 v5, 0x0
+    .locals 5
 
     const-class v1, Lcom/a9/vs/marsoemlibrary/config/FileUtils;
 
@@ -209,9 +207,11 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
+    const/4 v0, 0x0
+
     monitor-exit v1
 
-    return-object v5
+    return-object v0
 
     :catchall_1
     move-exception v0

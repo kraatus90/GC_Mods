@@ -290,23 +290,19 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    new-instance v0, Lcom/google/android/gms/dynamic/zza$3;
 
-    new-instance v1, Lcom/google/android/gms/dynamic/zza$3;
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/dynamic/zza$3;-><init>(Lcom/google/android/gms/dynamic/zza;Landroid/os/Bundle;)V
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/gms/dynamic/zza$3;-><init>(Lcom/google/android/gms/dynamic/zza;Landroid/os/Bundle;)V
-
-    invoke-direct {p0, p1, v1}, Lcom/google/android/gms/dynamic/zza;->zza(Landroid/os/Bundle;Lcom/google/android/gms/dynamic/zza$zza;)V
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/dynamic/zza;->zza(Landroid/os/Bundle;Lcom/google/android/gms/dynamic/zza$zza;)V
 
     return-void
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 7
-
-    move-object v6, p0
+    .locals 6
 
     new-instance v2, Landroid/widget/FrameLayout;
 
@@ -388,15 +384,13 @@
 .end method
 
 .method public onInflate(Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    new-instance v0, Lcom/google/android/gms/dynamic/zza$2;
 
-    new-instance v1, Lcom/google/android/gms/dynamic/zza$2;
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/android/gms/dynamic/zza$2;-><init>(Lcom/google/android/gms/dynamic/zza;Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/android/gms/dynamic/zza$2;-><init>(Lcom/google/android/gms/dynamic/zza;Landroid/app/Activity;Landroid/os/Bundle;Landroid/os/Bundle;)V
-
-    invoke-direct {p0, p3, v1}, Lcom/google/android/gms/dynamic/zza;->zza(Landroid/os/Bundle;Lcom/google/android/gms/dynamic/zza$zza;)V
+    invoke-direct {p0, p3, v0}, Lcom/google/android/gms/dynamic/zza;->zza(Landroid/os/Bundle;Lcom/google/android/gms/dynamic/zza$zza;)V
 
     return-void
 .end method
@@ -444,11 +438,11 @@
 .method public onResume()V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/dynamic/zza$7;
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/dynamic/zza$7;-><init>(Lcom/google/android/gms/dynamic/zza;)V
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lcom/google/android/gms/dynamic/zza;->zza(Landroid/os/Bundle;Lcom/google/android/gms/dynamic/zza$zza;)V
 
@@ -456,32 +450,30 @@
 .end method
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Lcom/google/android/gms/dynamic/zza;->zzacd:Lcom/google/android/gms/dynamic/LifecycleDelegate;
 
-    iget-object v1, p0, Lcom/google/android/gms/dynamic/zza;->zzacd:Lcom/google/android/gms/dynamic/LifecycleDelegate;
+    if-nez v0, :cond_0
 
-    if-nez v1, :cond_0
+    iget-object v0, p0, Lcom/google/android/gms/dynamic/zza;->zzace:Landroid/os/Bundle;
 
-    iget-object v1, p0, Lcom/google/android/gms/dynamic/zza;->zzace:Landroid/os/Bundle;
-
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/dynamic/zza;->zzacd:Lcom/google/android/gms/dynamic/LifecycleDelegate;
+    iget-object v0, p0, Lcom/google/android/gms/dynamic/zza;->zzacd:Lcom/google/android/gms/dynamic/LifecycleDelegate;
 
-    invoke-interface {v1, p1}, Lcom/google/android/gms/dynamic/LifecycleDelegate;->onSaveInstanceState(Landroid/os/Bundle;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/dynamic/LifecycleDelegate;->onSaveInstanceState(Landroid/os/Bundle;)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/dynamic/zza;->zzace:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/dynamic/zza;->zzace:Landroid/os/Bundle;
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
     goto :goto_0
 .end method
@@ -489,11 +481,11 @@
 .method public onStart()V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/dynamic/zza$6;
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/dynamic/zza$6;-><init>(Lcom/google/android/gms/dynamic/zza;)V
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lcom/google/android/gms/dynamic/zza;->zza(Landroid/os/Bundle;Lcom/google/android/gms/dynamic/zza$zza;)V
 

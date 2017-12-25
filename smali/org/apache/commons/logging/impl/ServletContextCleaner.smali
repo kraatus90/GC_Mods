@@ -19,9 +19,9 @@
 
     new-array v1, v0, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
-
     sget-object v0, Lorg/apache/commons/logging/impl/ServletContextCleaner;->a:Ljava/lang/Class;
+
+    const/4 v2, 0x0
 
     if-eqz v0, :cond_0
 
@@ -120,11 +120,11 @@
 
     move-result-object v0
 
-    const-string/jumbo v4, "release"
+    sget-object v4, Lorg/apache/commons/logging/impl/ServletContextCleaner;->RELEASE_SIGNATURE:[Ljava/lang/Class;
 
-    sget-object v5, Lorg/apache/commons/logging/impl/ServletContextCleaner;->RELEASE_SIGNATURE:[Ljava/lang/Class;
+    const-string/jumbo v5, "release"
 
-    invoke-virtual {v0, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v5, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v4
 

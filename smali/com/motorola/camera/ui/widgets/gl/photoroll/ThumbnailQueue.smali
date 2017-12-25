@@ -149,11 +149,13 @@
     return-object v0
 .end method
 
-.method public getSeqId(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+.method public getSeqId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)TT;"
+            "(",
+            "Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;",
+            ")TT;"
         }
     .end annotation
 
@@ -178,11 +180,15 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
 
-    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;->getSeqId()I
+    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;->getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-result-object v3
+
+    invoke-static {v3, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-ne v3, p1, :cond_0
+    if-eqz v3, :cond_0
 
     :goto_0
     return-object v0

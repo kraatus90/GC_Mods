@@ -39,15 +39,13 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/session/MediaSessionCompat$Token;
-    .locals 4
+    .locals 2
 
-    const/4 v3, 0x0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v1, 0x15
 
-    const/16 v2, 0x15
-
-    if-ge v1, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
@@ -61,7 +59,9 @@
     return-object v1
 
     :cond_0
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
     move-result-object v0
 

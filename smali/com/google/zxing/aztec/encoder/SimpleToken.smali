@@ -49,15 +49,15 @@
 
     const/4 v3, 0x1
 
-    iget-short v1, p0, Lcom/google/zxing/aztec/encoder/SimpleToken;->value:S
+    iget-short v0, p0, Lcom/google/zxing/aztec/encoder/SimpleToken;->value:S
 
-    iget-short v2, p0, Lcom/google/zxing/aztec/encoder/SimpleToken;->bitCount:S
+    iget-short v1, p0, Lcom/google/zxing/aztec/encoder/SimpleToken;->bitCount:S
 
-    shl-int v2, v3, v2
+    shl-int v1, v3, v1
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    and-int v0, v1, v2
+    and-int/2addr v0, v1
 
     iget-short v1, p0, Lcom/google/zxing/aztec/encoder/SimpleToken;->bitCount:S
 
@@ -79,29 +79,29 @@
 
     shl-int v2, v3, v2
 
-    or-int/2addr v2, v0
+    or-int/2addr v0, v2
 
-    invoke-static {v2}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/16 v2, 0x3e
+    const/16 v1, 0x3e
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

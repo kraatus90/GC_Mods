@@ -34,6 +34,13 @@
 # direct methods
 .method private varargs constructor <init>([Lcom/motorola/camera/settings/Setting$UpdateType;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([",
+            "Lcom/motorola/camera/settings/Setting$UpdateType;",
+            ")V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

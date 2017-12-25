@@ -300,9 +300,9 @@
 .method protected a([B)[B
     .locals 4
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
@@ -350,9 +350,9 @@
 .method protected b([B)[B
     .locals 5
 
-    const/16 v4, 0x5f
-
     const/4 v1, 0x0
+
+    const/16 v4, 0x5f
 
     const/4 v0, 0x0
 

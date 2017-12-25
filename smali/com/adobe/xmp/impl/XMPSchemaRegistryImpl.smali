@@ -1452,15 +1452,15 @@
     move-object v2, p2
 
     :goto_0
-    const/4 v0, 0x0
-
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 v1, 0x0
+
+    invoke-virtual {v2, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1575,15 +1575,15 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x0
-
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v3
 
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v3, v3, -0x1
 
-    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 

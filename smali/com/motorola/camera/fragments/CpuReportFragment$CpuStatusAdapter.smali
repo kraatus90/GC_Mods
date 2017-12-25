@@ -17,7 +17,7 @@
     value = {
         "Landroid/widget/ArrayAdapter",
         "<",
-        "Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;",
+        "Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;",
         ">;"
     }
 .end annotation
@@ -30,12 +30,12 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/motorola/camera/fragments/CpuReportFragment;Landroid/content/Context;[Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;)V
+.method constructor <init>(Lcom/motorola/camera/fragments/CpuReportFragment;Landroid/content/Context;[Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;)V
     .locals 1
 
     iput-object p1, p0, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatusAdapter;->this$0:Lcom/motorola/camera/fragments/CpuReportFragment;
 
-    const v0, 0x7f040021
+    const v0, 0x7f040023
 
     invoke-direct {p0, p2, v0, p3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
@@ -63,14 +63,14 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatusAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040021
+    const v1, 0x7f040023
 
     invoke-virtual {v0, v1, p3, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object p2
 
     :cond_0
-    const v0, 0x7f0e008b
+    const v0, 0x7f0e009c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -78,7 +78,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f0e008c
+    const v1, 0x7f0e009d
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -86,7 +86,7 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    const v2, 0x7f0e008d
+    const v2, 0x7f0e009e
 
     invoke-virtual {p2, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -98,7 +98,7 @@
 
     move-result-object v3
 
-    check-cast v3, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;
+    check-cast v3, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;
 
     iget-object v4, p0, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatusAdapter;->this$0:Lcom/motorola/camera/fragments/CpuReportFragment;
 
@@ -106,7 +106,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0801bc
+    const v5, 0x7f0801d0
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -128,15 +128,15 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-boolean v0, v3, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;->present:Z
+    iget-boolean v0, v3, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mPresent:Z
 
     if-eqz v0, :cond_1
 
-    iget-boolean v0, v3, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;->online:Z
+    iget-boolean v0, v3, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mOnline:Z
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0801e1
+    const v0, 0x7f0801f8
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
 
@@ -144,7 +144,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget v1, v3, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;->current:I
+    iget v1, v3, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mCurrent:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    iget v1, v3, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;->maximum:I
+    iget v1, v3, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mMaximum:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -172,11 +172,11 @@
     return-object p2
 
     :cond_1
-    iget-boolean v0, v3, Lcom/motorola/camera/fragments/CpuReportFragment$CpuStatus;->present:Z
+    iget-boolean v0, v3, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mPresent:Z
 
     if-eqz v0, :cond_2
 
-    const v0, 0x7f0801e0
+    const v0, 0x7f0801f7
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
 

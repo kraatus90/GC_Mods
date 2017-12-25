@@ -187,13 +187,13 @@
 
     invoke-virtual {v0, v3}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;->setName(Ljava/lang/String;)V
 
-    const-string/jumbo v3, "?xml:lang"
-
     invoke-virtual {v0}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v4, "?xml:lang"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -326,15 +326,15 @@
         }
     .end annotation
 
-    const/16 v3, 0x39
+    const/16 v6, 0x39
 
     const/16 v2, 0x30
 
-    const/16 v6, 0x5d
+    const/4 v5, 0x0
 
-    const/16 v5, 0x66
+    const/16 v4, 0x5d
 
-    const/4 v4, 0x0
+    const/16 v3, 0x66
 
     iget v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
@@ -383,7 +383,7 @@
 
     move-result v0
 
-    if-eq v0, v6, :cond_a
+    if-eq v0, v4, :cond_a
 
     iget v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepBegin:I
 
@@ -452,7 +452,7 @@
 
     const/4 v1, 0x6
 
-    invoke-direct {v0, v4, v1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v5, v1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;-><init>(Ljava/lang/String;I)V
 
     :goto_2
     iget v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
@@ -470,7 +470,7 @@
 
     const-string/jumbo v1, "Missing \']\' for array index"
 
-    invoke-direct {v0, v1, v5}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
@@ -483,7 +483,7 @@
 
     move-result v0
 
-    if-gt v0, v3, :cond_0
+    if-gt v0, v6, :cond_0
 
     :goto_3
     iget v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
@@ -501,7 +501,7 @@
 
     const/4 v1, 0x3
 
-    invoke-direct {v0, v4, v1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v5, v1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;-><init>(Ljava/lang/String;I)V
 
     goto :goto_2
 
@@ -524,7 +524,7 @@
 
     move-result v0
 
-    if-gt v0, v3, :cond_6
+    if-gt v0, v6, :cond_6
 
     iget v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
@@ -543,7 +543,7 @@
 
     move-result v0
 
-    if-eq v0, v6, :cond_1
+    if-eq v0, v4, :cond_1
 
     iget-object v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
 
@@ -570,24 +570,24 @@
 
     const-string/jumbo v1, "Missing \']\' or \'=\' for array index"
 
-    invoke-direct {v0, v1, v5}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
     :cond_a
-    const-string/jumbo v0, "[last()"
+    iget-object v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
+    iget v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepBegin:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepBegin:I
+    iget v2, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
-    iget v3, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "[last()"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -597,7 +597,7 @@
 
     const/4 v1, 0x4
 
-    invoke-direct {v0, v4, v1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v5, v1}, Lcom/adobe/xmp/impl/xpath/XMPPathSegment;-><init>(Ljava/lang/String;I)V
 
     goto/16 :goto_2
 
@@ -606,7 +606,7 @@
 
     const-string/jumbo v1, "Invalid non-numeric array index"
 
-    invoke-direct {v0, v1, v5}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
@@ -619,7 +619,7 @@
 
     const-string/jumbo v1, "Invalid quote in array selector"
 
-    invoke-direct {v0, v1, v5}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
@@ -677,7 +677,7 @@
 
     const-string/jumbo v1, "No terminating quote for array selector"
 
-    invoke-direct {v0, v1, v5}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/adobe/xmp/XMPException;-><init>(Ljava/lang/String;I)V
 
     throw v0
 
@@ -690,7 +690,7 @@
 
     move-result v1
 
-    if-ne v1, v6, :cond_4
+    if-ne v1, v4, :cond_4
 
     iget v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
@@ -831,17 +831,17 @@
     return-void
 
     :cond_1
-    const-string/jumbo v0, "/[*"
+    iget-object v0, p1, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
 
-    iget-object v1, p1, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
+    iget v1, p1, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
-    iget v2, p1, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
+    move-result v0
 
-    move-result v1
+    const-string/jumbo v1, "/[*"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v1, v0}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
@@ -985,17 +985,17 @@
     return-object v0
 
     :cond_1
-    const-string/jumbo v0, "/[*"
+    iget-object v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
+    iget v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
-    iget v2, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
+    move-result v0
 
-    move-result v1
+    const-string/jumbo v1, "/[*"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v1, v0}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 

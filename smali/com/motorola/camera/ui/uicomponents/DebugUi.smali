@@ -355,7 +355,7 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/uicomponents/DebugUi;->mParentView:Landroid/view/View;
 
-    const v3, 0x7f0e007d
+    const v3, 0x7f0e008e
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -438,7 +438,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0801c5
+    const v4, 0x7f0801d9
 
     invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -475,7 +475,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0801f6
+    const v4, 0x7f08020d
 
     invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -512,7 +512,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0801d6
+    const v4, 0x7f0801ed
 
     invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -547,7 +547,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0801c3
+    const v4, 0x7f0801d7
 
     invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -584,7 +584,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f080225
+    const v4, 0x7f08023c
 
     invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -621,7 +621,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0801c0
+    const v4, 0x7f0801d4
 
     invoke-virtual {v3, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 

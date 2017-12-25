@@ -63,71 +63,73 @@
         }
     .end annotation
 
-    new-instance v3, Ljava/util/ArrayList;
+    const/4 v1, 0x0
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
 
     :goto_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v3
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLongArray;
+    new-instance v4, Ljava/util/concurrent/atomic/AtomicLongArray;
 
-    invoke-direct {v0, v2}, Ljava/util/concurrent/atomic/AtomicLongArray;-><init>(I)V
-
-    const/4 v1, 0x0
+    invoke-direct {v4, v3}, Ljava/util/concurrent/atomic/AtomicLongArray;-><init>(I)V
 
     :goto_1
-    if-lt v1, v2, :cond_1
+    if-lt v1, v3, :cond_1
 
-    return-object v0
+    return-object v4
 
     :cond_0
-    iget-object v6, p0, Lcom/google/gson/Gson$5;->val$longAdapter:Lcom/google/gson/TypeAdapter;
+    iget-object v0, p0, Lcom/google/gson/Gson$5;->val$longAdapter:Lcom/google/gson/TypeAdapter;
 
-    invoke-virtual {v6, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, Ljava/lang/Number;
+    check-cast v0, Ljava/lang/Number;
 
-    invoke-virtual {v6}, Ljava/lang/Number;->longValue()J
+    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v4
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, Ljava/lang/Long;
+    check-cast v0, Ljava/lang/Long;
 
-    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v6
 
-    invoke-virtual {v0, v1, v6, v7}, Ljava/util/concurrent/atomic/AtomicLongArray;->set(IJ)V
+    invoke-virtual {v4, v1, v6, v7}, Ljava/util/concurrent/atomic/AtomicLongArray;->set(IJ)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_1
 .end method

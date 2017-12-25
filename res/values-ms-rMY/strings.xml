@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">Navigasi skrin utama</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">Navigasi ke atas</string>
-    <string name="abc_action_menu_overflow_description">Lagi pilihan</string>
-    <string name="abc_action_mode_done">Selesai</string>
-    <string name="abc_activity_chooser_view_see_all">Lihat semua</string>
-    <string name="abc_activitychooserview_choose_application">Pilih apl</string>
-    <string name="abc_capital_off">MATI</string>
-    <string name="abc_capital_on">HIDUP</string>
-    <string name="abc_search_hint">Cari…</string>
-    <string name="abc_searchview_description_clear">Kosongkan pertanyaan</string>
-    <string name="abc_searchview_description_query">Pertanyaan carian</string>
-    <string name="abc_searchview_description_search">Cari</string>
-    <string name="abc_searchview_description_submit">Serah pertanyaan</string>
-    <string name="abc_searchview_description_voice">Carian suara</string>
-    <string name="abc_shareactionprovider_share_with">Kongsi dengan</string>
-    <string name="abc_shareactionprovider_share_with_application">Kongsi dengan %s</string>
-    <string name="abc_toolbar_collapse_description">Runtuhkan</string>
     <string name="common_android_wear_notification_needs_update_text">Apl memerlukan kemas kini kepada apl Android Wear.</string>
     <string name="common_android_wear_update_text">Apl ini tidak akan berfungsi melainkan anda mengemas kini apl Android Wear.</string>
     <string name="common_android_wear_update_title">Kemas kini Android Wear</string>
@@ -50,8 +31,6 @@
     <string name="common_signin_button_text">Log masuk</string>
     <string name="common_signin_button_text_long">Log masuk dengan Google</string>
     <string name="commono_google_play_services_api_unavailable_text">Apl ini memerlukan satu atau lebih perkhidmatan Google Play yang tidak tersedia pada masa ini. Sila hubungi pembangun untuk mendapatkan bantuan.</string>
-    <string name="search_menu_title">Cari</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="act_name_camcorder">Kamkorder</string>
     <string name="act_name_camera">Kamera</string>
     <string name="action_licenses">Lesen sumber terbuka</string>
@@ -148,7 +127,7 @@
     <string name="cancel">Batal</string>
     <string name="capture_failure">Tangkapan gagal. Cuba lagi.</string>
     <string name="checkbox_do_not_show">Jangan tunjukkan lagi</string>
-    <string name="cloudsight_terms">Imej anda akan dihantar kepada CloudSight untuk memberikan hasil carian. &lt;br/>&lt;br/> Dengan meneruskan, anda bersetuju dengan &lt;a href=%1$s>Polisi Privasi&lt;/a> CloudSight.</string>
+    <string name="cloudsight_terms">Setiap kali anda menggunakan pengecaman objek, imej dan lokasi (jika didayakan) akan dihantar kepada pihak ketiga untuk memberikan hasil carian.&lt;br/>&lt;br/> Dengan meneruskan, anda bersetuju dengan&lt;a href=%1$s>Dasar Privasi&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama gagal. Sila cuba semula.</string>
     <string name="dailog_panorama_not_taken">Gambar panorama tidak diambil.</string>
     <string name="dialog_access_sd_fail">Gagal menangkap media. Tidak dapat mengakses kad SD.</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">Peranti tidak disokong</string>
     <string name="dialog_disagree">Tidak bersetuju</string>
     <string name="dialog_dismiss">Jangan tunjukkan lagi</string>
+    <string name="dialog_download">Muat turun</string>
     <string name="dialog_external_sd_missing">Tidak boleh menangkap gambar. Kad SD tidak boleh diakses. Bertukar ke storan telefon dalaman</string>
     <string name="dialog_first_time_set_pure_raw_message">"Jenis fail yang tidak diproses ini digunakan untuk mengedit foto secara profesional.
 
@@ -247,6 +227,7 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="help_next">Seterusnya</string>
     <string name="image_360_desc">Ini ialah foto 360. Anda boleh mengedit foto ini dengan Editor Moto 360.</string>
     <string name="image_360_name">Foto 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">KEDALAMAN DIDAYAKAN</string>
     <string name="indicate_mode_mono">H&amp;P BENAR</string>
@@ -258,16 +239,19 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="indicate_mode_ultra_wide">SUDUT ULTRA LUAS</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">SUDUT LUAS</string>
+    <string name="indicate_mode_wide_angle_selfie">SELFIE SUDUT LUAS</string>
     <string name="internal_storage">storan dalaman</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Pengecaman mercu tanda menawarkan maklumat mengenai mercu tanda popular di seluruh dunia.&lt;br/>&lt;br/>Pasang untuk mendayakan ciri ini.</string>
-    <string name="landmark_install_over_data">Saiz muat turun pengecaman mercu tanda ialah 92 MB. Pemasangan melalui data mudah alih boleh menyebabkan caj data tambahan.</string>
-    <string name="landmark_notification_downloading">Memuat turun Pengecaman mercu tanda</string>
-    <string name="landmark_notification_install">Memasang Pengecaman mercu tanda</string>
-    <string name="landmark_notification_install_complete">Pemasangan Pengecaman mercu tanda selesai</string>
-    <string name="landmark_notification_install_failed">Pemasangan Pengecaman mercu tanda telah gagal</string>
+    <string name="landmark_install_message">Pengecaman Mercu tanda menawarkan maklumat mengenai mercu tanda popular di seluruh dunia.&lt;br/>&lt;br/>Muat turun pangkalan data Mercu tanda untuk mendayakan ciri ini.</string>
+    <string name="landmark_install_over_data">Saiz muat turun pangkalan data Mercun tanda ialah 92 MB. Muat turun melalui data mudah alih boleh menyebabkan caj data tambahan.</string>
+    <string name="landmark_notification_downloading">Memuat turun pangkalan data Mercu tanda</string>
+    <string name="landmark_notification_install">Memasang pangkalan data Mercu tanda</string>
+    <string name="landmark_notification_install_complete">Pemasangan pangkalan data Mercu tanda selesai</string>
+    <string name="landmark_notification_install_failed">Pemasangan pangkalan data Mercu tanda telah gagal</string>
     <string name="landmark_notification_install_invalid_url">Pangkalan data mercu tanda tidak tersedia, sila kemas kini kepada versi Kamera terkini</string>
-    <string name="landmark_notification_install_out_of_space">Ruang storan tersedia tidak mencukupi untuk memasang Pengecaman mercu tanda</string>
+    <string name="landmark_notification_install_out_of_space">Ruang storan yang tersedia tidak mencukupi untuk memasang pangkalan data Mercu tanda</string>
+    <string name="landmark_notification_paused">Pangkalan data Mercu tanda akan terus dimuat turun apabila Internet tersedia</string>
+    <string name="landmark_notification_queued">Pangkalan data Mercu tanda akan mula dimuat turun apabila Internet tersedia</string>
     <string name="main_setting_amz_barcode">Pengimbas kod bar Amazon</string>
     <string name="main_setting_amz_privacy">Notis Privasi Amazon</string>
     <string name="main_setting_amz_terms">Syarat Penggunaan</string>
@@ -290,6 +274,8 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="main_setting_image_ratio">Saiz foto (belakang)</string>
     <string name="main_setting_image_ratio_front">Saiz foto (depan)</string>
     <string name="main_setting_landmark_detection">Pengecaman mercu tanda</string>
+    <string name="main_setting_landmark_version_current">Versi pangkalan data: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Pangkalan data tidak dipasang</string>
     <string name="main_setting_licenses">Lesen sumber terbuka</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +311,9 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="perm_required_alert_title">Kebenaran diperlukan</string>
     <string name="photos_depth_desc">Gunakan editor kedalaman untuk memilih fokus, menggantikan latar atau memilih kawasan untuk diubah kepada hitam dan putih.</string>
     <string name="photos_depth_name">Kedalaman didayakan</string>
+    <string name="photos_notification_desc">Dapatkan storan tanpa had dengan Google Photos</string>
+    <string name="photos_notification_title">Sandarkan ke Google Photos</string>
+    <string name="qcfa_resolution_description">Cahaya Rendah Boleh Suai</string>
     <string name="retake">Tangkap semula</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +356,7 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="setting_mode_slow_motion">Gerak perlahan</string>
     <string name="setting_mode_ultra_wide">Sudut ultra luas</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Selfie sudut luas</string>
     <string name="setting_off">Mati</string>
     <string name="setting_on">Hidup</string>
     <string name="setting_persist">Tunda</string>
@@ -383,20 +373,25 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="setting_timer_dialog_title">PEMASA</string>
     <string name="setting_torch">Lampu Suluh</string>
     <string name="setting_true">benar</string>
+    <string name="shortcut_desc_depth">Foto Dalam</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Kamera Pintar</string>
+    <string name="smartcam_no_detections">Tiada objek atau mercu tanda disimpan</string>
     <string name="storage_location_external">Kad SD</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Storan tidak tersedia</string>
+    <string name="toast_battery_saver">Anda kini menggunakan mod penjimatan kuasa, beberapa ciri mungkin terhad</string>
     <string name="toast_geotag_message_1">Anda mesti memberikan kebenaran lokasi untuk mendayakan penyimpanan lokasi.</string>
     <string name="toast_geotag_message_2">Tetapan lokasi hanya akan berfungsi selepas tetapan lokasi sistem dihidupkan.</string>
     <string name="tooltip_camera_switch_360">Cuba bertukar ke pilihan kamera berlainan.</string>
     <string name="tooltip_capture_360">Cuba tangkap foto atau video 360° dengan mengetik pada butang pengatup ini.</string>
-    <string name="tooltip_capture_key_360">Juga cuba tangkap dengan butang pengatup pada belakang mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Tangkap foto dgn maklumat tambahan utk mendayakan ciri pengeditan khas.</string>
+    <string name="tooltip_capture_key_360">Juga, cuba tangkap dengan butang pengatup pada belakang Mod.</string>
     <string name="tooltip_first_use_zoom_button">Ketik di sini untuk bertukar ke sudut luas.</string>
     <string name="tooltip_gallery_360">Lihat hasil foto atau video 360° anda dengan menyapu ke kiri.</string>
     <string name="tooltip_minimap_viewfinder">Sorot imej bawah kiri atau kanan.</string>
     <string name="tooltip_mode_switch_360">Cuba tangkap 360° dalam mod yang berlainan!</string>
+    <string name="tooltip_modes_list">Temui cara baru untuk menangkap foto anda.</string>
     <string name="tooltip_smart_camera">Ketik untuk mengetahui lebih lanjut mengenai objek.</string>
     <string name="tooltip_smart_camera_disable">Anda boleh mematikan ini dalam Tetapan.</string>
     <string name="tooltip_spherical_viewfinder">Sorot atau zum masuk &amp; zum keluar untuk mengawal pandangan.</string>
@@ -419,4 +414,10 @@ Bersetuju dengan yang berikut kemudian hidupkan Lokasi dalam Tetapan."</string>
     <string name="zoom_hint_full">PENUH</string>
     <string name="zoom_hint_wide">LUAS</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">SELANG MASA</string>
+    <string name="setting_mode_timelapse">Selang masa</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

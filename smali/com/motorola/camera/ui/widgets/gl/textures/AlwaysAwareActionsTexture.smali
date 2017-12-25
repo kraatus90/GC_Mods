@@ -12,12 +12,6 @@
 
 .field private static final FADE_DURATION_FAST:J = 0x64L
 
-.field private static final INDEX_PLACES_CARD:I = 0x2
-
-.field private static final INDEX_SEARCH_CARD:I = 0x3
-
-.field private static final INDEX_WIKI_CARD:I = 0x1
-
 .field public static final PADDING:F = 8.0f
 
 .field private static final TAG:Ljava/lang/String;
@@ -32,7 +26,7 @@
 
 .field mComponent:Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
-.field private mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+.field private mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
 .field private mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -48,11 +42,15 @@
 
 .field private mObjectTitleTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;
 
+.field private mPlacesShown:Z
+
 .field private mSearchCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
 
 .field private mViewSize:Lcom/motorola/camera/PreviewSize;
 
 .field private mWikiCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiCardTexture;
+
+.field private mWikiShown:Z
 
 
 # direct methods
@@ -64,10 +62,26 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+.method static synthetic -set0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;Z)Z
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->addCard(ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+    iput-boolean p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mPlacesShown:Z
+
+    return p1
+.end method
+
+.method static synthetic -set1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;Z)Z
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mWikiShown:Z
+
+    return p1
+.end method
+
+.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->addCard(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
 
     return-void
 .end method
@@ -89,6 +103,8 @@
 .method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
     .locals 4
 
+    const/4 v1, 0x0
+
     invoke-direct {p0, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
@@ -97,17 +113,21 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
 
+    iput-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mWikiShown:Z
+
+    iput-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mPlacesShown:Z
+
     iput-object p3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mComponent:Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mComponent:Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mComponent:Lcom/motorola/camera/ui/widgets/gl/iGlComponent;
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    invoke-direct {v0, p1, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
+    invoke-direct {v0, v1, p1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
 
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -115,13 +135,13 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setAdapter(Lcom/motorola/camera/ui/widgets/gl/ListAdapter;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setAdapter(Lcom/motorola/camera/ui/widgets/gl/ListAdapter;)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/LayoutSpec$Builder;
 
@@ -151,7 +171,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setLayoutSpec(Lcom/motorola/camera/ui/widgets/gl/textures/LayoutSpec;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setLayoutSpec(Lcom/motorola/camera/ui/widgets/gl/textures/LayoutSpec;)V
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture$1;
 
@@ -165,7 +185,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mAmazonCard:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -179,7 +199,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mMessageCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -195,7 +215,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mWikiCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareWikiCardTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -209,7 +229,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mGooglePlacesTexture:Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -225,7 +245,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mSearchCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -241,7 +261,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mActionsCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -255,13 +275,13 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mDefaultCard:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mGooglePlacesTexture:Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -275,7 +295,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mMessageCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
@@ -289,14 +309,14 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mObjectTitleTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;->setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V
 
     return-void
 .end method
 
-.method private addCard(ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+.method private addCard(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
@@ -309,7 +329,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
-    invoke-virtual {v0, p2}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
 
     :goto_0
     return-void
@@ -323,15 +343,110 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
+    invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
-    invoke-virtual {v1, v0, p2}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+    invoke-virtual {v1, v0, p1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
 
     goto :goto_0
+.end method
+
+.method private updateLayoutBounds()V
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mDisplayOrientation:I
+
+    if-eqz v2, :cond_0
+
+    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mDisplayOrientation:I
+
+    const/16 v3, 0xb4
+
+    if-ne v2, v3, :cond_1
+
+    :cond_0
+    :goto_0
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/motorola/camera/CameraApp;->hasSoftTSB()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getNavBarSize()Landroid/graphics/PointF;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/graphics/PointF;->y:F
+
+    float-to-int v1, v1
+
+    move v2, v1
+
+    :goto_1
+    if-eqz v0, :cond_3
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v1, v1, Lcom/motorola/camera/PreviewSize;->width:I
+
+    :goto_2
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    sub-int/2addr v0, v2
+
+    :goto_3
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+
+    new-instance v3, Lcom/motorola/camera/ui/widgets/gl/textures/LayoutBounds;
+
+    invoke-direct {v3, v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/LayoutBounds;-><init>(II)V
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setLayoutBounds(Lcom/motorola/camera/ui/widgets/gl/textures/LayoutBounds;)V
+
+    return-void
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v2, v1
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v1, v1, Lcom/motorola/camera/PreviewSize;->height:I
+
+    sub-int/2addr v1, v2
+
+    goto :goto_2
+
+    :cond_4
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    goto :goto_3
 .end method
 
 
@@ -399,6 +514,33 @@
     const-wide/16 v2, 0x12c
 
     goto :goto_0
+.end method
+
+.method public getAmazonResultsCount()I
+    .locals 2
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mAmazonCard:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, -0x1
+
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mAmazonCard:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->getResultsCount()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public declared-synchronized getLayoutSize()Landroid/graphics/PointF;
@@ -471,7 +613,23 @@
     throw v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsTexture_lambda$1()V
+.method public isPlacesShown()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mPlacesShown:Z
+
+    return v0
+.end method
+
+.method public isWikiShown()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mWikiShown:Z
+
+    return v0
+.end method
+
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsTexture_6352()V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
@@ -522,17 +680,17 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->clear()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->loadTexture()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->loadTexture()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$66;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$l6fuBo5bkyYVT14bvp2HAZEeueg;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$66;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$l6fuBo5bkyYVT14bvp2HAZEeueg;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setListSizeChangeListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setListSizeChangeListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mAmazonCard:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;
 
@@ -640,6 +798,51 @@
     return-void
 .end method
 
+.method public onDrag(ZLandroid/graphics/PointF;Landroid/graphics/PointF;)V
+    .locals 10
+
+    const-wide/16 v6, 0x0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getOnScreenSize()Landroid/graphics/Point;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v0, v0
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+
+    invoke-virtual {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getLayoutSize()Landroid/graphics/PointF;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/graphics/PointF;->y:F
+
+    cmpg-float v0, v0, v1
+
+    if-gez v0, :cond_0
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+
+    const/4 v5, 0x0
+
+    move v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-wide v8, v6
+
+    invoke-virtual/range {v1 .. v9}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->onDrag(ZLandroid/graphics/PointF;Landroid/graphics/PointF;Lcom/motorola/camera/ui/widgets/gl/Vector3F;JJ)V
+
+    :cond_0
+    return-void
+.end method
+
 .method protected declared-synchronized onDraw([F[F)V
     .locals 2
 
@@ -658,11 +861,11 @@
 
     invoke-static {v0, v1, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->multiplyMatrix([F[F[F)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mMvpMatrix:[F
 
-    invoke-virtual {v0, v1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->draw([F[F)V
+    invoke-virtual {v0, v1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->draw([F[F)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -681,9 +884,9 @@
 .method protected onDrawFbo([F[F)V
     .locals 1
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->drawFbo([F[F)V
+    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->drawFbo([F[F)V
 
     return-void
 .end method
@@ -695,6 +898,10 @@
 
     invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->animationUpdate([F)Z
 
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+
+    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->onPreDraw([F[F)V
+
     return-void
 .end method
 
@@ -705,9 +912,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->onUiEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->onUiEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
@@ -762,9 +969,9 @@
     :try_start_0
     invoke-super {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->setAlpha(F)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setAlpha(F)V
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setAlpha(F)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -803,9 +1010,9 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setVisibility(Z)V
 
     :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mDefaultCard:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;
@@ -822,9 +1029,9 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setVisibility(Z)V
 
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mObjectTitleTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;
@@ -841,9 +1048,9 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setVisibility(Z)V
 
     :cond_2
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mGooglePlacesTexture:Lcom/motorola/camera/ui/widgets/gl/textures/GooglePlacesContentTexture;
@@ -881,79 +1088,27 @@
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
 
     :cond_3
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->onDirty()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->onDirty()V
 
     return-void
 .end method
 
 .method public setDisplayOrientation(I)V
-    .locals 0
+    .locals 2
 
     invoke-super {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->setDisplayOrientation(I)V
 
-    return-void
-.end method
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-.method public setMessage(Ljava/lang/String;Landroid/graphics/Bitmap;)V
-    .locals 3
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mDisplayOrientation:I
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setDisplayOrientation(I)V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->updateLayoutBounds()V
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->clear()V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mMessageCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;
-
-    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;->setContent(Ljava/lang/String;Landroid/graphics/Bitmap;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mMessageCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMessageCardTexture;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setVisibility(Z)V
-
-    :cond_0
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mActionsCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;
-
-    new-instance v1, Lcom/motorola/camera/detector/results/tidbit/actions/CancelAction;
-
-    invoke-direct {v1}, Lcom/motorola/camera/detector/results/tidbit/actions/CancelAction;-><init>()V
-
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->setContent(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mActionsCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->setVisibility(Z)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mActionsCardTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
-
-    :cond_1
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->onDirty()V
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->updateTranslations()V
 
     return-void
 .end method
@@ -962,6 +1117,8 @@
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->updateLayoutBounds()V
 
     return-void
 .end method
@@ -975,9 +1132,9 @@
 
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->updateTranslations()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->onDirty()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->onDirty()V
 
     return-void
 .end method
@@ -987,13 +1144,13 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->unloadTexture()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->unloadTexture()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setListSizeChangeListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setListSizeChangeListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -1041,9 +1198,9 @@
 
     const/4 v5, 0x0
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->getLayoutSize()Landroid/graphics/PointF;
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->getLayoutSize()Landroid/graphics/PointF;
 
     move-result-object v0
 
@@ -1069,9 +1226,9 @@
 
     iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mLayoutSize:Landroid/graphics/PointF;
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->mContentCardsList:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    invoke-virtual {v0, v5, v5, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setPostTranslation(FFF)V
+    invoke-virtual {v0, v5, v5, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setPostTranslation(FFF)V
 
     return-void
 .end method

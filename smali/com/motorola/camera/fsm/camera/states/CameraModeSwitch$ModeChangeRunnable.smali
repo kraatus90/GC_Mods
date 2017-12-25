@@ -129,13 +129,9 @@
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraKpi;->startKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
     :cond_1
-    sget-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {p2, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/Constants$UseCase;->CAMERA_INIT:Lcom/motorola/camera/fsm/camera/Constants$UseCase;
 
@@ -145,7 +141,7 @@
 
     if-eqz v1, :cond_2
 
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCamerasClosed()Z
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->allCamerasClosed()Z
 
     move-result v1
 
@@ -213,9 +209,9 @@
     :cond_4
     new-instance v1, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;
 
-    invoke-direct {v1, p0, v0, p2}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;-><init>(Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;Lcom/motorola/camera/fsm/camera/FsmContext;)V
+    invoke-direct {v1, p0, v0, p2}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;-><init>(Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable;Lcom/motorola/camera/device/CameraStateManager;Lcom/motorola/camera/fsm/camera/FsmContext;)V
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->addStateListener(Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/device/CameraStateManager;->addStateListener(Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;)V
 
     goto :goto_1
 .end method

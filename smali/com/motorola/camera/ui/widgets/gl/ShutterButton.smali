@@ -8,6 +8,7 @@
     value = {
         Lcom/motorola/camera/ui/widgets/gl/ShutterButton$1;,
         Lcom/motorola/camera/ui/widgets/gl/ShutterButton$2;,
+        Lcom/motorola/camera/ui/widgets/gl/ShutterButton$3;,
         Lcom/motorola/camera/ui/widgets/gl/ShutterButton$Flag;
     }
 .end annotation
@@ -40,6 +41,8 @@
 .field mMcfStateAdapter:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
 
 .field private mMode:I
+
+.field mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
 
 .field private mTsbOffset:F
 
@@ -107,6 +110,12 @@
     invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/ShutterButton$2;-><init>(Lcom/motorola/camera/ui/widgets/gl/ShutterButton;)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ShutterButton;->mMcfStateAdapter:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/ShutterButton$3;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/ShutterButton$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/ShutterButton;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ShutterButton;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;
 
@@ -718,6 +727,12 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/ShutterButton;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/ShutterButton;->setButtonKeepOut()V
 
@@ -1379,7 +1394,7 @@
 .end method
 
 .method protected declared-synchronized unloadTextures()V
-    .locals 1
+    .locals 2
 
     monitor-enter p0
 
@@ -1401,6 +1416,12 @@
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ShutterButton;->mButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->unloadTexture()V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/ShutterButton;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

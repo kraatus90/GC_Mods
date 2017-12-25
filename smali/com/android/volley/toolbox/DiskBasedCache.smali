@@ -60,13 +60,13 @@
 
     new-instance v0, Ljava/util/LinkedHashMap;
 
-    const/16 v1, 0x10
+    const/4 v1, 0x1
 
-    const/high16 v2, 0x3f400000    # 0.75f
+    const/16 v2, 0x10
 
-    const/4 v3, 0x1
+    const/high16 v3, 0x3f400000    # 0.75f
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
+    invoke-direct {v0, v2, v3, v1}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
     iput-object v0, p0, Lcom/android/volley/toolbox/DiskBasedCache;->mEntries:Ljava/util/Map;
 
@@ -250,11 +250,11 @@
 
     invoke-static {p0, v2, v3}, Lcom/android/volley/toolbox/DiskBasedCache;->a(Ljava/io/OutputStream;J)V
 
-    const/4 v1, 0x0
+    array-length v1, v0
 
-    array-length v2, v0
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v0, v1, v2}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p0, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
 
     return-void
 .end method
@@ -333,6 +333,8 @@
 .method static b(Ljava/io/InputStream;)J
     .locals 8
 
+    const-wide/16 v4, 0x0
+
     const-wide/16 v6, 0xff
 
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->read(Ljava/io/InputStream;)I
@@ -347,9 +349,7 @@
 
     shl-long/2addr v0, v2
 
-    const-wide/16 v2, 0x0
-
-    or-long/2addr v0, v2
+    or-long/2addr v0, v4
 
     invoke-static {p0}, Lcom/android/volley/toolbox/DiskBasedCache;->read(Ljava/io/InputStream;)I
 
@@ -662,13 +662,13 @@
     return-void
 
     :cond_3
-    const-string/jumbo v0, "Pruning old cache entries."
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string/jumbo v1, "Pruning old cache entries."
 
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -697,19 +697,15 @@
 
     if-nez v7, :cond_5
 
-    const-string/jumbo v7, "Could not delete cache entry for key=%s, filename=%s"
+    const/4 v7, 0x2
 
-    const/4 v8, 0x2
+    new-array v7, v7, [Ljava/lang/Object;
 
-    new-array v8, v8, [Ljava/lang/Object;
+    iget-object v8, v0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->key:Ljava/lang/String;
 
     const/4 v9, 0x0
 
-    iget-object v10, v0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->key:Ljava/lang/String;
-
-    aput-object v10, v8, v9
-
-    const/4 v9, 0x1
+    aput-object v8, v7, v9
 
     iget-object v0, v0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->key:Ljava/lang/String;
 
@@ -717,9 +713,13 @@
 
     move-result-object v0
 
-    aput-object v0, v8, v9
+    const/4 v8, 0x1
 
-    invoke-static {v7, v8}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v7, v8
+
+    const-string/jumbo v0, "Could not delete cache entry for key=%s, filename=%s"
+
+    invoke-static {v0, v7}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :goto_4
     invoke-interface {v6}, Ljava/util/Iterator;->remove()V
@@ -762,33 +762,29 @@
     goto :goto_4
 
     :cond_6
-    const-string/jumbo v0, "pruned %d files, %d bytes, %d ms"
+    const/4 v0, 0x3
 
-    const/4 v6, 0x3
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v6, v7
+    const/4 v6, 0x0
 
-    const/4 v1, 0x1
+    aput-object v1, v0, v6
 
-    iget-wide v8, p0, Lcom/android/volley/toolbox/DiskBasedCache;->mTotalSize:J
+    iget-wide v6, p0, Lcom/android/volley/toolbox/DiskBasedCache;->mTotalSize:J
 
-    sub-long v2, v8, v2
+    sub-long v2, v6, v2
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v6, v1
+    const/4 v2, 0x1
 
-    const/4 v1, 0x2
+    aput-object v1, v0, v2
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -798,11 +794,15 @@
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v6, v1
+    const/4 v2, 0x2
 
-    invoke-static {v0, v6}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "pruned %d files, %d bytes, %d ms"
+
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_3
 .end method
@@ -1009,13 +1009,13 @@
 
     iput-wide v0, p0, Lcom/android/volley/toolbox/DiskBasedCache;->mTotalSize:J
 
-    const-string/jumbo v0, "Cache cleared."
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string/jumbo v1, "Cache cleared."
 
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1152,30 +1152,30 @@
     move-object v1, v2
 
     :goto_1
+    const/4 v4, 0x2
+
     :try_start_4
-    const-string/jumbo v4, "%s: %s"
-
-    const/4 v5, 0x2
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v4, v4, [Ljava/lang/Object;
 
     invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v5, v6
+    const/4 v5, 0x0
 
-    const/4 v3, 0x1
+    aput-object v3, v4, v5
 
     invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v5, v3
+    const/4 v3, 0x1
 
-    invoke-static {v4, v5}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v4, v3
+
+    const-string/jumbo v0, "%s: %s"
+
+    invoke-static {v0, v4}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p0, p1}, Lcom/android/volley/toolbox/DiskBasedCache;->remove(Ljava/lang/String;)V
     :try_end_4
@@ -1325,24 +1325,24 @@
     return-void
 
     :cond_1
+    const/4 v0, 0x1
+
     :try_start_2
-    const-string/jumbo v0, "Unable to create cache dir %s"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/android/volley/toolbox/DiskBasedCache;->mRootDirectory:Ljava/io/File;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
 
     const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/android/volley/toolbox/DiskBasedCache;->mRootDirectory:Ljava/io/File;
+    aput-object v1, v0, v2
 
-    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    const-string/jumbo v1, "Unable to create cache dir %s"
 
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -1546,7 +1546,7 @@
 .end method
 
 .method public declared-synchronized put(Ljava/lang/String;Lcom/android/volley/Cache$Entry;)V
-    .locals 5
+    .locals 4
 
     monitor-enter p0
 
@@ -1601,21 +1601,21 @@
     :try_start_2
     invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->close()V
 
-    const-string/jumbo v1, "Failed to write header for %s"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x0
 
-    invoke-static {v1, v2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v1, v3
+
+    const-string/jumbo v2, "Failed to write header for %s"
+
+    invoke-static {v2, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v1, Ljava/io/IOException;
 
@@ -1644,22 +1644,22 @@
     return-void
 
     :cond_1
+    const/4 v1, 0x1
+
     :try_start_4
-    const-string/jumbo v1, "Could not clean up file %s"
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "Could not clean up file %s"
+
+    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
@@ -1674,7 +1674,7 @@
 .end method
 
 .method public declared-synchronized remove(Ljava/lang/String;)V
-    .locals 4
+    .locals 3
 
     monitor-enter p0
 
@@ -1699,26 +1699,26 @@
     return-void
 
     :cond_0
+    const/4 v0, 0x2
+
     :try_start_1
-    const-string/jumbo v0, "Could not delete cache entry for key=%s, filename=%s"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const/4 v2, 0x1
+    aput-object p1, v0, v1
 
     invoke-direct {p0, p1}, Lcom/android/volley/toolbox/DiskBasedCache;->getFilenameForKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v1, v2
+    const/4 v2, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "Could not delete cache entry for key=%s, filename=%s"
+
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

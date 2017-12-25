@@ -36,7 +36,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_guards_RetryCheckRunnable_lambda$1(Landroid/os/Bundle;Lcom/motorola/camera/fsm/camera/FsmContext;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_guards_RetryCheckRunnable_1528(Landroid/os/Bundle;Lcom/motorola/camera/fsm/camera/FsmContext;)V
     .locals 3
 
     const-string/jumbo v0, "error_retry_count"
@@ -91,13 +91,9 @@
 
     iput v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/guards/RetryCheckRunnable;->mRetryCount:I
 
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+    iget v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/guards/RetryCheckRunnable;->mRetryCount:I
 
-    move-result-object v1
-
-    iget v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/guards/RetryCheckRunnable;->mRetryCount:I
-
-    invoke-static {v1, v2}, Lcom/motorola/camera/JsonConfig;->parseRetryDelayMillis(Landroid/content/Context;I)J
+    invoke-static {v1}, Lcom/motorola/camera/JsonConfig;->getRetryDelayMillis(I)J
 
     move-result-wide v2
 
@@ -142,21 +138,18 @@
 
     move-result-object v1
 
-    new-instance v4, Lcom/motorola/camera/fsm/camera/states/runnables/guards/-$Lambda$155;
+    invoke-virtual {v1}, Lcom/motorola/camera/CameraApp;->removeCallbacksAndMessages()V
 
-    invoke-direct {v4, p0, v0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/-$Lambda$155;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v1
+
+    new-instance v4, Lcom/motorola/camera/fsm/camera/states/runnables/guards/-$Lambda$lljZtNJJfH387v_xfvx1o2E8OPc;
+
+    invoke-direct {v4, p0, v0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/guards/-$Lambda$lljZtNJJfH387v_xfvx1o2E8OPc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v1, v4, v2, v3}, Lcom/motorola/camera/CameraApp;->postDelayed(Ljava/lang/Runnable;J)V
 
-    :goto_0
-    return-void
-
     :cond_1
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->removeCallbacksAndMessages()V
-
-    goto :goto_0
+    return-void
 .end method

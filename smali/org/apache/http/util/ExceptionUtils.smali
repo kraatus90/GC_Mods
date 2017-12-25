@@ -33,20 +33,18 @@
 .end method
 
 .method private static getInitCauseMethod()Ljava/lang/reflect/Method;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v0, 0x1
 
     :try_start_0
     new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v1, 0x0
+    const-class v1, Ljava/lang/Throwable;
 
-    const-class v2, Ljava/lang/Throwable;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     const-class v1, Ljava/lang/Throwable;
 
@@ -63,7 +61,9 @@
     :catch_0
     move-exception v0
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static initCause(Ljava/lang/Throwable;Ljava/lang/Throwable;)V

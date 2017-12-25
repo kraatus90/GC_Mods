@@ -3,7 +3,7 @@
 .source "AlwaysAwarePopup.java"
 
 # interfaces
-.implements Lcom/motorola/camera/fsm/camera/subfsms/FaceDetectStateMachine$FaceDetectionListener;
+.implements Lcom/motorola/camera/landmarkdownload/LandmarkLocationHelper$PrefilterUpdateListener;
 
 
 # annotations
@@ -34,23 +34,59 @@
 
 
 # virtual methods
-.method public onFaceDetected([Landroid/hardware/camera2/params/Face;)V
-    .locals 3
+.method public onUpdate()V
+    .locals 4
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    if-eqz p1, :cond_0
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Z
 
-    array-length v2, p1
+    move-result v1
 
-    if-lez v2, :cond_0
+    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Z)Z
 
-    const/4 v0, 0x1
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->isCurrentBackWideCamera()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isLandmarkDetectionEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get5(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->isVisible()Z
+
+    move-result v1
+
+    xor-int/lit8 v1, v1, 0x1
+
+    const/4 v2, 0x3
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v2, v1, v3}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;IZZ)V
 
     :cond_0
-    invoke-static {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Z)Z
-
     return-void
 .end method

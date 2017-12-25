@@ -112,11 +112,11 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {p0, v0, p1, p2, v1}, Lcom/google/android/gms/common/api/Status;-><init>(IILjava/lang/String;Landroid/app/PendingIntent;)V
+    invoke-direct {p0, v1, p1, p2, v0}, Lcom/google/android/gms/common/api/Status;-><init>(IILjava/lang/String;Landroid/app/PendingIntent;)V
 
     return-void
 .end method
@@ -281,37 +281,37 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzzH:I
 
-    iget v2, p0, Lcom/google/android/gms/common/api/Status;->zzzH:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/common/api/Status;->zzOJ:I
 
-    iget v2, p0, Lcom/google/android/gms/common/api/Status;->zzOJ:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->zzQZ:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/Status;->zzQZ:Ljava/lang/String;
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->mPendingIntent:Landroid/app/PendingIntent;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/Status;->mPendingIntent:Landroid/app/PendingIntent;
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 
@@ -386,8 +386,6 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
-
     const/4 v4, 0x0
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/Status;->hasResolution()Z
@@ -401,6 +399,8 @@
     invoke-virtual {v0}, Landroid/app/PendingIntent;->getIntentSender()Landroid/content/IntentSender;
 
     move-result-object v1
+
+    const/4 v3, 0x0
 
     move-object v0, p1
 
@@ -425,21 +425,21 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "statusCode"
-
     invoke-direct {p0}, Lcom/google/android/gms/common/api/Status;->zzkv()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/internal/zzu$zza;->zzg(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/zzu$zza;
+    const-string/jumbo v2, "statusCode"
+
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzu$zza;->zzg(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/zzu$zza;
 
     move-result-object v0
 
-    const-string/jumbo v1, "resolution"
+    iget-object v1, p0, Lcom/google/android/gms/common/api/Status;->mPendingIntent:Landroid/app/PendingIntent;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/Status;->mPendingIntent:Landroid/app/PendingIntent;
+    const-string/jumbo v2, "resolution"
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/internal/zzu$zza;->zzg(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/zzu$zza;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzu$zza;->zzg(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/zzu$zza;
 
     move-result-object v0
 

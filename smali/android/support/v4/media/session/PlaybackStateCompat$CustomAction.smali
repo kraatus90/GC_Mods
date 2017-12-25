@@ -116,19 +116,19 @@
 .method public static fromCustomAction(Ljava/lang/Object;)Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
     .locals 5
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     if-nez p0, :cond_1
 
     :cond_0
-    return-object v3
+    return-object v2
 
     :cond_1
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x15
+    const/16 v1, 0x15
 
-    if-lt v1, v2, :cond_0
+    if-lt v0, v1, :cond_0
 
     new-instance v0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
 

@@ -326,16 +326,16 @@
     return-object v0
 .end method
 
-.method static isMod360(Landroid/hardware/camera2/CameraCharacteristics;)Z
+.method static isMod360(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics;)Z
     .locals 2
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->MODS_CAMERA_PARAMETERS_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->MODS_CAMERA_PARAMETERS_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->MODS_CAMERA_PARAMETERS_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->MODS_CAMERA_PARAMETERS_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {p0, v0}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCharacteristics(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-virtual {v0, p0, p1}, Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics;)Ljava/lang/Object;
 
     move-result-object v0
 

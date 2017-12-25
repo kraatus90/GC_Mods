@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private mAppCompatProgressBarHelper:Landroid/support/v7/widget/AppCompatProgressBarHelper;
+.field private final mAppCompatProgressBarHelper:Landroid/support/v7/widget/AppCompatProgressBarHelper;
 
 
 # direct methods
@@ -49,16 +49,16 @@
 
 # virtual methods
 .method protected declared-synchronized onMeasure(II)V
-    .locals 4
+    .locals 2
 
     monitor-enter p0
 
     :try_start_0
     invoke-super {p0, p1, p2}, Landroid/widget/RatingBar;->onMeasure(II)V
 
-    iget-object v2, p0, Landroid/support/v7/widget/AppCompatRatingBar;->mAppCompatProgressBarHelper:Landroid/support/v7/widget/AppCompatProgressBarHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatRatingBar;->mAppCompatProgressBarHelper:Landroid/support/v7/widget/AppCompatProgressBarHelper;
 
-    invoke-virtual {v2}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->getSampleTime()Landroid/graphics/Bitmap;
+    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->getSampleTime()Landroid/graphics/Bitmap;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -75,34 +75,34 @@
     :try_start_1
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v2
+    move-result v0
 
     invoke-virtual {p0}, Landroid/support/v7/widget/AppCompatRatingBar;->getNumStars()I
 
-    move-result v3
+    move-result v1
 
-    mul-int v1, v2, v3
+    mul-int/2addr v0, v1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v1, p1, v2}, Landroid/support/v4/view/ViewCompat;->resolveSizeAndState(III)I
+    invoke-static {v0, p1, v1}, Landroid/view/View;->resolveSizeAndState(III)I
 
-    move-result v2
+    move-result v0
 
     invoke-virtual {p0}, Landroid/support/v7/widget/AppCompatRatingBar;->getMeasuredHeight()I
 
-    move-result v3
+    move-result v1
 
-    invoke-virtual {p0, v2, v3}, Landroid/support/v7/widget/AppCompatRatingBar;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/support/v7/widget/AppCompatRatingBar;->setMeasuredDimension(II)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
     :catchall_0
-    move-exception v2
+    move-exception v0
 
     monitor-exit p0
 
-    throw v2
+    throw v0
 .end method

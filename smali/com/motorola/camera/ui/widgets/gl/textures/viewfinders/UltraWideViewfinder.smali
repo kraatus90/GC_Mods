@@ -4,9 +4,25 @@
 
 
 # static fields
+.field private static final U_FF_LEFT:F = 0.7917f
+
+.field private static final U_FF_RIGHT:F = 0.2083f
+
+.field private static final U_LEFT:F = 0.2917f
+
+.field private static final U_RIGHT:F = 0.7083f
+
 .field private static final VERTICES_DATA_FF:[F
 
+.field private static final VERTICES_DATA_FF_POST_CAPTURE:[F
+
 .field private static final VERTICES_DATA_RF:[F
+
+.field private static final VERTICES_DATA_RF_POST_CAPTURE:[F
+
+.field private static final V_BOTTOM:F = 0.2917f
+
+.field private static final V_TOP:F = 0.7083f
 
 
 # instance fields
@@ -33,13 +49,29 @@
 
     sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->VERTICES_DATA_RF:[F
 
-    const/16 v0, 0x28
+    const/16 v0, 0x10
 
     new-array v0, v0, [F
 
     fill-array-data v0, :array_1
 
+    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->VERTICES_DATA_RF_POST_CAPTURE:[F
+
+    const/16 v0, 0x28
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_2
+
     sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->VERTICES_DATA_FF:[F
+
+    const/16 v0, 0x20
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_3
+
+    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->VERTICES_DATA_FF_POST_CAPTURE:[F
 
     return-void
 
@@ -72,6 +104,26 @@
     :array_1
     .array-data 4
         -0x40800000    # -1.0f
+        0x3f800000    # 1.0f
+        0x3e9559b4    # 0.2917f
+        0x3e9559b4    # 0.2917f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f355326    # 0.7083f
+        0x3e9559b4    # 0.2917f
+        -0x40800000    # -1.0f
+        -0x40800000    # -1.0f
+        0x3e9559b4    # 0.2917f
+        0x3f355326    # 0.7083f
+        0x3f800000    # 1.0f
+        -0x40800000    # -1.0f
+        0x3f355326    # 0.7083f
+        0x3f355326    # 0.7083f
+    .end array-data
+
+    :array_2
+    .array-data 4
+        -0x40800000    # -1.0f
         -0x40800000    # -1.0f
         0x0
         0x3f4aacda    # 0.7917f
@@ -112,6 +164,42 @@
         0x3e554c98    # 0.2083f
         0x3f355326    # 0.7083f
     .end array-data
+
+    :array_3
+    .array-data 4
+        -0x40800000    # -1.0f
+        0x3f800000    # 1.0f
+        0x3f4aacda    # 0.7917f
+        0x3e9559b4    # 0.2917f
+        0x0
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3e9559b4    # 0.2917f
+        -0x40800000    # -1.0f
+        -0x40800000    # -1.0f
+        0x3f4aacda    # 0.7917f
+        0x3f355326    # 0.7083f
+        0x0
+        -0x40800000    # -1.0f
+        0x3f800000    # 1.0f
+        0x3f355326    # 0.7083f
+        0x0
+        0x3f800000    # 1.0f
+        0x0
+        0x3e9559b4    # 0.2917f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3e554c98    # 0.2083f
+        0x3e9559b4    # 0.2917f
+        0x0
+        -0x40800000    # -1.0f
+        0x0
+        0x3f355326    # 0.7083f
+        0x3f800000    # 1.0f
+        -0x40800000    # -1.0f
+        0x3e554c98    # 0.2083f
+        0x3f355326    # 0.7083f
+    .end array-data
 .end method
 
 .method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
@@ -120,6 +208,22 @@
     invoke-direct {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/ViewfinderTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
 
     return-void
+.end method
+
+.method public static getVerticesData(Z)[F
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->VERTICES_DATA_FF_POST_CAPTURE:[F
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/UltraWideViewfinder;->VERTICES_DATA_RF_POST_CAPTURE:[F
+
+    goto :goto_0
 .end method
 
 

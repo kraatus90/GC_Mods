@@ -27,11 +27,11 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/16 v0, 0x191
+    const-string/jumbo v0, "WWW-Authenticate"
 
-    const-string/jumbo v1, "WWW-Authenticate"
+    const/16 v1, 0x191
 
-    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/client/AuthenticationStrategyImpl;-><init>(ILjava/lang/String;)V
+    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/client/AuthenticationStrategyImpl;-><init>(ILjava/lang/String;)V
 
     return-void
 .end method

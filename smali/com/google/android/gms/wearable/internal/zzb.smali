@@ -35,37 +35,37 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzzH:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzzH:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzyZ()Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzaLc:[Landroid/content/IntentFilter;
+    iget-object v1, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzaLc:[Landroid/content/IntentFilter;
 
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    const/4 v2, 0x3
 
-    const/4 v1, 0x4
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzaLd:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzaLd:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x4
 
-    const/4 v1, 0x5
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzaLe:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/wearable/internal/AddListenerRequest;->zzaLe:Ljava/lang/String;
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x5
+
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 

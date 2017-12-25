@@ -238,14 +238,14 @@
 .end method
 
 .method public getRequestInterceptor(I)Lorg/apache/http/HttpRequestInterceptor;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     if-gez p1, :cond_1
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     iget-object v0, p0, Lorg/apache/http/protocol/BasicHttpProcessor;->a:Ljava/util/List;
@@ -280,14 +280,14 @@
 .end method
 
 .method public getResponseInterceptor(I)Lorg/apache/http/HttpResponseInterceptor;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     if-gez p1, :cond_1
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     iget-object v0, p0, Lorg/apache/http/protocol/BasicHttpProcessor;->b:Ljava/util/List;

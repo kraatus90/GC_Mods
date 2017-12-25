@@ -28,6 +28,16 @@
 
 
 # virtual methods
+.method public getCaptureMode()I
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/capturedmediadata/CapturedMediaData;->mCaptureRecord:Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
+
+    iget v0, v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
+
+    return v0
+.end method
+
 .method public getCaptureRecord()Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
     .locals 1
 

@@ -21,7 +21,7 @@
 
 .field public static final cancel_button_image_alpha:I = 0x7f0f0002
 
-.field public static final status_bar_notification_info_maxnum:I = 0x7f0f0006
+.field public static final status_bar_notification_info_maxnum:I = 0x7f0f0007
 
 
 # direct methods

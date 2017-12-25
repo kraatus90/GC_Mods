@@ -76,55 +76,56 @@
 
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 7
-
-    const/4 v6, 0x0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v5
-
-    float-to-int v3, v5
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v5
-
-    float-to-int v4, v5
-
-    const/4 v2, 0x0
+    .locals 6
 
     const/4 v1, 0x1
 
     const/4 v0, 0x0
 
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v2
+
+    float-to-int v3, v2
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v2
+
+    float-to-int v4, v2
+
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v5
+    move-result v2
 
-    packed-switch v5, :pswitch_data_0
+    packed-switch v2, :pswitch_data_0
+
+    move v2, v0
 
     :cond_0
     :goto_0
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
     :goto_1
     return v0
 
     :pswitch_0
-    iget-object v5, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mTargetBounds:Landroid/graphics/Rect;
+    iget-object v2, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mTargetBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v5, v3, v4}, Landroid/graphics/Rect;->contains(II)Z
+    invoke-virtual {v2, v3, v4}, Landroid/graphics/Rect;->contains(II)Z
 
-    move-result v5
+    move-result v2
 
-    if-eqz v5, :cond_0
+    if-nez v2, :cond_1
 
-    const/4 v5, 0x1
+    move v2, v0
 
-    iput-boolean v5, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
+    goto :goto_0
 
-    const/4 v2, 0x1
+    :cond_1
+    iput-boolean v1, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
+
+    move v2, v1
 
     goto :goto_0
 
@@ -141,78 +142,78 @@
 
     if-nez v5, :cond_0
 
-    const/4 v1, 0x0
+    move v1, v0
 
     goto :goto_0
 
     :pswitch_2
     iget-boolean v2, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
 
-    iput-boolean v6, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateTargeted:Z
 
     goto :goto_0
 
-    :cond_1
-    if-nez v1, :cond_3
-
     :cond_2
-    iget-object v5, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
+    if-nez v1, :cond_4
 
-    iget v5, v5, Landroid/graphics/Rect;->left:I
+    :cond_3
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
 
-    sub-int v5, v3, v5
+    iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    int-to-float v5, v5
+    sub-int v0, v3, v0
 
-    iget-object v6, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
+    int-to-float v0, v0
 
-    iget v6, v6, Landroid/graphics/Rect;->top:I
+    iget-object v1, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
 
-    sub-int v6, v4, v6
+    iget v1, v1, Landroid/graphics/Rect;->top:I
 
-    int-to-float v6, v6
+    sub-int v1, v4, v1
 
-    invoke-virtual {p1, v5, v6}, Landroid/view/MotionEvent;->setLocation(FF)V
+    int-to-float v1, v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
 
     :goto_2
-    iget-object v5, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
-    invoke-virtual {v5, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     goto :goto_1
 
-    :cond_3
-    iget-object v5, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
+    :cond_4
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mActualBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v5, v3, v4}, Landroid/graphics/Rect;->contains(II)Z
+    invoke-virtual {v0, v3, v4}, Landroid/graphics/Rect;->contains(II)Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_2
+    if-nez v0, :cond_3
 
-    iget-object v5, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
-    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
-    move-result v5
+    move-result v0
 
-    div-int/lit8 v5, v5, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    int-to-float v5, v5
+    int-to-float v0, v0
 
-    iget-object v6, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
+    iget-object v1, p0, Landroid/support/v7/widget/SearchView$UpdatableTouchDelegate;->mDelegateView:Landroid/view/View;
 
-    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
 
-    move-result v6
+    move-result v1
 
-    div-int/lit8 v6, v6, 0x2
+    div-int/lit8 v1, v1, 0x2
 
-    int-to-float v6, v6
+    int-to-float v1, v1
 
-    invoke-virtual {p1, v5, v6}, Landroid/view/MotionEvent;->setLocation(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
 
     goto :goto_2
 

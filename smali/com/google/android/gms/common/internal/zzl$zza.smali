@@ -23,9 +23,9 @@
 .method public constructor <init>(Landroid/content/ComponentName;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzso:Ljava/lang/String;
 
@@ -41,9 +41,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,7 +51,9 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzso:Ljava/lang/String;
 
-    iput-object v1, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzTP:Landroid/content/ComponentName;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzTP:Landroid/content/ComponentName;
 
     return-void
 .end method
@@ -118,17 +118,17 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzso:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzso:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzTP:Landroid/content/ComponentName;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zzl$zza;->zzTP:Landroid/content/ComponentName;
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

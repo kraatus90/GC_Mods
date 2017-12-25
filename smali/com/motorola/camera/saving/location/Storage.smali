@@ -225,13 +225,13 @@
 .end method
 
 .method public static createFile(Landroid/net/Uri;Lcom/motorola/camera/saving/FileName;)Landroid/net/Uri;
-    .locals 9
+    .locals 8
 
-    const/4 v8, 0x0
+    const/4 v1, 0x0
 
     if-nez p0, :cond_0
 
-    return-object v8
+    return-object v1
 
     :cond_0
     invoke-static {p0}, Lcom/motorola/camera/saving/location/Storage;->checkStorageLocation(Landroid/net/Uri;)V
@@ -246,9 +246,9 @@
 
     invoke-static {p0}, Lcom/motorola/camera/saving/location/Storage;->isFileUri(Landroid/net/Uri;)Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_6
+    if-eqz v4, :cond_6
 
     :try_start_0
     invoke-virtual {p0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -257,9 +257,9 @@
 
     invoke-virtual {p1}, Lcom/motorola/camera/saving/FileName;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0, v4}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
@@ -267,49 +267,49 @@
 
     move-result-object v0
 
-    new-instance v1, Ljava/io/File;
+    new-instance v4, Ljava/io/File;
 
     invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
+    invoke-virtual {v4}, Ljava/io/File;->createNewFile()Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_2
+    if-eqz v4, :cond_2
 
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v4, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v4, :cond_1
 
-    sget-object v1, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
+    sget-object v4, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "createNewFile "
+    const-string/jumbo v6, "createNewFile "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    const-string/jumbo v5, " dur:"
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    move-result-object v4
+    const-string/jumbo v6, " dur:"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -317,7 +317,7 @@
 
     sub-long v2, v6, v2
 
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -325,33 +325,33 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
     return-object v0
 
     :cond_2
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v4, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v4, :cond_3
 
-    sget-object v1, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
+    sget-object v4, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "file already exists "
+    const-string/jumbo v6, "file already exists "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v5
 
     invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -359,7 +359,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
     const/16 v0, 0x10
@@ -372,9 +372,9 @@
 
     invoke-virtual {p1}, Lcom/motorola/camera/saving/FileName;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0, v4}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
     move-result-object v0
 
@@ -382,49 +382,49 @@
 
     move-result-object v0
 
-    new-instance v1, Ljava/io/File;
+    new-instance v4, Ljava/io/File;
 
     invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
+    invoke-virtual {v4}, Ljava/io/File;->createNewFile()Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_5
+    if-eqz v4, :cond_5
 
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v4, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v4, :cond_4
 
-    sget-object v1, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
+    sget-object v4, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "createNewFile "
+    const-string/jumbo v6, "createNewFile "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v6
 
-    const-string/jumbo v5, " dur:"
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v5
 
-    move-result-object v4
+    const-string/jumbo v6, " dur:"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -432,7 +432,7 @@
 
     sub-long v2, v6, v2
 
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -440,7 +440,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
@@ -454,66 +454,70 @@
     :catch_0
     move-exception v0
 
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
-    sget-object v1, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
+    sget-object v2, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "couldn\'t create file "
+    const-string/jumbo v4, "couldn\'t create file "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_5
-    return-object v8
+    return-object v1
 
     :cond_6
     invoke-static {v0, p0}, Landroid/provider/DocumentsContract;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
 
-    move-result v1
+    move-result v4
 
-    if-eqz v1, :cond_5
+    if-eqz v4, :cond_5
 
+    :try_start_1
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
-    move-result-object v1
+    move-result-object v4
 
     invoke-virtual {p1}, Lcom/motorola/camera/saving/FileName;->createExtension()Ljava/lang/String;
 
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/webkit/MimeTypeMap;->getMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v4
-
-    invoke-virtual {v1, v4}, Landroid/webkit/MimeTypeMap;->getMimeTypeFromExtension(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
 
     invoke-virtual {p1}, Lcom/motorola/camera/saving/FileName;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-static {v0, p0, v1, v4}, Landroid/provider/DocumentsContract;->createDocument(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {v0, p0, v4, v5}, Landroid/provider/DocumentsContract;->createDocument(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
     move-result-object v0
 
+    :goto_0
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
     if-eqz v1, :cond_7
@@ -562,6 +566,28 @@
 
     :cond_7
     return-object v0
+
+    :catch_1
+    move-exception v0
+
+    sget-boolean v4, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v4, :cond_8
+
+    sget-object v4, Lcom/motorola/camera/saving/location/Storage;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v5, "Could not create file"
+
+    invoke-static {v4, v5, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_8
+    move-object v0, v1
+
+    goto :goto_0
 .end method
 
 .method private static findAlternateLocation()Lcom/motorola/camera/saving/location/StorageLocation;
@@ -676,6 +702,12 @@
     move-result v3
 
     if-ne v3, v1, :cond_0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/saving/location/StorageLocation;->isAvailable()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     return-object v0
 
@@ -1289,12 +1321,16 @@
     goto :goto_0
 .end method
 
-.method public static register(Landroid/app/Activity;)Z
+.method public static register(Landroid/app/Activity;Lcom/motorola/camera/EventListener;)Z
     .locals 2
 
     invoke-static {}, Lcom/motorola/camera/saving/location/Storage;->getInstance()Lcom/motorola/camera/saving/location/Storage;
 
     move-result-object v0
+
+    iget-object v1, v0, Lcom/motorola/camera/saving/location/Storage;->mPool:Lcom/motorola/camera/saving/location/StoragePool;
+
+    invoke-virtual {v1, p1}, Lcom/motorola/camera/saving/location/StoragePool;->setEventListener(Lcom/motorola/camera/EventListener;)V
 
     iget-object v1, v0, Lcom/motorola/camera/saving/location/Storage;->mActivityList:Ljava/util/Set;
 
@@ -1445,14 +1481,14 @@
 
     if-ne v0, v3, :cond_0
 
-    const v0, 0x7f0800fd
+    const v0, 0x7f080101
 
     :goto_0
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v1
 
-    const v2, 0x7f0800c7
+    const v2, 0x7f0800c8
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1483,7 +1519,7 @@
     return-void
 
     :cond_0
-    const v0, 0x7f0800d0
+    const v0, 0x7f0800d1
 
     goto :goto_0
 .end method

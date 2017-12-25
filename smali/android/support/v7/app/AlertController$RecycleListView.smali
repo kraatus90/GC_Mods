@@ -38,9 +38,9 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->RecycleListView:[I
+    sget-object v0, Landroid/support/v7/appcompat/R$styleable;->RecycleListView:[I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -56,9 +56,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelOffset(II)I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Landroid/support/v7/app/AlertController$RecycleListView;->mPaddingTopNoTitle:I
+    iput v0, p0, Landroid/support/v7/app/AlertController$RecycleListView;->mPaddingTopNoTitle:I
 
     return-void
 .end method
@@ -73,23 +73,23 @@
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/app/AlertController$RecycleListView;->getPaddingLeft()I
 
-    move-result v1
+    move-result v2
 
     if-nez p1, :cond_2
 
-    iget v3, p0, Landroid/support/v7/app/AlertController$RecycleListView;->mPaddingTopNoTitle:I
+    iget v0, p0, Landroid/support/v7/app/AlertController$RecycleListView;->mPaddingTopNoTitle:I
 
     :goto_0
     invoke-virtual {p0}, Landroid/support/v7/app/AlertController$RecycleListView;->getPaddingRight()I
 
-    move-result v2
+    move-result v3
 
     if-nez p2, :cond_3
 
-    iget v0, p0, Landroid/support/v7/app/AlertController$RecycleListView;->mPaddingBottomNoButtons:I
+    iget v1, p0, Landroid/support/v7/app/AlertController$RecycleListView;->mPaddingBottomNoButtons:I
 
     :goto_1
-    invoke-virtual {p0, v1, v3, v2, v0}, Landroid/support/v7/app/AlertController$RecycleListView;->setPadding(IIII)V
+    invoke-virtual {p0, v2, v0, v3, v1}, Landroid/support/v7/app/AlertController$RecycleListView;->setPadding(IIII)V
 
     :goto_2
     return-void
@@ -102,14 +102,14 @@
     :cond_2
     invoke-virtual {p0}, Landroid/support/v7/app/AlertController$RecycleListView;->getPaddingTop()I
 
-    move-result v3
+    move-result v0
 
     goto :goto_0
 
     :cond_3
     invoke-virtual {p0}, Landroid/support/v7/app/AlertController$RecycleListView;->getPaddingBottom()I
 
-    move-result v0
+    move-result v1
 
     goto :goto_1
 .end method

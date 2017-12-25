@@ -148,7 +148,7 @@
     <string name="cancel">Batal</string>
     <string name="capture_failure">Gagal menjepret. Coba lagi.</string>
     <string name="checkbox_do_not_show">Jangan perlihatkan ini lagi</string>
-    <string name="cloudsight_terms">Gambar Anda akan dikirim ke CloudSight untuk menyediakan hasil pencarian. &lt;br/>&lt;br/> Dengan melanjutkan, Anda menyetujui&lt;a href=%1$s>Kebijakan Privasi&lt;/a> CloudSight.</string>
+    <string name="cloudsight_terms">Setiap kali pengenalan objek digunakan, gambar dan lokasi (jika diaktifkan) akan dikirim ke pihak ketiga untuk menyediakan hasil penelusuran.&lt;br/>&lt;br/> Dengan melanjutkan, Anda menyetujui&lt;a href=%1$s>Kebijakan Privasi&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama gagal. Harap coba lagi.</string>
     <string name="dailog_panorama_not_taken">Gambar panorama tidak diambil.</string>
     <string name="dialog_access_sd_fail">Tidak dapat merekam media. Tidak dapat mengakses kartu SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Perangkat tidak didukung</string>
     <string name="dialog_disagree">Tidak setuju</string>
     <string name="dialog_dismiss">Jangan tampilkan lagi</string>
+    <string name="dialog_download">Unduh</string>
     <string name="dialog_external_sd_missing">Tidak dapat merekam gambar. Kartu SD tidak dapat diakses. Mengalihkan ke penyimpanan ponsel internal</string>
     <string name="dialog_first_time_set_pure_raw_message">"Jenis file tanpa pemrosesan ini dipakai untuk mengedit foto secara profesional.
 
@@ -247,6 +248,7 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="help_next">Berikutnya</string>
     <string name="image_360_desc">Ini adalah foto 360. Anda dapat mengedit foto ini dengan Moto 360 Editor.</string>
     <string name="image_360_name">Foto 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">KEDALAMAN DIAKTIFKAN</string>
     <string name="indicate_mode_mono">TRUE B&amp;W</string>
@@ -258,16 +260,19 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="indicate_mode_ultra_wide">SUDUT ULTRA-LEBAR</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">SUDUT LEBAR</string>
+    <string name="indicate_mode_wide_angle_selfie">SWAFOTO SUDUT LEBAR</string>
     <string name="internal_storage">penyimpanan internal</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Pengenalan landmark menawarkan informasi tentang landmark populer di seluruh dunia.&lt;br/>&lt;br/>Instal untuk mengaktifkan fitur ini.</string>
-    <string name="landmark_install_over_data">Ukuran unduhan Pengenalan landmark adalah 92 MB. Menginstalnya lewat data seluler dapat menyebabkan biaya data tambahan.</string>
-    <string name="landmark_notification_downloading">Mengunduh Pengenalan landmark</string>
-    <string name="landmark_notification_install">Menginstal Pengenalan landmark</string>
-    <string name="landmark_notification_install_complete">Instalasi Pengenalan landmark selesai</string>
-    <string name="landmark_notification_install_failed">Instalasi Pengenalan landmark gagal</string>
+    <string name="landmark_install_message">Pengenalan landmark menawarkan informasi tentang landmark populer di seluruh dunia.&lt;br/>&lt;br/>Unduh Database landmark untuk mengaktifkan fitur ini.</string>
+    <string name="landmark_install_over_data">Ukuran unduhan Database landmark adalah 92 MB. Mengunduhnya lewat data seluler dapat menyebabkan biaya data tambahan.</string>
+    <string name="landmark_notification_downloading">Mengunduh Database landmark</string>
+    <string name="landmark_notification_install">Menginstal Database landmark</string>
+    <string name="landmark_notification_install_complete">Instalasi Database landmark selesai</string>
+    <string name="landmark_notification_install_failed">Instalasi Database landmark gagal</string>
     <string name="landmark_notification_install_invalid_url">Database landmark tidak tersedia, perbarui ke versi Kamera terbaru</string>
-    <string name="landmark_notification_install_out_of_space">Ruang penyimpanan yang tersedia tidak cukup untuk menginstal Pengenalan landmark</string>
+    <string name="landmark_notification_install_out_of_space">Ruang penyimpanan yang tersedia tidak cukup untuk menginstal Database landmark</string>
+    <string name="landmark_notification_paused">Pengunduhan database landmark akan dilanjutkan saat internet tersedia</string>
+    <string name="landmark_notification_queued">Database landmark akan mulai diunduh saat internet tersedia</string>
     <string name="main_setting_amz_barcode">Pemindai kode batang Amazon</string>
     <string name="main_setting_amz_privacy">Pemberitahuan Privasi Amazon</string>
     <string name="main_setting_amz_terms">Syarat Penggunaan</string>
@@ -290,6 +295,8 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="main_setting_image_ratio">Ukuran foto (belakang)</string>
     <string name="main_setting_image_ratio_front">Ukuran foto (depan)</string>
     <string name="main_setting_landmark_detection">Pengenalan landmark</string>
+    <string name="main_setting_landmark_version_current">Versi database: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Database tidak terinstal</string>
     <string name="main_setting_licenses">Lisensi sumber terbuka</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="perm_required_alert_title">Memerlukan izin</string>
     <string name="photos_depth_desc">Gunakan editor kedalaman untuk memilih fokus, mengganti latar belakang atau memilih area untuk diubah menjadi hitam dan putih.</string>
     <string name="photos_depth_name">Kedalaman diaktifkan</string>
+    <string name="photos_notification_desc">Dapatkan penyimpanan tidak terbatas dengan Google Foto</string>
+    <string name="photos_notification_title">Mencadangkan ke Google Foto</string>
+    <string name="qcfa_resolution_description">Adaptif Cahaya Rendah</string>
     <string name="retake">Ambil Kembali</string>
     <string name="second_10">10dtk</string>
     <string name="second_3">3dtk</string>
@@ -367,6 +377,7 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="setting_mode_slow_motion">Gerak lambat</string>
     <string name="setting_mode_ultra_wide">Sudut ultra-lebar</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Swafoto sudut lebar</string>
     <string name="setting_off">Nonaktif</string>
     <string name="setting_on">Aktif</string>
     <string name="setting_persist">Tahan</string>
@@ -383,20 +394,25 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="setting_timer_dialog_title">PENGATUR WAKTU</string>
     <string name="setting_torch">Senter</string>
     <string name="setting_true">true</string>
+    <string name="shortcut_desc_depth">Foto kdlmn</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Kamera Pintar</string>
+    <string name="smartcam_no_detections">Tidak ada objek atau landmark yang disimpan</string>
     <string name="storage_location_external">Kartu SD</string>
     <string name="storage_location_internal">Ponsel</string>
     <string name="storage_unavailable">Penyimpanan tidak tersedia</string>
+    <string name="toast_battery_saver">Saat ini Anda dalam mode hemat daya, beberapa fitur mungkin terbatas</string>
     <string name="toast_geotag_message_1">Anda harus memberi izin lokasi untuk mengaktifkan menyimpan lokasi.</string>
     <string name="toast_geotag_message_2">Setelan lokasi hanya aktif setelah setelan lokasi sistem diaktifkan.</string>
     <string name="tooltip_camera_switch_360">Coba beralih ke opsi kamera yang berbeda.</string>
     <string name="tooltip_capture_360">Coba ambil foto atau video 360° dengan mengetuk tombol rana ini.</string>
-    <string name="tooltip_capture_key_360">Selain itu, coba ambil gambar dengan tombol rana di bagian belakang mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Ambil foto dengan info ekstra untuk memungkinkan fitur pengeditan spesial.</string>
+    <string name="tooltip_capture_key_360">Coba juga ambil gambar dengan tombol rana di bagian belakang Mod.</string>
     <string name="tooltip_first_use_zoom_button">Ketuk di sini untuk beralih ke sudut lebar.</string>
     <string name="tooltip_gallery_360">Lihat hasil foto atau video 360° dengan mengusap ke kiri.</string>
     <string name="tooltip_minimap_viewfinder">Putar bagian bawah gambar ke kiri atau kanan.</string>
     <string name="tooltip_mode_switch_360">Coba ambil gambar 360° dalam mode yang berbeda!</string>
+    <string name="tooltip_modes_list">Temukan cara baru mengambil foto Anda.</string>
     <string name="tooltip_smart_camera">Ketuk untuk mencari tahu selengkapnya tentang objek.</string>
     <string name="tooltip_smart_camera_disable">Anda dapat menonaktifkannya di Setelan.</string>
     <string name="tooltip_spherical_viewfinder">Putar atau perbesar &amp; perkecil gambar untuk mengontrol tampilan.</string>
@@ -419,4 +435,10 @@ Setujui di bawah ini, lalu aktifkan Lokasi di Setelan."</string>
     <string name="zoom_hint_full">PENUH</string>
     <string name="zoom_hint_wide">LEBAR</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">TIMELAPSE</string>
+    <string name="setting_mode_timelapse">Timelapse</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

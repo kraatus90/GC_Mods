@@ -278,9 +278,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v6, 0x4
-
     const/4 v3, 0x0
+
+    const/4 v6, 0x4
 
     const/4 v1, 0x0
 
@@ -304,39 +304,39 @@
 
     aput-object v0, v3, v1
 
-    const/4 v0, 0x1
+    const-string/jumbo v0, "Y"
 
-    const-string/jumbo v4, "Y"
+    const/4 v4, 0x1
 
-    aput-object v4, v3, v0
+    aput-object v0, v3, v4
 
-    const/4 v0, 0x2
+    const-string/jumbo v0, "Cb"
 
-    const-string/jumbo v4, "Cb"
+    const/4 v4, 0x2
 
-    aput-object v4, v3, v0
+    aput-object v0, v3, v4
 
-    const/4 v0, 0x3
+    const-string/jumbo v0, "Cr"
 
-    const-string/jumbo v4, "Cr"
+    const/4 v4, 0x3
 
-    aput-object v4, v3, v0
+    aput-object v0, v3, v4
 
     const-string/jumbo v0, "R"
 
     aput-object v0, v3, v6
 
-    const/4 v0, 0x5
+    const-string/jumbo v0, "G"
 
-    const-string/jumbo v4, "G"
+    const/4 v4, 0x5
 
-    aput-object v4, v3, v0
+    aput-object v0, v3, v4
 
-    const/4 v0, 0x6
+    const-string/jumbo v0, "B"
 
-    const-string/jumbo v4, "B"
+    const/4 v4, 0x6
 
-    aput-object v4, v3, v0
+    aput-object v0, v3, v4
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -390,9 +390,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v3, 0x1
-
     const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     iget-object v0, p0, Lcom/drew/metadata/exif/ExifSubIFDDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -3111,9 +3111,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const-wide/high16 v4, 0x4000000000000000L    # 2.0
-
     const/4 v2, 0x0
+
+    const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
     iget-object v0, p0, Lcom/drew/metadata/exif/ExifSubIFDDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -3593,9 +3593,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/16 v7, 0xa
+    const/4 v7, 0x0
 
-    const/4 v6, 0x0
+    const/16 v6, 0xa
 
     iget-object v0, p0, Lcom/drew/metadata/exif/ExifSubIFDDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -3617,15 +3617,15 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const-string/jumbo v1, "ASCII"
+    const-string/jumbo v1, "file.encoding"
 
-    const-string/jumbo v3, "file.encoding"
+    invoke-static {v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v3}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v3
+    const-string/jumbo v3, "ASCII"
 
-    invoke-interface {v0, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "UNICODE"
 
@@ -3642,7 +3642,7 @@
     :try_start_0
     array-length v1, v2
 
-    if-ge v1, v7, :cond_3
+    if-ge v1, v6, :cond_3
 
     :cond_0
     new-instance v0, Ljava/lang/String;
@@ -3664,7 +3664,7 @@
     return-object v0
 
     :cond_1
-    return-object v6
+    return-object v7
 
     :cond_2
     const-string/jumbo v0, ""
@@ -3725,17 +3725,17 @@
     move-result v1
 
     :goto_0
-    if-lt v1, v7, :cond_5
+    if-lt v1, v6, :cond_5
 
     new-instance v1, Ljava/lang/String;
 
-    const/16 v3, 0xa
+    array-length v3, v2
 
-    array-length v4, v2
+    add-int/lit8 v3, v3, -0xa
 
-    add-int/lit8 v4, v4, -0xa
+    const/16 v4, 0xa
 
-    invoke-direct {v1, v2, v3, v4, v0}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v1, v2, v4, v3, v0}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -3777,7 +3777,7 @@
     :catch_0
     move-exception v0
 
-    return-object v6
+    return-object v7
 .end method
 
 .method public getWhiteBalanceDescription()Ljava/lang/String;
@@ -4007,12 +4007,12 @@
 
     if-eqz v0, :cond_2
 
-    aget v1, v0, v5
+    aget v1, v0, v4
 
     if-eq v1, v3, :cond_3
 
     :cond_0
-    aget v1, v0, v5
+    aget v1, v0, v4
 
     if-eq v1, v3, :cond_4
 
@@ -4022,7 +4022,7 @@
     return-object v0
 
     :cond_2
-    return-object v4
+    return-object v5
 
     :cond_3
     aget v1, v0, v2

@@ -41,7 +41,7 @@
 .end method
 
 .method static binarySearch([III)I
-    .locals 5
+    .locals 4
 
     const/4 v1, 0x0
 
@@ -50,14 +50,14 @@
     :goto_0
     if-le v1, v0, :cond_0
 
-    xor-int/lit8 v4, v1, -0x1
+    xor-int/lit8 v0, v1, -0x1
 
-    return v4
+    return v0
 
     :cond_0
-    add-int v4, v1, v0
+    add-int v2, v1, v0
 
-    ushr-int/lit8 v2, v4, 0x1
+    ushr-int/lit8 v2, v2, 0x1
 
     aget v3, p0, v2
 
@@ -81,67 +81,67 @@
 .method static binarySearch([JIJ)I
     .locals 8
 
-    const/4 v6, 0x1
+    const/4 v2, 0x1
 
-    const/4 v7, 0x0
-
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     add-int/lit8 v0, p1, -0x1
+
+    move v1, v3
 
     :goto_0
     if-le v1, v0, :cond_0
 
-    xor-int/lit8 v3, v1, -0x1
+    xor-int/lit8 v0, v1, -0x1
 
-    return v3
+    return v0
 
     :cond_0
-    add-int v3, v1, v0
+    add-int v4, v1, v0
 
-    ushr-int/lit8 v2, v3, 0x1
+    ushr-int/lit8 v5, v4, 0x1
 
-    aget-wide v4, p0, v2
+    aget-wide v6, p0, v5
 
-    cmp-long v3, v4, p2
+    cmp-long v4, v6, p2
 
-    if-ltz v3, :cond_1
+    if-ltz v4, :cond_1
 
-    move v3, v6
+    move v4, v2
 
     :goto_1
-    if-nez v3, :cond_2
+    if-nez v4, :cond_2
 
-    add-int/lit8 v1, v2, 0x1
+    add-int/lit8 v1, v5, 0x1
 
     goto :goto_0
 
     :cond_1
-    move v3, v7
+    move v4, v3
 
     goto :goto_1
 
     :cond_2
-    cmp-long v3, v4, p2
+    cmp-long v0, v6, p2
 
-    if-gtz v3, :cond_3
+    if-gtz v0, :cond_3
 
-    move v3, v6
+    move v0, v2
 
     :goto_2
-    if-nez v3, :cond_4
+    if-nez v0, :cond_4
 
-    add-int/lit8 v0, v2, -0x1
+    add-int/lit8 v0, v5, -0x1
 
     goto :goto_0
 
     :cond_3
-    move v3, v7
+    move v0, v3
 
     goto :goto_2
 
     :cond_4
-    return v2
+    return v5
 .end method
 
 .method public static equal(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -196,11 +196,11 @@
     goto :goto_0
 
     :cond_1
-    shl-int v1, v2, v0
+    shl-int v0, v2, v0
 
-    add-int/lit8 v1, v1, -0xc
+    add-int/lit8 v0, v0, -0xc
 
-    return v1
+    return v0
 .end method
 
 .method public static idealIntArraySize(I)I

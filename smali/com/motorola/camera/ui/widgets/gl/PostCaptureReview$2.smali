@@ -1,5 +1,5 @@
 .class Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;
-.super Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+.super Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 .source "PostCaptureReview.java"
 
 
@@ -19,34 +19,37 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
+.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;[IZ)V
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 
-    invoke-direct {p0, p2, p3, p4}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
+    invoke-direct {p0, p2, p3, p4}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;[IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getButtonEvent(JJ)Lcom/motorola/camera/fsm/camera/Trigger;
-    .locals 2
+.method protected onSingleTap(Landroid/graphics/PointF;JJ)V
+    .locals 3
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/Trigger;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->REVIEW_ACCEPT:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+    move-result v0
 
-    invoke-direct {v0, v1}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+    if-nez v0, :cond_0
 
-    return-object v0
-.end method
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$2;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-.method protected getTag()Ljava/lang/String;
-    .locals 1
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
 
-    const/4 v0, 0x0
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->OPEN_PHOTO:Lcom/motorola/camera/fsm/camera/Trigger$Event;
 
-    return-object v0
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    :cond_0
+    return-void
 .end method

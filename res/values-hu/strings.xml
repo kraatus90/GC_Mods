@@ -99,8 +99,8 @@
     <string name="aware_copy_msg_subject">Tárgy</string>
     <string name="aware_copy_number">Szám</string>
     <string name="aware_copy_type">" (%1$s)"</string>
-    <string name="aware_copy_wifi_hidden">Elrejtés</string>
-    <string name="aware_copy_wifi_hidden_no">no</string>
+    <string name="aware_copy_wifi_hidden">Rejtett</string>
+    <string name="aware_copy_wifi_hidden_no">nem</string>
     <string name="aware_copy_wifi_hidden_yes">igen</string>
     <string name="aware_copy_wifi_password">Jelszó</string>
     <string name="aware_copy_wifi_security">Biztonság típusa</string>
@@ -120,8 +120,8 @@
     <string name="aware_info_event">Esemény</string>
     <string name="aware_info_failed">Sikertelen</string>
     <string name="aware_info_geo">Hely</string>
-    <string name="aware_info_landmark">Tereptárgy</string>
-    <string name="aware_info_landmark_loading">A kamera felismeri a tereptárgyat</string>
+    <string name="aware_info_landmark">Nevezetesség</string>
+    <string name="aware_info_landmark_loading">A kamera felismeri a nevezetességet</string>
     <string name="aware_info_message">Üzenet</string>
     <string name="aware_info_more_wikipedia">További információk a Wikipédián</string>
     <string name="aware_info_no_results">Nincs találat</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Mégse</string>
     <string name="capture_failure">A felvétel sikertelen. Próbálja meg újra.</string>
     <string name="checkbox_do_not_show">Legközelebb ne jelenjen meg</string>
-    <string name="cloudsight_terms">A képek továbbítódnak a CloudSight felé a keresési találatok megjelenítéséhez. &lt;br/>&lt;br/> A továbblépéssel elfogadja a CloudSight&lt;a href=%1$s>Adatvédelmi szabályzatát&lt;/a>.</string>
+    <string name="cloudsight_terms">A tárgyfelismerés funkció használatakor a keresési találatok megjelenítése érdekében a képet és a helyet (ha engedélyezett) elküldjük egy harmadik félnek.&lt;br/>&lt;br/> A továbblépéssel elfogadja az &lt;a href=%1$s>Adatvédelmi szabályzatot&lt;/a>.</string>
     <string name="dailog_panorama_failed">A panorámakép készítése sikertelen. Próbálja újra.</string>
     <string name="dailog_panorama_not_taken">A panorámakép nem készült el.</string>
     <string name="dialog_access_sd_fail">Rögzítés nem lehetséges. Az SD-kártya nem érhető el.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Az eszköz nem támogatott</string>
     <string name="dialog_disagree">Nem értek egyet</string>
     <string name="dialog_dismiss">Ne jelenjen meg többé</string>
+    <string name="dialog_download">Letöltés</string>
     <string name="dialog_external_sd_missing">Nem lehet fényképezni. Az SD-kártya nem érhető el. Átváltás a belső tárhelyre</string>
     <string name="dialog_first_time_set_pure_raw_message">"Ez a feldolgozatlan fájltípus a fényképek professzionális szerkesztéséhez használható.
 
@@ -222,8 +223,8 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="help_desc_dual_result">Győződjön meg róla, hogy a témától 1,5 méteres távolságon belül tartózkodik. A legjobb, ha semmi sincs az útban, és a téma elkülönül a háttértől.</string>
     <string name="help_desc_quick">Fordítsa el kétszer a fényképezőgép megnyitásához vagy az előlapi és a hátlapi kamera közötti váltáshoz.</string>
     <string name="help_desc_quick_double_tap_pwr">Bekapcsológomb kétszeri megnyomása: kamera megnyitás.</string>
-    <string name="help_desc_smart_camera">A kamera felismeri a tárgyakat és tereptárgyakat. Emellett QR-kódok, névjegykártyák és vonalkódok beolvasására is képes.</string>
-    <string name="help_desc_smart_camera_landmark_only">A kamera felismeri a tereptárgyakat. Emellett QR-kódok, névjegykártyák és vonalkódok beolvasására is képes.</string>
+    <string name="help_desc_smart_camera">A kamera felismeri a tárgyakat és a nevezetességeket. Emellett QR-kódok, névjegykártyák és vonalkódok beolvasására is képes.</string>
+    <string name="help_desc_smart_camera_landmark_only">A kamera felismeri a nevezetességeket. Emellett QR-kódok, névjegykártyák és vonalkódok beolvasására is képes.</string>
     <string name="help_desc_zoom">Húzza fel és le a zoomoláshoz.</string>
     <string name="help_done">Kész</string>
     <string name="help_dtfe_focus_header">Fókusz és expozíció módosítása</string>
@@ -247,6 +248,7 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="help_next">Tovább</string>
     <string name="image_360_desc">Ez egy 360°-os fénykép, amelyet a Moto 360 Editor alkalmazással tud szerkeszteni.</string>
     <string name="image_360_name">360°-os fénykép</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">MÉLYSÉG ENGEDÉLYEZÉSE</string>
     <string name="indicate_mode_mono">VALÓDI F&amp;F</string>
@@ -258,16 +260,19 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="indicate_mode_ultra_wide">ULTRASZÉLES LÁTÓSZÖG</string>
     <string name="indicate_mode_video">VIDEÓ</string>
     <string name="indicate_mode_wide_angle">SZÉLES LÁTÓSZÖG</string>
+    <string name="indicate_mode_wide_angle_selfie">SZÉLES LÁTÓSZÖGŰ SZELFI</string>
     <string name="internal_storage">belső tárhely</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">A Tereptárgy-felismerés híres tereptárgyakról nyújt információkat világszerte.&lt;br/>&lt;br/>Telepítse a funkciót az engedélyezéshez.</string>
-    <string name="landmark_install_over_data">A Tereptárgy-felismerés letöltési mérete 92 MB. Mobil adatforgalommal való letöltése plusz adatdíjak fizetésére kötelezhet.</string>
-    <string name="landmark_notification_downloading">Tereptárgy-felismerés letöltése</string>
-    <string name="landmark_notification_install">Tereptárgy-felismerés telepítése</string>
-    <string name="landmark_notification_install_complete">A Tereptárgy-felismerés telepítése befejeződött</string>
-    <string name="landmark_notification_install_failed">A Tereptárgy-felismerés telepítése sikertelen</string>
-    <string name="landmark_notification_install_invalid_url">Nem érhető el tereptárgy-adatbázis, kérjük, frissítse a kamerát a legújabb verzióra</string>
-    <string name="landmark_notification_install_out_of_space">Nincs elegendő tárhely a Tereptárgy-felismerés telepítéséhez</string>
+    <string name="landmark_install_message">A Nevezetességfelismerés híres nevezetességekről nyújt információkat világszerte.&lt;br/>&lt;br/>Töltse le a Nevezetesség-adatbázist a funkció engedélyezéséhez.</string>
+    <string name="landmark_install_over_data">A Nevezetesség-adatbázis letöltési mérete 92 MB. Mobil adatforgalommal való letöltése plusz adatdíjak fizetésére kötelezhet.</string>
+    <string name="landmark_notification_downloading">A Nevezetesség-adatbázis letöltése folyamatban</string>
+    <string name="landmark_notification_install">Nevezetesség-adatbázis telepítése</string>
+    <string name="landmark_notification_install_complete">A Nevezetesség-adatbázis telepítése befejeződött</string>
+    <string name="landmark_notification_install_failed">A Nevezetesség-adatbázis telepítése sikertelen</string>
+    <string name="landmark_notification_install_invalid_url">Nem érhető el nevezetesség-adatbázis, kérjük, frissítse a Kamera alkalmazást a legújabb verzióra</string>
+    <string name="landmark_notification_install_out_of_space">Nincs elegendő tárhely a Nevezetesség-adatbázis telepítéséhez</string>
+    <string name="landmark_notification_paused">A Nevezetesség-adatbázis letöltése az internet elérhetővé válásakor folytatódik</string>
+    <string name="landmark_notification_queued">A Nevezetesség-adatbázis letöltése az internet elérhetővé válásakor elindul</string>
     <string name="main_setting_amz_barcode">Amazon vonalkódolvasó</string>
     <string name="main_setting_amz_privacy">Az Amazon adatvédelmi figyelmeztetése</string>
     <string name="main_setting_amz_terms">Használati feltételek</string>
@@ -289,7 +294,9 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="main_setting_help_ui">Oktatóanyag ismételt lejátszása</string>
     <string name="main_setting_image_ratio">Fénykép mérete (hátlap)</string>
     <string name="main_setting_image_ratio_front">Fénykép mérete (előlap)</string>
-    <string name="main_setting_landmark_detection">Tereptárgy-felismerés</string>
+    <string name="main_setting_landmark_detection">Nevezetességfelismerés</string>
+    <string name="main_setting_landmark_version_current">Adatbázis verziója: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Az adatbázis nincs telepítve</string>
     <string name="main_setting_licenses">Nyílt forráskódú licencek</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="perm_required_alert_title">Engedélyek szükségesek</string>
     <string name="photos_depth_desc">Fókusz kiválasztásához, a háttér kicseréléséhez, valamint a fekete-fehérre módosítandó terület kiválasztásához használja a mélységszerkesztőt.</string>
     <string name="photos_depth_name">Mélység engedélyezve</string>
+    <string name="photos_notification_desc">Szerezzen korlátlan tárhelyet a Google Photos alkalmazás segítségével</string>
+    <string name="photos_notification_title">Biztonsági mentés a Google Photos alkalmazásra</string>
+    <string name="qcfa_resolution_description">Igazodás kevés fényhez</string>
     <string name="retake">Újra</string>
     <string name="second_10">10 mp</string>
     <string name="second_3">3 mp</string>
@@ -367,6 +377,7 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="setting_mode_slow_motion">Lassított felvétel</string>
     <string name="setting_mode_ultra_wide">Ultraszéles látószög</string>
     <string name="setting_mode_video">Videó</string>
+    <string name="setting_mode_wide_angle_selfie">Széles látószögű szelfi</string>
     <string name="setting_off">Ki</string>
     <string name="setting_on">Be</string>
     <string name="setting_persist">Tartás</string>
@@ -383,20 +394,25 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="setting_timer_dialog_title">IDŐZÍTŐ</string>
     <string name="setting_torch">Lámpa</string>
     <string name="setting_true">igaz</string>
+    <string name="shortcut_desc_depth">Térhatású fénykép</string>
+    <string name="shortcut_desc_selfie">Szelfi</string>
+    <string name="shortcut_desc_video">Videó</string>
     <string name="smartcam_landmark_notification_title">Okos fényképezőgép</string>
+    <string name="smartcam_no_detections">Nincsenek elmentett tárgyak és tereptárgyak</string>
     <string name="storage_location_external">SD-kártya</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">A tárhely nem érhető el</string>
+    <string name="toast_battery_saver">Az energiatakarékos mód be van kapcsolva. Bizonyos funkciók csak korlátozottan állnak rendelkezésre</string>
     <string name="toast_geotag_message_1">Engedélyeznie kell a helyadatokhoz való hozzáférést a hely elmentéséhez.</string>
     <string name="toast_geotag_message_2">A helyzetbeállítás csak az után lép érvénybe, hogy bekapcsolták a rendszer helyzete lehetőséget.</string>
     <string name="tooltip_camera_switch_360">Próbáljon meg a kamera egyéb beállításaira váltani.</string>
     <string name="tooltip_capture_360">Próbáljon meg erre az exponálógombra koppintva 360°-os fényképeket vagy videókat rögzíteni.</string>
-    <string name="tooltip_capture_key_360">A mod hátulján található exponálógombbal is megpróbálhatja rögzíteni a felvételt.</string>
-    <string name="tooltip_dual_camera_depth_photo">Fotózzon extra információkkal a speciális szerkesztőfunkciók elérhetővé tételéhez.</string>
+    <string name="tooltip_capture_key_360">A Mod hátulján található exponálógombbal is megpróbálhatja rögzíteni a felvételt.</string>
     <string name="tooltip_first_use_zoom_button">Koppintson ide a széles látószögre váltáshoz.</string>
     <string name="tooltip_gallery_360">Gyorsan csúsztassa az ujját balra a 360°-os fénykép vagy videó megtekintéséhez.</string>
     <string name="tooltip_minimap_viewfinder">Pásztázzon balra vagy jobbra a lenti képen.</string>
     <string name="tooltip_mode_switch_360">Próbáljon többféle módban 360°-os tartalmakat rögzíteni!</string>
+    <string name="tooltip_modes_list">Fedezzen fel új fényképezési módokat.</string>
     <string name="tooltip_smart_camera">Koppintson, ha többet szeretne megtudni a tárgyról.</string>
     <string name="tooltip_smart_camera_disable">Ezt a Beállításokban kapcsolhatja ki.</string>
     <string name="tooltip_spherical_viewfinder">Pásztázzon, nagyítson vagy kicsinyítsen a megjelenítés szabályozásához.</string>
@@ -419,5 +435,10 @@ Fogadja el az alábbiakat, és kapcsolja be a pozícióadatokat a beállítások
     <string name="zoom_hint_full">TELJES</string>
     <string name="zoom_hint_wide">SZÉLES</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">Igazodás kevés fényhez</string>
+    <string name="indicate_mode_timelapse">GYORSÍTOTT FELVÉTEL</string>
+    <string name="setting_mode_timelapse">Gyorsított felvétel</string>
+    <string name="timelapse_config_16x">16x</string>
+    <string name="timelapse_config_32x">32x</string>
+    <string name="timelapse_config_4x">4x</string>
+    <string name="timelapse_config_8x">8x</string>
 </resources>

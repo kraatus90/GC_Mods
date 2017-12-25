@@ -322,9 +322,9 @@
 
     iget-object v2, p0, Lorg/apache/http/impl/conn/BasicClientConnectionManager;->log:Lorg/apache/commons/logging/Log;
 
-    const-wide/16 v6, 0x0
-
     sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v6, 0x0
 
     move-object v4, p1
 

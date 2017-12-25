@@ -64,13 +64,13 @@
 
     const/4 v3, 0x0
 
-    iget-object v1, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    array-length v1, v1
+    array-length v0, v0
 
-    mul-int/lit8 v1, v1, 0x20
+    mul-int/lit8 v0, v0, 0x20
 
-    if-gt p1, v1, :cond_0
+    if-gt p1, v0, :cond_0
 
     :goto_0
     return-void
@@ -156,11 +156,11 @@
 
     iget v1, p1, Lcom/google/zxing/common/BitArray;->size:I
 
-    iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    add-int/2addr v2, v1
+    add-int/2addr v0, v1
 
-    invoke-direct {p0, v2}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
+    invoke-direct {p0, v0}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
 
     const/4 v0, 0x0
 
@@ -182,61 +182,59 @@
 .end method
 
 .method public appendBits(II)V
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-gez p2, :cond_1
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Num bits must be between 0 and 32"
+    const-string/jumbo v1, "Num bits must be between 0 and 32"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_1
-    const/16 v1, 0x20
+    const/16 v0, 0x20
 
-    if-gt p2, v1, :cond_0
+    if-gt p2, v0, :cond_0
 
-    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    add-int/2addr v1, p2
+    add-int/2addr v0, p2
 
-    invoke-direct {p0, v1}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
-
-    move v0, p2
+    invoke-direct {p0, v0}, Lcom/google/zxing/common/BitArray;->ensureCapacity(I)V
 
     :goto_0
-    if-gtz v0, :cond_2
+    if-gtz p2, :cond_2
 
     return-void
 
     :cond_2
-    add-int/lit8 v1, v0, -0x1
+    add-int/lit8 v0, p2, -0x1
 
-    shr-int v1, p1, v1
+    shr-int v0, p1, v0
 
-    and-int/lit8 v1, v1, 0x1
+    and-int/lit8 v0, v0, 0x1
 
-    if-eq v1, v3, :cond_3
+    if-eq v0, v2, :cond_3
 
-    move v1, v2
+    move v0, v1
 
     :goto_1
-    invoke-virtual {p0, v1}, Lcom/google/zxing/common/BitArray;->appendBit(Z)V
+    invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->appendBit(Z)V
 
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 p2, p2, -0x1
 
     goto :goto_0
 
     :cond_3
-    move v1, v3
+    move v0, v2
 
     goto :goto_1
 .end method
@@ -244,23 +242,23 @@
 .method public clear()V
     .locals 4
 
-    iget-object v2, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    const/4 v1, 0x0
 
-    array-length v1, v2
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    const/4 v0, 0x0
+    array-length v2, v0
+
+    move v0, v1
 
     :goto_0
-    if-lt v0, v1, :cond_0
+    if-lt v0, v2, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v2, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    const/4 v3, 0x0
-
-    aput v3, v2, v0
+    aput v1, v3, v0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -303,43 +301,41 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    instance-of v2, p1, Lcom/google/zxing/common/BitArray;
+    instance-of v1, p1, Lcom/google/zxing/common/BitArray;
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move-object v0, p1
+    check-cast p1, Lcom/google/zxing/common/BitArray;
 
-    check-cast v0, Lcom/google/zxing/common/BitArray;
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v2, p1, Lcom/google/zxing/common/BitArray;->size:I
 
-    iget v3, v0, Lcom/google/zxing/common/BitArray;->size:I
-
-    if-eq v2, v3, :cond_2
+    if-eq v1, v2, :cond_2
 
     :cond_0
     :goto_0
-    return v1
+    return v0
 
     :cond_1
-    return v1
+    return v0
 
     :cond_2
-    iget-object v2, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v1, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    iget-object v3, v0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v2, p1, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([I[I)Z
+    invoke-static {v1, v2}, Ljava/util/Arrays;->equals([I[I)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
@@ -405,153 +401,153 @@
 .end method
 
 .method public getNextSet(I)I
-    .locals 5
+    .locals 4
 
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    if-ge p1, v3, :cond_0
+    if-ge p1, v0, :cond_0
 
-    div-int/lit8 v0, p1, 0x20
+    div-int/lit8 v1, p1, 0x20
 
-    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v1, v3, v0
+    aget v0, v0, v1
 
-    and-int/lit8 v3, p1, 0x1f
+    and-int/lit8 v2, p1, 0x1f
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    shl-int v3, v4, v3
+    shl-int v2, v3, v2
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    xor-int/lit8 v3, v3, -0x1
+    xor-int/lit8 v2, v2, -0x1
 
-    and-int/2addr v1, v3
+    and-int/2addr v0, v2
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    mul-int/lit8 v3, v0, 0x20
+    mul-int/lit8 v1, v1, 0x20
 
-    invoke-static {v1}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
+    invoke-static {v0}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
 
-    move-result v4
+    move-result v0
 
-    add-int v2, v3, v4
+    add-int/2addr v0, v1
 
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    if-gt v2, v3, :cond_3
+    if-gt v0, v1, :cond_3
 
     :goto_1
-    return v2
+    return v0
 
     :cond_0
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    return v3
+    return v0
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    array-length v3, v3
+    array-length v0, v0
 
-    if-eq v0, v3, :cond_2
+    if-eq v1, v0, :cond_2
 
-    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v1, v3, v0
+    aget v0, v0, v1
 
     goto :goto_0
 
     :cond_2
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    return v3
+    return v0
 
     :cond_3
-    iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
     goto :goto_1
 .end method
 
 .method public getNextUnset(I)I
-    .locals 5
+    .locals 4
 
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    if-ge p1, v3, :cond_0
+    if-ge p1, v0, :cond_0
 
-    div-int/lit8 v0, p1, 0x20
+    div-int/lit8 v1, p1, 0x20
 
-    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v3, v3, v0
+    aget v0, v0, v1
 
-    xor-int/lit8 v1, v3, -0x1
+    xor-int/lit8 v0, v0, -0x1
 
-    and-int/lit8 v3, p1, 0x1f
+    and-int/lit8 v2, p1, 0x1f
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    shl-int v3, v4, v3
+    shl-int v2, v3, v2
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    xor-int/lit8 v3, v3, -0x1
+    xor-int/lit8 v2, v2, -0x1
 
-    and-int/2addr v1, v3
+    and-int/2addr v0, v2
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    mul-int/lit8 v3, v0, 0x20
+    mul-int/lit8 v1, v1, 0x20
 
-    invoke-static {v1}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
+    invoke-static {v0}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
 
-    move-result v4
+    move-result v0
 
-    add-int v2, v3, v4
+    add-int/2addr v0, v1
 
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    if-gt v2, v3, :cond_3
+    if-gt v0, v1, :cond_3
 
     :goto_1
-    return v2
+    return v0
 
     :cond_0
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    return v3
+    return v0
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    array-length v3, v3
+    array-length v0, v0
 
-    if-eq v0, v3, :cond_2
+    if-eq v1, v0, :cond_2
 
-    iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v3, v3, v0
+    aget v0, v0, v1
 
-    xor-int/lit8 v1, v3, -0x1
+    xor-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
     :cond_2
-    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    return v3
+    return v0
 
     :cond_3
-    iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v0, p0, Lcom/google/zxing/common/BitArray;->size:I
 
     goto :goto_1
 .end method
@@ -597,310 +593,306 @@
 .method public isRange(IIZ)Z
     .locals 11
 
-    const/16 v8, 0x1f
+    const/16 v3, 0x1f
 
     const/4 v10, 0x1
 
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
     if-lt p2, p1, :cond_0
 
     if-eq p2, p1, :cond_1
 
-    add-int/lit8 p2, p2, -0x1
+    add-int/lit8 v8, p2, -0x1
 
-    div-int/lit8 v1, p1, 0x20
+    div-int/lit8 v7, p1, 0x20
 
-    div-int/lit8 v5, p2, 0x20
+    div-int/lit8 v9, v8, 0x20
 
-    move v2, v1
+    move v6, v7
 
     :goto_0
-    if-le v2, v5, :cond_2
+    if-le v6, v9, :cond_2
 
     return v10
 
     :cond_0
-    new-instance v7, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v7}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v7
+    throw v0
 
     :cond_1
     return v10
 
     :cond_2
-    if-gt v2, v1, :cond_5
+    if-gt v6, v7, :cond_5
 
     and-int/lit8 v0, p1, 0x1f
 
     :goto_1
-    if-lt v2, v5, :cond_6
+    if-lt v6, v9, :cond_6
 
-    and-int/lit8 v4, p2, 0x1f
+    and-int/lit8 v2, v8, 0x1f
 
     :goto_2
     if-eqz v0, :cond_7
 
     :cond_3
-    const/4 v6, 0x0
+    move v4, v0
 
-    move v3, v0
+    move v0, v1
 
     :goto_3
-    if-le v3, v4, :cond_8
+    if-le v4, v2, :cond_8
 
     :goto_4
-    iget-object v9, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v2, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v9, v9, v2
+    aget v2, v2, v6
 
-    and-int/2addr v9, v6
+    and-int/2addr v2, v0
 
     if-nez p3, :cond_4
 
-    move v6, v7
+    move v0, v1
 
     :cond_4
-    if-ne v9, v6, :cond_9
+    if-ne v2, v0, :cond_9
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v6, 0x1
+
+    move v6, v0
 
     goto :goto_0
 
     :cond_5
-    move v0, v7
+    move v0, v1
 
     goto :goto_1
 
     :cond_6
-    move v4, v8
+    move v2, v3
 
     goto :goto_2
 
     :cond_7
-    if-ne v4, v8, :cond_3
+    if-ne v2, v3, :cond_3
 
-    const/4 v6, -0x1
+    const/4 v0, -0x1
 
     goto :goto_4
 
     :cond_8
-    shl-int v9, v10, v3
+    shl-int v5, v10, v4
 
-    or-int/2addr v6, v9
+    or-int/2addr v5, v0
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
+
+    move v0, v5
 
     goto :goto_3
 
     :cond_9
-    return v7
+    return v1
 .end method
 
 .method public reverse()V
     .locals 15
 
-    iget-object v10, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    const/16 v14, 0x8
 
-    array-length v10, v10
+    const/4 v13, 0x4
 
-    new-array v5, v10, [I
+    const/4 v12, 0x2
 
-    iget v10, p0, Lcom/google/zxing/common/BitArray;->size:I
+    const/4 v2, 0x0
 
-    add-int/lit8 v10, v10, -0x1
+    const/4 v0, 0x1
 
-    div-int/lit8 v3, v10, 0x20
+    iget-object v1, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    add-int/lit8 v7, v3, 0x1
+    array-length v1, v1
 
-    const/4 v1, 0x0
+    new-array v4, v1, [I
+
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    div-int/lit8 v3, v1, 0x20
+
+    add-int/lit8 v5, v3, 0x1
+
+    move v1, v2
 
     :goto_0
-    if-lt v1, v7, :cond_0
+    if-lt v1, v5, :cond_0
 
-    iget v10, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    mul-int/lit8 v11, v7, 0x20
+    mul-int/lit8 v3, v5, 0x20
 
-    if-ne v10, v11, :cond_1
+    if-ne v1, v3, :cond_1
 
     :goto_1
-    iput-object v5, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iput-object v4, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
     return-void
 
     :cond_0
-    iget-object v10, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v6, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v10, v10, v1
+    aget v6, v6, v1
 
-    int-to-long v8, v10
+    int-to-long v6, v6
 
-    const/4 v10, 0x1
+    shr-long v8, v6, v0
 
-    shr-long v10, v8, v10
+    const-wide/32 v10, 0x55555555
 
-    const-wide/32 v12, 0x55555555
+    and-long/2addr v8, v10
 
-    and-long/2addr v10, v12
+    const-wide/32 v10, 0x55555555
 
-    const-wide/32 v12, 0x55555555
+    and-long/2addr v6, v10
 
-    and-long/2addr v12, v8
+    shl-long/2addr v6, v0
 
-    const/4 v14, 0x1
+    or-long/2addr v6, v8
 
-    shl-long/2addr v12, v14
+    shr-long v8, v6, v12
 
-    or-long v8, v10, v12
+    const-wide/32 v10, 0x33333333
 
-    const/4 v10, 0x2
+    and-long/2addr v8, v10
 
-    shr-long v10, v8, v10
+    const-wide/32 v10, 0x33333333
 
-    const-wide/32 v12, 0x33333333
+    and-long/2addr v6, v10
 
-    and-long/2addr v10, v12
+    shl-long/2addr v6, v12
 
-    const-wide/32 v12, 0x33333333
+    or-long/2addr v6, v8
 
-    and-long/2addr v12, v8
+    shr-long v8, v6, v13
 
-    const/4 v14, 0x2
+    const-wide/32 v10, 0xf0f0f0f
 
-    shl-long/2addr v12, v14
+    and-long/2addr v8, v10
 
-    or-long v8, v10, v12
+    const-wide/32 v10, 0xf0f0f0f
 
-    const/4 v10, 0x4
+    and-long/2addr v6, v10
 
-    shr-long v10, v8, v10
+    shl-long/2addr v6, v13
 
-    const-wide/32 v12, 0xf0f0f0f
+    or-long/2addr v6, v8
 
-    and-long/2addr v10, v12
+    shr-long v8, v6, v14
 
-    const-wide/32 v12, 0xf0f0f0f
+    const-wide/32 v10, 0xff00ff
 
-    and-long/2addr v12, v8
+    and-long/2addr v8, v10
 
-    const/4 v14, 0x4
+    const-wide/32 v10, 0xff00ff
 
-    shl-long/2addr v12, v14
+    and-long/2addr v6, v10
 
-    or-long v8, v10, v12
+    shl-long/2addr v6, v14
 
-    const/16 v10, 0x8
+    or-long/2addr v6, v8
 
-    shr-long v10, v8, v10
+    const/16 v8, 0x10
 
-    const-wide/32 v12, 0xff00ff
+    shr-long v8, v6, v8
 
-    and-long/2addr v10, v12
+    const-wide/32 v10, 0xffff
 
-    const-wide/32 v12, 0xff00ff
+    and-long/2addr v8, v10
 
-    and-long/2addr v12, v8
+    const-wide/32 v10, 0xffff
 
-    const/16 v14, 0x8
-
-    shl-long/2addr v12, v14
-
-    or-long v8, v10, v12
+    and-long/2addr v6, v10
 
     const/16 v10, 0x10
 
-    shr-long v10, v8, v10
+    shl-long/2addr v6, v10
 
-    const-wide/32 v12, 0xffff
+    or-long/2addr v6, v8
 
-    and-long/2addr v10, v12
+    sub-int v8, v3, v1
 
-    const-wide/32 v12, 0xffff
+    long-to-int v6, v6
 
-    and-long/2addr v12, v8
-
-    const/16 v14, 0x10
-
-    shl-long/2addr v12, v14
-
-    or-long v8, v10, v12
-
-    sub-int v10, v3, v1
-
-    long-to-int v11, v8
-
-    aput v11, v5, v10
+    aput v6, v4, v8
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_1
-    mul-int/lit8 v10, v7, 0x20
+    mul-int/lit8 v1, v5, 0x20
 
-    iget v11, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    sub-int v2, v10, v11
+    sub-int v6, v1, v3
 
-    const/4 v4, 0x1
+    move v1, v2
 
-    const/4 v1, 0x0
+    move v3, v0
 
     :goto_2
-    rsub-int/lit8 v10, v2, 0x1f
+    rsub-int/lit8 v7, v6, 0x1f
 
-    if-lt v1, v10, :cond_2
+    if-lt v1, v7, :cond_2
 
-    const/4 v10, 0x0
+    aget v1, v4, v2
 
-    aget v10, v5, v10
+    shr-int/2addr v1, v6
 
-    shr-int/2addr v10, v2
-
-    and-int v0, v10, v4
-
-    const/4 v1, 0x1
+    and-int/2addr v1, v3
 
     :goto_3
-    if-lt v1, v7, :cond_3
+    if-lt v0, v5, :cond_3
 
-    add-int/lit8 v10, v7, -0x1
+    add-int/lit8 v0, v5, -0x1
 
-    aput v0, v5, v10
+    aput v1, v4, v0
 
     goto :goto_1
 
     :cond_2
-    shl-int/lit8 v10, v4, 0x1
+    shl-int/lit8 v3, v3, 0x1
 
-    or-int/lit8 v4, v10, 0x1
+    or-int/lit8 v3, v3, 0x1
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
     :cond_3
-    aget v6, v5, v1
+    aget v2, v4, v0
 
-    rsub-int/lit8 v10, v2, 0x20
+    rsub-int/lit8 v7, v6, 0x20
 
-    shl-int v10, v6, v10
+    shl-int v7, v2, v7
 
-    or-int/2addr v0, v10
+    or-int/2addr v1, v7
 
-    add-int/lit8 v10, v1, -0x1
+    add-int/lit8 v7, v0, -0x1
 
-    aput v0, v5, v10
+    aput v1, v4, v7
 
-    shr-int v10, v6, v2
+    shr-int v1, v2, v6
 
-    and-int v0, v10, v4
+    and-int/2addr v1, v3
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 .end method
@@ -940,156 +932,172 @@
 .end method
 
 .method public setRange(II)V
-    .locals 11
+    .locals 10
 
-    const/16 v8, 0x1f
+    const/16 v3, 0x1f
 
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
     if-lt p2, p1, :cond_0
 
     if-eq p2, p1, :cond_1
 
-    add-int/lit8 p2, p2, -0x1
+    add-int/lit8 v8, p2, -0x1
 
-    div-int/lit8 v1, p1, 0x20
+    div-int/lit8 v7, p1, 0x20
 
-    div-int/lit8 v5, p2, 0x20
+    div-int/lit8 v9, v8, 0x20
 
-    move v2, v1
+    move v6, v7
 
     :goto_0
-    if-le v2, v5, :cond_2
+    if-le v6, v9, :cond_2
 
     return-void
 
     :cond_0
-    new-instance v7, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v7}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v7
+    throw v0
 
     :cond_1
     return-void
 
     :cond_2
-    if-gt v2, v1, :cond_4
+    if-gt v6, v7, :cond_4
 
     and-int/lit8 v0, p1, 0x1f
 
     :goto_1
-    if-lt v2, v5, :cond_5
+    if-lt v6, v9, :cond_5
 
-    and-int/lit8 v4, p2, 0x1f
+    and-int/lit8 v2, v8, 0x1f
 
     :goto_2
     if-eqz v0, :cond_6
 
     :cond_3
-    const/4 v6, 0x0
+    move v4, v0
 
-    move v3, v0
+    move v0, v1
 
     :goto_3
-    if-le v3, v4, :cond_7
+    if-le v4, v2, :cond_7
 
     :goto_4
-    iget-object v9, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v2, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
-    aget v10, v9, v2
+    aget v4, v2, v6
 
-    or-int/2addr v10, v6
+    or-int/2addr v0, v4
 
-    aput v10, v9, v2
+    aput v0, v2, v6
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v6, 0x1
+
+    move v6, v0
 
     goto :goto_0
 
     :cond_4
-    move v0, v7
+    move v0, v1
 
     goto :goto_1
 
     :cond_5
-    move v4, v8
+    move v2, v3
 
     goto :goto_2
 
     :cond_6
-    if-ne v4, v8, :cond_3
+    if-ne v2, v3, :cond_3
 
-    const/4 v6, -0x1
+    const/4 v0, -0x1
 
     goto :goto_4
 
     :cond_7
-    const/4 v9, 0x1
+    const/4 v5, 0x1
 
-    shl-int/2addr v9, v3
+    shl-int/2addr v5, v4
 
-    or-int/2addr v6, v9
+    or-int/2addr v5, v0
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
+
+    move v0, v5
 
     goto :goto_3
 .end method
 
 .method public toBytes(I[BII)V
-    .locals 5
+    .locals 7
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
+
+    move v4, v2
+
+    move v0, p1
 
     :goto_0
-    if-lt v0, p4, :cond_0
+    if-lt v4, p4, :cond_0
 
     return-void
 
     :cond_0
-    const/4 v2, 0x0
+    move v1, v2
 
-    const/4 v1, 0x0
+    move v3, v0
+
+    move v0, v2
 
     :goto_1
-    const/16 v3, 0x8
+    const/16 v5, 0x8
 
-    if-lt v1, v3, :cond_1
+    if-lt v1, v5, :cond_1
 
-    add-int v3, p3, v0
+    add-int v1, p3, v4
 
-    int-to-byte v4, v2
+    int-to-byte v0, v0
 
-    int-to-byte v4, v4
+    int-to-byte v0, v0
 
-    aput-byte v4, p2, v3
+    aput-byte v0, p2, v1
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
+
+    move v0, v3
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0, p1}, Lcom/google/zxing/common/BitArray;->get(I)Z
+    invoke-virtual {p0, v3}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
-    move-result v3
+    move-result v5
 
-    if-nez v3, :cond_2
+    if-nez v5, :cond_2
 
     :goto_2
-    add-int/lit8 p1, p1, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     :cond_2
-    rsub-int/lit8 v3, v1, 0x7
+    rsub-int/lit8 v5, v1, 0x7
 
-    const/4 v4, 0x1
+    const/4 v6, 0x1
 
-    shl-int v3, v4, v3
+    shl-int v5, v6, v5
 
-    or-int/2addr v2, v3
+    or-int/2addr v0, v5
 
     goto :goto_2
 .end method
@@ -1097,55 +1105,55 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
     const/4 v0, 0x0
 
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
     :goto_0
-    iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
+    iget v1, p0, Lcom/google/zxing/common/BitArray;->size:I
 
-    if-lt v0, v2, :cond_0
+    if-lt v0, v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     :cond_0
-    and-int/lit8 v2, v0, 0x7
+    and-int/lit8 v1, v0, 0x7
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
     :goto_1
     invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
-    const/16 v2, 0x2e
+    const/16 v1, 0x2e
 
     :goto_2
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/16 v2, 0x20
+    const/16 v1, 0x20
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
     :cond_2
-    const/16 v2, 0x58
+    const/16 v1, 0x58
 
     goto :goto_2
 .end method
@@ -1153,15 +1161,15 @@
 .method public xor(Lcom/google/zxing/common/BitArray;)V
     .locals 4
 
-    iget-object v1, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+    iget-object v0, p0, Lcom/google/zxing/common/BitArray;->bits:[I
+
+    array-length v0, v0
+
+    iget-object v1, p1, Lcom/google/zxing/common/BitArray;->bits:[I
 
     array-length v1, v1
 
-    iget-object v2, p1, Lcom/google/zxing/common/BitArray;->bits:[I
-
-    array-length v2, v2
-
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -1175,13 +1183,13 @@
     return-void
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Sizes don\'t match"
+    const-string/jumbo v1, "Sizes don\'t match"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_1
     iget-object v1, p0, Lcom/google/zxing/common/BitArray;->bits:[I

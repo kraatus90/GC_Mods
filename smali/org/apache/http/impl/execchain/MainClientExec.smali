@@ -90,21 +90,21 @@
 
     new-array v1, v1, [Lorg/apache/http/HttpRequestInterceptor;
 
-    const/4 v2, 0x0
+    new-instance v2, Lorg/apache/http/client/protocol/RequestClientConnControl;
 
-    new-instance v3, Lorg/apache/http/client/protocol/RequestClientConnControl;
+    invoke-direct {v2}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x1
+    new-instance v2, Lorg/apache/http/protocol/RequestUserAgent;
 
-    new-instance v3, Lorg/apache/http/protocol/RequestUserAgent;
+    invoke-direct {v2}, Lorg/apache/http/protocol/RequestUserAgent;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/protocol/RequestUserAgent;-><init>()V
+    const/4 v3, 0x1
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     invoke-direct {v0, v1}, Lorg/apache/http/protocol/ImmutableHttpProcessor;-><init>([Lorg/apache/http/HttpRequestInterceptor;)V
 
@@ -172,13 +172,13 @@
 
     new-instance v9, Lorg/apache/http/message/BasicHttpRequest;
 
-    const-string/jumbo v2, "CONNECT"
-
     invoke-interface {p4}, Lorg/apache/http/HttpRequest;->getProtocolVersion()Lorg/apache/http/ProtocolVersion;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v9, v2, v0, v3}, Lorg/apache/http/message/BasicHttpRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/apache/http/ProtocolVersion;)V
+    const-string/jumbo v3, "CONNECT"
+
+    invoke-direct {v9, v3, v0, v2}, Lorg/apache/http/message/BasicHttpRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/apache/http/ProtocolVersion;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/execchain/MainClientExec;->requestExecutor:Lorg/apache/http/protocol/HttpRequestExecutor;
 

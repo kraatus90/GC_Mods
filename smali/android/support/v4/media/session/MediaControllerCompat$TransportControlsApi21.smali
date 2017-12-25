@@ -82,27 +82,27 @@
 .end method
 
 .method public playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
-    .locals 3
+    .locals 2
 
     if-nez p1, :cond_1
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "You must specify a non-empty Uri for playFromUri."
+    const-string/jumbo v1, "You must specify a non-empty Uri for playFromUri."
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_1
-    sget-object v1, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+    sget-object v0, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
 
-    invoke-virtual {v1, p1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
 
@@ -126,9 +126,9 @@
 .method public prepare()V
     .locals 2
 
-    const/4 v1, 0x0
-
     const-string/jumbo v0, "android.support.v4.media.session.action.PREPARE"
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
 
@@ -224,6 +224,12 @@
 .method public sendCustomAction(Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;Landroid/os/Bundle;)V
     .locals 2
 
+    invoke-virtual {p1}, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, p2}, Landroid/support/v4/media/session/MediaControllerCompat;->access$100(Ljava/lang/String;Landroid/os/Bundle;)V
+
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->mControlsObj:Ljava/lang/Object;
 
     invoke-virtual {p1}, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;->getAction()Ljava/lang/String;
@@ -238,9 +244,29 @@
 .method public sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
 
+    invoke-static {p1, p2}, Landroid/support/v4/media/session/MediaControllerCompat;->access$100(Ljava/lang/String;Landroid/os/Bundle;)V
+
     iget-object v0, p0, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->mControlsObj:Ljava/lang/Object;
 
     invoke-static {v0, p1, p2}, Landroid/support/v4/media/session/MediaControllerCompatApi21$TransportControls;->sendCustomAction(Ljava/lang/Object;Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method public setCaptioningEnabled(Z)V
+    .locals 2
+
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_CAPTIONING_ENABLED"
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.SET_CAPTIONING_ENABLED"
+
+    invoke-virtual {p0, v1, v0}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
 
     return-void
 .end method
@@ -267,6 +293,28 @@
     goto :goto_0
 .end method
 
+.method public setRating(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
+    .locals 2
+
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_RATING"
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
+
+    invoke-virtual {v0, v1, p2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.SET_RATING"
+
+    invoke-virtual {p0, v1, v0}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
 .method public setRepeatMode(I)V
     .locals 2
 
@@ -279,6 +327,24 @@
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     const-string/jumbo v1, "android.support.v4.media.session.action.SET_REPEAT_MODE"
+
+    invoke-virtual {p0, v1, v0}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-void
+.end method
+
+.method public setShuffleMode(I)V
+    .locals 2
+
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_SHUFFLE_MODE"
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.SET_SHUFFLE_MODE"
 
     invoke-virtual {p0, v1, v0}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControlsApi21;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
 

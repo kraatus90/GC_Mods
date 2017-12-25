@@ -1360,19 +1360,19 @@
     if-nez v0, :cond_1
 
     :cond_0
-    return-object v4
+    return-object v5
 
     :cond_1
     array-length v1, v0
 
     if-lt v1, v2, :cond_0
 
-    aget v1, v0, v5
+    aget v1, v0, v4
 
     if-eq v1, v2, :cond_4
 
     :cond_2
-    aget v1, v0, v5
+    aget v1, v0, v4
 
     if-eq v1, v2, :cond_5
 

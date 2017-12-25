@@ -23,7 +23,7 @@
 .end method
 
 .method private static beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
-    .locals 6
+    .locals 4
     .param p1    # Landroid/graphics/Rect;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -37,62 +37,62 @@
         .end annotation
     .end param
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     invoke-static {p0, p1, p2}, Landroid/support/v4/widget/FocusStrategy;->beamsOverlap(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    move-result v0
+    move-result v2
 
     invoke-static {p0, p1, p3}, Landroid/support/v4/widget/FocusStrategy;->beamsOverlap(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_1
+    if-eqz v3, :cond_1
 
     :cond_0
-    return v2
+    return v0
 
     :cond_1
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-static {p0, p1, p3}, Landroid/support/v4/widget/FocusStrategy;->isToDirectionOf(ILandroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_3
+    if-eqz v2, :cond_3
 
-    const/16 v4, 0x11
+    const/16 v2, 0x11
 
-    if-ne p0, v4, :cond_4
+    if-ne p0, v2, :cond_4
 
     :cond_2
-    return v3
+    return v1
 
     :cond_3
-    return v3
+    return v1
 
     :cond_4
-    const/16 v4, 0x42
+    const/16 v2, 0x42
 
-    if-eq p0, v4, :cond_2
+    if-eq p0, v2, :cond_2
 
     invoke-static {p0, p1, p2}, Landroid/support/v4/widget/FocusStrategy;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v4
+    move-result v2
 
     invoke-static {p0, p1, p3}, Landroid/support/v4/widget/FocusStrategy;->majorAxisDistanceToFarEdge(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v5
+    move-result v3
 
-    if-lt v4, v5, :cond_5
+    if-lt v2, v3, :cond_5
 
     :goto_0
-    return v2
+    return v0
 
     :cond_5
-    move v2, v3
+    move v0, v1
 
     goto :goto_0
 .end method
@@ -176,7 +176,7 @@
 .end method
 
 .method public static findNextFocusInAbsoluteDirection(Ljava/lang/Object;Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;Landroid/support/v4/widget/FocusStrategy$BoundsAdapter;Ljava/lang/Object;Landroid/graphics/Rect;I)Ljava/lang/Object;
-    .locals 8
+    .locals 7
     .param p0    # Ljava/lang/Object;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -216,96 +216,98 @@
         }
     .end annotation
 
-    const/4 v7, 0x0
+    const/4 v0, 0x0
 
-    new-instance v0, Landroid/graphics/Rect;
+    new-instance v3, Landroid/graphics/Rect;
 
-    invoke-direct {v0, p4}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    invoke-direct {v3, p4}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
     sparse-switch p5, :sswitch_data_0
 
-    new-instance v6, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v7, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
+    const-string/jumbo v1, "direction must be one of {FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}."
 
-    invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     :sswitch_0
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
-    move-result v6
+    move-result v1
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-virtual {v0, v6, v7}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {v3, v1, v0}, Landroid/graphics/Rect;->offset(II)V
 
     :goto_0
     const/4 v1, 0x0
 
     invoke-interface {p1, p0}, Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;->size(Ljava/lang/Object;)I
 
-    move-result v2
+    move-result v4
 
-    new-instance v4, Landroid/graphics/Rect;
+    new-instance v5, Landroid/graphics/Rect;
 
-    invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
-    const/4 v5, 0x0
+    move v2, v0
+
+    move-object v0, v1
 
     :goto_1
-    if-lt v5, v2, :cond_0
+    if-lt v2, v4, :cond_0
 
-    return-object v1
+    return-object v0
 
     :sswitch_1
     invoke-virtual {p4}, Landroid/graphics/Rect;->width()I
 
-    move-result v6
+    move-result v1
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    neg-int v6, v6
+    neg-int v1, v1
 
-    invoke-virtual {v0, v6, v7}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {v3, v1, v0}, Landroid/graphics/Rect;->offset(II)V
 
     goto :goto_0
 
     :sswitch_2
     invoke-virtual {p4}, Landroid/graphics/Rect;->height()I
 
-    move-result v6
+    move-result v1
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-virtual {v0, v7, v6}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {v3, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
     goto :goto_0
 
     :sswitch_3
     invoke-virtual {p4}, Landroid/graphics/Rect;->height()I
 
-    move-result v6
+    move-result v1
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    neg-int v6, v6
+    neg-int v1, v1
 
-    invoke-virtual {v0, v7, v6}, Landroid/graphics/Rect;->offset(II)V
+    invoke-virtual {v3, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {p1, p0, v5}, Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-interface {p1, p0, v2}, Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    if-eq v3, p3, :cond_1
+    if-eq v1, p3, :cond_1
 
-    invoke-interface {p2, v3, v4}, Landroid/support/v4/widget/FocusStrategy$BoundsAdapter;->obtainBounds(Ljava/lang/Object;Landroid/graphics/Rect;)V
+    invoke-interface {p2, v1, v5}, Landroid/support/v4/widget/FocusStrategy$BoundsAdapter;->obtainBounds(Ljava/lang/Object;Landroid/graphics/Rect;)V
 
-    invoke-static {p5, p4, v4, v0}, Landroid/support/v4/widget/FocusStrategy;->isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
+    invoke-static {p5, p4, v5, v3}, Landroid/support/v4/widget/FocusStrategy;->isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v6
 
@@ -313,14 +315,16 @@
 
     :cond_1
     :goto_2
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v0, v4}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    invoke-virtual {v3, v5}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    move-object v1, v3
+    move-object v0, v1
 
     goto :goto_2
 
@@ -334,7 +338,7 @@
 .end method
 
 .method public static findNextFocusInRelativeDirection(Ljava/lang/Object;Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;Landroid/support/v4/widget/FocusStrategy$BoundsAdapter;Ljava/lang/Object;IZZ)Ljava/lang/Object;
-    .locals 6
+    .locals 4
     .param p0    # Ljava/lang/Object;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -372,55 +376,55 @@
 
     move-result v1
 
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-lt v2, v1, :cond_0
+    if-lt v0, v1, :cond_0
 
     new-instance v0, Landroid/support/v4/widget/FocusStrategy$SequentialComparator;
 
     invoke-direct {v0, p5, p2}, Landroid/support/v4/widget/FocusStrategy$SequentialComparator;-><init>(ZLandroid/support/v4/widget/FocusStrategy$BoundsAdapter;)V
 
-    invoke-static {v3, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-static {v2, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     packed-switch p4, :pswitch_data_0
 
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "direction must be one of {FOCUS_FORWARD, FOCUS_BACKWARD}."
+    const-string/jumbo v1, "direction must be one of {FOCUS_FORWARD, FOCUS_BACKWARD}."
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     :cond_0
-    invoke-interface {p1, p0, v2}, Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-interface {p1, p0, v0}, Landroid/support/v4/widget/FocusStrategy$CollectionAdapter;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p3, v3, p6}, Landroid/support/v4/widget/FocusStrategy;->getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
+    invoke-static {p3, v2, p6}, Landroid/support/v4/widget/FocusStrategy;->getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    return-object v4
+    return-object v0
 
     :pswitch_1
-    invoke-static {p3, v3, p6}, Landroid/support/v4/widget/FocusStrategy;->getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
+    invoke-static {p3, v2, p6}, Landroid/support/v4/widget/FocusStrategy;->getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    return-object v4
+    return-object v0
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -430,64 +434,6 @@
 .end method
 
 .method private static getNextFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;",
-            "Ljava/util/ArrayList",
-            "<TT;>;Z)TT;"
-        }
-    .end annotation
-
-    const/4 v4, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->lastIndexOf(Ljava/lang/Object;)I
-
-    move-result v2
-
-    :goto_0
-    add-int/lit8 v1, v2, 0x1
-
-    if-lt v1, v0, :cond_2
-
-    if-nez p2, :cond_3
-
-    :cond_0
-    return-object v4
-
-    :cond_1
-    const/4 v2, -0x1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    return-object v2
-
-    :cond_3
-    if-lez v0, :cond_0
-
-    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    return-object v2
-.end method
-
-.method private static getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -501,20 +447,22 @@
 
     const/4 v3, 0x0
 
+    const/4 v2, 0x0
+
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v1
 
     if-eqz p0, :cond_1
 
-    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->lastIndexOf(Ljava/lang/Object;)I
 
-    move-result v2
+    move-result v0
 
     :goto_0
-    add-int/lit8 v1, v2, -0x1
+    add-int/lit8 v0, v0, 0x1
 
-    if-gez v1, :cond_2
+    if-lt v0, v1, :cond_2
 
     if-nez p2, :cond_3
 
@@ -522,27 +470,83 @@
     return-object v3
 
     :cond_1
-    move v2, v0
+    const/4 v0, -0x1
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     :cond_3
-    if-lez v0, :cond_0
-
-    add-int/lit8 v2, v0, -0x1
+    if-lez v1, :cond_0
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
+    return-object v0
+.end method
+
+.method private static getPreviousFocusable(Ljava/lang/Object;Ljava/util/ArrayList;Z)Ljava/lang/Object;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;",
+            "Ljava/util/ArrayList",
+            "<TT;>;Z)TT;"
+        }
+    .end annotation
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
+
+    move-result v0
+
+    :goto_0
+    add-int/lit8 v0, v0, -0x1
+
+    if-gez v0, :cond_2
+
+    if-nez p2, :cond_3
+
+    :cond_0
     return-object v2
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_3
+    if-lez v1, :cond_0
+
+    add-int/lit8 v0, v1, -0x1
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method private static getWeightedDistanceFor(II)I
@@ -560,7 +564,7 @@
 .end method
 
 .method private static isBetterCandidate(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
-    .locals 6
+    .locals 5
     .param p1    # Landroid/graphics/Rect;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -574,77 +578,77 @@
         .end annotation
     .end param
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     invoke-static {p1, p2, p0}, Landroid/support/v4/widget/FocusStrategy;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-static {p1, p3, p0}, Landroid/support/v4/widget/FocusStrategy;->isCandidate(Landroid/graphics/Rect;Landroid/graphics/Rect;I)Z
 
-    move-result v4
+    move-result v2
 
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     invoke-static {p0, p1, p2, p3}, Landroid/support/v4/widget/FocusStrategy;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
     invoke-static {p0, p1, p3, p2}, Landroid/support/v4/widget/FocusStrategy;->beamBeats(ILandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_3
+    if-nez v2, :cond_3
 
     invoke-static {p0, p1, p2}, Landroid/support/v4/widget/FocusStrategy;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v4
+    move-result v2
 
     invoke-static {p0, p1, p2}, Landroid/support/v4/widget/FocusStrategy;->minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v5
+    move-result v3
 
-    invoke-static {v4, v5}, Landroid/support/v4/widget/FocusStrategy;->getWeightedDistanceFor(II)I
+    invoke-static {v2, v3}, Landroid/support/v4/widget/FocusStrategy;->getWeightedDistanceFor(II)I
 
-    move-result v0
+    move-result v2
 
     invoke-static {p0, p1, p3}, Landroid/support/v4/widget/FocusStrategy;->majorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v4
+    move-result v3
 
     invoke-static {p0, p1, p3}, Landroid/support/v4/widget/FocusStrategy;->minorAxisDistance(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v4, v5}, Landroid/support/v4/widget/FocusStrategy;->getWeightedDistanceFor(II)I
+    invoke-static {v3, v4}, Landroid/support/v4/widget/FocusStrategy;->getWeightedDistanceFor(II)I
 
-    move-result v1
+    move-result v3
 
-    if-lt v0, v1, :cond_4
+    if-lt v2, v3, :cond_4
 
     :goto_0
-    return v2
+    return v0
 
     :cond_0
-    return v2
+    return v0
 
     :cond_1
-    return v3
+    return v1
 
     :cond_2
-    return v3
+    return v1
 
     :cond_3
-    return v2
+    return v0
 
     :cond_4
-    move v2, v3
+    move v0, v1
 
     goto :goto_0
 .end method
@@ -904,13 +908,13 @@
         .end annotation
     .end param
 
-    const/4 v0, 0x0
-
     invoke-static {p0, p1, p2}, Landroid/support/v4/widget/FocusStrategy;->majorAxisDistanceRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
@@ -994,13 +998,13 @@
         .end annotation
     .end param
 
-    const/4 v0, 0x1
-
     invoke-static {p0, p1, p2}, Landroid/support/v4/widget/FocusStrategy;->majorAxisDistanceToFarEdgeRaw(ILandroid/graphics/Rect;Landroid/graphics/Rect;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+    const/4 v1, 0x1
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 

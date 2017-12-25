@@ -165,8 +165,6 @@
 .method public getCondensedHeader(Ljava/lang/String;)Lorg/apache/http/Header;
     .locals 5
 
-    const/4 v3, 0x0
-
     const/4 v0, 0x1
 
     const/4 v4, 0x0
@@ -219,7 +217,9 @@
     return-object v0
 
     :cond_0
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     aget-object v0, v1, v4
@@ -245,9 +245,7 @@
 .end method
 
 .method public getFirstHeader(Ljava/lang/String;)Lorg/apache/http/Header;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     iget-object v0, p0, Lorg/apache/http/message/HeaderGroup;->headers:Ljava/util/List;
 
@@ -262,7 +260,9 @@
 
     if-nez v0, :cond_1
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -342,9 +342,7 @@
 .end method
 
 .method public getLastHeader(Ljava/lang/String;)Lorg/apache/http/Header;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     iget-object v0, p0, Lorg/apache/http/message/HeaderGroup;->headers:Ljava/util/List;
 
@@ -359,7 +357,9 @@
     :goto_0
     if-gez v1, :cond_0
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     iget-object v0, p0, Lorg/apache/http/message/HeaderGroup;->headers:Ljava/util/List;
@@ -393,11 +393,11 @@
 .method public iterator()Lorg/apache/http/HeaderIterator;
     .locals 3
 
-    const/4 v2, 0x0
-
     new-instance v0, Lorg/apache/http/message/BasicListHeaderIterator;
 
     iget-object v1, p0, Lorg/apache/http/message/HeaderGroup;->headers:Ljava/util/List;
+
+    const/4 v2, 0x0
 
     invoke-direct {v0, v1, v2}, Lorg/apache/http/message/BasicListHeaderIterator;-><init>(Ljava/util/List;Ljava/lang/String;)V
 

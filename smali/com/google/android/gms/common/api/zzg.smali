@@ -870,11 +870,11 @@
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0xd
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0xd
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -912,11 +912,11 @@
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0xf
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0xf
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -1014,11 +1014,11 @@
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0xd
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0xd
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1054,11 +1054,11 @@
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0xe
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0xe
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1086,11 +1086,11 @@
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0xf
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0xf
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -1505,45 +1505,45 @@
 
     if-nez v0, :cond_4
 
-    const-string/jumbo v0, "GoogleApiClientImpl"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/api/Api;->getName()Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    const-string/jumbo v2, " requested in getConnectionResult"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, " requested in getConnectionResult"
 
-    const-string/jumbo v2, " is not connected but is not present in the failed connections map"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, " is not connected but is not present in the failed connections map"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "GoogleApiClientImpl"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0x8
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0x8
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -2139,8 +2139,6 @@
 .method zzkX()V
     .locals 3
 
-    const/4 v2, 0x0
-
     iget-object v0, p0, Lcom/google/android/gms/common/api/zzg;->zzQF:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -2187,6 +2185,8 @@
     move-result-object v0
 
     check-cast v0, Lcom/google/android/gms/common/api/zzg$zze;
+
+    const/4 v2, 0x0
 
     invoke-interface {v0, v2}, Lcom/google/android/gms/common/api/zzg$zze;->zza(Lcom/google/android/gms/common/api/zzg$zzc;)V
 

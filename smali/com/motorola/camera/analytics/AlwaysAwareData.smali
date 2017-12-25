@@ -7,6 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;,
+        Lcom/motorola/camera/analytics/AlwaysAwareData$AmazonEnabledStatus;,
+        Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;,
         Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;,
         Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;,
         Lcom/motorola/camera/analytics/AlwaysAwareData$SCAN_RESULT;
@@ -15,53 +17,124 @@
 
 
 # static fields
+.field private static final AMAZON_DISABLED:I = 0x2
+
+.field private static final AMAZON_ENABLED:I = 0x1
+
+.field private static final AMAZON_NOT_SUPPORTED:I = 0x0
+
 .field public static final SCAN_FAILURE:I = 0x1
+
+.field public static final SCAN_INTERRUPTED:I = 0x2
 
 .field public static final SCAN_SUCCESS:I
 
 
 # instance fields
-.field public mAction:I
+.field public action:I
 
-.field public mDetectionTime:J
+.field public amazonEnabled:I
+    .annotation build Lcom/motorola/camera/analytics/AlwaysAwareData$AmazonEnabledStatus;
+    .end annotation
+.end field
+
+.field public amazonResults:I
+
+.field public detectionTime:J
+
+.field public failure:I
+
+.field public geoAvailable:Z
+
+.field public landmarkScore:D
+
+.field public landmarkVersion:J
 
 .field private mLensFacing:Ljava/lang/String;
     .annotation build Lcom/motorola/camera/analytics/LogEvent$LENS_FACING;
     .end annotation
 .end field
 
-.field public mScanSuccess:I
-
-.field public mScanTime:J
-
-.field public mTotFields:J
-
 .field private mType:I
+
+.field public networkSubtype:I
+    .annotation build Lcom/motorola/camera/NetworkUtil$NetworkType;
+    .end annotation
+.end field
+
+.field public networkType:I
+    .annotation build Lcom/motorola/camera/NetworkUtil$NetworkType;
+    .end annotation
+.end field
+
+.field public placesShown:Z
+
+.field public scanSuccess:I
+
+.field public scanTime:J
+
+.field public totFields:J
+
+.field public uploadTime:J
+
+.field public wikiShown:Z
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 4
+    .locals 6
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
+
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mDetectionTime:J
+    iput-wide v4, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->detectionTime:J
 
-    iput-wide v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mScanTime:J
+    iput-wide v4, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->scanTime:J
 
     sget-object v0, Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;->UNKNOWN:Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;
 
-    iget v0, v0, Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;->mCheckInData:I
+    iget v0, v0, Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;->checkInData:I
 
-    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mAction:I
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->action:I
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mScanSuccess:I
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->scanSuccess:I
 
-    iput-wide v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mTotFields:J
+    iput-wide v4, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->totFields:J
+
+    iput-wide v4, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->uploadTime:J
+
+    iput-boolean v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->wikiShown:Z
+
+    iput-boolean v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->placesShown:Z
+
+    sget-object v0, Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;->NONE:Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;
+
+    iget v0, v0, Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;->checkinData:I
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->failure:I
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->amazonResults:I
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->landmarkScore:D
+
+    iput-wide v4, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->landmarkVersion:J
+
+    iput v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->amazonEnabled:I
+
+    iput v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->networkType:I
+
+    iput v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->networkSubtype:I
+
+    iput-boolean v2, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->geoAvailable:Z
 
     const-string/jumbo v0, "false"
 
@@ -94,6 +167,16 @@
     iget v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mType:I
 
     return v0
+.end method
+
+.method public setAction(Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;)V
+    .locals 1
+
+    iget v0, p1, Lcom/motorola/camera/analytics/AlwaysAwareData$Actions;->checkInData:I
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->action:I
+
+    return-void
 .end method
 
 .method public setCameraUsed(Lcom/motorola/camera/detector/FrameData;)V
@@ -171,6 +254,42 @@
     .end packed-switch
 .end method
 
+.method public setFailure(Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;)V
+    .locals 1
+
+    iget v0, p1, Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;->checkinData:I
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->failure:I
+
+    return-void
+.end method
+
+.method public setFailure(Ljava/lang/String;)V
+    .locals 1
+
+    invoke-static {p1}, Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;->fromCSMessage(Ljava/lang/String;)Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;
+
+    move-result-object v0
+
+    iget v0, v0, Lcom/motorola/camera/analytics/AlwaysAwareData$Failure;->checkinData:I
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->failure:I
+
+    return-void
+.end method
+
+.method public setScanSuccess(I)V
+    .locals 0
+    .param p1    # I
+        .annotation build Lcom/motorola/camera/analytics/AlwaysAwareData$SCAN_RESULT;
+        .end annotation
+    .end param
+
+    iput p1, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->scanSuccess:I
+
+    return-void
+.end method
+
 .method public setType(Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;)V
     .locals 2
 
@@ -185,4 +304,41 @@
     iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mType:I
 
     return-void
+.end method
+
+.method public updateAmazonEnabled()V
+    .locals 1
+
+    invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->isSupported()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->isEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->amazonEnabled:I
+
+    :goto_0
+    return-void
+
+    :cond_0
+    const/4 v0, 0x2
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->amazonEnabled:I
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/motorola/camera/analytics/AlwaysAwareData;->amazonEnabled:I
+
+    goto :goto_0
 .end method

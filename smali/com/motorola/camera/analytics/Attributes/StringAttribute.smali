@@ -119,12 +119,12 @@
     return-object v0
 .end method
 
-.method public record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+.method public record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/analytics/Attributes/StringAttribute;->mName:Ljava/lang/String;
 
-    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p2, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

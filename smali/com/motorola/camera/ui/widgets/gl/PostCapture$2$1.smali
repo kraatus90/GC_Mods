@@ -31,20 +31,8 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_PostCapture$2$1_lambda$3()V
-    .locals 1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
-
-    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-wrap3(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)V
-
-    return-void
-.end method
-
 .method public onAnimationEnd(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
-    .locals 6
+    .locals 5
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
 
@@ -53,6 +41,56 @@
     monitor-enter v1
 
     :try_start_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
+
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get5(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+
+    move-result-object v0
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v2, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostScale(FFF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
+
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get5(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setVisibility(Z)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
+
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get5(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
+
+    iget-object v2, v2, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get7(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)F
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v3, v2, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostTranslation(FFF)V
+
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
     if-eqz v0, :cond_0
@@ -61,30 +99,26 @@
 
     move-result-object v0
 
-    const-string/jumbo v2, "animateShowGuideCapture end"
+    const-string/jumbo v2, "animateHidePostCapture end"
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_0
+    monitor-exit v1
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
 
     iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get3(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Landroid/os/Handler;
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2$1;->this$1:Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$107;
+    iget-object v1, v1, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$107;-><init>(Ljava/lang/Object;)V
-
-    const-wide/16 v4, 0x190
-
-    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v1
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderWhenDirty(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
 
     return-void
 

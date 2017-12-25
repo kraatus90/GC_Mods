@@ -3,7 +3,7 @@
 .source "MenuItemWrapperICS.java"
 
 # interfaces
-.implements Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;
+.implements Landroid/view/MenuItem$OnActionExpandListener;
 
 
 # annotations
@@ -22,7 +22,7 @@
         "<",
         "Landroid/view/MenuItem$OnActionExpandListener;",
         ">;",
-        "Landroid/support/v4/view/MenuItemCompat$OnActionExpandListener;"
+        "Landroid/view/MenuItem$OnActionExpandListener;"
     }
 .end annotation
 

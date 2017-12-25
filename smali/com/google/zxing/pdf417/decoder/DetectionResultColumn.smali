@@ -69,9 +69,9 @@
 .end method
 
 .method final getCodewordNearby(I)Lcom/google/zxing/pdf417/decoder/Codeword;
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {p0, p1}, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->getCodeword(I)Lcom/google/zxing/pdf417/decoder/Codeword;
 
@@ -79,14 +79,14 @@
 
     if-nez v0, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_0
-    const/4 v3, 0x5
+    const/4 v1, 0x5
 
-    if-lt v1, v3, :cond_1
+    if-lt v0, v1, :cond_1
 
-    return-object v4
+    return-object v3
 
     :cond_0
     return-object v0
@@ -94,47 +94,47 @@
     :cond_1
     invoke-virtual {p0, p1}, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->imageRowToCodewordIndex(I)I
 
-    move-result v3
+    move-result v1
 
-    sub-int v2, v3, v1
+    sub-int/2addr v1, v0
 
-    if-gez v2, :cond_4
+    if-gez v1, :cond_4
 
     :cond_2
     invoke-virtual {p0, p1}, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->imageRowToCodewordIndex(I)I
 
-    move-result v3
+    move-result v1
 
-    add-int v2, v3, v1
+    add-int/2addr v1, v0
 
-    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
 
-    array-length v3, v3
+    array-length v2, v2
 
-    if-lt v2, v3, :cond_5
+    if-lt v1, v2, :cond_5
 
     :cond_3
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_4
-    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
 
-    aget-object v0, v3, v2
+    aget-object v1, v2, v1
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_2
 
-    return-object v0
+    return-object v1
 
     :cond_5
-    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
 
-    aget-object v0, v3, v2
+    aget-object v1, v2, v1
 
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
-    return-object v0
+    return-object v1
 .end method
 
 .method final getCodewords()[Lcom/google/zxing/pdf417/decoder/Codeword;
@@ -174,101 +174,99 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 13
+    .locals 10
 
-    const/4 v12, 0x1
-
-    const/4 v5, 0x0
-
-    new-instance v1, Ljava/util/Formatter;
-
-    invoke-direct {v1}, Ljava/util/Formatter;-><init>()V
+    const/4 v9, 0x1
 
     const/4 v2, 0x0
 
-    iget-object v6, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    new-instance v4, Ljava/util/Formatter;
 
-    array-length v7, v6
+    invoke-direct {v4}, Ljava/util/Formatter;-><init>()V
 
-    move v4, v5
+    iget-object v5, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+
+    array-length v6, v5
+
+    move v1, v2
 
     move v3, v2
 
     :goto_0
-    if-lt v4, v7, :cond_0
+    if-lt v1, v6, :cond_0
 
-    invoke-virtual {v1}, Ljava/util/Formatter;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/util/Formatter;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/util/Formatter;->close()V
+    invoke-virtual {v4}, Ljava/util/Formatter;->close()V
 
-    return-object v4
+    return-object v0
 
     :cond_0
-    aget-object v0, v6, v4
+    aget-object v7, v5, v1
 
-    if-eqz v0, :cond_1
+    if-eqz v7, :cond_1
 
-    const-string/jumbo v8, "%3d: %3d|%3d%n"
+    const/4 v0, 0x3
 
-    const/4 v9, 0x3
+    new-array v8, v0, [Ljava/lang/Object;
 
-    new-array v9, v9, [Ljava/lang/Object;
-
-    add-int/lit8 v2, v3, 0x1
+    add-int/lit8 v0, v3, 0x1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v10
+    move-result-object v3
 
-    aput-object v10, v9, v5
+    aput-object v3, v8, v2
 
-    invoke-virtual {v0}, Lcom/google/zxing/pdf417/decoder/Codeword;->getRowNumber()I
+    invoke-virtual {v7}, Lcom/google/zxing/pdf417/decoder/Codeword;->getRowNumber()I
 
-    move-result v10
+    move-result v3
 
-    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v10
+    move-result-object v3
 
-    aput-object v10, v9, v12
+    aput-object v3, v8, v9
 
-    const/4 v10, 0x2
+    invoke-virtual {v7}, Lcom/google/zxing/pdf417/decoder/Codeword;->getValue()I
 
-    invoke-virtual {v0}, Lcom/google/zxing/pdf417/decoder/Codeword;->getValue()I
+    move-result v3
 
-    move-result v11
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v3
 
-    move-result-object v11
+    const/4 v7, 0x2
 
-    aput-object v11, v9, v10
+    aput-object v3, v8, v7
 
-    invoke-virtual {v1, v8, v9}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
+    const-string/jumbo v3, "%3d: %3d|%3d%n"
+
+    invoke-virtual {v4, v3, v8}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
     :goto_1
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    move v3, v2
+    move v3, v0
 
     goto :goto_0
 
     :cond_1
-    const-string/jumbo v8, "%3d:    |   %n"
+    new-array v7, v9, [Ljava/lang/Object;
 
-    new-array v9, v12, [Ljava/lang/Object;
-
-    add-int/lit8 v2, v3, 0x1
+    add-int/lit8 v0, v3, 0x1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v10
+    move-result-object v3
 
-    aput-object v10, v9, v5
+    aput-object v3, v7, v2
 
-    invoke-virtual {v1, v8, v9}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
+    const-string/jumbo v3, "%3d:    |   %n"
+
+    invoke-virtual {v4, v3, v7}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
     goto :goto_1
 .end method

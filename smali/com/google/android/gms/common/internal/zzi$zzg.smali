@@ -28,13 +28,13 @@
 .method public constructor <init>(Lcom/google/android/gms/common/internal/zzi;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     iput-object p1, p0, Lcom/google/android/gms/common/internal/zzi$zzg;->zzTz:Lcom/google/android/gms/common/internal/zzi;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0, v1}, Lcom/google/android/gms/common/internal/zzi$zza;-><init>(Lcom/google/android/gms/common/internal/zzi;ILandroid/os/Bundle;)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, p1, v1, v0}, Lcom/google/android/gms/common/internal/zzi$zza;-><init>(Lcom/google/android/gms/common/internal/zzi;ILandroid/os/Bundle;)V
 
     return-void
 .end method
@@ -78,11 +78,11 @@
 .method protected zzma()Z
     .locals 4
 
+    const/4 v3, 0x0
+
     const/4 v1, 0x1
 
     const/4 v0, 0x0
-
-    const/4 v3, 0x0
 
     iget-object v2, p0, Lcom/google/android/gms/common/internal/zzi$zzg;->zzTz:Lcom/google/android/gms/common/internal/zzi;
 

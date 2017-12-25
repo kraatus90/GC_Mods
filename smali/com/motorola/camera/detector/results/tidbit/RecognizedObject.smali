@@ -9,6 +9,8 @@
 # instance fields
 .field public locale:Ljava/util/Locale;
 
+.field public retryMessage:Ljava/lang/String;
+
 .field public text:Ljava/lang/String;
 
 .field public token:Ljava/lang/String;
@@ -231,6 +233,14 @@
     .locals 1
 
     sget-object v0, Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;->Object:Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
+
+    return-object v0
+.end method
+
+.method public getMessage()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;->retryMessage:Ljava/lang/String;
 
     return-object v0
 .end method

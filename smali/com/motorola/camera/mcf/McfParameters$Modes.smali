@@ -156,17 +156,17 @@
 
     move-result-object v1
 
-    const/4 v2, 0x1
-
     invoke-virtual {p0}, Lcom/motorola/camera/mcf/McfParameters$Modes;->name()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 

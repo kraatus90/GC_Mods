@@ -484,17 +484,17 @@
     move v0, v1
 
     :goto_1
-    const-string/jumbo v3, "startOffset is negative: %s"
-
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v3, v1, [Ljava/lang/Object;
 
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v2
+    aput-object v4, v3, v2
 
-    invoke-static {v0, v3, v4}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v4, "startOffset is negative: %s"
+
+    invoke-static {v0, v4, v3}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     cmp-long v0, p5, v6
 
@@ -515,17 +515,17 @@
     move v0, v1
 
     :goto_3
-    const-string/jumbo v3, "invalid length: %s"
-
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {p5, p6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v1, v2
+    aput-object v3, v1, v2
 
-    invoke-static {v0, v3, v1}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v2, "invalid length: %s"
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v0, Lcom/google/android/gms/wearable/internal/ChannelImpl$6;
 

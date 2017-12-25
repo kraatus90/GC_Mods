@@ -39,6 +39,8 @@
     .end annotation
 .end field
 
+.field public mCropInstaPrint:Z
+
 .field public mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
 .field public mMcfAuxData:Lcom/motorola/camera/mcf/McfAuxiliaryData;
@@ -55,6 +57,8 @@
 
 .field public mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
 
+.field public mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
 .field public mSetResultListener:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -69,6 +73,8 @@
 .field public mUltraWide:Z
 
 .field public mUltraWideFront:Z
+
+.field public mViewPoint:Lcom/motorola/camera/saving/ViewPoint;
 
 
 # direct methods
@@ -102,6 +108,10 @@
     sget-object v0, Lcom/motorola/camera/mcf/Mcf$ReprocessType;->INVALID:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
+
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->NORMAL:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
     const/4 v0, 0x0
 
@@ -139,6 +149,10 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
 
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->NORMAL:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mPriority:I
@@ -171,6 +185,10 @@
 
     iput-boolean v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mRaw:Z
 
+    iget-boolean v0, p1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mCropInstaPrint:Z
+
+    iput-boolean v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mCropInstaPrint:Z
+
     iget-boolean v0, p1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mUltraWide:Z
 
     iput-boolean v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mUltraWide:Z
@@ -182,6 +200,41 @@
     iget v0, p1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMsCount:I
 
     iput v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMsCount:I
+
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mViewPoint:Lcom/motorola/camera/saving/ViewPoint;
+
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mViewPoint:Lcom/motorola/camera/saving/ViewPoint;
+
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    return-void
+.end method
+
+.method private playCaptureSound()V
+    .locals 3
+
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$SceneMode;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    if-eq v0, v1, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHUTTER:Lcom/motorola/camera/Notifier$TYPE;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/Notifier;->postNotify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
+
+    :cond_0
+    sget-object v0, Lcom/motorola/camera/ui/SettingSoundPlayer$Sound;->SHUTTER_CLICK:Lcom/motorola/camera/ui/SettingSoundPlayer$Sound;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/SettingSoundPlayer;->play(Lcom/motorola/camera/ui/SettingSoundPlayer$Sound;)V
 
     return-void
 .end method
@@ -195,7 +248,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->playCaptureSound()V
+    invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->playCaptureSound()V
 
     :cond_0
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMetaData:Landroid/os/Bundle;
@@ -217,16 +270,6 @@
     return-void
 .end method
 
-.method public playCaptureSound()V
-    .locals 1
-
-    sget-object v0, Lcom/motorola/camera/ui/SettingSoundPlayer$Sound;->SHUTTER_CLICK:Lcom/motorola/camera/ui/SettingSoundPlayer$Sound;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/SettingSoundPlayer;->play(Lcom/motorola/camera/ui/SettingSoundPlayer$Sound;)V
-
-    return-void
-.end method
-
 .method public populateCaptureRecord()V
     .locals 2
 
@@ -239,6 +282,12 @@
     move-result v0
 
     iput-boolean v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mRaw:Z
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mCropInstaPrint:Z
 
     const/4 v0, 0x5
 
@@ -302,6 +351,14 @@
     .locals 0
 
     iput-boolean p1, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mPlayShutter:Z
+
+    return-void
+.end method
+
+.method public setViewPoint(Lcom/motorola/camera/saving/ViewPoint;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mViewPoint:Lcom/motorola/camera/saving/ViewPoint;
 
     return-void
 .end method

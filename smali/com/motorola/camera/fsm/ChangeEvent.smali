@@ -40,6 +40,12 @@
 .end field
 
 .field public final mType:Lcom/motorola/camera/fsm/ChangeEvent$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/fsm/ChangeEvent$Type;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

@@ -54,10 +54,10 @@
     return-void
 .end method
 
-.method onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;I)V
-    .locals 3
+.method onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
@@ -77,19 +77,19 @@
     return-void
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23$1;->val$resultWrapper:Landroid/support/v4/media/MediaBrowserServiceCompatApi21$ResultWrapper;
+    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23$1;->val$resultWrapper:Landroid/support/v4/media/MediaBrowserServiceCompatApi21$ResultWrapper;
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/media/MediaBrowserServiceCompatApi21$ResultWrapper;->sendResult(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/media/MediaBrowserServiceCompatApi21$ResultWrapper;->sendResult(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
 
-.method bridge synthetic onResultSent(Ljava/lang/Object;I)V
+.method bridge synthetic onResultSent(Ljava/lang/Object;)V
     .locals 0
 
     check-cast p1, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
 
-    invoke-virtual {p0, p1, p2}, Landroid/support/v4/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23$1;->onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;I)V
+    invoke-virtual {p0, p1}, Landroid/support/v4/media/MediaBrowserServiceCompat$MediaBrowserServiceImplApi23$1;->onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
 
     return-void
 .end method

@@ -164,9 +164,9 @@
 .method public addCustomAction(Ljava/lang/String;Ljava/lang/String;I)Landroid/support/v4/media/session/PlaybackStateCompat$Builder;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, p2, p3, v1}, Landroid/support/v4/media/session/PlaybackStateCompat$CustomAction;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;ILandroid/os/Bundle;)V
 

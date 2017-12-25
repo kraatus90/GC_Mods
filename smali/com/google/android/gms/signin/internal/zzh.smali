@@ -69,35 +69,35 @@
 .end method
 
 .method public static zza(Lcom/google/android/gms/internal/zzme;Ljava/lang/Integer;Ljava/util/concurrent/ExecutorService;)Landroid/os/Bundle;
-    .locals 4
+    .locals 3
 
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const-string/jumbo v1, "com.google.android.gms.signin.internal.offlineAccessRequested"
-
     invoke-virtual {p0}, Lcom/google/android/gms/internal/zzme;->zzwf()Z
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    const-string/jumbo v2, "com.google.android.gms.signin.internal.offlineAccessRequested"
 
-    const-string/jumbo v1, "com.google.android.gms.signin.internal.idTokenRequested"
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/zzme;->zzwg()Z
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    const-string/jumbo v2, "com.google.android.gms.signin.internal.idTokenRequested"
 
-    const-string/jumbo v1, "com.google.android.gms.signin.internal.serverClientId"
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/zzme;->zzvx()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v2, "com.google.android.gms.signin.internal.serverClientId"
+
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/internal/zzme;->zzwh()Lcom/google/android/gms/common/api/GoogleApiClient$ServerAuthCodeCallbacks;
 
@@ -120,24 +120,24 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "com.google.android.gms.signin.internal.signInCallbacks"
+    new-instance v2, Lcom/google/android/gms/common/internal/BinderWrapper;
 
-    new-instance v3, Lcom/google/android/gms/common/internal/BinderWrapper;
+    invoke-direct {v2, v1}, Lcom/google/android/gms/common/internal/BinderWrapper;-><init>(Landroid/os/IBinder;)V
 
-    invoke-direct {v3, v1}, Lcom/google/android/gms/common/internal/BinderWrapper;-><init>(Landroid/os/IBinder;)V
+    const-string/jumbo v1, "com.google.android.gms.signin.internal.signInCallbacks"
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     goto :goto_0
 
     :cond_1
-    const-string/jumbo v1, "com.google.android.gms.common.internal.ClientSettings.sessionId"
-
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    const-string/jumbo v2, "com.google.android.gms.common.internal.ClientSettings.sessionId"
+
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_1
 .end method
@@ -203,11 +203,11 @@
     :try_start_1
     new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    const/16 v1, 0x8
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0x8
 
-    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v0, v2, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
     new-instance v1, Lcom/google/android/gms/signin/internal/AuthAccountResult;
 
@@ -404,15 +404,15 @@
     return-object v0
 
     :cond_0
-    const-string/jumbo v1, "com.google.android.gms.signin.internal.realClientPackageName"
+    iget-object v1, p0, Lcom/google/android/gms/signin/internal/zzh;->zzQg:Lcom/google/android/gms/common/internal/zze;
 
-    iget-object v2, p0, Lcom/google/android/gms/signin/internal/zzh;->zzQg:Lcom/google/android/gms/common/internal/zze;
+    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zze;->zzlJ()Ljava/lang/String;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/common/internal/zze;->zzlJ()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    const-string/jumbo v2, "com.google.android.gms.signin.internal.realClientPackageName"
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

@@ -59,15 +59,15 @@
 .end method
 
 .method public getParameter(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const-string/jumbo v0, "Parameter name"
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public getRealm()Ljava/lang/String;

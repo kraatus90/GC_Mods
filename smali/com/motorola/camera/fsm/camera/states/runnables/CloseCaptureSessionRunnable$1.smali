@@ -47,7 +47,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseCaptureSessionRunnable$1_lambda$2(Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseCaptureSessionRunnable$1_2598(Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;)V
     .locals 0
 
     invoke-virtual {p1, p0}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->removeStateListener(Ljava/lang/Object;)V
@@ -107,11 +107,11 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$136;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$8k-oSWmZ8I2nKB_HrhGX3FaZ7O8$1;
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseCaptureSessionRunnable$1;->val$mcfStateMachine:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
 
-    invoke-direct {v1, p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$136;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$8k-oSWmZ8I2nKB_HrhGX3FaZ7O8$1;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

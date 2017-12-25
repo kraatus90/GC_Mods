@@ -19,8 +19,14 @@
 .method public abstract registerStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
 .end method
 
+.method public abstract registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+.end method
+
 .method public abstract startActivity(Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;)V
 .end method
 
 .method public abstract unregisterStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+.end method
+
+.method public abstract unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
 .end method

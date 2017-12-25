@@ -24,9 +24,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const-class v0, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;
 
@@ -36,7 +34,9 @@
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;->TAG:Ljava/lang/String;
 
-    sput-object v1, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;->sVolleyRequestQueue:Lcom/android/volley/RequestQueue;
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;->sVolleyRequestQueue:Lcom/android/volley/RequestQueue;
 
     return-void
 .end method
@@ -134,13 +134,13 @@
 
     invoke-virtual {v0, v2, v3}, Ljava/util/Date;->setTime(J)V
 
-    const-string/jumbo v1, "APKAJ5D3YPF4NSOJKWDA"
-
     invoke-direct {p0}, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;->readPrivateKeyFromAsset()Ljava/security/PrivateKey;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v0}, Lcom/a9/vs/marsoemlibrary/security/CloudFrontUrlSignerUtil;->getSignedURLWithCannedPolicy(Ljava/lang/String;Ljava/lang/String;Ljava/security/PrivateKey;Ljava/util/Date;)Ljava/lang/String;
+    const-string/jumbo v2, "APKAJ5D3YPF4NSOJKWDA"
+
+    invoke-static {p1, v2, v1, v0}, Lcom/a9/vs/marsoemlibrary/security/CloudFrontUrlSignerUtil;->getSignedURLWithCannedPolicy(Ljava/lang/String;Ljava/lang/String;Ljava/security/PrivateKey;Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -148,9 +148,7 @@
 .end method
 
 .method private readPrivateKeyFromAsset()Ljava/security/PrivateKey;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     :try_start_0
     iget-object v0, p0, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;->mContext:Landroid/content/Context;
@@ -182,15 +180,15 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method a(Lcom/a9/vs/marsoemlibrary/listeners/ScanItInitListener;)V
     .locals 8
-
-    const/4 v4, 0x0
 
     const-string/jumbo v0, "https://d394rpdlmv4bky.cloudfront.net/mobile/android/750379b5926e9f728aa6c253d37e3792/1.0/config.json"
 
@@ -202,10 +200,6 @@
 
     new-instance v0, Lcom/a9/vs/marsoemlibrary/gson/GsonRequest;
 
-    const/4 v1, 0x0
-
-    const-class v3, Lcom/a9/vs/marsoemlibrary/config/ConfigurationResponse;
-
     new-instance v5, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor$1;
 
     invoke-direct {v5, p0, p1}, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor$1;-><init>(Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;Lcom/a9/vs/marsoemlibrary/listeners/ScanItInitListener;)V
@@ -213,6 +207,12 @@
     new-instance v6, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor$2;
 
     invoke-direct {v6, p0, p1}, Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor$2;-><init>(Lcom/a9/vs/marsoemlibrary/config/AWSConfigurationInteractor;Lcom/a9/vs/marsoemlibrary/listeners/ScanItInitListener;)V
+
+    const-class v3, Lcom/a9/vs/marsoemlibrary/config/ConfigurationResponse;
+
+    const/4 v4, 0x0
+
+    const/4 v1, 0x0
 
     invoke-direct/range {v0 .. v6}, Lcom/a9/vs/marsoemlibrary/gson/GsonRequest;-><init>(ILjava/lang/String;Ljava/lang/Class;Ljava/util/Map;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 

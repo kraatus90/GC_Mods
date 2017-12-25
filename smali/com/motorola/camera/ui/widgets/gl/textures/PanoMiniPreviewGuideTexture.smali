@@ -242,7 +242,7 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xf3
+    const/16 v1, 0xf4
 
     invoke-direct {v0, p2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
@@ -250,7 +250,7 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xf4
+    const/16 v1, 0xf5
 
     invoke-direct {v0, p2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
@@ -2524,7 +2524,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800c1
+    const v2, 0x7f0800c2
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2559,7 +2559,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800c2
+    const v2, 0x7f0800c3
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -3377,7 +3377,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800c0
+    const v2, 0x7f0800c1
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 

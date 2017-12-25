@@ -176,7 +176,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_subfsms_ZoomStateMachine_lambda$1(Landroid/hardware/camera2/CaptureResult;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_subfsms_ZoomStateMachine_2574(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)V
     .locals 7
 
     const/16 v6, 0x64
@@ -189,17 +189,17 @@
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;->mZoomState:Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine$ZoomState;
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ZOOM_MOVING_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ZOOM_MOVING_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-static {p1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCaptureResult(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Byte;
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ZOOM_LEVEL_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ZOOM_LEVEL_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-static {p1, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCaptureResult(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v1, p1, p2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -469,9 +469,9 @@
     :cond_0
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/subfsms/ZoomStateMachine;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$140;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$a6jOueC2lSjylP1EsT3ydk9laNo;
 
-    invoke-direct {v1, p0, p2}, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$140;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1, p2}, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$a6jOueC2lSjylP1EsT3ydk9laNo;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/apache/http/protocol/HttpRequestExecutor;Lorg/apache/http/conn/HttpClientConnectionManager;Lorg/apache/http/ConnectionReuseStrategy;Lorg/apache/http/conn/ConnectionKeepAliveStrategy;)V
-    .locals 7
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -62,49 +62,49 @@
 
     new-array v1, v1, [Lorg/apache/http/HttpRequestInterceptor;
 
-    const/4 v2, 0x0
+    new-instance v2, Lorg/apache/http/protocol/RequestContent;
 
-    new-instance v3, Lorg/apache/http/protocol/RequestContent;
+    invoke-direct {v2}, Lorg/apache/http/protocol/RequestContent;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/protocol/RequestContent;-><init>()V
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x1
+    new-instance v2, Lorg/apache/http/protocol/RequestTargetHost;
 
-    new-instance v3, Lorg/apache/http/protocol/RequestTargetHost;
+    invoke-direct {v2}, Lorg/apache/http/protocol/RequestTargetHost;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/protocol/RequestTargetHost;-><init>()V
+    const/4 v3, 0x1
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x2
+    new-instance v2, Lorg/apache/http/client/protocol/RequestClientConnControl;
 
-    new-instance v3, Lorg/apache/http/client/protocol/RequestClientConnControl;
+    invoke-direct {v2}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
+    const/4 v3, 0x2
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x3
+    new-instance v2, Lorg/apache/http/protocol/RequestUserAgent;
 
-    new-instance v3, Lorg/apache/http/protocol/RequestUserAgent;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
 
     const-string/jumbo v4, "Apache-HttpClient"
 
     const-string/jumbo v5, "org.apache.http.client"
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v4, v5, v3}, Lorg/apache/http/util/VersionInfo;->getUserAgent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-static {v4, v5, v6}, Lorg/apache/http/util/VersionInfo;->getUserAgent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-direct {v2, v3}, Lorg/apache/http/protocol/RequestUserAgent;-><init>(Ljava/lang/String;)V
 
-    move-result-object v4
+    const/4 v3, 0x3
 
-    invoke-direct {v3, v4}, Lorg/apache/http/protocol/RequestUserAgent;-><init>(Ljava/lang/String;)V
-
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     invoke-direct {v0, v1}, Lorg/apache/http/protocol/ImmutableHttpProcessor;-><init>([Lorg/apache/http/HttpRequestInterceptor;)V
 

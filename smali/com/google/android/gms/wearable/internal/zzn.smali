@@ -48,13 +48,13 @@
     :goto_0
     new-instance v1, Lcom/google/android/gms/wearable/ChannelIOException;
 
-    const-string/jumbo v2, "Channel closed unexpectedly before stream was finished"
-
-    iget v3, v0, Lcom/google/android/gms/wearable/internal/zzj;->zzaLz:I
+    iget v2, v0, Lcom/google/android/gms/wearable/internal/zzj;->zzaLz:I
 
     iget v0, v0, Lcom/google/android/gms/wearable/internal/zzj;->zzaLA:I
 
-    invoke-direct {v1, v2, v3, v0}, Lcom/google/android/gms/wearable/ChannelIOException;-><init>(Ljava/lang/String;II)V
+    const-string/jumbo v3, "Channel closed unexpectedly before stream was finished"
+
+    invoke-direct {v1, v3, v2, v0}, Lcom/google/android/gms/wearable/ChannelIOException;-><init>(Ljava/lang/String;II)V
 
     return-object v1
 

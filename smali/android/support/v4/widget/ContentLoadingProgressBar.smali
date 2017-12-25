@@ -87,62 +87,62 @@
 
     const-wide/16 v8, 0x1f4
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    iput-boolean v3, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDismissed:Z
+    iput-boolean v1, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDismissed:Z
 
-    iget-object v4, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedShow:Ljava/lang/Runnable;
+    iget-object v2, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedShow:Ljava/lang/Runnable;
 
-    invoke-virtual {p0, v4}, Landroid/support/v4/widget/ContentLoadingProgressBar;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v2}, Landroid/support/v4/widget/ContentLoadingProgressBar;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    iget-wide v6, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mStartTime:J
+    iget-wide v4, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mStartTime:J
 
-    sub-long v0, v4, v6
+    sub-long/2addr v2, v4
 
-    cmp-long v4, v0, v8
+    cmp-long v4, v2, v8
 
     if-ltz v4, :cond_0
 
-    move v2, v3
+    move v0, v1
 
     :cond_0
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     iget-wide v4, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mStartTime:J
 
     const-wide/16 v6, -0x1
 
-    cmp-long v2, v4, v6
+    cmp-long v0, v4, v6
 
-    if-nez v2, :cond_3
+    if-nez v0, :cond_3
 
     :cond_1
-    const/16 v2, 0x8
+    const/16 v0, 0x8
 
-    invoke-virtual {p0, v2}, Landroid/support/v4/widget/ContentLoadingProgressBar;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/support/v4/widget/ContentLoadingProgressBar;->setVisibility(I)V
 
     :cond_2
     :goto_0
     return-void
 
     :cond_3
-    iget-boolean v2, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedHide:Z
+    iget-boolean v0, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedHide:Z
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
-    iget-object v2, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedHide:Ljava/lang/Runnable;
+    iget-object v0, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mDelayedHide:Ljava/lang/Runnable;
 
-    sub-long v4, v8, v0
+    sub-long v2, v8, v2
 
-    invoke-virtual {p0, v2, v4, v5}, Landroid/support/v4/widget/ContentLoadingProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {p0, v0, v2, v3}, Landroid/support/v4/widget/ContentLoadingProgressBar;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    iput-boolean v3, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedHide:Z
+    iput-boolean v1, p0, Landroid/support/v4/widget/ContentLoadingProgressBar;->mPostedHide:Z
 
     goto :goto_0
 .end method

@@ -93,35 +93,35 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "H"
 
-    const-string/jumbo v2, "H"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "F"
 
-    const-string/jumbo v2, "F"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "V"
 
-    const-string/jumbo v2, "V"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "W"
 
-    const-string/jumbo v2, "W"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, " "
 
-    const-string/jumbo v2, " "
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/language/DoubleMetaphone;->L_R_N_M_B_H_F_V_W_SPACE:[Ljava/lang/String;
 
@@ -149,41 +149,41 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "IB"
 
-    const-string/jumbo v2, "IB"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "IL"
 
-    const-string/jumbo v2, "IL"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "IN"
 
-    const-string/jumbo v2, "IN"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "IE"
 
-    const-string/jumbo v2, "IE"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "EI"
 
-    const-string/jumbo v2, "EI"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "ER"
 
-    const-string/jumbo v2, "ER"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/language/DoubleMetaphone;->ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER:[Ljava/lang/String;
 
@@ -211,23 +211,23 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "M"
 
-    const-string/jumbo v2, "M"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "B"
 
-    const-string/jumbo v2, "B"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "Z"
 
-    const-string/jumbo v2, "Z"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/language/DoubleMetaphone;->L_T_K_S_N_M_B_Z:[Ljava/lang/String;
 
@@ -336,11 +336,11 @@
 
     const/4 v0, 0x0
 
-    const/4 v2, 0x4
+    const-string/jumbo v2, "CHIA"
 
-    const-string/jumbo v3, "CHIA"
+    const/4 v3, 0x4
 
-    invoke-static {p1, p2, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p2, v3, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v2
 
@@ -362,11 +362,11 @@
 
     add-int/lit8 v2, p2, -0x1
 
-    const/4 v3, 0x3
+    const-string/jumbo v3, "ACH"
 
-    const-string/jumbo v4, "ACH"
+    const/4 v4, 0x3
 
-    invoke-static {p1, v2, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v2, v4, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v2
 
@@ -385,13 +385,13 @@
     :cond_0
     add-int/lit8 v2, p2, -0x2
 
-    const/4 v3, 0x6
+    const-string/jumbo v3, "BACHER"
 
-    const-string/jumbo v4, "BACHER"
+    const-string/jumbo v4, "MACHER"
 
-    const-string/jumbo v5, "MACHER"
+    const/4 v5, 0x6
 
-    invoke-static {p1, v2, v3, v4, v5}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v2, v5, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v2
 
@@ -463,8 +463,6 @@
     :cond_2
     add-int/lit8 v1, p2, 0x1
 
-    const/4 v2, 0x3
-
     const-string/jumbo v3, "HOR"
 
     const-string/jumbo v4, "HYM"
@@ -472,6 +470,8 @@
     const-string/jumbo v5, "HIA"
 
     const-string/jumbo v6, "HEM"
+
+    const/4 v2, 0x3
 
     move-object v0, p1
 
@@ -494,13 +494,13 @@
 
     const/4 v7, 0x0
 
-    const/4 v0, 0x4
+    const-string/jumbo v0, "VAN "
 
-    const-string/jumbo v1, "VAN "
+    const-string/jumbo v1, "VON "
 
-    const-string/jumbo v2, "VON "
+    const/4 v2, 0x4
 
-    invoke-static {p1, v7, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v7, v2, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -513,11 +513,11 @@
     return v0
 
     :cond_1
-    const/4 v0, 0x3
+    const-string/jumbo v0, "SCH"
 
-    const-string/jumbo v1, "SCH"
+    const/4 v1, 0x3
 
-    invoke-static {p1, v7, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v7, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -525,13 +525,13 @@
 
     add-int/lit8 v1, p2, -0x2
 
-    const/4 v2, 0x6
-
     const-string/jumbo v3, "ORCHES"
 
     const-string/jumbo v4, "ARCHIT"
 
     const-string/jumbo v5, "ORCHID"
+
+    const/4 v2, 0x6
 
     move-object v0, p1
 
@@ -629,13 +629,13 @@
 
     add-int/lit8 v0, v0, -0x2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "AS"
 
-    const-string/jumbo v3, "AS"
+    const-string/jumbo v3, "OS"
 
-    const-string/jumbo v4, "OS"
+    const/4 v4, 0x2
 
-    invoke-static {p1, v0, v1, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v4, v1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -716,11 +716,11 @@
 
     add-int/lit8 v2, p2, -0x1
 
-    const/4 v3, 0x3
+    const-string/jumbo v3, "UMB"
 
-    const-string/jumbo v4, "UMB"
+    const/4 v4, 0x3
 
-    invoke-static {p1, v2, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v2, v4, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v2
 
@@ -748,11 +748,11 @@
 
     add-int/lit8 v2, p2, 0x2
 
-    const/4 v3, 0x2
+    const-string/jumbo v3, "ER"
 
-    const-string/jumbo v4, "ER"
+    const/4 v4, 0x2
 
-    invoke-static {p1, v2, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v2, v4, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v2
 
@@ -988,11 +988,11 @@
     :cond_1
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "CIA"
 
-    const-string/jumbo v3, "CIA"
+    const/4 v3, 0x3
 
-    invoke-static {p1, v0, v1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1059,13 +1059,13 @@
 
     add-int/lit8 v4, p3, 0x1
 
-    const/4 v5, 0x1
-
     const-string/jumbo v6, "C"
 
     const-string/jumbo v7, "K"
 
     const-string/jumbo v8, "Q"
+
+    const/4 v5, 0x1
 
     move-object v3, p1
 
@@ -1091,11 +1091,11 @@
     goto :goto_2
 
     :cond_4
-    const/4 v0, 0x6
+    const-string/jumbo v0, "CAESAR"
 
-    const-string/jumbo v1, "CAESAR"
+    const/4 v1, 0x6
 
-    invoke-static {p1, p3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1115,11 +1115,11 @@
     :cond_6
     add-int/lit8 v0, p3, -0x2
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "WICZ"
 
-    const-string/jumbo v3, "WICZ"
+    const/4 v3, 0x4
 
-    invoke-static {p1, v0, v1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1166,13 +1166,13 @@
     goto :goto_3
 
     :cond_d
-    const/4 v2, 0x3
-
     const-string/jumbo v3, "CIO"
 
     const-string/jumbo v4, "CIE"
 
     const-string/jumbo v5, "CIA"
+
+    const/4 v2, 0x3
 
     move-object v0, p1
 
@@ -1243,11 +1243,11 @@
     :cond_1
     add-int/lit8 v0, p3, 0x2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "HU"
 
-    const-string/jumbo v3, "HU"
+    const/4 v3, 0x2
 
-    invoke-static {p1, v0, v1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1258,13 +1258,13 @@
     :cond_2
     add-int/lit8 v0, p3, -0x1
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "UCCEE"
 
-    const-string/jumbo v2, "UCCEE"
+    const-string/jumbo v2, "UCCES"
 
-    const-string/jumbo v3, "UCCES"
+    const/4 v3, 0x5
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1332,11 +1332,11 @@
     return v0
 
     :cond_1
-    const/4 v0, 0x4
+    const-string/jumbo v0, "CHAE"
 
-    const-string/jumbo v1, "CHAE"
+    const/4 v1, 0x4
 
-    invoke-static {p1, p3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1363,11 +1363,11 @@
     return v0
 
     :cond_4
-    const/4 v0, 0x2
+    const-string/jumbo v0, "MC"
 
-    const-string/jumbo v1, "MC"
+    const/4 v1, 0x2
 
-    invoke-static {p1, v2, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v2, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1418,13 +1418,13 @@
     :cond_0
     add-int/lit8 v1, p3, 0x2
 
-    const/4 v2, 0x1
-
     const-string/jumbo v3, "I"
 
     const-string/jumbo v4, "E"
 
     const-string/jumbo v5, "Y"
+
+    const/4 v2, 0x1
 
     move-object v0, p1
 
@@ -1483,11 +1483,11 @@
 
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "LI"
 
-    const-string/jumbo v2, "LI"
+    const/4 v2, 0x2
 
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1499,26 +1499,26 @@
     :goto_0
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "ER"
 
-    const-string/jumbo v2, "ER"
+    const/4 v2, 0x2
 
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
     :cond_1
-    const/4 v1, 0x0
-
-    const/4 v2, 0x6
-
     const-string/jumbo v3, "DANGER"
 
     const-string/jumbo v4, "RANGER"
 
     const-string/jumbo v5, "MANGER"
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x6
 
     move-object v0, p1
 
@@ -1532,13 +1532,13 @@
     :goto_1
     add-int/lit8 v1, p3, 0x1
 
-    const/4 v2, 0x1
-
     const-string/jumbo v3, "E"
 
     const-string/jumbo v4, "I"
 
     const-string/jumbo v5, "Y"
+
+    const/4 v2, 0x1
 
     move-object v0, p1
 
@@ -1549,15 +1549,15 @@
     if-eqz v0, :cond_11
 
     :cond_3
-    const/4 v0, 0x0
+    const-string/jumbo v0, "VAN "
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "VON "
 
-    const-string/jumbo v2, "VAN "
+    const/4 v2, 0x0
 
-    const-string/jumbo v3, "VON "
+    const/4 v3, 0x4
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v2, v3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1589,11 +1589,11 @@
     :cond_7
     add-int/lit8 v0, p3, 0x2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "EY"
 
-    const-string/jumbo v2, "EY"
+    const/4 v2, 0x2
 
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1684,11 +1684,11 @@
     :cond_e
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x2
+    sget-object v1, Lorg/apache/commons/codec/language/DoubleMetaphone;->ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER:[Ljava/lang/String;
 
-    sget-object v2, Lorg/apache/commons/codec/language/DoubleMetaphone;->ES_EP_EB_EL_EY_IB_IL_IN_IE_EI_ER:[Ljava/lang/String;
+    const/4 v2, 0x2
 
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->a(Ljava/lang/String;II[Ljava/lang/String;)Z
+    invoke-static {p1, v0, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->a(Ljava/lang/String;II[Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1712,13 +1712,13 @@
     :cond_10
     add-int/lit8 v0, p3, -0x1
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "E"
 
-    const-string/jumbo v2, "E"
+    const-string/jumbo v2, "I"
 
-    const-string/jumbo v3, "I"
+    const/4 v3, 0x1
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1726,13 +1726,13 @@
 
     add-int/lit8 v0, p3, -0x1
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "RGY"
 
-    const-string/jumbo v2, "RGY"
+    const-string/jumbo v2, "OGY"
 
-    const-string/jumbo v3, "OGY"
+    const/4 v3, 0x3
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1749,13 +1749,13 @@
     :cond_11
     add-int/lit8 v0, p3, -0x1
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "AGGI"
 
-    const-string/jumbo v2, "AGGI"
+    const-string/jumbo v2, "OGGI"
 
-    const-string/jumbo v3, "OGGI"
+    const/4 v3, 0x4
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -1780,25 +1780,13 @@
     goto/16 :goto_3
 
     :cond_12
-    const/4 v0, 0x0
+    const-string/jumbo v0, "SCH"
 
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    const-string/jumbo v2, "SCH"
+    const/4 v2, 0x3
 
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    add-int/lit8 v0, p3, 0x1
-
-    const/4 v1, 0x2
-
-    const-string/jumbo v2, "ET"
-
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v1, v2, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -1806,11 +1794,23 @@
 
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "ET"
 
-    const-string/jumbo v2, "IER"
+    const/4 v2, 0x2
 
-    invoke-static {p1, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v0, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    add-int/lit8 v0, p3, 0x1
+
+    const-string/jumbo v1, "IER"
+
+    const/4 v2, 0x3
+
+    invoke-static {p1, v0, v2, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -2329,13 +2329,13 @@
 
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "P"
 
-    const-string/jumbo v2, "P"
+    const-string/jumbo v2, "B"
 
-    const-string/jumbo v3, "B"
+    const/4 v3, 0x1
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -2437,13 +2437,13 @@
 
     add-int/lit8 v0, p3, -0x1
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "ISL"
 
-    const-string/jumbo v3, "ISL"
+    const-string/jumbo v3, "YSL"
 
-    const-string/jumbo v4, "YSL"
+    const/4 v4, 0x3
 
-    invoke-static {p1, v0, v1, v3, v4}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v4, v1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -2460,13 +2460,13 @@
 
     if-nez v0, :cond_4
 
-    const/4 v0, 0x3
+    const-string/jumbo v0, "SIO"
 
-    const-string/jumbo v1, "SIO"
+    const-string/jumbo v1, "SIA"
 
-    const-string/jumbo v3, "SIA"
+    const/4 v3, 0x3
 
-    invoke-static {p1, p3, v0, v1, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, p3, v3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -2493,11 +2493,11 @@
     goto :goto_2
 
     :cond_3
-    const/4 v0, 0x5
+    const-string/jumbo v0, "SUGAR"
 
-    const-string/jumbo v1, "SUGAR"
+    const/4 v1, 0x5
 
-    invoke-static {p1, p3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -2508,8 +2508,6 @@
     :cond_4
     add-int/lit8 v1, p3, 0x1
 
-    const/4 v2, 0x4
-
     const-string/jumbo v3, "HEIM"
 
     const-string/jumbo v4, "HOEK"
@@ -2517,6 +2515,8 @@
     const-string/jumbo v5, "HOLM"
 
     const-string/jumbo v6, "HOLZ"
+
+    const/4 v2, 0x4
 
     move-object v0, p1
 
@@ -2540,11 +2540,11 @@
     goto :goto_4
 
     :cond_7
-    const/4 v0, 0x4
+    const-string/jumbo v0, "SIAN"
 
-    const-string/jumbo v1, "SIAN"
+    const/4 v1, 0x4
 
-    invoke-static {p1, p3, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, p3, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
@@ -2684,13 +2684,13 @@
 
     add-int/lit8 v1, p3, 0x2
 
-    const/4 v2, 0x1
-
     const-string/jumbo v3, "I"
 
     const-string/jumbo v4, "E"
 
     const-string/jumbo v5, "Y"
+
+    const/4 v2, 0x1
 
     move-object v0, p1
 
@@ -2888,13 +2888,13 @@
 
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "T"
 
-    const-string/jumbo v2, "T"
+    const-string/jumbo v2, "D"
 
-    const-string/jumbo v3, "D"
+    const/4 v3, 0x1
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -2963,8 +2963,6 @@
     :cond_0
     add-int/lit8 v1, p3, -0x1
 
-    const/4 v2, 0x5
-
     const-string/jumbo v3, "EWSKI"
 
     const-string/jumbo v4, "EWSKY"
@@ -2972,6 +2970,8 @@
     const-string/jumbo v5, "OWSKI"
 
     const-string/jumbo v6, "OWSKY"
+
+    const/4 v2, 0x5
 
     move-object v0, p1
 
@@ -3063,23 +3063,23 @@
     goto :goto_1
 
     :cond_9
-    const/4 v0, 0x3
+    const-string/jumbo v0, "SCH"
 
-    const-string/jumbo v1, "SCH"
+    const/4 v1, 0x3
 
-    invoke-static {p1, v7, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
+    invoke-static {p1, v7, v1, v0}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    const/4 v0, 0x4
+    const-string/jumbo v0, "WICZ"
 
-    const-string/jumbo v1, "WICZ"
+    const-string/jumbo v1, "WITZ"
 
-    const-string/jumbo v2, "WITZ"
+    const/4 v2, 0x4
 
-    invoke-static {p1, p3, v0, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, p3, v2, v0, v1}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -3118,13 +3118,13 @@
     :goto_0
     add-int/lit8 v0, p3, 0x1
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "C"
 
-    const-string/jumbo v2, "C"
+    const-string/jumbo v2, "X"
 
-    const-string/jumbo v3, "X"
+    const/4 v3, 0x1
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -3146,13 +3146,13 @@
     :cond_3
     add-int/lit8 v0, p3, -0x3
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "IAU"
 
-    const-string/jumbo v2, "IAU"
+    const-string/jumbo v2, "EAU"
 
-    const-string/jumbo v3, "EAU"
+    const/4 v3, 0x3
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -3160,13 +3160,13 @@
 
     add-int/lit8 v0, p3, -0x2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "AU"
 
-    const-string/jumbo v2, "AU"
+    const-string/jumbo v2, "OU"
 
-    const-string/jumbo v3, "OU"
+    const/4 v3, 0x2
 
-    invoke-static {p1, v0, v1, v2, v3}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
+    invoke-static {p1, v0, v3, v1, v2}, Lorg/apache/commons/codec/language/DoubleMetaphone;->contains(Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -3195,13 +3195,13 @@
 
     add-int/lit8 v1, p3, 0x1
 
-    const/4 v2, 0x2
-
     const-string/jumbo v3, "ZO"
 
     const-string/jumbo v4, "ZI"
 
     const-string/jumbo v5, "ZA"
+
+    const/4 v2, 0x2
 
     move-object v0, p1
 

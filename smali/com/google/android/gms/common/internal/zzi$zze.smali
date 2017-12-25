@@ -34,55 +34,51 @@
 
 # virtual methods
 .method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 3
+    .locals 2
 
-    move-object v0, p0
+    const-string/jumbo v0, "Expecting a valid IBinder"
 
-    const-string/jumbo v1, "Expecting a valid IBinder"
+    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/zzv;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2, v1}, Lcom/google/android/gms/common/internal/zzv;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
 
     invoke-static {p2}, Lcom/google/android/gms/common/internal/zzq$zza;->zzT(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/zzq;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/zzi;->zza(Lcom/google/android/gms/common/internal/zzi;Lcom/google/android/gms/common/internal/zzq;)Lcom/google/android/gms/common/internal/zzq;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzi;->zza(Lcom/google/android/gms/common/internal/zzi;Lcom/google/android/gms/common/internal/zzq;)Lcom/google/android/gms/common/internal/zzq;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/zzi;->zzlV()V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/zzi;->zzlV()V
 
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 5
+    .locals 4
 
-    move-object v0, p0
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
+
+    iget-object v0, v0, Lcom/google/android/gms/common/internal/zzi;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
 
     iget-object v1, v1, Lcom/google/android/gms/common/internal/zzi;->mHandler:Landroid/os/Handler;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/zzi$zze;->zzTz:Lcom/google/android/gms/common/internal/zzi;
+    const/4 v2, 0x1
 
-    iget-object v2, v2, Lcom/google/android/gms/common/internal/zzi;->mHandler:Landroid/os/Handler;
-
-    const/4 v3, 0x4
-
-    const/4 v4, 0x1
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    const/4 v3, 0x4
+
+    invoke-virtual {v1, v3, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method

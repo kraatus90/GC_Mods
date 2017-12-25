@@ -106,9 +106,13 @@
         .end annotation
     .end param
 
-    const/high16 v1, 0x1000000
+    const/4 v3, 0x1
 
-    if-ge p1, v1, :cond_0
+    ushr-int/lit8 v0, p1, 0x18
+
+    and-int/lit16 v0, v0, 0xff
+
+    if-ge v0, v3, :cond_0
 
     new-instance v0, Landroid/util/TypedValue;
 
@@ -120,13 +124,11 @@
 
     sget v2, Landroid/support/v7/appcompat/R$attr;->alertDialogTheme:I
 
-    const/4 v3, 0x1
-
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    iget v1, v0, Landroid/util/TypedValue;->resourceId:I
+    iget v0, v0, Landroid/util/TypedValue;->resourceId:I
 
-    return v1
+    return v0
 
     :cond_0
     return p1
@@ -219,9 +221,9 @@
 .method public setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->mAlert:Landroid/support/v7/app/AlertController;
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, p1, p2, p3, v1}, Landroid/support/v7/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;)V
 
@@ -231,9 +233,9 @@
 .method public setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->mAlert:Landroid/support/v7/app/AlertController;
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, p1, p2, v1, p3}, Landroid/support/v7/app/AlertController;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;Landroid/os/Message;)V
 
@@ -242,6 +244,11 @@
 
 .method setButtonPanelLayoutHint(I)V
     .locals 1
+    .annotation build Landroid/support/annotation/RestrictTo;
+        value = {
+            .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
+        }
+    .end annotation
 
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->mAlert:Landroid/support/v7/app/AlertController;
 
@@ -301,9 +308,9 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AlertDialog;->mAlert:Landroid/support/v7/app/AlertController;
 
-    iget v2, v0, Landroid/util/TypedValue;->resourceId:I
+    iget v0, v0, Landroid/util/TypedValue;->resourceId:I
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/app/AlertController;->setIcon(I)V
+    invoke-virtual {v1, v0}, Landroid/support/v7/app/AlertController;->setIcon(I)V
 
     return-void
 .end method

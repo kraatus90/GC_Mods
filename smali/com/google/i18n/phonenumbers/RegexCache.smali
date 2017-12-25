@@ -57,9 +57,9 @@
 .method public getPatternForRegex(Ljava/lang/String;)Ljava/util/regex/Pattern;
     .locals 2
 
-    iget-object v1, p0, Lcom/google/i18n/phonenumbers/RegexCache;->cache:Lcom/google/i18n/phonenumbers/RegexCache$LRUCache;
+    iget-object v0, p0, Lcom/google/i18n/phonenumbers/RegexCache;->cache:Lcom/google/i18n/phonenumbers/RegexCache$LRUCache;
 
-    invoke-virtual {v1, p1}, Lcom/google/i18n/phonenumbers/RegexCache$LRUCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lcom/google/i18n/phonenumbers/RegexCache$LRUCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

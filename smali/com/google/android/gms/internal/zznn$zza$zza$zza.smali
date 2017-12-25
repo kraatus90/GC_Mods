@@ -504,9 +504,9 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x3
-
     iget-wide v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNg:D
+
+    const/4 v0, 0x3
 
     invoke-virtual {p1, v0, v2, v3}, Lcom/google/android/gms/internal/zznr;->zza(ID)V
 
@@ -532,9 +532,9 @@
 
     if-eqz v0, :cond_1
 
-    const/4 v0, 0x5
-
     iget-wide v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNi:J
+
+    const/4 v0, 0x5
 
     invoke-virtual {p1, v0, v2, v3}, Lcom/google/android/gms/internal/zznr;->zzb(IJ)V
 
@@ -580,9 +580,9 @@
 
     if-eqz v0, :cond_6
 
-    const/16 v0, 0xd
-
     iget-wide v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNr:J
+
+    const/16 v0, 0xd
 
     invoke-virtual {p1, v0, v2, v3}, Lcom/google/android/gms/internal/zznr;->zzb(IJ)V
 
@@ -597,56 +597,56 @@
     return-void
 
     :cond_8
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNe:[B
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNe:[B
+    const/4 v2, 0x1
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zza(I[B)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zza(I[B)V
 
     goto :goto_0
 
     :cond_9
-    const/4 v0, 0x2
+    iget-object v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNf:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNf:Ljava/lang/String;
+    const/4 v2, 0x2
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzb(ILjava/lang/String;)V
 
     goto :goto_1
 
     :cond_a
-    const/4 v0, 0x4
+    iget v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNh:F
 
-    iget v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNh:F
+    const/4 v2, 0x4
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzb(IF)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzb(IF)V
 
     goto :goto_2
 
     :cond_b
-    const/4 v0, 0x6
+    iget v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNj:I
 
-    iget v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNj:I
+    const/4 v2, 0x6
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzx(II)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzx(II)V
 
     goto :goto_3
 
     :cond_c
-    const/4 v0, 0x7
+    iget v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNk:I
 
-    iget v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNk:I
+    const/4 v2, 0x7
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzy(II)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzy(II)V
 
     goto :goto_4
 
     :cond_d
-    const/16 v0, 0x8
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNl:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNl:Z
+    const/16 v2, 0x8
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzb(IZ)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzb(IZ)V
 
     goto :goto_5
 
@@ -768,13 +768,13 @@
 
     if-ge v0, v2, :cond_5
 
-    const/16 v2, 0xc
+    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNp:[J
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNp:[J
+    aget-wide v2, v2, v0
 
-    aget-wide v4, v3, v0
+    const/16 v4, 0xc
 
-    invoke-virtual {p1, v2, v4, v5}, Lcom/google/android/gms/internal/zznr;->zzb(IJ)V
+    invoke-virtual {p1, v4, v2, v3}, Lcom/google/android/gms/internal/zznr;->zzb(IJ)V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -794,13 +794,13 @@
 
     if-ge v1, v0, :cond_7
 
-    const/16 v0, 0xe
+    iget-object v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNq:[F
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNq:[F
+    aget v0, v0, v1
 
-    aget v2, v2, v1
+    const/16 v2, 0xe
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzb(IF)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzb(IF)V
 
     add-int/lit8 v1, v1, 0x1
 
@@ -875,11 +875,11 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x3
+    iget-wide v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNg:D
 
-    iget-wide v4, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNg:D
+    const/4 v4, 0x3
 
-    invoke-static {v2, v4, v5}, Lcom/google/android/gms/internal/zznr;->zzb(ID)I
+    invoke-static {v4, v2, v3}, Lcom/google/android/gms/internal/zznr;->zzb(ID)I
 
     move-result v2
 
@@ -907,11 +907,11 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x5
+    iget-wide v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNi:J
 
-    iget-wide v4, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNi:J
+    const/4 v4, 0x5
 
-    invoke-static {v2, v4, v5}, Lcom/google/android/gms/internal/zznr;->zzd(IJ)I
+    invoke-static {v4, v2, v3}, Lcom/google/android/gms/internal/zznr;->zzd(IJ)I
 
     move-result v2
 
@@ -963,9 +963,9 @@
 
     if-eqz v1, :cond_6
 
-    const/16 v1, 0xd
-
     iget-wide v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNr:J
+
+    const/16 v1, 0xd
 
     invoke-static {v1, v2, v3}, Lcom/google/android/gms/internal/zznr;->zzd(IJ)I
 
@@ -994,11 +994,11 @@
     goto :goto_0
 
     :cond_9
-    const/4 v2, 0x2
+    iget-object v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNf:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNf:Ljava/lang/String;
+    const/4 v3, 0x2
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
+    invoke-static {v3, v2}, Lcom/google/android/gms/internal/zznr;->zzj(ILjava/lang/String;)I
 
     move-result v2
 
@@ -1018,11 +1018,11 @@
     goto :goto_2
 
     :cond_b
-    const/4 v2, 0x6
+    iget v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNj:I
 
-    iget v3, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNj:I
+    const/4 v3, 0x6
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/internal/zznr;->zzz(II)I
+    invoke-static {v3, v2}, Lcom/google/android/gms/internal/zznr;->zzz(II)I
 
     move-result v2
 
@@ -1031,11 +1031,11 @@
     goto :goto_3
 
     :cond_c
-    const/4 v2, 0x7
+    iget v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNk:I
 
-    iget v3, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNk:I
+    const/4 v3, 0x7
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/internal/zznr;->zzA(II)I
+    invoke-static {v3, v2}, Lcom/google/android/gms/internal/zznr;->zzA(II)I
 
     move-result v2
 
@@ -1044,11 +1044,11 @@
     goto :goto_4
 
     :cond_d
-    const/16 v2, 0x8
+    iget-boolean v2, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNl:Z
 
-    iget-boolean v3, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNl:Z
+    const/16 v3, 0x8
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/internal/zznr;->zzc(IZ)I
+    invoke-static {v3, v2}, Lcom/google/android/gms/internal/zznr;->zzc(IZ)I
 
     move-result v2
 
@@ -1879,8 +1879,6 @@
 
     const-wide/16 v4, 0x0
 
-    const/4 v3, 0x0
-
     const/4 v2, 0x0
 
     sget-object v0, Lcom/google/android/gms/internal/zzob;->zzaOc:[B
@@ -1933,7 +1931,9 @@
 
     iput-wide v4, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNr:J
 
-    iput-object v3, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNI:Lcom/google/android/gms/internal/zznu;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zznn$zza$zza$zza;->zzaNI:Lcom/google/android/gms/internal/zznu;
 
     const/4 v0, -0x1
 

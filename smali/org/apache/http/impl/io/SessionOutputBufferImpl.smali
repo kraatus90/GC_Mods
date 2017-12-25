@@ -37,17 +37,17 @@
 
     new-array v0, v0, [B
 
-    const/4 v1, 0x0
+    const/16 v1, 0xd
 
-    const/16 v2, 0xd
+    const/4 v2, 0x0
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x1
+    const/16 v1, 0xa
 
-    const/16 v2, 0xa
+    const/4 v2, 0x1
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     sput-object v0, Lorg/apache/http/impl/io/SessionOutputBufferImpl;->CRLF:[B
 
@@ -417,11 +417,11 @@
 
     if-eqz p1, :cond_0
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/impl/io/SessionOutputBufferImpl;->write([BII)V
+    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/impl/io/SessionOutputBufferImpl;->write([BII)V
 
     return-void
 

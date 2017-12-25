@@ -8,6 +8,8 @@
 
 .field private static final MOTO_ARSELFIE_EXTRA_CAMERA:Ljava/lang/String; = "com.motorola.arselfie.intent.EXTRA_CAMERA"
 
+.field private static final MOTO_ARSELFIE_EXTRA_CAPTURE_ACTION:Ljava/lang/String; = "com.motorola.arselfie.intent.EXTRA_CAPTURE_ACTION"
+
 .field private static final MOTO_ARSELFIE_EXTRA_PICTURE_SIZE:Ljava/lang/String; = "com.motorola.arselfie.intent.EXTRA_PICTURE_SIZE"
 
 .field private static final MOTO_ARSELFIE_EXTRA_SHUTTER_TONE:Ljava/lang/String; = "com.motorola.arselfie.intent.EXTRA_SHUTTER_TONE"
@@ -154,6 +156,26 @@
     move-result v0
 
     invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string/jumbo v2, "com.motorola.arselfie.intent.EXTRA_CAPTURE_ACTION"
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_ACTION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     invoke-virtual {p0, v1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 

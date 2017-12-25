@@ -35,11 +35,34 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x0
 
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$2;->this$0:Landroid/support/v7/widget/SearchView;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/SearchView;->updateFocusedState()V
+    iget-object v0, v0, Landroid/support/v7/widget/SearchView;->mSuggestionsAdapter:Landroid/support/v4/widget/CursorAdapter;
 
+    if-nez v0, :cond_1
+
+    :cond_0
+    :goto_0
     return-void
+
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$2;->this$0:Landroid/support/v7/widget/SearchView;
+
+    iget-object v0, v0, Landroid/support/v7/widget/SearchView;->mSuggestionsAdapter:Landroid/support/v4/widget/CursorAdapter;
+
+    instance-of v0, v0, Landroid/support/v7/widget/SuggestionsAdapter;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$2;->this$0:Landroid/support/v7/widget/SearchView;
+
+    iget-object v0, v0, Landroid/support/v7/widget/SearchView;->mSuggestionsAdapter:Landroid/support/v4/widget/CursorAdapter;
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/CursorAdapter;->changeCursor(Landroid/database/Cursor;)V
+
+    goto :goto_0
 .end method

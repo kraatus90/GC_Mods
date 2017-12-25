@@ -18,7 +18,7 @@
 
 
 # virtual methods
-.method abstract getFeatures()Ljava/util/EnumSet;
+.method abstract getLimitedFeatures()Ljava/util/EnumSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

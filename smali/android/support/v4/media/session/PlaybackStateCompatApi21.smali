@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x15
 .end annotation
@@ -148,7 +144,7 @@
 .end method
 
 .method public static newInstance(IJJFJLjava/lang/CharSequence;JLjava/util/List;J)Ljava/lang/Object;
-    .locals 11
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IJJFJ",
@@ -170,7 +166,7 @@
 
     move-wide v4, p1
 
-    move/from16 v6, p5
+    move v6, p5
 
     move-wide/from16 v7, p9
 
@@ -178,7 +174,7 @@
 
     invoke-virtual {v2, p3, p4}, Landroid/media/session/PlaybackState$Builder;->setBufferedPosition(J)Landroid/media/session/PlaybackState$Builder;
 
-    move-wide/from16 v0, p6
+    move-wide v0, p6
 
     invoke-virtual {v2, v0, v1}, Landroid/media/session/PlaybackState$Builder;->setActions(J)Landroid/media/session/PlaybackState$Builder;
 
@@ -188,14 +184,14 @@
 
     invoke-interface/range {p11 .. p11}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v4
 
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
     move-wide/from16 v0, p12
 
@@ -203,18 +199,18 @@
 
     invoke-virtual {v2}, Landroid/media/session/PlaybackState$Builder;->build()Landroid/media/session/PlaybackState;
 
-    move-result-object v3
+    move-result-object v2
 
-    return-object v3
+    return-object v2
 
     :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v3
 
-    check-cast v9, Landroid/media/session/PlaybackState$CustomAction;
+    check-cast v3, Landroid/media/session/PlaybackState$CustomAction;
 
-    invoke-virtual {v2, v9}, Landroid/media/session/PlaybackState$Builder;->addCustomAction(Landroid/media/session/PlaybackState$CustomAction;)Landroid/media/session/PlaybackState$Builder;
+    invoke-virtual {v2, v3}, Landroid/media/session/PlaybackState$Builder;->addCustomAction(Landroid/media/session/PlaybackState$CustomAction;)Landroid/media/session/PlaybackState$Builder;
 
     goto :goto_0
 .end method

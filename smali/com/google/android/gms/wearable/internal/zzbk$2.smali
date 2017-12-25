@@ -65,15 +65,15 @@
     if-nez v1, :cond_0
 
     :goto_0
-    const-string/jumbo v1, "file"
+    iget-object v1, p0, Lcom/google/android/gms/wearable/internal/zzbk$2;->zzayj:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/internal/zzbk$2;->zzayj:Landroid/net/Uri;
+    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    invoke-virtual {v2}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    const-string/jumbo v2, "file"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -155,11 +155,11 @@
 
     new-instance v1, Lcom/google/android/gms/common/api/Status;
 
-    const/16 v2, 0xa
+    const-string/jumbo v2, "Channel.receiveFile used with non-file URI"
 
-    const-string/jumbo v3, "Channel.receiveFile used with non-file URI"
+    const/16 v3, 0xa
 
-    invoke-direct {v1, v2, v3}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+    invoke-direct {v1, v3, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
     invoke-interface {v0, v1}, Lcom/google/android/gms/common/api/zza$zzb;->zzk(Lcom/google/android/gms/common/api/Status;)V
 
@@ -173,27 +173,27 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v0, "WearableClient"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "File couldn\'t be opened for Channel.receiveFile: "
 
-    const-string/jumbo v3, "File couldn\'t be opened for Channel.receiveFile: "
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "WearableClient"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzbk$2;->zzaxh:Lcom/google/android/gms/common/api/zza$zzb;
 

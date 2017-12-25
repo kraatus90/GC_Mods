@@ -69,53 +69,51 @@
 .end method
 
 .method public declared-synchronized read(Lcom/google/gson/stream/JsonReader;)Ljava/sql/Date;
-    .locals 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v5, 0x0
-
     monitor-enter p0
 
     :try_start_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v4, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    sget-object v1, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eq v1, v4, :cond_0
+    if-eq v0, v1, :cond_0
 
     :try_start_1
-    iget-object v1, p0, Lcom/google/gson/internal/bind/SqlDateTypeAdapter;->format:Ljava/text/DateFormat;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/SqlDateTypeAdapter;->format:Ljava/text/DateFormat;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
-
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
 
-    move-result-wide v2
+    move-result-object v0
 
-    new-instance v1, Ljava/sql/Date;
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    invoke-direct {v1, v2, v3}, Ljava/sql/Date;-><init>(J)V
+    move-result-wide v0
+
+    new-instance v2, Ljava/sql/Date;
+
+    invoke-direct {v2, v0, v1}, Ljava/sql/Date;-><init>(J)V
     :try_end_1
     .catch Ljava/text/ParseException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
-    return-object v1
+    return-object v2
 
     :cond_0
     :try_start_2
@@ -123,9 +121,11 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
+    const/4 v0, 0x0
+
     monitor-exit p0
 
-    return-object v5
+    return-object v0
 
     :catch_0
     move-exception v0
@@ -140,11 +140,11 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     monitor-exit p0
 
-    throw v1
+    throw v0
 .end method
 
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V

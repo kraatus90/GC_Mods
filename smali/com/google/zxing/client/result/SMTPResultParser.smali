@@ -15,44 +15,45 @@
 
 # virtual methods
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/EmailAddressParsedResult;
-    .locals 9
+    .locals 7
 
-    const/16 v1, 0x3a
-
-    const/4 v3, 0x0
+    const/16 v5, 0x3a
 
     const/4 v2, 0x0
 
+    const/4 v6, 0x0
+
     invoke-static {p1}, Lcom/google/zxing/client/result/SMTPResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    const-string/jumbo v0, "smtp:"
+    const-string/jumbo v1, "smtp:"
 
-    invoke-virtual {v8, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_2
+    if-eqz v1, :cond_1
 
     :cond_0
-    const/4 v0, 0x5
+    const/4 v1, 0x5
 
-    invoke-virtual {v8, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    const/4 v4, 0x0
+    invoke-virtual {v0, v5}, Ljava/lang/String;->indexOf(I)I
 
-    const/4 v5, 0x0
+    move-result v1
 
-    invoke-virtual {v7, v1}, Ljava/lang/String;->indexOf(I)I
+    if-gez v1, :cond_2
 
-    move-result v6
+    move-object v5, v2
 
-    if-gez v6, :cond_3
+    move-object v4, v2
 
-    :cond_1
+    move-object v3, v0
+
     :goto_0
     new-instance v0, Lcom/google/zxing/client/result/EmailAddressParsedResult;
 
@@ -60,7 +61,7 @@
 
     new-array v1, v1, [Ljava/lang/String;
 
-    aput-object v7, v1, v3
+    aput-object v3, v1, v6
 
     move-object v3, v2
 
@@ -68,43 +69,52 @@
 
     return-object v0
 
-    :cond_2
-    const-string/jumbo v0, "SMTP:"
+    :cond_1
+    const-string/jumbo v1, "SMTP:"
 
-    invoke-virtual {v8, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     return-object v2
 
-    :cond_3
-    add-int/lit8 v0, v6, 0x1
+    :cond_2
+    add-int/lit8 v3, v1, 0x1
 
-    invoke-virtual {v7, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v7, v3, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0, v6, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v4, v1}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v4, v5}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v6
+    move-result v1
 
-    if-ltz v6, :cond_1
+    if-gez v1, :cond_3
 
-    add-int/lit8 v0, v6, 0x1
+    move-object v5, v2
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    move-object v3, v0
+
+    goto :goto_0
+
+    :cond_3
+    add-int/lit8 v3, v1, 0x1
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v4, v3, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v4, v6, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v4
+
+    move-object v3, v0
 
     goto :goto_0
 .end method

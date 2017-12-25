@@ -66,46 +66,48 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
+    .param p1    # Landroid/graphics/Canvas;
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v5, 0x0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v4, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v2, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p0, v4}, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->copyBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v2}, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->copyBounds(Landroid/graphics/Rect;)V
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    iget-object v4, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->this$0:Landroid/support/v4/app/ActionBarDrawerToggle;
+    iget-object v2, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->this$0:Landroid/support/v4/app/ActionBarDrawerToggle;
 
-    iget-object v4, v4, Landroid/support/v4/app/ActionBarDrawerToggle;->mActivity:Landroid/app/Activity;
+    iget-object v2, v2, Landroid/support/v4/app/ActionBarDrawerToggle;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v4}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v2}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    invoke-virtual {v2}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {v2}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
-    move-result v4
+    move-result v2
 
-    if-eq v4, v3, :cond_1
+    if-eq v2, v1, :cond_1
 
     :goto_0
-    if-nez v1, :cond_2
-
-    move v0, v3
+    if-nez v0, :cond_2
 
     :goto_1
-    iget-object v3, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v2, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mTmpRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v3}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
     move-result v2
 
@@ -121,13 +123,13 @@
 
     mul-float/2addr v3, v4
 
-    int-to-float v4, v0
+    int-to-float v1, v1
 
-    mul-float/2addr v3, v4
+    mul-float/2addr v1, v3
 
-    invoke-virtual {p1, v3, v5}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v1, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     :cond_0
     :goto_2
@@ -138,29 +140,29 @@
     return-void
 
     :cond_1
-    move v1, v3
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
     goto :goto_1
 
     :cond_3
-    iget-boolean v3, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mHasMirroring:Z
+    iget-boolean v0, p0, Landroid/support/v4/app/ActionBarDrawerToggle$SlideDrawable;->mHasMirroring:Z
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    int-to-float v3, v2
+    int-to-float v0, v2
 
-    invoke-virtual {p1, v3, v5}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    const/high16 v3, -0x40800000    # -1.0f
+    const/high16 v0, -0x40800000    # -1.0f
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
     goto :goto_2
 .end method

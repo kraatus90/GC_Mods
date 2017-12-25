@@ -98,6 +98,34 @@
 
     invoke-static {v2, v0}, Lcom/motorola/camera/saving/location/StoragePool;->-wrap0(Lcom/motorola/camera/saving/location/StoragePool;Lcom/motorola/camera/saving/location/StorageLocation;)V
 
+    new-instance v2, Landroid/os/Bundle;
+
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
+
+    const-string/jumbo v0, "SDCARD_MOUNTED"
+
+    invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool$1;->this$0:Lcom/motorola/camera/saving/location/StoragePool;
+
+    invoke-static {v0}, Lcom/motorola/camera/saving/location/StoragePool;->-get2(Lcom/motorola/camera/saving/location/StoragePool;)Ljava/lang/ref/WeakReference;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/EventListener;
+
+    new-instance v3, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v4, Lcom/motorola/camera/fsm/camera/Trigger$Event;->STORAGE_CHANGED:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v3, v4, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;Ljava/lang/Object;)V
+
+    invoke-interface {v0, v3}, Lcom/motorola/camera/EventListener;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
     move v0, v1
 
     goto :goto_0

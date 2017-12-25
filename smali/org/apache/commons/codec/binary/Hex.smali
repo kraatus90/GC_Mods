@@ -56,71 +56,71 @@
 
     aput-char v1, v0, v7
 
-    const/4 v1, 0x5
+    const/16 v1, 0x35
 
-    const/16 v2, 0x35
+    const/4 v2, 0x5
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x6
+    const/16 v1, 0x36
 
-    const/16 v2, 0x36
+    const/4 v2, 0x6
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x7
+    const/16 v1, 0x37
 
-    const/16 v2, 0x37
+    const/4 v2, 0x7
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0x8
+    const/16 v1, 0x38
 
-    const/16 v2, 0x38
+    const/16 v2, 0x8
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0x9
+    const/16 v1, 0x39
 
-    const/16 v2, 0x39
+    const/16 v2, 0x9
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xa
+    const/16 v1, 0x61
 
-    const/16 v2, 0x61
+    const/16 v2, 0xa
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xb
+    const/16 v1, 0x62
 
-    const/16 v2, 0x62
+    const/16 v2, 0xb
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xc
+    const/16 v1, 0x63
 
-    const/16 v2, 0x63
+    const/16 v2, 0xc
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xd
+    const/16 v1, 0x64
 
-    const/16 v2, 0x64
+    const/16 v2, 0xd
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xe
+    const/16 v1, 0x65
 
-    const/16 v2, 0x65
+    const/16 v2, 0xe
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xf
+    const/16 v1, 0x66
 
-    const/16 v2, 0x66
+    const/16 v2, 0xf
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/Hex;->DIGITS_LOWER:[C
 
@@ -148,71 +148,71 @@
 
     aput-char v1, v0, v7
 
-    const/4 v1, 0x5
+    const/16 v1, 0x35
 
-    const/16 v2, 0x35
+    const/4 v2, 0x5
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x6
+    const/16 v1, 0x36
 
-    const/16 v2, 0x36
+    const/4 v2, 0x6
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x7
+    const/16 v1, 0x37
 
-    const/16 v2, 0x37
+    const/4 v2, 0x7
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0x8
+    const/16 v1, 0x38
 
-    const/16 v2, 0x38
+    const/16 v2, 0x8
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0x9
+    const/16 v1, 0x39
 
-    const/16 v2, 0x39
+    const/16 v2, 0x9
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xa
+    const/16 v1, 0x41
 
-    const/16 v2, 0x41
+    const/16 v2, 0xa
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xb
+    const/16 v1, 0x42
 
-    const/16 v2, 0x42
+    const/16 v2, 0xb
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xc
+    const/16 v1, 0x43
 
-    const/16 v2, 0x43
+    const/16 v2, 0xc
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xd
+    const/16 v1, 0x44
 
-    const/16 v2, 0x44
+    const/16 v2, 0xd
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xe
+    const/16 v1, 0x45
 
-    const/16 v2, 0x45
+    const/16 v2, 0xe
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xf
+    const/16 v1, 0x46
 
-    const/16 v2, 0x46
+    const/16 v2, 0xf
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/Hex;->DIGITS_UPPER:[C
 

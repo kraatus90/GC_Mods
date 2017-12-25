@@ -25,8 +25,6 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 3
 
-    const/4 v1, 0x0
-
     const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +47,9 @@
 
     iput-object v0, p0, Lorg/apache/http/auth/UsernamePasswordCredentials;->principal:Lorg/apache/http/auth/BasicUserPrincipal;
 
-    iput-object v1, p0, Lorg/apache/http/auth/UsernamePasswordCredentials;->password:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/auth/UsernamePasswordCredentials;->password:Ljava/lang/String;
 
     :goto_0
     return-void

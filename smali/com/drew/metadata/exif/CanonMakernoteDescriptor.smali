@@ -999,9 +999,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v3, 0x0
+
+    const/4 v1, 0x0
 
     iget-object v0, p0, Lcom/drew/metadata/exif/CanonMakernoteDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -2294,7 +2294,7 @@
 .end method
 
 .method public getSerialNumberDescription()Ljava/lang/String;
-    .locals 5
+    .locals 4
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -2312,29 +2312,25 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, "%04X%05d"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v2
 
-    shr-int/lit8 v4, v4, 0x8
+    shr-int/lit8 v2, v2, 0x8
 
-    and-int/lit16 v4, v4, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    aput-object v2, v1, v3
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -2346,9 +2342,13 @@
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "%04X%05d"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

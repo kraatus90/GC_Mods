@@ -22,6 +22,18 @@
 
 .field static final CAMERA:Ljava/lang/String; = "Camera"
 
+.field static final CAMERA_BACK:I = 0x1
+
+.field static final CAMERA_BACK_SECONDARY:I = 0x2
+
+.field static final CAMERA_EXTERNAL_360:I = 0x4
+
+.field static final CAMERA_EXTERNAL_HASSELBLAD:I = 0x3
+
+.field static final CAMERA_FRONT:I = 0x0
+
+.field static final CAMERA_UNKNOWN:I = -0x1
+
 .field static final CAMERA_USED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -35,9 +47,15 @@
 
 .field static final CAPTURE_MODE_TYPE_CAMCORDER:Ljava/lang/String; = "CAMCORDER"
 
+.field static final CAPTURE_MODE_TYPE_CAMCORDER_MONO:Ljava/lang/String; = "CAMCORDER_MONO"
+
 .field static final CAPTURE_MODE_TYPE_DIS:Ljava/lang/String; = "DIS"
 
 .field static final CAPTURE_MODE_TYPE_HDR:Ljava/lang/String; = "HDR"
+
+.field static final CAPTURE_MODE_TYPE_MS_MONO:Ljava/lang/String; = "MS_MONO"
+
+.field static final CAPTURE_MODE_TYPE_MS_PRO:Ljava/lang/String; = "MS_PRO"
 
 .field static final CAPTURE_MODE_TYPE_MULTISHOT:Ljava/lang/String; = "MULTISHOT"
 
@@ -46,6 +64,16 @@
 .field static final CAPTURE_MODE_TYPE_SINGLESHOT:Ljava/lang/String; = "SINGLESHOT"
 
 .field static final CAPTURE_MODE_TYPE_SLOW_MOTION:Ljava/lang/String; = "SLOW_MOTION"
+
+.field static final CAPTURE_MODE_TYPE_SS_DEPTH:Ljava/lang/String; = "SS_DEPTH"
+
+.field static final CAPTURE_MODE_TYPE_SS_MONO:Ljava/lang/String; = "SS_MONO"
+
+.field static final CAPTURE_MODE_TYPE_SS_PRO:Ljava/lang/String; = "SS_PRO"
+
+.field static final CAPTURE_MODE_TYPE_SS_SPOT_COLOR:Ljava/lang/String; = "SS_SPOT_COLOR"
+
+.field static final CAPTURE_MODE_TYPE_SS_ULTRA_WIDE:Ljava/lang/String; = "SS_ULTRA_WIDE"
 
 .field static final CAPTURE_MODE_TYPE_UHD:Ljava/lang/String; = "UHD"
 
@@ -329,6 +357,192 @@
     return-void
 .end method
 
+.method static getCameraIdForAnalytics()I
+    .locals 1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_FACING:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/motorola/camera/analytics/LogEvent;->getCameraIdForAnalytics(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static getCameraIdForAnalytics(I)I
+    .locals 4
+
+    const/4 v3, 0x2
+
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
+
+    if-ne p0, v3, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x4
+
+    return v0
+
+    :cond_0
+    if-ne p0, v1, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isHasselBlad()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x3
+
+    return v0
+
+    :cond_1
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsHelper;->isMonoCamera(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->isCurrentBackWideCamera()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    :cond_2
+    return v3
+
+    :cond_3
+    if-ne p0, v1, :cond_4
+
+    return v1
+
+    :cond_4
+    if-nez p0, :cond_5
+
+    return v2
+
+    :cond_5
+    const/4 v0, -0x1
+
+    return v0
+.end method
+
+.method static getCaptureMode(ILcom/motorola/camera/ShotType;)Ljava/lang/String;
+    .locals 3
+
+    const/4 v2, 0x7
+
+    const/4 v1, 0x4
+
+    sget-object v0, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+
+    if-ne p1, v0, :cond_4
+
+    const/4 v0, 0x6
+
+    if-ne p0, v0, :cond_0
+
+    const-string/jumbo v0, "SS_DEPTH"
+
+    return-object v0
+
+    :cond_0
+    if-ne p0, v2, :cond_1
+
+    const-string/jumbo v0, "SS_MONO"
+
+    return-object v0
+
+    :cond_1
+    if-ne p0, v1, :cond_2
+
+    const-string/jumbo v0, "SS_PRO"
+
+    return-object v0
+
+    :cond_2
+    const/16 v0, 0xc
+
+    if-ne p0, v0, :cond_3
+
+    const-string/jumbo v0, "SS_SPOT_COLOR"
+
+    return-object v0
+
+    :cond_3
+    const/4 v0, 0x5
+
+    if-ne p0, v0, :cond_7
+
+    const-string/jumbo v0, "SS_ULTRA_WIDE"
+
+    return-object v0
+
+    :cond_4
+    sget-object v0, Lcom/motorola/camera/ShotType;->MULTI:Lcom/motorola/camera/ShotType;
+
+    if-ne p1, v0, :cond_6
+
+    if-ne p0, v2, :cond_5
+
+    const-string/jumbo v0, "MS_MONO"
+
+    return-object v0
+
+    :cond_5
+    if-ne p0, v1, :cond_7
+
+    const-string/jumbo v0, "MS_PRO"
+
+    return-object v0
+
+    :cond_6
+    sget-object v0, Lcom/motorola/camera/ShotType;->VIDEO:Lcom/motorola/camera/ShotType;
+
+    if-ne p1, v0, :cond_7
+
+    const/16 v0, 0x8
+
+    if-ne p0, v0, :cond_7
+
+    const-string/jumbo v0, "CAMCORDER_MONO"
+
+    return-object v0
+
+    :cond_7
+    invoke-static {p1}, Lcom/motorola/camera/analytics/LogEvent;->getCaptureMode(Lcom/motorola/camera/ShotType;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method static getCaptureMode(Lcom/motorola/camera/ShotType;)Ljava/lang/String;
     .locals 2
 
@@ -393,7 +607,7 @@
 
 
 # virtual methods
-.method abstract addData(Landroid/os/Bundle;Landroid/os/Bundle;Ljava/lang/Object;)V
+.method abstract addData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Ljava/lang/Object;)V
 .end method
 
 .method abstract getEventType()Lcom/motorola/camera/analytics/AnalyticsService$EventType;
@@ -402,20 +616,20 @@
 .method abstract getEventVersion()Ljava/lang/String;
 .end method
 
-.method logEvent(Lcom/motorola/camera/analytics/AnalyticsService;Landroid/os/Bundle;Ljava/lang/Object;)V
+.method logEvent(Lcom/motorola/camera/analytics/AnalyticsService;Lcom/motorola/camera/analytics/SynchronizedBundle;Ljava/lang/Object;)V
     .locals 4
 
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    invoke-virtual {p0, p2, v0, p3}, Lcom/motorola/camera/analytics/LogEvent;->addData(Landroid/os/Bundle;Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-virtual {p0, p2, v0, p3}, Lcom/motorola/camera/analytics/LogEvent;->addData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Ljava/lang/Object;)V
 
     const-string/jumbo v1, "SEQID"
 
     const-string/jumbo v2, "SEQID"
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+    invoke-virtual {p2, v2}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v2
 

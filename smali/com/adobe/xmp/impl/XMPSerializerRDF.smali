@@ -54,35 +54,35 @@
 
     new-array v1, v1, [Ljava/lang/String;
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, "xml:lang"
 
-    const-string/jumbo v3, "xml:lang"
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x1
+    const-string/jumbo v2, "rdf:resource"
 
-    const-string/jumbo v3, "rdf:resource"
+    const/4 v3, 0x1
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x2
+    const-string/jumbo v2, "rdf:ID"
 
-    const-string/jumbo v3, "rdf:ID"
+    const/4 v3, 0x2
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x3
+    const-string/jumbo v2, "rdf:bagID"
 
-    const-string/jumbo v3, "rdf:bagID"
+    const/4 v3, 0x3
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x4
+    const-string/jumbo v2, "rdf:nodeID"
 
-    const-string/jumbo v3, "rdf:nodeID"
+    const/4 v3, 0x4
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -287,13 +287,13 @@
 
     if-nez v1, :cond_0
 
-    const-string/jumbo v1, "[]"
-
     invoke-virtual {p1}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "[]"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -1051,9 +1051,9 @@
 
     if-nez v2, :cond_2
 
-    :goto_1
     move-object v2, v1
 
+    :goto_1
     invoke-direct {p0, p2}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeIndent(I)V
 
     const/16 v1, 0x3c
@@ -1130,6 +1130,8 @@
     :cond_2
     const-string/jumbo v1, "rdf:li"
 
+    move-object v2, v1
+
     goto :goto_1
 
     :cond_3
@@ -1151,13 +1153,13 @@
 
     if-eqz v9, :cond_4
 
-    const-string/jumbo v3, "rdf:resource"
-
     invoke-virtual {v1}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v9, "rdf:resource"
+
+    invoke-virtual {v9, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -1761,6 +1763,7 @@
     :goto_0
     move-object v1, v0
 
+    :goto_1
     invoke-direct {p0, p3}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeIndent(I)V
 
     const/16 v0, 0x3c
@@ -1777,7 +1780,7 @@
 
     move-result-object v6
 
-    :goto_1
+    :goto_2
     move v3, v2
 
     move v2, v0
@@ -1817,7 +1820,7 @@
 
     move-result-object v2
 
-    :goto_2
+    :goto_3
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -1830,17 +1833,17 @@
 
     invoke-direct {p0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeNewline()V
 
-    :goto_3
+    :goto_4
     const/4 v0, 0x0
 
     move v2, v0
 
     move v0, v4
 
-    :goto_4
+    :goto_5
     if-nez v2, :cond_16
 
-    :goto_5
+    :goto_6
     return-void
 
     :cond_1
@@ -1851,7 +1854,9 @@
     :cond_2
     const-string/jumbo v0, "rdf:li"
 
-    goto :goto_0
+    move-object v1, v0
+
+    goto :goto_1
 
     :cond_3
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -1872,13 +1877,13 @@
 
     if-eqz v7, :cond_4
 
-    const-string/jumbo v2, "rdf:resource"
-
     invoke-virtual {v0}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v7, "rdf:resource"
+
+    invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -1888,7 +1893,7 @@
 
     move v2, v3
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_4
     const/4 v3, 0x1
@@ -1897,7 +1902,7 @@
 
     move v2, v3
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     const/16 v7, 0x20
@@ -1930,7 +1935,7 @@
 
     move v2, v3
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_6
     if-nez p2, :cond_0
@@ -1954,7 +1959,7 @@
     move-result-object v2
 
     :cond_7
-    :goto_6
+    :goto_7
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -1962,12 +1967,12 @@
     if-nez v0, :cond_a
 
     :cond_8
-    :goto_7
+    :goto_8
     move v0, v4
 
     move v2, v5
 
-    goto :goto_4
+    goto :goto_5
 
     :cond_9
     new-instance v0, Lcom/adobe/xmp/XMPException;
@@ -2005,7 +2010,7 @@
 
     invoke-direct {p0, v0, v6, v3}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->serializePrettyRDFProperty(Lcom/adobe/xmp/impl/XMPNode;ZI)V
 
-    goto :goto_6
+    goto :goto_7
 
     :cond_b
     invoke-virtual {p1}, Lcom/adobe/xmp/impl/XMPNode;->getOptions()Lcom/adobe/xmp/options/PropertyOptions;
@@ -2031,7 +2036,7 @@
 
     invoke-direct {p0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeNewline()V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_d
     const-string/jumbo v0, " rdf:resource=\""
@@ -2052,16 +2057,16 @@
 
     invoke-direct {p0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeNewline()V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_e
-    const-string/jumbo v0, ""
-
     invoke-virtual {p1}, Lcom/adobe/xmp/impl/XMPNode;->getValue()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, ""
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -2083,7 +2088,7 @@
 
     move v2, v5
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_f
     const/16 v0, 0x3e
@@ -2108,12 +2113,12 @@
 
     if-nez v0, :cond_10
 
-    :goto_8
+    :goto_9
     invoke-virtual {p1}, Lcom/adobe/xmp/impl/XMPNode;->iterateChildren()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :goto_9
+    :goto_a
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -2126,12 +2131,12 @@
 
     invoke-direct {p0, p1, v2, v0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->emitRDFArrayTag(Lcom/adobe/xmp/impl/XMPNode;ZI)V
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 
     :cond_10
     invoke-static {p1}, Lcom/adobe/xmp/impl/XMPNodeUtils;->normalizeLangArray(Lcom/adobe/xmp/impl/XMPNode;)V
 
-    goto :goto_8
+    goto :goto_9
 
     :cond_11
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -2146,7 +2151,7 @@
 
     invoke-direct {p0, v0, v6, v3}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->serializePrettyRDFProperty(Lcom/adobe/xmp/impl/XMPNode;ZI)V
 
-    goto :goto_9
+    goto :goto_a
 
     :cond_12
     invoke-virtual {p1}, Lcom/adobe/xmp/impl/XMPNode;->hasChildren()Z
@@ -2165,7 +2170,7 @@
 
     move-result-object v2
 
-    :goto_a
+    :goto_b
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
@@ -2184,7 +2189,7 @@
 
     invoke-direct {p0, v0, v6, v3}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->serializePrettyRDFProperty(Lcom/adobe/xmp/impl/XMPNode;ZI)V
 
-    goto :goto_a
+    goto :goto_b
 
     :cond_13
     const-string/jumbo v0, " rdf:parseType=\"Resource\"/>"
@@ -2193,7 +2198,7 @@
 
     invoke-direct {p0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeNewline()V
 
-    goto/16 :goto_3
+    goto/16 :goto_4
 
     :cond_14
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -2240,7 +2245,7 @@
 
     invoke-direct {p0, v0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->write(I)V
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_15
     new-instance v0, Lcom/adobe/xmp/XMPException;
@@ -2256,7 +2261,7 @@
     :cond_16
     if-nez v0, :cond_17
 
-    :goto_b
+    :goto_c
     const-string/jumbo v0, "</"
 
     invoke-direct {p0, v0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->write(Ljava/lang/String;)V
@@ -2269,12 +2274,12 @@
 
     invoke-direct {p0}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeNewline()V
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_17
     invoke-direct {p0, p3}, Lcom/adobe/xmp/impl/XMPSerializerRDF;->writeIndent(I)V
 
-    goto :goto_b
+    goto :goto_c
 .end method
 
 .method private serializePrettyRDFSchema(Lcom/adobe/xmp/impl/XMPNode;)V

@@ -268,13 +268,13 @@
     :try_start_0
     iget-object v0, p0, Lorg/apache/http/impl/io/ChunkedInputStream;->in:Lorg/apache/http/io/SessionInputBuffer;
 
-    const/4 v1, -0x1
+    const/4 v1, 0x0
 
     const/4 v2, -0x1
 
-    const/4 v3, 0x0
+    const/4 v3, -0x1
 
-    invoke-static {v0, v1, v2, v3}, Lorg/apache/http/impl/io/AbstractMessageParser;->parseHeaders(Lorg/apache/http/io/SessionInputBuffer;IILorg/apache/http/message/LineParser;)[Lorg/apache/http/Header;
+    invoke-static {v0, v2, v3, v1}, Lorg/apache/http/impl/io/AbstractMessageParser;->parseHeaders(Lorg/apache/http/io/SessionInputBuffer;IILorg/apache/http/message/LineParser;)[Lorg/apache/http/Header;
 
     move-result-object v0
 
@@ -499,11 +499,11 @@
 .method public read([B)I
     .locals 2
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/impl/io/ChunkedInputStream;->read([BII)I
+    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/impl/io/ChunkedInputStream;->read([BII)I
 
     move-result v0
 

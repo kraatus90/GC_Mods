@@ -39,7 +39,7 @@
 
 # virtual methods
 .method protected createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,13 +48,11 @@
         }
     .end annotation
 
-    move-object v0, p0
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    const-string/jumbo v1, "Creating failed results is not supported"
 
-    const-string/jumbo v2, "Creating failed results is not supported"
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v1
+    throw v0
 .end method

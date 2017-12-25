@@ -14,8 +14,6 @@
 
 .field private static final THRESHOLD_SCORE:F = 0.5f
 
-.field public static final UNDERSCORE:C = '_'
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -51,7 +49,7 @@
 .end method
 
 .method private static parseResult(Lcom/motorola/camera/mcf/McfLandmark;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
-    .locals 5
+    .locals 7
 
     const/4 v4, 0x0
 
@@ -116,13 +114,13 @@
 
     move-result-object v0
 
-    aget v0, v0, v4
+    aget v3, v0, v4
 
-    const/high16 v3, 0x3f000000    # 0.5f
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    cmpl-float v0, v0, v3
+    cmpl-float v0, v3, v0
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_4
 
     invoke-virtual {p0}, Lcom/motorola/camera/mcf/McfLandmark;->getLables()[Ljava/lang/String;
 
@@ -130,43 +128,84 @@
 
     aget-object v0, v0, v4
 
-    const/16 v3, 0x5f
+    const-string/jumbo v4, ":"
 
-    const/16 v4, 0x20
+    invoke-virtual {v0, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v0, v3, v4}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    move-result v4
 
-    move-result-object v0
+    if-eqz v4, :cond_1
 
-    const-string/jumbo v3, ":"
+    const-string/jumbo v4, ":"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_1
+    add-int/lit8 v4, v4, 0x1
 
-    const-string/jumbo v3, ":"
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v0, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
     :cond_1
-    iput-object v0, v2, Lcom/motorola/camera/detector/results/tidbit/Landmark;->text:Ljava/lang/String;
+    invoke-static {v0}, Lcom/motorola/camera/landmarkdownload/LandmarkLocalizationHelper;->getLocalizedLandmark(Ljava/lang/String;)Ljava/lang/String;
 
+    move-result-object v4
+
+    iput-object v4, v2, Lcom/motorola/camera/detector/results/tidbit/Landmark;->text:Ljava/lang/String;
+
+    sget-boolean v4, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v4, :cond_2
+
+    sget-object v4, Lcom/motorola/camera/detector/results/LandmarkResultParser;->TAG:Ljava/lang/String;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "Landmark id: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v5, ", text: "
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/results/tidbit/Landmark;->text:Ljava/lang/String;
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
     :goto_0
     iput-object v2, v1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
 
     const/4 v0, 0x3
 
     iput v0, v1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mSource:I
+
+    iget-object v0, v1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
+
+    float-to-double v4, v3
+
+    iput-wide v4, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->landmarkScore:D
 
     iget-object v0, v1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
 
@@ -178,7 +217,7 @@
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget-object v0, Lcom/motorola/camera/detector/results/LandmarkResultParser;->TAG:Ljava/lang/String;
 
@@ -202,10 +241,10 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
+    :cond_3
     return-object v1
 
-    :cond_3
+    :cond_4
     const-string/jumbo v0, ""
 
     iput-object v0, v2, Lcom/motorola/camera/detector/results/tidbit/Landmark;->text:Ljava/lang/String;

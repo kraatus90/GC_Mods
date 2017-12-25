@@ -23,9 +23,9 @@
 .method constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$NTLMMessage;->messageContents:[B
 
@@ -39,11 +39,11 @@
 .method constructor <init>(Ljava/lang/String;I)V
     .locals 4
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v1, 0x0
 
     iput-object v1, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$NTLMMessage;->messageContents:[B
 
@@ -320,11 +320,11 @@
 
     iget-object v0, p0, Lorg/apache/http/impl/auth/NTLMEngineImpl$NTLMMessage;->messageContents:[B
 
-    const/4 v1, 0x0
+    array-length v1, p1
 
-    array-length v2, p1
+    const/4 v2, 0x0
 
-    invoke-static {v0, p2, p1, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, p2, p1, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-void
 

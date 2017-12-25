@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Landroid/support/annotation/RequiresApi;
+    value = 0x15
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 .end annotation
@@ -35,64 +39,67 @@
 
 # virtual methods
 .method public onCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.GET_EXTRA_BINDER"
+    :try_start_0
+    const-string/jumbo v0, "android.support.v4.media.session.command.GET_EXTRA_BINDER"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.ADD_QUEUE_ITEM"
+    const-string/jumbo v0, "android.support.v4.media.session.command.ADD_QUEUE_ITEM"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_3
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.ADD_QUEUE_ITEM_AT"
+    const-string/jumbo v0, "android.support.v4.media.session.command.ADD_QUEUE_ITEM_AT"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_3
+    if-nez v0, :cond_4
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.REMOVE_QUEUE_ITEM"
+    const-string/jumbo v0, "android.support.v4.media.session.command.REMOVE_QUEUE_ITEM"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_4
+    if-nez v0, :cond_5
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT"
+    const-string/jumbo v0, "android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT"
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_5
+    if-nez v0, :cond_6
 
-    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    invoke-virtual {v2, p1, p2, p3}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
+    invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    iget-object v2, v2, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->mSessionImpl:Ljava/lang/ref/WeakReference;
+    invoke-static {v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->access$100(Landroid/support/v4/media/session/MediaSessionCompat$Callback;)Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -100,291 +107,456 @@
 
     if-eqz v0, :cond_0
 
-    new-instance v1, Landroid/os/Bundle;
+    new-instance v2, Landroid/os/Bundle;
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    const-string/jumbo v2, "android.support.v4.media.session.EXTRA_BINDER"
+    invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->getSessionToken()Landroid/support/v4/media/session/MediaSessionCompat$Token;
 
-    invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->getExtraSessionBinder()Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21$ExtraSession;
+    move-result-object v0
 
-    move-result-object v3
+    invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$Token;->getExtraBinder()Landroid/support/v4/media/session/IMediaSession;
 
-    invoke-static {v1, v2, v3}, Landroid/support/v4/app/BundleCompat;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+    move-result-object v0
 
-    invoke-virtual {p3, v4, v1}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    const-string/jumbo v3, "android.support.v4.media.session.EXTRA_BINDER"
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0}, Landroid/support/v4/media/session/IMediaSession;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    :cond_2
+    invoke-static {v2, v3, v1}, Landroid/support/v4/app/BundleCompat;->putBinder(Landroid/os/Bundle;Ljava/lang/String;Landroid/os/IBinder;)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p3, v0, v2}, Landroid/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    :try_end_0
+    .catch Landroid/os/BadParcelableException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :cond_2
-    const-class v2, Landroid/support/v4/media/MediaDescriptionCompat;
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    const-string/jumbo v0, "MediaSessionCompat"
 
-    move-result-object v2
+    const-string/jumbo v1, "Could not unparcel the extra data."
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
-
-    iget-object v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
-
-    const-string/jumbo v2, "android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"
-
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/support/v4/media/MediaDescriptionCompat;
-
-    invoke-virtual {v3, v2}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onAddQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
     :cond_3
-    const-class v2, Landroid/support/v4/media/MediaDescriptionCompat;
+    :try_start_1
+    const-class v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    iget-object v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"
+    const-string/jumbo v0, "android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/v4/media/MediaDescriptionCompat;
+    check-cast v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
-    const-string/jumbo v4, "android.support.v4.media.session.command.ARGUMENT_INDEX"
-
-    invoke-virtual {p2, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-virtual {v3, v2, v4}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onAddQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;I)V
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onAddQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
 
     goto :goto_0
 
     :cond_4
-    const-class v2, Landroid/support/v4/media/MediaDescriptionCompat;
+    const-class v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
 
-    iget-object v3, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    const-string/jumbo v2, "android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"
+    const-string/jumbo v0, "android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"
 
-    invoke-virtual {p2, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/v4/media/MediaDescriptionCompat;
+    check-cast v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
-    invoke-virtual {v3, v2}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onRemoveQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
+    const-string/jumbo v2, "android.support.v4.media.session.command.ARGUMENT_INDEX"
+
+    invoke-virtual {p2, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-virtual {v1, v0, v2}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onAddQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;I)V
 
     goto :goto_0
 
     :cond_5
-    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    const-class v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
-    const-string/jumbo v3, "android.support.v4.media.session.command.ARGUMENT_INDEX"
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    invoke-virtual {p2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
+
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    const-string/jumbo v0, "android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/media/MediaDescriptionCompat;
+
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onRemoveQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
+
+    goto/16 :goto_0
+
+    :cond_6
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-static {v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->access$100(Landroid/support/v4/media/session/MediaSessionCompat$Callback;)Ljava/lang/ref/WeakReference;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;
+
+    if-eqz v0, :cond_0
+
+    invoke-static {v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->access$200(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;)Ljava/util/List;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    const-string/jumbo v2, "android.support.v4.media.session.command.ARGUMENT_INDEX"
+
+    const/4 v3, -0x1
+
+    invoke-virtual {p2, v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v2
+
+    if-gez v2, :cond_8
+
+    :cond_7
+    move-object v0, v1
+
+    :goto_1
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->getDescription()Landroid/support/v4/media/MediaDescriptionCompat;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onRemoveQueueItem(Landroid/support/v4/media/MediaDescriptionCompat;)V
+
+    goto/16 :goto_0
+
+    :cond_8
+    invoke-static {v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->access$200(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;)Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onRemoveQueueItemAt(I)V
+    if-ge v2, v3, :cond_7
 
-    goto :goto_0
+    invoke-static {v0}, Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;->access$200(Landroid/support/v4/media/session/MediaSessionCompat$MediaSessionImplApi21;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
+    :try_end_1
+    .catch Landroid/os/BadParcelableException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
 .end method
 
 .method public onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 7
+    .locals 3
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.PLAY_FROM_URI"
+    const-string/jumbo v0, "android.support.v4.media.session.action.PLAY_FROM_URI"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.PREPARE"
+    const-string/jumbo v0, "android.support.v4.media.session.action.PREPARE"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_1
+    if-nez v0, :cond_1
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.PREPARE_FROM_MEDIA_ID"
+    const-string/jumbo v0, "android.support.v4.media.session.action.PREPARE_FROM_MEDIA_ID"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_2
+    if-nez v0, :cond_2
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.PREPARE_FROM_SEARCH"
+    const-string/jumbo v0, "android.support.v4.media.session.action.PREPARE_FROM_SEARCH"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_3
+    if-nez v0, :cond_3
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.PREPARE_FROM_URI"
+    const-string/jumbo v0, "android.support.v4.media.session.action.PREPARE_FROM_URI"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_4
+    if-nez v0, :cond_4
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.SET_REPEAT_MODE"
+    const-string/jumbo v0, "android.support.v4.media.session.action.SET_CAPTIONING_ENABLED"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_5
+    if-nez v0, :cond_5
 
-    const-string/jumbo v6, "android.support.v4.media.session.action.SET_SHUFFLE_MODE_ENABLED"
+    const-string/jumbo v0, "android.support.v4.media.session.action.SET_REPEAT_MODE"
 
-    invoke-virtual {p1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_6
+    if-nez v0, :cond_6
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    const-string/jumbo v0, "android.support.v4.media.session.action.SET_SHUFFLE_MODE_ENABLED"
 
-    invoke-virtual {v6, p1, p2}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    const-string/jumbo v0, "android.support.v4.media.session.action.SET_SHUFFLE_MODE"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    const-string/jumbo v0, "android.support.v4.media.session.action.SET_RATING"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :goto_0
     return-void
 
     :cond_0
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_URI"
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_URI"
 
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/net/Uri;
-
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
-
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    check-cast v0, Landroid/os/Bundle;
+    check-cast v0, Landroid/net/Uri;
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
 
-    invoke-virtual {v6, v5, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/Bundle;
+
+    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v2, v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPlayFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    invoke-virtual {v6}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepare()V
+    invoke-virtual {v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepare()V
 
     goto :goto_0
 
     :cond_2
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_MEDIA_ID"
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_MEDIA_ID"
 
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
-
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
 
-    invoke-virtual {v6, v2, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v2, v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
 
     goto :goto_0
 
     :cond_3
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_QUERY"
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_QUERY"
 
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
-
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
 
-    invoke-virtual {v6, v3, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v2, v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
 
     goto :goto_0
 
     :cond_4
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_URI"
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_URI"
 
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/net/Uri;
-
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
-
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    check-cast v0, Landroid/net/Uri;
 
-    invoke-virtual {v6, v5, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
+
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v2, v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onPrepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
 
     goto :goto_0
 
     :cond_5
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_REPEAT_MODE"
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_CAPTIONING_ENABLED"
 
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v0
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    invoke-virtual {v6, v4}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetRepeatMode(I)V
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetCaptioningEnabled(Z)V
 
     goto :goto_0
 
     :cond_6
-    const-string/jumbo v6, "android.support.v4.media.session.action.ARGUMENT_SHUFFLE_MODE_ENABLED"
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_REPEAT_MODE"
 
-    invoke-virtual {p2, v6}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    iget-object v6, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
 
-    invoke-virtual {v6, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetShuffleModeEnabled(Z)V
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetRepeatMode(I)V
 
     goto :goto_0
+
+    :cond_7
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_SHUFFLE_MODE_ENABLED"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetShuffleModeEnabled(Z)V
+
+    goto/16 :goto_0
+
+    :cond_8
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_SHUFFLE_MODE"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetShuffleMode(I)V
+
+    goto/16 :goto_0
+
+    :cond_9
+    const-class v0, Landroid/support/v4/media/RatingCompat;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
+
+    const-string/jumbo v0, "android.support.v4.media.session.action.ARGUMENT_RATING"
+
+    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/media/RatingCompat;
+
+    const-string/jumbo v1, "android.support.v4.media.session.action.ARGUMENT_EXTRAS"
+
+    invoke-virtual {p2, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-virtual {v2, v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetRating(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
+
+    goto/16 :goto_0
 .end method
 
 .method public onFastForward()V
@@ -479,6 +651,20 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetRating(Landroid/support/v4/media/RatingCompat;)V
+
+    return-void
+.end method
+
+.method public onSetRating(Ljava/lang/Object;Landroid/os/Bundle;)V
+    .locals 2
+
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$Callback$StubApi21;->this$0:Landroid/support/v4/media/session/MediaSessionCompat$Callback;
+
+    invoke-static {p1}, Landroid/support/v4/media/RatingCompat;->fromRating(Ljava/lang/Object;)Landroid/support/v4/media/RatingCompat;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p2}, Landroid/support/v4/media/session/MediaSessionCompat$Callback;->onSetRating(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
 
     return-void
 .end method

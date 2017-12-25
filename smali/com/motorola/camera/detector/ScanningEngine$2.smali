@@ -41,13 +41,13 @@
 
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine$2;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
-    invoke-static {v0}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/motorola/camera/detector/ScanningEngine;->-get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine$2;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
-    invoke-static {v1}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/motorola/camera/detector/ScanningEngine;->-get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -67,13 +67,13 @@
 
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine$2;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
-    invoke-static {v0}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/motorola/camera/detector/ScanningEngine;->-get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine$2;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
-    invoke-static {v1}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/motorola/camera/detector/ScanningEngine;->-get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
 
     move-result-object v1
 

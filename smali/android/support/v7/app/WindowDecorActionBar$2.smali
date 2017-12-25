@@ -34,9 +34,9 @@
 .method public onAnimationEnd(Landroid/view/View;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$2;->this$0:Landroid/support/v7/app/WindowDecorActionBar;
+
+    const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v7/app/WindowDecorActionBar;->mCurrentShowAnim:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 

@@ -37,11 +37,11 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "data"
 
-    const-string/jumbo v2, "data"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/android/gms/common/data/zzd;->zzRy:[Ljava/lang/String;
 
@@ -69,15 +69,13 @@
 
 # virtual methods
 .method public synthetic get(I)Ljava/lang/Object;
-    .locals 2
-
-    move-object v0, p0
+    .locals 1
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/data/zzd;->zzaC(I)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public zzaC(I)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
@@ -92,15 +90,15 @@
 
     iget-object v0, p0, Lcom/google/android/gms/common/data/zzd;->zzPy:Lcom/google/android/gms/common/data/DataHolder;
 
-    const-string/jumbo v1, "data"
+    iget-object v1, p0, Lcom/google/android/gms/common/data/zzd;->zzPy:Lcom/google/android/gms/common/data/DataHolder;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/data/zzd;->zzPy:Lcom/google/android/gms/common/data/DataHolder;
+    invoke-virtual {v1, p1}, Lcom/google/android/gms/common/data/DataHolder;->zzaD(I)I
 
-    invoke-virtual {v2, p1}, Lcom/google/android/gms/common/data/DataHolder;->zzaD(I)I
+    move-result v1
 
-    move-result v2
+    const-string/jumbo v2, "data"
 
-    invoke-virtual {v0, v1, p1, v2}, Lcom/google/android/gms/common/data/DataHolder;->zzg(Ljava/lang/String;II)[B
+    invoke-virtual {v0, v2, p1, v1}, Lcom/google/android/gms/common/data/DataHolder;->zzg(Ljava/lang/String;II)[B
 
     move-result-object v0
 

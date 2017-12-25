@@ -46,11 +46,11 @@
 .end method
 
 .method private static varargs buildMessage(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-    .locals 9
+    .locals 7
 
     const/4 v1, 0x2
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
     if-eqz p1, :cond_0
 
@@ -87,33 +87,33 @@
     :goto_1
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const-string/jumbo v3, "[%d] %s: %s"
+    const/4 v3, 0x3
 
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Ljava/lang/Thread;->getId()J
+    invoke-virtual {v4}, Ljava/lang/Thread;->getId()J
 
-    move-result-wide v6
+    move-result-wide v4
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v8
+    aput-object v4, v3, v6
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    aput-object v0, v4, v5
+    aput-object v0, v3, v4
 
-    aput-object p0, v4, v1
+    aput-object p0, v3, v1
 
-    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v0, "[%d] %s: %s"
+
+    invoke-static {v2, v0, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -243,19 +243,19 @@
 .end method
 
 .method public static setTag(Ljava/lang/String;)V
-    .locals 3
+    .locals 2
 
-    const-string/jumbo v0, "Changing log tag to %s"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    aput-object p0, v0, v1
 
-    aput-object p0, v1, v2
+    const-string/jumbo v1, "Changing log tag to %s"
 
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     sput-object p0, Lcom/android/volley/VolleyLog;->TAG:Ljava/lang/String;
 

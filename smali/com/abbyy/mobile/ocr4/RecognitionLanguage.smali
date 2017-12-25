@@ -263,11 +263,11 @@
 
     const-string/jumbo v1, "Bulgarian"
 
-    const/4 v2, 0x5
+    const-string/jumbo v2, "Bulgar"
 
-    const-string/jumbo v3, "Bulgar"
+    const/4 v3, 0x5
 
-    invoke-direct {v0, v1, v2, v3, v5}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v5}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Bulgarian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -325,11 +325,11 @@
 
     const-string/jumbo v1, "Czech"
 
-    const/16 v2, 0xb
+    const-string/jumbo v2, "Czech"
 
-    const-string/jumbo v3, "Czech"
+    const/16 v3, 0xb
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Czech:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -337,11 +337,11 @@
 
     const-string/jumbo v1, "Danish"
 
-    const/16 v2, 0xc
+    const-string/jumbo v2, "Danish"
 
-    const-string/jumbo v3, "Danish"
+    const/16 v3, 0xc
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Danish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -349,11 +349,11 @@
 
     const-string/jumbo v1, "Dutch"
 
-    const/16 v2, 0xd
+    const-string/jumbo v2, "Dutch"
 
-    const-string/jumbo v3, "Dutch"
+    const/16 v3, 0xd
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Dutch:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -361,11 +361,11 @@
 
     const-string/jumbo v1, "DutchBelgian"
 
-    const/16 v2, 0xe
+    const-string/jumbo v2, "Flemmish"
 
-    const-string/jumbo v3, "Flemmish"
+    const/16 v3, 0xe
 
-    invoke-direct {v0, v1, v2, v3, v5}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v5}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->DutchBelgian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -373,11 +373,11 @@
 
     const-string/jumbo v1, "English"
 
-    const/16 v2, 0xf
+    const-string/jumbo v2, "English"
 
-    const-string/jumbo v3, "English"
+    const/16 v3, 0xf
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->English:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -385,11 +385,11 @@
 
     const-string/jumbo v1, "Estonian"
 
-    const/16 v2, 0x10
+    const-string/jumbo v2, "Eston"
 
-    const-string/jumbo v3, "Eston"
+    const/16 v3, 0x10
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Estonian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -407,11 +407,11 @@
 
     const-string/jumbo v1, "Finnish"
 
-    const/16 v2, 0x12
+    const-string/jumbo v2, "Finnish"
 
-    const-string/jumbo v3, "Finnish"
+    const/16 v3, 0x12
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Finnish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -419,11 +419,11 @@
 
     const-string/jumbo v1, "French"
 
-    const/16 v2, 0x13
+    const-string/jumbo v2, "French"
 
-    const-string/jumbo v3, "French"
+    const/16 v3, 0x13
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->French:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -431,11 +431,11 @@
 
     const-string/jumbo v1, "German"
 
-    const/16 v2, 0x14
+    const-string/jumbo v2, "German"
 
-    const-string/jumbo v3, "German"
+    const/16 v3, 0x14
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->German:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -443,11 +443,11 @@
 
     const-string/jumbo v1, "GermanNewSpelling"
 
-    const/16 v2, 0x15
+    const-string/jumbo v2, "GermanNS"
 
-    const-string/jumbo v3, "GermanNS"
+    const/16 v3, 0x15
 
-    invoke-direct {v0, v1, v2, v3, v5}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v5}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->GermanNewSpelling:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -455,11 +455,11 @@
 
     const-string/jumbo v1, "Greek"
 
-    const/16 v2, 0x16
+    const-string/jumbo v2, "Greek"
 
-    const-string/jumbo v3, "Greek"
+    const/16 v3, 0x16
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Greek:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -497,11 +497,11 @@
 
     const-string/jumbo v1, "Indonesian"
 
-    const/16 v2, 0x1a
+    const-string/jumbo v2, "Indones"
 
-    const-string/jumbo v3, "Indones"
+    const/16 v3, 0x1a
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Indonesian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -519,11 +519,11 @@
 
     const-string/jumbo v1, "Italian"
 
-    const/16 v2, 0x1c
+    const-string/jumbo v2, "Italian"
 
-    const-string/jumbo v3, "Italian"
+    const/16 v3, 0x1c
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Italian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -641,11 +641,11 @@
 
     const-string/jumbo v1, "NorwegianBokmal"
 
-    const/16 v2, 0x28
+    const-string/jumbo v2, "NorwBok"
 
-    const-string/jumbo v3, "NorwBok"
+    const/16 v3, 0x28
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianBokmal:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -653,11 +653,11 @@
 
     const-string/jumbo v1, "NorwegianNynorsk"
 
-    const/16 v2, 0x29
+    const-string/jumbo v2, "NorwNyn"
 
-    const-string/jumbo v3, "NorwNyn"
+    const/16 v3, 0x29
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianNynorsk:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -675,11 +675,11 @@
 
     const-string/jumbo v1, "Polish"
 
-    const/16 v2, 0x2b
+    const-string/jumbo v2, "Polish"
 
-    const-string/jumbo v3, "Polish"
+    const/16 v3, 0x2b
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Polish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -687,11 +687,11 @@
 
     const-string/jumbo v1, "Portuguese"
 
-    const/16 v2, 0x2c
+    const-string/jumbo v2, "Portug"
 
-    const-string/jumbo v3, "Portug"
+    const/16 v3, 0x2c
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Portuguese:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -699,11 +699,11 @@
 
     const-string/jumbo v1, "PortugueseBrazilian"
 
-    const/16 v2, 0x2d
+    const-string/jumbo v2, "Brazil"
 
-    const-string/jumbo v3, "Brazil"
+    const/16 v3, 0x2d
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->PortugueseBrazilian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -741,11 +741,11 @@
 
     const-string/jumbo v1, "Russian"
 
-    const/16 v2, 0x31
+    const-string/jumbo v2, "Russian"
 
-    const-string/jumbo v3, "Russian"
+    const/16 v3, 0x31
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Russian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -793,11 +793,11 @@
 
     const-string/jumbo v1, "Spanish"
 
-    const/16 v2, 0x36
+    const-string/jumbo v2, "Spanish"
 
-    const-string/jumbo v3, "Spanish"
+    const/16 v3, 0x36
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Spanish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -815,11 +815,11 @@
 
     const-string/jumbo v1, "Swedish"
 
-    const/16 v2, 0x38
+    const-string/jumbo v2, "Swedish"
 
-    const-string/jumbo v3, "Swedish"
+    const/16 v3, 0x38
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Swedish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -847,11 +847,11 @@
 
     const-string/jumbo v1, "Turkish"
 
-    const/16 v2, 0x3b
+    const-string/jumbo v2, "Turkish"
 
-    const-string/jumbo v3, "Turkish"
+    const/16 v3, 0x3b
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Turkish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -859,11 +859,11 @@
 
     const-string/jumbo v1, "Ukrainian"
 
-    const/16 v2, 0x3c
+    const-string/jumbo v2, "Ukrain"
 
-    const-string/jumbo v3, "Ukrain"
+    const/16 v3, 0x3c
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Ukrainian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -891,11 +891,11 @@
 
     const-string/jumbo v1, "WestEuropean"
 
-    const/16 v2, 0x3f
+    const-string/jumbo v2, "WestEuropean"
 
-    const-string/jumbo v3, "WestEuropean"
+    const/16 v3, 0x3f
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
+    invoke-direct {v0, v1, v3, v2, v4}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->WestEuropean:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -983,395 +983,395 @@
 
     aput-object v1, v0, v8
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Bulgarian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Bulgarian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Byelorussian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Byelorussian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Catalan:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Catalan:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Chechen:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Chechen:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->CrimeanTatar:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->CrimeanTatar:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Croatian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Croatian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Czech:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Czech:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Danish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Danish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Dutch:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Dutch:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->DutchBelgian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->DutchBelgian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->English:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->English:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Estonian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Estonian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Fijian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Fijian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Finnish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Finnish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->French:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->French:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->German:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->German:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->GermanNewSpelling:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->GermanNewSpelling:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Greek:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Greek:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x17
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Hawaiian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Hawaiian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x17
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x18
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Hungarian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Hungarian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x18
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x19
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Icelandic:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Icelandic:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x19
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1a
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Indonesian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Indonesian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x1a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1b
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Irish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Irish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x1b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1c
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Italian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Italian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x1c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1d
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Kabardian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Kabardian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x1d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1e
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Latin:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Latin:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x1e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1f
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Latvian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Latvian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x1f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x20
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Lithuanian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Lithuanian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x20
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x21
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Macedonian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Macedonian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x21
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x22
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Malay:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Malay:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x22
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x23
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Maori:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Maori:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x23
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x24
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Mixed:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Mixed:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x24
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x25
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Moldavian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Moldavian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x25
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x26
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Mongol:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Mongol:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x26
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x27
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Norwegian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Norwegian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x27
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x28
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianBokmal:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianBokmal:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x28
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x29
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianNynorsk:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianNynorsk:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x29
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x2a
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Ossetic:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Ossetic:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x2a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x2b
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Polish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Polish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x2b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x2c
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Portuguese:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Portuguese:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x2c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x2d
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->PortugueseBrazilian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->PortugueseBrazilian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x2d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x2e
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Provencal:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Provencal:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x2e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x2f
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->RhaetoRomanic:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->RhaetoRomanic:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x2f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x30
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Romanian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Romanian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x30
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x31
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Russian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Russian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x31
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x32
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Samoan:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Samoan:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x32
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x33
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Serbian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Serbian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x33
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x34
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Slovak:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Slovak:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x34
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x35
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Slovenian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Slovenian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x35
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x36
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Spanish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Spanish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x36
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x37
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Swahili:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Swahili:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x37
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x38
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Swedish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Swedish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x38
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x39
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Tagalog:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Tagalog:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x39
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x3a
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Tatar:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Tatar:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x3a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x3b
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Turkish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Turkish:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x3b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x3c
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Ukrainian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Ukrainian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x3c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x3d
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Welsh:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Welsh:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x3d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x3e
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Digits:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Digits:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x3e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x3f
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->WestEuropean:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->WestEuropean:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x3f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x40
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->ChineseSimplified:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->ChineseSimplified:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x40
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x41
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->ChineseTraditional:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->ChineseTraditional:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x41
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x42
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Japanese:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Japanese:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x42
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x43
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Korean:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Korean:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x43
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x44
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->KoreanHangul:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->KoreanHangul:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x44
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x45
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->KoreanHanja:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->KoreanHanja:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    const/16 v2, 0x45
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->$VALUES:[Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
@@ -1508,53 +1508,53 @@
 .end method
 
 .method public static getDictionaryLanguagesForGroup(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)[Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage$1;->$SwitchMap$com$abbyy$mobile$ocr4$RecognitionLanguage:[I
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage$1;->$SwitchMap$com$abbyy$mobile$ocr4$RecognitionLanguage:[I
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->ordinal()I
 
-    move-result v2
+    move-result v1
 
-    aget v1, v1, v2
+    aget v0, v0, v1
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    new-array v0, v4, [Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    new-array v0, v3, [Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    aput-object p0, v0, v3
+    aput-object p0, v0, v2
 
     return-object v0
 
     :pswitch_0
-    new-array v0, v5, [Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    new-array v0, v4, [Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
     sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->English:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
     sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->Russian:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v3
 
     return-object v0
 
     :pswitch_1
-    new-array v0, v5, [Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    new-array v0, v4, [Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
     sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianBokmal:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v2
 
     sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->NorwegianNynorsk:Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v3
 
     return-object v0
 

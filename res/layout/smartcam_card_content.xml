@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/smartcam_card_title" android:textStyle="bold" android:ellipsize="end" android:id="@id/smartcam_card_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/smartcam_card_title_spacing" android:maxLines="1" />
+    <TextView android:textSize="@dimen/smartcam_card_desc" android:textColor="@android:color/darker_gray" android:ellipsize="end" android:id="@id/smartcam_card_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="6" />
+</LinearLayout>

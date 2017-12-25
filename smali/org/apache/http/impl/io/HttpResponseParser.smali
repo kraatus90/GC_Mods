@@ -55,9 +55,7 @@
 
 # virtual methods
 .method protected b(Lorg/apache/http/io/SessionInputBuffer;)Lorg/apache/http/HttpMessage;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     iget-object v0, p0, Lorg/apache/http/impl/io/HttpResponseParser;->lineBuf:Lorg/apache/http/util/CharArrayBuffer;
 
@@ -75,15 +73,15 @@
 
     new-instance v0, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lorg/apache/http/impl/io/HttpResponseParser;->lineBuf:Lorg/apache/http/util/CharArrayBuffer;
 
-    iget-object v2, p0, Lorg/apache/http/impl/io/HttpResponseParser;->lineBuf:Lorg/apache/http/util/CharArrayBuffer;
+    invoke-virtual {v1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
-    invoke-virtual {v2}, Lorg/apache/http/util/CharArrayBuffer;->length()I
+    move-result v1
 
-    move-result v2
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    invoke-direct {v0, v2, v1}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     iget-object v1, p0, Lorg/apache/http/impl/io/HttpResponseParser;->a:Lorg/apache/http/message/LineParser;
 
@@ -95,7 +93,9 @@
 
     iget-object v1, p0, Lorg/apache/http/impl/io/HttpResponseParser;->responseFactory:Lorg/apache/http/HttpResponseFactory;
 
-    invoke-interface {v1, v0, v3}, Lorg/apache/http/HttpResponseFactory;->newHttpResponse(Lorg/apache/http/StatusLine;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
+    const/4 v2, 0x0
+
+    invoke-interface {v1, v0, v2}, Lorg/apache/http/HttpResponseFactory;->newHttpResponse(Lorg/apache/http/StatusLine;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
 
     move-result-object v0
 

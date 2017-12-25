@@ -115,11 +115,11 @@
 .end method
 
 .method public constructor <init>(III)V
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -129,81 +129,81 @@
 
     iput p3, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->generatorBase:I
 
-    new-array v2, p2, [I
+    new-array v0, p2, [I
 
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
+    iput-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
 
-    new-array v2, p2, [I
+    new-array v0, p2, [I
 
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
+    iput-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
 
-    const/4 v1, 0x1
+    move v2, v1
 
-    const/4 v0, 0x0
+    move v0, v3
 
     :goto_0
-    if-lt v0, p2, :cond_0
+    if-lt v2, p2, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     add-int/lit8 v2, p2, -0x1
 
     if-lt v0, v2, :cond_2
 
-    new-instance v2, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
-    new-array v3, v5, [I
+    new-array v2, v3, [I
 
-    aput v4, v3, v4
+    aput v1, v2, v1
 
-    invoke-direct {v2, p0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
+    invoke-direct {v0, p0, v2}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
 
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    iput-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
-    new-instance v2, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    new-instance v0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
-    new-array v3, v5, [I
+    new-array v2, v3, [I
 
-    aput v5, v3, v4
+    aput v3, v2, v1
 
-    invoke-direct {v2, p0, v3}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
+    invoke-direct {v0, p0, v2}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
 
-    iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    iput-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->one:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     return-void
 
     :cond_0
-    iget-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
+    iget-object v4, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
 
-    aput v1, v2, v0
+    aput v0, v4, v2
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/lit8 v0, v0, 0x2
 
-    if-ge v1, p2, :cond_1
+    if-ge v0, p2, :cond_1
 
     :goto_2
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_1
-    xor-int/2addr v1, p1
+    xor-int/2addr v0, p1
 
-    add-int/lit8 v2, p2, -0x1
+    add-int/lit8 v4, p2, -0x1
 
-    and-int/2addr v1, v2
+    and-int/2addr v0, v4
 
     goto :goto_2
 
     :cond_2
     iget-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->logTable:[I
 
-    iget-object v3, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
+    iget-object v4, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->expTable:[I
 
-    aget v3, v3, v0
+    aget v4, v4, v0
 
-    aput v0, v2, v3
+    aput v0, v2, v4
 
     add-int/lit8 v0, v0, 0x1
 
@@ -221,19 +221,19 @@
 
 # virtual methods
 .method buildMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-ltz p1, :cond_0
 
     if-eqz p2, :cond_1
 
-    add-int/lit8 v1, p1, 0x1
+    add-int/lit8 v0, p1, 0x1
 
-    new-array v0, v1, [I
+    new-array v0, v0, [I
 
-    aput p2, v0, v2
+    aput p2, v0, v1
 
     new-instance v1, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
@@ -242,16 +242,16 @@
     return-object v1
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v1}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v1
+    throw v0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->zero:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
-    return-object v1
+    return-object v0
 .end method
 
 .method exp(I)I

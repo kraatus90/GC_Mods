@@ -15,16 +15,18 @@
 
 # virtual methods
 .method public final fileExists(Ljava/lang/String;)Z
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/NullPointerException;
         }
     .end annotation
 
-    if-eqz p1, :cond_0
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    if-eqz p1, :cond_1
+
+    const/4 v1, 0x0
 
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/abbyy/mobile/ocr4/DataSource;->getSizedInputStream(Ljava/lang/String;)Lcom/abbyy/mobile/ocr4/SizedInputStream;
@@ -32,52 +34,81 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v2
+    move-result-object v0
 
-    if-nez v2, :cond_1
-
-    :goto_0
-    if-nez v2, :cond_2
-
-    const/4 v3, 0x0
-
-    :goto_1
-    return v3
+    if-nez v0, :cond_2
 
     :cond_0
-    new-instance v3, Ljava/lang/NullPointerException;
+    :goto_0
+    if-nez v0, :cond_4
 
-    const-string/jumbo v4, "dataFileName is null."
+    const/4 v0, 0x0
 
-    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v3
+    :goto_1
+    return v0
 
     :cond_1
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    const-string/jumbo v1, "dataFileName is null."
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_2
     :try_start_1
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception v1
 
     goto :goto_0
 
     :catch_1
+    move-exception v2
+
+    if-eqz v0, :cond_0
+
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_0
+
+    :catch_2
     move-exception v1
 
     goto :goto_0
 
     :catchall_0
-    move-exception v3
+    move-exception v2
 
-    throw v3
+    if-nez v0, :cond_3
 
-    :cond_2
-    const/4 v3, 0x1
+    :goto_2
+    throw v2
+
+    :cond_3
+    :try_start_3
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
+
+    goto :goto_2
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v0, 0x1
 
     goto :goto_1
 .end method

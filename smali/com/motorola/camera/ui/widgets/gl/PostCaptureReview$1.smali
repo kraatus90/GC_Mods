@@ -1,11 +1,14 @@
 .class Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;
-.super Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+.super Ljava/lang/Object;
 .source "PostCaptureReview.java"
+
+# interfaces
+.implements Lcom/motorola/camera/settings/SettingChangeListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;-><init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,32 +22,48 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;[IZ)V
+.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)V
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 
-    invoke-direct {p0, p2, p3, p4}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;[IZ)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onSingleTap(Landroid/graphics/PointF;JJ)V
+.method public onChange(Lcom/motorola/camera/settings/Setting;)V
     .locals 3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get1(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->isVisible()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    xor-int/lit8 v0, v0, 0x1
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$1;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
+
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
     new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->OPEN_PHOTO:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->REVIEW_ACCEPT:Lcom/motorola/camera/fsm/camera/Trigger$Event;
 
     invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
 

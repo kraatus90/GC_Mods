@@ -93,23 +93,41 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    invoke-virtual {p2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getModeSetup()Lcom/motorola/camera/fsm/camera/modes/AbstractMode;
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates$WideSelfieCaptureRunnable;->this$0:Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/motorola/camera/fsm/camera/modes/AbstractMode;->getModeBundle()Landroid/os/Bundle;
+    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->-get4(Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;)Ljava/util/ArrayList;
 
     move-result-object v1
 
     const-string/jumbo v2, "PANO_SELFIE_IMAGE_ID"
 
-    const-string/jumbo v3, "PANO_SELFIE_IMAGE_ID"
-
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getModeSetup()Lcom/motorola/camera/fsm/camera/modes/AbstractMode;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/modes/AbstractMode;->getModeBundle()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "PANO_SELFIE_IMAGE_ID"
+
+    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates$WideSelfieCaptureRunnable;->this$0:Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;
+
+    invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->-get4(Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
     invoke-virtual {p2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getModeSetup()Lcom/motorola/camera/fsm/camera/modes/AbstractMode;
 

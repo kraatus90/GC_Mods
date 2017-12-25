@@ -57,52 +57,52 @@
 .end method
 
 .method protected onForwardingStarted()Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Landroid/support/v7/view/menu/ActionMenuItemView;
+    iget-object v1, p0, Landroid/support/v7/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Landroid/support/v7/view/menu/ActionMenuItemView;
 
-    iget-object v2, v2, Landroid/support/v7/view/menu/ActionMenuItemView;->mItemInvoker:Landroid/support/v7/view/menu/MenuBuilder$ItemInvoker;
+    iget-object v1, v1, Landroid/support/v7/view/menu/ActionMenuItemView;->mItemInvoker:Landroid/support/v7/view/menu/MenuBuilder$ItemInvoker;
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     :cond_0
-    return v1
+    return v0
 
     :cond_1
+    iget-object v1, p0, Landroid/support/v7/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Landroid/support/v7/view/menu/ActionMenuItemView;
+
+    iget-object v1, v1, Landroid/support/v7/view/menu/ActionMenuItemView;->mItemInvoker:Landroid/support/v7/view/menu/MenuBuilder$ItemInvoker;
+
     iget-object v2, p0, Landroid/support/v7/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Landroid/support/v7/view/menu/ActionMenuItemView;
 
-    iget-object v2, v2, Landroid/support/v7/view/menu/ActionMenuItemView;->mItemInvoker:Landroid/support/v7/view/menu/MenuBuilder$ItemInvoker;
+    iget-object v2, v2, Landroid/support/v7/view/menu/ActionMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->this$0:Landroid/support/v7/view/menu/ActionMenuItemView;
+    invoke-interface {v1, v2}, Landroid/support/v7/view/menu/MenuBuilder$ItemInvoker;->invokeItem(Landroid/support/v7/view/menu/MenuItemImpl;)Z
 
-    iget-object v3, v3, Landroid/support/v7/view/menu/ActionMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
+    move-result v1
 
-    invoke-interface {v2, v3}, Landroid/support/v7/view/menu/MenuBuilder$ItemInvoker;->invokeItem(Landroid/support/v7/view/menu/MenuItemImpl;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/ActionMenuItemView$ActionMenuItemForwardingListener;->getPopup()Landroid/support/v7/view/menu/ShowableListMenu;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez v0, :cond_3
+    if-nez v1, :cond_3
 
     :cond_2
     :goto_0
-    return v1
+    return v0
 
     :cond_3
-    invoke-interface {v0}, Landroid/support/v7/view/menu/ShowableListMenu;->isShowing()Z
+    invoke-interface {v1}, Landroid/support/v7/view/menu/ShowableListMenu;->isShowing()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

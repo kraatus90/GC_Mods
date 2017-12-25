@@ -14,9 +14,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/commons/logging/LogConfigurationException;->a:Ljava/lang/Throwable;
 
@@ -26,9 +26,9 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/commons/logging/LogConfigurationException;->a:Ljava/lang/Throwable;
 
@@ -36,9 +36,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuffer;
 
@@ -70,7 +68,9 @@
 
     invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    iput-object v2, p0, Lorg/apache/commons/logging/LogConfigurationException;->a:Ljava/lang/Throwable;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/commons/logging/LogConfigurationException;->a:Ljava/lang/Throwable;
 
     iput-object p2, p0, Lorg/apache/commons/logging/LogConfigurationException;->a:Ljava/lang/Throwable;
 

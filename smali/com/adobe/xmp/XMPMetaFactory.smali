@@ -10,9 +10,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     new-instance v0, Lcom/adobe/xmp/impl/XMPSchemaRegistryImpl;
 
@@ -20,7 +18,9 @@
 
     sput-object v0, Lcom/adobe/xmp/XMPMetaFactory;->schema:Lcom/adobe/xmp/XMPSchemaRegistry;
 
-    sput-object v1, Lcom/adobe/xmp/XMPMetaFactory;->versionInfo:Lcom/adobe/xmp/XMPVersionInfo;
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/adobe/xmp/XMPMetaFactory;->versionInfo:Lcom/adobe/xmp/XMPVersionInfo;
 
     return-void
 .end method

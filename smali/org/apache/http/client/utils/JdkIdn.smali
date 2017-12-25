@@ -16,7 +16,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,20 +26,20 @@
 
     move-result-object v0
 
+    const/4 v1, 0x1
+
     :try_start_0
-    const-string/jumbo v1, "toUnicode"
+    new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Class;
+    const-class v2, Ljava/lang/String;
 
     const/4 v3, 0x0
 
-    const-class v4, Ljava/lang/String;
+    aput-object v2, v1, v3
 
-    aput-object v4, v2, v3
+    const-string/jumbo v2, "toUnicode"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 

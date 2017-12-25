@@ -41,62 +41,62 @@
 .end method
 
 .method private static isDigits(Ljava/lang/CharSequence;II)Z
-    .locals 6
+    .locals 5
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    add-int v1, p1, p2
+    add-int v0, p1, p2
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
-    move-result v3
-
-    move v2, p1
+    move-result v2
 
     :goto_0
-    if-lt v2, v1, :cond_1
+    if-lt p1, v0, :cond_1
 
     :cond_0
-    if-le v1, v3, :cond_5
+    if-le v0, v2, :cond_5
+
+    move v0, v1
 
     :goto_1
-    return v4
+    return v0
 
     :cond_1
-    if-ge v2, v3, :cond_0
+    if-ge p1, v2, :cond_0
 
-    invoke-interface {p0, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v0
+    move-result v3
 
-    const/16 v5, 0x30
+    const/16 v4, 0x30
 
-    if-ge v0, v5, :cond_3
+    if-ge v3, v4, :cond_3
 
     :cond_2
-    const/16 v5, 0xf1
+    const/16 v4, 0xf1
 
-    if-ne v0, v5, :cond_4
+    if-ne v3, v4, :cond_4
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     :goto_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
     :cond_3
-    const/16 v5, 0x39
+    const/16 v4, 0x39
 
-    if-gt v0, v5, :cond_2
+    if-gt v3, v4, :cond_2
 
     goto :goto_2
 
     :cond_4
-    return v4
+    return v1
 
     :cond_5
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 .end method
@@ -162,367 +162,329 @@
 .end method
 
 .method public encode(Ljava/lang/String;)[Z
-    .locals 20
+    .locals 12
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    const/16 v7, 0x63
 
-    move-result v8
+    const/4 v8, 0x1
 
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
-
-    if-ge v8, v0, :cond_1
-
-    :cond_0
-    new-instance v17, Ljava/lang/IllegalArgumentException;
-
-    new-instance v18, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v19, "Contents length should be between 1 and 80 characters, but got "
-
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v18
-
-    invoke-direct/range {v17 .. v18}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v17
-
-    :cond_1
-    const/16 v17, 0x50
-
-    move/from16 v0, v17
-
-    if-gt v8, v0, :cond_0
-
-    const/4 v7, 0x0
-
-    :goto_0
-    if-lt v7, v8, :cond_4
-
-    new-instance v12, Ljava/util/ArrayList;
-
-    invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    const/4 v14, 0x0
-
-    :cond_2
-    :goto_1
-    if-lt v14, v8, :cond_7
-
-    rem-int/lit8 v3, v3, 0x67
-
-    sget-object v17, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
-
-    aget-object v17, v17, v3
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v12, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    sget-object v17, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
-
-    const/16 v18, 0x6a
-
-    aget-object v17, v17, v18
-
-    move-object/from16 v0, v17
-
-    invoke-interface {v12, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    const/16 v1, 0x64
 
     const/4 v6, 0x0
 
-    invoke-interface {v12}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result-object v18
+    move-result v10
 
-    :cond_3
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v10, v8, :cond_1
 
-    move-result v17
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    if-nez v17, :cond_e
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-array v0, v6, [Z
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-object/from16 v17, v0
+    const-string/jumbo v2, "Contents length should be between 1 and 80 characters, but got "
 
-    const/4 v13, 0x0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v12}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result-object v1
 
-    move-result-object v18
+    invoke-virtual {v1, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    const/16 v0, 0x50
+
+    if-gt v10, v0, :cond_0
+
+    move v0, v6
+
+    :goto_0
+    if-lt v0, v10, :cond_3
+
+    new-instance v11, Ljava/util/ArrayList;
+
+    invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
+
+    move v2, v6
+
+    move v4, v6
+
+    move v5, v8
+
+    move v9, v6
+
+    :goto_1
+    if-lt v2, v10, :cond_6
+
+    rem-int/lit8 v0, v9, 0x67
+
+    sget-object v1, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+
+    aget-object v0, v1, v0
+
+    invoke-interface {v11, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    sget-object v0, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+
+    const/16 v1, 0x6a
+
+    aget-object v0, v0, v1
+
+    invoke-interface {v11, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {v11}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    move v1, v6
+
+    :cond_2
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    new-array v1, v1, [Z
+
+    invoke-interface {v11}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
 
     :goto_2
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v19
+    move-result v0
 
-    if-nez v19, :cond_f
+    if-nez v0, :cond_f
 
-    return-object v17
+    return-object v1
 
-    :cond_4
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v7}, Ljava/lang/String;->charAt(I)C
+    :cond_3
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
-    const/16 v17, 0x20
+    const/16 v3, 0x20
 
-    move/from16 v0, v17
+    if-ge v2, v3, :cond_5
 
-    if-ge v2, v0, :cond_6
-
-    :cond_5
+    :cond_4
     packed-switch v2, :pswitch_data_0
 
-    new-instance v17, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v19, "Bad character in input: "
+    const-string/jumbo v3, "Bad character in input: "
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v1
 
-    move-object/from16 v0, v18
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v18
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v18
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct/range {v17 .. v18}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    throw v0
 
-    throw v17
+    :cond_5
+    const/16 v3, 0x7e
 
-    :cond_6
-    const/16 v17, 0x7e
-
-    move/from16 v0, v17
-
-    if-gt v2, v0, :cond_5
+    if-gt v2, v3, :cond_4
 
     :pswitch_0
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_7
-    const/16 v17, 0x63
+    :cond_6
+    if-eq v4, v7, :cond_7
 
-    move/from16 v0, v17
-
-    if-eq v5, v0, :cond_8
-
-    const/4 v15, 0x4
+    const/4 v0, 0x4
 
     :goto_3
-    move-object/from16 v0, p1
+    invoke-static {p1, v2, v0}, Lcom/google/zxing/oned/Code128Writer;->isDigits(Ljava/lang/CharSequence;II)Z
 
-    invoke-static {v0, v14, v15}, Lcom/google/zxing/oned/Code128Writer;->isDigits(Ljava/lang/CharSequence;II)Z
+    move-result v0
 
-    move-result v17
+    if-nez v0, :cond_8
 
-    if-nez v17, :cond_9
-
-    const/16 v9, 0x64
+    move v3, v1
 
     :goto_4
-    if-eq v9, v5, :cond_a
+    if-eq v3, v4, :cond_9
 
-    if-eqz v5, :cond_c
+    if-eqz v4, :cond_b
 
-    move v11, v9
+    move v0, v3
 
     :goto_5
-    move v5, v9
+    sget-object v4, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+
+    aget-object v4, v4, v0
+
+    invoke-interface {v11, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    mul-int/2addr v0, v5
+
+    add-int v4, v9, v0
+
+    if-nez v2, :cond_d
+
+    move v0, v5
 
     :goto_6
-    sget-object v17, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+    move v5, v0
 
-    aget-object v17, v17, v11
+    move v9, v4
 
-    move-object/from16 v0, v17
+    move v4, v3
 
-    invoke-interface {v12, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    goto :goto_1
 
-    mul-int v17, v11, v4
-
-    add-int v3, v3, v17
-
-    if-eqz v14, :cond_2
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto/16 :goto_1
-
-    :cond_8
-    const/4 v15, 0x2
+    :cond_7
+    const/4 v0, 0x2
 
     goto :goto_3
 
-    :cond_9
-    const/16 v9, 0x63
+    :cond_8
+    move v3, v7
 
     goto :goto_4
 
-    :cond_a
-    move-object/from16 v0, p1
+    :cond_9
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v0, v14}, Ljava/lang/String;->charAt(I)C
+    move-result v0
 
-    move-result v17
+    packed-switch v0, :pswitch_data_1
 
-    packed-switch v17, :pswitch_data_1
+    if-eq v4, v1, :cond_a
 
-    const/16 v17, 0x64
+    add-int/lit8 v0, v2, 0x2
 
-    move/from16 v0, v17
+    invoke-virtual {p1, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    if-eq v5, v0, :cond_b
+    move-result-object v0
 
-    add-int/lit8 v17, v14, 0x2
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-object/from16 v0, p1
+    move-result v0
 
-    move/from16 v1, v17
-
-    invoke-virtual {v0, v14, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v11
-
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     :goto_7
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    move v3, v4
+
+    goto :goto_5
 
     :pswitch_1
-    const/16 v11, 0x66
+    const/16 v0, 0x66
 
     goto :goto_7
 
     :pswitch_2
-    const/16 v11, 0x61
+    const/16 v0, 0x61
 
     goto :goto_7
 
     :pswitch_3
-    const/16 v11, 0x60
+    const/16 v0, 0x60
 
     goto :goto_7
 
     :pswitch_4
-    const/16 v11, 0x64
+    move v0, v1
+
+    goto :goto_7
+
+    :cond_a
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x20
 
     goto :goto_7
 
     :cond_b
-    move-object/from16 v0, p1
+    if-eq v3, v1, :cond_c
 
-    invoke-virtual {v0, v14}, Ljava/lang/String;->charAt(I)C
+    const/16 v0, 0x69
 
-    move-result v17
-
-    add-int/lit8 v11, v17, -0x20
-
-    goto :goto_7
+    goto :goto_5
 
     :cond_c
-    const/16 v17, 0x64
-
-    move/from16 v0, v17
-
-    if-eq v9, v0, :cond_d
-
-    const/16 v11, 0x69
+    const/16 v0, 0x68
 
     goto :goto_5
 
     :cond_d
-    const/16 v11, 0x68
+    add-int/lit8 v0, v5, 0x1
 
-    goto :goto_5
+    goto :goto_6
 
     :cond_e
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v0
 
-    check-cast v10, [I
+    check-cast v0, [I
 
-    array-length v0, v10
+    array-length v5, v0
 
-    move/from16 v19, v0
-
-    const/16 v17, 0x0
+    move v2, v6
 
     :goto_8
-    move/from16 v0, v17
+    if-ge v2, v5, :cond_2
 
-    move/from16 v1, v19
+    aget v3, v0, v2
 
-    if-ge v0, v1, :cond_3
+    add-int/2addr v3, v1
 
-    aget v16, v10, v17
+    add-int/lit8 v1, v2, 0x1
 
-    add-int v6, v6, v16
+    move v2, v1
 
-    add-int/lit8 v17, v17, 0x1
+    move v1, v3
 
     goto :goto_8
 
     :cond_f
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v0
 
-    check-cast v10, [I
+    check-cast v0, [I
 
-    const/16 v19, 0x1
+    invoke-static {v1, v6, v0, v8}, Lcom/google/zxing/oned/Code128Writer;->appendPattern([ZI[IZ)I
 
-    move-object/from16 v0, v17
+    move-result v0
 
-    move/from16 v1, v19
-
-    invoke-static {v0, v13, v10, v1}, Lcom/google/zxing/oned/Code128Writer;->appendPattern([ZI[IZ)I
-
-    move-result v19
-
-    add-int v13, v13, v19
+    add-int/2addr v6, v0
 
     goto/16 :goto_2
 

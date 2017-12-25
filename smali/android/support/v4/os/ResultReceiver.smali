@@ -70,9 +70,7 @@
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -80,7 +78,9 @@
 
     iput-boolean v0, p0, Landroid/support/v4/os/ResultReceiver;->mLocal:Z
 
-    iput-object v1, p0, Landroid/support/v4/os/ResultReceiver;->mHandler:Landroid/os/Handler;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/v4/os/ResultReceiver;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 

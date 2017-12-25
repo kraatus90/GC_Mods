@@ -57,7 +57,7 @@
 
 .field private mPlayTex:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-.field private mSeqId:I
+.field private mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
 .field private mTextureLoaded:Z
 
@@ -213,7 +213,7 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;ILcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRollInterface;)V
+.method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRollInterface;)V
     .locals 2
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/BatchDrawTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
@@ -232,7 +232,7 @@
 
     iput-object p3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mType:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
 
-    iput p2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:I
+    iput-object p2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/BitmapTexture;
 
@@ -278,7 +278,7 @@
 
     if-ne v0, p3, :cond_0
 
-    const/16 v0, 0xf9
+    const/16 v0, 0xfa
 
     :goto_0
     invoke-direct {p0, v0, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setResource(ILcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;)V
@@ -286,7 +286,7 @@
     return-void
 
     :cond_0
-    const/16 v0, 0xf8
+    const/16 v0, 0xf9
 
     goto :goto_0
 .end method
@@ -941,12 +941,12 @@
     .end packed-switch
 .end method
 
-.method public getSeqId()I
+.method public getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
     .locals 1
 
-    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:I
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    return v0
+    return-object v0
 .end method
 
 .method public getThumbnailLoadState()Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture$ThumbnailLoadState;
@@ -1956,10 +1956,10 @@
     return-void
 .end method
 
-.method public setSeqId(I)V
+.method public setSeqId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
     .locals 0
 
-    iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:I
+    iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     return-void
 .end method
@@ -2031,7 +2031,7 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    const-string/jumbo v1, "%s( %s, seqId:0x%08x, Type:%s, ViewSize:%s, State:%s, LoadState:%s)"
+    const-string/jumbo v1, "%s( %s, seqId:%s, Type:%s, ViewSize:%s, State:%s, LoadState:%s)"
 
     const/4 v0, 0x7
 
@@ -2058,11 +2058,7 @@
 
     aput-object v0, v2, v3
 
-    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     const/4 v3, 0x2
 

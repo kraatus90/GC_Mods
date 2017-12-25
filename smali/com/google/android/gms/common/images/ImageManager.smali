@@ -104,9 +104,7 @@
 .end method
 
 .method private constructor <init>(Landroid/content/Context;Z)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -136,7 +134,9 @@
 
     if-nez p2, :cond_1
 
-    iput-object v2, p0, Lcom/google/android/gms/common/images/ImageManager;->zzRW:Lcom/google/android/gms/common/images/ImageManager$zzb;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/common/images/ImageManager;->zzRW:Lcom/google/android/gms/common/images/ImageManager$zzb;
 
     :cond_0
     :goto_0

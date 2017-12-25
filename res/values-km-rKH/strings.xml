@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">រកមើល​ទៅ​ដើម</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">រកមើល​ឡើងលើ</string>
-    <string name="abc_action_menu_overflow_description">ជម្រើស​ច្រើន​ទៀត</string>
-    <string name="abc_action_mode_done">រួចរាល់</string>
-    <string name="abc_activity_chooser_view_see_all">មើល​ទាំងអស់</string>
-    <string name="abc_activitychooserview_choose_application">ជ្រើស​កម្មវិធី​​</string>
-    <string name="abc_capital_off">បិទ</string>
-    <string name="abc_capital_on">បើក</string>
-    <string name="abc_search_hint">ស្វែងរក…</string>
-    <string name="abc_searchview_description_clear">សម្អាត​សំណួរ</string>
-    <string name="abc_searchview_description_query">ស្វែងរក​សំណួរ</string>
-    <string name="abc_searchview_description_search">ស្វែងរក</string>
-    <string name="abc_searchview_description_submit">ដាក់​​​ស្នើ​សំណួរ</string>
-    <string name="abc_searchview_description_voice">ការស្វែងរក​សំឡេង</string>
-    <string name="abc_shareactionprovider_share_with">ចែករំលែក​ជាមួយ</string>
-    <string name="abc_shareactionprovider_share_with_application">ចែករំលែក​ជាមួយ %s</string>
-    <string name="abc_toolbar_collapse_description">បង្រួម</string>
     <string name="common_android_wear_notification_needs_update_text">កម្មវិធី​ទាមទារ​បច្ចុប្បន្នភាព​ចំពោះ​កម្មវិធី Android Wear ។</string>
     <string name="common_android_wear_update_text">កម្មវិធី​នេះ​នឹង​មិន​ដំណើរការ​ទេ លុះ​ត្រា​តែ​អ្នក​ធ្វើ​បច្ចុប្បន្នភាព​​កម្មវិធី Android Wear ។</string>
     <string name="common_android_wear_update_title">ធ្វើ​បច្ចុប្បន្នភាព Android Wear</string>
@@ -50,8 +31,6 @@
     <string name="common_signin_button_text">ចូល</string>
     <string name="common_signin_button_text_long">ចូល​ដោយ​ប្រើ​ Google</string>
     <string name="commono_google_play_services_api_unavailable_text">កម្មវិធីនេះតម្រូវឲ្យមានសេវាកម្ម Google Play មួយ ឬច្រើនដែលមិនមានផ្តល់ជូនទេនាពេលបច្ចុប្បន្ន។ សូមទំនាក់ទំនងអ្នកអភិវឌ្ឍន៍ដើម្បីទទួលជំនួយ។</string>
-    <string name="search_menu_title">ស្វែងរក</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="act_name_camcorder">កាមេរ៉ា​វីដេអូ</string>
     <string name="act_name_camera">កាមេរ៉ា</string>
     <string name="action_licenses">អាជ្ញាប័ណ្ណ​ប្រភព​បើក​ចំហ</string>
@@ -144,11 +123,11 @@
     <string name="best_shot_desc">មានរូបថតផ្សេងទៀត។ យើងបានថតរួបខណៈល្អប្រសើរក្នុងពេលសម្រាប់​រូបថតនេះ។</string>
     <string name="best_shot_desc_new">យើងបានថតរូបថតល្អប្រសើរសម្រាប់ខណៈនេះ។</string>
     <string name="best_shot_name">រូបថតល្អបំផុត</string>
-    <string name="camera_phone">កាមេរ៉ាទូរស័ព្ទ</string>
+    <string name="camera_phone">កាមេរ៉ាទូរសព្ទ</string>
     <string name="cancel">បោះបង់</string>
     <string name="capture_failure">ការចាប់​យក​បរាជ័យ។ ព្យាយាម​ម្ដង​ទៀត។</string>
     <string name="checkbox_do_not_show">កុំបង្ហាញម្តងទៀត</string>
-    <string name="cloudsight_terms">រូបភាព​របស់​អ្នក​នឹង​ត្រូវ​ផ្ញើ​ទៅ CloudSight ដើម្បី​ផ្ដល់​លទ្ធផល​នៃការ​ស្វែងរក។ &lt;br/>&lt;br/> តាម​រយៈ​ការ​បន្ត អ្នក​យល់ព្រម​ចំពោះ​ &lt;a href=%1$s>គោលការណ៍​ស្ដីពីឯកជនភាព​&lt;/a>​របស់ CloudSight ។</string>
+    <string name="cloudsight_terms">រាល់ពេលដែលអ្នកប្រើការស្គាល់វត្ថុ រូបភាព និងទីតាំង (បើបានបើក) នឹងត្រូវបាន​ផ្ញើ​ទៅភាគីទីបីដើម្បីផ្ដល់លទ្ធផលស្វែងរក។&lt;br/>&lt;br/> ដោយការបន្ដ អ្នកយល់ព្រមតាម&lt;a href=%1$s>គោលការណ៍​ឯកជនភាព​&lt;/a>។</string>
     <string name="dailog_panorama_failed">ទេសភាពទូលាយបរាជ័យ។ សូមព្យាយាមម្តងទៀត។</string>
     <string name="dailog_panorama_not_taken">រូបភាពទេសភាព​ទូលាយ មិនត្រូវបានថត។</string>
     <string name="dialog_access_sd_fail">មិនអាចថតមេឌៀ។ មិនអាចូលប្រើកាត SD។</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">ឧបករណ៍មិនគាំទ្រ</string>
     <string name="dialog_disagree">មិនយល់ព្រម</string>
     <string name="dialog_dismiss">មិនបង្ហាញម្តងទៀត</string>
+    <string name="dialog_download">ទាញ​យក</string>
     <string name="dialog_external_sd_missing">មិនអាចថតរូបភាព។ កាត SD មិនអាចចូលប្រើបាន។ ប្តូរទៅកាន់ការស្តុកខាងក្នុងទូរស័ព្ទ</string>
     <string name="dialog_first_time_set_pure_raw_message">"ប្រភេទឯកសារមិនដំណើរការនេះត្រូវបានប្រើប្រាស់ដើម្បីកែរូបថតជាលក្ខណៈអាជីព។
 
@@ -247,6 +227,7 @@
     <string name="help_next">បន្ទាប់</string>
     <string name="image_360_desc">នេះគឺជារូបថត 360 ។ អ្នកអាចកែតម្រូវរូបថតនេះជាមួយនឹង កម្មវិធីកែតម្រូវ​ Moto 360 ។</string>
     <string name="image_360_name">រូបថត 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">បានបើក​ភាពច្បាស់</string>
     <string name="indicate_mode_mono">ស និង​ខ្មៅ ពិត</string>
@@ -258,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">មុំទទឹងខ្លី</string>
     <string name="indicate_mode_video">វីដេអូ</string>
     <string name="indicate_mode_wide_angle">មុំទូលាយ</string>
+    <string name="indicate_mode_wide_angle_selfie">មុំ SELFIE យ៉ាងទូលំទូលាយ</string>
     <string name="internal_storage">ឧបករណ៍ផ្ទុកខាងក្នុង</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">ការស្គាល់​សញ្ញា​សម្គាល់​ទីតាំង ផ្ដល់​ព័ត៌មានអំពី​ទីកន្លែង​ពេញ​និយម នៅ​ជុំវិញ​ពិភពលោក។ &lt;br/>&lt;br/>ដំឡើង​ដើម្បី​បើក​មុខងារ​នេះ។</string>
-    <string name="landmark_install_over_data">ទំហំទាញយក​ការស្គាល់​សញ្ញា​សម្គាល់​ទីតាំង គឺ 92 MB។ ការដំឡើងវា​តាម​ទិន្នន័យ​ទូរស័ព្ទ​ចល័ត អាច​នាំ​ឲ្យ​មាន​ការ​គិត​ថ្លៃ​បន្ថែម។</string>
-    <string name="landmark_notification_downloading">កំពុង​ទាញយកការ​ស្គាល់​សញ្ញា​សម្គាល់​ទី​តាំង</string>
-    <string name="landmark_notification_install">កំពុង​ដំឡើងការ​ស្គាល់​សញ្ញា​សម្គាល់​ទី​តាំង</string>
-    <string name="landmark_notification_install_complete">ការដំឡើងការ​ស្គាល់​សញ្ញា​សម្គាល់​ទី​តាំង បាន​បញ្ចប់</string>
-    <string name="landmark_notification_install_failed">ការដំឡើងការ​ស្គាល់​សញ្ញា​សម្គាល់​ទី​តាំង បាន​បរាជ័យ</string>
+    <string name="landmark_install_message">ការស្គាល់​សញ្ញា​សម្គាល់​ទីតាំង ផ្ដល់​ព័ត៌មានអំពី​ទីកន្លែង​ពេញ​និយម នៅ​ជុំវិញ​ពិភពលោក។&lt;br/>&lt;br/> ទាញយកសំណុំទិន្នន័យសញ្ញាសម្គាល់​ទីតាំង​ដើម្បី​បើក​មុខងារ​នេះ។</string>
+    <string name="landmark_install_over_data">ទំហំទាញយក​សំណុំទិន្នន័យសញ្ញាសម្គាល់ទីតាំង​ គឺ 92 MB។ ការទាញយកវា​តាម​ទិន្នន័យ​ទូរស័ព្ទ​ចល័ត អាច​នាំ​ឲ្យ​មាន​ការ​គិត​ថ្លៃ​បន្ថែម។</string>
+    <string name="landmark_notification_downloading">ការទាញយកសំណុំទិន្នន័យសញ្ញាសម្គាល់ទីតាំង</string>
+    <string name="landmark_notification_install">ការដំឡើងសំណុំទិន្នន័យសញ្ញាសម្គាល់ទីតាំង</string>
+    <string name="landmark_notification_install_complete">ការដំឡើងសំណុំទិន្នន័យសញ្ញា​សម្គាល់​ទី​តាំងបាន​បញ្ចប់</string>
+    <string name="landmark_notification_install_failed">ការដំឡើងសំណុំទិន្នន័យសញ្ញា​សម្គាល់​ទី​តាំងបាន​បរាជ័យ</string>
     <string name="landmark_notification_install_invalid_url">មិនមានមូលដ្ឋានទិន្នន័យនៃសញ្ញាសម្គាល់ទីតាំងទេ សូម​អាប់ដេតទៅ​កំណែកាមេរ៉ាចុងក្រោយបំផុត</string>
-    <string name="landmark_notification_install_out_of_space">មិនមាន​ទំហំផ្ទុក​គ្រប់គ្រាន់​សម្រាប់​ការដំឡើងការ​ស្គាល់​សញ្ញា​សម្គាល់​ទី​តាំង</string>
+    <string name="landmark_notification_install_out_of_space">មិនមាន​ទំហំផ្ទុក​គ្រប់គ្រាន់​សម្រាប់​ការដំឡើងសំណុំទិន្នន័យ​សញ្ញា​សម្គាល់​ទី​តាំង</string>
+    <string name="landmark_notification_paused">សំណុំទិន្នន័យសញ្ញា​សម្គាល់ទីតាំង នឹង​បន្ត​​ទាញ​យក នៅពេល​មាន​អ៊ីនធឺណិត</string>
+    <string name="landmark_notification_queued">សំណុំទិន្នន័យ​សញ្ញា​សម្គាល់ទីតាំង នឹង​ចាប់ផ្ដើម​ទាញ​យក នៅពេល​មាន​អ៊ីនធឺណិត</string>
     <string name="main_setting_amz_barcode">ឧបករណ៍ស្កេនបាកូដរបស់ Amazon</string>
     <string name="main_setting_amz_privacy">ការជូនដំណឹងស្ដីពីឯកជនភាពរបស់ Amazon</string>
     <string name="main_setting_amz_terms">លក្ខខណ្ឌនៃការប្រើប្រាស់</string>
@@ -290,6 +274,8 @@
     <string name="main_setting_image_ratio">ទំហំរូបថត (ក្រោយ)</string>
     <string name="main_setting_image_ratio_front">ទំហំរូបថត (មុខ)</string>
     <string name="main_setting_landmark_detection">ការ​ស្គាល់​សញ្ញា​សម្គាល់​ទី​តាំង</string>
+    <string name="main_setting_landmark_version_current">កំណែសំណុំទិន្នន័យ៖ %s</string>
+    <string name="main_setting_landmark_version_not_installed">មិនបានដំឡើងសំណុំទិន្នន័យ</string>
     <string name="main_setting_licenses">អាជ្ញាប័ណ្ណ​ប្រភព​បើក​ចំហ</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +311,9 @@
     <string name="perm_required_alert_title">ចាំបាច់ត្រូវមានការអនុញ្ញាត</string>
     <string name="photos_depth_desc">ប្រើកម្មវិធីកែសម្រួលភាពច្បាស់ដើម្បីជ្រើសរើសការផ្ដោត ជំនួសផ្ទៃខាងក្រោយ ឬជ្រើសរើសតំបន់ដើម្បីផ្លាស់ប្ដូរទៅជា ខ្មៅ និងស។</string>
     <string name="photos_depth_name">បានបើក​ភាពច្បាស់</string>
+    <string name="photos_notification_desc">ទទួលបានការផ្ទុកគ្មានដែនកំណត់ជាមួយ Google Photos</string>
+    <string name="photos_notification_title">បម្រុងទុកនៅក្នុង Google Photos</string>
+    <string name="qcfa_resolution_description">សម្របតាមពន្លឺទាប</string>
     <string name="retake">ថត​ឡើងវិញ</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +356,7 @@
     <string name="setting_mode_slow_motion">ទម្រង់យឺត</string>
     <string name="setting_mode_ultra_wide">មុំទទឺងខ្លី</string>
     <string name="setting_mode_video">វីដេអូ</string>
+    <string name="setting_mode_wide_angle_selfie">មុំ selfie យ៉ាងទូលំទូលាយ</string>
     <string name="setting_off">បិទ</string>
     <string name="setting_on">បើក</string>
     <string name="setting_persist">រង់ចាំ</string>
@@ -383,20 +373,25 @@
     <string name="setting_timer_dialog_title">កំណត់ពេល</string>
     <string name="setting_torch">ពិល</string>
     <string name="setting_true">ត្រូវ</string>
+    <string name="shortcut_desc_depth">រូប​ថត​​ច្បាស់</string>
+    <string name="shortcut_desc_selfie">សែលហ្វី</string>
+    <string name="shortcut_desc_video">វីដេអូ</string>
     <string name="smartcam_landmark_notification_title">កាមេរ៉ាវ័យឆ្លាត</string>
+    <string name="smartcam_no_detections">វត្ថុ ឬសញ្ញាសំគាល់ដែលមិនបានរក្សាទុក</string>
     <string name="storage_location_external">កាត​អេសឌី</string>
     <string name="storage_location_internal">ទូរសព្ទ</string>
     <string name="storage_unavailable">ការស្តុកមិនអាចមាន</string>
+    <string name="toast_battery_saver">បច្ចុប្បន្នអ្នកកំពុងនៅក្នុងម៉ូដរក្សាថាមពល មុខងារខ្លះអាចត្រូវបានដាក់កំហិត។</string>
     <string name="toast_geotag_message_1">អ្នកត្រូវផ្តល់ការអនុញ្ញាតទីតាំងដើម្បីអនុញ្ញាតរក្សាទុកទីតាំង។</string>
     <string name="toast_geotag_message_2">ការកំណត់ទីតាំងមានអានុភាពតែនៅបន្ទាប់ពីការកំណត់ប្រព័ន្ធទីតាំងត្រូវបានបើកប៉ុណ្ណោះ។</string>
     <string name="tooltip_camera_switch_360">សាកល្បង​ប្ដូរ​ជម្រើស​ផ្សេងៗគ្នា​នៃ​ម៉ាស៊ីន​ថត។</string>
     <string name="tooltip_capture_360">ព្យាយាម​ថតយក​រូបថត ឬ​វីដេអូ 360° ដោយ​ការ​ប៉ះ​លើ​ប៊ូតុង​បិទនេះ។</string>
-    <string name="tooltip_capture_key_360">ទន្ទឹមនេះ សូមសាកល្បង​ថតជាមួយ​នឹង​ប៊ូតុងបិទ​នៅខាងក្រោយម៉ូដ។</string>
-    <string name="tooltip_dual_camera_depth_photo">ថត​រូប​ថតជាមួយ​នឹងព័ត៌មាន​បន្ថែម ដើម្បី​អនុញ្ញាត​លក្ខណៈ​ពិសេសនៃ​ការ​កែសម្រួល​។</string>
+    <string name="tooltip_capture_key_360">សូមសាកល្បង​ថតជាមួយ​នឹង​ប៊ូតុងបិទ​នៅខាងក្រោយ Mod ផងដែរ។</string>
     <string name="tooltip_first_use_zoom_button">ប៉ះកន្លែងនេះ ដើម្បីប្ដូរទៅជារូបភាពធំទូលាយ។</string>
     <string name="tooltip_gallery_360">មើល​អំពី​របៀប​ដែល​រូបថត ឬ​វីដេអូ 360° របស់អ្នក បង្ហាញ​ចេញ​មក​ ដោយការ​អូស​ទៅ​ខាងឆ្វេង។</string>
     <string name="tooltip_minimap_viewfinder">ប្ដូរ​ទំហំ​រូបភាព​ផ្នែកខាងក្រោម នៅ​ខាងឆ្វេង ឬ​ខាងស្ដាំ។</string>
     <string name="tooltip_mode_switch_360">សាកល្បង​ថត 360° ដោយប្រើ​ម៉ូដផ្សេងៗ​គ្នា!</string>
+    <string name="tooltip_modes_list">រកឃើញ​វិធីសាស្រ្ត​ថ្មី​ដើម្បី​ថត​រូប​របស់​អ្នក។</string>
     <string name="tooltip_smart_camera">ចុច​ដើម្បី​ស្វែងរក​បន្ថែមទៀត​អំពី​វត្ថុ។</string>
     <string name="tooltip_smart_camera_disable">អ្នកអាច​បិទវា​នៅក្នុង​ការ​កំណត់។</string>
     <string name="tooltip_spherical_viewfinder">ប្ដូរ​ទំហំ ឬ​ពង្រីក និង​បង្រួម​ការបញ្ជាលើ​ការ​បង្ហាញ។</string>
@@ -419,6 +414,10 @@
     <string name="zoom_hint_full">ពេញ</string>
     <string name="zoom_hint_wide">ធំទូលាយ</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">សម្របតាមពន្លឺទាប</string>
+    <string name="indicate_mode_timelapse">ការ​ដើរ​លឿន</string>
+    <string name="setting_mode_timelapse">ការដើរលឿន</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

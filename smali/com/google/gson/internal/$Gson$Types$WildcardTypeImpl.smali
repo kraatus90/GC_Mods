@@ -32,8 +32,6 @@
 .method public constructor <init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     const/4 v2, 0x1
 
     const/4 v1, 0x0
@@ -70,7 +68,9 @@
 
     invoke-static {v0}, Lcom/google/gson/internal/$Gson$Types;->checkNotPrimitive(Ljava/lang/reflect/Type;)V
 
-    iput-object v3, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
     aget-object v0, p1, v1
 
@@ -174,11 +174,11 @@
 
     new-array v0, v0, [Ljava/lang/reflect/Type;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
 
-    iget-object v2, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->lowerBound:Ljava/lang/reflect/Type;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     goto :goto_0
 .end method
@@ -190,11 +190,11 @@
 
     new-array v0, v0, [Ljava/lang/reflect/Type;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
 
-    iget-object v2, p0, Lcom/google/gson/internal/$Gson$Types$WildcardTypeImpl;->upperBound:Ljava/lang/reflect/Type;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     return-object v0
 .end method

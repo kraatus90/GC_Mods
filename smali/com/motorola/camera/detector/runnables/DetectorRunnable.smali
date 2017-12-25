@@ -241,12 +241,8 @@
     return-void
 .end method
 
-.method protected updateCheckinData(Lcom/motorola/camera/detector/results/tidbit/Tidbit;I)V
+.method protected updateCheckinData(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
     .locals 6
-    .param p2    # I
-        .annotation build Lcom/motorola/camera/analytics/AlwaysAwareData$SCAN_RESULT;
-        .end annotation
-    .end param
 
     const-wide/16 v2, 0x0
 
@@ -275,7 +271,7 @@
 
     sub-long/2addr v2, v4
 
-    iput-wide v2, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mScanTime:J
+    iput-wide v2, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->scanTime:J
 
     :cond_1
     iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
@@ -286,15 +282,11 @@
 
     iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
 
-    iput p2, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mScanSuccess:I
-
-    iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
-
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->mDetectionTime:J
+    iput-wide v2, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->detectionTime:J
 
     return-void
 .end method

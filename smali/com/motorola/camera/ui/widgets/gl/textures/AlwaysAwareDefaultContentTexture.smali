@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c002d
+    const v1, 0x7f0c002e
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -440,7 +440,7 @@
 .end method
 
 .method public setContent(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Z
-    .locals 6
+    .locals 7
 
     const/4 v1, 0x1
 
@@ -497,13 +497,26 @@
     move v4, v1
 
     :goto_2
-    if-eqz v3, :cond_3
+    iget-object v5, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    invoke-interface {v5}, Lcom/motorola/camera/detector/results/tidbit/ITidbitData;->getKind()Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;->Landmark:Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
+
+    if-ne v5, v6, :cond_3
+
+    move v5, v1
+
+    :goto_3
+    if-eqz v3, :cond_4
 
     invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->isEnabled()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_3
+    if-eqz v6, :cond_4
 
     return v2
 
@@ -523,16 +536,24 @@
     goto :goto_2
 
     :cond_3
-    if-eqz v4, :cond_4
+    move v5, v2
 
-    return v2
+    goto :goto_3
 
     :cond_4
-    if-nez v0, :cond_5
+    if-nez v4, :cond_5
 
-    if-eqz v3, :cond_7
+    if-eqz v5, :cond_6
 
     :cond_5
+    return v2
+
+    :cond_6
+    if-nez v0, :cond_7
+
+    if-eqz v3, :cond_9
+
+    :cond_7
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->mTitleText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     sget v2, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->TITLE_COLOR:I
@@ -551,7 +572,7 @@
 
     invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setTextColor(I)V
 
-    :goto_3
+    :goto_4
     iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
 
     invoke-interface {v0}, Lcom/motorola/camera/detector/results/tidbit/ITidbitData;->getTitleString()Ljava/lang/String;
@@ -588,16 +609,16 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onDirty()V
 
-    :cond_6
+    :cond_8
     return v1
 
-    :cond_7
+    :cond_9
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->mTitleText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     sget v2, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareDefaultContentTexture;->SECTION_HEADER_COLOR:I
@@ -616,7 +637,7 @@
 
     invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setTextColor(I)V
 
-    goto :goto_3
+    goto :goto_4
 .end method
 
 .method public setObserver(Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;)V

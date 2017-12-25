@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll$7_lambda$8()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll$7_52702()V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll$7;->this$0:Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;
@@ -74,9 +74,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$116;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$116;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$1;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

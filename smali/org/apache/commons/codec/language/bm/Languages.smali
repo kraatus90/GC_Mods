@@ -254,23 +254,23 @@
 .end method
 
 .method private static langResourceName(Lorg/apache/commons/codec/language/bm/NameType;)Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    const-string/jumbo v0, "org/apache/commons/codec/language/bm/%s_languages.txt"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-virtual {p0}, Lorg/apache/commons/codec/language/bm/NameType;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v1, v2
+    const/4 v2, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "org/apache/commons/codec/language/bm/%s_languages.txt"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -63,7 +63,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable$CreateFullFrameRequestsRunnable_lambda$2()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable$CreateFullFrameRequestsRunnable_53452()V
     .locals 3
 
     const/4 v0, 0x0
@@ -120,9 +120,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateFullFrameRequestsRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$72;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$72;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$3;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -140,17 +140,13 @@
 
     invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/CameraRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {p2, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateFullFrameRequestsRunnable;->mCameraId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->isMaster(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/device/CameraStateManager;->isMaster(Ljava/lang/String;)Z
 
     move-result v1
 

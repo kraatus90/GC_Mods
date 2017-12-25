@@ -465,9 +465,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const-wide/high16 v4, 0x4000000000000000L    # 2.0
-
     const/4 v2, 0x0
+
+    const-wide/high16 v4, 0x4000000000000000L    # 2.0
 
     iget-object v0, p0, Lcom/drew/metadata/xmp/XmpDescriptor;->_directory:Lcom/drew/metadata/Directory;
 

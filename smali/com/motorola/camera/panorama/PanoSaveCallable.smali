@@ -454,7 +454,7 @@
 
     :cond_2
     :try_start_1
-    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isRearCamera()Z
+    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isProcessingRearCamera()Z
 
     move-result v1
 

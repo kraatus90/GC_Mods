@@ -101,113 +101,113 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "Main Focal length ratio = %f\n"
 
-    const-string/jumbo v2, "Main Focal length ratio = %f\n"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "Aux Native Sensor Resolution width = %dpx\n"
 
-    const-string/jumbo v2, "Aux Native Sensor Resolution width = %dpx\n"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "Aux Native Sensor Resolution height = %dpx\n"
 
-    const-string/jumbo v2, "Aux Native Sensor Resolution height = %dpx\n"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "Aux Calibration Resolution width = %dpx\n"
 
-    const-string/jumbo v2, "Aux Calibration Resolution width = %dpx\n"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "Aux Calibration Resolution height = %dpx\n"
 
-    const-string/jumbo v2, "Aux Calibration Resolution height = %dpx\n"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "Aux Focal length ratio = %f\n"
 
-    const-string/jumbo v2, "Aux Focal length ratio = %f\n"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "Relative Rotation matrix [0] through [8] = %s\n"
 
-    const-string/jumbo v2, "Relative Rotation matrix [0] through [8] = %s\n"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "Relative Geometric surface parameters [0] through [31] = %s\n"
 
-    const-string/jumbo v2, "Relative Geometric surface parameters [0] through [31] = %s\n"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "Relative Principal point X axis offset (ox) = %fpx\n"
 
-    const-string/jumbo v2, "Relative Principal point X axis offset (ox) = %fpx\n"
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, "Relative Principal point Y axis offset (oy) = %fpx\n"
 
-    const-string/jumbo v2, "Relative Principal point Y axis offset (oy) = %fpx\n"
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    const-string/jumbo v1, "Relative position flag = %d\n"
 
-    const-string/jumbo v2, "Relative position flag = %d\n"
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    const-string/jumbo v1, "Baseline distance = %fmm\n"
 
-    const-string/jumbo v2, "Baseline distance = %fmm\n"
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    const-string/jumbo v1, "Main sensor mirror and flip setting = %d\n"
 
-    const-string/jumbo v2, "Main sensor mirror and flip setting = %d\n"
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    const-string/jumbo v1, "Aux sensor mirror and flip setting = %d\n"
 
-    const-string/jumbo v2, "Aux sensor mirror and flip setting = %d\n"
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    const-string/jumbo v1, "Module orientation during calibration = %d\n"
 
-    const-string/jumbo v2, "Module orientation during calibration = %d\n"
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    const-string/jumbo v1, "Rotation flag = %d\n"
 
-    const-string/jumbo v2, "Rotation flag = %d\n"
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    const-string/jumbo v1, "Main Normalized Focal length = %fpx\n"
 
-    const-string/jumbo v2, "Main Normalized Focal length = %fpx\n"
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    const-string/jumbo v1, "Aux Normalized Focal length = %fpx\n"
 
-    const-string/jumbo v2, "Aux Normalized Focal length = %fpx\n"
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->CALIB_FMT_STRINGS:[Ljava/lang/String;
 
@@ -235,17 +235,17 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "Dewarp Coefficient 4 = %f\n"
 
-    const-string/jumbo v2, "Dewarp Coefficient 4 = %f\n"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "Dewarp Focal Length = %f\n"
 
-    const-string/jumbo v2, "Dewarp Focal Length = %f\n"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->CALIB_FMT_STRINGS_TYPE1:[Ljava/lang/String;
 
@@ -273,55 +273,53 @@
 .end method
 
 .method private buildCommaSeparatedString([F)Ljava/lang/String;
-    .locals 8
+    .locals 7
 
-    const/4 v7, 0x1
+    const/4 v1, 0x1
 
     const/4 v6, 0x0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const-string/jumbo v3, "%f"
+    new-array v3, v1, [Ljava/lang/Object;
 
-    new-array v4, v7, [Ljava/lang/Object;
+    aget v4, p1, v6
 
-    aget v5, p1, v6
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v4
 
-    move-result-object v5
+    aput-object v4, v3, v6
 
-    aput-object v5, v4, v6
+    const-string/jumbo v4, "%f"
 
-    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v4, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_0
-    array-length v2, p1
+    array-length v3, p1
 
-    if-lt v0, v2, :cond_0
+    if-lt v0, v3, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     :cond_0
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const-string/jumbo v3, ",%f"
-
-    new-array v4, v7, [Ljava/lang/Object;
+    new-array v4, v1, [Ljava/lang/Object;
 
     aget v5, p1, v0
 
@@ -331,11 +329,13 @@
 
     aput-object v5, v4, v6
 
-    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v5, ",%f"
 
-    move-result-object v2
+    invoke-static {v3, v5, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v0, v0, 0x1
 
@@ -343,305 +343,305 @@
 .end method
 
 .method public static createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
-    .locals 4
+    .locals 5
 
-    new-instance v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;-><init>()V
+    new-instance v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
+
+    invoke-direct {v2}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;-><init>()V
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
-    move-result v2
+    move-result v1
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->calibration_format_version:I
-
-    invoke-static {p0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+    iput v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->calibration_format_version:I
 
     invoke-static {p0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+    iput-object v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
 
-    const/4 v1, 0x0
+    invoke-static {p0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+
+    move-result-object v1
+
+    iput-object v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+
+    move v1, v0
 
     :goto_0
-    const/16 v2, 0x9
+    const/16 v3, 0x9
 
-    if-lt v1, v2, :cond_0
-
-    const/4 v1, 0x0
+    if-lt v1, v3, :cond_0
 
     :goto_1
-    const/16 v2, 0x20
+    const/16 v1, 0x20
 
-    if-lt v1, v2, :cond_1
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
-
-    move-result v2
-
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_x_offset:F
+    if-lt v0, v1, :cond_1
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v2
+    move-result v0
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_y_offset:F
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_position_flag:S
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_x_offset:F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v2
+    move-result v0
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_baseline_distance:F
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_sensor_mirror_and_flip_setting:S
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_y_offset:F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
 
-    move-result v2
+    move-result v0
 
-    int-to-short v2, v2
+    int-to-short v0, v0
 
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_sensor_mirror_and_flip_setting:S
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_position_flag:S
 
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v2
+    move-result v0
 
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->module_orientation_during_calibration:S
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_baseline_distance:F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
 
-    move-result v2
+    move-result v0
 
-    int-to-short v2, v2
+    int-to-short v0, v0
 
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->rotation_flag:S
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_sensor_mirror_and_flip_setting:S
 
-    return-object v0
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_sensor_mirror_and_flip_setting:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->module_orientation_during_calibration:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->rotation_flag:S
+
+    return-object v2
 
     :cond_0
-    iget-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_rotation_matrix:[F
+    iget-object v3, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_rotation_matrix:[F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v3
+    move-result v4
 
-    aput v3, v2, v1
+    aput v4, v3, v1
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_geometric_surface_parameters:[F
+    iget-object v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_geometric_surface_parameters:[F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
     move-result v3
 
-    aput v3, v2, v1
+    aput v3, v1, v0
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 .end method
 
 .method public static createFromByteBuffOfBlobType1(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
-    .locals 4
+    .locals 5
 
-    new-instance v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;-><init>()V
+    new-instance v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
+
+    invoke-direct {v2}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;-><init>()V
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getInt()I
 
-    move-result v2
+    move-result v1
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->calibration_format_version:I
-
-    invoke-static {p0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+    iput v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->calibration_format_version:I
 
     invoke-static {p0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+    iput-object v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
 
-    const/4 v1, 0x0
+    invoke-static {p0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+
+    move-result-object v1
+
+    iput-object v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_cam_specific_calibration:Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
+
+    move v1, v0
 
     :goto_0
-    const/16 v2, 0x9
+    const/16 v3, 0x9
 
-    if-lt v1, v2, :cond_0
-
-    const/4 v1, 0x0
+    if-lt v1, v3, :cond_0
 
     :goto_1
-    const/16 v2, 0x20
+    const/16 v1, 0x20
 
-    if-lt v1, v2, :cond_1
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
-
-    move-result v2
-
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_x_offset:F
+    if-lt v0, v1, :cond_1
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v2
+    move-result v0
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_y_offset:F
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_position_flag:S
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_x_offset:F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v2
+    move-result v0
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_baseline_distance:F
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_sensor_mirror_and_flip_setting:S
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_principle_point_y_offset:F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
 
-    move-result v2
+    move-result v0
 
-    int-to-short v2, v2
+    int-to-short v0, v0
 
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_sensor_mirror_and_flip_setting:S
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->module_orientation_during_calibration:S
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->rotation_flag:S
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
-
-    move-result v2
-
-    int-to-short v2, v2
-
-    iput-short v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_version:S
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff0:D
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff1:D
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff2:D
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff3:D
-
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
-
-    move-result-wide v2
-
-    iput-wide v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff4:D
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_position_flag:S
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v2
+    move-result v0
 
-    iput v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->fl_dewarping_reference:F
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_baseline_distance:F
 
-    return-object v0
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->main_sensor_mirror_and_flip_setting:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->aux_sensor_mirror_and_flip_setting:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->module_orientation_during_calibration:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->rotation_flag:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getShort()S
+
+    move-result v0
+
+    int-to-short v0, v0
+
+    iput-short v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_version:S
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
+
+    move-result-wide v0
+
+    iput-wide v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff0:D
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
+
+    move-result-wide v0
+
+    iput-wide v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff1:D
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
+
+    move-result-wide v0
+
+    iput-wide v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff2:D
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
+
+    move-result-wide v0
+
+    iput-wide v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff3:D
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getDouble()D
+
+    move-result-wide v0
+
+    iput-wide v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->dewarp_coeff4:D
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
+
+    move-result v0
+
+    iput v0, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->fl_dewarping_reference:F
+
+    return-object v2
 
     :cond_0
-    iget-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_rotation_matrix:[F
+    iget-object v3, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_rotation_matrix:[F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
-    move-result v3
+    move-result v4
 
-    aput v3, v2, v1
+    aput v4, v3, v1
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, v0, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_geometric_surface_parameters:[F
+    iget-object v1, v2, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->relative_geometric_surface_parameters:[F
 
     invoke-virtual {p0}, Ljava/nio/ByteBuffer;->getFloat()F
 
     move-result v3
 
-    aput v3, v2, v1
+    aput v3, v1, v0
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 .end method
 
 .method public static createFromBytes([B)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
@@ -649,24 +649,24 @@
 
     move-result-object v0
 
-    sget-object v2, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
-    return-object v2
+    return-object v0
 .end method
 
 .method public static createFromBytesBlobType1([B)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
@@ -674,18 +674,18 @@
 
     move-result-object v0
 
-    sget-object v2, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
     invoke-static {v0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;->createFromByteBuffOfBlobType1(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
-    return-object v2
+    return-object v0
 .end method
 
 
@@ -1275,9 +1275,9 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public toStringBlobType1()Ljava/lang/String;
@@ -1457,7 +1457,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

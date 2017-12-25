@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public newInstance(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -53,8 +53,6 @@
         }
     .end annotation
 
-    const/4 v4, 0x0
-
     invoke-static {p1}, Lcom/google/gson/internal/UnsafeAllocator$2;->assertInstantiable(Ljava/lang/Class;)V
 
     iget-object v0, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$newInstance:Ljava/lang/reflect/Method;
@@ -67,17 +65,19 @@
 
     aput-object p1, v1, v2
 
-    const/4 v2, 0x1
+    iget v2, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$constructorId:I
 
-    iget v3, p0, Lcom/google/gson/internal/UnsafeAllocator$2;->val$constructorId:I
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
+    const/4 v3, 0x1
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    invoke-virtual {v0, v4, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

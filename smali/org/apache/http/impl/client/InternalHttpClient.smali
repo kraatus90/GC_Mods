@@ -241,69 +241,69 @@
     return-void
 
     :cond_0
-    const-string/jumbo v0, "http.auth.target-scope"
+    new-instance v0, Lorg/apache/http/auth/AuthState;
 
-    new-instance v1, Lorg/apache/http/auth/AuthState;
+    invoke-direct {v0}, Lorg/apache/http/auth/AuthState;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/auth/AuthState;-><init>()V
+    const-string/jumbo v1, "http.auth.target-scope"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_1
-    const-string/jumbo v0, "http.auth.proxy-scope"
+    new-instance v0, Lorg/apache/http/auth/AuthState;
 
-    new-instance v1, Lorg/apache/http/auth/AuthState;
+    invoke-direct {v0}, Lorg/apache/http/auth/AuthState;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/auth/AuthState;-><init>()V
+    const-string/jumbo v1, "http.auth.proxy-scope"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_2
-    const-string/jumbo v0, "http.authscheme-registry"
+    iget-object v0, p0, Lorg/apache/http/impl/client/InternalHttpClient;->authSchemeRegistry:Lorg/apache/http/config/Lookup;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/InternalHttpClient;->authSchemeRegistry:Lorg/apache/http/config/Lookup;
+    const-string/jumbo v1, "http.authscheme-registry"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_3
-    const-string/jumbo v0, "http.cookiespec-registry"
+    iget-object v0, p0, Lorg/apache/http/impl/client/InternalHttpClient;->cookieSpecRegistry:Lorg/apache/http/config/Lookup;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/InternalHttpClient;->cookieSpecRegistry:Lorg/apache/http/config/Lookup;
+    const-string/jumbo v1, "http.cookiespec-registry"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_3
 
     :cond_4
-    const-string/jumbo v0, "http.cookie-store"
+    iget-object v0, p0, Lorg/apache/http/impl/client/InternalHttpClient;->cookieStore:Lorg/apache/http/client/CookieStore;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/InternalHttpClient;->cookieStore:Lorg/apache/http/client/CookieStore;
+    const-string/jumbo v1, "http.cookie-store"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_4
 
     :cond_5
-    const-string/jumbo v0, "http.auth.credentials-provider"
+    iget-object v0, p0, Lorg/apache/http/impl/client/InternalHttpClient;->credentialsProvider:Lorg/apache/http/client/CredentialsProvider;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/InternalHttpClient;->credentialsProvider:Lorg/apache/http/client/CredentialsProvider;
+    const-string/jumbo v1, "http.auth.credentials-provider"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_5
 
     :cond_6
-    const-string/jumbo v0, "http.request-config"
+    iget-object v0, p0, Lorg/apache/http/impl/client/InternalHttpClient;->defaultConfig:Lorg/apache/http/client/config/RequestConfig;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/InternalHttpClient;->defaultConfig:Lorg/apache/http/client/config/RequestConfig;
+    const-string/jumbo v1, "http.request-config"
 
-    invoke-virtual {p1, v0, v1}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p1, v1, v0}, Lorg/apache/http/client/protocol/HttpClientContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_6
 .end method

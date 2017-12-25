@@ -227,6 +227,36 @@
     return-object v1
 .end method
 
+.method private undoMotionEventTransformsWithViewMatrix(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    .locals 4
+
+    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->undoMotionEventTransforms(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->getViewMatrixOffset()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/graphics/Matrix;
+
+    invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
+
+    iget v3, v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
+
+    neg-float v3, v3
+
+    iget v1, v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
+
+    neg-float v1, v1
+
+    invoke-virtual {v2, v3, v1}, Landroid/graphics/Matrix;->setTranslate(FF)V
+
+    invoke-virtual {v0, v2}, Landroid/view/MotionEvent;->transform(Landroid/graphics/Matrix;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
 .method protected declared-synchronized doLayout()V
@@ -1421,7 +1451,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->undoMotionEventTransforms(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->undoMotionEventTransformsWithViewMatrix(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v1
 
@@ -1451,15 +1481,21 @@
     if-eqz v0, :cond_2
 
     :cond_3
+    invoke-virtual {v1}, Landroid/view/MotionEvent;->recycle()V
+
     if-nez v0, :cond_4
+
+    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->undoMotionEventTransforms(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+
+    move-result-object v1
 
     invoke-super {p0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->onUiEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    :cond_4
     invoke-virtual {v1}, Landroid/view/MotionEvent;->recycle()V
 
+    :cond_4
     return v0
 .end method
 

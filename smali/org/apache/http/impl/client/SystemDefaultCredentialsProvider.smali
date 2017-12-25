@@ -40,11 +40,11 @@
 
     sget-object v0, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->SCHEME_MAP:Ljava/util/Map;
 
-    const-string/jumbo v1, "Basic"
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    const-string/jumbo v2, "Basic"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -54,11 +54,11 @@
 
     sget-object v0, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->SCHEME_MAP:Ljava/util/Map;
 
-    const-string/jumbo v1, "Digest"
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    const-string/jumbo v2, "Digest"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -68,11 +68,11 @@
 
     sget-object v0, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->SCHEME_MAP:Ljava/util/Map;
 
-    const-string/jumbo v1, "NTLM"
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    const-string/jumbo v2, "NTLM"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -82,11 +82,11 @@
 
     sget-object v0, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->SCHEME_MAP:Ljava/util/Map;
 
-    const-string/jumbo v1, "negotiate"
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    const-string/jumbo v2, "negotiate"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -96,11 +96,11 @@
 
     sget-object v0, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->SCHEME_MAP:Ljava/util/Map;
 
-    const-string/jumbo v1, "Kerberos"
+    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    const-string/jumbo v2, "Kerberos"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -204,15 +204,15 @@
 
     move-result v2
 
-    const-string/jumbo v3, "http"
-
     invoke-virtual {p1}, Lorg/apache/http/auth/AuthScope;->getScheme()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-static {v4}, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->translateScheme(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3}, Lorg/apache/http/impl/client/SystemDefaultCredentialsProvider;->translateScheme(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
+
+    const-string/jumbo v3, "http"
 
     move-object v4, v1
 

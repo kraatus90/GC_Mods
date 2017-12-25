@@ -28,7 +28,7 @@
 
     invoke-direct {p0, p1, p2}, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolder;-><init>(Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter;Landroid/view/View;)V
 
-    const v0, 0x7f0e00ca
+    const v0, 0x7f0e00d8
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -38,9 +38,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolderGeneric;->mValueTextView:Landroid/widget/TextView;
 
-    new-instance v0, Lcom/motorola/camera/fragments/-$Lambda$29;
+    new-instance v0, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY$2;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fragments/-$Lambda$29;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY$2;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -49,7 +49,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment$SettingsManagerAdapter$ViewHolderGeneric_lambda$3(Landroid/view/View;)V
+.method synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment$SettingsManagerAdapter$ViewHolderGeneric_14144(Landroid/view/View;)V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolderGeneric;->this$1:Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter;

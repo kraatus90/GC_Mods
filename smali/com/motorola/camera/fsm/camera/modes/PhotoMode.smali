@@ -256,13 +256,35 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mFgHandler:Landroid/os/Handler;
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$38;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$Q5tZ_-fCM74qA51p-zudr-1MKBo$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$38;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$Q5tZ_-fCM74qA51p-zudr-1MKBo$1;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mMcfControlListener:Lcom/motorola/camera/mcf/Mcf$OnControlListener;
 
     return-void
+.end method
+
+.method private getMcfCameraMode(ZZ)Lcom/motorola/camera/mcf/Mcf$CameraMode;
+    .locals 1
+
+    if-eqz p1, :cond_1
+
+    if-eqz p2, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$CameraMode;->DEPTH_DUAL_MODE:Lcom/motorola/camera/mcf/Mcf$CameraMode;
+
+    return-object v0
+
+    :cond_0
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$CameraMode;->DUAL_MODE:Lcom/motorola/camera/mcf/Mcf$CameraMode;
+
+    return-object v0
+
+    :cond_1
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$CameraMode;->NORMAL_MODE:Lcom/motorola/camera/mcf/Mcf$CameraMode;
+
+    return-object v0
 .end method
 
 .method private setupFullYuvImageReader(Lcom/motorola/camera/fsm/camera/FsmContext;)V
@@ -432,7 +454,11 @@
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mJpegImageReader:Landroid/media/ImageReader;
 
-    invoke-static {}, Lcom/motorola/camera/saving/ImageCaptureManager;->getImageAvailableListener()Landroid/media/ImageReader$OnImageAvailableListener;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/motorola/camera/saving/ImageCaptureManager;->getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
 
     move-result-object v2
 
@@ -471,11 +497,13 @@
 .end method
 
 .method private setupMcf(Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Z)V
-    .locals 11
+    .locals 10
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
     const/16 v4, 0x23
+
+    const/4 v3, 0x2
 
     const/4 v0, 0x1
 
@@ -517,7 +545,7 @@
     :cond_1
     new-instance v9, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;
 
-    invoke-direct {v9, p0, v3}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;-><init>(Lcom/motorola/camera/fsm/camera/modes/PhotoMode;Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)V
+    invoke-direct {v9, p0, v5}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;-><init>(Lcom/motorola/camera/fsm/camera/modes/PhotoMode;Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)V
 
     invoke-static {p2}, Lcom/motorola/camera/settings/SettingsHelper;->isMonoCamera(Ljava/lang/String;)Z
 
@@ -529,38 +557,29 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     invoke-static {p2}, Lcom/motorola/camera/settings/SettingsHelper;->isAuxBayerCamera(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     :cond_2
     sget-object v0, Lcom/motorola/camera/mcf/Mcf$CameraType;->MONO:Lcom/motorola/camera/mcf/Mcf$CameraType;
 
     :goto_0
-    invoke-static {v9, v0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-set0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Lcom/motorola/camera/mcf/Mcf$CameraType;)Lcom/motorola/camera/mcf/Mcf$CameraType;
+    invoke-static {v9, v0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-set1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Lcom/motorola/camera/mcf/Mcf$CameraType;)Lcom/motorola/camera/mcf/Mcf$CameraType;
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->isDualCameraSupported()Z
 
     move-result v0
 
-    const/4 v1, 0x2
-
-    invoke-static {v1}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
+    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
 
     move-result v1
 
     invoke-static {v0, v1}, Lcom/motorola/camera/JsonConfig$Mode;->getMode(ZZ)Lcom/motorola/camera/JsonConfig$Mode;
-
-    move-result-object v10
-
-    const/16 v5, 0x14
-
-    :try_start_0
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v0
 
@@ -574,13 +593,10 @@
 
     move-result v2
 
-    invoke-static {v0, v1, v2, v10}, Lcom/motorola/camera/JsonConfig;->parseBufferCnt(Landroid/content/Context;Lcom/motorola/camera/JsonConfig$Path;ILcom/motorola/camera/JsonConfig$Mode;)I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v1, v2, v0}, Lcom/motorola/camera/JsonConfig;->getBufferCnt(Lcom/motorola/camera/JsonConfig$Path;ILcom/motorola/camera/JsonConfig$Mode;)I
 
     move-result v5
 
-    :goto_1
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
     if-eqz v0, :cond_3
@@ -618,7 +634,21 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
-    invoke-static {v9}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Lcom/motorola/camera/mcf/Mcf$CameraType;
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->isDualCameraSupported()Z
+
+    move-result v0
+
+    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
+
+    move-result v1
+
+    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->getMcfCameraMode(ZZ)Lcom/motorola/camera/mcf/Mcf$CameraMode;
+
+    move-result-object v0
+
+    invoke-static {v9, v0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-set0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Lcom/motorola/camera/mcf/Mcf$CameraMode;)Lcom/motorola/camera/mcf/Mcf$CameraMode;
+
+    invoke-static {v9}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Lcom/motorola/camera/mcf/Mcf$CameraType;
 
     move-result-object v1
 
@@ -630,15 +660,15 @@
 
     move-result v3
 
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->isDualCameraSupported()Z
+    invoke-static {v9}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get0(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Lcom/motorola/camera/mcf/Mcf$CameraMode;
 
-    move-result v7
+    move-result-object v7
 
     const/4 v6, 0x0
 
     move-object v0, p2
 
-    invoke-static/range {v0 .. v7}, Lcom/motorola/camera/mcf/Mcf;->openFullFrame(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CameraType;IIIIIZ)V
+    invoke-static/range {v0 .. v7}, Lcom/motorola/camera/mcf/Mcf;->openFullFrame(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CameraType;IIIIILcom/motorola/camera/mcf/Mcf$CameraMode;)V
 
     invoke-static {p2}, Lcom/motorola/camera/mcf/Mcf;->getFullFrameSurface(Ljava/lang/String;)Landroid/view/Surface;
 
@@ -646,11 +676,11 @@
 
     invoke-static {v9, v0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-set3(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Landroid/view/Surface;)Landroid/view/Surface;
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_5
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;->FULL_YUV:Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;
 
-    :goto_2
+    :goto_1
     new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
 
     sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->SET_SURFACE:Lcom/motorola/camera/fsm/camera/Trigger$Event;
@@ -667,140 +697,21 @@
 
     invoke-virtual {p1, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendTrigger(Lcom/motorola/camera/fsm/camera/Trigger;)V
 
-    const/16 v0, 0x8
-
-    :try_start_1
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/motorola/camera/JsonConfig$Path;->OUTPUT:Lcom/motorola/camera/JsonConfig$Path;
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    invoke-static {v1, v2, v3, v10}, Lcom/motorola/camera/JsonConfig;->parseBufferCnt(Landroid/content/Context;Lcom/motorola/camera/JsonConfig$Path;ILcom/motorola/camera/JsonConfig$Mode;)I
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
-
-    move-result v0
-
-    :goto_3
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v1, :cond_4
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "cameraId:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " MCF_OUTPUT_BUFFER_CNT:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_4
-    invoke-virtual {v8}, Landroid/util/Size;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {v8}, Landroid/util/Size;->getHeight()I
-
-    move-result v2
-
-    invoke-static {v1, v2, v4, v0}, Landroid/media/ImageReader;->newInstance(IIII)Landroid/media/ImageReader;
-
-    move-result-object v1
-
-    invoke-static {v9, v1}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-set1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Landroid/media/ImageReader;)Landroid/media/ImageReader;
-
-    invoke-static {v9}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Landroid/media/ImageReader;
-
-    move-result-object v1
-
-    invoke-static {p2}, Lcom/motorola/camera/saving/ImageCaptureManager;->getMcfReprocImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandler:Landroid/os/Handler;
-
-    invoke-virtual {v1, v2, v3}, Landroid/media/ImageReader;->setOnImageAvailableListener(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V
-
-    invoke-static {v9}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Landroid/media/ImageReader;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/media/ImageReader;->getSurface()Landroid/view/Surface;
-
-    move-result-object v1
-
-    invoke-static {p2, v1, v0}, Lcom/motorola/camera/mcf/Mcf;->openReprocess(Ljava/lang/String;Landroid/view/Surface;I)V
-
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mMcfHolders:Ljava/util/Map;
 
     invoke-interface {v0, p2, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 
-    :cond_5
+    :cond_4
     sget-object v0, Lcom/motorola/camera/mcf/Mcf$CameraType;->COLOR:Lcom/motorola/camera/mcf/Mcf$CameraType;
 
     goto/16 :goto_0
 
-    :catch_0
-    move-exception v0
-
-    sget-object v0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v1, "Parse Json file issue, using default input buffer config instead"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_1
-
-    :cond_6
+    :cond_5
     sget-object v0, Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;->SLV_FULL_YUV:Lcom/motorola/camera/fsm/camera/SurfaceManager$SurfaceType;
 
-    goto/16 :goto_2
-
-    :catch_1
-    move-exception v1
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v2, "Parse Json file issue, using default output buffer config instead"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_3
+    goto :goto_1
 .end method
 
 .method private setupQcfaRawImageReader(Lcom/motorola/camera/fsm/camera/FsmContext;)V
@@ -865,7 +776,11 @@
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mRawImageReader:Landroid/media/ImageReader;
 
-    invoke-static {}, Lcom/motorola/camera/saving/ImageCaptureManager;->getImageAvailableListener()Landroid/media/ImageReader$OnImageAvailableListener;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/motorola/camera/saving/ImageCaptureManager;->getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
 
     move-result-object v2
 
@@ -952,7 +867,11 @@
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mRawImageReader:Landroid/media/ImageReader;
 
-    invoke-static {}, Lcom/motorola/camera/saving/ImageCaptureManager;->getImageAvailableListener()Landroid/media/ImageReader$OnImageAvailableListener;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/motorola/camera/saving/ImageCaptureManager;->getImageAvailableListener(Ljava/lang/String;)Landroid/media/ImageReader$OnImageAvailableListener;
 
     move-result-object v2
 
@@ -1047,7 +966,7 @@
     return v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_modes_PhotoMode_lambda$1(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$RateControl;Lcom/motorola/camera/mcf/McfMetadata;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_modes_PhotoMode_3187(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$RateControl;Lcom/motorola/camera/mcf/McfMetadata;)V
     .locals 3
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
@@ -1145,7 +1064,7 @@
     .end packed-switch
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_modes_PhotoMode_lambda$2(Landroid/os/Message;)Z
+.method synthetic lambda$-com_motorola_camera_fsm_camera_modes_PhotoMode_5553(Landroid/os/Message;)Z
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandlerCallback:Landroid/os/Handler$Callback;
@@ -1167,9 +1086,9 @@
 .end method
 
 .method public onCloseSessionSurfaces(Lcom/motorola/camera/fsm/camera/FsmContext;)V
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -1190,7 +1109,7 @@
 
     invoke-virtual {v0}, Landroid/media/ImageReader;->close()V
 
-    iput-object v3, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mJpegImageReader:Landroid/media/ImageReader;
+    iput-object v2, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mJpegImageReader:Landroid/media/ImageReader;
 
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mRawImageReader:Landroid/media/ImageReader;
@@ -1201,7 +1120,7 @@
 
     invoke-virtual {v0}, Landroid/media/ImageReader;->close()V
 
-    iput-object v3, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mRawImageReader:Landroid/media/ImageReader;
+    iput-object v2, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mRawImageReader:Landroid/media/ImageReader;
 
     :cond_2
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mYuvImageReader:Landroid/media/ImageReader;
@@ -1212,67 +1131,26 @@
 
     invoke-virtual {v0}, Landroid/media/ImageReader;->close()V
 
-    iput-object v3, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mYuvImageReader:Landroid/media/ImageReader;
+    iput-object v2, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mYuvImageReader:Landroid/media/ImageReader;
 
     :cond_3
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mMcfHolders:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :cond_4
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Landroid/media/ImageReader;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_4
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-get1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;)Landroid/media/ImageReader;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/media/ImageReader;->close()V
-
-    invoke-static {v0, v3}, Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;->-set1(Lcom/motorola/camera/fsm/camera/modes/PhotoMode$McfHolder;Landroid/media/ImageReader;)Landroid/media/ImageReader;
-
-    goto :goto_0
-
-    :cond_5
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mMcfHolders:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandlerThread:Landroid/os/HandlerThread;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_4
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
 
-    iput-object v3, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandlerThread:Landroid/os/HandlerThread;
+    iput-object v2, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandlerThread:Landroid/os/HandlerThread;
 
-    iput-object v3, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandler:Landroid/os/Handler;
+    iput-object v2, p0, Lcom/motorola/camera/fsm/camera/modes/PhotoMode;->mBgHandler:Landroid/os/Handler;
 
-    :cond_6
+    :cond_4
     return-void
 .end method
 
@@ -1386,9 +1264,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$25;
+    new-instance v2, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$Q5tZ_-fCM74qA51p-zudr-1MKBo;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$25;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, p0}, Lcom/motorola/camera/fsm/camera/modes/-$Lambda$Q5tZ_-fCM74qA51p-zudr-1MKBo;-><init>(Ljava/lang/Object;)V
 
     invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
@@ -1629,6 +1507,10 @@
     :goto_0
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
+    invoke-static {v1, p1, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setFaceStatisticReporting(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
+
     invoke-static {v1, p1, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setExposureWhiteBalance(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
@@ -1669,7 +1551,9 @@
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
-    invoke-static {v1, p1, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setStillFlip(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+    iget-object v2, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
+
+    invoke-static {v1, p1, v2, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setStillFlip(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
@@ -1677,11 +1561,15 @@
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
-    invoke-static {v1, p1, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setModParams(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+    iget-object v2, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
+
+    invoke-static {v1, p1, v2, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setModParams(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->CAPTURE:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
-    invoke-static {v1, p1, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setCdsMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+    iget-object v2, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
+
+    invoke-static {v1, p1, v2, v0, p3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setCdsMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
 
     return-void
 
@@ -1770,21 +1658,23 @@
 .end method
 
 .method public onSetupStreamingRequests(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/RequestWrapper;)V
-    .locals 4
+    .locals 5
 
-    const/4 v3, 0x6
+    const/4 v4, 0x6
+
+    const/4 v3, 0x3
 
     iget-object v0, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mBuilder:Landroid/hardware/camera2/CaptureRequest$Builder;
 
     iget-boolean v1, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mIsMaster:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isQcfaMode()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     const/4 v1, 0x1
 
@@ -1792,23 +1682,36 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     :goto_0
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isReprocessingSupportedByCurrentMode()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsHelper;->isCurrentMode(I)Z
+    invoke-static {v4}, Lcom/motorola/camera/settings/SettingsHelper;->isCurrentMode(I)Z
 
     move-result v1
 
     xor-int/lit8 v1, v1, 0x1
 
+    if-eqz v1, :cond_1
+
+    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
+
+    move-result v1
+
     if-eqz v1, :cond_0
 
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->isDualFusionStreaming()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSurfaceManager()Lcom/motorola/camera/fsm/camera/SurfaceManager;
 
     move-result-object v1
@@ -1821,7 +1724,7 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
-    :cond_0
+    :cond_1
     :goto_1
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->PREVIEW:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
@@ -1879,19 +1782,23 @@
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->PREVIEW:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
-    sget-object v2, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+    iget-object v2, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
 
-    invoke-static {v1, p1, v0, v2}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setModParams(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+    sget-object v3, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+
+    invoke-static {v1, p1, v2, v0, v3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setModParams(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;->PREVIEW:Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 
-    sget-object v2, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+    iget-object v2, p2, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
 
-    invoke-static {v1, p1, v0, v2}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setCdsMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+    sget-object v3, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+
+    invoke-static {v1, p1, v2, v0, v3}, Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;->setCdsMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
 
     return-void
 
-    :cond_1
+    :cond_2
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSurfaceManager()Lcom/motorola/camera/fsm/camera/SurfaceManager;
 
     move-result-object v1
@@ -1904,9 +1811,9 @@
 
     invoke-virtual {v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->addTarget(Landroid/view/Surface;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_2
+    :cond_3
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSurfaceManager()Lcom/motorola/camera/fsm/camera/SurfaceManager;
 
     move-result-object v1
@@ -1923,16 +1830,29 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsHelper;->isCurrentMode(I)Z
+    invoke-static {v4}, Lcom/motorola/camera/settings/SettingsHelper;->isCurrentMode(I)Z
 
     move-result v1
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
+    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->isDualFusionStreaming()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_4
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSurfaceManager()Lcom/motorola/camera/fsm/camera/SurfaceManager;
 
     move-result-object v1
@@ -2154,9 +2074,9 @@
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2188,9 +2108,9 @@
 
     move-result v0
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v1}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v1
 

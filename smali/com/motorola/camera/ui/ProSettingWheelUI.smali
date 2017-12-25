@@ -679,7 +679,7 @@
 
     if-ne v2, v3, :cond_7
 
-    const v1, 0x7f020065
+    const v1, 0x7f020068
 
     :cond_6
     :goto_4
@@ -694,7 +694,7 @@
 
     if-ne v2, v0, :cond_8
 
-    const v1, 0x7f02006b
+    const v1, 0x7f02006e
 
     goto :goto_4
 
@@ -709,7 +709,7 @@
 
     if-ge v0, v2, :cond_9
 
-    const v1, 0x7f020066
+    const v1, 0x7f020069
 
     goto :goto_4
 
@@ -720,7 +720,7 @@
 
     if-ne v0, v2, :cond_6
 
-    const v1, 0x7f020067
+    const v1, 0x7f02006a
 
     goto :goto_4
 
@@ -852,7 +852,7 @@
     goto/16 :goto_0
 
     :pswitch_data_0
-    .packed-switch 0x7f0e0081
+    .packed-switch 0x7f0e0092
         :pswitch_3
         :pswitch_0
         :pswitch_1
@@ -1478,7 +1478,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e007e
+    const v1, 0x7f0e008f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1495,7 +1495,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0081
+    const v1, 0x7f0e0092
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1542,7 +1542,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0083
+    const v1, 0x7f0e0094
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1593,7 +1593,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0085
+    const v1, 0x7f0e0096
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1644,7 +1644,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0087
+    const v1, 0x7f0e0098
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1695,7 +1695,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0089
+    const v1, 0x7f0e009a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1746,7 +1746,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0082
+    const v1, 0x7f0e0093
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1769,7 +1769,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0084
+    const v1, 0x7f0e0095
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1792,7 +1792,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0086
+    const v1, 0x7f0e0097
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1815,7 +1815,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0088
+    const v1, 0x7f0e0099
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1838,7 +1838,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e008a
+    const v1, 0x7f0e009b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1861,7 +1861,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e007f
+    const v1, 0x7f0e0090
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1886,7 +1886,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mParentView:Landroid/view/View;
 
-    const v1, 0x7f0e0080
+    const v1, 0x7f0e0091
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2307,7 +2307,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0801e3
+    const v2, 0x7f0801fa
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2357,7 +2357,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mBigWheelMFFlag:Lcom/motorola/camera/ui/widgets/RotateImageView;
 
-    const v1, 0x7f020065
+    const v1, 0x7f020068
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/RotateImageView;->setImageResource(I)V
 
@@ -2401,7 +2401,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0801e3
+    const v2, 0x7f0801fa
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2520,7 +2520,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/ProSettingWheelUI;->mBigWheelWBFlag:Lcom/motorola/camera/ui/widgets/RotateImageView;
 
-    const v1, 0x7f020065
+    const v1, 0x7f020068
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/RotateImageView;->setImageResource(I)V
 
@@ -3318,7 +3318,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0e0081
+    .packed-switch 0x7f0e0092
         :pswitch_3
         :pswitch_0
         :pswitch_1
@@ -3464,7 +3464,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0e0081
+    .packed-switch 0x7f0e0092
         :pswitch_3
         :pswitch_0
         :pswitch_1

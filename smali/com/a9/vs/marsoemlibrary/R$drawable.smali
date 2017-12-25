@@ -181,7 +181,7 @@
 
 .field public static final abc_vector_test:I = 0x7f020052
 
-.field public static final notification_template_icon_bg:I = 0x7f0200bb
+.field public static final notification_template_icon_bg:I = 0x7f0200c6
 
 
 # direct methods

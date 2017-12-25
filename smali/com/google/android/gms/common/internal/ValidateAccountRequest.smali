@@ -70,9 +70,9 @@
 
     const/4 v3, 0x0
 
-    const/4 v1, 0x1
-
     const v2, 0x6fcd18
+
+    const/4 v1, 0x1
 
     if-eqz p1, :cond_0
 

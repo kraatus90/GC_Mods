@@ -169,7 +169,7 @@
 
     sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v2, 0x7f0800ce
+    const v2, 0x7f0800cf
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -186,7 +186,7 @@
 
     sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v2, 0x7f0800cd
+    const v2, 0x7f0800ce
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

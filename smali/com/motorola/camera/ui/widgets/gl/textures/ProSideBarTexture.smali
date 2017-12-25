@@ -487,7 +487,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0801e3
+    const v1, 0x7f0801fa
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -518,7 +518,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0801e6
+    const v1, 0x7f0801fd
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -535,7 +535,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0801e5
+    const v1, 0x7f0801fc
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -548,7 +548,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0801e4
+    const v1, 0x7f0801fb
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -1929,7 +1929,7 @@
 
     const-string/jumbo v1, ""
 
-    const/16 v0, 0xd3
+    const/16 v0, 0xd4
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->mSideButtons:[Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture$SideBarHolder;
 
@@ -2051,7 +2051,7 @@
 
     move-result-object v0
 
-    const v4, 0x7f0801e3
+    const v4, 0x7f0801fa
 
     invoke-virtual {v0, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2099,7 +2099,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f0801e6
+    const v5, 0x7f0801fd
 
     invoke-virtual {v0, v5}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2111,7 +2111,7 @@
 
     if-eqz v0, :cond_0
 
-    const/16 v3, 0xb3
+    const/16 v3, 0xb4
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->mSideButtons:[Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture$SideBarHolder;
 

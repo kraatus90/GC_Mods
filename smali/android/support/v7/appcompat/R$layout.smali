@@ -69,43 +69,45 @@
 
 .field public static final abc_select_dialog_material:I = 0x7f04001a
 
-.field public static final notification_action:I = 0x7f04002b
+.field public static final notification_action:I = 0x7f04002e
 
-.field public static final notification_action_tombstone:I = 0x7f04002c
+.field public static final notification_action_tombstone:I = 0x7f04002f
 
-.field public static final notification_media_action:I = 0x7f04002d
+.field public static final notification_media_action:I = 0x7f040030
 
-.field public static final notification_media_cancel_action:I = 0x7f04002e
+.field public static final notification_media_cancel_action:I = 0x7f040031
 
-.field public static final notification_template_big_media:I = 0x7f04002f
+.field public static final notification_template_big_media:I = 0x7f040032
 
-.field public static final notification_template_big_media_custom:I = 0x7f040030
+.field public static final notification_template_big_media_custom:I = 0x7f040033
 
-.field public static final notification_template_big_media_narrow:I = 0x7f040031
+.field public static final notification_template_big_media_narrow:I = 0x7f040034
 
-.field public static final notification_template_big_media_narrow_custom:I = 0x7f040032
+.field public static final notification_template_big_media_narrow_custom:I = 0x7f040035
 
-.field public static final notification_template_custom_big:I = 0x7f040033
+.field public static final notification_template_custom_big:I = 0x7f040036
 
-.field public static final notification_template_icon_group:I = 0x7f040034
+.field public static final notification_template_icon_group:I = 0x7f040037
 
-.field public static final notification_template_lines_media:I = 0x7f040035
+.field public static final notification_template_lines_media:I = 0x7f040038
 
-.field public static final notification_template_media:I = 0x7f040036
+.field public static final notification_template_media:I = 0x7f040039
 
-.field public static final notification_template_media_custom:I = 0x7f040037
+.field public static final notification_template_media_custom:I = 0x7f04003a
 
-.field public static final notification_template_part_chronometer:I = 0x7f040038
+.field public static final notification_template_part_chronometer:I = 0x7f04003b
 
-.field public static final notification_template_part_time:I = 0x7f040039
+.field public static final notification_template_part_time:I = 0x7f04003c
 
-.field public static final select_dialog_item_material:I = 0x7f04003c
+.field public static final select_dialog_item_material:I = 0x7f04003f
 
-.field public static final select_dialog_multichoice_material:I = 0x7f04003d
+.field public static final select_dialog_multichoice_material:I = 0x7f040040
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f04003e
+.field public static final select_dialog_singlechoice_material:I = 0x7f040041
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f04004f
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f040057
+
+.field public static final tooltip:I = 0x7f040059
 
 
 # direct methods

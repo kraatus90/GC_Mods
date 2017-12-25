@@ -36,7 +36,7 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xfd
+    const/16 v1, 0xfe
 
     invoke-direct {v0, p2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
@@ -44,7 +44,7 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xfc
+    const/16 v1, 0xfd
 
     invoke-direct {v0, p2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
@@ -199,7 +199,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/RotateIndicator$Rotate360Texture;->mPhoneTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xfd
+    const/16 v1, 0xfe
 
     const/4 v2, 0x1
 
@@ -207,7 +207,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/RotateIndicator$Rotate360Texture;->mArrowTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0xfc
+    const/16 v1, 0xfd
 
     const/4 v2, 0x1
 

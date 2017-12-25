@@ -35,9 +35,9 @@
 
     new-instance v0, Ljava/util/HashMap;
 
-    const/16 v2, 0x11e
+    const/16 v1, 0x11e
 
-    invoke-direct {v0, v2}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
     new-instance v1, Ljava/util/ArrayList;
 

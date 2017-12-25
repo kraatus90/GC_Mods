@@ -217,57 +217,57 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKu:I
 
-    iget v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKu:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
+    aput-object v1, v0, v2
 
     iget-wide v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKv:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x1
 
-    const/4 v1, 0x2
+    aput-object v1, v0, v2
 
-    iget-object v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKw:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKw:Ljava/lang/String;
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    aput-object v1, v0, v2
 
-    iget v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKx:I
+    iget v1, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKx:I
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x3
 
-    const/4 v1, 0x4
+    aput-object v1, v0, v2
 
-    iget v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKy:I
+    iget v1, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKy:I
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x4
 
-    const/4 v1, 0x5
+    aput-object v1, v0, v2
 
-    iget-object v2, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKz:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/auth/AccountChangeEvent;->zzKz:Ljava/lang/String;
 
-    aput-object v2, v0, v1
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

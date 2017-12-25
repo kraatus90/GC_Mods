@@ -29,89 +29,89 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "EEE, dd MMM yyyy HH:mm:ss zzz"
 
-    const-string/jumbo v2, "EEE, dd MMM yyyy HH:mm:ss zzz"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "EEE, dd-MMM-yy HH:mm:ss zzz"
 
-    const-string/jumbo v2, "EEE, dd-MMM-yy HH:mm:ss zzz"
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "EEE MMM d HH:mm:ss yyyy"
 
-    const-string/jumbo v2, "EEE MMM d HH:mm:ss yyyy"
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "EEE, dd-MMM-yyyy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE, dd-MMM-yyyy HH:mm:ss z"
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "EEE, dd-MMM-yyyy HH-mm-ss z"
 
-    const-string/jumbo v2, "EEE, dd-MMM-yyyy HH-mm-ss z"
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "EEE, dd MMM yy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE, dd MMM yy HH:mm:ss z"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "EEE dd-MMM-yyyy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE dd-MMM-yyyy HH:mm:ss z"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "EEE dd MMM yyyy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE dd MMM yyyy HH:mm:ss z"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "EEE dd-MMM-yyyy HH-mm-ss z"
 
-    const-string/jumbo v2, "EEE dd-MMM-yyyy HH-mm-ss z"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "EEE dd-MMM-yy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE dd-MMM-yy HH:mm:ss z"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "EEE dd MMM yy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE dd MMM yy HH:mm:ss z"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "EEE,dd-MMM-yy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE,dd-MMM-yy HH:mm:ss z"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "EEE,dd-MMM-yyyy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE,dd-MMM-yyyy HH:mm:ss z"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "EEE, dd-MM-yyyy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE, dd-MM-yyyy HH:mm:ss z"
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->DEFAULT_DATE_PATTERNS:[Ljava/lang/String;
 
@@ -121,9 +121,9 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     sget-object v0, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;->SECURITYLEVEL_DEFAULT:Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;-><init>([Ljava/lang/String;Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;)V
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public constructor <init>([Ljava/lang/String;Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;)V
-    .locals 3
+    .locals 2
 
     invoke-direct {p0}, Lorg/apache/http/impl/cookie/CookieSpecBase;-><init>()V
 
@@ -180,75 +180,75 @@
     goto :goto_0
 
     :pswitch_0
-    const-string/jumbo v0, "path"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicPathHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicPathHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicPathHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicPathHandler;-><init>()V
+    const-string/jumbo v1, "path"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
     :goto_1
-    const-string/jumbo v0, "domain"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicDomainHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicDomainHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicDomainHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicDomainHandler;-><init>()V
+    const-string/jumbo v1, "domain"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "max-age"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;-><init>()V
+    const-string/jumbo v1, "max-age"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "secure"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicSecureHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicSecureHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicSecureHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicSecureHandler;-><init>()V
+    const-string/jumbo v1, "secure"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "comment"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicCommentHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicCommentHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicCommentHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicCommentHandler;-><init>()V
+    const-string/jumbo v1, "comment"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "expires"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicExpiresHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicExpiresHandler;
+    iget-object v1, p0, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->datepatterns:[Ljava/lang/String;
 
-    iget-object v2, p0, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->datepatterns:[Ljava/lang/String;
+    invoke-direct {v0, v1}, Lorg/apache/http/impl/cookie/BasicExpiresHandler;-><init>([Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Lorg/apache/http/impl/cookie/BasicExpiresHandler;-><init>([Ljava/lang/String;)V
+    const-string/jumbo v1, "expires"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "version"
+    new-instance v0, Lorg/apache/http/impl/cookie/BrowserCompatVersionAttributeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BrowserCompatVersionAttributeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BrowserCompatVersionAttributeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BrowserCompatVersionAttributeHandler;-><init>()V
+    const-string/jumbo v1, "version"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
     return-void
 
     :pswitch_1
-    const-string/jumbo v0, "path"
+    new-instance v0, Lorg/apache/http/impl/cookie/BrowserCompatSpec$1;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BrowserCompatSpec$1;
+    invoke-direct {v0, p0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec$1;-><init>(Lorg/apache/http/impl/cookie/BrowserCompatSpec;)V
 
-    invoke-direct {v1, p0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec$1;-><init>(Lorg/apache/http/impl/cookie/BrowserCompatSpec;)V
+    const-string/jumbo v1, "path"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
     goto :goto_1
 

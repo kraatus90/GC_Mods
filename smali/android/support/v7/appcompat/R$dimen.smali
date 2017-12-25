@@ -163,53 +163,79 @@
 
 .field public static final abc_text_size_title_material_toolbar:I = 0x7f0a0004
 
-.field public static final disabled_alpha_material_dark:I = 0x7f0a005c
+.field public static final compat_button_inset_horizontal_material:I = 0x7f0a005c
 
-.field public static final disabled_alpha_material_light:I = 0x7f0a005d
+.field public static final compat_button_inset_vertical_material:I = 0x7f0a005d
 
-.field public static final highlight_alpha_material_colored:I = 0x7f0a006d
+.field public static final compat_button_padding_horizontal_material:I = 0x7f0a005e
 
-.field public static final highlight_alpha_material_dark:I = 0x7f0a006e
+.field public static final compat_button_padding_vertical_material:I = 0x7f0a005f
 
-.field public static final highlight_alpha_material_light:I = 0x7f0a006f
+.field public static final compat_control_corner_material:I = 0x7f0a0060
 
-.field public static final hint_alpha_material_dark:I = 0x7f0a0070
+.field public static final disabled_alpha_material_dark:I = 0x7f0a0061
 
-.field public static final hint_alpha_material_light:I = 0x7f0a0071
+.field public static final disabled_alpha_material_light:I = 0x7f0a0062
 
-.field public static final hint_pressed_alpha_material_dark:I = 0x7f0a0072
+.field public static final highlight_alpha_material_colored:I = 0x7f0a0072
 
-.field public static final hint_pressed_alpha_material_light:I = 0x7f0a0073
+.field public static final highlight_alpha_material_dark:I = 0x7f0a0073
 
-.field public static final notification_action_icon_size:I = 0x7f0a0077
+.field public static final highlight_alpha_material_light:I = 0x7f0a0074
 
-.field public static final notification_action_text_size:I = 0x7f0a0078
+.field public static final hint_alpha_material_dark:I = 0x7f0a0075
 
-.field public static final notification_big_circle_margin:I = 0x7f0a0079
+.field public static final hint_alpha_material_light:I = 0x7f0a0076
+
+.field public static final hint_pressed_alpha_material_dark:I = 0x7f0a0077
+
+.field public static final hint_pressed_alpha_material_light:I = 0x7f0a0078
+
+.field public static final notification_action_icon_size:I = 0x7f0a007c
+
+.field public static final notification_action_text_size:I = 0x7f0a007d
+
+.field public static final notification_big_circle_margin:I = 0x7f0a007e
 
 .field public static final notification_content_margin_start:I = 0x7f0a0012
 
-.field public static final notification_large_icon_height:I = 0x7f0a007a
+.field public static final notification_large_icon_height:I = 0x7f0a007f
 
-.field public static final notification_large_icon_width:I = 0x7f0a007b
+.field public static final notification_large_icon_width:I = 0x7f0a0080
 
 .field public static final notification_main_column_padding_top:I = 0x7f0a0013
 
 .field public static final notification_media_narrow_margin:I = 0x7f0a0014
 
-.field public static final notification_right_icon_size:I = 0x7f0a007c
+.field public static final notification_right_icon_size:I = 0x7f0a0081
 
 .field public static final notification_right_side_padding_top:I = 0x7f0a0010
 
-.field public static final notification_small_icon_background_padding:I = 0x7f0a007d
+.field public static final notification_small_icon_background_padding:I = 0x7f0a0082
 
-.field public static final notification_small_icon_size_as_large:I = 0x7f0a007e
+.field public static final notification_small_icon_size_as_large:I = 0x7f0a0083
 
-.field public static final notification_subtext_size:I = 0x7f0a007f
+.field public static final notification_subtext_size:I = 0x7f0a0084
 
-.field public static final notification_top_pad:I = 0x7f0a0080
+.field public static final notification_top_pad:I = 0x7f0a0085
 
-.field public static final notification_top_pad_large_text:I = 0x7f0a0081
+.field public static final notification_top_pad_large_text:I = 0x7f0a0086
+
+.field public static final tooltip_corner_radius:I = 0x7f0a00bf
+
+.field public static final tooltip_horizontal_padding:I = 0x7f0a00c0
+
+.field public static final tooltip_margin:I = 0x7f0a00c1
+
+.field public static final tooltip_precise_anchor_extra_offset:I = 0x7f0a00c2
+
+.field public static final tooltip_precise_anchor_threshold:I = 0x7f0a00c3
+
+.field public static final tooltip_vertical_padding:I = 0x7f0a00c4
+
+.field public static final tooltip_y_offset_non_touch:I = 0x7f0a00c5
+
+.field public static final tooltip_y_offset_touch:I = 0x7f0a00c6
 
 
 # direct methods

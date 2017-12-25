@@ -73,11 +73,11 @@
     return v0
 
     :cond_1
-    const-string/jumbo v2, "100-continue"
-
     invoke-interface {v1}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
     move-result-object v1
+
+    const-string/jumbo v2, "100-continue"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

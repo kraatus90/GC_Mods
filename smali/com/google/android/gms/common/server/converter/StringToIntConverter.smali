@@ -83,9 +83,7 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -105,13 +103,15 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzUu:Ljava/util/HashMap;
 
-    iput-object v1, p0, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzUv:Ljava/util/ArrayList;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzUv:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 .method constructor <init>(ILjava/util/ArrayList;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -121,8 +121,6 @@
             ">;)V"
         }
     .end annotation
-
-    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -140,7 +138,9 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzUu:Ljava/util/HashMap;
 
-    iput-object v1, p0, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzUv:Ljava/util/ArrayList;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzUv:Ljava/util/ArrayList;
 
     invoke-direct {p0, p2}, Lcom/google/android/gms/common/server/converter/StringToIntConverter;->zzb(Ljava/util/ArrayList;)V
 

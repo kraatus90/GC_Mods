@@ -92,7 +92,7 @@
 .end method
 
 .method public static createFromBytes([B)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
 
@@ -100,7 +100,7 @@
 
     invoke-static {v0}, Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;->createFromByteBuff(Ljava/nio/ByteBuffer;)Lcom/motorola/camera/mcf/McfCamSystemCalibrationData$McfCamSensorCalibrationData;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

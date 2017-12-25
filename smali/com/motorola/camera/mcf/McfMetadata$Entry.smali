@@ -37,14 +37,12 @@
 
 # direct methods
 .method constructor <init>(Lcom/motorola/camera/mcf/McfMetadata;Ljava/lang/Object;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
-
-    move-object v0, p0
 
     iput-object p1, p0, Lcom/motorola/camera/mcf/McfMetadata$Entry;->this$0:Lcom/motorola/camera/mcf/McfMetadata;
 
@@ -64,14 +62,12 @@
 .end method
 
 .method private setValue(Ljava/lang/Object;)V
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
-
-    move-object v0, p0
 
     iput-object p1, p0, Lcom/motorola/camera/mcf/McfMetadata$Entry;->mValue:Ljava/lang/Object;
 
@@ -81,16 +77,14 @@
 
 # virtual methods
 .method public getValue()Ljava/lang/Object;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
         }
     .end annotation
 
-    move-object v0, p0
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfMetadata$Entry;->mValue:Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/motorola/camera/mcf/McfMetadata$Entry;->mValue:Ljava/lang/Object;
-
-    return-object v1
+    return-object v0
 .end method

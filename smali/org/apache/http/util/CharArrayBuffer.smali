@@ -134,13 +134,13 @@
     if-gt v1, v2, :cond_1
 
     :goto_0
-    const/4 v2, 0x0
+    iget-object v2, p0, Lorg/apache/http/util/CharArrayBuffer;->buffer:[C
 
-    iget-object v3, p0, Lorg/apache/http/util/CharArrayBuffer;->buffer:[C
+    iget v3, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
 
-    iget v4, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
+    const/4 v4, 0x0
 
-    invoke-virtual {p1, v2, v0, v3, v4}, Ljava/lang/String;->getChars(II[CI)V
+    invoke-virtual {p1, v4, v0, v2, v3}, Ljava/lang/String;->getChars(II[CI)V
 
     iput v1, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
 
@@ -176,11 +176,11 @@
 
     iget-object v0, p1, Lorg/apache/http/util/CharArrayBuffer;->buffer:[C
 
-    const/4 v1, 0x0
+    iget v1, p1, Lorg/apache/http/util/CharArrayBuffer;->len:I
 
-    iget v2, p1, Lorg/apache/http/util/CharArrayBuffer;->len:I
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v0, v1, v2}, Lorg/apache/http/util/CharArrayBuffer;->append([CII)V
+    invoke-virtual {p0, v0, v2, v1}, Lorg/apache/http/util/CharArrayBuffer;->append([CII)V
 
     return-void
 
@@ -502,11 +502,11 @@
 .method public indexOf(I)I
     .locals 2
 
-    const/4 v0, 0x0
+    iget v0, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
 
-    iget v1, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/util/CharArrayBuffer;->indexOf(III)I
+    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/util/CharArrayBuffer;->indexOf(III)I
 
     move-result v0
 
@@ -873,11 +873,11 @@
 
     iget-object v1, p0, Lorg/apache/http/util/CharArrayBuffer;->buffer:[C
 
-    const/4 v2, 0x0
+    iget v2, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
 
-    iget v3, p0, Lorg/apache/http/util/CharArrayBuffer;->len:I
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([CII)V
+    invoke-direct {v0, v1, v3, v2}, Ljava/lang/String;-><init>([CII)V
 
     return-object v0
 .end method

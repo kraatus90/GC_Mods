@@ -20,118 +20,118 @@
 .end method
 
 .method private static renderResult(Lcom/google/zxing/qrcode/encoder/QRCode;III)Lcom/google/zxing/common/BitMatrix;
-    .locals 19
+    .locals 12
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/encoder/QRCode;->getMatrix()Lcom/google/zxing/qrcode/encoder/ByteMatrix;
+    invoke-virtual {p0}, Lcom/google/zxing/qrcode/encoder/QRCode;->getMatrix()Lcom/google/zxing/qrcode/encoder/ByteMatrix;
 
-    move-result-object v2
+    move-result-object v5
 
-    if-eqz v2, :cond_0
+    if-eqz v5, :cond_0
 
-    invoke-virtual {v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getWidth()I
 
-    move-result v4
+    move-result v6
 
-    invoke-virtual {v2}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->getHeight()I
+
+    move-result v7
+
+    mul-int/lit8 v0, p3, 0x2
+
+    add-int/2addr v0, v6
+
+    mul-int/lit8 v1, p3, 0x2
+
+    add-int/2addr v1, v7
+
+    invoke-static {p1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v2
+
+    invoke-static {p2, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v3
 
-    mul-int/lit8 v17, p3, 0x2
+    div-int v0, v2, v0
 
-    add-int v15, v4, v17
+    div-int v1, v3, v1
 
-    mul-int/lit8 v17, p3, 0x2
-
-    add-int v14, v3, v17
-
-    move/from16 v0, p1
-
-    invoke-static {v0, v15}, Ljava/lang/Math;->max(II)I
-
-    move-result v11
-
-    move/from16 v0, p2
-
-    invoke-static {v0, v14}, Ljava/lang/Math;->max(II)I
-
-    move-result v10
-
-    div-int v17, v11, v15
-
-    div-int v18, v10, v14
-
-    invoke-static/range {v17 .. v18}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v8
 
-    mul-int v17, v4, v8
+    mul-int v0, v6, v8
 
-    sub-int v17, v11, v17
+    sub-int v0, v2, v0
 
-    div-int/lit8 v7, v17, 0x2
+    div-int/lit8 v1, v0, 0x2
 
-    mul-int v17, v3, v8
+    mul-int v0, v7, v8
 
-    sub-int v17, v10, v17
+    sub-int v0, v3, v0
 
-    div-int/lit8 v16, v17, 0x2
+    div-int/lit8 v0, v0, 0x2
 
     new-instance v9, Lcom/google/zxing/common/BitMatrix;
 
-    invoke-direct {v9, v11, v10}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
+    invoke-direct {v9, v2, v3}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
-    const/4 v6, 0x0
+    const/4 v2, 0x0
 
-    move/from16 v13, v16
+    move v3, v0
+
+    move v4, v2
 
     :goto_0
-    if-lt v6, v3, :cond_1
+    if-lt v4, v7, :cond_1
 
     return-object v9
 
     :cond_0
-    new-instance v17, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct/range {v17 .. v17}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v17
+    throw v0
 
     :cond_1
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
-    move v12, v7
+    move v2, v0
+
+    move v0, v1
 
     :goto_1
-    if-lt v5, v4, :cond_2
+    if-lt v2, v6, :cond_2
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v2, v4, 0x1
 
-    add-int/2addr v13, v8
+    add-int v0, v3, v8
+
+    move v3, v0
+
+    move v4, v2
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v2, v5, v6}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
+    invoke-virtual {v5, v2, v4}, Lcom/google/zxing/qrcode/encoder/ByteMatrix;->get(II)B
 
-    move-result v17
+    move-result v10
 
-    const/16 v18, 0x1
+    const/4 v11, 0x1
 
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_3
+    if-eq v10, v11, :cond_3
 
     :goto_2
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    add-int/2addr v12, v8
+    add-int/2addr v0, v8
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual {v9, v12, v13, v8, v8}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v9, v0, v3, v8, v8}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
     goto :goto_2
 .end method
@@ -166,7 +166,7 @@
 .end method
 
 .method public encode(Ljava/lang/String;Lcom/google/zxing/BarcodeFormat;IILjava/util/Map;)Lcom/google/zxing/common/BitMatrix;
-    .locals 8
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -189,84 +189,84 @@
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
-    sget-object v5, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
 
-    if-ne p2, v5, :cond_2
+    if-ne p2, v0, :cond_2
 
     if-gez p3, :cond_3
 
     :cond_0
-    new-instance v5, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Requested dimensions are too small: "
+    const-string/jumbo v2, "Requested dimensions are too small: "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    const/16 v7, 0x78
+    const/16 v2, 0x78
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v0
 
     :cond_1
-    new-instance v5, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v6, "Found empty contents"
+    const-string/jumbo v1, "Found empty contents"
 
-    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v0
 
     :cond_2
-    new-instance v5, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Can only encode QR_CODE, but got "
+    const-string/jumbo v2, "Can only encode QR_CODE, but got "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v0
 
     :cond_3
     if-ltz p4, :cond_0
@@ -275,50 +275,56 @@
 
     const/4 v2, 0x4
 
-    if-nez p5, :cond_5
+    if-nez p5, :cond_4
 
-    :cond_4
+    move v0, v2
+
     :goto_0
     invoke-static {p1, v1, p5}, Lcom/google/zxing/qrcode/encoder/Encoder;->encode(Ljava/lang/String;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/Map;)Lcom/google/zxing/qrcode/encoder/QRCode;
 
+    move-result-object v1
+
+    invoke-static {v1, p3, p4, v0}, Lcom/google/zxing/qrcode/QRCodeWriter;->renderResult(Lcom/google/zxing/qrcode/encoder/QRCode;III)Lcom/google/zxing/common/BitMatrix;
+
     move-result-object v0
 
-    invoke-static {v0, p3, p4, v2}, Lcom/google/zxing/qrcode/QRCodeWriter;->renderResult(Lcom/google/zxing/qrcode/encoder/QRCode;III)Lcom/google/zxing/common/BitMatrix;
+    return-object v0
 
-    move-result-object v5
+    :cond_4
+    sget-object v0, Lcom/google/zxing/EncodeHintType;->ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
 
-    return-object v5
+    invoke-interface {p5, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_5
-    sget-object v5, Lcom/google/zxing/EncodeHintType;->ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
+    move-result-object v0
 
-    invoke-interface {p5, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    move-result-object v4
-
-    check-cast v4, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
-
-    if-nez v4, :cond_6
+    if-nez v0, :cond_5
 
     :goto_1
-    sget-object v5, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
+    sget-object v0, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
 
-    invoke-interface {p5, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p5, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v3, :cond_4
+    if-nez v0, :cond_6
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
+    move v0, v2
 
     goto :goto_0
 
-    :cond_6
-    move-object v1, v4
+    :cond_5
+    move-object v1, v0
 
     goto :goto_1
+
+    :cond_6
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    goto :goto_0
 .end method

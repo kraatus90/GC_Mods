@@ -31,85 +31,85 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string/jumbo v5, "ISO-8859-1"
+    const-string/jumbo v0, "ISO-8859-1"
 
-    invoke-static {v5}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {p1, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    invoke-virtual {p1, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    move-result-object v3
+    move-result-object v1
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    array-length v5, v3
+    array-length v0, v1
 
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    array-length v0, v3
+    array-length v3, v1
 
     :goto_0
-    if-lt v2, v0, :cond_0
+    if-lt v0, v3, :cond_0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->msg:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->msg:Ljava/lang/String;
 
-    sget-object v5, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;->FORCE_NONE:Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
+    sget-object v0, Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;->FORCE_NONE:Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
 
-    iput-object v5, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->shape:Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
+    iput-object v0, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->shape:Lcom/google/zxing/datamatrix/encoder/SymbolShapeHint;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v6
+    move-result v1
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iput-object v5, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->codewords:Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->codewords:Ljava/lang/StringBuilder;
 
-    const/4 v5, -0x1
+    const/4 v0, -0x1
 
-    iput v5, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->newEncoding:I
+    iput v0, p0, Lcom/google/zxing/datamatrix/encoder/EncoderContext;->newEncoding:I
 
     return-void
 
     :cond_0
-    aget-byte v5, v3, v2
+    aget-byte v4, v1, v0
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    int-to-char v1, v5
+    int-to-char v4, v4
 
-    if-eq v1, v6, :cond_2
+    if-eq v4, v6, :cond_2
 
     :cond_1
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
 
     if-eq v5, v6, :cond_1
 
-    new-instance v5, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v6, "Message contains characters outside ISO-8859-1 encoding."
+    const-string/jumbo v1, "Message contains characters outside ISO-8859-1 encoding."
 
-    invoke-direct {v5, v6}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v5
+    throw v0
 .end method
 
 .method private getTotalMessageCharCount()I

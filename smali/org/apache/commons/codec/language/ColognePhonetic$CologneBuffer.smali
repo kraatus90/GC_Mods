@@ -80,11 +80,11 @@
 
     new-instance v0, Ljava/lang/String;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lorg/apache/commons/codec/language/ColognePhonetic$CologneBuffer;->b:I
 
-    iget v2, p0, Lorg/apache/commons/codec/language/ColognePhonetic$CologneBuffer;->b:I
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v1, v2}, Lorg/apache/commons/codec/language/ColognePhonetic$CologneBuffer;->a(II)[C
+    invoke-virtual {p0, v2, v1}, Lorg/apache/commons/codec/language/ColognePhonetic$CologneBuffer;->a(II)[C
 
     move-result-object v1
 

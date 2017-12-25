@@ -136,7 +136,7 @@
     <string name="aware_info_unsure">Richt onder een andere hoek op het object</string>
     <string name="aware_info_url">URL</string>
     <string name="aware_info_web_results">Meer webresultaten</string>
-    <string name="aware_info_wifi">Wi-Fi</string>
+    <string name="aware_info_wifi">Wifi</string>
     <string name="aware_info_wikipedia">Wikipedia</string>
     <string name="aware_wifi_connected">Verbonden met netwerk \"%1$s\"</string>
     <string name="aware_wifi_connecting">Verbinding maken met netwerk \"%1$s\"</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Annuleren</string>
     <string name="capture_failure">Opname mislukt. Probeer het opnieuw.</string>
     <string name="checkbox_do_not_show">Niet opnieuw weergeven</string>
-    <string name="cloudsight_terms">Uw afbeeldingen worden naar CloudSight gestuurd voor zoekresultaten. &lt;br/>&lt;br/> Als u doorgaat, gaat u akkoord met het &lt;a href=%1$s>privacybeleid&lt;/a> van CloudSight.</string>
+    <string name="cloudsight_terms">Elke keer dat u de herkenning van objecten gebruikt, worden de afbeelding en (indien ingeschakeld) de locatie naar derden gestuurd voor zoekresultaten.&lt;br/>&lt;br/> Als u doorgaat, gaat u akkoord met het&lt;a href=%1$s> privacybeleid&lt;/a>.</string>
     <string name="dailog_panorama_failed">Het panorama is mislukt. Probeer het opnieuw.</string>
     <string name="dailog_panorama_not_taken">De panoramafoto is niet gemaakt.</string>
     <string name="dialog_access_sd_fail">Kan media niet vastleggen. Geen toegang tot SD-kaart.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Apparaat niet ondersteund</string>
     <string name="dialog_disagree">Niet akkoord</string>
     <string name="dialog_dismiss">Niet opnieuw weergeven</string>
+    <string name="dialog_download">Downloaden</string>
     <string name="dialog_external_sd_missing">Kan geen foto maken. De SD-kaart is niet toegankelijk. Het interne geheugen van de telefoon wordt gebruikt</string>
     <string name="dialog_first_time_set_pure_raw_message">"Dit bestandstype wordt gebruikt voor professionele fotobewerking.
 
@@ -222,7 +223,7 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="help_desc_dual_result">"Zorg dat u op maximaal 1,5 meter van uw onderwerp staat. U maakt de mooiste foto's als niets in de weg staat en uw onderwerp goed opvalt."</string>
     <string name="help_desc_quick">"Draai twee keer om te openen of om tussen de camera's aan de voor- en achterzijde te schakelen."</string>
     <string name="help_desc_quick_double_tap_pwr">Dubbeltik op aan/uit-knop om camera te openen.</string>
-    <string name="help_desc_smart_camera">Uw camera herkent objecten en oriëntatiepunten. U kunt er ook QR-codes, visitekaartjes en barcodes mee scannen.</string>
+    <string name="help_desc_smart_camera">Uw camera herkent objecten en bezienswaardigheden. U kunt er ook QR-codes, visitekaartjes en barcodes mee scannen.</string>
     <string name="help_desc_smart_camera_landmark_only">Uw camera herkent bezienswaardigheden. U kunt er ook QR-codes, visitekaartjes en barcodes mee scannen.</string>
     <string name="help_desc_zoom">Sleep omhoog en omlaag om te zoomen.</string>
     <string name="help_done">Gereed</string>
@@ -247,6 +248,7 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="help_next">Volgende</string>
     <string name="image_360_desc">Dit is een 360-foto. U kunt deze foto bewerken met Moto 360-editor.</string>
     <string name="image_360_name">360-foto</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">MET DIEPTE</string>
     <string name="indicate_mode_mono">ECHT ZWART-WIT</string>
@@ -258,16 +260,19 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="indicate_mode_ultra_wide">ULTRAGROOTHOEK</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">GROOTHOEK</string>
+    <string name="indicate_mode_wide_angle_selfie">BREDE SELFIE</string>
     <string name="internal_storage">Intern geheugen</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">De herkenningsfunctie voor bezienswaardigheden biedt informatie over populaire bezienswaardigheden op de hele wereld.&lt;br/>&lt;br/>Installeer om deze functie in te schakelen.</string>
-    <string name="landmark_install_over_data">De herkenningsfunctie voor bezienswaardigheden is 92 MB groot. Als u deze functie installeert via uw mobiele netwerk, worden mogelijk extra datakosten in rekening gebracht.</string>
-    <string name="landmark_notification_downloading">Herkenningsfunctie voor bezienswaardigheden downloaden</string>
-    <string name="landmark_notification_install">Herkenningsfunctie voor bezienswaardigheden installeren</string>
-    <string name="landmark_notification_install_complete">Installatie van de herkenningsfunctie voor bezienswaardigheden voltooid</string>
-    <string name="landmark_notification_install_failed">Installatie van de herkenningsfunctie voor bezienswaardigheden is mislukt</string>
+    <string name="landmark_install_message">De herkenningsfunctie voor bezienswaardigheden biedt informatie over populaire bezienswaardigheden op de hele wereld.&lt;br/>&lt;br/>Download de database met bezienswaardigheden om deze functie in te schakelen.</string>
+    <string name="landmark_install_over_data">De database met bezienswaardigheden is 92 MB groot. Als u deze functie downloadt via uw mobiele netwerk, worden mogelijk extra datakosten in rekening gebracht.</string>
+    <string name="landmark_notification_downloading">Database met bezienswaardigheden downloaden</string>
+    <string name="landmark_notification_install">Database met bezienswaardigheden installeren</string>
+    <string name="landmark_notification_install_complete">Installatie van de database met bezienswaardigheden voltooid</string>
+    <string name="landmark_notification_install_failed">Installatie van de database met bezienswaardigheden is mislukt</string>
     <string name="landmark_notification_install_invalid_url">De database met bezienswaardigheden is niet beschikbaar. Update naar de nieuwste cameraversie</string>
-    <string name="landmark_notification_install_out_of_space">Er is onvoldoende geheugen beschikbaar om de herkenningsfunctie voor bezienswaardigheden te installeren</string>
+    <string name="landmark_notification_install_out_of_space">Er is onvoldoende geheugen beschikbaar om de database met bezienswaardigheden te installeren</string>
+    <string name="landmark_notification_paused">De database met bezienswaardigheden wordt verder gedownload zodra er een internetverbinding beschikbaar is</string>
+    <string name="landmark_notification_queued">De database met bezienswaardigheden wordt gedownload zodra er een internetverbinding beschikbaar is</string>
     <string name="main_setting_amz_barcode">Barcodescanner van Amazon</string>
     <string name="main_setting_amz_privacy">Privacykennisgeving van Amazon</string>
     <string name="main_setting_amz_terms">Gebruiksvoorwaarden</string>
@@ -290,6 +295,8 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="main_setting_image_ratio">Fotogrootte (achter)</string>
     <string name="main_setting_image_ratio_front">Fotogrootte (voor)</string>
     <string name="main_setting_landmark_detection">Herkenning van bezienswaardigheden</string>
+    <string name="main_setting_landmark_version_current">Databaseversie: %s</string>
+    <string name="main_setting_landmark_version_not_installed">De database is niet geïnstalleerd</string>
     <string name="main_setting_licenses">Open-sourcelicenties</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="perm_required_alert_title">Toestemming vereist</string>
     <string name="photos_depth_desc">Gebruik de diepte-editor om de focus te selecteren, de achtergrond te wijzigen of een gebied om te zetten in zwart-wit.</string>
     <string name="photos_depth_name">Diepte ingeschakeld</string>
+    <string name="photos_notification_desc">"Profiteer van onbeperkte opslagruimte met Google Foto's"</string>
+    <string name="photos_notification_title">"Back-up maken in Google Foto's"</string>
+    <string name="qcfa_resolution_description">Aanpassing bij weinig licht</string>
     <string name="retake">Opnieuw maken</string>
     <string name="second_10">10 sec</string>
     <string name="second_3">3 sec</string>
@@ -367,6 +377,7 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="setting_mode_slow_motion">Slowmotion</string>
     <string name="setting_mode_ultra_wide">Ultragroothoek</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Brede selfie</string>
     <string name="setting_off">Uit</string>
     <string name="setting_on">Aan</string>
     <string name="setting_persist">In wacht</string>
@@ -383,20 +394,25 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="setting_timer_dialog_title">TIMER</string>
     <string name="setting_torch">Lamp</string>
     <string name="setting_true">true</string>
+    <string name="shortcut_desc_depth">Dieptefoto</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Slimme camera</string>
+    <string name="smartcam_no_detections">Geen opgeslagen objecten of bezienswaardigheden</string>
     <string name="storage_location_external">SD-kaart</string>
     <string name="storage_location_internal">Telefoon</string>
     <string name="storage_unavailable">Geheugen niet beschikbaar</string>
+    <string name="toast_battery_saver">Uw apparaat staat momenteel in de besparingsmodus. Sommige functies zijn mogelijk beperkt</string>
     <string name="toast_geotag_message_1">U moet de locatiemachtiging verlenen om het opslaan van de locatie in te schakelen.</string>
     <string name="toast_geotag_message_2">De locatie-instelling wordt pas van kracht nadat de instelling voor de systeemlocatie is ingeschakeld.</string>
     <string name="tooltip_camera_switch_360">Schakel tussen verschillende cameraopties.</string>
     <string name="tooltip_capture_360">Probeer een 360°-foto of -video te maken door op deze sluiterknop te tikken.</string>
     <string name="tooltip_capture_key_360">Probeer ook eens een opname te maken met de sluiterknop op de achterkant van de mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">"Maak foto's met extra info om speciale bewerkingsfuncties in te schakelen."</string>
     <string name="tooltip_first_use_zoom_button">Tik hier om over te schakelen naar groothoek.</string>
     <string name="tooltip_gallery_360">Bekijk het resultaat door uw 360°-foto of -video naar links te vegen.</string>
     <string name="tooltip_minimap_viewfinder">Pan de onderste afbeelding naar links of rechts.</string>
     <string name="tooltip_mode_switch_360">Maak 360°-opnamen in verschillende modi.</string>
+    <string name="tooltip_modes_list">Ontdek nieuwe fotografiemogelijkheden.</string>
     <string name="tooltip_smart_camera">Tik op om meer te weten te komen over het object.</string>
     <string name="tooltip_smart_camera_disable">U kunt dit uitschakelen in Instellingen.</string>
     <string name="tooltip_spherical_viewfinder">Pan of zoom in en uit om de weergave te beheren.</string>
@@ -419,6 +435,10 @@ Ga hieronder akkoord en schakel in Instellingen de optie Locatie in."</string>
     <string name="zoom_hint_full">VOL</string>
     <string name="zoom_hint_wide">BREED</string>
     <string name="zoom_pattern">%1$s,%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Aanpassing bij weinig licht</string>
+    <string name="indicate_mode_timelapse">TIMELAPSE</string>
+    <string name="setting_mode_timelapse">Timelapse</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

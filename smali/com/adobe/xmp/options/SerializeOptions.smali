@@ -101,14 +101,12 @@
 
 # virtual methods
 .method public clone()Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/CloneNotSupportedException;
         }
     .end annotation
-
-    const/4 v2, 0x0
 
     :try_start_0
     new-instance v0, Lcom/adobe/xmp/options/SerializeOptions;
@@ -142,15 +140,17 @@
     :catch_0
     move-exception v0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method protected defineOptionName(I)Ljava/lang/String;
     .locals 1
 
-    const/4 v0, 0x0
-
     sparse-switch p1, :sswitch_data_0
+
+    const/4 v0, 0x0
 
     return-object v0
 
@@ -406,11 +406,11 @@
 .method public setEncodeUTF16BE(Z)Lcom/adobe/xmp/options/SerializeOptions;
     .locals 2
 
-    const/4 v0, 0x3
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    invoke-virtual {p0, v0, v1}, Lcom/adobe/xmp/options/SerializeOptions;->setOption(IZ)V
+    invoke-virtual {p0, v1, v0}, Lcom/adobe/xmp/options/SerializeOptions;->setOption(IZ)V
 
     const/4 v0, 0x2
 

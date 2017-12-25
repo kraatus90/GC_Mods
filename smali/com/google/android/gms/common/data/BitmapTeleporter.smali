@@ -48,8 +48,6 @@
 .method constructor <init>(ILandroid/os/ParcelFileDescriptor;I)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzzH:I
@@ -57,6 +55,8 @@
     iput-object p2, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzzI:Landroid/os/ParcelFileDescriptor;
 
     iput p3, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzMG:I
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzRq:Landroid/graphics/Bitmap;
 
@@ -70,13 +70,13 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 2
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput v1, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzzH:I
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzzI:Landroid/os/ParcelFileDescriptor;
 
@@ -122,13 +122,13 @@
     if-eqz v0, :cond_0
 
     :try_start_0
-    const-string/jumbo v0, "teleporter"
+    iget-object v0, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzRs:Ljava/io/File;
 
-    const-string/jumbo v1, ".tmp"
+    const-string/jumbo v1, "teleporter"
 
-    iget-object v2, p0, Lcom/google/android/gms/common/data/BitmapTeleporter;->zzRs:Ljava/io/File;
+    const-string/jumbo v2, ".tmp"
 
-    invoke-static {v0, v1, v2}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
+    invoke-static {v1, v2, v0}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 

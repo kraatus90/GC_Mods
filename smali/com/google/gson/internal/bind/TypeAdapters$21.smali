@@ -50,46 +50,46 @@
 .end method
 
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/net/URL;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
-    move-result-object v2
+    move-result-object v1
 
-    sget-object v3, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    sget-object v2, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    if-eq v2, v3, :cond_1
+    if-eq v1, v2, :cond_1
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string/jumbo v2, "null"
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    new-instance v1, Ljava/net/URL;
+    new-instance v0, Ljava/net/URL;
 
-    invoke-direct {v1, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
     :cond_0
-    return-object v1
+    return-object v0
 
     :cond_1
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V

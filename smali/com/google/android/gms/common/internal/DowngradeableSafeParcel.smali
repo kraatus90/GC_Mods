@@ -49,7 +49,7 @@
 .end method
 
 .method private static zza(Ljava/lang/Class;)Z
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,7 +58,7 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     :try_start_0
     const-string/jumbo v0, "NULL"
@@ -67,13 +67,13 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "SAFE_PARCELABLE_NULL_STRING"
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
+
+    const-string/jumbo v1, "SAFE_PARCELABLE_NULL_STRING"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
     :try_end_0
@@ -87,12 +87,12 @@
     :catch_0
     move-exception v0
 
-    return v3
+    return v2
 
     :catch_1
     move-exception v0
 
-    return v3
+    return v2
 .end method
 
 .method protected static zzbK(Ljava/lang/String;)Z

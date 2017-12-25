@@ -4,6 +4,10 @@
 
 
 # annotations
+.annotation build Landroid/support/annotation/RequiresApi;
+    value = 0x18
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Landroid/support/v13/view/DragAndDropPermissionsCompat;
 .end annotation
@@ -28,7 +32,9 @@
 .method public release(Ljava/lang/Object;)V
     .locals 0
 
-    invoke-static {p1}, Landroid/support/v13/view/DragAndDropPermissionsCompatApi24;->release(Ljava/lang/Object;)V
+    check-cast p1, Landroid/view/DragAndDropPermissions;
+
+    invoke-virtual {p1}, Landroid/view/DragAndDropPermissions;->release()V
 
     return-void
 .end method
@@ -36,7 +42,7 @@
 .method public request(Landroid/app/Activity;Landroid/view/DragEvent;)Ljava/lang/Object;
     .locals 1
 
-    invoke-static {p1, p2}, Landroid/support/v13/view/DragAndDropPermissionsCompatApi24;->request(Landroid/app/Activity;Landroid/view/DragEvent;)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
 
     move-result-object v0
 

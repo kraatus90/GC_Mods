@@ -312,7 +312,7 @@
     return v0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment_lambda$5(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingsManager$Key;)I
+.method static synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment_2766(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingsManager$Key;)I
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/settings/SettingsManager$Key;->mName:Ljava/lang/String;
@@ -644,7 +644,7 @@
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    const v0, 0x7f04004b
+    const v0, 0x7f04004e
 
     const/4 v1, 0x0
 
@@ -660,9 +660,9 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    new-instance v2, Lcom/motorola/camera/fragments/-$Lambda$9;
+    new-instance v2, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY;
 
-    invoke-direct {v2}, Lcom/motorola/camera/fragments/-$Lambda$9;-><init>()V
+    invoke-direct {v2}, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY;-><init>()V
 
     invoke-interface {v0, v2}, Ljava/util/List;->sort(Ljava/util/Comparator;)V
 
@@ -676,7 +676,7 @@
 
     iput-object v2, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment;->mAdapter:Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter;
 
-    const v0, 0x7f0e00c9
+    const v0, 0x7f0e00d7
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

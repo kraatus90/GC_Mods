@@ -23,57 +23,57 @@
 
     new-array v0, v0, [B
 
-    const/4 v1, 0x0
+    const/high16 v1, -0x1000000
 
-    const/high16 v2, -0x1000000
+    and-int/2addr v1, p0
 
-    and-int/2addr v2, p0
+    shr-int/lit8 v1, v1, 0x18
 
-    shr-int/lit8 v2, v2, 0x18
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    const/4 v2, 0x0
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x1
+    const/high16 v1, 0xff0000
 
-    const/high16 v2, 0xff0000
+    and-int/2addr v1, p0
 
-    and-int/2addr v2, p0
+    shr-int/lit8 v1, v1, 0x10
 
-    shr-int/lit8 v2, v2, 0x10
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    const/4 v2, 0x1
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x2
+    const v1, 0xff00
 
-    const v2, 0xff00
+    and-int/2addr v1, p0
 
-    and-int/2addr v2, p0
+    shr-int/lit8 v1, v1, 0x8
 
-    shr-int/lit8 v2, v2, 0x8
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    const/4 v2, 0x2
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
-    const/4 v1, 0x3
+    and-int/lit16 v1, p0, 0xff
 
-    and-int/lit16 v2, p0, 0xff
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    const/4 v2, 0x3
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     new-instance v1, Ljava/lang/String;
 
@@ -288,14 +288,14 @@
 
     const/4 v1, 0x0
 
+    :try_start_0
+    invoke-virtual {v3, v1}, Lcom/drew/lang/BufferReader;->getInt32(I)I
+
+    move-result v1
+
     const/4 v4, 0x0
 
-    :try_start_0
-    invoke-virtual {v3, v4}, Lcom/drew/lang/BufferReader;->getInt32(I)I
-
-    move-result v4
-
-    invoke-virtual {v0, v1, v4}, Lcom/drew/metadata/icc/IccDirectory;->setInt(II)V
+    invoke-virtual {v0, v4, v1}, Lcom/drew/metadata/icc/IccDirectory;->setInt(II)V
 
     const/4 v1, 0x4
 
@@ -358,35 +358,35 @@
 
     new-array v1, v1, [F
 
-    const/4 v4, 0x0
+    const/16 v4, 0x44
 
-    const/16 v5, 0x44
+    invoke-virtual {v3, v4}, Lcom/drew/lang/BufferReader;->getS15Fixed16(I)F
 
-    invoke-virtual {v3, v5}, Lcom/drew/lang/BufferReader;->getS15Fixed16(I)F
+    move-result v4
 
-    move-result v5
+    const/4 v5, 0x0
 
-    aput v5, v1, v4
+    aput v4, v1, v5
 
-    const/4 v4, 0x1
+    const/16 v4, 0x48
 
-    const/16 v5, 0x48
+    invoke-virtual {v3, v4}, Lcom/drew/lang/BufferReader;->getS15Fixed16(I)F
 
-    invoke-virtual {v3, v5}, Lcom/drew/lang/BufferReader;->getS15Fixed16(I)F
+    move-result v4
 
-    move-result v5
+    const/4 v5, 0x1
 
-    aput v5, v1, v4
+    aput v4, v1, v5
 
-    const/4 v4, 0x2
+    const/16 v4, 0x4c
 
-    const/16 v5, 0x4c
+    invoke-virtual {v3, v4}, Lcom/drew/lang/BufferReader;->getS15Fixed16(I)F
 
-    invoke-virtual {v3, v5}, Lcom/drew/lang/BufferReader;->getS15Fixed16(I)F
+    move-result v4
 
-    move-result v5
+    const/4 v5, 0x2
 
-    aput v5, v1, v4
+    aput v4, v1, v5
 
     const/16 v4, 0x44
 
@@ -415,11 +415,11 @@
 
     if-le v1, v4, :cond_1
 
-    const/16 v4, 0x34
-
     invoke-static {v1}, Lcom/drew/metadata/icc/IccReader;->getStringFromInt32(I)Ljava/lang/String;
 
     move-result-object v1
+
+    const/16 v4, 0x34
 
     invoke-virtual {v0, v4, v1}, Lcom/drew/metadata/icc/IccDirectory;->setString(ILjava/lang/String;)V
     :try_end_0
@@ -430,27 +430,27 @@
     :catch_0
     move-exception v1
 
-    const-string/jumbo v3, "Reading ICC Header %s:%s"
-
-    new-array v4, v9, [Ljava/lang/Object;
+    new-array v3, v9, [Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v2
+    aput-object v4, v3, v2
 
     invoke-virtual {v1}, Lcom/drew/lang/BufferBoundsException;->getMessage()Ljava/lang/String;
 
     move-result-object v1
 
-    aput-object v1, v4, v8
+    aput-object v1, v3, v8
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v1, "Reading ICC Header %s:%s"
+
+    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

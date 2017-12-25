@@ -482,19 +482,17 @@
 .method public hashCode()I
     .locals 6
 
-    const/16 v2, 0x4d5
+    const/16 v1, 0x4d5
 
-    const/16 v3, 0x4cf
-
-    const/16 v0, 0x29
+    const/16 v2, 0x4cf
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit16 v0, v1, 0x87d
+    add-int/lit16 v0, v0, 0x87d
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNationalNumber()J
 
@@ -502,103 +500,103 @@
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/Long;->hashCode()I
+    invoke-virtual {v3}, Ljava/lang/Long;->hashCode()I
 
-    move-result v4
+    move-result v3
 
-    add-int v0, v1, v4
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getExtension()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
-    move-result v4
+    move-result v3
 
-    add-int v0, v1, v4
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v4, v0, 0x35
+    mul-int/lit8 v3, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->isItalianLeadingZero()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    move v1, v2
+    move v0, v1
 
     :goto_0
-    add-int v0, v4, v1
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNumberOfLeadingZeros()I
 
-    move-result v4
+    move-result v3
 
-    add-int v0, v1, v4
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getRawInput()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
-    move-result v4
+    move-result v3
 
-    add-int v0, v1, v4
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCodeSource()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;->hashCode()I
+    invoke-virtual {v3}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;->hashCode()I
 
-    move-result v4
+    move-result v3
 
-    add-int v0, v1, v4
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getPreferredDomesticCarrierCode()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
-    move-result v4
+    move-result v3
 
-    add-int v0, v1, v4
+    add-int/2addr v0, v3
 
-    mul-int/lit8 v1, v0, 0x35
+    mul-int/lit8 v0, v0, 0x35
 
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasPreferredDomesticCarrierCode()Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_1
+    if-nez v3, :cond_1
 
     :goto_1
-    add-int v0, v1, v2
+    add-int/2addr v0, v1
 
     return v0
 
     :cond_0
-    move v1, v3
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    move v2, v3
+    move v1, v2
 
     goto :goto_1
 .end method
@@ -942,9 +940,9 @@
     :goto_4
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_1
     invoke-virtual {p0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->isItalianLeadingZero()Z

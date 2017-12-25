@@ -13,33 +13,35 @@
 .end method
 
 .method private static matchMultipleValuePrefix(Ljava/lang/String;ILjava/lang/String;Z)[Ljava/lang/String;
-    .locals 6
-
-    const/4 v5, 0x0
+    .locals 5
 
     const/4 v2, 0x0
 
     const/4 v0, 0x1
 
+    move v1, v0
+
+    move-object v0, v2
+
     :goto_0
-    if-le v0, p1, :cond_1
+    if-le v1, p1, :cond_1
 
     :cond_0
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v1
 
-    new-array v3, v3, [Ljava/lang/String;
+    new-array v1, v1, [Ljava/lang/String;
 
-    invoke-interface {v2, v3}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, [Ljava/lang/String;
+    check-cast v0, [Ljava/lang/String;
 
-    return-object v3
+    return-object v0
 
     :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
@@ -50,7 +52,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -68,42 +70,40 @@
 
     invoke-static {v3, p2, v4, p3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    if-eqz v1, :cond_0
+    if-eqz v3, :cond_0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
     :goto_1
-    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_2
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v2, p1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(I)V
 
     goto :goto_1
 
     :cond_3
-    return-object v5
+    return-object v2
 .end method
 
 
 # virtual methods
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;
-    .locals 21
+    .locals 17
 
     invoke-static/range {p1 .. p1}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
-    move-result-object v20
+    move-result-object v0
 
     const-string/jumbo v1, "MEMORY"
-
-    move-object/from16 v0, v20
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -112,14 +112,12 @@
     if-nez v1, :cond_1
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    return-object v1
+    return-object v0
 
     :cond_1
     const-string/jumbo v1, "\r\n"
-
-    move-object/from16 v0, v20
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
@@ -133,96 +131,86 @@
 
     const/4 v3, 0x1
 
-    move-object/from16 v0, v20
-
     invoke-static {v1, v0, v2, v3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v1
 
-    const-string/jumbo v1, "NAME2:"
+    const-string/jumbo v2, "NAME2:"
 
-    const/16 v2, 0xd
+    const/16 v3, 0xd
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    move-object/from16 v0, v20
+    invoke-static {v2, v0, v3, v4}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
-    invoke-static {v1, v0, v2, v3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
+    move-result-object v3
+
+    const-string/jumbo v2, "TEL"
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x3
+
+    invoke-static {v2, v5, v0, v4}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchMultipleValuePrefix(Ljava/lang/String;ILjava/lang/String;Z)[Ljava/lang/String;
 
     move-result-object v4
 
-    const-string/jumbo v1, "TEL"
+    const-string/jumbo v2, "MAIL"
 
-    const/4 v2, 0x3
+    const/4 v5, 0x1
 
-    const/4 v3, 0x1
+    const/4 v6, 0x3
 
-    move-object/from16 v0, v20
+    invoke-static {v2, v6, v0, v5}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchMultipleValuePrefix(Ljava/lang/String;ILjava/lang/String;Z)[Ljava/lang/String;
 
-    invoke-static {v1, v2, v0, v3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchMultipleValuePrefix(Ljava/lang/String;ILjava/lang/String;Z)[Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v5
+    const-string/jumbo v2, "MEMORY:"
 
-    const-string/jumbo v1, "MAIL"
+    const/16 v5, 0xd
 
-    const/4 v2, 0x3
+    const/4 v7, 0x0
 
-    const/4 v3, 0x1
+    invoke-static {v2, v0, v5, v7}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
-    move-object/from16 v0, v20
+    move-result-object v9
 
-    invoke-static {v1, v2, v0, v3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchMultipleValuePrefix(Ljava/lang/String;ILjava/lang/String;Z)[Ljava/lang/String;
+    const-string/jumbo v2, "ADD:"
 
-    move-result-object v7
+    const/16 v5, 0xd
 
-    const-string/jumbo v1, "MEMORY:"
+    const/4 v7, 0x1
 
-    const/16 v2, 0xd
+    invoke-static {v2, v0, v5, v7}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    move-object/from16 v0, v20
+    if-eqz v0, :cond_2
 
-    invoke-static {v1, v0, v2, v3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v10
+    new-array v10, v2, [Ljava/lang/String;
 
-    const-string/jumbo v1, "ADD:"
+    const/4 v2, 0x0
 
-    const/16 v2, 0xd
-
-    const/4 v3, 0x1
-
-    move-object/from16 v0, v20
-
-    invoke-static {v1, v0, v2, v3}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
-
-    move-result-object v18
-
-    if-eqz v18, :cond_2
-
-    const/4 v1, 0x1
-
-    new-array v11, v1, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    aput-object v18, v11, v1
+    aput-object v0, v10, v2
 
     :goto_0
-    new-instance v1, Lcom/google/zxing/client/result/AddressBookParsedResult;
+    new-instance v0, Lcom/google/zxing/client/result/AddressBookParsedResult;
 
-    invoke-static/range {v19 .. v19}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->maybeWrap(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/zxing/client/result/AddressBookAUResultParser;->maybeWrap(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
+
+    const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    const/4 v11, 0x0
 
     const/4 v12, 0x0
 
@@ -234,14 +222,12 @@
 
     const/16 v16, 0x0
 
-    const/16 v17, 0x0
+    invoke-direct/range {v0 .. v16}, Lcom/google/zxing/client/result/AddressBookParsedResult;-><init>([Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    invoke-direct/range {v1 .. v17}, Lcom/google/zxing/client/result/AddressBookParsedResult;-><init>([Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
-
-    return-object v1
+    return-object v0
 
     :cond_2
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     goto :goto_0
 .end method

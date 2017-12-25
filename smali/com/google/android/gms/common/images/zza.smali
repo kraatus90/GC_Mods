@@ -222,18 +222,18 @@
 .method zza(Landroid/content/Context;Lcom/google/android/gms/internal/zzhg;)V
     .locals 3
 
-    const/4 v0, 0x0
-
     const/4 v2, 0x0
 
-    iget-boolean v1, p0, Lcom/google/android/gms/common/images/zza;->zzSn:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/images/zza;->zzSn:Z
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
+    const/4 v0, 0x0
+
     iget v1, p0, Lcom/google/android/gms/common/images/zza;->zzSh:I
 
     if-nez v1, :cond_1

@@ -47,9 +47,7 @@
 .end method
 
 .method private static getDefaultSize2(II)I
-    .locals 3
-
-    move v0, p0
+    .locals 2
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -57,29 +55,27 @@
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v2
+    move-result v0
 
     sparse-switch v1, :sswitch_data_0
 
     :goto_0
-    return v0
-
     :sswitch_0
-    move v0, p0
-
-    goto :goto_0
+    return p0
 
     :sswitch_1
-    invoke-static {p0, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {p0, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result v0
+    move-result p0
 
     goto :goto_0
 
     :sswitch_2
-    move v0, v2
+    move p0, v0
 
     goto :goto_0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -93,6 +89,11 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 0
+    .annotation build Landroid/annotation/SuppressLint;
+        value = {
+            "MissingSuperCall"
+        }
+    .end annotation
 
     return-void
 .end method

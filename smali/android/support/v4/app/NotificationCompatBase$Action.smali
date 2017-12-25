@@ -37,6 +37,9 @@
 .method public abstract getAllowGeneratedReplies()Z
 .end method
 
+.method public abstract getDataOnlyRemoteInputs()[Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput;
+.end method
+
 .method public abstract getExtras()Landroid/os/Bundle;
 .end method
 

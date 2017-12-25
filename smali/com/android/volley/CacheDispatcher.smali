@@ -220,11 +220,11 @@
     return-void
 
     :cond_1
-    const-string/jumbo v0, "start new dispatcher"
+    new-array v0, v1, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string/jumbo v1, "start new dispatcher"
 
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 

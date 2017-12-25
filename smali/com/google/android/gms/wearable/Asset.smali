@@ -306,29 +306,29 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/wearable/Asset;->zzanX:[B
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/Asset;->zzanX:[B
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/wearable/Asset;->zzaKy:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/Asset;->zzaKy:Ljava/lang/String;
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/wearable/Asset;->zzaKz:Landroid/os/ParcelFileDescriptor;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/Asset;->zzaKz:Landroid/os/ParcelFileDescriptor;
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/google/android/gms/wearable/Asset;->uri:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/Asset;->uri:Landroid/net/Uri;
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

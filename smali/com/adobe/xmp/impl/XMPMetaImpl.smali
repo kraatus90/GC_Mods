@@ -78,9 +78,9 @@
 .method public constructor <init>(Lcom/adobe/xmp/impl/XMPNode;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/adobe/xmp/impl/XMPMetaImpl;->packetHeader:Ljava/lang/String;
 
@@ -97,13 +97,13 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
-
     const/4 v4, 0x0
 
     new-instance v1, Lcom/adobe/xmp/impl/XMPNode;
 
     const-string/jumbo v0, "[]"
+
+    const/4 v2, 0x0
 
     invoke-direct {v1, v0, v2}, Lcom/adobe/xmp/impl/XMPNode;-><init>(Ljava/lang/String;Lcom/adobe/xmp/options/PropertyOptions;)V
 
@@ -1019,13 +1019,13 @@
 
     iget-object v1, p0, Lcom/adobe/xmp/impl/XMPMetaImpl;->tree:Lcom/adobe/xmp/impl/XMPNode;
 
-    invoke-static {v1, v0, v3, v2}, Lcom/adobe/xmp/impl/XMPNodeUtils;->findNode(Lcom/adobe/xmp/impl/XMPNode;Lcom/adobe/xmp/impl/xpath/XMPPath;ZLcom/adobe/xmp/options/PropertyOptions;)Lcom/adobe/xmp/impl/XMPNode;
+    invoke-static {v1, v0, v2, v3}, Lcom/adobe/xmp/impl/XMPNodeUtils;->findNode(Lcom/adobe/xmp/impl/XMPNode;Lcom/adobe/xmp/impl/xpath/XMPPath;ZLcom/adobe/xmp/options/PropertyOptions;)Lcom/adobe/xmp/impl/XMPNode;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    return-object v2
+    return-object v3
 
     :cond_0
     if-nez p3, :cond_2
@@ -1220,13 +1220,13 @@
 
     iget-object v1, p0, Lcom/adobe/xmp/impl/XMPMetaImpl;->tree:Lcom/adobe/xmp/impl/XMPNode;
 
-    invoke-static {v1, v0, v3, v2}, Lcom/adobe/xmp/impl/XMPNodeUtils;->findNode(Lcom/adobe/xmp/impl/XMPNode;Lcom/adobe/xmp/impl/xpath/XMPPath;ZLcom/adobe/xmp/options/PropertyOptions;)Lcom/adobe/xmp/impl/XMPNode;
+    invoke-static {v1, v0, v2, v3}, Lcom/adobe/xmp/impl/XMPNodeUtils;->findNode(Lcom/adobe/xmp/impl/XMPNode;Lcom/adobe/xmp/impl/xpath/XMPPath;ZLcom/adobe/xmp/options/PropertyOptions;)Lcom/adobe/xmp/impl/XMPNode;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    return-object v2
+    return-object v3
 
     :cond_0
     if-nez p3, :cond_2
@@ -1549,9 +1549,9 @@
         }
     .end annotation
 
-    const/4 v5, 0x0
-
     const/4 v2, 0x0
+
+    const/4 v5, 0x0
 
     invoke-static {p1}, Lcom/adobe/xmp/impl/ParameterAsserts;->assertSchemaNS(Ljava/lang/String;)V
 
@@ -1824,37 +1824,37 @@
     throw v0
 
     :cond_9
-    const-string/jumbo v7, "xml:lang"
+    const/4 v7, 0x1
 
-    const/4 v8, 0x1
+    invoke-virtual {v0, v7}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
 
-    invoke-virtual {v0, v8}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
+    move-result-object v7
 
-    move-result-object v8
+    invoke-virtual {v7}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    invoke-virtual {v8}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v8
+    const-string/jumbo v8, "xml:lang"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-eqz v7, :cond_8
 
-    const-string/jumbo v7, "x-default"
+    const/4 v7, 0x1
 
-    const/4 v8, 0x1
+    invoke-virtual {v0, v7}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
 
-    invoke-virtual {v0, v8}, Lcom/adobe/xmp/impl/XMPNode;->getQualifier(I)Lcom/adobe/xmp/impl/XMPNode;
+    move-result-object v7
 
-    move-result-object v8
+    invoke-virtual {v7}, Lcom/adobe/xmp/impl/XMPNode;->getValue()Ljava/lang/String;
 
-    invoke-virtual {v8}, Lcom/adobe/xmp/impl/XMPNode;->getValue()Ljava/lang/String;
+    move-result-object v7
 
-    move-result-object v8
+    const-string/jumbo v8, "x-default"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -2302,13 +2302,13 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     if-nez p3, :cond_0
 
     const-string/jumbo v0, "False"
 
     :goto_0
+    const/4 v1, 0x0
+
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/adobe/xmp/impl/XMPMetaImpl;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lcom/adobe/xmp/options/PropertyOptions;)V
 
     return-void
@@ -2406,11 +2406,11 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Ljava/lang/Double;
 
     invoke-direct {v0, p3, p4}, Ljava/lang/Double;-><init>(D)V
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/adobe/xmp/impl/XMPMetaImpl;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lcom/adobe/xmp/options/PropertyOptions;)V
 
@@ -2442,11 +2442,11 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Ljava/lang/Integer;
 
     invoke-direct {v0, p3}, Ljava/lang/Integer;-><init>(I)V
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/adobe/xmp/impl/XMPMetaImpl;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lcom/adobe/xmp/options/PropertyOptions;)V
 
@@ -2478,11 +2478,11 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Ljava/lang/Long;
 
     invoke-direct {v0, p3, p4}, Ljava/lang/Long;-><init>(J)V
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/adobe/xmp/impl/XMPMetaImpl;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Lcom/adobe/xmp/options/PropertyOptions;)V
 

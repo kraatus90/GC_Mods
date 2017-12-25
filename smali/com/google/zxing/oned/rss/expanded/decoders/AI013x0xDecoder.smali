@@ -30,15 +30,15 @@
 
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
+    invoke-virtual {v0}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v1
+    move-result v0
 
-    const/16 v2, 0x3c
+    const/16 v1, 0x3c
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -56,14 +56,14 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
 .end method

@@ -763,11 +763,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v1, "DataMap"
-
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "DataMap"
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -1282,11 +1282,11 @@
     :catch_0
     move-exception v6
 
-    const-string/jumbo v4, "Boolean"
-
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v5
+
+    const-string/jumbo v4, "Boolean"
 
     move-object v1, p0
 
@@ -1341,11 +1341,11 @@
     :catch_0
     move-exception v6
 
-    const-string/jumbo v4, "Byte"
-
     invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v5
+
+    const-string/jumbo v4, "Byte"
 
     move-object v1, p0
 
@@ -1516,11 +1516,11 @@
     :catch_0
     move-exception v7
 
-    const-string/jumbo v5, "Double"
-
     invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v6
+
+    const-string/jumbo v5, "Double"
 
     move-object v2, p0
 
@@ -1575,11 +1575,11 @@
     :catch_0
     move-exception v6
 
-    const-string/jumbo v4, "Float"
-
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v5
+
+    const-string/jumbo v4, "Float"
 
     move-object v1, p0
 

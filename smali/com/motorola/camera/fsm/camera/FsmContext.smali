@@ -153,16 +153,6 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/FsmContext;->mSubStateMachineMap:Ljava/util/Map;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    new-instance v3, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    invoke-direct {v3}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;-><init>()V
-
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/FsmContext;->mSubStateMachineMap:Ljava/util/Map;
-
     sget-object v2, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->ENV_INFO:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
     new-instance v3, Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine;

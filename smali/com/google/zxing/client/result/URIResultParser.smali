@@ -43,67 +43,67 @@
 .method static isBasicallyValidURI(Ljava/lang/String;)Z
     .locals 4
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    const-string/jumbo v3, " "
+    const-string/jumbo v2, " "
 
-    invoke-virtual {p0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_2
+    if-nez v2, :cond_2
 
-    sget-object v3, Lcom/google/zxing/client/result/URIResultParser;->URL_WITH_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
+    sget-object v2, Lcom/google/zxing/client/result/URIResultParser;->URL_WITH_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v3, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
     :cond_0
-    sget-object v3, Lcom/google/zxing/client/result/URIResultParser;->URL_WITHOUT_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
+    sget-object v2, Lcom/google/zxing/client/result/URIResultParser;->URL_WITHOUT_PROTOCOL_PATTERN:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v3, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-nez v3, :cond_4
 
     :goto_0
-    move v1, v2
+    move v0, v1
 
     :cond_1
-    return v1
+    return v0
 
     :cond_2
-    return v2
-
-    :cond_3
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
     return v1
 
+    :cond_3
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    return v0
+
     :cond_4
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->start()I
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     goto :goto_0
 .end method
@@ -123,15 +123,15 @@
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/URIParsedResult;
     .locals 4
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     invoke-static {p1}, Lcom/google/zxing/client/result/URIResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string/jumbo v2, "URL:"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
@@ -142,46 +142,46 @@
 
     const/4 v3, 0x4
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v2, v3, v1}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v0}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v2
 
     :cond_1
     const-string/jumbo v2, "URI:"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-static {v0}, Lcom/google/zxing/client/result/URIResultParser;->isBasicallyValidURI(Ljava/lang/String;)Z
+    invoke-static {v2}, Lcom/google/zxing/client/result/URIResultParser;->isBasicallyValidURI(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
     :goto_0
-    return-object v1
+    return-object v0
 
     :cond_2
-    new-instance v2, Lcom/google/zxing/client/result/URIParsedResult;
+    new-instance v1, Lcom/google/zxing/client/result/URIParsedResult;
 
-    invoke-direct {v2, v0, v1}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v0}, Lcom/google/zxing/client/result/URIParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object v1, v2
+    move-object v0, v1
 
     goto :goto_0
 .end method

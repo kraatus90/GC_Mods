@@ -56,6 +56,15 @@
 # virtual methods
 .method public animateIconScale(Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;IIIFFLcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;I)V
     .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;",
+            "IIIFF",
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;",
+            "I)V"
+        }
+    .end annotation
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

@@ -32,23 +32,23 @@
 
     new-array v0, v0, [I
 
-    const/4 v1, 0x0
+    const v1, 0x1010003
 
-    const v2, 0x1010003
+    const/4 v2, 0x0
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x1
+    const v1, 0x10100d0
 
-    const v2, 0x10100d0
+    const/4 v2, 0x1
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x2
+    const v1, 0x10100d1
 
-    const v2, 0x10100d1
+    const/4 v2, 0x2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     sput-object v0, Landroid/support/v4/app/FragmentManagerImpl$FragmentTag;->Fragment:[I
 

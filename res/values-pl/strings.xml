@@ -148,7 +148,7 @@
     <string name="cancel">Anuluj</string>
     <string name="capture_failure">Nie udało się przechwycić. Spróbuj ponownie.</string>
     <string name="checkbox_do_not_show">Nie pokazuj ponownie</string>
-    <string name="cloudsight_terms">Wykonane zdjęcia będą przesyłane do firmy CloudSight w celu odnalezienia pasujących produktów. &lt;br/>&lt;br/> Kontynuując używanie tej funkcji, wyrażasz zgodę na&lt;a href=%1$s>Zasady ochrony prywatności&lt;/a>firmy CloudSight.</string>
+    <string name="cloudsight_terms">Za każdym razem, kiedy używasz funkcji rozpoznawania obiektów, obraz i lokalizacja (jeśli opcje te są włączone) będą przesyłane do innej firmy w celu przeprowadzenia wyszukiwania.&lt;br/>&lt;br/> Kontynuując używanie tej funkcji, wyrażasz zgodę na&lt;a href=%1$s>Zasady ochrony prywatności&lt;/a>.</string>
     <string name="dailog_panorama_failed">Nie można utworzyć panoramy. Spróbuj ponownie.</string>
     <string name="dailog_panorama_not_taken">Zdjęcie panoramiczne niewykonane.</string>
     <string name="dialog_access_sd_fail">Nie można przechwycić multimediów. Brak dostępu do karty SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Urządzenie nie jest obsługiwane</string>
     <string name="dialog_disagree">Brak zgody</string>
     <string name="dialog_dismiss">Nie pokazuj ponownie</string>
+    <string name="dialog_download">Pobierz</string>
     <string name="dialog_external_sd_missing">Nie można zrobić zdjęcia. Karta SD jest niedostępna. Przełączanie na pamięć wewnętrzną telefonu</string>
     <string name="dialog_first_time_set_pure_raw_message">"Nieprzetworzony typ pliku jest używany do profesjonalnej edycji zdjęć.
 
@@ -247,6 +248,7 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="help_next">Dalej</string>
     <string name="image_360_desc">To jest zdjęcie 360. Możesz je edytować za pomocą edytora Moto 360.</string>
     <string name="image_360_name">Zdjęcie panoramiczne</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s), %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">WŁĄCZENIE GŁĘBI</string>
     <string name="indicate_mode_mono">PRAWDZIWA CZERŃ I BIEL</string>
@@ -258,16 +260,19 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="indicate_mode_ultra_wide">ULTRASZEROKI KĄT</string>
     <string name="indicate_mode_video">FILM</string>
     <string name="indicate_mode_wide_angle">SZEROKI KĄT</string>
+    <string name="indicate_mode_wide_angle_selfie">SZEROKOKĄTNE SELFIE</string>
     <string name="internal_storage">Pamięć wewnętrzna</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">Funkcja rozpoznawania zabytków udostępnia informacje dotyczące popularnych zabytków na całym świecie.&lt;br/>&lt;br/>Zainstaluj tę funkcję, aby ją włączyć.</string>
-    <string name="landmark_install_over_data">Wielkość pliku funkcji rozpoznawania zabytków do pobrania wynosi 92 MB. Instalacja za pośrednictwem połączenia danych mobilnych może spowodować naliczenie dodatkowych opłat.</string>
-    <string name="landmark_notification_downloading">Pobieranie funkcji rozpoznawania zabytków</string>
-    <string name="landmark_notification_install">Instalowanie opcji rozpoznawania zabytków</string>
-    <string name="landmark_notification_install_complete">Instalacja funkcji rozpoznawania zabytków zakończona</string>
-    <string name="landmark_notification_install_failed">Instalacja funkcji rozpoznawania zabytków zakończona niepowodzeniem</string>
+    <string name="landmark_install_message">Funkcja rozpoznawania zabytków udostępnia informacje dotyczące popularnych zabytków na całym świecie.&lt;br/>&lt;br/>Pobierz bazę zabytków, aby włączyć tę funkcję.</string>
+    <string name="landmark_install_over_data">Rozmiar pliku bazy zabytków wynosi 92 MB. Pobieranie za pośrednictwem połączenia danych mobilnych może spowodować naliczenie dodatkowych opłat.</string>
+    <string name="landmark_notification_downloading">Pobieranie bazy zabytków</string>
+    <string name="landmark_notification_install">Instalowanie bazy zabytków</string>
+    <string name="landmark_notification_install_complete">Instalacja bazy zabytków zakończona</string>
+    <string name="landmark_notification_install_failed">Instalacja bazy zabytków zakończona niepowodzeniem</string>
     <string name="landmark_notification_install_invalid_url">Baza zabytków nie jest dostępna, zaktualizuj aparat do najnowszej wersji.</string>
-    <string name="landmark_notification_install_out_of_space">Niewystarczająca ilość miejsca do zainstalowania funkcji rozpoznawania zabytków</string>
+    <string name="landmark_notification_install_out_of_space">Niewystarczająca ilość miejsca do zainstalowania bazy zabytków</string>
+    <string name="landmark_notification_paused">Pobieranie bazy zabytków będzie kontynuowane, gdy dostępne będzie połączenie z Internetem</string>
+    <string name="landmark_notification_queued">Pobieranie bazy zabytków rozpocznie się, gdy dostępne będzie połączenie z Internetem</string>
     <string name="main_setting_amz_barcode">Skaner kodów kreskowych Amazon</string>
     <string name="main_setting_amz_privacy">Informacje o prywatności Amazon</string>
     <string name="main_setting_amz_terms">Warunki użytkowania</string>
@@ -290,6 +295,8 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="main_setting_image_ratio">Rozmiar zdjęcia (tył)</string>
     <string name="main_setting_image_ratio_front">Rozmiar zdjęcia (przód)</string>
     <string name="main_setting_landmark_detection">Rozpoznawanie zabytków</string>
+    <string name="main_setting_landmark_version_current">Wersja bazy danych: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Nie zainstalowano bazy danych</string>
     <string name="main_setting_licenses">Licencje open source</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="perm_required_alert_title">Wymagane są specjalne uprawnienia</string>
     <string name="photos_depth_desc">Użyj edytora głębi, aby ustawić ostrość, zmienić tło lub wybrać obszar, którego kolor ma być zmieniony na czarno-biały.</string>
     <string name="photos_depth_name">Włączenie głębi</string>
+    <string name="photos_notification_desc">Zyskaj nieograniczoną ilość miejsca dzięki usłudze Zdjęcia Google</string>
+    <string name="photos_notification_title">Przekopiuj do Zdjęć Google</string>
+    <string name="qcfa_resolution_description">naświetlanie adaptacyjne</string>
     <string name="retake">Zrób ponownie</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="setting_mode_slow_motion">Zwolnione tempo</string>
     <string name="setting_mode_ultra_wide">Ultraszeroki kąt</string>
     <string name="setting_mode_video">Film</string>
+    <string name="setting_mode_wide_angle_selfie">Szerokokątne selfie</string>
     <string name="setting_off">Wyłącz</string>
     <string name="setting_on">Włącz</string>
     <string name="setting_persist">Zawieś</string>
@@ -383,20 +394,25 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="setting_timer_dialog_title">SAMOWYZW.</string>
     <string name="setting_torch">Latarka</string>
     <string name="setting_true">prawda</string>
+    <string name="shortcut_desc_depth">Głębia</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Film</string>
     <string name="smartcam_landmark_notification_title">Inteligentny aparat</string>
+    <string name="smartcam_no_detections">Brak zapisanych obiektów lub zabytków</string>
     <string name="storage_location_external">Karta SD</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Pamięć jest niedostępna</string>
+    <string name="toast_battery_saver">Pracujesz aktualnie w trybie oszczędzania energii. Działanie niektórych funkcji może być ograniczone.</string>
     <string name="toast_geotag_message_1">Aby włączyć zapisywanie lokalizacji, musisz wyrazić zgodę na lokalizowanie urządzenia.</string>
     <string name="toast_geotag_message_2">Funkcja określania lokalizacji będzie działać dopiero po jej włączeniu.</string>
     <string name="tooltip_camera_switch_360">Spróbuj przełączyć się na inne ustawienia aparatu.</string>
     <string name="tooltip_capture_360">Spróbuj zrobić zdjęcie lub nagrać wideo 360°, dotykając tego przycisku migawki.</string>
     <string name="tooltip_capture_key_360">Spróbuj także zrobić zdjęcie poprzez naciśnięcie przycisku migawki z tyłu urządzenia Mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Rób zdjęcia z dodatkowymi informacjami, by włączyć specjalne funkcje.</string>
     <string name="tooltip_first_use_zoom_button">Dotknij tutaj, aby przełączyć się na szeroki kąt.</string>
     <string name="tooltip_gallery_360">Zobacz, jak można obrócić zdjęcie lub wideo 360°, przesuwając palcem w lewo.</string>
     <string name="tooltip_minimap_viewfinder">Przesuń dolny obraz w lewo lub w prawo.</string>
     <string name="tooltip_mode_switch_360">Spróbuj uchwycić obraz 360° w różnych trybach!</string>
+    <string name="tooltip_modes_list">Odkryj nowy sposób fotografowania.</string>
     <string name="tooltip_smart_camera">Dotknij, aby dowiedzieć się więcej o obiekcie.</string>
     <string name="tooltip_smart_camera_disable">Można je wyłączyć w ustawieniach.</string>
     <string name="tooltip_spherical_viewfinder">Aby sterować widokiem, przesuń, powiększ lub pomniejsz obraz.</string>
@@ -419,6 +435,10 @@ Wyraź zgodę poniżej i włącz Lokalizację w Ustawieniach."</string>
     <string name="zoom_hint_full">PEŁNE</string>
     <string name="zoom_hint_wide">SZEROKIE</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s), %5$s</string>
-    <string name="qcfa_resolution_description">naświetlanie adaptacyjne</string>
+    <string name="indicate_mode_timelapse">FILM POKLATKOWY</string>
+    <string name="setting_mode_timelapse">Film poklatkowy</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

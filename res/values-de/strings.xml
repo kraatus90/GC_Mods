@@ -148,7 +148,7 @@
     <string name="cancel">Abbrechen</string>
     <string name="capture_failure">Aufnahme fehlgeschlagen. Versuchen Sie es erneut.</string>
     <string name="checkbox_do_not_show">Nicht wieder anzeigen</string>
-    <string name="cloudsight_terms">Ihre Bilder werden an CloudSight gesendet, um Ihnen Suchergebnisse bereitzustellen. &lt;br/>&lt;br/>Wenn Sie fortfahren, stimmen Sie den &lt;a href=%1$s>Datenschutzbestimmungen&lt;/a> von CloudSight zu.</string>
+    <string name="cloudsight_terms">Jedes Mal, wenn Sie die Objekterkennung verwenden, werden das Bild und der Standort (sofern aktiviert) an Dritte gesendet, um Suchergebnisse zu erhalten.&lt;br/>&lt;br/> Indem Sie fortfahren, stimmen Sie den &lt;a href=%1$s>Datenschutzbestimmungen&lt;/a> zu.</string>
     <string name="dailog_panorama_failed">"Fehler bei Panoramaaufnahme. 
 Bitte versuchen Sie es erneut."</string>
     <string name="dailog_panorama_not_taken">Panoramabild nicht aufgenommen.</string>
@@ -171,6 +171,7 @@ Bitte versuchen Sie es erneut."</string>
     <string name="dialog_device_not_supported">Gerät wird nicht unterstützt.</string>
     <string name="dialog_disagree">Ablehnen</string>
     <string name="dialog_dismiss">Nicht erneut anzeigen</string>
+    <string name="dialog_download">Herunterladen</string>
     <string name="dialog_external_sd_missing">Bildaufnahme nicht möglich. SD-Speicherkarte nicht verfügbar. Wechsel zum internen Gerätespeicher wird ausgeführt.</string>
     <string name="dialog_first_time_set_pure_raw_message">"Dieser Dateityp ohne Vorverarbeitung wird für die professionelle Bearbeitung von Fotos verwendet.
 
@@ -223,7 +224,7 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="help_desc_dual_result">Sie müssen sich innerhalb von 1,5 m Entfernung zu Ihrem Motiv befinden. Sie sollten freie Sicht auf das Motiv haben und es sollte sich möglichst von der Umgebung abheben.</string>
     <string name="help_desc_quick">Drehen Sie zweimal schnell das Handgelenk, um die Kamera zu öffnen oder zwischen der Kamera vorne und der Kamera hinten zu wechseln.</string>
     <string name="help_desc_quick_double_tap_pwr">Ein-/Austaste zweimal drücken, um Kamera zu öffnen.</string>
-    <string name="help_desc_smart_camera">Ihre Kamera erkennt Objekte und Wahrzeichen. Sie kann außerdem QR Codes, Visitenkarten und Barcodes scannen.</string>
+    <string name="help_desc_smart_camera">Ihre Kamera erkennt Objekte und Wahrzeichen. Sie kann außerdem QR-Codes, Visitenkarten und Barcodes scannen.</string>
     <string name="help_desc_smart_camera_landmark_only">Ihre Kamera erkennt Wahrzeichen. Sie kann außerdem QR-Codes, Visitenkarten und Barcodes scannen.</string>
     <string name="help_desc_zoom">Ziehen Sie zum Zoomen nach oben oder unten.</string>
     <string name="help_done">Fertig</string>
@@ -246,8 +247,9 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="help_header_zoom">Zoom</string>
     <string name="help_location_description">Ja, Ortsangabe hinzufügen</string>
     <string name="help_next">Weiter</string>
-    <string name="image_360_desc">Dies ist ein 360-Foto. Sie können dieses Foto mit Moto 360-Editor bearbeiten.</string>
+    <string name="image_360_desc">Dies ist ein 360-Foto. Sie können dieses Foto mit Moto 360 Editor bearbeiten.</string>
     <string name="image_360_name">360-Foto</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">TIEFE AKTIVIERT</string>
     <string name="indicate_mode_mono">ECHTES SW</string>
@@ -259,16 +261,19 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="indicate_mode_ultra_wide">ULTRAWEITWINKEL</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">WEITWINKEL</string>
+    <string name="indicate_mode_wide_angle_selfie">WEITWINKEL-SELFIE</string>
     <string name="internal_storage">Interner Speicher</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Die Wahrzeichenerkennung versorgt Sie mit Informationen über beliebte Wahrzeichen auf der ganzen Welt.&lt;br/>&lt;br/>Installieren Sie die Funktion, um sie zu aktivieren.</string>
-    <string name="landmark_install_over_data">Die Downloadgröße der Wahrzeichenerkennung beträgt 92 MB. Bei der Installation über Mobilfunkdaten können zusätzliche Gebühren anfallen.</string>
-    <string name="landmark_notification_downloading">Wahrzeichenerkennung wird heruntergeladen</string>
-    <string name="landmark_notification_install">Wahrzeichenerkennung installieren</string>
-    <string name="landmark_notification_install_complete">Installation der Wahrzeichenerkennung abgeschlossen</string>
-    <string name="landmark_notification_install_failed">Installation der Wahrzeichenerkennung fehlgeschlagen</string>
+    <string name="landmark_install_message">Die Wahrzeichenerkennung versorgt Sie mit Informationen über beliebte Wahrzeichen auf der ganzen Welt.&lt;br/>&lt;br/>Laden Sie die Wahrzeichendatenbank herunter, um die Funktion zu aktivieren.</string>
+    <string name="landmark_install_over_data">Die Downloadgröße der Wahrzeichendatenbank beträgt 92 MB. Beim Herunterladen über Mobilfunkdaten können zusätzliche Gebühren anfallen.</string>
+    <string name="landmark_notification_downloading">Wahrzeichendatenbank wird heruntergeladen</string>
+    <string name="landmark_notification_install">Wahrzeichendatenbank wird heruntergeladen</string>
+    <string name="landmark_notification_install_complete">Installation der Wahrzeichendatenbank abgeschlossen</string>
+    <string name="landmark_notification_install_failed">Installation der Wahrzeichendatenbank fehlgeschlagen</string>
     <string name="landmark_notification_install_invalid_url">Wahrzeichen-Datenbank nicht verfügbar. Bitte aktualisieren Sie die Kameraversion.</string>
-    <string name="landmark_notification_install_out_of_space">Nicht genug Speicher für die Installation der Wahrzeichenerkennung vorhanden</string>
+    <string name="landmark_notification_install_out_of_space">Nicht genug Speicher für die Installation der Wahrzeichendatenbank vorhanden</string>
+    <string name="landmark_notification_paused">Der Download der Wahrzeichendatenbank wird fortgesetzt, wenn eine Internetverbindung verfügbar ist.</string>
+    <string name="landmark_notification_queued">Die Wahrzeichendatenbank wird heruntergeladen, wenn eine Internetverbindung verfügbar ist.</string>
     <string name="main_setting_amz_barcode">Amazon-Barcodescanner</string>
     <string name="main_setting_amz_privacy">Amazon-Datenschutzhinweis</string>
     <string name="main_setting_amz_terms">Nutzungsbedingungen</string>
@@ -291,6 +296,8 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="main_setting_image_ratio">Fotogröße (hintere Kamera)</string>
     <string name="main_setting_image_ratio_front">Fotogröße (Vorderseite)</string>
     <string name="main_setting_landmark_detection">Wahrzeichenerkennung</string>
+    <string name="main_setting_landmark_version_current">Datenbankversion: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Datenbank nicht installiert</string>
     <string name="main_setting_licenses">Open-Source-Lizenzen</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -322,10 +329,13 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="perm_control_camera_desc">Steuerung der Motorola-Kamera durch diese App zulassen.</string>
     <string name="perm_control_camera_label">Kamera steuern</string>
     <string name="perm_required_alert_button_app_info">App-Info</string>
-    <string name="perm_required_alert_msg">Die Kamera benötigt eine Erlaubnis für den Zugriff auf einige Funktionen auf Ihrem Gerät. Wählen Sie \"Berechtigungen\" in der App-Info, um diese App erneut zu aktivieren.</string>
+    <string name="perm_required_alert_msg">Die Kamera benötigt eine Erlaubnis für den Zugriff auf einige Funktionen auf Ihrem Gerät. Wählen Sie \"Berechtigungen\" in der App-Info zur Reaktivierung.</string>
     <string name="perm_required_alert_title">Berechtigungen erforderlich</string>
     <string name="photos_depth_desc">Verwenden Sie den Tiefeneditor, um den Fokus auszuwählen, den Hintergrund auszutauschen oder einen Bereich auszuwählen, der in Schwarzweiß geändert werden soll.</string>
     <string name="photos_depth_name">Tiefe aktiviert</string>
+    <string name="photos_notification_desc">Holen Sie sich unbegrenzten Speicher mit Google Fotos</string>
+    <string name="photos_notification_title">Sicherung in Google Fotos</string>
+    <string name="qcfa_resolution_description">Restlicht-adaptiv</string>
     <string name="retake">Neu aufnehmen</string>
     <string name="second_10">10 Sek.</string>
     <string name="second_3">3 Sek.</string>
@@ -368,6 +378,7 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="setting_mode_slow_motion">Zeitlupe</string>
     <string name="setting_mode_ultra_wide">Ultraweitwinkel</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Weitwinkel-Selfie</string>
     <string name="setting_off">Aus</string>
     <string name="setting_on">An</string>
     <string name="setting_persist">Halten</string>
@@ -384,20 +395,25 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="setting_timer_dialog_title">TIMER</string>
     <string name="setting_torch">Dauerlicht</string>
     <string name="setting_true">wahr</string>
+    <string name="shortcut_desc_depth">Tiefenfoto</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Intelligente Kamera</string>
+    <string name="smartcam_no_detections">Keine gespeicherten Objekte oder Wahrzeichen</string>
     <string name="storage_location_external">SD-Karte</string>
     <string name="storage_location_internal">Gerät</string>
     <string name="storage_unavailable">Speicher nicht verfügbar</string>
+    <string name="toast_battery_saver">Sie befinden sich im Energiesparmodus, einige Funktionen sind eventuell eingeschränkt.</string>
     <string name="toast_geotag_message_1">Die Standortberechtigung müssen erlaubt werden, um das Speichern des Standorts zuzulassen.</string>
     <string name="toast_geotag_message_2">Die Standorteinstellungen stehen erst zur Verfügung, nachdem der Standortdienst in den Systemeinstellungen aktiviert wurde.</string>
     <string name="tooltip_camera_switch_360">Probieren Sie verschiedene Kameraoptionen aus.</string>
     <string name="tooltip_capture_360">Nehmen Sie ein 360°-Foto oder -Video auf, indem Sie auf diesen Auslöser tippen.</string>
     <string name="tooltip_capture_key_360">Versuchen Sie außerdem, mit dem Auslöser auf der Rückseite des Mod Aufnahmen zu erstellen.</string>
-    <string name="tooltip_dual_camera_depth_photo">Nehmen Sie Fotos mit Zusatz-Infos für spezielle Bearbeitungsfunktionen auf.</string>
     <string name="tooltip_first_use_zoom_button">Tippen Sie hier, um zum Weitwinkel zu wechseln.</string>
     <string name="tooltip_gallery_360">Sehen Sie sich Ihr 360°-Foto oder -Video an, indem Sie nach links wischen.</string>
     <string name="tooltip_minimap_viewfinder">Schwenken Sie das untere Bild nach links oder rechts.</string>
     <string name="tooltip_mode_switch_360">Erstellen Sie 360°-Aufnahmen in verschiedenen Modi.</string>
+    <string name="tooltip_modes_list">Entdecken Sie neue Möglichkeiten zum Aufnehmen von Fotos.</string>
     <string name="tooltip_smart_camera">Tippen, um mehr über das Objekt herauszufinden.</string>
     <string name="tooltip_smart_camera_disable">Sie können dies in den Einstellungen ausschalten.</string>
     <string name="tooltip_spherical_viewfinder">Schwenken oder zoomen Sie, um die Ansicht zu steuern.</string>
@@ -420,6 +436,10 @@ Stimmen Sie hier zu und aktivieren Sie dann die Standorterfassung in den Einstel
     <string name="zoom_hint_full">VOLL</string>
     <string name="zoom_hint_wide">BREIT</string>
     <string name="zoom_pattern">%1$s,%2$s x</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Restlicht-adaptiv</string>
+    <string name="indicate_mode_timelapse">ZEITRAFFER</string>
+    <string name="setting_mode_timelapse">Zeitraffer</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

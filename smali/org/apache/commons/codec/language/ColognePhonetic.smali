@@ -23,65 +23,65 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    const/4 v3, 0x2
+    const/4 v5, 0x2
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     const/4 v0, 0x4
 
     new-array v0, v0, [[C
 
-    new-array v1, v3, [C
+    new-array v1, v5, [C
 
     const/16 v2, 0xc4
 
-    aput-char v2, v1, v4
+    aput-char v2, v1, v3
 
     const/16 v2, 0x41
 
-    aput-char v2, v1, v5
-
-    aput-object v1, v0, v4
-
-    new-array v1, v3, [C
-
-    const/16 v2, 0xdc
-
     aput-char v2, v1, v4
-
-    const/16 v2, 0x55
-
-    aput-char v2, v1, v5
-
-    aput-object v1, v0, v5
-
-    new-array v1, v3, [C
-
-    const/16 v2, 0xd6
-
-    aput-char v2, v1, v4
-
-    const/16 v2, 0x4f
-
-    aput-char v2, v1, v5
 
     aput-object v1, v0, v3
 
-    const/4 v1, 0x3
+    new-array v1, v5, [C
 
-    new-array v2, v3, [C
+    const/16 v2, 0xdc
 
-    const/16 v3, 0xdf
+    aput-char v2, v1, v3
 
-    aput-char v3, v2, v4
+    const/16 v2, 0x55
 
-    const/16 v3, 0x53
+    aput-char v2, v1, v4
 
-    aput-char v3, v2, v5
+    aput-object v1, v0, v4
 
-    aput-object v2, v0, v1
+    new-array v1, v5, [C
+
+    const/16 v2, 0xd6
+
+    aput-char v2, v1, v3
+
+    const/16 v2, 0x4f
+
+    aput-char v2, v1, v4
+
+    aput-object v1, v0, v5
+
+    new-array v1, v5, [C
+
+    const/16 v2, 0xdf
+
+    aput-char v2, v1, v3
+
+    const/16 v2, 0x53
+
+    aput-char v2, v1, v4
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/language/ColognePhonetic;->PREPROCESS_MAP:[[C
 
@@ -274,47 +274,47 @@
 
     new-array v7, v7, [C
 
-    const/4 v8, 0x0
+    const/16 v8, 0x41
 
-    const/16 v9, 0x41
+    const/4 v9, 0x0
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x1
+    const/16 v8, 0x45
 
-    const/16 v9, 0x45
+    const/4 v9, 0x1
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x2
+    const/16 v8, 0x49
 
-    const/16 v9, 0x49
+    const/4 v9, 0x2
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x3
+    const/16 v8, 0x4a
 
-    const/16 v9, 0x4a
+    const/4 v9, 0x3
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x4
+    const/16 v8, 0x4f
 
-    const/16 v9, 0x4f
+    const/4 v9, 0x4
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x5
+    const/16 v8, 0x55
 
-    const/16 v9, 0x55
+    const/4 v9, 0x5
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x6
+    const/16 v8, 0x59
 
-    const/16 v9, 0x59
+    const/4 v9, 0x6
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
     invoke-static {v7, v1}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -390,23 +390,23 @@
 
     new-array v7, v7, [C
 
-    const/4 v8, 0x0
+    const/16 v8, 0x53
 
-    const/16 v9, 0x53
+    const/4 v9, 0x0
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x1
+    const/16 v8, 0x43
 
-    const/16 v9, 0x43
+    const/4 v9, 0x1
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x2
+    const/16 v8, 0x5a
 
-    const/16 v9, 0x5a
+    const/4 v9, 0x2
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
     invoke-static {v7, v0}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -419,29 +419,29 @@
 
     new-array v7, v7, [C
 
-    const/4 v8, 0x0
+    const/16 v8, 0x57
 
-    const/16 v9, 0x57
+    const/4 v9, 0x0
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x1
+    const/16 v8, 0x46
 
-    const/16 v9, 0x46
+    const/4 v9, 0x1
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x2
+    const/16 v8, 0x50
 
-    const/16 v9, 0x50
+    const/4 v9, 0x2
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x3
+    const/16 v8, 0x56
 
-    const/16 v9, 0x56
+    const/4 v9, 0x3
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
     invoke-static {v7, v1}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -453,23 +453,23 @@
 
     new-array v7, v7, [C
 
-    const/4 v8, 0x0
+    const/16 v8, 0x47
 
-    const/16 v9, 0x47
+    const/4 v9, 0x0
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x1
+    const/16 v8, 0x4b
 
-    const/16 v9, 0x4b
+    const/4 v9, 0x1
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x2
+    const/16 v8, 0x51
 
-    const/16 v9, 0x51
+    const/4 v9, 0x2
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
     invoke-static {v7, v1}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -521,47 +521,47 @@
 
     new-array v4, v4, [C
 
-    const/4 v7, 0x0
+    const/16 v7, 0x41
 
-    const/16 v8, 0x41
+    const/4 v8, 0x0
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x1
+    const/16 v7, 0x48
 
-    const/16 v8, 0x48
+    const/4 v8, 0x1
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x2
+    const/16 v7, 0x4f
 
-    const/16 v8, 0x4f
+    const/4 v8, 0x2
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x3
+    const/16 v7, 0x55
 
-    const/16 v8, 0x55
+    const/4 v8, 0x3
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x4
+    const/16 v7, 0x4b
 
-    const/16 v8, 0x4b
+    const/4 v8, 0x4
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x5
+    const/16 v7, 0x51
 
-    const/16 v8, 0x51
+    const/4 v8, 0x5
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x6
+    const/16 v7, 0x58
 
-    const/16 v8, 0x58
+    const/4 v8, 0x6
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
     invoke-static {v4, v0}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -579,23 +579,23 @@
 
     new-array v7, v7, [C
 
-    const/4 v8, 0x0
+    const/16 v8, 0x43
 
-    const/16 v9, 0x43
+    const/4 v9, 0x0
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x1
+    const/16 v8, 0x4b
 
-    const/16 v9, 0x4b
+    const/4 v9, 0x1
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x2
+    const/16 v8, 0x51
 
-    const/16 v9, 0x51
+    const/4 v9, 0x2
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
     invoke-static {v7, v4}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -626,23 +626,23 @@
 
     new-array v0, v0, [C
 
-    const/4 v4, 0x0
+    const/16 v4, 0x54
 
-    const/16 v7, 0x54
+    const/4 v7, 0x0
 
-    aput-char v7, v0, v4
+    aput-char v4, v0, v7
 
-    const/4 v4, 0x1
+    const/16 v4, 0x44
 
-    const/16 v7, 0x44
+    const/4 v7, 0x1
 
-    aput-char v7, v0, v4
+    aput-char v4, v0, v7
 
-    const/4 v4, 0x2
+    const/16 v4, 0x58
 
-    const/16 v7, 0x58
+    const/4 v7, 0x2
 
-    aput-char v7, v0, v4
+    aput-char v4, v0, v7
 
     invoke-static {v0, v1}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -676,17 +676,17 @@
 
     new-array v7, v7, [C
 
-    const/4 v8, 0x0
+    const/16 v8, 0x53
 
-    const/16 v9, 0x53
+    const/4 v9, 0x0
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
-    const/4 v8, 0x1
+    const/16 v8, 0x5a
 
-    const/16 v9, 0x5a
+    const/4 v9, 0x1
 
-    aput-char v9, v7, v8
+    aput-char v8, v7, v9
 
     invoke-static {v7, v4}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 
@@ -701,59 +701,59 @@
 
     new-array v4, v4, [C
 
-    const/4 v7, 0x0
+    const/16 v7, 0x41
 
-    const/16 v8, 0x41
+    const/4 v8, 0x0
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x1
+    const/16 v7, 0x48
 
-    const/16 v8, 0x48
+    const/4 v8, 0x1
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x2
+    const/16 v7, 0x4b
 
-    const/16 v8, 0x4b
+    const/4 v8, 0x2
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x3
+    const/16 v7, 0x4c
 
-    const/16 v8, 0x4c
+    const/4 v8, 0x3
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x4
+    const/16 v7, 0x4f
 
-    const/16 v8, 0x4f
+    const/4 v8, 0x4
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x5
+    const/16 v7, 0x51
 
-    const/16 v8, 0x51
+    const/4 v8, 0x5
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x6
+    const/16 v7, 0x52
 
-    const/16 v8, 0x52
+    const/4 v8, 0x6
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/4 v7, 0x7
+    const/16 v7, 0x55
 
-    const/16 v8, 0x55
+    const/4 v8, 0x7
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
-    const/16 v7, 0x8
+    const/16 v7, 0x58
 
-    const/16 v8, 0x58
+    const/16 v8, 0x8
 
-    aput-char v8, v4, v7
+    aput-char v7, v4, v8
 
     invoke-static {v4, v0}, Lorg/apache/commons/codec/language/ColognePhonetic;->arrayContains([CC)Z
 

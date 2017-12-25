@@ -27,11 +27,11 @@
 .method protected a(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
-    const/4 v2, 0x2
-
     const/4 v0, 0x0
 
     const/16 v4, 0x3f
+
+    const/4 v2, 0x2
 
     if-eqz p1, :cond_1
 
@@ -196,9 +196,9 @@
 .method protected a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
-    const/16 v2, 0x3f
-
     const/4 v0, 0x0
+
+    const/16 v2, 0x3f
 
     if-eqz p1, :cond_0
 

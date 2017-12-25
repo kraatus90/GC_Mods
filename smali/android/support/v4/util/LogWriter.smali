@@ -97,28 +97,28 @@
 .method public write([CII)V
     .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-lt v1, p3, :cond_0
+    if-lt v0, p3, :cond_0
 
     return-void
 
     :cond_0
-    add-int v2, p2, v1
+    add-int v1, p2, v0
 
-    aget-char v0, p1, v2
+    aget-char v1, p1, v1
 
     const/16 v2, 0xa
 
-    if-eq v0, v2, :cond_1
+    if-eq v1, v2, :cond_1
 
     iget-object v2, p0, Landroid/support/v4/util/LogWriter;->mBuilder:Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 

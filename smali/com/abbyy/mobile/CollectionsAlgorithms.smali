@@ -13,7 +13,7 @@
 .end method
 
 .method public static filter(Lcom/abbyy/mobile/Predicate;Ljava/util/Collection;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -45,22 +45,22 @@
     return-void
 
     :cond_1
-    new-instance v1, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v2, "predicate"
+    const-string/jumbo v1, "predicate"
 
-    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_2
-    new-instance v1, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v2, "collection"
+    const-string/jumbo v1, "collection"
 
-    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_3
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;

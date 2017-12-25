@@ -199,53 +199,53 @@
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    const-string/jumbo v1, "clientVersion"
-
     invoke-virtual {p0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getClientVersion()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string/jumbo v2, "clientVersion"
 
-    const-string/jumbo v1, "clientDeviceId"
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     invoke-virtual {p0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getClientDeviceId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string/jumbo v2, "clientDeviceId"
 
-    const-string/jumbo v1, "clientDevice"
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     invoke-virtual {p0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getClientDevice()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string/jumbo v2, "clientDevice"
 
-    const-string/jumbo v1, "clientDeviceVersion"
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     invoke-virtual {p0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getDeviceVersion()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string/jumbo v2, "clientDeviceVersion"
 
-    const-string/jumbo v1, "clientApplicationIdentifier"
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     invoke-virtual {p0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string/jumbo v2, "clientApplicationIdentifier"
 
-    const-string/jumbo v1, "libraryVersion"
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     invoke-virtual {p0}, Lcom/a9/vs/marsoemlibrary/deviceinfo/DeviceInfo;->getClientLibVersion()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string/jumbo v2, "libraryVersion"
+
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

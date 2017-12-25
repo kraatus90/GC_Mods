@@ -38,7 +38,7 @@
 .end method
 
 .method constructor <init>()V
-    .locals 9
+    .locals 10
 
     sget-object v6, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$MinimapViewfinderTooltip;->SIZE:Landroid/util/SizeF;
 
@@ -46,15 +46,17 @@
 
     const-wide/16 v2, 0x4
 
-    const v4, 0x7f080186
+    const v4, 0x7f08019b
 
-    const v5, 0x7f0800b2
+    const v5, 0x7f0800b3
 
     const/4 v8, 0x0
 
+    const/4 v9, 0x1
+
     move-object v1, p0
 
-    invoke-direct/range {v1 .. v8}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ViewfinderTooltip;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;Z)V
+    invoke-direct/range {v1 .. v9}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$ViewfinderTooltip;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;ZZ)V
 
     return-void
 .end method

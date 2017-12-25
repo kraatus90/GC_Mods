@@ -88,7 +88,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200a6
+    const v2, 0x7f0200ae
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -109,7 +109,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0200a5
+    const v2, 0x7f0200ad
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

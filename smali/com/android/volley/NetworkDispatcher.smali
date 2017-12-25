@@ -246,19 +246,19 @@
     :catch_2
     move-exception v1
 
-    const-string/jumbo v4, "Unhandled exception %s"
+    const/4 v4, 0x1
 
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    aput-object v6, v5, v8
+    aput-object v5, v4, v8
 
-    invoke-static {v1, v4, v5}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v5, "Unhandled exception %s"
+
+    invoke-static {v1, v5, v4}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v4, Lcom/android/volley/VolleyError;
 

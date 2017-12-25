@@ -72,9 +72,9 @@
 .method private bufferHeaderValue()V
     .locals 4
 
-    const/4 v3, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v3, 0x0
 
     iput-object v0, p0, Lorg/apache/http/message/BasicHeaderElementIterator;->cursor:Lorg/apache/http/message/ParserCursor;
 

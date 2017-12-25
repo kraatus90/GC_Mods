@@ -39,7 +39,7 @@
 
 # virtual methods
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T2:",
@@ -52,8 +52,6 @@
             "<TT2;>;"
         }
     .end annotation
-
-    const/4 v2, 0x0
 
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
@@ -74,7 +72,9 @@
     return-object v1
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;

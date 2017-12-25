@@ -45,17 +45,6 @@
 
     invoke-virtual {p2, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendTrigger(Lcom/motorola/camera/fsm/camera/Trigger;)V
 
-    :goto_0
-    return-void
-
     :cond_0
-    new-instance v0, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->WAITTING_FOR_SURFACES:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    invoke-direct {v0, v1}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-virtual {p2, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendTrigger(Lcom/motorola/camera/fsm/camera/Trigger;)V
-
-    goto :goto_0
+    return-void
 .end method

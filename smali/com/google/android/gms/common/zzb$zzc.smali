@@ -39,9 +39,9 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Ljava/lang/ref/WeakReference;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 

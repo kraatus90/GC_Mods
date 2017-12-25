@@ -20,7 +20,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/support/v7/widget/ActionMenuPresenter;Landroid/content/Context;Landroid/support/v7/view/menu/SubMenuBuilder;Landroid/view/View;)V
-    .locals 7
+    .locals 6
 
     const/4 v4, 0x0
 
@@ -40,11 +40,11 @@
 
     invoke-virtual {p3}, Landroid/support/v7/view/menu/SubMenuBuilder;->getItem()Landroid/view/MenuItem;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v6}, Landroid/support/v7/view/menu/MenuItemImpl;->isActionButton()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isActionButton()Z
 
     move-result v0
 
@@ -84,9 +84,9 @@
 .method protected onDismiss()V
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
+
+    const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v7/widget/ActionMenuPresenter;->mActionButtonPopup:Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;
 

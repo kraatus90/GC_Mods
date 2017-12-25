@@ -52,31 +52,31 @@
 .end method
 
 .method public getNumBlocks()I
-    .locals 6
+    .locals 5
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v3, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    iget-object v2, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    array-length v4, v3
+    array-length v3, v2
 
-    const/4 v2, 0x0
+    move v1, v0
 
     :goto_0
-    if-lt v2, v4, :cond_0
+    if-lt v0, v3, :cond_0
 
     return v1
 
     :cond_0
-    aget-object v0, v3, v2
+    aget-object v4, v2, v0
 
-    invoke-virtual {v0}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
+    invoke-virtual {v4}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
 
-    move-result v5
+    move-result v4
 
-    add-int/2addr v1, v5
+    add-int/2addr v1, v4
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method

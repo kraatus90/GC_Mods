@@ -401,6 +401,90 @@
     goto :goto_0
 .end method
 
+.method private static embedMetadata(Lcom/motorola/camera/saving/XmpData;Lcom/adobe/xmp/XMPMeta;)V
+    .locals 5
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/saving/XmpData;->mMetadata:Lcom/adobe/xmp/XMPMeta;
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/adobe/xmp/XMPMetaFactory;->create()Lcom/adobe/xmp/XMPMeta;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/motorola/camera/saving/XmpData;->mMetadata:Lcom/adobe/xmp/XMPMeta;
+
+    :cond_1
+    iget-object v1, p0, Lcom/motorola/camera/saving/XmpData;->mMetadata:Lcom/adobe/xmp/XMPMeta;
+
+    :try_start_0
+    new-instance v0, Lcom/adobe/xmp/options/IteratorOptions;
+
+    invoke-direct {v0}, Lcom/adobe/xmp/options/IteratorOptions;-><init>()V
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v2}, Lcom/adobe/xmp/options/IteratorOptions;->setJustLeafnodes(Z)Lcom/adobe/xmp/options/IteratorOptions;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Lcom/adobe/xmp/XMPMeta;->iterator(Lcom/adobe/xmp/options/IteratorOptions;)Lcom/adobe/xmp/XMPIterator;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Lcom/adobe/xmp/XMPIterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v2}, Lcom/adobe/xmp/XMPIterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/adobe/xmp/properties/XMPPropertyInfo;
+
+    invoke-interface {v0}, Lcom/adobe/xmp/properties/XMPPropertyInfo;->getNamespace()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0}, Lcom/adobe/xmp/properties/XMPPropertyInfo;->getPath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-interface {v0}, Lcom/adobe/xmp/properties/XMPPropertyInfo;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v1, v3, v4, v0}, Lcom/adobe/xmp/XMPMeta;->setProperty(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    :try_end_0
+    .catch Lcom/adobe/xmp/XMPException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lcom/motorola/camera/saving/XmpData;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "can\'t embed metadata"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    return-void
+.end method
+
 .method private static embedPanorama(Lcom/motorola/camera/saving/XmpData;Lcom/motorola/camera/saving/XmpData$Panorama;)V
     .locals 4
 
@@ -669,8 +753,100 @@
     goto :goto_1
 .end method
 
+.method private static embedViewPoint(Lcom/motorola/camera/saving/XmpData;Lcom/motorola/camera/saving/ViewPoint;)V
+    .locals 6
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/saving/XmpData;->mMetadata:Lcom/adobe/xmp/XMPMeta;
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/adobe/xmp/XMPMetaFactory;->create()Lcom/adobe/xmp/XMPMeta;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/motorola/camera/saving/XmpData;->mMetadata:Lcom/adobe/xmp/XMPMeta;
+
+    :cond_1
+    iget-object v0, p0, Lcom/motorola/camera/saving/XmpData;->mMetadata:Lcom/adobe/xmp/XMPMeta;
+
+    :try_start_0
+    const-string/jumbo v1, "http://ns.google.com/photos/1.0/panorama/"
+
+    const-string/jumbo v2, "PoseHeadingDegrees"
+
+    const-wide/16 v4, 0x0
+
+    invoke-interface {v0, v1, v2, v4, v5}, Lcom/adobe/xmp/XMPMeta;->setPropertyDouble(Ljava/lang/String;Ljava/lang/String;D)V
+
+    const-string/jumbo v1, "http://ns.google.com/photos/1.0/panorama/"
+
+    const-string/jumbo v2, "PosePitchDegrees"
+
+    const-wide/16 v4, 0x0
+
+    invoke-interface {v0, v1, v2, v4, v5}, Lcom/adobe/xmp/XMPMeta;->setPropertyDouble(Ljava/lang/String;Ljava/lang/String;D)V
+
+    const-string/jumbo v1, "http://ns.google.com/photos/1.0/panorama/"
+
+    const-string/jumbo v2, "InitialViewHeadingDegrees"
+
+    iget v3, p1, Lcom/motorola/camera/saving/ViewPoint;->mHeading:I
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/adobe/xmp/XMPMeta;->setPropertyInteger(Ljava/lang/String;Ljava/lang/String;I)V
+
+    const-string/jumbo v1, "http://ns.google.com/photos/1.0/panorama/"
+
+    const-string/jumbo v2, "InitialViewPitchDegrees"
+
+    iget v3, p1, Lcom/motorola/camera/saving/ViewPoint;->mPitch:I
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/adobe/xmp/XMPMeta;->setPropertyInteger(Ljava/lang/String;Ljava/lang/String;I)V
+    :try_end_0
+    .catch Lcom/adobe/xmp/XMPException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_2
+    :goto_0
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lcom/motorola/camera/saving/XmpData;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "can\'t embed viewpoint metadata"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
+.method public add(Lcom/adobe/xmp/XMPMeta;)Lcom/motorola/camera/saving/XmpData;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/motorola/camera/saving/XmpData;->embedMetadata(Lcom/motorola/camera/saving/XmpData;Lcom/adobe/xmp/XMPMeta;)V
+
+    return-object p0
+.end method
+
+.method public add(Lcom/motorola/camera/saving/ViewPoint;)Lcom/motorola/camera/saving/XmpData;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/motorola/camera/saving/XmpData;->embedViewPoint(Lcom/motorola/camera/saving/XmpData;Lcom/motorola/camera/saving/ViewPoint;)V
+
+    return-object p0
+.end method
+
 .method public add(Lcom/motorola/camera/saving/XmpData$GDepth;)Lcom/motorola/camera/saving/XmpData;
     .locals 0
 

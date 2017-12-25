@@ -84,13 +84,25 @@
 
     iput-object v0, p0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->mListenerSet:Ljava/util/Set;
 
-    new-instance v0, Lcom/motorola/camera/limitfunctionality/PowerSaveHandler;
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/BatterySaverHandler;
 
-    invoke-direct {v0}, Lcom/motorola/camera/limitfunctionality/PowerSaveHandler;-><init>()V
+    invoke-direct {v0}, Lcom/motorola/camera/limitfunctionality/BatterySaverHandler;-><init>()V
 
     iget-object v1, p0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->mLimitHandlerMap:Ljava/util/Map;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/limitfunctionality/PowerSaveHandler;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/limitfunctionality/BatterySaverHandler;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/BatteryHandler;
+
+    invoke-direct {v0}, Lcom/motorola/camera/limitfunctionality/BatteryHandler;-><init>()V
+
+    iget-object v1, p0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->mLimitHandlerMap:Ljava/util/Map;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/limitfunctionality/BatteryHandler;->getName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -166,7 +178,7 @@
 
     check-cast v0, Lcom/motorola/camera/limitfunctionality/LimiterHandler;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/limitfunctionality/LimiterHandler;->getFeatures()Ljava/util/EnumSet;
+    invoke-virtual {v0}, Lcom/motorola/camera/limitfunctionality/LimiterHandler;->getLimitedFeatures()Ljava/util/EnumSet;
 
     move-result-object v4
 
@@ -205,6 +217,62 @@
     move v0, v1
 
     goto :goto_1
+.end method
+
+.method public static declared-synchronized isHandlerLimited(Ljava/lang/String;)Z
+    .locals 2
+
+    const-class v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-static {}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->getInstance()Lcom/motorola/camera/limitfunctionality/FeatureLimiter;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->mLimitHandlerMap:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->getInstance()Lcom/motorola/camera/limitfunctionality/FeatureLimiter;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->mLimitHandlerMap:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/limitfunctionality/LimiterHandler;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/limitfunctionality/LimiterHandler;->isLimited()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v0
+
+    :goto_0
+    monitor-exit v1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method
 
 .method public static declared-synchronized limitFeatures(Ljava/lang/String;Z)V

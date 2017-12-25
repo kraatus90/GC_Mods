@@ -148,7 +148,7 @@
     <string name="cancel">Peruuta</string>
     <string name="capture_failure">Tallennus epäonnistui. Yritä uudelleen.</string>
     <string name="checkbox_do_not_show">Älä näytä uudelleen</string>
-    <string name="cloudsight_terms">Kuvat lähetetään CloudSightiin hakutuloksia varten. &lt;br/>&lt;br/> Jatkamalla käyttöä hyväksyt CloudSightin&lt;a href=%1$s>tietosuojakäytännön&lt;/a>.</string>
+    <string name="cloudsight_terms">Aina kun käytät kohteen tunnistusta, kuva ja sijainti (jos käytössä) lähetetään kolmannelle osapuolelle hakutuloksia varten.&lt;br/>&lt;br/> Jatkamalla käyttöä hyväksyt&lt;a href=%1$s>tietosuojakäytännön&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panoraamakuvaus epäonnistui. Yritä uudelleen.</string>
     <string name="dailog_panorama_not_taken">Panoraamakuvaa ei otettu.</string>
     <string name="dialog_access_sd_fail">Mediaa ei voi tallentaa. SD-kortti ei ole käytettävissä.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Laitetta ei tueta</string>
     <string name="dialog_disagree">En hyväksy</string>
     <string name="dialog_dismiss">Älä näytä uudelleen</string>
+    <string name="dialog_download">Lataa</string>
     <string name="dialog_external_sd_missing">Kuvaa ei voi ottaa. SD-kortti ei ole käytettävissä. Vaihdetaan puhelimen sisäiseen muistiin</string>
     <string name="dialog_first_time_set_pure_raw_message">"Tätä käsittelemätöntä tiedostotyyppiä käytetään valokuvien muokkaamiseen.
 
@@ -247,6 +248,7 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="help_next">Seuraava</string>
     <string name="image_360_desc">Tämä on 360-kuva. Voit muokata kuvaa Moto 360 -editorissa.</string>
     <string name="image_360_name">360-kuva</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">SYVYYSKUVA</string>
     <string name="indicate_mode_mono">TOSI MV</string>
@@ -258,16 +260,19 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="indicate_mode_ultra_wide">ULTRALAAJAKULMA</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">LAAJAKULMA</string>
+    <string name="indicate_mode_wide_angle_selfie">LAAJAKULMA-SELFIE</string>
     <string name="internal_storage">Sisäinen tallennustila</string>
     <string name="kilo_bytes">" kt"</string>
-    <string name="landmark_install_message">Maamerkkien tunnistus tarjoaa tietoja suosituista maamerkeistä eri puolilla maailmaa.&lt;br/>&lt;br/>Asenna ja ota ominaisuus käyttöön.</string>
-    <string name="landmark_install_over_data">Maamerkkien tunnistuksen latauskoko on 92 Mt. Lataaminen mobiiliyhteydellä voi aiheuttaa lisämaksuja.</string>
-    <string name="landmark_notification_downloading">Ladataan Maamerkkien tunnistus</string>
-    <string name="landmark_notification_install">Asennetaan Maamerkkien tunnistus</string>
-    <string name="landmark_notification_install_complete">Maamerkkien tunnistus on asennettu</string>
-    <string name="landmark_notification_install_failed">Maamerkkien tunnistuksen asennus epäonnistui</string>
+    <string name="landmark_install_message">Maamerkkien tunnistus tarjoaa tietoja suosituista maamerkeistä eri puolilla maailmaa.&lt;br/>&lt;br/>Lataa Maamerkkitietokanta, jotta voit ottaa ominaisuuden käyttöön.</string>
+    <string name="landmark_install_over_data">Maamerkkitietokannan latauskoko on 92 Mt. Lataaminen mobiiliyhteydellä voi aiheuttaa lisämaksuja.</string>
+    <string name="landmark_notification_downloading">Ladataan Maamerkkitietokantaa</string>
+    <string name="landmark_notification_install">Asennetaan Maamerkkitietokantaa</string>
+    <string name="landmark_notification_install_complete">Maamerkkitietokannan asennus onnistui</string>
+    <string name="landmark_notification_install_failed">Maamerkkitietokannan asennus epäonnistui</string>
     <string name="landmark_notification_install_invalid_url">Maamerkkitietokanta ei ole käytettävissä, päivitä kamera uusimpaan versioon</string>
-    <string name="landmark_notification_install_out_of_space">Tallennustila ei riitä Maamerkkien tunnistuksen asentamiseen</string>
+    <string name="landmark_notification_install_out_of_space">Tallennustila ei riitä Maamerkkitietokannan asentamiseen</string>
+    <string name="landmark_notification_paused">Maamerkkitietokannan lataus jatkuu, kun internet-yhteys on käytettävissä</string>
+    <string name="landmark_notification_queued">Maamerkkitietokanta latautuu, kun internet-yhteys on käytettävissä</string>
     <string name="main_setting_amz_barcode">Amazonin viivakoodinlukija</string>
     <string name="main_setting_amz_privacy">Amazon-tietosuojailmoitus</string>
     <string name="main_setting_amz_terms">Käyttöehdot</string>
@@ -290,6 +295,8 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="main_setting_image_ratio">Kuvan koko (takakamera)</string>
     <string name="main_setting_image_ratio_front">Kuvan koko (etukamera)</string>
     <string name="main_setting_landmark_detection">Maamerkkien tunnistus</string>
+    <string name="main_setting_landmark_version_current">Tietokannan versio: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Tietokantaa ei ole asennettu</string>
     <string name="main_setting_licenses">Avoimen lähdekoodin lisenssit</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="perm_required_alert_title">Käyttöoikeudet tarvitaan</string>
     <string name="photos_depth_desc">Käytä syvyysmuokkausta, kun haluat valita tarkennuksen, vaihtaa taustan tai muuttaa jonkin alueen mustavalkoiseksi.</string>
     <string name="photos_depth_name">Syvyyskuva</string>
+    <string name="photos_notification_desc">Saat rajattoman tallennustilan Google-kuvat-palvelussa</string>
+    <string name="photos_notification_title">Varmuuskopioi Google-kuviin</string>
+    <string name="qcfa_resolution_description">Mukautuva hämärätila</string>
     <string name="retake">Kuvaa uudelleen</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="setting_mode_slow_motion">Hidas liike</string>
     <string name="setting_mode_ultra_wide">Ultralaajakulma</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Laajakulma-selfie</string>
     <string name="setting_off">Ei käytössä</string>
     <string name="setting_on">Käytössä</string>
     <string name="setting_persist">Pitoon</string>
@@ -383,20 +394,25 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="setting_timer_dialog_title">AJASTIN</string>
     <string name="setting_torch">Lamppu</string>
     <string name="setting_true">tosi</string>
+    <string name="shortcut_desc_depth">Syvyyskuva</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Älykamera</string>
+    <string name="smartcam_no_detections">Ei tallennettuja kohteita tai maamerkkejä</string>
     <string name="storage_location_external">SD-kortti</string>
     <string name="storage_location_internal">Puhelin</string>
     <string name="storage_unavailable">Tallennustila ei ole käytettävissä</string>
+    <string name="toast_battery_saver">Laite on virransäästötilassa, joten tietyt ominaisuudet eivät ole käytettävissä</string>
     <string name="toast_geotag_message_1">Sinun on myönnettävä sijaintitietojen käyttöoikeus, jotta sijainti voidaan tallentaa.</string>
     <string name="toast_geotag_message_2">Sijaintiasetus astuu voimaan vasta, kun järjestelmän sijaintiasetus on otettu käyttöön.</string>
     <string name="tooltip_camera_switch_360">Kokeile erilaisia kamera-asetuksia.</string>
     <string name="tooltip_capture_360">Ota 360 asteen kuva tai video napauttamalla tätä suljinpainiketta.</string>
     <string name="tooltip_capture_key_360">Voit ottaa kuvan myös napauttamalla Mod-lisäosan takapaneelissa olevaa suljinpainiketta.</string>
-    <string name="tooltip_dual_camera_depth_photo">Tallenna kuviin lisätietoja, jotta voit käyttää erityisiä muokkausominaisuuksia.</string>
     <string name="tooltip_first_use_zoom_button">Vaihda laajakulmaan napauttamalla tätä.</string>
     <string name="tooltip_gallery_360">Esikatselu 360 asteen valokuvaa tai videota pyyhkäisemällä vasemmalle.</string>
     <string name="tooltip_minimap_viewfinder">Panoroi alhaalla näkyvää kuvaa vasemmalle tai oikealle.</string>
     <string name="tooltip_mode_switch_360">Ota 360 asteen kuvia eri kuvaustiloissa!</string>
+    <string name="tooltip_modes_list">Tutustu uusiin valokuvaustapoihin.</string>
     <string name="tooltip_smart_camera">Saat lisätietoja kohteesta napauttamalla.</string>
     <string name="tooltip_smart_camera_disable">Voit poistaa toiminnon käytöstä Asetuksissa.</string>
     <string name="tooltip_spherical_viewfinder">Voit panoroida ja zoomata näkymää.</string>
@@ -419,4 +435,10 @@ Valitse alapuolelta hyväksyvä vaihtoehto ja ota sitten Sijainti käyttöön As
     <string name="zoom_hint_full">TÄYSI</string>
     <string name="zoom_hint_wide">LAAJA</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">INTERVALLIKUVAUS</string>
+    <string name="setting_mode_timelapse">Intervallikuvaus</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

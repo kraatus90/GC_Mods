@@ -90,9 +90,7 @@
 .end method
 
 .method public static getSignedURLWithCannedPolicy(Ljava/lang/String;Ljava/lang/String;Ljava/security/PrivateKey;Ljava/util/Date;)Ljava/lang/String;
-    .locals 7
-
-    const/4 v6, 0x0
+    .locals 6
 
     :try_start_0
     invoke-static {p0, p3}, Lcom/a9/vs/marsoemlibrary/security/CloudFrontUrlSignerUtil;->buildCannedPolicy(Ljava/lang/String;Ljava/util/Date;)Ljava/lang/String;
@@ -198,13 +196,13 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v6
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method private static loadPrivateKey(Ljava/io/File;)Ljava/security/PrivateKey;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -238,7 +236,9 @@
 
     if-nez v0, :cond_1
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     new-instance v0, Ljava/io/FileInputStream;
@@ -328,9 +328,7 @@
 .end method
 
 .method private static makeBytesUrlSafe([B)Ljava/lang/String;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -390,7 +388,9 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :sswitch_1
     const/16 v2, 0x5f
@@ -418,9 +418,7 @@
 .end method
 
 .method private static signWithSha1RSA([BLjava/security/PrivateKey;)[B
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     :try_start_0
     const-string/jumbo v0, "SHA1withRSA"
@@ -452,5 +450,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

@@ -42,14 +42,12 @@
 .end method
 
 .method public getArguments()Landroid/os/Bundle;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
-
-    const/4 v0, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -60,17 +58,17 @@
     move-result-object v2
 
     :try_start_0
-    const-string/jumbo v3, "com.google.android.gms.dynamic.IFragmentWrapper"
+    const-string/jumbo v0, "com.google.android.gms.dynamic.IFragmentWrapper"
 
-    invoke-virtual {v1, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/google/android/gms/dynamic/zzc$zza$zza;->zzlW:Landroid/os/IBinder;
+    iget-object v0, p0, Lcom/google/android/gms/dynamic/zzc$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v4, 0x3
+    const/4 v3, 0x3
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-interface {v3, v4, v1, v2, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     invoke-virtual {v2}, Landroid/os/Parcel;->readException()V
 
@@ -78,9 +76,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
 
     :goto_0
     invoke-virtual {v2}, Landroid/os/Parcel;->recycle()V

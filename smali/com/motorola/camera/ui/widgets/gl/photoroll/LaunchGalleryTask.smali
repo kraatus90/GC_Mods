@@ -19,6 +19,8 @@
 # static fields
 .field private static final ACTION_REVIEW:Ljava/lang/String; = "com.android.camera.action.REVIEW"
 
+.field public static final EXTRA_BRIGHTNESS:Ljava/lang/String; = "brightness"
+
 .field private static final IMAGE:Ljava/lang/String; = "image/*"
 
 .field private static final PACKAGE_GOOGLE_PHOTOS:Ljava/lang/String; = "com.google.android.apps.photos"
@@ -420,6 +422,14 @@
     move-result-object v0
 
     goto :goto_0
+.end method
+
+.method public static getPackageGooglePhotos()Ljava/lang/String;
+    .locals 1
+
+    const-string/jumbo v0, "com.google.android.apps.photos"
+
+    return-object v0
 .end method
 
 

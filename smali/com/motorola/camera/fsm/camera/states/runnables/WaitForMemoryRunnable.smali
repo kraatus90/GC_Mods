@@ -64,7 +64,7 @@
     return-object v0
 
     :cond_0
-    const v2, 0x7f0800bd
+    const v2, 0x7f0800be
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -78,7 +78,7 @@
 
     if-ne v0, v4, :cond_1
 
-    const v0, 0x7f0800fd
+    const v0, 0x7f080101
 
     :goto_1
     invoke-virtual {v1, v0}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
@@ -96,7 +96,7 @@
     goto :goto_0
 
     :cond_1
-    const v0, 0x7f0800d0
+    const v0, 0x7f0800d1
 
     goto :goto_1
 .end method
@@ -134,11 +134,11 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lcom/motorola/camera/Battery;->canStartCapture()Z
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->VIDEO_RECORD:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
 
     move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 

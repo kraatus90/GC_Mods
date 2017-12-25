@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">ہوم پر نیویگیٹ کریں</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">اوپر نیویگیٹ کریں</string>
-    <string name="abc_action_menu_overflow_description">مزید اختیارات</string>
-    <string name="abc_action_mode_done">ہو گیا</string>
-    <string name="abc_activity_chooser_view_see_all">سبھی دیکھیں</string>
-    <string name="abc_activitychooserview_choose_application">ایک ایپ منتخب کریں</string>
-    <string name="abc_capital_off">آف</string>
-    <string name="abc_capital_on">آن</string>
-    <string name="abc_search_hint">تلاش کریں…</string>
-    <string name="abc_searchview_description_clear">استفسار صاف کریں</string>
-    <string name="abc_searchview_description_query">استفسار تلاش کریں</string>
-    <string name="abc_searchview_description_search">تلاش کریں</string>
-    <string name="abc_searchview_description_submit">استفسار جمع کرائیں</string>
-    <string name="abc_searchview_description_voice">صوتی تلاش</string>
-    <string name="abc_shareactionprovider_share_with">اشتراک کریں مع</string>
-    <string name="abc_shareactionprovider_share_with_application">‏%s کے ساتھ اشتراک کریں</string>
-    <string name="abc_toolbar_collapse_description">سکیڑیں</string>
     <string name="common_android_wear_notification_needs_update_text">‏ایک اپیلیکیشن کو Android Wear ایپ کیلئے ایک اپ ڈیٹ درکار ہے۔</string>
     <string name="common_android_wear_update_text">‏جب تک آپ Android Wear ایپ کو اپ ڈیٹ نہیں کر لیتے یہ ایپ نہیں چلے گی۔</string>
     <string name="common_android_wear_update_title">‏Android Wear کو اپ ڈیٹ کریں</string>
@@ -50,15 +31,13 @@
     <string name="common_signin_button_text">سائن ان کریں</string>
     <string name="common_signin_button_text_long">‏Google کے ساتھ سائن ان کریں</string>
     <string name="commono_google_play_services_api_unavailable_text">‏اس ایپ کیلئے ایک یا مزید Google Play سروسز درکار ہس جو فی الحال دستیاب نہیں ہے۔ براہ کرم مدد کیلئے ڈیولپر سے رابطہ کریں۔</string>
-    <string name="search_menu_title">تلاش</string>
-    <string name="status_bar_notification_info_overflow">‎999+‎</string>
     <string name="act_name_camcorder">کیم کورڈر</string>
-    <string name="act_name_camera">کیمرہ</string>
+    <string name="act_name_camera">کیمرا</string>
     <string name="action_licenses">اوپن سورس لائسنسز</string>
     <string name="amazon_terms">مماثل مصنوعات تلاش کرنے کے لیے آپ کی تصاویر Amazon کو بھیجے جائیں گے۔ Amazon مصنوعات فراہم کرنے اور اپنی خدمات میں بہتری کے لیے ان تصاویر پر کارروائی کرتا ہے۔&lt;br/>&lt;br/> جاری رکھنے کا مطلب آپ Amazon کے &lt;a href=%1$s>شرائط استعمال&lt;/a> اور &lt;a href=%2$s> رازداری نوٹس&lt;/a> سے اتفاق کرتے ہیں۔</string>
     <string name="android_flashlight_app">انڈرائیڈ فلیش لائٹ</string>
-    <string name="app_name">کیمرہ</string>
-    <string name="app_test_name">کیمرہ کی جانچ</string>
+    <string name="app_name">کیمرا</string>
+    <string name="app_test_name">کیمرا کی جانچ</string>
     <string name="available">دستیاب</string>
     <string name="aware_action_cancel">منسوخ کریں</string>
     <string name="aware_action_clipboard">کلپ بورڈ میں نقل کرلی گئی</string>
@@ -148,20 +127,20 @@
     <string name="cancel">منسوخ کریں</string>
     <string name="capture_failure">تصویر کھیچنا ناکام ہوگيا۔ دوبارہ کوشش کریں۔</string>
     <string name="checkbox_do_not_show">دوبارہ نہ دکھائیں</string>
-    <string name="cloudsight_terms">تلاش نتائج فراہم کرنے کے لیے آپ کی تصاویر CloudSight پر بھیجی جائے گی۔ &lt;br/>&lt;br/> جاری رکھنے کا مطلب آپ CloudSight&lt;a href=%1$s>کی راز داری پالیسی&lt;/a>سے اتفاق کرتے ہیں۔</string>
+    <string name="cloudsight_terms">آپ جب بھی آبجیکٹ کی شناخت استعمال کرتے ہیں، نقش اور محل وقوع (اگر اہل ہے) تلاش نتائج فراہم کرنے کے لیے فریق ثالث کو بھیجا جائے گا۔&lt;br/>&lt;br/> جاری رکھنے کا مطلب، آپ&lt;a href=%1$s>راز داری پالیسی&lt;/a>سے اتفاق کرتے ہیں۔</string>
     <string name="dailog_panorama_failed">پینوراما ناکام ہوگیا۔ براہ کرم پھر سے کوشش کریں۔</string>
     <string name="dailog_panorama_not_taken">پینوراما تصویر نہیں لی گئی۔</string>
     <string name="dialog_access_sd_fail">میڈیا کیپچر کرنے کے قابل نہیں۔ SD کارڈ تک رسائی نہیں کرسکتا۔</string>
-    <string name="dialog_actions_tutorial_message">ویساہی موشن سامنے کے کیمرہ سے بھی سوئچ کرتا ہے۔</string>
+    <string name="dialog_actions_tutorial_message">ویساہی موشن سامنے کے کیمرا سے بھی سوئچ کرتا ہے۔</string>
     <string name="dialog_actions_tutorial_title">بہت اچھا!</string>
     <string name="dialog_activity_not_found">سرگرمی نہیں ملی۔</string>
     <string name="dialog_agree">متفق</string>
     <string name="dialog_battery_drop">کمزر بیٹری! کیپچر روکنا۔</string>
     <string name="dialog_battery_low">کمزر بیٹری! کیپچر کرنا شروع نہیں کرسکتے۔</string>
-    <string name="dialog_camera_error">براہ کرم کیمرہ پھر سے اسٹارٹ کریں۔</string>
+    <string name="dialog_camera_error">براہ کرم کیمرا پھر سے اسٹارٹ کریں۔</string>
     <string name="dialog_camera_error_disabled">کیمرا آپ کے منتظم کے ذریعہ نااہل کردیا گیا ہے۔</string>
     <string name="dialog_camera_error_disabled_title">کیمرا نااہل کردیا گیا</string>
-    <string name="dialog_camera_error_locked_by_another_process">کیمرہ استعمال نہیں کرسکتے۔ یہ یقینی بنائیں کہ %1$s آف ہے اور کیمرہ استعمال کئے جاسکنے والے کسی بھی ایپس کو بند کریں۔ اگر مسلہ جاری رہتا ہے، تو براہ کرم اپنے فون کو پھر سے اسٹارٹ کریں۔</string>
+    <string name="dialog_camera_error_locked_by_another_process">کیمرا استعمال نہیں کرسکتے۔ یہ یقینی بنائیں کہ %1$s آف ہے اور کیمرا استعمال کئے جاسکنے والے کسی بھی ایپس کو بند کریں۔ اگر مسلہ جاری رہتا ہے، تو براہ کرم اپنے فون کو پھر سے اسٹارٹ کریں۔</string>
     <string name="dialog_camera_error_open">کیمرا اسٹارٹ کرنے سے قاصر۔ اگر یہ عمل دوہراتا ہے تو براہ کرم اپنے فون کو پاور آف کریں اور پھر سے اسٹارٹ کریں۔</string>
     <string name="dialog_camera_error_open_title">مصروف کیمرا</string>
     <string name="dialog_camera_error_title">کیمرا کی غلطی</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">آلہ معاون نہیں ہے</string>
     <string name="dialog_disagree">غیر متفق</string>
     <string name="dialog_dismiss">دوبارہ نہ دکھائیں</string>
+    <string name="dialog_download">ڈاؤن لوڈ کریں</string>
     <string name="dialog_external_sd_missing">تصویر کیپچر نہیں کرسکتے۔ SD کارڈ قابل رسائی نہیں ہے۔ اندورنی فون اسٹوریج میں سوئچ کرنا</string>
     <string name="dialog_first_time_set_pure_raw_message">"اس غیرعمل کردہ فائل کی قسم کو پیشہ ورانہ طور پر تصویر میں تدوین کرنے کے لیے استعمال کیاجاتاہے۔
 
@@ -185,7 +165,7 @@
     <string name="dialog_geotag_title_3">سسٹم محل وقوع آف ہے</string>
     <string name="dialog_got_it">سمجھ آ گئی</string>
     <string name="dialog_hold_portrait">مثالی Moto 360 Camera کا تجربہ کے لیے عمودی انداز میں ہولڈ کریں</string>
-    <string name="dialog_hold_steady">کیمرہ کو مستحکم پکڑیں</string>
+    <string name="dialog_hold_steady">کیمرا کو مستحکم پکڑیں</string>
     <string name="dialog_im_in">میں ہوں</string>
     <string name="dialog_install">انسٹال کریں</string>
     <string name="dialog_learn_more">مزید جانیں</string>
@@ -218,10 +198,10 @@
     <string name="help_desc_amazon_barcode">‏Amazon پر فوری طورپر مصنوعہ تلاش کرنے کے لیے اپنا کیمرا کسی بارکوڈ کے بس سامنے رکھیں۔</string>
     <string name="help_desc_anywhere">تصویر لینے کے لیے کسی جگہ ٹیپ کریں، یا متعدد شاٹس کے لیے ٹیپ کرکے ہولڈ کریں۔</string>
     <string name="help_desc_dual_depth">اضافی ڈیٹا کی تصویر کھنچیں جو آپ کو پس منظر باہر پھیرنے، رنگ اسپلیش شامل کرنے، یا آپ کے اسنیپ تصویر کے بعد فوکس تبدیل کرنے کی اجازت دیتا ہے۔</string>
-    <string name="help_desc_dual_mono">کیمرہ کی بناوٹ کے ذریعے زیادہ پروفیشنل شباہت والی تصاویر خصوصا سیاہ و سفید رنگ میں عمدہ تصویر کھنچیں۔</string>
+    <string name="help_desc_dual_mono">کیمرا کی بناوٹ کے ذریعے زیادہ پروفیشنل شباہت والی تصاویر خصوصا سیاہ و سفید رنگ میں عمدہ تصویر کھنچیں۔</string>
     <string name="help_desc_dual_result">اس بات کو یقینی بنائیں کہ آپ اپنے موضوع کے 1.5 میٹر (5 فٹ) کے اندر ہیں۔ اگر نمایا کردہ طریقے اور موضوع میں کوئی پریشانی نہیں ہے تو یہ بہت اچھی بات ہے۔</string>
     <string name="help_desc_quick">کیمرا کھولنے یا سامنے اور پیچھے کے کیمروں میں سوئچ کرنے کے لیے دوبار موڑیں۔</string>
-    <string name="help_desc_quick_double_tap_pwr">کیمرہ کھولنے کے لیے پاور بٹن پر دوہری تھپکی دیں۔</string>
+    <string name="help_desc_quick_double_tap_pwr">کیمرا کھولنے کے لیے پاور بٹن پر دوہری تھپکی دیں۔</string>
     <string name="help_desc_smart_camera">آپ کا کیمرا آبجیکٹس اور لینڈ مارکس کی شناخت کرتا ہے۔ یہ QR کوڈز، کاروباری کارڈز، اور بارکوڈز اسکین بھی کرسکتا ہے۔</string>
     <string name="help_desc_smart_camera_landmark_only">آپ کا کیمرا لینڈ مارکس کی شناخت کرتا ہے۔ یہ QR کوڈز، کاروباری کارڈز، اور بارکوڈز کو بھی اسکین کرسکتا ہے۔</string>
     <string name="help_desc_zoom">زوم کرنے کے لیے اوپر نیچے گھسیٹیں۔</string>
@@ -234,7 +214,7 @@
     <string name="help_dtfe_scan_header">اسکین کریں</string>
     <string name="help_dtfe_scan_header_no_bcard">‏QR اور بارکوڈ اسکین</string>
     <string name="help_dtfe_scan_summary">شئے پر آسانی سے کیمرا رکھ کر QR کوڈ، بار کوڈ اور بزنس کارڈ اسکین کریں۔</string>
-    <string name="help_dtfe_scan_summary_no_bcard">شئے پر آسانی سے کیمرہ رکھ کر QR کوڈ اور بار کوڈ اسکین کریں۔</string>
+    <string name="help_dtfe_scan_summary_no_bcard">شئے پر آسانی سے کیمرا رکھ کر QR کوڈ اور بار کوڈ اسکین کریں۔</string>
     <string name="help_header_amazon_barcode">‏Amazon پر مصنوعات تلاش کریں</string>
     <string name="help_header_anywhere">تصویر لیں</string>
     <string name="help_header_dual_depth">ڈیپتھ سے زیادہ کریں</string>
@@ -247,6 +227,7 @@
     <string name="help_next">اگلا</string>
     <string name="image_360_desc">یہ 360 تصویر ہے۔ آپ Moto 360 ایڈیٹر کے ذریعے یہ تصویر تدوین کرسکتے ہیں۔</string>
     <string name="image_360_name">360 تصویر</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">گہرائی فعال ہے</string>
     <string name="indicate_mode_mono">درست سیاہ و سفید</string>
@@ -258,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">الٹرا کا وسیع زاویہ</string>
     <string name="indicate_mode_video">ویڈیو</string>
     <string name="indicate_mode_wide_angle">وائڈ زاویہ</string>
+    <string name="indicate_mode_wide_angle_selfie">وسیع زاویہ والی سیلفی</string>
     <string name="internal_storage">داخلی اسٹوریج</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">لینڈ مارکس کی شناخت دنیا بھرکے مشہور لینڈ مارک کے متعلق معلومات پیش کرتا ہے۔ یہ خصوصیت اہل بنانے کے لیے &lt;br/>&lt;br/> تنصیب کریں۔</string>
-    <string name="landmark_install_over_data">لینڈ مارک کی شناخت ڈاؤن لوڈ کی سائز 92 MB ہے۔ اسے موبائل ڈیٹا سے تنصیب کرنے سے اضافی ڈیٹا چارجز عائد ہوسکتے ہیں۔</string>
-    <string name="landmark_notification_downloading">لینڈ مارک کی شناخت ڈاؤن لوڈ کیا جارہا ہے</string>
-    <string name="landmark_notification_install">لینڈ مارک کی شناخت تنصیب کی جارہی ہے</string>
-    <string name="landmark_notification_install_complete">لینڈ مارک شناخت کی تنصیب کاری مکمل ہوگئی</string>
-    <string name="landmark_notification_install_failed">لینڈ مارک شناخت کی تنصیب کاری ناکام ہوگئی</string>
+    <string name="landmark_install_message">لینڈ مارک کی شناخت دنیا بھر کے مشہور لینڈ مارکس کے متعلق معلومات پیش کرتا ہے۔ یہ خصوصیت اہل بنانے کے لیے&lt;br/>&lt;br/>لینڈ مارک ڈیٹا بیس ڈاؤن لوڈ کریں۔</string>
+    <string name="landmark_install_over_data">لینڈ مارک ڈیٹا بیس کی سائز 92 MB ہے۔ اسے موبائل ڈیٹا کے ذریعہ ڈاؤن لوڈ کرنے سے اضافی ڈیٹا چارجز عائد ہوسکتے ہیں۔</string>
+    <string name="landmark_notification_downloading">لینڈ مارک ڈیٹا بیس ڈاؤن لوڈ کیا جارہا ہے</string>
+    <string name="landmark_notification_install">لینڈ مارک ڈیٹا بیس تنصیب کی جارہی ہے</string>
+    <string name="landmark_notification_install_complete">لینڈ مارک ڈیٹا بیس کی تنصیب کاری مکمل</string>
+    <string name="landmark_notification_install_failed">لینڈ مارک ڈیٹا بیس کی تنصیب کاری ناکام</string>
     <string name="landmark_notification_install_invalid_url">لینڈمارک ڈیٹا بیس دستیاب نہیں ہے، براہ کرم تازہ ترین کیمرا ورژن میں تازہ کاری کریں</string>
-    <string name="landmark_notification_install_out_of_space">لینڈ مارک کی شناخت تنصیب کرنے کے لیے ذخیرہ میں دستیاب جگہ ناکافی ہے</string>
+    <string name="landmark_notification_install_out_of_space">لینڈ مارک ڈیٹا بیس کو تنصیب کرنے کے لیے ذخیرہ میں دستیاب جگہ ناکافی ہے</string>
+    <string name="landmark_notification_paused">انٹرنیٹ دستیاب ہونے پر لینڈ مارک ڈیٹا بیس ڈاؤن لوڈ ہونا جاری ہوجائے گا</string>
+    <string name="landmark_notification_queued">انٹرنیٹ دستیاب ہونے پر لینڈ مارک ڈیٹا بیس ڈاؤن لوڈ ہونا شروع ہوجائے گا</string>
     <string name="main_setting_amz_barcode">‏Amazon بارکوڈ اسکینر</string>
     <string name="main_setting_amz_privacy">‏Amazon رازداری نوٹس</string>
     <string name="main_setting_amz_terms">شرائط استعمال</string>
@@ -290,6 +274,8 @@
     <string name="main_setting_image_ratio">فوٹو سائز (پیچھے)</string>
     <string name="main_setting_image_ratio_front">فوٹو سائز (سامنے)</string>
     <string name="main_setting_landmark_detection">لینڈ مارک کی شناخت</string>
+    <string name="main_setting_landmark_version_current">ڈیٹا بیس ورژن: %s</string>
+    <string name="main_setting_landmark_version_not_installed">ڈیٹا بیس تنصیب کیا ہوا نہیں ہے</string>
     <string name="main_setting_licenses">اوپن سورس لائسنسز</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -297,7 +283,7 @@
     <string name="main_setting_object_privacy">رازداری کی پالیسی</string>
     <string name="main_setting_post_capture_review">کیپچر جائزہ پوسٹ کریں</string>
     <string name="main_setting_quick_launch">فوری کیپچر</string>
-    <string name="main_setting_quick_launch_double_tap_pwr_summary">کیمرہ کھولنے کے لیے پاور بٹن پر دوہری تھپکی دیں</string>
+    <string name="main_setting_quick_launch_double_tap_pwr_summary">کیمرا کھولنے کے لیے پاور بٹن پر دوہری تھپکی دیں</string>
     <string name="main_setting_quick_launch_summary">کیمرا کھولنے یا سامنے اور پیچھے کے کیمروں میں سوئچ کرنے کے لیے دوبار موڑیں</string>
     <string name="main_setting_slow_motion_size">سُست حرکت کا سائز (پیچھے)</string>
     <string name="main_setting_slow_motion_size_front">سُست حرکت کا سائز (سامنے)</string>
@@ -318,13 +304,16 @@
     <string name="mega_pixels">MP</string>
     <string name="original_shot_desc">کوئی دوسرا شاٹ ہے۔ہم نے اس لمحہ کے لیے ایک بہترین تصویر کیپچر کی ہے۔</string>
     <string name="original_shot_name">اصل شاٹ</string>
-    <string name="perm_control_camera_desc">Motorola کے کیمرہ پر کنٹرول کرنے کے لیے اس ایپ کو اجازت دیں۔</string>
+    <string name="perm_control_camera_desc">Motorola کے کیمرا پر کنٹرول کرنے کے لیے اس ایپ کو اجازت دیں۔</string>
     <string name="perm_control_camera_label">کیمرا پر کنٹرول کریں</string>
     <string name="perm_required_alert_button_app_info">ایپ معلومات</string>
     <string name="perm_required_alert_msg">کیمرا کو آپ کے آلہ پر کچھ چیزوں تک رسائی کے لیے اجازت کی ضرورت ہے۔ ایپ معلومات میں دوبارہ اہل کرنے کے لیے \"اجازتیں\" منتخب کریں۔</string>
     <string name="perm_required_alert_title">اجازتوں کی ضرورت</string>
     <string name="photos_depth_desc">فوکس منتخب کرنے، پس منظر کو بدلنے یا پچھلے حصہ کو سیاہ اور سفید میں تبدیل کرنے کے لیے ڈیپٹھ ایڈیٹر کا استعمال کریں۔</string>
     <string name="photos_depth_name">ڈیبتھ اہل ہوگيا</string>
+    <string name="photos_notification_desc">‏Google Photos کے ذریعہ غیر محدود ذخیرہ حاصل کریں</string>
+    <string name="photos_notification_title">‏Google Photos پر بیک اپ لیں</string>
+    <string name="qcfa_resolution_description">موافق کم روشنی</string>
     <string name="retake">دوبارہ لیں</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +356,7 @@
     <string name="setting_mode_slow_motion">سست رفتار</string>
     <string name="setting_mode_ultra_wide">الٹرا کا وسیع زاویہ</string>
     <string name="setting_mode_video">ویڈیو</string>
+    <string name="setting_mode_wide_angle_selfie">وسیع زاویہ والی سیلفی</string>
     <string name="setting_off">آف</string>
     <string name="setting_on">آن</string>
     <string name="setting_persist">ہولڈ کریں</string>
@@ -383,20 +373,25 @@
     <string name="setting_timer_dialog_title">ٹائمر</string>
     <string name="setting_torch">ٹارچ</string>
     <string name="setting_true">سچ</string>
+    <string name="shortcut_desc_depth">ڈیپتھ تصویر</string>
+    <string name="shortcut_desc_selfie">سیلفی</string>
+    <string name="shortcut_desc_video">ویڈیو</string>
     <string name="smartcam_landmark_notification_title">اسمارٹ کیمرا</string>
+    <string name="smartcam_no_detections">کوئی محفوظ کردہ آبجیکٹس یا لینڈ مارکس نہیں ہیں</string>
     <string name="storage_location_external">‏SD کارڈ</string>
     <string name="storage_location_internal">فون</string>
     <string name="storage_unavailable">اسٹوریج غیر دستیاب</string>
+    <string name="toast_battery_saver">آپ فی الحال پاور بچت موڈ میں ہیں، کچھ خصوصیات محدود ہوسکتی ہیں</string>
     <string name="toast_geotag_message_1">آپ کو مقام محفوظ کرنا اہل کرنے کے لیے مقام کی اجازت کی منظوری دینی ضروری ہے۔</string>
     <string name="toast_geotag_message_2">محل وقوع کی سیٹنگ صرف سسٹم محل وقوع سیٹنگ کے اہل ہونے پر ہی نافذ ہوتی ہے۔</string>
-    <string name="tooltip_camera_switch_360">مختلف کیمرہ آپشنز میں سوئچ کرنے کی کوشش کریں۔</string>
+    <string name="tooltip_camera_switch_360">مختلف کیمرا آپشنز میں سوئچ کرنے کی کوشش کریں۔</string>
     <string name="tooltip_capture_360">اس شٹر بٹن پر تھپکی دے کے 360° تصویر یا ویڈیو کیپچر کرنے کی کوشش کریں۔</string>
-    <string name="tooltip_capture_key_360">اس کے علاوہ موڈ کے پچھلے حصہ پر شٹر بٹن کے ذریعے کیپچر کرنے کی کوشش کریں۔</string>
-    <string name="tooltip_dual_camera_depth_photo">خاص تدوینی خصوصیات اہل کرکے اضافی معلومات کے ساتھ تصاویر کھنچیں۔</string>
+    <string name="tooltip_capture_key_360">موڈ کے پچھلے حصہ پر موجود شٹر بٹن سے بھی کیپچر کرنے کی کوشش کریں۔</string>
     <string name="tooltip_first_use_zoom_button">وسیع زاویہ میں سوئچ کرنے کے لیے یہاں ٹیپ کریں۔</string>
     <string name="tooltip_gallery_360">دیکھیں کہ آپ کا 360° تصویر یا ویڈیو بائیں جانب سوائپ کرنے سے کیسے باہر ہوگیا۔</string>
     <string name="tooltip_minimap_viewfinder">تصویر کے نچلے حصہ کو دائیں یا بائیں پین کریں۔</string>
     <string name="tooltip_mode_switch_360">مختلف موڈز میں 360° کیپچر کرنے کی کوشش کریں!</string>
+    <string name="tooltip_modes_list">اپنی تصاویر کھینچنے کے نئے طریقے دریافت کریں۔</string>
     <string name="tooltip_smart_camera">آبجیکٹ کے متعلق مزید تلاش کے لیے ٹیپ کریں۔</string>
     <string name="tooltip_smart_camera_disable">آپ اسے ترتیبات میں آف کرسکتے ہیں۔</string>
     <string name="tooltip_spherical_viewfinder">منظر کو کنٹرول کرنے کے لیے پین یا زوم ان اور زوم آؤٹ کریں۔</string>
@@ -419,4 +414,10 @@
     <string name="zoom_hint_full">بھرا ہوا</string>
     <string name="zoom_hint_wide">وسیع</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">ٹائم لیپس</string>
+    <string name="setting_mode_timelapse">ٹائم لیپس</string>
+    <string name="timelapse_config_16x">‏16X</string>
+    <string name="timelapse_config_32x">‏32X</string>
+    <string name="timelapse_config_4x">‏4X</string>
+    <string name="timelapse_config_8x">‏8X</string>
 </resources>

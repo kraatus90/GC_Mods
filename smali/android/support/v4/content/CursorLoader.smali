@@ -122,9 +122,9 @@
 
     invoke-virtual {p0}, Landroid/support/v4/content/CursorLoader;->isReset()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroid/support/v4/content/CursorLoader;->mCursor:Landroid/database/Cursor;
 

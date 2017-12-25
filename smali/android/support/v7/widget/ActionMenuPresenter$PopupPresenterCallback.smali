@@ -35,18 +35,18 @@
 
 # virtual methods
 .method public onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    instance-of v1, p1, Landroid/support/v7/view/menu/SubMenuBuilder;
+    instance-of v0, p1, Landroid/support/v7/view/menu/SubMenuBuilder;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     :goto_0
-    iget-object v1, p0, Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
+    iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/ActionMenuPresenter;->getCallback()Landroid/support/v7/view/menu/MenuPresenter$Callback;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->getCallback()Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     move-result-object v0
 
@@ -58,9 +58,9 @@
     :cond_0
     invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuBuilder;->getRootMenu()Landroid/support/v7/view/menu/MenuBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
 
     goto :goto_0
 
@@ -71,48 +71,48 @@
 .end method
 
 .method public onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
-    iget-object v3, p0, Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
+    iget-object v2, p0, Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    move-object v1, p1
+    move-object v0, p1
 
-    check-cast v1, Landroid/support/v7/view/menu/SubMenuBuilder;
+    check-cast v0, Landroid/support/v7/view/menu/SubMenuBuilder;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/SubMenuBuilder;->getItem()Landroid/view/MenuItem;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/SubMenuBuilder;->getItem()Landroid/view/MenuItem;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Landroid/view/MenuItem;->getItemId()I
+    invoke-interface {v0}, Landroid/view/MenuItem;->getItemId()I
 
-    move-result v1
+    move-result v0
 
-    iput v1, v3, Landroid/support/v7/widget/ActionMenuPresenter;->mOpenSubMenuId:I
+    iput v0, v2, Landroid/support/v7/widget/ActionMenuPresenter;->mOpenSubMenuId:I
 
-    iget-object v1, p0, Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
+    iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/ActionMenuPresenter;->getCallback()Landroid/support/v7/view/menu/MenuPresenter$Callback;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->getCallback()Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     move-result-object v0
 
     if-nez v0, :cond_1
 
-    move v1, v2
+    move v0, v1
 
     :goto_0
-    return v1
+    return v0
 
     :cond_0
-    return v2
+    return v1
 
     :cond_1
     invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_0
 .end method

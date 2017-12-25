@@ -21,16 +21,16 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-static {p0, p1}, Landroid/support/v4/view/animation/PathInterpolatorCompatBase;->create(FF)Landroid/view/animation/Interpolator;
+    new-instance v0, Landroid/support/v4/view/animation/PathInterpolatorApi14;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Landroid/support/v4/view/animation/PathInterpolatorApi14;-><init>(FF)V
 
     return-object v0
 
     :cond_0
-    invoke-static {p0, p1}, Landroid/support/v4/view/animation/PathInterpolatorCompatApi21;->create(FF)Landroid/view/animation/Interpolator;
+    new-instance v0, Landroid/view/animation/PathInterpolator;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Landroid/view/animation/PathInterpolator;-><init>(FF)V
 
     return-object v0
 .end method
@@ -44,16 +44,16 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/view/animation/PathInterpolatorCompatBase;->create(FFFF)Landroid/view/animation/Interpolator;
+    new-instance v0, Landroid/support/v4/view/animation/PathInterpolatorApi14;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1, p2, p3}, Landroid/support/v4/view/animation/PathInterpolatorApi14;-><init>(FFFF)V
 
     return-object v0
 
     :cond_0
-    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/view/animation/PathInterpolatorCompatApi21;->create(FFFF)Landroid/view/animation/Interpolator;
+    new-instance v0, Landroid/view/animation/PathInterpolator;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1, p2, p3}, Landroid/view/animation/PathInterpolator;-><init>(FFFF)V
 
     return-object v0
 .end method
@@ -67,16 +67,16 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-static {p0}, Landroid/support/v4/view/animation/PathInterpolatorCompatBase;->create(Landroid/graphics/Path;)Landroid/view/animation/Interpolator;
+    new-instance v0, Landroid/support/v4/view/animation/PathInterpolatorApi14;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Landroid/support/v4/view/animation/PathInterpolatorApi14;-><init>(Landroid/graphics/Path;)V
 
     return-object v0
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/view/animation/PathInterpolatorCompatApi21;->create(Landroid/graphics/Path;)Landroid/view/animation/Interpolator;
+    new-instance v0, Landroid/view/animation/PathInterpolator;
 
-    move-result-object v0
+    invoke-direct {v0, p0}, Landroid/view/animation/PathInterpolator;-><init>(Landroid/graphics/Path;)V
 
     return-object v0
 .end method

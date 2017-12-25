@@ -181,9 +181,9 @@
 
     const/16 v7, 0x20
 
-    const/4 v2, 0x0
-
     const/4 v4, 0x0
+
+    const/4 v2, 0x0
 
     const-string/jumbo v0, "Session input buffer"
 
@@ -416,14 +416,12 @@
 .end method
 
 .method public parse()Lorg/apache/http/HttpMessage;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
         }
     .end annotation
-
-    const/4 v5, 0x0
 
     iget v0, p0, Lorg/apache/http/impl/io/AbstractMessageParser;->state:I
 
@@ -482,7 +480,9 @@
 
     iget-object v0, p0, Lorg/apache/http/impl/io/AbstractMessageParser;->message:Lorg/apache/http/HttpMessage;
 
-    iput-object v5, p0, Lorg/apache/http/impl/io/AbstractMessageParser;->message:Lorg/apache/http/HttpMessage;
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lorg/apache/http/impl/io/AbstractMessageParser;->message:Lorg/apache/http/HttpMessage;
 
     iget-object v1, p0, Lorg/apache/http/impl/io/AbstractMessageParser;->headerLines:Ljava/util/List;
 

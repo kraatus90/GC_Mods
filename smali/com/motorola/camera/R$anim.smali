@@ -43,6 +43,10 @@
 
 .field public static final setting_popup_shrink_fade_out:I = 0x7f05000d
 
+.field public static final tooltip_enter:I = 0x7f05000e
+
+.field public static final tooltip_exit:I = 0x7f05000f
+
 
 # direct methods
 .method public constructor <init>()V

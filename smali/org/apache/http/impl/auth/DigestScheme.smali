@@ -41,101 +41,101 @@
 
     new-array v0, v0, [C
 
-    const/4 v1, 0x0
+    const/16 v1, 0x30
 
-    const/16 v2, 0x30
+    const/4 v2, 0x0
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x1
+    const/16 v1, 0x31
 
-    const/16 v2, 0x31
+    const/4 v2, 0x1
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x2
+    const/16 v1, 0x32
 
-    const/16 v2, 0x32
+    const/4 v2, 0x2
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x3
+    const/16 v1, 0x33
 
-    const/16 v2, 0x33
+    const/4 v2, 0x3
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x4
+    const/16 v1, 0x34
 
-    const/16 v2, 0x34
+    const/4 v2, 0x4
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x5
+    const/16 v1, 0x35
 
-    const/16 v2, 0x35
+    const/4 v2, 0x5
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x6
+    const/16 v1, 0x36
 
-    const/16 v2, 0x36
+    const/4 v2, 0x6
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x7
+    const/16 v1, 0x37
 
-    const/16 v2, 0x37
+    const/4 v2, 0x7
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0x8
+    const/16 v1, 0x38
 
-    const/16 v2, 0x38
+    const/16 v2, 0x8
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0x9
+    const/16 v1, 0x39
 
-    const/16 v2, 0x39
+    const/16 v2, 0x9
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xa
+    const/16 v1, 0x61
 
-    const/16 v2, 0x61
+    const/16 v2, 0xa
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xb
+    const/16 v1, 0x62
 
-    const/16 v2, 0x62
+    const/16 v2, 0xb
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xc
+    const/16 v1, 0x63
 
-    const/16 v2, 0x63
+    const/16 v2, 0xc
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xd
+    const/16 v1, 0x64
 
-    const/16 v2, 0x64
+    const/16 v2, 0xd
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xe
+    const/16 v1, 0x65
 
-    const/16 v2, 0x65
+    const/16 v2, 0xe
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/16 v1, 0xf
+    const/16 v1, 0x66
 
-    const/16 v2, 0x66
+    const/16 v2, 0xf
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
     sput-object v0, Lorg/apache/http/impl/auth/DigestScheme;->HEXADECIMAL:[C
 
@@ -253,7 +253,7 @@
 .end method
 
 .method private createDigestHeader(Lorg/apache/http/auth/Credentials;Lorg/apache/http/HttpRequest;)Lorg/apache/http/Header;
-    .locals 22
+    .locals 20
 
     const-string/jumbo v2, "uri"
 
@@ -413,31 +413,35 @@
 
     invoke-direct {v15, v14, v0}, Ljava/util/Formatter;-><init>(Ljava/lang/Appendable;Ljava/util/Locale;)V
 
-    const-string/jumbo v16, "%08x"
+    const/16 v16, 0x1
 
-    const/16 v17, 0x1
-
-    move/from16 v0, v17
+    move/from16 v0, v16
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
+    move-object/from16 v16, v0
 
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lorg/apache/http/impl/auth/DigestScheme;->nounceCount:J
 
-    move-wide/from16 v20, v0
+    move-wide/from16 v18, v0
 
-    invoke-static/range {v20 .. v21}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static/range {v18 .. v19}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v19
+    move-result-object v17
 
-    aput-object v19, v17, v18
+    const/16 v18, 0x0
 
-    invoke-virtual/range {v15 .. v17}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
+    aput-object v17, v16, v18
+
+    const-string/jumbo v17, "%08x"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v16
+
+    invoke-virtual {v15, v0, v1}, Ljava/util/Formatter;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/util/Formatter;
 
     invoke-virtual {v15}, Ljava/util/Formatter;->close()V
 
@@ -1294,13 +1298,13 @@
 
     new-instance v3, Lorg/apache/http/message/BasicNameValuePair;
 
-    const-string/jumbo v4, "cnonce"
-
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lorg/apache/http/impl/auth/DigestScheme;->cnonce:Ljava/lang/String;
+    iget-object v4, v0, Lorg/apache/http/impl/auth/DigestScheme;->cnonce:Ljava/lang/String;
 
-    invoke-direct {v3, v4, v5}, Lorg/apache/http/message/BasicNameValuePair;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v5, "cnonce"
+
+    invoke-direct {v3, v5, v4}, Lorg/apache/http/message/BasicNameValuePair;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v11, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1494,33 +1498,33 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "methodname"
-
     invoke-interface {p2}, Lorg/apache/http/HttpRequest;->getRequestLine()Lorg/apache/http/RequestLine;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Lorg/apache/http/RequestLine;->getMethod()Ljava/lang/String;
+    invoke-interface {v1}, Lorg/apache/http/RequestLine;->getMethod()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v2, "methodname"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lorg/apache/http/impl/auth/DigestScheme;->d()Ljava/util/Map;
 
     move-result-object v0
 
-    const-string/jumbo v1, "uri"
-
     invoke-interface {p2}, Lorg/apache/http/HttpRequest;->getRequestLine()Lorg/apache/http/RequestLine;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Lorg/apache/http/RequestLine;->getUri()Ljava/lang/String;
+    invoke-interface {v1}, Lorg/apache/http/RequestLine;->getUri()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v2, "uri"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v0, "charset"
 
@@ -1560,13 +1564,13 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "charset"
-
     invoke-virtual {p0, p2}, Lorg/apache/http/impl/auth/DigestScheme;->a(Lorg/apache/http/HttpRequest;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v2, "charset"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method

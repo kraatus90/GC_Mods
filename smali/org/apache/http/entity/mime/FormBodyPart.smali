@@ -73,11 +73,11 @@
     if-nez v1, :cond_0
 
     :goto_0
-    const-string/jumbo v1, "Content-Disposition"
-
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "Content-Disposition"
 
     invoke-virtual {p0, v1, v0}, Lorg/apache/http/entity/mime/FormBodyPart;->addField(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -139,11 +139,11 @@
     if-nez v1, :cond_0
 
     :goto_0
-    const-string/jumbo v1, "Content-Type"
-
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "Content-Type"
 
     invoke-virtual {p0, v1, v0}, Lorg/apache/http/entity/mime/FormBodyPart;->addField(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -166,13 +166,13 @@
 .method protected c(Lorg/apache/http/entity/mime/content/ContentBody;)V
     .locals 2
 
-    const-string/jumbo v0, "Content-Transfer-Encoding"
-
     invoke-interface {p1}, Lorg/apache/http/entity/mime/content/ContentBody;->getTransferEncoding()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/entity/mime/FormBodyPart;->addField(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "Content-Transfer-Encoding"
+
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/entity/mime/FormBodyPart;->addField(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

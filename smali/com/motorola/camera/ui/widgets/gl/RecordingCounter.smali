@@ -183,7 +183,7 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/RecordingCounter;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const/16 v2, 0xfb
+    const/16 v2, 0xfc
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;I)V
 
@@ -1304,7 +1304,7 @@
         }
     .end annotation
 
-    const/16 v2, 0xfb
+    const/16 v2, 0xfc
 
     const/4 v1, 0x2
 

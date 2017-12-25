@@ -32,9 +32,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/motorola/camera/mcf/McfDepthMap;)V
-    .locals 3
-
-    const/4 v2, 0x2
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -54,7 +52,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v2}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    invoke-static {v0}, Lcom/motorola/camera/mcf/MotUtil;->Base64Encode([B)Ljava/lang/String;
 
     move-result-object v0
 
@@ -93,7 +91,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, v2}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    invoke-static {v0}, Lcom/motorola/camera/mcf/MotUtil;->Base64Encode([B)Ljava/lang/String;
 
     move-result-object v0
 

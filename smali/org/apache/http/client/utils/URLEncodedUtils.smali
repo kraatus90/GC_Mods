@@ -1133,9 +1133,9 @@
         }
     .end annotation
 
-    const/4 v4, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v4, 0x0
 
     invoke-virtual {p1, p2}, Ljava/util/Scanner;->useDelimiter(Ljava/lang/String;)Ljava/util/Scanner;
 
@@ -1217,13 +1217,13 @@
 .method private static urlDecode(Ljava/lang/String;Ljava/nio/charset/Charset;Z)Ljava/lang/String;
     .locals 9
 
+    const/4 v0, 0x0
+
     const/16 v8, 0x25
 
     const/16 v7, 0x10
 
     const/4 v6, -0x1
-
-    const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
@@ -1346,9 +1346,9 @@
 .method private static urlEncode(Ljava/lang/String;Ljava/nio/charset/Charset;Ljava/util/BitSet;Z)Ljava/lang/String;
     .locals 5
 
-    const/16 v4, 0x10
-
     const/4 v0, 0x0
+
+    const/16 v4, 0x10
 
     if-eqz p0, :cond_0
 

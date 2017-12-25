@@ -32,48 +32,50 @@
 
 .field public static final enum FACE_DETECTION:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-.field public static final enum JUST_SHOOT:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
-
 .field public static final enum MULTI_SHOT_RATE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+.field public static final enum PREVIEW_RATE_DEPTH:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+.field public static final enum PREVIEW_RATE_LVL_1:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+.field public static final enum PREVIEW_RATE_LVL_2:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+.field public static final enum SURFACE_SIZE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+.field public static final enum VIDEO_RECORD:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+.field public static final enum VIDEO_STABILIZATION:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 8
 
-    const/4 v6, 0x4
+    const/4 v7, 0x4
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v2, 0x0
-
-    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
-
-    const-string/jumbo v1, "JUST_SHOOT"
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->JUST_SHOOT:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
-
-    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
-
-    const-string/jumbo v1, "BRIGHTNESS"
-
-    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->BRIGHTNESS:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    const/4 v3, 0x0
 
     new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
     const-string/jumbo v1, "ALWAYS_AWARE"
 
-    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "BRIGHTNESS"
+
+    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->BRIGHTNESS:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
     new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
@@ -91,19 +93,73 @@
 
     sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->MULTI_SHOT_RATE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-    const/4 v0, 0x5
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "PREVIEW_RATE_LVL_1"
+
+    invoke-direct {v0, v1, v7}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_LVL_1:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "PREVIEW_RATE_LVL_2"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_LVL_2:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "PREVIEW_RATE_DEPTH"
+
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_DEPTH:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "SURFACE_SIZE"
+
+    const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->SURFACE_SIZE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "VIDEO_RECORD"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->VIDEO_RECORD:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    new-instance v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const-string/jumbo v1, "VIDEO_STABILIZATION"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->VIDEO_STABILIZATION:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->JUST_SHOOT:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
-
-    aput-object v1, v0, v2
-
-    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->BRIGHTNESS:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->BRIGHTNESS:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
     aput-object v1, v0, v4
 
@@ -114,6 +170,40 @@
     sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->MULTI_SHOT_RATE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
     aput-object v1, v0, v6
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_LVL_1:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    aput-object v1, v0, v7
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_LVL_2:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_DEPTH:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const/4 v2, 0x6
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->SURFACE_SIZE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->VIDEO_RECORD:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->VIDEO_STABILIZATION:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->$VALUES:[Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 

@@ -7,6 +7,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/support/v4/app/ActivityCompat$OnRequestPermissionsResultCallback;,
+        Landroid/support/v4/app/ActivityCompat$RequestPermissionsRequestCodeValidator;,
         Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;,
         Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;
     }
@@ -20,42 +21,6 @@
     invoke-direct {p0}, Landroid/support/v4/content/ContextCompat;-><init>()V
 
     return-void
-.end method
-
-.method private static createCallback(Landroid/support/v4/app/SharedElementCallback;)Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
-
-    goto :goto_0
-.end method
-
-.method private static createCallback23(Landroid/support/v4/app/SharedElementCallback;)Landroid/support/v4/app/ActivityCompatApi23$SharedElementCallback23;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
-
-    goto :goto_0
 .end method
 
 .method public static finishAffinity(Landroid/app/Activity;)V
@@ -73,7 +38,7 @@
     return-void
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityCompatJB;->finishAffinity(Landroid/app/Activity;)V
+    invoke-virtual {p0}, Landroid/app/Activity;->finishAffinity()V
 
     goto :goto_0
 .end method
@@ -93,81 +58,70 @@
     return-void
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityCompatApi21;->finishAfterTransition(Landroid/app/Activity;)V
+    invoke-virtual {p0}, Landroid/app/Activity;->finishAfterTransition()V
 
     goto :goto_0
 .end method
 
 .method public static getReferrer(Landroid/app/Activity;)Landroid/net/Uri;
-    .locals 6
+    .locals 3
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    const/4 v5, 0x0
-
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v4, 0x16
-
-    if-ge v3, v4, :cond_0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v0
-
-    const-string/jumbo v3, "android.intent.extra.REFERRER"
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/net/Uri;
-
-    if-nez v1, :cond_1
-
-    const-string/jumbo v3, "android.intent.extra.REFERRER_NAME"
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    if-nez v2, :cond_2
-
-    return-object v5
-
-    :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityCompatApi22;->getReferrer(Landroid/app/Activity;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    return-object v3
-
-    :cond_1
-    return-object v1
-
-    :cond_2
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    return-object v3
-.end method
-
-.method public static invalidateOptionsMenu(Landroid/app/Activity;)Z
-    .locals 2
+    const/4 v2, 0x0
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v1, 0xb
+    const/16 v1, 0x16
 
     if-ge v0, v1, :cond_0
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    return v0
+    move-result-object v1
+
+    const-string/jumbo v0, "android.intent.extra.REFERRER"
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/Uri;
+
+    if-nez v0, :cond_1
+
+    const-string/jumbo v0, "android.intent.extra.REFERRER_NAME"
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2
+
+    return-object v2
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityCompatHoneycomb;->invalidateOptionsMenu(Landroid/app/Activity;)V
+    invoke-virtual {p0}, Landroid/app/Activity;->getReferrer()Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_1
+    return-object v0
+
+    :cond_2
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static invalidateOptionsMenu(Landroid/app/Activity;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
     const/4 v0, 0x1
 
@@ -187,13 +141,13 @@
     return-void
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityCompatApi21;->postponeEnterTransition(Landroid/app/Activity;)V
+    invoke-virtual {p0}, Landroid/app/Activity;->postponeEnterTransition()V
 
     goto :goto_0
 .end method
 
 .method public static requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
-    .locals 3
+    .locals 2
     .param p0    # Landroid/app/Activity;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -208,25 +162,39 @@
         .end annotation
     .end param
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x17
+    const/16 v1, 0x17
 
-    if-ge v1, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
-    instance-of v1, p0, Landroid/support/v4/app/ActivityCompat$OnRequestPermissionsResultCallback;
+    instance-of v0, p0, Landroid/support/v4/app/ActivityCompat$OnRequestPermissionsResultCallback;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_2
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {p0, p1, p2}, Landroid/support/v4/app/ActivityCompatApi23;->requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+    instance-of v0, p0, Landroid/support/v4/app/ActivityCompat$RequestPermissionsRequestCodeValidator;
+
+    if-nez v0, :cond_1
+
+    :goto_1
+    invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
     goto :goto_0
 
     :cond_1
+    move-object v0, p0
+
+    check-cast v0, Landroid/support/v4/app/ActivityCompat$RequestPermissionsRequestCodeValidator;
+
+    invoke-interface {v0, p2}, Landroid/support/v4/app/ActivityCompat$RequestPermissionsRequestCodeValidator;->validateRequestPermissionsRequestCode(I)V
+
+    goto :goto_1
+
+    :cond_2
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -245,77 +213,105 @@
 .end method
 
 .method public static setEnterSharedElementCallback(Landroid/app/Activity;Landroid/support/v4/app/SharedElementCallback;)V
-    .locals 2
+    .locals 3
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x0
 
-    const/16 v1, 0x17
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v0, v1, :cond_0
+    const/16 v2, 0x17
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-ge v1, v2, :cond_0
 
-    const/16 v1, 0x15
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v0, v1, :cond_1
+    const/16 v2, 0x15
+
+    if-ge v1, v2, :cond_2
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {p1}, Landroid/support/v4/app/ActivityCompat;->createCallback23(Landroid/support/v4/app/SharedElementCallback;)Landroid/support/v4/app/ActivityCompatApi23$SharedElementCallback23;
+    if-nez p1, :cond_1
 
-    move-result-object v0
-
-    invoke-static {p0, v0}, Landroid/support/v4/app/ActivityCompatApi23;->setEnterSharedElementCallback(Landroid/app/Activity;Landroid/support/v4/app/ActivityCompatApi23$SharedElementCallback23;)V
+    :goto_1
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setEnterSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
     goto :goto_0
 
     :cond_1
-    invoke-static {p1}, Landroid/support/v4/app/ActivityCompat;->createCallback(Landroid/support/v4/app/SharedElementCallback;)Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;
+    new-instance v0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
 
-    invoke-static {p0, v0}, Landroid/support/v4/app/ActivityCompatApi21;->setEnterSharedElementCallback(Landroid/app/Activity;Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;)V
+    goto :goto_1
+
+    :cond_2
+    if-nez p1, :cond_3
+
+    :goto_2
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setEnterSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
     goto :goto_0
+
+    :cond_3
+    new-instance v0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;
+
+    invoke-direct {v0, p1}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
+
+    goto :goto_2
 .end method
 
 .method public static setExitSharedElementCallback(Landroid/app/Activity;Landroid/support/v4/app/SharedElementCallback;)V
-    .locals 2
+    .locals 3
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x0
 
-    const/16 v1, 0x17
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v0, v1, :cond_0
+    const/16 v2, 0x17
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    if-ge v1, v2, :cond_0
 
-    const/16 v1, 0x15
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v0, v1, :cond_1
+    const/16 v2, 0x15
+
+    if-ge v1, v2, :cond_2
 
     :goto_0
     return-void
 
     :cond_0
-    invoke-static {p1}, Landroid/support/v4/app/ActivityCompat;->createCallback23(Landroid/support/v4/app/SharedElementCallback;)Landroid/support/v4/app/ActivityCompatApi23$SharedElementCallback23;
+    if-nez p1, :cond_1
 
-    move-result-object v0
-
-    invoke-static {p0, v0}, Landroid/support/v4/app/ActivityCompatApi23;->setExitSharedElementCallback(Landroid/app/Activity;Landroid/support/v4/app/ActivityCompatApi23$SharedElementCallback23;)V
+    :goto_1
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setExitSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
     goto :goto_0
 
     :cond_1
-    invoke-static {p1}, Landroid/support/v4/app/ActivityCompat;->createCallback(Landroid/support/v4/app/SharedElementCallback;)Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;
+    new-instance v0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback23Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
 
-    invoke-static {p0, v0}, Landroid/support/v4/app/ActivityCompatApi21;->setExitSharedElementCallback(Landroid/app/Activity;Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;)V
+    goto :goto_1
+
+    :cond_2
+    if-nez p1, :cond_3
+
+    :goto_2
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setExitSharedElementCallback(Landroid/app/SharedElementCallback;)V
 
     goto :goto_0
+
+    :cond_3
+    new-instance v0, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;
+
+    invoke-direct {v0, p1}, Landroid/support/v4/app/ActivityCompat$SharedElementCallback21Impl;-><init>(Landroid/support/v4/app/SharedElementCallback;)V
+
+    goto :goto_2
 .end method
 
 .method public static shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
@@ -340,7 +336,7 @@
     return v0
 
     :cond_0
-    invoke-static {p0, p1}, Landroid/support/v4/app/ActivityCompatApi23;->shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -366,7 +362,7 @@
     return-void
 
     :cond_0
-    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/app/ActivityCompatJB;->startActivityForResult(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
+    invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
 
     goto :goto_0
 .end method
@@ -395,7 +391,7 @@
     return-void
 
     :cond_0
-    invoke-static/range {p0 .. p7}, Landroid/support/v4/app/ActivityCompatJB;->startIntentSenderForResult(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+    invoke-virtual/range {p0 .. p7}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 
     goto :goto_0
 .end method
@@ -413,7 +409,7 @@
     return-void
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityCompatApi21;->startPostponedEnterTransition(Landroid/app/Activity;)V
+    invoke-virtual {p0}, Landroid/app/Activity;->startPostponedEnterTransition()V
 
     goto :goto_0
 .end method

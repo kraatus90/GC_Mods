@@ -40,11 +40,11 @@
 .method static constructor <clinit>()V
     .locals 4
 
+    const/4 v1, 0x0
+
     const/4 v3, 0x1
 
     const/4 v2, 0x0
-
-    const/4 v1, 0x0
 
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 

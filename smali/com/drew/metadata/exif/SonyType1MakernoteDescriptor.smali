@@ -29,7 +29,7 @@
 
 # virtual methods
 .method public getAntiBlurDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -53,17 +53,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -102,7 +102,7 @@
 .end method
 
 .method public getColorModeDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -126,17 +126,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -240,9 +240,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v3, 0x0
-
     const/4 v2, 0x0
+
+    const/4 v3, 0x0
 
     iget-object v0, p0, Lcom/drew/metadata/exif/SonyType1MakernoteDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -284,19 +284,19 @@
 
     or-int/2addr v0, v1
 
-    const-string/jumbo v1, "%d K"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    aput-object v0, v1, v3
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v0, "%d K"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -420,7 +420,7 @@
 .end method
 
 .method public getDynamicRangeOptimizerDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -445,17 +445,17 @@
     packed-switch v1, :pswitch_data_0
 
     :pswitch_0
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -523,7 +523,7 @@
 .end method
 
 .method public getExposureModeDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -547,17 +547,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -659,7 +659,7 @@
 .end method
 
 .method public getLongExposureNoiseReductionDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -683,17 +683,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -726,7 +726,7 @@
 .end method
 
 .method public getMacroDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -750,17 +750,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -799,7 +799,7 @@
 .end method
 
 .method public getQualityDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -823,17 +823,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -866,7 +866,7 @@
 .end method
 
 .method public getSceneModeDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -891,17 +891,17 @@
     packed-switch v1, :pswitch_data_0
 
     :pswitch_0
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -994,7 +994,7 @@
 .end method
 
 .method public getZoneMatchingDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -1018,17 +1018,17 @@
 
     packed-switch v1, :pswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -35,21 +35,21 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
-    const-string/jumbo v0, "application/json; charset=%s"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string/jumbo v1, "utf-8"
 
     const/4 v2, 0x0
 
-    const-string/jumbo v3, "utf-8"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    const-string/jumbo v1, "application/json; charset=%s"
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -142,7 +142,7 @@
 .end method
 
 .method public getBody()[B
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -167,25 +167,25 @@
     :catch_0
     move-exception v1
 
-    const-string/jumbo v1, "Unsupported Encoding while trying to get the bytes of %s using %s"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    iget-object v2, p0, Lcom/android/volley/toolbox/JsonRequest;->mRequestBody:Ljava/lang/String;
 
     const/4 v3, 0x0
 
-    iget-object v4, p0, Lcom/android/volley/toolbox/JsonRequest;->mRequestBody:Ljava/lang/String;
+    aput-object v2, v1, v3
 
-    aput-object v4, v2, v3
+    const-string/jumbo v2, "utf-8"
 
     const/4 v3, 0x1
 
-    const-string/jumbo v4, "utf-8"
+    aput-object v2, v1, v3
 
-    aput-object v4, v2, v3
+    const-string/jumbo v2, "Unsupported Encoding while trying to get the bytes of %s using %s"
 
-    invoke-static {v1, v2}, Lcom/android/volley/VolleyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v1}, Lcom/android/volley/VolleyLog;->wtf(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-object v0
 .end method

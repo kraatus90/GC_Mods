@@ -60,27 +60,17 @@
 .method public onCaptureCompleted(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable$SetRepeatingRequestListenerExt;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;->-wrap0(Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable$SetRepeatingRequestListenerExt;->mCameraId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/device/CameraStateManager;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$Status;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
     if-ne v0, v1, :cond_1
 
@@ -106,7 +96,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable$SetRepeatingRequestListenerExt;->mCameraId:Ljava/lang/String;
 
-    invoke-static {v0, p1, p2}, Lcom/motorola/camera/saving/ImageCaptureManager;->onZslCaptureCompleted(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)Z
+    invoke-static {v0, p1, p2}, Lcom/motorola/camera/saving/ImageCaptureManager;->onZslCaptureCompleted(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
 
     :cond_2
     iget-boolean v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable$SetRepeatingRequestListenerExt;->mOneShot:Z
@@ -203,27 +193,17 @@
 .method public onCaptureProgressed(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable$SetRepeatingRequestListenerExt;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;->-wrap0(Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable$SetRepeatingRequestListenerExt;->mCameraId:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/device/CameraStateManager;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$Status;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
     if-ne v0, v1, :cond_1
 
@@ -271,7 +251,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {p1, p2, p3}, Lcom/motorola/camera/saving/ImageCaptureManager;->onZslCaptureStarted(Landroid/hardware/camera2/CaptureRequest;J)Z
+    invoke-static {p1, p2, p3}, Lcom/motorola/camera/saving/ImageCaptureManager;->onZslCaptureStarted(Landroid/hardware/camera2/CaptureRequest;J)V
 
     :cond_0
     return-void

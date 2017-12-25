@@ -23,9 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/apache/http/io/SessionInputBuffer;J)V
-    .locals 4
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
@@ -37,7 +35,9 @@
 
     iput-boolean v0, p0, Lorg/apache/http/impl/io/ContentLengthInputStream;->closed:Z
 
-    iput-object v2, p0, Lorg/apache/http/impl/io/ContentLengthInputStream;->in:Lorg/apache/http/io/SessionInputBuffer;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/impl/io/ContentLengthInputStream;->in:Lorg/apache/http/io/SessionInputBuffer;
 
     const-string/jumbo v0, "Session input buffer"
 
@@ -275,11 +275,11 @@
 .method public read([B)I
     .locals 2
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/impl/io/ContentLengthInputStream;->read([BII)I
+    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/impl/io/ContentLengthInputStream;->read([BII)I
 
     move-result v0
 

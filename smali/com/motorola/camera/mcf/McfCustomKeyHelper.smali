@@ -35,42 +35,38 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 4
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
-    const-class v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;
+    const-class v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->TAG:Ljava/lang/String;
 
-    const/4 v0, 0x0
-
-    const/4 v0, 0x0
+    const/4 v0, 0x2
 
     :try_start_0
-    const-class v2, Landroid/hardware/camera2/CameraCharacteristics$Key;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v3, 0x2
+    const-class v1, Ljava/lang/String;
 
-    new-array v3, v3, [Ljava/lang/Class;
+    const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    aput-object v1, v0, v2
 
-    const-class v5, Ljava/lang/String;
+    const-class v1, Ljava/lang/Class;
 
-    aput-object v5, v3, v4
+    const/4 v2, 0x1
 
-    const/4 v4, 0x1
+    aput-object v1, v0, v2
 
-    const-class v5, Ljava/lang/Class;
+    const-class v1, Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    aput-object v5, v3, v4
-
-    invoke-virtual {v2, v3}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {v1, v0}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -80,60 +76,60 @@
     sput-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
 
     :goto_0
-    sget-object v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
+    sget-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    sput-object v6, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SENSOR_INFO_NAME_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sput-object v3, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SENSOR_INFO_NAME_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    sput-object v6, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SYSTEM_CAMERA_CALIBRATION_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sput-object v3, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SYSTEM_CAMERA_CALIBRATION_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     :goto_1
     return-void
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
     :try_start_1
-    sget-object v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v3, "Unable to find CameraCharacteristics.Key"
+    const-string/jumbo v1, "Unable to find CameraCharacteristics.Key"
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    sput-object v6, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
+    sput-object v3, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
 
     goto :goto_0
 
     :catchall_0
-    move-exception v2
+    move-exception v0
 
-    sput-object v6, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
+    sput-object v3, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
 
-    throw v2
+    throw v0
 
     :cond_0
-    const-string/jumbo v2, "com.lenovo.moto.sensor.info.name"
+    const-string/jumbo v0, "com.lenovo.moto.sensor.info.name"
 
-    const-class v3, Ljava/lang/String;
+    const-class v1, Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->getCharacteristicKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CameraCharacteristics$Key;
+    invoke-static {v0, v1}, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->getCharacteristicKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SENSOR_INFO_NAME_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sput-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SENSOR_INFO_NAME_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    const-string/jumbo v2, "org.codeaurora.qcamera3.dualcam_calib_meta_data.dualcam_calib_meta_data_blob"
+    const-string/jumbo v0, "org.codeaurora.qcamera3.dualcam_calib_meta_data.dualcam_calib_meta_data_blob"
 
-    const-class v3, [B
+    const-class v1, [B
 
-    invoke-static {v2, v3}, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->getCharacteristicKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CameraCharacteristics$Key;
+    invoke-static {v0, v1}, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->getCharacteristicKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SYSTEM_CAMERA_CALIBRATION_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sput-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->SYSTEM_CAMERA_CALIBRATION_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     goto :goto_1
 .end method
@@ -147,7 +143,7 @@
 .end method
 
 .method public static getCharacteristicKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CameraCharacteristics$Key;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -164,39 +160,37 @@
     const/4 v1, 0x0
 
     :try_start_0
-    sget-object v2, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
+    sget-object v0, Lcom/motorola/camera/mcf/McfCustomKeyHelper;->mCharacteristicsCst:Ljava/lang/reflect/Constructor;
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    aput-object p0, v3, v4
+    aput-object p0, v2, v3
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    aput-object p1, v3, v4
+    aput-object p1, v2, v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v2
-
-    move-object v0, v2
+    move-result-object v0
 
     check-cast v0, Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    move-object v1, v0
     :try_end_0
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     :goto_0
-    return-object v1
+    return-object v0
 
     :catch_0
-    move-exception v2
+    move-exception v0
+
+    move-object v0, v1
 
     goto :goto_0
 .end method

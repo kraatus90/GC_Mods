@@ -29,8 +29,6 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/internal/zzhd$zza;
 
     invoke-direct {v0}, Lcom/google/android/gms/internal/zzhd$zza;-><init>()V
@@ -38,6 +36,8 @@
     sput-object v0, Lcom/google/android/gms/internal/zzhd$zza;->zzSF:Lcom/google/android/gms/internal/zzhd$zza;
 
     new-instance v0, Lcom/google/android/gms/internal/zzhd$zza$zza;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/internal/zzhd$zza$zza;-><init>(Lcom/google/android/gms/internal/zzhd$1;)V
 

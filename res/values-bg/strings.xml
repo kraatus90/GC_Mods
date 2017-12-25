@@ -148,7 +148,7 @@
     <string name="cancel">Отказ</string>
     <string name="capture_failure">Неуспешно снимане. Опитайте отново.</string>
     <string name="checkbox_do_not_show">Повече да не се показва</string>
-    <string name="cloudsight_terms">Вашите изображения ще бъдат изпратени на CloudSight за осигуряване на резултати от търсене. &lt;br/>&lt;br/> Ако продължите, Вие се съгласявате с &lt;a href=%1$s>Политиката за поверителност&lt;/a> на CloudSight.</string>
+    <string name="cloudsight_terms">Всеки път, когато използвате разпознаване на обекти, съответният образ, както и местоположението (ако е разрешено), ще бъдат изпратени на трета страна за предоставяне на резултати от търсенето.&lt;br/>&lt;br/> Ако продължите, Вие се съгласявате с&lt;a href=%1$s>Политиката за поверителност&lt;/a>.</string>
     <string name="dailog_panorama_failed">Панорамата е неуспешна. Моля, опитайте отново.</string>
     <string name="dailog_panorama_not_taken">Панорамната снимка не е направена.</string>
     <string name="dialog_access_sd_fail">Не е възможно заснемане на мултимедия. Няма достъп до SD картата.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Устройството не се поддържа</string>
     <string name="dialog_disagree">Не съм съгласен/а</string>
     <string name="dialog_dismiss">Не показвай отново</string>
+    <string name="dialog_download">Изтегляне</string>
     <string name="dialog_external_sd_missing">Не може да се заснеме снимка. SD картата е недостъпна. Превключване към вътрешната памет на телефона</string>
     <string name="dialog_first_time_set_pure_raw_message">"Този тип необработени файлове са за професионално редактиране на снимки.
 
@@ -247,6 +248,7 @@
     <string name="help_next">Напред</string>
     <string name="image_360_desc">Това е снимка на 360 градуса. Можете да редактирате тази снимка с Moto 360 Редактор.</string>
     <string name="image_360_name">Снимка на 360 градуса</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">РАЗРЕШЕНА ДЪЛБОЧИНА</string>
     <string name="indicate_mode_mono">РЕАЛИСТИЧНИ БЯЛО И ЧЕРНО</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">СВРЪХШИРОК ЪГЪЛ</string>
     <string name="indicate_mode_video">ВИДЕО</string>
     <string name="indicate_mode_wide_angle">ШИРОКОЪГЪЛЕН</string>
+    <string name="indicate_mode_wide_angle_selfie">ШИРОКОЪГЪЛНО СЕЛФИ</string>
     <string name="internal_storage">вътрешна памет</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Разпознаването на забележителност предлага информация относно популярни забележителности по света.&lt;br/>&lt;br/>Инсталирайте, за да разрешите тази функция.</string>
-    <string name="landmark_install_over_data">Размерът на файла за разпознаването на забележителност е 92 MB. Инсталирането чрез мобилни данни може да доведе до начисляване на допълнителни такси за данни.</string>
-    <string name="landmark_notification_downloading">Изтегляне на разпознаване на забележителност</string>
-    <string name="landmark_notification_install">Инсталиране на разпознаване на забележителност</string>
-    <string name="landmark_notification_install_complete">Инсталирането на разпознаване на забележителност е завършено</string>
-    <string name="landmark_notification_install_failed">Инсталирането на разпознаване на забележителност е неуспешно</string>
+    <string name="landmark_install_message">Разпознаването на забележителност предлага информация относно популярни забележителности по света.&lt;br/>&lt;br/>Изтеглете базата данни със забележителности, за да разрешите тази функция.</string>
+    <string name="landmark_install_over_data">Размерът за изтегляне на базата данни със забележителности е 92 MB. Изтеглянето чрез мобилни данни може да доведе до допълнителни такси за мобилни данни.</string>
+    <string name="landmark_notification_downloading">Изтегляне на базата данни със забележителности</string>
+    <string name="landmark_notification_install">Инсталиране на базата данни със забележителности</string>
+    <string name="landmark_notification_install_complete">Инсталирането на базата данни със забележителности е завършено</string>
+    <string name="landmark_notification_install_failed">Инсталирането на базата данни със забележителности е неуспешно</string>
     <string name="landmark_notification_install_invalid_url">Няма налична база данни за забележителности, моля, обновете до най-новата версия на камерата</string>
-    <string name="landmark_notification_install_out_of_space">Недостатъчно налично пространство за съхранение за инсталиране на разпознаване на забележителност</string>
+    <string name="landmark_notification_install_out_of_space">В паметта няма достатъчно място за инсталиране на базата данни със забележителности</string>
+    <string name="landmark_notification_paused">Изтеглянето на базата данни със забележителности ще продължи при наличие на интернет връзка</string>
+    <string name="landmark_notification_queued">Изтеглянето на базата данни със забележителности ще започне при наличие на интернет връзка</string>
     <string name="main_setting_amz_barcode">Скенер за баркод от Amazon</string>
     <string name="main_setting_amz_privacy">Известие за поверителност на Amazon</string>
     <string name="main_setting_amz_terms">Условия на използване</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">Размер на снимка (задна)</string>
     <string name="main_setting_image_ratio_front">Размер на снимка (предна)</string>
     <string name="main_setting_landmark_detection">Разпознаване на забележителност</string>
+    <string name="main_setting_landmark_version_current">Версия на базата данни: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Базата данни не е инсталирана</string>
     <string name="main_setting_licenses">Лицензи с отворен код</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">Изисква се разрешение</string>
     <string name="photos_depth_desc">Използвайте редактора за дълбочина за избор на фокус, смяна на фон или избор на зона за промяна на черно и бяло.</string>
     <string name="photos_depth_name">Разрешена дълбочина</string>
+    <string name="photos_notification_desc">Вземете неограничена памет с Google Снимки</string>
+    <string name="photos_notification_title">Архивирайте към Google Снимки</string>
+    <string name="qcfa_resolution_description">Адаптивно слабо осветяване</string>
     <string name="retake">Повторно заснемане</string>
     <string name="second_10">10 сек.</string>
     <string name="second_3">3 сек.</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">Забавен каданс</string>
     <string name="setting_mode_ultra_wide">Свръхширок ъгъл</string>
     <string name="setting_mode_video">Видео</string>
+    <string name="setting_mode_wide_angle_selfie">Широкоъгълно селфи</string>
     <string name="setting_off">Изкл.</string>
     <string name="setting_on">Вкл.</string>
     <string name="setting_persist">Задържане</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">ТАЙМЕР</string>
     <string name="setting_torch">Фенерче</string>
     <string name="setting_true">вярно</string>
+    <string name="shortcut_desc_depth">Дълбока снимка</string>
+    <string name="shortcut_desc_selfie">Селфи</string>
+    <string name="shortcut_desc_video">Видео</string>
     <string name="smartcam_landmark_notification_title">Интелигентна камера</string>
+    <string name="smartcam_no_detections">Няма запазени обекти или забележителности</string>
     <string name="storage_location_external">SD карта</string>
     <string name="storage_location_internal">Телефон</string>
     <string name="storage_unavailable">Няма налична памет</string>
+    <string name="toast_battery_saver">В момента сте в режим на пестене на батерията, използването на определени функции може да е ограничено</string>
     <string name="toast_geotag_message_1">Трябва да предоставите разрешение за местоположение за активиране на запазване на местоположение.</string>
     <string name="toast_geotag_message_2">Настройката за местоположение влиза в сила само след включване на настройката за местоположение на системата.</string>
     <string name="tooltip_camera_switch_360">Опитайте се да превключите на различни опции на камерата.</string>
     <string name="tooltip_capture_360">Опитайте се да заснемете 360° снимка или видео, като докоснете този бутон на затвора.</string>
-    <string name="tooltip_capture_key_360">Опитайте се също да заснемете с бутона на затвора от задната страна на mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Правете снимки с допълнителна информация за специални функции за редактиране.</string>
+    <string name="tooltip_capture_key_360">Опитайте се също да заснемете с бутона на затвора от задната страна на Mod.</string>
     <string name="tooltip_first_use_zoom_button">Натиснете тук, за да превключите на широк ъгъл.</string>
     <string name="tooltip_gallery_360">Вижте как изглежда Вашата 360° снимка или видео, като плъзнете наляво.</string>
     <string name="tooltip_minimap_viewfinder">Панорамирайте долния образ наляво или надясно.</string>
     <string name="tooltip_mode_switch_360">Опитайте се да снимате в 360° в различни режими!</string>
+    <string name="tooltip_modes_list">Открийте нови начини за снимане.</string>
     <string name="tooltip_smart_camera">Натиснете, за да разберете повече за обекта.</string>
     <string name="tooltip_smart_camera_disable">Може да се изключи в Настройки.</string>
     <string name="tooltip_spherical_viewfinder">Панорамирайте или приближете и намалете мащаба за управление на разглеждането.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">ЦЯЛ</string>
     <string name="zoom_hint_wide">ШИРОК</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">НА ЗАБАВЕН КАДЪР</string>
+    <string name="setting_mode_timelapse">На забавен кадър</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

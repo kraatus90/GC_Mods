@@ -86,13 +86,13 @@
 
 # virtual methods
 .method public run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
-    .locals 11
+    .locals 12
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    const/4 v9, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v10, 0x1
 
     invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/CameraRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
@@ -101,23 +101,23 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/modes/AbstractMode;->getBuilder(I)Landroid/hardware/camera2/CaptureRequest$Builder;
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/fsm/camera/modes/AbstractMode;->getBuilder(I)Landroid/hardware/camera2/CaptureRequest$Builder;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getModeSetup()Lcom/motorola/camera/fsm/camera/modes/AbstractMode;
 
     move-result-object v0
 
-    const/4 v1, 0x6
+    const/4 v3, 0x6
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/modes/AbstractMode;->getBuilder(I)Landroid/hardware/camera2/CaptureRequest$Builder;
+    invoke-virtual {v0, v3}, Lcom/motorola/camera/fsm/camera/modes/AbstractMode;->getBuilder(I)Landroid/hardware/camera2/CaptureRequest$Builder;
     :try_end_0
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v4
+    move-result-object v3
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
@@ -157,13 +157,9 @@
     return-void
 
     :cond_2
-    sget-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
-    invoke-virtual {p2, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    move-result-object v4
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
@@ -173,28 +169,28 @@
 
     move-result-object v6
 
-    invoke-virtual {v0, v5}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->isLinked(Ljava/lang/String;)Z
+    invoke-virtual {v4, v5}, Lcom/motorola/camera/device/CameraStateManager;->isLinked(Ljava/lang/String;)Z
 
     move-result v7
 
-    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->mLinkCamerasListener:Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$LinkCamerasListener;
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->mLinkCamerasListener:Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$LinkCamerasListener;
 
-    if-eqz v1, :cond_7
+    if-eqz v0, :cond_9
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$CaptureRequestListenerWrapper;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$CaptureRequestListenerWrapper;
 
     const/4 v8, 0x2
 
-    invoke-direct {v1, p0, v8, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$CaptureRequestListenerWrapper;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;ILcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$CaptureRequestListenerWrapper;)V
+    invoke-direct {v0, p0, v8, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$CaptureRequestListenerWrapper;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;ILcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable$CaptureRequestListenerWrapper;)V
 
     :goto_0
     iget-boolean v8, p0, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->mLink:Z
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
     xor-int/lit8 v8, v7, 0x1
 
-    if-eqz v8, :cond_5
+    if-eqz v8, :cond_6
 
     sget-boolean v7, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -207,84 +203,115 @@
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_3
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v9}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v8
-
-    invoke-virtual {v3, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_MAIN_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v9}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v8
-
-    invoke-virtual {v3, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_SESSION_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    invoke-virtual {v3, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v9}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v8
-
-    invoke-virtual {v4, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_MAIN_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     invoke-static {v10}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v8
 
-    invoke-virtual {v4, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v7, v5, v2, v8}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_SESSION_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result v7
+
+    sget-object v8, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_MAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
+
+    invoke-static {v10}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v5, v2, v9}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    and-int/2addr v7, v8
+
+    sget-object v8, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_SESSION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v5, v2, v9}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    and-int/2addr v7, v8
+
+    sget-object v8, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
+
+    invoke-static {v10}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v6, v3, v9}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    and-int/2addr v7, v8
+
+    sget-object v8, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_MAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
+
+    invoke-static {v11}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v6, v3, v9}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    and-int/2addr v7, v8
+
+    sget-object v8, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_SESSION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v4, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v8, v6, v3, v9}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    and-int/2addr v7, v8
+
+    if-nez v7, :cond_4
+
+    sget-object v7, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v8, "Failed to set custom keys for dual session link"
+
+    invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_4
+    invoke-virtual {v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
+
+    move-result-object v2
+
+    invoke-static {v5, v2, v1, v0}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
 
     invoke-virtual {v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v5, v3, v2, v1}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
+    invoke-static {v6, v2, v1, v0}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
 
-    invoke-virtual {v4}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
+    invoke-virtual {v4, v5, v10}, Lcom/motorola/camera/device/CameraStateManager;->setLinked(Ljava/lang/String;Z)V
 
-    move-result-object v3
+    invoke-virtual {v4, v6, v10}, Lcom/motorola/camera/device/CameraStateManager;->setLinked(Ljava/lang/String;Z)V
 
-    invoke-static {v6, v3, v2, v1}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
-
-    invoke-virtual {v0, v5, v9}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setLinked(Ljava/lang/String;Z)V
-
-    invoke-virtual {v0, v6, v9}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setLinked(Ljava/lang/String;Z)V
-
-    :cond_4
+    :cond_5
     :goto_1
     return-void
 
-    :cond_5
+    :cond_6
     iget-boolean v8, p0, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->mLink:Z
 
-    if-nez v8, :cond_4
+    if-nez v8, :cond_5
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     sget-boolean v7, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v7, :cond_6
+    if-eqz v7, :cond_7
 
     sget-object v7, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->TAG:Ljava/lang/String;
 
@@ -292,43 +319,58 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    :cond_7
+    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
-    invoke-static {v10}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object v8
-
-    invoke-virtual {v3, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    sget-object v7, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v10}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {v11}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v8
 
-    invoke-virtual {v4, v7, v8}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v7, v5, v2, v8}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v7
+
+    sget-object v8, Lcom/motorola/camera/settings/CustomKeyHelper;->BAYER_MONO_LINK_ENABLE_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
+
+    invoke-static {v11}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v6, v3, v9}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    and-int/2addr v7, v8
+
+    if-nez v7, :cond_8
+
+    sget-object v7, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v8, "Failed to set custom keys for dual session unlink"
+
+    invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_8
+    invoke-virtual {v2}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
+
+    move-result-object v2
+
+    invoke-static {v5, v2, v1, v0}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
 
     invoke-virtual {v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v5, v3, v2, v1}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
+    invoke-static {v6, v2, v1, v0}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
 
-    invoke-virtual {v4}, Landroid/hardware/camera2/CaptureRequest$Builder;->build()Landroid/hardware/camera2/CaptureRequest;
+    invoke-virtual {v4, v5, v11}, Lcom/motorola/camera/device/CameraStateManager;->setLinked(Ljava/lang/String;Z)V
 
-    move-result-object v3
-
-    invoke-static {v6, v3, v2, v1}, Lcom/motorola/camera/device/CameraService;->capture(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest;Lcom/motorola/camera/device/callables/CameraListener;Lcom/motorola/camera/device/callables/CaptureRequestListener;)V
-
-    invoke-virtual {v0, v5, v10}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setLinked(Ljava/lang/String;Z)V
-
-    invoke-virtual {v0, v6, v10}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setLinked(Ljava/lang/String;Z)V
+    invoke-virtual {v4, v6, v11}, Lcom/motorola/camera/device/CameraStateManager;->setLinked(Ljava/lang/String;Z)V
 
     goto :goto_1
 
-    :cond_7
-    move-object v1, v2
+    :cond_9
+    move-object v0, v1
 
     goto/16 :goto_0
 .end method

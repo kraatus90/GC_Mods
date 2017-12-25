@@ -119,9 +119,9 @@
 .method protected a(Lorg/apache/http/io/SessionInputBuffer;)Lorg/apache/http/HttpResponse;
     .locals 8
 
-    const/4 v7, -0x1
+    const/4 v7, 0x0
 
-    const/4 v6, 0x0
+    const/4 v6, -0x1
 
     const/4 v1, 0x0
 
@@ -138,7 +138,7 @@
 
     move-result v2
 
-    if-eq v2, v7, :cond_2
+    if-eq v2, v6, :cond_2
 
     :cond_0
     new-instance v3, Lorg/apache/http/message/ParserCursor;
@@ -161,7 +161,7 @@
 
     if-nez v4, :cond_5
 
-    if-ne v2, v7, :cond_3
+    if-ne v2, v6, :cond_3
 
     :cond_1
     new-instance v0, Lorg/apache/http/ProtocolException;
@@ -247,7 +247,7 @@
 
     iget-object v1, p0, Lorg/apache/http/impl/conn/DefaultHttpResponseParser;->responseFactory:Lorg/apache/http/HttpResponseFactory;
 
-    invoke-interface {v1, v0, v6}, Lorg/apache/http/HttpResponseFactory;->newHttpResponse(Lorg/apache/http/StatusLine;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
+    invoke-interface {v1, v0, v7}, Lorg/apache/http/HttpResponseFactory;->newHttpResponse(Lorg/apache/http/StatusLine;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpResponse;
 
     move-result-object v0
 

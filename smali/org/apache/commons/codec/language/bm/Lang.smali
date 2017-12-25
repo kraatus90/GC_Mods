@@ -72,13 +72,13 @@
 
     sget-object v4, Lorg/apache/commons/codec/language/bm/Lang;->Langs:Ljava/util/Map;
 
-    const-string/jumbo v5, "org/apache/commons/codec/language/bm/lang.txt"
-
     invoke-static {v3}, Lorg/apache/commons/codec/language/bm/Languages;->getInstance(Lorg/apache/commons/codec/language/bm/NameType;)Lorg/apache/commons/codec/language/bm/Languages;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-static {v5, v6}, Lorg/apache/commons/codec/language/bm/Lang;->loadFromResource(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;
+    const-string/jumbo v6, "org/apache/commons/codec/language/bm/lang.txt"
+
+    invoke-static {v6, v5}, Lorg/apache/commons/codec/language/bm/Lang;->loadFromResource(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;
 
     move-result-object v5
 
@@ -133,9 +133,9 @@
 .method public static loadFromResource(Ljava/lang/String;Lorg/apache/commons/codec/language/bm/Languages;)Lorg/apache/commons/codec/language/bm/Lang;
     .locals 11
 
-    const/4 v4, 0x1
-
     const/4 v10, 0x0
+
+    const/4 v4, 0x1
 
     const/4 v1, 0x0
 

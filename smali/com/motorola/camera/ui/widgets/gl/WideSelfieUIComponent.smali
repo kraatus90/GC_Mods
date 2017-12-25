@@ -1392,95 +1392,95 @@
     :pswitch_0
     if-ne p2, v2, :cond_0
 
-    const/16 v0, 0xdb
+    const/16 v0, 0xdc
 
     return v0
 
     :cond_0
     if-ne p2, v3, :cond_1
 
-    const/16 v0, 0xdc
+    const/16 v0, 0xdd
 
     return v0
 
     :cond_1
-    const/16 v0, 0xda
+    const/16 v0, 0xdb
 
     return v0
 
     :pswitch_1
     if-ne p2, v2, :cond_2
 
-    const/16 v0, 0xe1
+    const/16 v0, 0xe2
 
     return v0
 
     :cond_2
     if-ne p2, v3, :cond_3
 
-    const/16 v0, 0xe2
+    const/16 v0, 0xe3
 
     return v0
 
     :cond_3
-    const/16 v0, 0xe0
+    const/16 v0, 0xe1
 
     return v0
 
     :pswitch_2
     if-ne p2, v2, :cond_4
 
-    const/16 v0, 0xe4
+    const/16 v0, 0xe5
 
     return v0
 
     :cond_4
     if-ne p2, v3, :cond_5
 
-    const/16 v0, 0xe5
+    const/16 v0, 0xe6
 
     return v0
 
     :cond_5
-    const/16 v0, 0xe3
+    const/16 v0, 0xe4
 
     return v0
 
     :pswitch_3
     if-ne p2, v2, :cond_6
 
-    const/16 v0, 0xde
+    const/16 v0, 0xdf
 
     return v0
 
     :cond_6
     if-ne p2, v3, :cond_7
 
-    const/16 v0, 0xdf
+    const/16 v0, 0xe0
 
     return v0
 
     :cond_7
-    const/16 v0, 0xdd
+    const/16 v0, 0xde
 
     return v0
 
     :pswitch_4
     if-ne p2, v2, :cond_8
 
-    const/16 v0, 0xe7
+    const/16 v0, 0xe8
 
     return v0
 
     :cond_8
     if-ne p2, v3, :cond_9
 
-    const/16 v0, 0xe8
+    const/16 v0, 0xe9
 
     return v0
 
     :cond_9
-    const/16 v0, 0xe6
+    const/16 v0, 0xe7
 
     return v0
 
@@ -3704,7 +3704,7 @@
 .end method
 
 .method public getStatesToListenFor()Ljava/util/Collection;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -3715,71 +3715,91 @@
         }
     .end annotation
 
-    const/16 v0, 0xa
+    new-instance v0, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
 
-    new-array v0, v0, [Lcom/motorola/camera/fsm/camera/StateKey;
+    invoke-direct {v0}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;-><init>()V
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/modes/WideSelfieStates;->LENOVO_SELFIE_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    invoke-static {}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->getAppClosingKeys()Ljava/util/Collection;
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    aput-object v1, v0, v2
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->add(Ljava/util/Collection;)Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/PanoShotStates;->PANO_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    move-result-object v0
 
-    const/4 v2, 0x1
+    const/16 v1, 0xa
 
-    aput-object v1, v0, v2
+    new-array v1, v1, [Lcom/motorola/camera/fsm/camera/StateKey;
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/PanoShotStates;->PS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/modes/WideSelfieStates;->LENOVO_SELFIE_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/4 v2, 0x2
+    const/4 v3, 0x0
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/PanoShotStates;->PS_SAVING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PanoShotStates;->PANO_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/4 v2, 0x3
+    const/4 v3, 0x1
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PanoShotStates;->PS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/4 v2, 0x4
+    const/4 v3, 0x2
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PanoShotStates;->PS_SAVING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/4 v2, 0x5
+    const/4 v3, 0x3
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->SELFIEWIDE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_WAIT_FOR_SURFACES_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/4 v2, 0x6
+    const/4 v3, 0x4
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_SAVING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/4 v2, 0x7
+    const/4 v3, 0x5
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_STOPPING_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->SELFIEWIDE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/16 v2, 0x8
+    const/4 v3, 0x6
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_SAVING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    const/16 v2, 0x9
+    const/4 v3, 0x7
 
-    aput-object v1, v0, v2
+    aput-object v2, v1, v3
 
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_STOPPING_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x8
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->WS_SET_REPEATING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x9
+
+    aput-object v2, v1, v3
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->add(Ljava/util/Collection;)Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->build()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -4450,7 +4470,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_8
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/WideSelfieUIComponent;->mGuideTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
@@ -4481,6 +4501,23 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/WideSelfieUIComponent;->mStartPoint:Landroid/graphics/Point;
+
+    goto/16 :goto_0
+
+    :cond_8
+    invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringAppClosing(Lcom/motorola/camera/fsm/ChangeEvent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/WideSelfieUIComponent;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->cancelAnimations()V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/WideSelfieUIComponent;->mAnimationTracker:Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->clearAnimations()V
 
     goto/16 :goto_0
 .end method

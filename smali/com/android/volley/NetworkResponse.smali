@@ -86,15 +86,15 @@
 .method public constructor <init>([B)V
     .locals 8
 
-    const/16 v2, 0xc8
-
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v4
 
-    const-wide/16 v6, 0x0
-
     const/4 v5, 0x0
+
+    const/16 v2, 0xc8
+
+    const-wide/16 v6, 0x0
 
     move-object v1, p0
 
@@ -118,11 +118,11 @@
         }
     .end annotation
 
+    const/4 v5, 0x0
+
     const/16 v2, 0xc8
 
     const-wide/16 v6, 0x0
-
-    const/4 v5, 0x0
 
     move-object v1, p0
 

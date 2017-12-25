@@ -95,9 +95,7 @@
 
 # virtual methods
 .method public close()V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     iget-object v0, p0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;->mPool:Lcom/android/volley/toolbox/ByteArrayPool;
 
@@ -105,7 +103,9 @@
 
     invoke-virtual {v0, v1}, Lcom/android/volley/toolbox/ByteArrayPool;->returnBuf([B)V
 
-    iput-object v2, p0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;->buf:[B
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/volley/toolbox/PoolingByteArrayOutputStream;->buf:[B
 
     invoke-super {p0}, Ljava/io/ByteArrayOutputStream;->close()V
 

@@ -39,9 +39,9 @@
 
     move-result-object v0
 
-    new-instance v2, Lcom/motorola/camera/detector/-$Lambda$3;
+    new-instance v2, Lcom/motorola/camera/detector/-$Lambda$2SbUk7sKIy9fZZkapeYWhUzwDjQ;
 
-    invoke-direct {v2}, Lcom/motorola/camera/detector/-$Lambda$3;-><init>()V
+    invoke-direct {v2}, Lcom/motorola/camera/detector/-$Lambda$2SbUk7sKIy9fZZkapeYWhUzwDjQ;-><init>()V
 
     invoke-direct {v1, v0, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
@@ -120,7 +120,7 @@
     return-object v0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_detector_ScanningService_lambda$1(Landroid/os/Message;)Z
+.method static synthetic lambda$-com_motorola_camera_detector_ScanningService_1063(Landroid/os/Message;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/os/Message;->obj:Ljava/lang/Object;

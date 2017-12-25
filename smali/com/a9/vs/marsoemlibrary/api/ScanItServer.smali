@@ -67,13 +67,13 @@
 .method private getBarcodeRequest(Ljava/lang/String;Ljava/lang/String;Lcom/a9/vs/marsoemlibrary/config/Configuration;)Lcom/a9/vs/marsoemlibrary/model/ScanItJSONRequest;
     .locals 7
 
-    const/4 v4, 0x0
-
     new-instance v0, Lcom/a9/vs/marsoemlibrary/model/ScanItBarcodeDecodeRequest;
 
     invoke-static {p3}, Lcom/a9/vs/marsoemlibrary/api/ServerUtils;->getUrl(Lcom/a9/vs/marsoemlibrary/config/Configuration;)Ljava/lang/String;
 
     move-result-object v3
+
+    const/4 v4, 0x0
 
     move-object v1, p1
 

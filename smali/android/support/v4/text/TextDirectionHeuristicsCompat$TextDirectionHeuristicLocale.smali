@@ -44,22 +44,22 @@
 
 # virtual methods
 .method protected defaultIsRtl()Z
-    .locals 3
+    .locals 2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Landroid/support/v4/text/TextUtilsCompat;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
+    invoke-static {v1}, Landroid/support/v4/text/TextUtilsCompat;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
 
-    move-result v0
+    move-result v1
 
-    if-eq v0, v1, :cond_0
+    if-eq v1, v0, :cond_0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :cond_0
-    return v1
+    return v0
 .end method

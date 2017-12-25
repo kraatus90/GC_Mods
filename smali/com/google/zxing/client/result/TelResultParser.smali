@@ -25,95 +25,95 @@
 .end method
 
 .method public parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/TelParsedResult;
-    .locals 8
+    .locals 5
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    const/4 v6, 0x4
+    const/4 v3, 0x4
 
     invoke-static {p1}, Lcom/google/zxing/client/result/TelResultParser;->getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string/jumbo v4, "tel:"
+    const-string/jumbo v0, "tel:"
 
-    invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_1
+    if-eqz v0, :cond_1
 
     :cond_0
-    const-string/jumbo v4, "TEL:"
+    const-string/jumbo v0, "TEL:"
 
-    invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
-    move-object v3, v2
+    move-object v0, v1
 
     :goto_0
-    const/16 v4, 0x3f
+    const/16 v2, 0x3f
 
-    invoke-virtual {v2, v4, v6}, Ljava/lang/String;->indexOf(II)I
+    invoke-virtual {v1, v2, v3}, Ljava/lang/String;->indexOf(II)I
 
-    move-result v1
+    move-result v2
 
-    if-ltz v1, :cond_3
+    if-ltz v2, :cond_3
 
-    invoke-virtual {v2, v6, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     :goto_1
-    new-instance v4, Lcom/google/zxing/client/result/TelParsedResult;
+    new-instance v2, Lcom/google/zxing/client/result/TelParsedResult;
 
-    invoke-direct {v4, v0, v3, v7}, Lcom/google/zxing/client/result/TelParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v0, v4}, Lcom/google/zxing/client/result/TelParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v2
+
+    :cond_1
+    const-string/jumbo v0, "TEL:"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     return-object v4
 
-    :cond_1
-    const-string/jumbo v4, "TEL:"
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    return-object v7
-
     :cond_2
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "tel:"
+    const-string/jumbo v2, "tel:"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
     goto :goto_0
 
     :cond_3
-    invoke-virtual {v2, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     goto :goto_1
 .end method

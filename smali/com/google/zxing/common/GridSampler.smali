@@ -29,40 +29,46 @@
 .end method
 
 .method protected static checkAndNudgePoints(Lcom/google/zxing/common/BitMatrix;[F)V
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
         }
     .end annotation
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    const/4 v8, -0x1
+    const/4 v1, 0x0
+
+    const/4 v7, -0x1
+
+    const/4 v3, 0x1
 
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
-    move-result v3
+    move-result v4
 
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
-    move-result v0
+    move-result v5
 
-    const/4 v1, 0x1
+    move v0, v1
 
-    const/4 v2, 0x0
+    move v2, v3
 
     :goto_0
     array-length v6, p1
 
-    if-lt v2, v6, :cond_2
+    if-lt v0, v6, :cond_2
 
     :cond_0
-    const/4 v1, 0x1
+    array-length v0, p1
 
-    array-length v6, p1
+    add-int/lit8 v0, v0, -0x2
 
-    add-int/lit8 v2, v6, -0x2
+    move v2, v0
+
+    move v0, v3
 
     :goto_1
     if-gez v2, :cond_9
@@ -71,129 +77,129 @@
     return-void
 
     :cond_2
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    aget v6, p1, v2
+    aget v2, p1, v0
 
-    float-to-int v4, v6
+    float-to-int v2, v2
 
-    add-int/lit8 v6, v2, 0x1
+    add-int/lit8 v6, v0, 0x1
 
     aget v6, p1, v6
 
-    float-to-int v5, v6
+    float-to-int v6, v6
 
-    if-ge v4, v8, :cond_4
+    if-ge v2, v7, :cond_4
 
     :cond_3
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v6
+    move-result-object v0
 
-    throw v6
+    throw v0
 
     :cond_4
-    if-gt v4, v3, :cond_3
+    if-gt v2, v4, :cond_3
 
-    if-lt v5, v8, :cond_3
+    if-lt v6, v7, :cond_3
 
-    if-gt v5, v0, :cond_3
+    if-gt v6, v5, :cond_3
 
-    const/4 v1, 0x0
+    if-eq v2, v7, :cond_5
 
-    if-eq v4, v8, :cond_5
+    if-eq v2, v4, :cond_6
 
-    if-eq v4, v3, :cond_6
+    move v2, v1
 
     :goto_2
-    if-eq v5, v8, :cond_7
+    if-eq v6, v7, :cond_7
 
-    if-eq v5, v0, :cond_8
+    if-eq v6, v5, :cond_8
 
     :goto_3
-    add-int/lit8 v2, v2, 0x2
+    add-int/lit8 v0, v0, 0x2
 
     goto :goto_0
 
     :cond_5
-    aput v9, p1, v2
+    aput v8, p1, v0
 
-    const/4 v1, 0x1
+    move v2, v3
 
     goto :goto_2
 
     :cond_6
-    add-int/lit8 v6, v3, -0x1
+    add-int/lit8 v2, v4, -0x1
+
+    int-to-float v2, v2
+
+    aput v2, p1, v0
+
+    move v2, v3
+
+    goto :goto_2
+
+    :cond_7
+    add-int/lit8 v2, v0, 0x1
+
+    aput v8, p1, v2
+
+    move v2, v3
+
+    goto :goto_3
+
+    :cond_8
+    add-int/lit8 v2, v0, 0x1
+
+    add-int/lit8 v6, v5, -0x1
 
     int-to-float v6, v6
 
     aput v6, p1, v2
 
-    const/4 v1, 0x1
-
-    goto :goto_2
-
-    :cond_7
-    add-int/lit8 v6, v2, 0x1
-
-    aput v9, p1, v6
-
-    const/4 v1, 0x1
-
-    goto :goto_3
-
-    :cond_8
-    add-int/lit8 v6, v2, 0x1
-
-    add-int/lit8 v7, v0, -0x1
-
-    int-to-float v7, v7
-
-    aput v7, p1, v6
-
-    const/4 v1, 0x1
+    move v2, v3
 
     goto :goto_3
 
     :cond_9
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    aget v6, p1, v2
+    aget v0, p1, v2
 
-    float-to-int v4, v6
+    float-to-int v0, v0
 
     add-int/lit8 v6, v2, 0x1
 
     aget v6, p1, v6
 
-    float-to-int v5, v6
+    float-to-int v6, v6
 
-    if-ge v4, v8, :cond_b
+    if-ge v0, v7, :cond_b
 
     :cond_a
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v6
+    move-result-object v0
 
-    throw v6
+    throw v0
 
     :cond_b
-    if-gt v4, v3, :cond_a
+    if-gt v0, v4, :cond_a
 
-    if-lt v5, v8, :cond_a
+    if-lt v6, v7, :cond_a
 
-    if-gt v5, v0, :cond_a
+    if-gt v6, v5, :cond_a
 
-    const/4 v1, 0x0
+    if-eq v0, v7, :cond_c
 
-    if-eq v4, v8, :cond_c
+    if-eq v0, v4, :cond_d
 
-    if-eq v4, v3, :cond_d
+    move v0, v1
 
     :goto_4
-    if-eq v5, v8, :cond_e
+    if-eq v6, v7, :cond_e
 
-    if-eq v5, v0, :cond_f
+    if-eq v6, v5, :cond_f
 
     :goto_5
     add-int/lit8 v2, v2, -0x2
@@ -201,42 +207,42 @@
     goto :goto_1
 
     :cond_c
-    aput v9, p1, v2
+    aput v8, p1, v2
 
-    const/4 v1, 0x1
+    move v0, v3
 
     goto :goto_4
 
     :cond_d
-    add-int/lit8 v6, v3, -0x1
+    add-int/lit8 v0, v4, -0x1
 
-    int-to-float v6, v6
+    int-to-float v0, v0
 
-    aput v6, p1, v2
+    aput v0, p1, v2
 
-    const/4 v1, 0x1
+    move v0, v3
 
     goto :goto_4
 
     :cond_e
-    add-int/lit8 v6, v2, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    aput v9, p1, v6
+    aput v8, p1, v0
 
-    const/4 v1, 0x1
+    move v0, v3
 
     goto :goto_5
 
     :cond_f
-    add-int/lit8 v6, v2, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    add-int/lit8 v7, v0, -0x1
+    add-int/lit8 v6, v5, -0x1
 
-    int-to-float v7, v7
+    int-to-float v6, v6
 
-    aput v7, p1, v6
+    aput v6, p1, v0
 
-    const/4 v1, 0x1
+    move v0, v3
 
     goto :goto_5
 .end method

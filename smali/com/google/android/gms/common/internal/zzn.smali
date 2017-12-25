@@ -26,9 +26,7 @@
 
 # virtual methods
 .method public zza(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 7
-
-    const/4 v6, 0x0
+    .locals 6
 
     const/4 v5, 0x2
 
@@ -56,23 +54,25 @@
 
     invoke-direct {v0, p1, v2}, Lcom/google/android/gms/internal/zzlj;-><init>(Landroid/content/Context;I)V
 
-    const-string/jumbo v2, "GMS_WTF"
+    new-array v2, v5, [Ljava/lang/String;
 
-    new-array v4, v5, [Ljava/lang/String;
+    const-string/jumbo v4, "GMS_WTF"
 
-    const-string/jumbo v5, "GMS_WTF"
-
-    aput-object v5, v4, v1
-
-    const/4 v1, 0x1
+    aput-object v4, v2, v1
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v4, v1
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v2, v6, v4}, Lcom/google/android/gms/internal/zzlj;->zza(Ljava/lang/String;[B[Ljava/lang/String;)V
+    aput-object v1, v2, v3
+
+    const-string/jumbo v1, "GMS_WTF"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v3, v2}, Lcom/google/android/gms/internal/zzlj;->zza(Ljava/lang/String;[B[Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/google/android/gms/internal/zzlj;->send()V
 

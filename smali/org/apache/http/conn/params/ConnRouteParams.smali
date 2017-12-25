@@ -27,11 +27,11 @@
 
     const-string/jumbo v1, "127.0.0.255"
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, "no-host"
 
-    const-string/jumbo v3, "no-host"
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lorg/apache/http/conn/params/ConnRouteParams;->NO_HOST:Lorg/apache/http/HttpHost;
 

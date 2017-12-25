@@ -31,13 +31,13 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v7/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
+    iput-object v1, p0, Landroid/support/v7/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
 
-    iput-boolean v1, p0, Landroid/support/v7/widget/TintInfo;->mHasTintList:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/TintInfo;->mHasTintList:Z
 
-    iput-object v0, p0, Landroid/support/v7/widget/TintInfo;->mTintMode:Landroid/graphics/PorterDuff$Mode;
+    iput-object v1, p0, Landroid/support/v7/widget/TintInfo;->mTintMode:Landroid/graphics/PorterDuff$Mode;
 
-    iput-boolean v1, p0, Landroid/support/v7/widget/TintInfo;->mHasTintMode:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/TintInfo;->mHasTintMode:Z
 
     return-void
 .end method

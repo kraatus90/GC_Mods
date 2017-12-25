@@ -30,6 +30,8 @@
 
 .field private mHandler:Landroid/os/Handler;
 
+.field private mIsActivityVisible:Z
+
 .field public mIsColdStart:Z
 
 .field private mModPid:I
@@ -254,6 +256,26 @@
 
 
 # virtual methods
+.method public activityPaused()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/motorola/camera/CameraApp;->mIsActivityVisible:Z
+
+    return-void
+.end method
+
+.method public activityResumed()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/CameraApp;->mIsActivityVisible:Z
+
+    return-void
+.end method
+
 .method public getActivityRequestCode()Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
     .locals 1
 
@@ -545,6 +567,14 @@
     return v0
 .end method
 
+.method public isActivityVisible()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/motorola/camera/CameraApp;->mIsActivityVisible:Z
+
+    return v0
+.end method
+
 .method public isCameraActivityRunning()Z
     .locals 2
 
@@ -680,8 +710,6 @@
     .locals 2
 
     const/4 v1, 0x0
-
-    invoke-virtual {p0}, Lcom/motorola/camera/CameraApp;->removeCallbacksAndMessages()V
 
     iget v0, p0, Lcom/motorola/camera/CameraApp;->mResumeRefCount:I
 

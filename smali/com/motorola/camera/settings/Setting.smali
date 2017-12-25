@@ -174,6 +174,12 @@
 .end field
 
 .field private mUpdateType:Lcom/motorola/camera/settings/Setting$UpdateType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
+.end field
 
 .field private mValue:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -944,6 +950,13 @@
 
 .method private setupPersist(Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
     .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;",
+            ")V"
+        }
+    .end annotation
 
     sget-object v0, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST_NONE:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
 
@@ -2060,6 +2073,12 @@
 
 .method public getUpdateType()Lcom/motorola/camera/settings/Setting$UpdateType;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/motorola/camera/settings/Setting$UpdateType;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/motorola/camera/settings/Setting;->mUpdateType:Lcom/motorola/camera/settings/Setting$UpdateType;
 
@@ -2229,6 +2248,13 @@
 
 .method setUpdateType(Lcom/motorola/camera/settings/Setting$UpdateType;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/settings/Setting$UpdateType;",
+            ")V"
+        }
+    .end annotation
 
     iput-object p1, p0, Lcom/motorola/camera/settings/Setting;->mUpdateType:Lcom/motorola/camera/settings/Setting$UpdateType;
 
@@ -2255,15 +2281,24 @@
 .end method
 
 .method setValueFromPersist(Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
 
+    iget-object v0, p0, Lcom/motorola/camera/settings/Setting;->mValue:Ljava/lang/Object;
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->deepEquals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     invoke-direct {p0, p1}, Lcom/motorola/camera/settings/Setting;->setValuePriv(Ljava/lang/Object;)V
 
+    :cond_0
     return-void
 .end method
 

@@ -68,9 +68,9 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    const/4 v0, 0x0
-
     const/4 v3, 0x0
+
+    const/4 v0, 0x0
 
     :try_start_0
     const-string/jumbo v1, "SHA1PRNG"
@@ -364,7 +364,7 @@
 .end method
 
 .method static b([B[B)[B
-    .locals 4
+    .locals 3
 
     :try_start_0
     const-string/jumbo v0, "RC4"
@@ -373,15 +373,15 @@
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    new-instance v1, Ljavax/crypto/spec/SecretKeySpec;
 
-    new-instance v2, Ljavax/crypto/spec/SecretKeySpec;
+    const-string/jumbo v2, "RC4"
 
-    const-string/jumbo v3, "RC4"
+    invoke-direct {v1, p1, v2}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
 
-    invoke-direct {v2, p1, v3}, Ljavax/crypto/spec/SecretKeySpec;-><init>([BLjava/lang/String;)V
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
+    invoke-virtual {v0, v2, v1}, Ljavax/crypto/Cipher;->init(ILjava/security/Key;)V
 
     invoke-virtual {v0, p0}, Ljavax/crypto/Cipher;->doFinal([B)[B
     :try_end_0
@@ -732,63 +732,63 @@
 
     aput-byte v2, v1, v7
 
-    const/4 v2, 0x5
+    aget-byte v2, v0, v7
 
-    aget-byte v3, v0, v7
-
-    shl-int/lit8 v3, v3, 0x3
-
-    const/4 v4, 0x5
-
-    aget-byte v4, v0, v4
-
-    and-int/lit16 v4, v4, 0xff
-
-    ushr-int/lit8 v4, v4, 0x5
-
-    or-int/2addr v3, v4
-
-    int-to-byte v3, v3
-
-    int-to-byte v3, v3
-
-    aput-byte v3, v1, v2
-
-    const/4 v2, 0x6
+    shl-int/lit8 v2, v2, 0x3
 
     const/4 v3, 0x5
 
     aget-byte v3, v0, v3
 
-    shl-int/lit8 v3, v3, 0x2
+    and-int/lit16 v3, v3, 0xff
 
-    const/4 v4, 0x6
+    ushr-int/lit8 v3, v3, 0x5
 
-    aget-byte v4, v0, v4
+    or-int/2addr v2, v3
 
-    and-int/lit16 v4, v4, 0xff
+    int-to-byte v2, v2
 
-    ushr-int/lit8 v4, v4, 0x6
+    int-to-byte v2, v2
 
-    or-int/2addr v3, v4
+    const/4 v3, 0x5
 
-    int-to-byte v3, v3
+    aput-byte v2, v1, v3
 
-    int-to-byte v3, v3
+    const/4 v2, 0x5
 
-    aput-byte v3, v1, v2
+    aget-byte v2, v0, v2
 
-    const/4 v2, 0x7
+    shl-int/lit8 v2, v2, 0x2
 
     const/4 v3, 0x6
 
-    aget-byte v0, v0, v3
+    aget-byte v3, v0, v3
+
+    and-int/lit16 v3, v3, 0xff
+
+    ushr-int/lit8 v3, v3, 0x6
+
+    or-int/2addr v2, v3
+
+    int-to-byte v2, v2
+
+    int-to-byte v2, v2
+
+    const/4 v3, 0x6
+
+    aput-byte v2, v1, v3
+
+    const/4 v2, 0x6
+
+    aget-byte v0, v0, v2
 
     shl-int/lit8 v0, v0, 0x1
 
     int-to-byte v0, v0
 
     int-to-byte v0, v0
+
+    const/4 v2, 0x7
 
     aput-byte v0, v1, v2
 

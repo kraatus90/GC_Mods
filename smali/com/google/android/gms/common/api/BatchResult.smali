@@ -84,9 +84,9 @@
 
     aget-object v0, v0, v1
 
-    const-wide/16 v2, 0x0
-
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v2, 0x0
 
     invoke-interface {v0, v2, v3, v1}, Lcom/google/android/gms/common/api/PendingResult;->await(JLjava/util/concurrent/TimeUnit;)Lcom/google/android/gms/common/api/Result;
 

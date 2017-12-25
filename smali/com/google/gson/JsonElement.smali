@@ -440,37 +440,37 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 3
 
     :try_start_0
-    new-instance v2, Ljava/io/StringWriter;
+    new-instance v0, Ljava/io/StringWriter;
 
-    invoke-direct {v2}, Ljava/io/StringWriter;-><init>()V
+    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
     new-instance v1, Lcom/google/gson/stream/JsonWriter;
 
-    invoke-direct {v1, v2}, Lcom/google/gson/stream/JsonWriter;-><init>(Ljava/io/Writer;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/stream/JsonWriter;-><init>(Ljava/io/Writer;)V
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v3}, Lcom/google/gson/stream/JsonWriter;->setLenient(Z)V
+    invoke-virtual {v1, v2}, Lcom/google/gson/stream/JsonWriter;->setLenient(Z)V
 
     invoke-static {p0, v1}, Lcom/google/gson/internal/Streams;->write(Lcom/google/gson/JsonElement;Lcom/google/gson/stream/JsonWriter;)V
 
-    invoke-virtual {v2}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :catch_0
     move-exception v0
 
-    new-instance v3, Ljava/lang/AssertionError;
+    new-instance v1, Ljava/lang/AssertionError;
 
-    invoke-direct {v3, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    throw v3
+    throw v1
 .end method

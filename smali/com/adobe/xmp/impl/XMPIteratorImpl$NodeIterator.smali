@@ -46,9 +46,9 @@
 .method public constructor <init>(Lcom/adobe/xmp/impl/XMPIteratorImpl;)V
     .locals 2
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     iput-object p1, p0, Lcom/adobe/xmp/impl/XMPIteratorImpl$NodeIterator;->this$0:Lcom/adobe/xmp/impl/XMPIteratorImpl;
 
@@ -548,8 +548,6 @@
 .method public next()Ljava/lang/Object;
     .locals 2
 
-    const/4 v1, 0x0
-
     invoke-virtual {p0}, Lcom/adobe/xmp/impl/XMPIteratorImpl$NodeIterator;->hasNext()Z
 
     move-result v0
@@ -566,6 +564,8 @@
 
     :cond_0
     iget-object v0, p0, Lcom/adobe/xmp/impl/XMPIteratorImpl$NodeIterator;->returnProperty:Lcom/adobe/xmp/properties/XMPPropertyInfo;
+
+    const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/adobe/xmp/impl/XMPIteratorImpl$NodeIterator;->returnProperty:Lcom/adobe/xmp/properties/XMPPropertyInfo;
 

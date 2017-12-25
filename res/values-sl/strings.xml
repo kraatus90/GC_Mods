@@ -148,7 +148,7 @@
     <string name="cancel">Prekliči</string>
     <string name="capture_failure">Zajemanje ni uspelo. Poskusite znova.</string>
     <string name="checkbox_do_not_show">Tega sporočila ne kaži več</string>
-    <string name="cloudsight_terms">Slike bodo poslane CloudSightu za rezultate iskanja. &lt;br/>&lt;br/> Če boste nadaljevali, boste s tem sprejeli CloudSightov&lt;a href=%1$s>pravilnik o zasebnosti&lt;/a>.</string>
+    <string name="cloudsight_terms">Ob vsaki uporabi prepoznavanja objekta bosta tretji osebi poslani slika in lokacija (če je omogočena) z namenom zagotovitve rezultatov iskanja.&lt;br/>&lt;br/> Če boste nadaljevali, boste s tem sprejeli&lt;a href=%1$s>pravilnik o zasebnosti&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panoramski posnetek ni uspel. Poskusite znova.</string>
     <string name="dailog_panorama_not_taken">Panorama ni bila posneta.</string>
     <string name="dialog_access_sd_fail">Snemanje ni mogoče. Dostop do kartice SD ni mogoč.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Naprava ni podprta</string>
     <string name="dialog_disagree">Ne strinjam se</string>
     <string name="dialog_dismiss">Tega ne prikaži več</string>
+    <string name="dialog_download">Prenesi</string>
     <string name="dialog_external_sd_missing">Fotografiranje ni mogoče. Kartica SD ni na voljo. Preklapljanje na notranji pomnilnik telefona</string>
     <string name="dialog_first_time_set_pure_raw_message">"Ta vrsta neobdelanih datotek se uporablja za profesionalno urejanje fotografij.
 
@@ -219,7 +220,7 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="help_desc_anywhere">Tapnite kjer koli, da posnamete eno fotografijo, ali tapnite in pridržite, da jih posnamete več.</string>
     <string name="help_desc_dual_depth">Zajemite dodatne podatke, da boste lahko na posneti fotografiji zamenjali ozadje, dodali barvo ali celo spremenili izostritev.</string>
     <string name="help_desc_dual_mono">Naredite privlačnejše in bolj profesionalne fotografije s fotoaparatom, zasnovanim posebej za črno-bele slike.</string>
-    <string name="help_desc_dual_result">Biti morate največ 1,5 metra od motiva. Najbolje je, da motiva nič ne ovira in da izstopa.</string>
+    <string name="help_desc_dual_result">Razdalja med vami in motivom naj ne bo večja od 1,5 metra. Najbolje je, da izstopa in da pred njim ni ničesar.</string>
     <string name="help_desc_quick">Za odpiranje ali preklop med fotoaparatoma na sprednji in zadnji strani dvakrat zasukajte zapestje.</string>
     <string name="help_desc_quick_double_tap_pwr">Dvakrat se dotaknite gumba za vklop, da odprete fotoaparat.</string>
     <string name="help_desc_smart_camera">Fotoaparat prepozna objekte in znamenitosti. Z njim lahko tudi optično preberete kode QR, vizitke in črtne kode.</string>
@@ -247,6 +248,7 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="help_next">Naprej</string>
     <string name="image_360_desc">To je fotografija 360. Fotografijo lahko uredite z urejevalnikom Moto 360.</string>
     <string name="image_360_name">Fotografija 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">NAPREDNE NASTAVITVE OMOGOČENE</string>
     <string name="indicate_mode_mono">RESNIČNO ČB</string>
@@ -258,16 +260,19 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="indicate_mode_ultra_wide">IZJEMNO ŠIROK KOT</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">ŠIROKI KOT</string>
+    <string name="indicate_mode_wide_angle_selfie">ŠIROKOKOTNI SEBEK</string>
     <string name="internal_storage">notranja shramba</string>
     <string name="kilo_bytes">kB</string>
-    <string name="landmark_install_message">Prepoznavanje znamenitosti nudi informacije o priljubljenih znamenitostih po svetu.&lt;br/>&lt;br/>Namestite, da omogočite to funkcijo.</string>
-    <string name="landmark_install_over_data">Velikost prenosa prepoznavanja znamenitosti je 92 MB. Če jo boste namestili prek mobilne podatkovne povezave, lahko pride do dodatnih stroškov prenosa podatkov.</string>
-    <string name="landmark_notification_downloading">Prenašanje prepoznavanja znamenitosti</string>
-    <string name="landmark_notification_install">Nameščanje prepoznavanja znamenitosti</string>
-    <string name="landmark_notification_install_complete">Namestitev prepoznavanja znamenitosti je končana</string>
-    <string name="landmark_notification_install_failed">Namestitev prepoznavanja znamenitosti ni uspela</string>
+    <string name="landmark_install_message">Prepoznavanje znamenitosti nudi informacije o priljubljenih znamenitostih po svetu.&lt;br/>&lt;br/>Da omogočite to funkcijo, prenesite zbirko podatkov o znamenitostih.</string>
+    <string name="landmark_install_over_data">Velikost prenosa zbirke podatkov o znamenitostih je 92 MB. Če jo boste prenesli prek mobilne podatkovne povezave, lahko pride do dodatnih stroškov prenosa podatkov.</string>
+    <string name="landmark_notification_downloading">Prenašanje zbirke podatkov o znamenitostih</string>
+    <string name="landmark_notification_install">Nameščanje zbirke podatkov o znamenitostih</string>
+    <string name="landmark_notification_install_complete">Namestitev zbirke podatkov o znamenitostih je končana</string>
+    <string name="landmark_notification_install_failed">Namestitev zbirke podatkov o znamenitostih ni uspela</string>
     <string name="landmark_notification_install_invalid_url">Zbirka podatkov o znamenitostih ni na voljo; posodobite na najnovejšo različico fotoaparata</string>
-    <string name="landmark_notification_install_out_of_space">Za namestitev prepoznavanje znamenitosti ni na voljo dovolj prostora za shranjevanje</string>
+    <string name="landmark_notification_install_out_of_space">Za namestitev zbirke podatkov o znamenitostih ni na voljo dovolj prostora za shranjevanje</string>
+    <string name="landmark_notification_paused">Prenašanje zbirke podatkov o znamenitostih se bo nadaljevalo, ko bo na voljo internetna povezava</string>
+    <string name="landmark_notification_queued">Zbirka podatkov o znamenitostih se bo začela prenašati, ko bo na voljo internetna povezava</string>
     <string name="main_setting_amz_barcode">Amazonov optični bralnik črtnih kod</string>
     <string name="main_setting_amz_privacy">Amazonovo obvestilo o zasebnosti</string>
     <string name="main_setting_amz_terms">Pogoji uporabe</string>
@@ -290,6 +295,8 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="main_setting_image_ratio">Velikost fotografij (hrbtni fotoaparat)</string>
     <string name="main_setting_image_ratio_front">Velikost fotografij (sprednji foto.)</string>
     <string name="main_setting_landmark_detection">Prepoznavanje znamenitosti</string>
+    <string name="main_setting_landmark_version_current">Različica zbirke podatkov: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Zbirka podatkov ni nameščena</string>
     <string name="main_setting_licenses">Odprtokodne licence</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="perm_required_alert_title">Zahtevana so dovoljenja</string>
     <string name="photos_depth_desc">Z naprednim urejevalnikom izberite izostritev, zamenjajte ozadje ali izberite območje, ki ga želite spremeniti v črno-belo.</string>
     <string name="photos_depth_name">Napredne nastavitve omogočene</string>
+    <string name="photos_notification_desc">Pridobite neomejen prostor za shranjevanje s storitvijo Google Foto</string>
+    <string name="photos_notification_title">Varnostno kopiranje v storitev Google Foto</string>
+    <string name="qcfa_resolution_description">Prilagodljivo slabi svetlobi</string>
     <string name="retake">Znova posnemi</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="setting_mode_slow_motion">Počasni posnetek</string>
     <string name="setting_mode_ultra_wide">Izjemno širok kot</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Širokokotni sebek</string>
     <string name="setting_off">Izklopljeno</string>
     <string name="setting_on">Vklopljeno</string>
     <string name="setting_persist">Zadrži</string>
@@ -383,22 +394,27 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="setting_timer_dialog_title">MERILNIK ČASA</string>
     <string name="setting_torch">Svetilka</string>
     <string name="setting_true">drži</string>
+    <string name="shortcut_desc_depth">Napr. fot.</string>
+    <string name="shortcut_desc_selfie">Sebek</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Pametni fotoaparat</string>
+    <string name="smartcam_no_detections">Shranjen ni noben objekt ali znamenitost</string>
     <string name="storage_location_external">Kartica SD</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Pomnilnik ni na voljo</string>
+    <string name="toast_battery_saver">Trenutno je nastavljen način varčevanja z energijo, zato so nekatere funkcije morda omejene</string>
     <string name="toast_geotag_message_1">Če želite omogočiti shranjevanje lokacije, morate dodeliti dovoljenje za določanje lokacije.</string>
     <string name="toast_geotag_message_2">Nastavitev lokacije začne veljati šele, ko vklopite nastavitev lokacije naprave.</string>
     <string name="tooltip_camera_switch_360">Preklopite na različne možnosti fotoaparata.</string>
     <string name="tooltip_capture_360">Za snemanje 360° fotografije ali videoposnetka tapnite gumb za zaklop.</string>
     <string name="tooltip_capture_key_360">Snemajte tudi z gumbom na zaklop na hrbtni strani modula.</string>
-    <string name="tooltip_dual_camera_depth_photo">Fotografije z več podatki, ki omogočajo posebne funkcije urejanja.</string>
     <string name="tooltip_first_use_zoom_button">Tapnite tukaj za preklop na široki kot.</string>
     <string name="tooltip_gallery_360">Podrsnite proti levi in si oglejte svojo 360° fotografijo ali videoposnetek.</string>
     <string name="tooltip_minimap_viewfinder">Spodnjo sliko premaknite levo ali desno.</string>
     <string name="tooltip_mode_switch_360">Posnemite 360° v različnih načinih!</string>
+    <string name="tooltip_modes_list">Odkrijte nove načine fotografiranja.</string>
     <string name="tooltip_smart_camera">Tapnite za več informacij o objektu.</string>
-    <string name="tooltip_smart_camera_disable">To lahko izklopite v Nastavitvah.</string>
+    <string name="tooltip_smart_camera_disable">To lahko izklopite v nastavitvah.</string>
     <string name="tooltip_spherical_viewfinder">Za upravljanje pogleda premaknite ali povečajte in zmanjšajte.</string>
     <string name="tooltip_viewfinder_switch">Za drugačen zaslon tapnite tukaj.</string>
     <string name="video_360_desc">To je video 360. Video lahko uredite z urejevalnikom Moto 360.</string>
@@ -419,5 +435,10 @@ Potrdite soglasje spodaj in v nastavitvah vklopite lokacijo."</string>
     <string name="zoom_hint_full">POLNO</string>
     <string name="zoom_hint_wide">ŠIROKO</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">Prilagodljivo slabi svetlobi</string>
+    <string name="indicate_mode_timelapse">ČASOVNI ZAMIK</string>
+    <string name="setting_mode_timelapse">Časovni zamik</string>
+    <string name="timelapse_config_16x">16 x</string>
+    <string name="timelapse_config_32x">32 x</string>
+    <string name="timelapse_config_4x">4 x</string>
+    <string name="timelapse_config_8x">8 x</string>
 </resources>

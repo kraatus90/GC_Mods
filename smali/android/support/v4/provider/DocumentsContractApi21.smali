@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x15
 .end annotation
@@ -27,7 +23,7 @@
 .end method
 
 .method private static closeQuietly(Ljava/lang/AutoCloseable;)V
-    .locals 2
+    .locals 1
 
     if-nez p0, :cond_0
 
@@ -49,7 +45,7 @@
     throw v0
 
     :catch_1
-    move-exception v1
+    move-exception v0
 
     goto :goto_0
 .end method
@@ -69,19 +65,31 @@
 .method public static createFile(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
     .locals 1
 
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2, p3}, Landroid/provider/DocumentsContract;->createDocument(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static listFiles(Landroid/content/Context;Landroid/net/Uri;)[Landroid/net/Uri;
-    .locals 11
+    .locals 8
+
+    const/4 v6, 0x0
 
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -89,28 +97,26 @@
 
     invoke-static {p1}, Landroid/provider/DocumentsContract;->getDocumentId(Landroid/net/Uri;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v2}, Landroid/provider/DocumentsContract;->buildChildDocumentsUriUsingTree(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {p1, v1}, Landroid/provider/DocumentsContract;->buildChildDocumentsUriUsingTree(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    new-instance v10, Ljava/util/ArrayList;
+    new-instance v7, Ljava/util/ArrayList;
 
-    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v6, 0x0
+    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v2, 0x1
 
     :try_start_0
     new-array v2, v2, [Ljava/lang/String;
 
-    const/4 v3, 0x0
+    const-string/jumbo v3, "document_id"
 
-    const-string/jumbo v4, "document_id"
+    const/4 v4, 0x0
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
     const/4 v3, 0x0
 
@@ -119,93 +125,113 @@
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v6
-
-    :goto_0
-    invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
+    move-result-object v1
 
-    if-nez v2, :cond_0
-
-    invoke-static {v6}, Landroid/support/v4/provider/DocumentsContractApi21;->closeQuietly(Ljava/lang/AutoCloseable;)V
-
-    :goto_1
-    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    new-array v2, v2, [Landroid/net/Uri;
-
-    invoke-virtual {v10, v2}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, [Landroid/net/Uri;
-
-    return-object v2
-
-    :cond_0
-    const/4 v2, 0x0
-
+    :goto_0
     :try_start_1
-    invoke-interface {v6, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {p1, v7}, Landroid/provider/DocumentsContract;->buildDocumentUriUsingTree(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v8
-
-    invoke-virtual {v10, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {v1}, Landroid/support/v4/provider/DocumentsContractApi21;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    :goto_1
+    invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [Landroid/net/Uri;
+
+    invoke-virtual {v7, v0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Landroid/net/Uri;
+
+    return-object v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_2
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Landroid/provider/DocumentsContract;->buildDocumentUriUsingTree(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     goto :goto_0
 
     :catch_0
-    move-exception v9
+    move-exception v0
 
-    :try_start_2
+    :goto_2
+    :try_start_3
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Failed query: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     const-string/jumbo v2, "DocumentFile"
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "Failed query: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-static {v6}, Landroid/support/v4/provider/DocumentsContractApi21;->closeQuietly(Ljava/lang/AutoCloseable;)V
+    invoke-static {v1}, Landroid/support/v4/provider/DocumentsContractApi21;->closeQuietly(Ljava/lang/AutoCloseable;)V
 
     goto :goto_1
 
     :catchall_0
-    move-exception v2
+    move-exception v0
 
-    invoke-static {v6}, Landroid/support/v4/provider/DocumentsContractApi21;->closeQuietly(Ljava/lang/AutoCloseable;)V
+    move-object v1, v6
 
-    throw v2
+    :goto_3
+    invoke-static {v1}, Landroid/support/v4/provider/DocumentsContractApi21;->closeQuietly(Ljava/lang/AutoCloseable;)V
+
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_3
+
+    :catch_1
+    move-exception v0
+
+    move-object v1, v6
+
+    goto :goto_2
 .end method
 
 .method public static prepareTreeUri(Landroid/net/Uri;)Landroid/net/Uri;
@@ -225,13 +251,23 @@
 .method public static renameTo(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
     .locals 1
 
+    :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     invoke-static {v0, p1, p2}, Landroid/provider/DocumentsContract;->renameDocument(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
 
     return-object v0
 .end method

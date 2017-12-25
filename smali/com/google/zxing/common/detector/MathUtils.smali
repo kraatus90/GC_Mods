@@ -13,51 +13,51 @@
 .end method
 
 .method public static distance(FFFF)F
-    .locals 4
+    .locals 2
 
     sub-float v0, p0, p2
 
     sub-float v1, p1, p3
 
-    mul-float v2, v0, v0
+    mul-float/2addr v0, v0
 
-    mul-float v3, v1, v1
+    mul-float/2addr v1, v1
 
-    add-float/2addr v2, v3
+    add-float/2addr v0, v1
 
-    float-to-double v2, v2
+    float-to-double v0, v0
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    double-to-float v2, v2
+    double-to-float v0, v0
 
-    return v2
+    return v0
 .end method
 
 .method public static distance(IIII)F
-    .locals 4
+    .locals 2
 
     sub-int v0, p0, p2
 
     sub-int v1, p1, p3
 
-    mul-int v2, v0, v0
+    mul-int/2addr v0, v0
 
-    mul-int v3, v1, v1
+    mul-int/2addr v1, v1
 
-    add-int/2addr v2, v3
+    add-int/2addr v0, v1
 
-    int-to-double v2, v2
+    int-to-double v0, v0
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    double-to-float v2, v2
+    double-to-float v0, v0
 
-    return v2
+    return v0
 .end method
 
 .method public static round(F)I

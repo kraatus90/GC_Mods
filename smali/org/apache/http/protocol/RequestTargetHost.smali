@@ -89,11 +89,11 @@
     move-object v0, v2
 
     :cond_3
-    const-string/jumbo v1, "Host"
-
     invoke-virtual {v0}, Lorg/apache/http/HttpHost;->toHostString()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "Host"
 
     invoke-interface {p1, v1, v0}, Lorg/apache/http/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 

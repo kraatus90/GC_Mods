@@ -49,21 +49,21 @@
 
     move-result v0
 
-    const/high16 v4, 0x40000000    # 2.0f
+    const/high16 v1, 0x40000000    # 2.0f
 
-    invoke-static {v0, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    const/4 v6, 0x0
+    move v7, v3
 
     :goto_0
-    if-lt v6, p1, :cond_0
+    if-lt v7, p1, :cond_0
 
     return-void
 
     :cond_0
-    invoke-virtual {p0, v6}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v7}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -77,30 +77,34 @@
 
     :cond_1
     :goto_1
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v0, v7, 0x1
+
+    move v7, v0
 
     goto :goto_0
 
     :cond_2
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;
+    move-object v6, v0
 
-    iget v0, v7, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->width:I
+    check-cast v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;
+
+    iget v0, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->width:I
 
     const/4 v4, -0x1
 
     if-ne v0, v4, :cond_1
 
-    iget v8, v7, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
+    iget v8, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    iput v0, v7, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
+    iput v0, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     move-object v0, p0
 
@@ -110,15 +114,15 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/AlertDialogLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    iput v8, v7, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
+    iput v8, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
 
     goto :goto_1
 .end method
 
 .method private static resolveMinimumHeight(Landroid/view/View;)I
-    .locals 5
+    .locals 3
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
 
@@ -126,38 +130,36 @@
 
     if-gtz v0, :cond_1
 
-    instance-of v2, p0, Landroid/view/ViewGroup;
+    instance-of v0, p0, Landroid/view/ViewGroup;
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     :cond_0
-    return v4
+    return v2
 
     :cond_1
     return v0
 
     :cond_2
-    move-object v1, p0
+    check-cast p0, Landroid/view/ViewGroup;
 
-    check-cast v1, Landroid/view/ViewGroup;
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
+    move-result v0
 
-    move-result v2
+    const/4 v1, 0x1
 
-    const/4 v3, 0x1
+    if-ne v0, v1, :cond_0
 
-    if-ne v2, v3, :cond_0
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    move-result-object v0
 
-    move-result-object v2
+    invoke-static {v0}, Landroid/support/v7/widget/AlertDialogLayout;->resolveMinimumHeight(Landroid/view/View;)I
 
-    invoke-static {v2}, Landroid/support/v7/widget/AlertDialogLayout;->resolveMinimumHeight(Landroid/view/View;)I
+    move-result v0
 
-    move-result v2
-
-    return v2
+    return v0
 .end method
 
 .method private setChildFrame(Landroid/view/View;IIII)V
@@ -173,22 +175,24 @@
 .end method
 
 .method private tryOnMeasure(II)Z
-    .locals 26
-
-    const/16 v20, 0x0
+    .locals 15
 
     const/4 v4, 0x0
 
-    const/16 v18, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getChildCount()I
+    const/4 v2, 0x0
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getChildCount()I
 
     move-result v9
 
-    const/4 v14, 0x0
+    const/4 v1, 0x0
+
+    move v5, v1
 
     :goto_0
-    if-lt v14, v9, :cond_1
+    if-lt v5, v9, :cond_1
 
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -196,285 +200,327 @@
 
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v11
+    move-result v8
 
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v22
-
-    const/4 v8, 0x0
-
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
-
-    move-result v24
-
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingBottom()I
-
-    move-result v25
-
-    add-int v21, v24, v25
-
-    if-nez v20, :cond_8
-
-    :goto_1
-    const/4 v3, 0x0
+    move-result v11
 
     const/4 v5, 0x0
 
-    if-nez v4, :cond_9
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingBottom()I
+
+    move-result v6
+
+    add-int/2addr v1, v6
+
+    if-nez v4, :cond_8
+
+    move v4, v5
+
+    :goto_1
+    const/4 v6, 0x0
+
+    const/4 v5, 0x0
+
+    if-nez v3, :cond_9
+
+    move v13, v5
+
+    move v5, v1
+
+    move v1, v13
+
+    move v14, v6
+
+    move v6, v4
+
+    move v4, v14
 
     :goto_2
-    const/16 v17, 0x0
+    const/4 v7, 0x0
 
-    if-nez v18, :cond_a
+    if-nez v2, :cond_a
+
+    move v13, v7
+
+    move v7, v6
+
+    move v6, v5
+
+    move v5, v13
 
     :goto_3
-    sub-int v19, v11, v21
+    sub-int/2addr v8, v6
 
-    if-nez v4, :cond_c
+    if-nez v3, :cond_c
+
+    move v1, v6
+
+    move v3, v7
 
     :goto_4
-    if-nez v18, :cond_e
+    if-nez v2, :cond_e
 
     :cond_0
-    :goto_5
-    const/16 v16, 0x0
+    move v2, v3
 
-    const/4 v14, 0x0
+    :goto_5
+    const/4 v4, 0x0
+
+    const/4 v3, 0x0
+
+    move v13, v3
+
+    move v3, v4
+
+    move v4, v13
 
     :goto_6
-    if-lt v14, v9, :cond_f
+    if-lt v4, v9, :cond_f
 
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingLeft()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingLeft()I
 
-    move-result v24
+    move-result v4
 
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingRight()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingRight()I
 
-    move-result v25
+    move-result v5
 
-    add-int v24, v24, v25
+    add-int/2addr v4, v5
 
-    add-int v16, v16, v24
+    add-int/2addr v3, v4
 
-    move/from16 v0, v16
+    move/from16 v0, p1
 
-    move/from16 v1, p1
+    invoke-static {v3, v0, v2}, Landroid/view/View;->resolveSizeAndState(III)I
 
-    invoke-static {v0, v1, v8}, Landroid/support/v4/view/ViewCompat;->resolveSizeAndState(III)I
+    move-result v2
 
-    move-result v23
+    const/4 v3, 0x0
 
-    const/16 v24, 0x0
+    move/from16 v0, p2
 
-    move/from16 v0, v21
+    invoke-static {v1, v0, v3}, Landroid/view/View;->resolveSizeAndState(III)I
 
-    move/from16 v1, p2
+    move-result v1
 
-    move/from16 v2, v24
+    invoke-virtual {p0, v2, v1}, Landroid/support/v7/widget/AlertDialogLayout;->setMeasuredDimension(II)V
 
-    invoke-static {v0, v1, v2}, Landroid/support/v4/view/ViewCompat;->resolveSizeAndState(III)I
+    const/high16 v1, 0x40000000    # 2.0f
 
-    move-result v12
-
-    move-object/from16 v0, p0
-
-    move/from16 v1, v23
-
-    invoke-virtual {v0, v1, v12}, Landroid/support/v7/widget/AlertDialogLayout;->setMeasuredDimension(II)V
-
-    const/high16 v24, 0x40000000    # 2.0f
-
-    move/from16 v0, v22
-
-    move/from16 v1, v24
-
-    if-ne v0, v1, :cond_11
+    if-ne v11, v1, :cond_11
 
     :goto_7
-    const/16 v24, 0x1
+    const/4 v1, 0x1
 
-    return v24
+    return v1
 
     :cond_1
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v5}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v0, v14}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
+    move-result-object v1
 
-    move-result-object v6
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
-    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
+    move-result v6
 
-    move-result v24
+    const/16 v7, 0x8
 
-    const/16 v25, 0x8
+    if-eq v6, v7, :cond_3
 
-    move/from16 v0, v24
+    invoke-virtual {v1}, Landroid/view/View;->getId()I
 
-    move/from16 v1, v25
+    move-result v6
 
-    if-eq v0, v1, :cond_3
+    sget v7, Landroid/support/v7/appcompat/R$id;->topPanel:I
 
-    invoke-virtual {v6}, Landroid/view/View;->getId()I
+    if-eq v6, v7, :cond_4
 
-    move-result v15
+    sget v7, Landroid/support/v7/appcompat/R$id;->buttonPanel:I
 
-    sget v24, Landroid/support/v7/appcompat/R$id;->topPanel:I
+    if-eq v6, v7, :cond_5
 
-    move/from16 v0, v24
+    sget v7, Landroid/support/v7/appcompat/R$id;->contentPanel:I
 
-    if-eq v15, v0, :cond_4
-
-    sget v24, Landroid/support/v7/appcompat/R$id;->buttonPanel:I
-
-    move/from16 v0, v24
-
-    if-eq v15, v0, :cond_5
-
-    sget v24, Landroid/support/v7/appcompat/R$id;->contentPanel:I
-
-    move/from16 v0, v24
-
-    if-ne v15, v0, :cond_6
+    if-ne v6, v7, :cond_6
 
     :cond_2
-    if-nez v18, :cond_7
+    if-nez v2, :cond_7
 
-    move-object/from16 v18, v6
+    move-object v2, v3
 
-    :cond_3
+    move-object v3, v4
+
     :goto_8
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v4, v5, 0x1
+
+    move v5, v4
+
+    move-object v4, v3
+
+    move-object v3, v2
+
+    move-object v2, v1
 
     goto/16 :goto_0
 
+    :cond_3
+    move-object v1, v2
+
+    move-object v2, v3
+
+    move-object v3, v4
+
+    goto :goto_8
+
     :cond_4
-    move-object/from16 v20, v6
+    move-object v13, v2
+
+    move-object v2, v3
+
+    move-object v3, v1
+
+    move-object v1, v13
 
     goto :goto_8
 
     :cond_5
-    move-object v4, v6
+    move-object v3, v4
+
+    move-object v13, v1
+
+    move-object v1, v2
+
+    move-object v2, v13
 
     goto :goto_8
 
     :cond_6
-    sget v24, Landroid/support/v7/appcompat/R$id;->customPanel:I
+    sget v7, Landroid/support/v7/appcompat/R$id;->customPanel:I
 
-    move/from16 v0, v24
+    if-eq v6, v7, :cond_2
 
-    if-eq v15, v0, :cond_2
+    const/4 v1, 0x0
 
-    const/16 v24, 0x0
-
-    return v24
+    return v1
 
     :cond_7
-    const/16 v24, 0x0
+    const/4 v1, 0x0
 
-    return v24
+    return v1
 
     :cond_8
-    const/16 v24, 0x0
+    const/4 v5, 0x0
 
-    move-object/from16 v0, v20
+    move/from16 v0, p1
 
-    move/from16 v1, p1
+    invoke-virtual {v4, v0, v5}, Landroid/view/View;->measure(II)V
 
-    move/from16 v2, v24
+    invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/View;->measure(II)V
+    move-result v5
 
-    invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getMeasuredHeight()I
+    add-int/2addr v1, v5
 
-    move-result v24
+    const/4 v5, 0x0
 
-    add-int v21, v21, v24
+    invoke-virtual {v4}, Landroid/view/View;->getMeasuredState()I
 
-    const/16 v24, 0x0
+    move-result v4
 
-    invoke-static/range {v20 .. v20}, Landroid/support/v4/view/ViewCompat;->getMeasuredState(Landroid/view/View;)I
+    invoke-static {v5, v4}, Landroid/view/View;->combineMeasuredStates(II)I
 
-    move-result v25
-
-    invoke-static/range {v24 .. v25}, Landroid/support/v4/view/ViewCompat;->combineMeasuredStates(II)I
-
-    move-result v8
+    move-result v4
 
     goto/16 :goto_1
 
     :cond_9
-    const/16 v24, 0x0
+    const/4 v5, 0x0
 
     move/from16 v0, p1
 
-    move/from16 v1, v24
+    invoke-virtual {v3, v0, v5}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {v4, v0, v1}, Landroid/view/View;->measure(II)V
+    invoke-static {v3}, Landroid/support/v7/widget/AlertDialogLayout;->resolveMinimumHeight(Landroid/view/View;)I
 
-    invoke-static {v4}, Landroid/support/v7/widget/AlertDialogLayout;->resolveMinimumHeight(Landroid/view/View;)I
+    move-result v6
 
-    move-result v3
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
-    invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
+    move-result v5
 
-    move-result v24
+    sub-int/2addr v5, v6
 
-    sub-int v5, v24, v3
+    add-int/2addr v1, v6
 
-    add-int v21, v21, v3
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredState()I
 
-    invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->getMeasuredState(Landroid/view/View;)I
+    move-result v7
 
-    move-result v24
+    invoke-static {v4, v7}, Landroid/view/View;->combineMeasuredStates(II)I
 
-    move/from16 v0, v24
+    move-result v4
 
-    invoke-static {v8, v0}, Landroid/support/v4/view/ViewCompat;->combineMeasuredStates(II)I
+    move v13, v5
 
-    move-result v8
+    move v5, v1
+
+    move v1, v13
+
+    move v14, v6
+
+    move v6, v4
+
+    move v4, v14
 
     goto/16 :goto_2
 
     :cond_a
     if-eqz v10, :cond_b
 
-    const/16 v24, 0x0
+    sub-int v7, v8, v5
 
-    sub-int v25, v11, v21
+    const/4 v12, 0x0
 
-    invoke-static/range {v24 .. v25}, Ljava/lang/Math;->max(II)I
+    invoke-static {v12, v7}, Ljava/lang/Math;->max(II)I
 
-    move-result v24
+    move-result v7
 
-    move/from16 v0, v24
-
-    invoke-static {v0, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v7, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v7
 
     :goto_9
-    move-object/from16 v0, v18
+    move/from16 v0, p1
 
-    move/from16 v1, p1
+    invoke-virtual {v2, v0, v7}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {v0, v1, v7}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
-    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getMeasuredHeight()I
+    move-result v7
 
-    move-result v17
+    add-int/2addr v5, v7
 
-    add-int v21, v21, v17
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredState()I
 
-    invoke-static/range {v18 .. v18}, Landroid/support/v4/view/ViewCompat;->getMeasuredState(Landroid/view/View;)I
+    move-result v12
 
-    move-result v24
+    invoke-static {v6, v12}, Landroid/view/View;->combineMeasuredStates(II)I
 
-    move/from16 v0, v24
+    move-result v6
 
-    invoke-static {v8, v0}, Landroid/support/v4/view/ViewCompat;->combineMeasuredStates(II)I
+    move v13, v7
 
-    move-result v8
+    move v7, v6
+
+    move v6, v5
+
+    move v5, v13
 
     goto/16 :goto_3
 
@@ -484,140 +530,118 @@
     goto :goto_9
 
     :cond_c
-    sub-int v21, v21, v3
+    sub-int/2addr v6, v4
 
-    move/from16 v0, v19
+    invoke-static {v8, v1}, Ljava/lang/Math;->min(II)I
 
-    invoke-static {v0, v5}, Ljava/lang/Math;->min(II)I
+    move-result v12
 
-    move-result v13
+    if-gtz v12, :cond_d
 
-    if-gtz v13, :cond_d
+    move v1, v8
 
     :goto_a
-    const/high16 v24, 0x40000000    # 2.0f
+    const/high16 v8, 0x40000000    # 2.0f
 
-    move/from16 v0, v24
+    invoke-static {v4, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-static {v3, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v7
+    move-result v4
 
     move/from16 v0, p1
 
-    invoke-virtual {v4, v0, v7}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v3, v0, v4}, Landroid/view/View;->measure(II)V
 
-    invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v24
+    move-result v4
 
-    add-int v21, v21, v24
+    add-int/2addr v6, v4
 
-    invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->getMeasuredState(Landroid/view/View;)I
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredState()I
 
-    move-result v24
+    move-result v3
 
-    move/from16 v0, v24
+    invoke-static {v7, v3}, Landroid/view/View;->combineMeasuredStates(II)I
 
-    invoke-static {v8, v0}, Landroid/support/v4/view/ViewCompat;->combineMeasuredStates(II)I
+    move-result v3
 
-    move-result v8
+    move v8, v1
+
+    move v1, v6
 
     goto/16 :goto_4
 
     :cond_d
-    sub-int v19, v19, v13
+    sub-int v1, v8, v12
 
-    add-int/2addr v3, v13
+    add-int/2addr v4, v12
 
     goto :goto_a
 
     :cond_e
-    if-lez v19, :cond_0
+    if-lez v8, :cond_0
 
-    sub-int v21, v21, v17
+    sub-int/2addr v1, v5
 
-    move/from16 v13, v19
+    add-int v4, v5, v8
 
-    sub-int v19, v19, v13
+    invoke-static {v4, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    add-int v17, v17, v13
+    move-result v4
 
-    move/from16 v0, v17
+    move/from16 v0, p1
 
-    invoke-static {v0, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-virtual {v2, v0, v4}, Landroid/view/View;->measure(II)V
 
-    move-result v7
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-object/from16 v0, v18
+    move-result v4
 
-    move/from16 v1, p1
+    add-int/2addr v1, v4
 
-    invoke-virtual {v0, v1, v7}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v2}, Landroid/view/View;->getMeasuredState()I
 
-    invoke-virtual/range {v18 .. v18}, Landroid/view/View;->getMeasuredHeight()I
+    move-result v2
 
-    move-result v24
+    invoke-static {v3, v2}, Landroid/view/View;->combineMeasuredStates(II)I
 
-    add-int v21, v21, v24
-
-    invoke-static/range {v18 .. v18}, Landroid/support/v4/view/ViewCompat;->getMeasuredState(Landroid/view/View;)I
-
-    move-result v24
-
-    move/from16 v0, v24
-
-    invoke-static {v8, v0}, Landroid/support/v4/view/ViewCompat;->combineMeasuredStates(II)I
-
-    move-result v8
+    move-result v2
 
     goto/16 :goto_5
 
     :cond_f
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v4}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v0, v14}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
+    move-result-object v5
 
-    move-result-object v6
+    invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
-    invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
+    move-result v6
 
-    move-result v24
+    const/16 v7, 0x8
 
-    const/16 v25, 0x8
-
-    move/from16 v0, v24
-
-    move/from16 v1, v25
-
-    if-ne v0, v1, :cond_10
+    if-ne v6, v7, :cond_10
 
     :goto_b
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_6
 
     :cond_10
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v24
+    move-result v5
 
-    move/from16 v0, v16
+    invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I
 
-    move/from16 v1, v24
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v16
+    move-result v3
 
     goto :goto_b
 
     :cond_11
-    move-object/from16 v0, p0
+    move/from16 v0, p2
 
-    move/from16 v1, p2
-
-    invoke-direct {v0, v9, v1}, Landroid/support/v7/widget/AlertDialogLayout;->forceUniformWidth(II)V
+    invoke-direct {p0, v9, v0}, Landroid/support/v7/widget/AlertDialogLayout;->forceUniformWidth(II)V
 
     goto/16 :goto_7
 .end method
@@ -625,74 +649,80 @@
 
 # virtual methods
 .method protected onLayout(ZIIII)V
-    .locals 24
+    .locals 14
 
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingLeft()I
-
-    move-result v20
-
-    sub-int v22, p4, p2
-
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingRight()I
-
-    move-result v1
-
-    sub-int v8, v22, v1
-
-    sub-int v1, v22, v20
-
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingRight()I
-
-    move-result v23
-
-    sub-int v9, v1, v23
-
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getMeasuredHeight()I
-
-    move-result v21
-
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getChildCount()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingLeft()I
 
     move-result v10
 
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getGravity()I
+    sub-int v0, p4, p2
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingRight()I
+
+    move-result v1
+
+    sub-int v11, v0, v1
+
+    sub-int/2addr v0, v10
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingRight()I
+
+    move-result v1
+
+    sub-int v12, v0, v1
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getChildCount()I
 
     move-result v13
 
-    and-int/lit8 v18, v13, 0x70
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getGravity()I
 
-    const v1, 0x800007
+    move-result v1
 
-    and-int v19, v13, v1
+    and-int/lit8 v2, v1, 0x70
 
-    sparse-switch v18, :sswitch_data_0
+    const v3, 0x800007
+
+    and-int v8, v1, v3
+
+    sparse-switch v2, :sswitch_data_0
 
     :sswitch_0
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
 
-    move-result v4
+    move-result v0
 
     :goto_0
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getDividerDrawable()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getDividerDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v11
+    move-result-object v1
 
-    if-eqz v11, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v12
+    move-result v1
+
+    move v7, v1
 
     :goto_1
-    const/4 v14, 0x0
+    const/4 v1, 0x0
+
+    move v9, v1
+
+    move v3, v0
 
     :goto_2
-    if-lt v14, v10, :cond_1
+    if-lt v9, v13, :cond_1
 
     return-void
 
     :sswitch_1
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
 
     move-result v1
 
@@ -700,175 +730,153 @@
 
     sub-int v1, v1, p3
 
-    sub-int v4, v1, v21
+    sub-int v0, v1, v0
 
     goto :goto_0
 
     :sswitch_2
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/AlertDialogLayout;->getPaddingTop()I
 
     move-result v1
 
-    sub-int v23, p5, p3
+    sub-int v2, p5, p3
 
-    sub-int v23, v23, v21
+    sub-int v0, v2, v0
 
-    div-int/lit8 v23, v23, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    add-int v4, v1, v23
+    add-int/2addr v0, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 v12, 0x0
+    const/4 v1, 0x0
+
+    move v7, v1
 
     goto :goto_1
 
     :cond_1
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v9}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
 
-    invoke-virtual {v0, v14}, Landroid/support/v7/widget/AlertDialogLayout;->getChildAt(I)Landroid/view/View;
+    move-result-object v1
 
-    move-result-object v2
-
-    if-nez v2, :cond_3
+    if-nez v1, :cond_3
 
     :cond_2
     :goto_3
-    add-int/lit8 v14, v14, 0x1
+    add-int/lit8 v0, v9, 0x1
+
+    move v9, v0
 
     goto :goto_2
 
     :cond_3
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
-    move-result v1
+    move-result v0
 
-    const/16 v23, 0x8
+    const/16 v2, 0x8
 
-    move/from16 v0, v23
+    if-eq v0, v2, :cond_2
 
-    if-eq v1, v0, :cond_2
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
+    move-result v4
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
 
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result v6
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    move-object v6, v0
 
-    move-result-object v17
+    check-cast v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;
 
-    check-cast v17, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;
+    iget v0, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->gravity:I
-
-    move/from16 v16, v0
-
-    if-ltz v16, :cond_4
+    if-ltz v0, :cond_4
 
     :goto_4
-    invoke-static/range {p0 .. p0}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
-    move-result v15
+    move-result v2
 
-    move/from16 v0, v16
+    invoke-static {v0, v2}, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(II)I
 
-    invoke-static {v0, v15}, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(II)I
+    move-result v0
 
-    move-result v7
+    and-int/lit8 v0, v0, 0x7
 
-    and-int/lit8 v1, v7, 0x7
-
-    packed-switch v1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     :pswitch_0
-    move-object/from16 v0, v17
+    iget v0, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
 
-    iget v1, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
-
-    add-int v3, v20, v1
+    add-int v2, v10, v0
 
     :goto_5
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v9}, Landroid/support/v7/widget/AlertDialogLayout;->hasDividerBeforeChildAt(I)Z
 
-    invoke-virtual {v0, v14}, Landroid/support/v7/widget/AlertDialogLayout;->hasDividerBeforeChildAt(I)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_5
 
-    if-nez v1, :cond_5
+    move v0, v3
 
     :goto_6
-    move-object/from16 v0, v17
+    iget v3, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->topMargin:I
 
-    iget v1, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->topMargin:I
+    add-int/2addr v3, v0
 
-    add-int/2addr v4, v1
+    move-object v0, p0
 
-    move-object/from16 v1, p0
+    invoke-direct/range {v0 .. v5}, Landroid/support/v7/widget/AlertDialogLayout;->setChildFrame(Landroid/view/View;IIII)V
 
-    invoke-direct/range {v1 .. v6}, Landroid/support/v7/widget/AlertDialogLayout;->setChildFrame(Landroid/view/View;IIII)V
+    iget v0, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->bottomMargin:I
 
-    move-object/from16 v0, v17
+    add-int/2addr v0, v5
 
-    iget v1, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->bottomMargin:I
-
-    add-int/2addr v1, v6
-
-    add-int/2addr v4, v1
+    add-int/2addr v3, v0
 
     goto :goto_3
 
     :cond_4
-    move/from16 v16, v19
+    move v0, v8
 
     goto :goto_4
 
     :pswitch_1
-    sub-int v1, v9, v5
+    sub-int v0, v12, v4
 
-    div-int/lit8 v1, v1, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    add-int v1, v1, v20
+    add-int/2addr v0, v10
 
-    move-object/from16 v0, v17
+    iget v2, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
 
-    iget v0, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->leftMargin:I
+    add-int/2addr v0, v2
 
-    move/from16 v23, v0
+    iget v2, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
 
-    add-int v1, v1, v23
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
-
-    move/from16 v23, v0
-
-    sub-int v3, v1, v23
+    sub-int v2, v0, v2
 
     goto :goto_5
 
     :pswitch_2
-    sub-int v1, v8, v5
+    sub-int v0, v11, v4
 
-    move-object/from16 v0, v17
+    iget v2, v6, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
 
-    iget v0, v0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->rightMargin:I
-
-    move/from16 v23, v0
-
-    sub-int v3, v1, v23
+    sub-int v2, v0, v2
 
     goto :goto_5
 
     :cond_5
-    add-int/2addr v4, v12
+    add-int v0, v3, v7
 
     goto :goto_6
 

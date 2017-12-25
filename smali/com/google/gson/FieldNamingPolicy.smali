@@ -179,31 +179,31 @@
 .method static separateCamelCase(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
     :goto_0
-    if-lt v1, v2, :cond_0
+    if-lt v0, v2, :cond_0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    return-object v4
+    return-object v0
 
     :cond_0
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v0
+    move-result v3
 
-    invoke-static {v0}, Ljava/lang/Character;->isUpperCase(C)Z
+    invoke-static {v3}, Ljava/lang/Character;->isUpperCase(C)Z
 
     move-result v4
 
@@ -211,94 +211,92 @@
 
     :cond_1
     :goto_1
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_1
 .end method
 
 .method static upperCaseFirstLetter(Ljava/lang/String;)Ljava/lang/String;
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
+    move-result v0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v3
 
     :goto_0
-    add-int/lit8 v5, v3, -0x1
+    add-int/lit8 v4, v3, -0x1
 
-    if-lt v2, v5, :cond_1
+    if-lt v1, v4, :cond_1
 
     :cond_0
-    invoke-static {v1}, Ljava/lang/Character;->isUpperCase(C)Z
+    invoke-static {v0}, Ljava/lang/Character;->isUpperCase(C)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_2
+    if-eqz v3, :cond_2
 
     return-object p0
 
     :cond_1
-    invoke-static {v1}, Ljava/lang/Character;->isLetter(C)Z
+    invoke-static {v0}, Ljava/lang/Character;->isLetter(C)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_0
+    if-nez v4, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v1}, Ljava/lang/Character;->toUpperCase(C)C
+    invoke-static {v0}, Ljava/lang/Character;->toUpperCase(C)C
 
-    move-result v5
+    move-result v0
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-static {v5, p0, v2}, Lcom/google/gson/FieldNamingPolicy;->modifyString(CLjava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lcom/google/gson/FieldNamingPolicy;->modifyString(CLjava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    return-object v5
+    return-object v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/gson/FieldNamingPolicy;

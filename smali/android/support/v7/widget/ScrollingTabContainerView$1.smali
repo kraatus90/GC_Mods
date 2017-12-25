@@ -39,33 +39,31 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
-    const/4 v4, 0x0
+    iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
 
-    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
-    invoke-virtual {v1}, Landroid/view/View;->getLeft()I
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+
+    invoke-virtual {v1}, Landroid/support/v7/widget/ScrollingTabContainerView;->getWidth()I
 
     move-result v1
 
-    iget-object v2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+    iget-object v2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
 
-    invoke-virtual {v2}, Landroid/support/v7/widget/ScrollingTabContainerView;->getWidth()I
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
-    iget-object v3, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
+    sub-int/2addr v1, v2
 
-    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
+    div-int/lit8 v1, v1, 0x2
 
-    move-result v3
-
-    sub-int/2addr v2, v3
-
-    div-int/lit8 v2, v2, 0x2
-
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
@@ -73,9 +71,11 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/support/v7/widget/ScrollingTabContainerView;->smoothScrollTo(II)V
 
-    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+    iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
-    iput-object v4, v1, Landroid/support/v7/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
 
     return-void
 .end method

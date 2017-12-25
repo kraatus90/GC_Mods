@@ -271,9 +271,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpScreens$TapFocusAnimation;->mMyHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$95;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$6;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$95;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$LOW-vl2YSVm5pkOx_DQZN0DT2mo$6;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
@@ -633,7 +633,7 @@
     throw v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens$TapFocusAnimation_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_HelpScreens$TapFocusAnimation_49263()V
     .locals 0
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/HelpScreens$TapFocusAnimation;->showAction()V

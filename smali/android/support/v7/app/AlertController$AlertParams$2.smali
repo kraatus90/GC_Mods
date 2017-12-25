@@ -58,9 +58,9 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
+    iput v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
 
     return-void
 .end method
@@ -68,13 +68,13 @@
 
 # virtual methods
 .method public bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
-    .locals 5
+    .locals 4
 
     const/4 v1, 0x1
 
-    const v2, 0x1020014
+    const v0, 0x1020014
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -94,20 +94,25 @@
 
     move-result v3
 
-    iget v4, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
+    iget v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
 
-    invoke-interface {p3, v4}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {p3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v4
+    move-result v0
 
-    if-eq v4, v1, :cond_0
+    if-eq v0, v1, :cond_0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    :cond_0
-    invoke-virtual {v2, v3, v1}, Landroid/support/v7/app/AlertController$RecycleListView;->setItemChecked(IZ)V
+    :goto_0
+    invoke-virtual {v2, v3, v0}, Landroid/support/v7/app/AlertController$RecycleListView;->setItemChecked(IZ)V
 
     return-void
+
+    :cond_0
+    move v0, v1
+
+    goto :goto_0
 .end method
 
 .method public newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;

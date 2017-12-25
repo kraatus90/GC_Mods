@@ -68,13 +68,13 @@
     <string name="aware_info_event">Evento</string>
     <string name="aware_info_failed">Error</string>
     <string name="aware_info_geo">Ubicación</string>
-    <string name="aware_info_landmark">Punto de referencia</string>
-    <string name="aware_info_landmark_loading">La cámara está reconociendo el punto de referencia…</string>
+    <string name="aware_info_landmark">Punto turístico</string>
+    <string name="aware_info_landmark_loading">La cámara está reconociendo el punto turístico</string>
     <string name="aware_info_message">Mensaje</string>
     <string name="aware_info_more_wikipedia">Ver más en Wikipedia</string>
     <string name="aware_info_no_results">No se encontraron resultados</string>
     <string name="aware_info_object">Objeto</string>
-    <string name="aware_info_object_loading">La cámara está reconociendo el objeto…</string>
+    <string name="aware_info_object_loading">La cámara está reconociendo el objeto</string>
     <string name="aware_info_processing">Procesando</string>
     <string name="aware_info_product">Producto</string>
     <string name="aware_info_search_amazon">Buscar en Amazon</string>
@@ -96,7 +96,7 @@
     <string name="cancel">Cancelar</string>
     <string name="capture_failure">No se pudo capturar. Inténtalo de nuevo.</string>
     <string name="checkbox_do_not_show">No mostrar de nuevo</string>
-    <string name="cloudsight_terms">Las imágenes se enviarán a CloudSight para proporcionar resultados de búsqueda. &lt;br/>&lt;br/>Si continúas, aceptas la&lt;a href=%1$s> Política de Privacidad&lt;/a> de CloudSight.</string>
+    <string name="cloudsight_terms">Cada vez que usas el reconocimiento de objetos, la imagen y la ubicación (si está habilitada) se enviarán a un tercero para proporcionar resultados de búsqueda.&lt;br/>&lt;br/> Al continuar, aceptas la &lt;a href=%1$s>Política de privacidad&lt;/a>.</string>
     <string name="dailog_panorama_failed">Falla en panorámica. Por favor, intenta de nuevo.</string>
     <string name="dailog_panorama_not_taken">Foto panorámica no tomada.</string>
     <string name="dialog_access_sd_fail">No es posible capturar medios. No es posible acceder a la tarjeta SD.</string>
@@ -118,6 +118,7 @@
     <string name="dialog_device_not_supported">El dispositivo no es compatible</string>
     <string name="dialog_disagree">No acepto</string>
     <string name="dialog_dismiss">No volver a mostrar</string>
+    <string name="dialog_download">Descargar</string>
     <string name="dialog_external_sd_missing">No es posible tomar la foto. La tarjeta SD es innaccesible. Cambiando a almacenamiento interno del teléfono</string>
     <string name="dialog_first_time_set_pure_raw_message">"Estos archivos sin procesar se usan para editar fotos profesionales.
 
@@ -170,8 +171,8 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="help_desc_dual_result">Asegúrate de estar a menos de 1.5 metros de distancia del sujeto. Es mejor si no hay nada en el camino y el sujeto se ve claramente.</string>
     <string name="help_desc_quick">Gira dos veces para abrir o cambiar entre las cámaras frontal y trasera.</string>
     <string name="help_desc_quick_double_tap_pwr">Toca dos veces el botón de encendido para abrir la cámara.</string>
-    <string name="help_desc_smart_camera">La cámara reconoce los objetos y puntos de referencia. También puede escanear códigos QR, tarjetas de presentación y códigos de barras.</string>
-    <string name="help_desc_smart_camera_landmark_only">La cámara reconoce puntos de referencia. También puede escanear códigos QR, tarjetas de presentación y códigos de barras.</string>
+    <string name="help_desc_smart_camera">La cámara reconoce los objetos y puntos turísticos. También puede escanear códigos QR, tarjetas de presentación y códigos de barras.</string>
+    <string name="help_desc_smart_camera_landmark_only">La cámara reconoce puntos turísticos. También puede escanear códigos QR, tarjetas de presentación y códigos de barras.</string>
     <string name="help_desc_zoom">Arrastra hacia arriba y hacia abajo para hacer zoom.</string>
     <string name="help_done">Listo</string>
     <string name="help_dtfe_focus_header">Cambiar enfoque y exposición</string>
@@ -195,6 +196,7 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="help_next">Siguiente</string>
     <string name="image_360_desc">Esta es una foto en 360°. Puedes editar esta foto con Editor Moto 360.</string>
     <string name="image_360_name">Foto en 360°</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d %5$s (%3$s%4$s)</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">"MODO PROFUNDIDAD "</string>
     <string name="indicate_mode_mono">B+N REAL</string>
@@ -206,16 +208,19 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="indicate_mode_ultra_wide">ÁNGULO ULTRAAMPLIO</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">GRAN ANGULAR</string>
+    <string name="indicate_mode_wide_angle_selfie">SELFIE GRAN ANGULAR</string>
     <string name="internal_storage">almacenamiento interno</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Reconocimiento de puntos de referencia brinda información acerca de puntos de referencia populares en todo el mundo.&lt;br/>&lt;br/>Instálalo para habilitar esta función.</string>
-    <string name="landmark_install_over_data">El tamaño de la de descarga de Reconocimiento de puntos de referencia de 92 MB. Su instalación a través de datos móviles puede causar cargos por uso de datos adicionales.</string>
-    <string name="landmark_notification_downloading">Descargando Reconocimiento de puntos de referencia…</string>
-    <string name="landmark_notification_install">Instalando Reconocimiento de puntos de referencia…</string>
-    <string name="landmark_notification_install_complete">Instalación de Reconocimiento de puntos de referencia completa</string>
-    <string name="landmark_notification_install_failed">Ocurrió un error en la instalación de Reconocimiento de puntos de referencia</string>
-    <string name="landmark_notification_install_invalid_url">La base de datos de puntos de referencia no está disponible, actualiza a la versión más reciente de la cámara</string>
-    <string name="landmark_notification_install_out_of_space">El espacio de almacenamiento disponible es insuficiente para instalar Reconocimiento de puntos de referencia</string>
+    <string name="landmark_install_message">El reconocimiento de puntos turísticos brinda información acerca de puntos turísticos populares en todo el mundo.&lt;br/>&lt;br/>Descarga la base de datos de puntos turísticos para habilitar esta función.</string>
+    <string name="landmark_install_over_data">El tamaño de la descarga de la base de datos de puntos turísticos es de 92 MB. La descarga a través de datos móviles puede causar cargos por uso de datos adicionales.</string>
+    <string name="landmark_notification_downloading">Descargando la base de datos de puntos turísticos…</string>
+    <string name="landmark_notification_install">Instalando la base de datos de puntos turísticos…</string>
+    <string name="landmark_notification_install_complete">Instalación de la base de datos de puntos turísticos completada</string>
+    <string name="landmark_notification_install_failed">Ocurrió un error en la instalación de a base de datos de puntos turísticos</string>
+    <string name="landmark_notification_install_invalid_url">La base de datos de puntos turísticos no está disponible, actualiza a la versión más reciente de la cámara</string>
+    <string name="landmark_notification_install_out_of_space">El espacio de almacenamiento disponible es insuficiente para instalar la base de datos de puntos turísticos</string>
+    <string name="landmark_notification_paused">La descarga de la base de datos de puntos turísticos continuará cuando la conexión a Internet esté disponible</string>
+    <string name="landmark_notification_queued">La descarga de la base de datos de puntos turísticos comenzará cuando la conexión a Internet esté disponible</string>
     <string name="main_setting_amz_barcode">Lector de código de barras de Amazon</string>
     <string name="main_setting_amz_privacy">Aviso de privacidad de Amazon</string>
     <string name="main_setting_amz_terms">Condiciones de uso.</string>
@@ -237,7 +242,9 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="main_setting_help_ui">Volver a reproducir el tutorial</string>
     <string name="main_setting_image_ratio">Tamaño de la foto (trasera)</string>
     <string name="main_setting_image_ratio_front">Tamaño de la foto (frontal)</string>
-    <string name="main_setting_landmark_detection">Reconocimiento de puntos de referencia</string>
+    <string name="main_setting_landmark_detection">Reconocimiento de puntos turísticos</string>
+    <string name="main_setting_landmark_version_current">Versión de la base de datos: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Base de datos no instalada</string>
     <string name="main_setting_licenses">Licencias de código abierto</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -273,6 +280,9 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="perm_required_alert_title">Permisos requeridos</string>
     <string name="photos_depth_desc">Utiliza el Editor de profundidad para seleccionar el enfoque, reemplazar el fondo o seleccionar el área que deseas cambiar a blanco y negro.</string>
     <string name="photos_depth_name">"Modo profundidad "</string>
+    <string name="photos_notification_desc">Obtén almacenamiento ilimitado con Google Photos</string>
+    <string name="photos_notification_title">Guardar copia de seguridad en Google Photos</string>
+    <string name="qcfa_resolution_description">Avanzado</string>
     <string name="retake">Re-tomar</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -315,6 +325,7 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="setting_mode_slow_motion">Movimiento lento</string>
     <string name="setting_mode_ultra_wide">Ángulo ultraamplio</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Selfie gran angular</string>
     <string name="setting_off">Desactivado</string>
     <string name="setting_on">Activado</string>
     <string name="setting_persist">Retener</string>
@@ -331,22 +342,27 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="setting_timer_dialog_title">TEMPORIZADOR</string>
     <string name="setting_torch">Antorcha</string>
     <string name="setting_true">verdadero</string>
+    <string name="shortcut_desc_depth">Foto de profundidad</string>
+    <string name="shortcut_desc_selfie">Selfi</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Cámara inteligente</string>
+    <string name="smartcam_no_detections">No hay objetos ni puntos turísticos guardados</string>
     <string name="storage_location_external">Tarjeta SD</string>
     <string name="storage_location_internal">Teléfono</string>
     <string name="storage_unavailable">Almacenamiento no disponible</string>
+    <string name="toast_battery_saver">Actualmente te encuentras en el modo de ahorro de energía y es posible que algunas funciones estén limitadas</string>
     <string name="toast_geotag_message_1">Debes conceder permisos de ubicación para guardar la ubicación.</string>
     <string name="toast_geotag_message_2">La configuración de ubicación entra en vigencia solo después de activar la configuración de ubicación de sistema.</string>
     <string name="tooltip_camera_switch_360">Intenta cambiar a diferentes opciones de cámara.</string>
     <string name="tooltip_capture_360">Prueba capturar fotos o videos en 360° presionando este botón de obturador.</string>
-    <string name="tooltip_capture_key_360">También prueba capturar imágenes con el botón de obturador en la parte posterior del mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Toma fotos con más información para tener funciones especiales de edición.</string>
+    <string name="tooltip_capture_key_360">También prueba capturar imágenes con el botón de obturador en la parte posterior del Mod.</string>
     <string name="tooltip_first_use_zoom_button">Presiona aquí para cambiar a modo gran angular.</string>
     <string name="tooltip_gallery_360">Para ver cómo salieron tus fotos o videos en 360°, desliza a la izquierda.</string>
     <string name="tooltip_minimap_viewfinder">Panea la imagen inferior hacia la izquierda o la derecha.</string>
     <string name="tooltip_mode_switch_360">Prueba capturar imágenes en 360° en modos diferentes.</string>
+    <string name="tooltip_modes_list">Descubre nuevas formas de capturar fotos.</string>
     <string name="tooltip_smart_camera">Toca para obtener más información acerca del objeto.</string>
-    <string name="tooltip_smart_camera_disable">Puedes desactivar esto en la Configuración.</string>
+    <string name="tooltip_smart_camera_disable">Puedes desactivar esto en Configurar.</string>
     <string name="tooltip_spherical_viewfinder">Panea o aleja y acerca la imagen para controlar la vista.</string>
     <string name="tooltip_viewfinder_switch">Prueba presionar esto para ver la pantalla de forma diferente.</string>
     <string name="video_360_desc">Este es un video en 360°. Puedes editar este video con Editor Moto 360.</string>
@@ -367,6 +383,10 @@ A continuación acepta y activa la opción Ubicación en Configurar."</string>
     <string name="zoom_hint_full">COMPLETO</string>
     <string name="zoom_hint_wide">AMPLIO</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d %5$s (%3$s%4$s)</string>
-    <string name="qcfa_resolution_description">Avanzado</string>
+    <string name="indicate_mode_timelapse">CÁMARA RÁPIDA</string>
+    <string name="setting_mode_timelapse">Cámara rápida</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

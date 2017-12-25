@@ -23,7 +23,7 @@
 .end method
 
 .method private static crossProductZ(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
-    .locals 5
+    .locals 4
 
     iget v0, p1, Lcom/google/zxing/ResultPoint;->x:F
 
@@ -41,17 +41,17 @@
 
     iget v3, p2, Lcom/google/zxing/ResultPoint;->y:F
 
-    sub-float/2addr v3, v1
+    sub-float v1, v3, v1
 
-    iget v4, p0, Lcom/google/zxing/ResultPoint;->x:F
+    iget v3, p0, Lcom/google/zxing/ResultPoint;->x:F
 
-    sub-float/2addr v4, v0
+    sub-float v0, v3, v0
 
-    mul-float/2addr v3, v4
+    mul-float/2addr v0, v1
 
-    sub-float/2addr v2, v3
+    sub-float v0, v2, v0
 
-    return v2
+    return v0
 .end method
 
 .method public static distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
@@ -73,143 +73,144 @@
 .end method
 
 .method public static orderBestPatterns([Lcom/google/zxing/ResultPoint;)V
-    .locals 12
+    .locals 9
 
-    const/4 v11, 0x2
+    const/4 v7, 0x2
 
-    const/4 v10, 0x1
+    const/4 v6, 0x1
 
-    const/4 v9, 0x0
+    const/4 v5, 0x0
 
-    aget-object v7, p0, v9
+    aget-object v0, p0, v5
 
-    aget-object v8, p0, v10
+    aget-object v1, p0, v6
 
-    invoke-static {v7, v8}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
-
-    move-result v5
-
-    aget-object v7, p0, v10
-
-    aget-object v8, p0, v11
-
-    invoke-static {v7, v8}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
+    invoke-static {v0, v1}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
     move-result v0
 
-    aget-object v7, p0, v9
+    aget-object v1, p0, v6
 
-    aget-object v8, p0, v11
+    aget-object v2, p0, v7
 
-    invoke-static {v7, v8}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
+    invoke-static {v1, v2}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
-    move-result v6
+    move-result v1
 
-    cmpl-float v7, v0, v5
+    aget-object v2, p0, v5
 
-    if-ltz v7, :cond_1
+    aget-object v3, p0, v7
 
-    cmpl-float v7, v0, v6
+    invoke-static {v2, v3}, Lcom/google/zxing/ResultPoint;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
-    if-ltz v7, :cond_1
+    move-result v2
 
-    aget-object v2, p0, v9
+    cmpl-float v3, v1, v0
 
-    aget-object v1, p0, v10
+    if-ltz v3, :cond_0
 
-    aget-object v3, p0, v11
+    cmpl-float v3, v1, v2
+
+    if-ltz v3, :cond_0
+
+    aget-object v2, p0, v5
+
+    aget-object v1, p0, v6
+
+    aget-object v0, p0, v7
 
     :goto_0
-    invoke-static {v1, v2, v3}, Lcom/google/zxing/ResultPoint;->crossProductZ(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
+    invoke-static {v1, v2, v0}, Lcom/google/zxing/ResultPoint;->crossProductZ(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
-    move-result v7
+    move-result v3
 
-    const/4 v8, 0x0
+    const/4 v4, 0x0
 
-    cmpg-float v7, v7, v8
+    cmpg-float v3, v3, v4
 
-    if-gez v7, :cond_0
+    if-gez v3, :cond_2
 
-    move-object v4, v1
+    :goto_1
+    aput-object v0, p0, v5
 
-    move-object v1, v3
+    aput-object v2, p0, v6
 
-    move-object v3, v4
-
-    :cond_0
-    aput-object v1, p0, v9
-
-    aput-object v2, p0, v10
-
-    aput-object v3, p0, v11
+    aput-object v1, p0, v7
 
     return-void
 
+    :cond_0
+    cmpl-float v1, v2, v1
+
+    if-ltz v1, :cond_1
+
+    cmpl-float v0, v2, v0
+
+    if-ltz v0, :cond_1
+
+    aget-object v2, p0, v6
+
+    aget-object v1, p0, v5
+
+    aget-object v0, p0, v7
+
+    goto :goto_0
+
     :cond_1
-    cmpl-float v7, v6, v0
+    aget-object v2, p0, v7
 
-    if-ltz v7, :cond_2
+    aget-object v1, p0, v5
 
-    cmpl-float v7, v6, v5
-
-    if-ltz v7, :cond_2
-
-    aget-object v2, p0, v10
-
-    aget-object v1, p0, v9
-
-    aget-object v3, p0, v11
+    aget-object v0, p0, v6
 
     goto :goto_0
 
     :cond_2
-    aget-object v2, p0, v11
+    move-object v8, v0
 
-    aget-object v1, p0, v9
+    move-object v0, v1
 
-    aget-object v3, p0, v10
+    move-object v1, v8
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    instance-of v2, p1, Lcom/google/zxing/ResultPoint;
+    instance-of v1, p1, Lcom/google/zxing/ResultPoint;
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
-    return v1
+    return v0
 
     :cond_0
-    move-object v0, p1
+    check-cast p1, Lcom/google/zxing/ResultPoint;
 
-    check-cast v0, Lcom/google/zxing/ResultPoint;
+    iget v1, p0, Lcom/google/zxing/ResultPoint;->x:F
 
-    iget v2, p0, Lcom/google/zxing/ResultPoint;->x:F
+    iget v2, p1, Lcom/google/zxing/ResultPoint;->x:F
 
-    iget v3, v0, Lcom/google/zxing/ResultPoint;->x:F
+    cmpl-float v1, v1, v2
 
-    cmpl-float v2, v2, v3
+    if-nez v1, :cond_1
 
-    if-nez v2, :cond_1
+    iget v1, p0, Lcom/google/zxing/ResultPoint;->y:F
 
-    iget v2, p0, Lcom/google/zxing/ResultPoint;->y:F
+    iget v2, p1, Lcom/google/zxing/ResultPoint;->y:F
 
-    iget v3, v0, Lcom/google/zxing/ResultPoint;->y:F
+    cmpl-float v1, v1, v2
 
-    cmpl-float v2, v2, v3
+    if-nez v1, :cond_1
 
-    if-nez v2, :cond_1
-
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :cond_1
-    return v1
+    return v0
 .end method
 
 .method public final getX()F
@@ -281,7 +282,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

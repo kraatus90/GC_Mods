@@ -35,33 +35,33 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 4
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$400()Lcom/motorola/camera/mcf/Mcf;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/motorola/camera/mcf/Mcf;->access$1700(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/ref/WeakReference;
+    invoke-static {v0}, Lcom/motorola/camera/mcf/Mcf;->access$1700(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/ref/WeakReference;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$400()Lcom/motorola/camera/mcf/Mcf;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/motorola/camera/mcf/Mcf;->access$1700(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/ref/WeakReference;
+    invoke-static {v0}, Lcom/motorola/camera/mcf/Mcf;->access$1700(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/ref/WeakReference;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/motorola/camera/mcf/Mcf$OnNotifyListener;
+    check-cast v0, Lcom/motorola/camera/mcf/Mcf$OnNotifyListener;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :goto_0
     return-void
@@ -69,11 +69,11 @@
     :cond_0
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$300()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, "Missing listener WeakReference for notify event."
+    const-string/jumbo v1, "Missing listener WeakReference for notify event."
 
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
@@ -81,16 +81,16 @@
     :try_start_0
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$1000()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
     :goto_1
-    iget-object v2, p0, Lcom/motorola/camera/mcf/Mcf$9;->val$obj1:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/motorola/camera/mcf/Mcf$9;->val$obj1:Ljava/lang/Object;
 
-    check-cast v2, Lcom/motorola/camera/mcf/McfAuxiliaryData;
+    check-cast v1, Lcom/motorola/camera/mcf/McfAuxiliaryData;
 
-    invoke-interface {v1, v2}, Lcom/motorola/camera/mcf/Mcf$OnNotifyListener;->onAuxiliaryData(Lcom/motorola/camera/mcf/McfAuxiliaryData;)V
+    invoke-interface {v0, v1}, Lcom/motorola/camera/mcf/Mcf$OnNotifyListener;->onAuxiliaryData(Lcom/motorola/camera/mcf/McfAuxiliaryData;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -101,27 +101,27 @@
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$300()Ljava/lang/String;
 
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "postNotifyEventFromNative: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string/jumbo v4, "postNotifyEventFromNative: "
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
@@ -129,35 +129,35 @@
     :try_start_1
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$300()Ljava/lang/String;
 
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "postNotifyEventFromNative: onAuxiliaryData(McfAuxiliaryData="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lcom/motorola/camera/mcf/Mcf$9;->val$obj1:Ljava/lang/Object;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v4, "postNotifyEventFromNative: onAuxiliaryData(McfAuxiliaryData="
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v3, ")"
 
-    move-result-object v3
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lcom/motorola/camera/mcf/Mcf$9;->val$obj1:Ljava/lang/Object;
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    const-string/jumbo v4, ")"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 

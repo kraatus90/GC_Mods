@@ -283,71 +283,71 @@
 
     aput-object v1, v0, v8
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->EASTERN_EUROPEAN:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->EASTERN_EUROPEAN:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->EASTERN_EUROPEAN_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->EASTERN_EUROPEAN_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->GREEK_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->GREEK_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->HEBREW_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->HEBREW_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->JAPAN_SJIS:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->JAPAN_SJIS:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->LATIN:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->LATIN:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->LATIN5_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->LATIN5_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->LATIN_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->LATIN_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->TURKISH_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->TURKISH_ISO:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->US_MSDOS:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->US_MSDOS:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->UTF8:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->UTF8:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->$VALUES:[Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
 

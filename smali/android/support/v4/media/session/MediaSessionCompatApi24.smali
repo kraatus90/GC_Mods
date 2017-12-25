@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x18
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x18
 .end annotation
@@ -44,53 +40,51 @@
 .end method
 
 .method public static getCallingPackage(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 7
+    .locals 3
 
-    const/4 v6, 0x0
-
-    move-object v2, p0
-
-    check-cast v2, Landroid/media/session/MediaSession;
+    check-cast p0, Landroid/media/session/MediaSession;
 
     :try_start_0
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string/jumbo v4, "getCallingPackage"
+    const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    new-array v1, v1, [Ljava/lang/Class;
 
-    new-array v5, v5, [Ljava/lang/Class;
+    const-string/jumbo v2, "getCallingPackage"
 
-    invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v3
+    return-object v0
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v3, "MediaSessionCompatApi24"
+    const-string/jumbo v1, "MediaSessionCompatApi24"
 
-    const-string/jumbo v4, "Cannot execute MediaSession.getCallingPackage()"
+    const-string/jumbo v2, "Cannot execute MediaSession.getCallingPackage()"
 
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v6
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

@@ -4,23 +4,83 @@
 
 
 # static fields
+.field static final AMZ_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private static final CALIBRATION_BUILD_STRING:Ljava/lang/String; = "com.motorola.camera.calibration_build"
 
 .field private static final CALIBRATION_CHECKIN_TIME:J = 0x13c680L
 
 .field private static final CAMVER:Ljava/lang/String; = "CAMVER"
 
-.field static final EVENT_VERSION:Ljava/lang/String; = "2.1"
+.field private static final CAMVER_CAMERA2:I = 0x2
+
+.field static final CS_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static final EVENT_VERSION:Ljava/lang/String; = "2.2"
 
 .field static final EVTTME:Ljava/lang/String; = "evttme"
 
+.field static final FACING:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field static final FOLIO:Ljava/lang/String; = "FOLIO"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field static final ISCOLDSTART:Ljava/lang/String; = "COLD"
+
+.field static final LANDMARK_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field protected static final LAST_CALIBRATION_TIME_FRONT:Ljava/lang/String; = "com.motorola.camera.calibration_time_front"
 
 .field protected static final LAST_CALIBRATION_TIME_REAR:Ljava/lang/String; = "com.motorola.camera.calibration_time_rear"
+
+.field static final LAST_USE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field static final LAUNCHEDBY:Ljava/lang/String; = "LAUNCHEDBY"
 
@@ -60,6 +120,17 @@
 
 .field static final QLNCH:Ljava/lang/String; = "QLNCH"
 
+.field static final RAM:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field static final SECURE_MODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,15 +147,15 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 4
+
+    const/4 v3, 0x0
 
     new-instance v0, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;
 
     const-string/jumbo v1, "SECUREMODE"
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;-><init>(Ljava/lang/String;Z)V
 
     sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->SECURE_MODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
@@ -97,6 +168,56 @@
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->MODMODEL:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "FACING"
+
+    invoke-direct {v0, v1}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->FACING:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;
+
+    const-string/jumbo v1, "AMZENAB"
+
+    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->AMZ_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;
+
+    const-string/jumbo v1, "CSENAB"
+
+    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->CS_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;
+
+    const-string/jumbo v1, "LANDENAB"
+
+    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;-><init>(Ljava/lang/String;Z)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->LANDMARK_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "RAM"
+
+    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->RAM:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/LongAttribute;
+
+    const-string/jumbo v1, "LASTUSE"
+
+    const-wide/16 v2, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/motorola/camera/analytics/Attributes/LongAttribute;-><init>(Ljava/lang/String;J)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->LAST_USE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     return-void
 .end method
@@ -240,7 +361,7 @@
     goto :goto_0
 .end method
 
-.method public static setCalibrationIfRequired(Landroid/os/Bundle;)V
+.method public static setCalibrationIfRequired(Lcom/motorola/camera/analytics/SynchronizedBundle;)V
     .locals 13
 
     const-wide/32 v10, 0x13c680
@@ -329,14 +450,14 @@
 
     const-string/jumbo v2, "REARCALIBRATION"
 
-    invoke-virtual {p0, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {p0, v2, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putBoolean(Ljava/lang/String;Z)V
 
     :cond_2
     if-eqz v0, :cond_3
 
     const-string/jumbo v0, "FRONTCALIBRATION"
 
-    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putBoolean(Ljava/lang/String;Z)V
 
     :cond_3
     return-void
@@ -363,95 +484,16 @@
 
 
 # virtual methods
-.method addData(Landroid/os/Bundle;Landroid/os/Bundle;Ljava/lang/Object;)V
-    .locals 10
-
-    const/4 v9, 0x1
-
-    const/4 v8, 0x0
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
-
-    move-result v2
-
-    const-string/jumbo v0, "Camera"
-
-    if-eqz v2, :cond_2
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isVideoServiceMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string/jumbo v0, "Camcorder"
-
-    move-object v1, v0
-
-    :goto_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v4
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v0
-
-    const-string/jumbo v3, "SEQID"
-
-    invoke-virtual {v0}, Ljava/util/UUID;->getLeastSignificantBits()J
-
-    move-result-wide v6
-
-    invoke-virtual {p1, v3, v6, v7}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    const-string/jumbo v0, "STARTUP"
-
-    const-string/jumbo v3, "STARTUP"
-
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    sub-long/2addr v4, v6
-
-    invoke-virtual {p1, v0, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
-
-    const-string/jumbo v0, "LNCH"
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCaptureIntent()Lcom/motorola/camera/settings/CaptureIntent;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lcom/motorola/camera/settings/CaptureIntent;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {p0, v3}, Lcom/motorola/camera/analytics/CameraReadyEvent;->getLaunchType(Landroid/content/Intent;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->SERVICEMODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
-
-    invoke-interface {v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->name()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    const-string/jumbo v0, "USECASE"
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {p1}, Lcom/motorola/camera/analytics/CameraReadyEvent;->setCalibrationIfRequired(Landroid/os/Bundle;)V
+.method addData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Ljava/lang/Object;)V
+    .locals 4
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v0
 
-    const-string/jumbo v3, "keyguard"
+    const-string/jumbo v1, "keyguard"
 
-    invoke-virtual {v0, v3}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -459,133 +501,271 @@
 
     invoke-virtual {v0}, Landroid/app/KeyguardManager;->inKeyguardRestrictedInputMode()Z
 
-    move-result v3
+    move-result v0
 
-    const-string/jumbo v0, "CAMVER"
+    const-string/jumbo v1, "CAMVER"
 
-    invoke-virtual {p2, v0, v9}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    const/4 v2, 0x2
 
-    const-string/jumbo v0, "USECASE"
+    invoke-virtual {p2, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "USECASE"
 
-    const-string/jumbo v0, "STARTUP"
+    const-string/jumbo v2, "USECASE"
+
+    invoke-virtual {p1, v2}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p2, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string/jumbo v1, "STARTUP"
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+    const-string/jumbo v2, "STARTUP"
 
-    move-result-wide v4
+    invoke-virtual {p1, v2}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getLong(Ljava/lang/String;)J
 
-    invoke-virtual {p2, v0, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    move-result-wide v2
 
-    const-string/jumbo v0, "evttme"
+    invoke-virtual {p2, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     const-string/jumbo v1, "evttme"
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
+    const-string/jumbo v2, "evttme"
 
-    move-result-wide v4
+    invoke-virtual {p1, v2}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getLong(Ljava/lang/String;)J
 
-    invoke-virtual {p2, v0, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    move-result-wide v2
 
-    const-string/jumbo v0, "LNCH"
+    invoke-virtual {p2, v1, v2, v3}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     const-string/jumbo v1, "LNCH"
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    const-string/jumbo v2, "LNCH"
 
-    move-result-object v1
+    invoke-virtual {p1, v2}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v2
 
-    const-string/jumbo v0, "COLD"
+    invoke-virtual {p2, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string/jumbo v1, "COLD"
 
-    invoke-virtual {p1, v1, v9}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    const-string/jumbo v2, "COLD"
 
-    move-result v1
+    const/4 v3, 0x1
 
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v2, v3}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getBoolean(Ljava/lang/String;Z)Z
 
-    const-string/jumbo v0, "LAUNCHEDBY"
+    move-result v2
+
+    invoke-virtual {p2, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string/jumbo v1, "LAUNCHEDBY"
 
-    const-string/jumbo v4, "INITIALIZED"
+    const-string/jumbo v2, "LAUNCHEDBY"
 
-    invoke-virtual {p1, v1, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const-string/jumbo v3, "INITIALIZED"
 
-    move-result-object v1
+    invoke-virtual {p1, v2, v3}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v2
 
-    const-string/jumbo v0, "QLNCH"
+    invoke-virtual {p2, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v1, "QLNCH"
 
     invoke-direct {p0}, Lcom/motorola/camera/analytics/CameraReadyEvent;->getQuickLaunch()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string/jumbo v1, "FOLIO"
+    sget-object v1, Lcom/motorola/camera/analytics/CameraReadyEvent;->SECURE_MODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    const-string/jumbo v0, "FOLIO_STATUS"
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {p1, v0, v8}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    move-result-object v0
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const-string/jumbo v0, "CLOSE"
-
-    :goto_1
-    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->SECURE_MODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-interface {v1, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->SERVICEMODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sget-object v1, Lcom/motorola/camera/analytics/CameraReadyEvent;->SERVICEMODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-interface {v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
+    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->FACING:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-static {}, Lcom/motorola/camera/analytics/CameraReadyEvent;->getCameraIdForAnalytics()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->AMZ_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->isEnabled()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->CS_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isObjectDetectionEnabled()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->LANDMARK_ENABLED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isLandmarkDetectionEnabled()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v0, Lcom/motorola/camera/analytics/CameraReadyEvent;->RAM:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-static {}, Lcom/motorola/camera/Util;->getTotalRAMMiB()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v1, Lcom/motorola/camera/analytics/CameraReadyEvent;->LAST_USE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_LAST_USE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-interface {v1, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOT_MOD_NAME:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    sget-object v1, Lcom/motorola/camera/analytics/CameraReadyEvent;->MODMODEL:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    sget-object v2, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    :cond_0
     const-string/jumbo v0, "COLD"
 
-    invoke-virtual {p1, v0, v8}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string/jumbo v0, "STARTUP"
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+    const-wide/16 v2, -0x1
 
-    return-void
+    invoke-virtual {p1, v0, v2, v3}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putLong(Ljava/lang/String;J)V
 
-    :cond_0
-    const-string/jumbo v0, "Camera"
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_LAST_USE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    move-object v1, v0
+    const-string/jumbo v1, "evttme"
 
-    goto/16 :goto_0
+    invoke-virtual {p1, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getLong(Ljava/lang/String;)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/analytics/CameraReadyEvent;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Camera Ready Event checkin: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p2}, Landroid/os/Bundle;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    const-string/jumbo v0, "OPEN"
-
-    goto :goto_1
-
-    :cond_2
-    move-object v1, v0
-
-    goto/16 :goto_0
+    return-void
 .end method
 
 .method getEventType()Lcom/motorola/camera/analytics/AnalyticsService$EventType;
@@ -599,7 +779,7 @@
 .method getEventVersion()Ljava/lang/String;
     .locals 1
 
-    const-string/jumbo v0, "2.1"
+    const-string/jumbo v0, "2.2"
 
     return-object v0
 .end method
@@ -843,4 +1023,73 @@
     move-result v0
 
     return v0
+.end method
+
+.method public setupSessionValues(Lcom/motorola/camera/analytics/SynchronizedBundle;)V
+    .locals 6
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isServiceMode()Z
+
+    move-result v1
+
+    const-string/jumbo v0, "Camera"
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isVideoServiceMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "Camcorder"
+
+    :cond_0
+    :goto_0
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "SEQID"
+
+    invoke-virtual {v2}, Ljava/util/UUID;->getLeastSignificantBits()J
+
+    move-result-wide v4
+
+    invoke-virtual {p1, v3, v4, v5}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putLong(Ljava/lang/String;J)V
+
+    const-string/jumbo v2, "LNCH"
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCaptureIntent()Lcom/motorola/camera/settings/CaptureIntent;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/motorola/camera/settings/CaptureIntent;->mIntent:Landroid/content/Intent;
+
+    invoke-virtual {p0, v3}, Lcom/motorola/camera/analytics/CameraReadyEvent;->getLaunchType(Landroid/content/Intent;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v2, Lcom/motorola/camera/analytics/CameraReadyEvent;->SERVICEMODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-interface {v2}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string/jumbo v1, "USECASE"
+
+    invoke-virtual {p1, v1, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {p1}, Lcom/motorola/camera/analytics/CameraReadyEvent;->setCalibrationIfRequired(Lcom/motorola/camera/analytics/SynchronizedBundle;)V
+
+    return-void
+
+    :cond_1
+    const-string/jumbo v0, "Camera"
+
+    goto :goto_0
 .end method

@@ -36,27 +36,27 @@
 
 # virtual methods
 .method isMasked(II)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    mul-int v0, p1, p2
+    mul-int v1, p1, p2
 
-    and-int/lit8 v2, v0, 0x1
+    and-int/lit8 v2, v1, 0x1
 
-    rem-int/lit8 v3, v0, 0x3
+    rem-int/lit8 v1, v1, 0x3
 
-    add-int/2addr v2, v3
+    add-int/2addr v1, v2
 
-    and-int/lit8 v2, v2, 0x1
+    and-int/lit8 v1, v1, 0x1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     :goto_0
-    return v1
+    return v0
 
     :cond_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

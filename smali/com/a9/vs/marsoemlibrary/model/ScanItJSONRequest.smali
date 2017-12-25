@@ -130,21 +130,21 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    const-string/jumbo v1, "Authorization"
-
     invoke-static {}, Lcom/a9/vs/marsoemlibrary/api/ServerUtils;->getAuthHeader()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v2, "Authorization"
 
-    const-string/jumbo v1, "x-api-key"
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {}, Lcom/a9/vs/marsoemlibrary/api/ServerUtils;->getApiKey()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-string/jumbo v2, "x-api-key"
+
+    invoke-interface {v0, v2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "accept-encoding"
 

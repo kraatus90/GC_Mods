@@ -33,25 +33,25 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;->versionCode:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;->versionCode:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x2
+    iget v1, p0, Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;->statusCode:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;->statusCode:I
+    const/4 v2, 0x2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x3
+    iget-object v1, p0, Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;->zzaMm:Lcom/google/android/gms/wearable/internal/NodeParcelable;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;->zzaMm:Lcom/google/android/gms/wearable/internal/NodeParcelable;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x3
 
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 
@@ -83,13 +83,13 @@
 .method public zzgp(Landroid/os/Parcel;)Lcom/google/android/gms/wearable/internal/GetLocalNodeResponse;
     .locals 6
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzL(Landroid/os/Parcel;)I
 
     move-result v3
+
+    const/4 v0, 0x0
 
     move v2, v1
 

@@ -23,6 +23,14 @@
 # direct methods
 .method public constructor <init>(Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Lcom/motorola/camera/detector/results/tidbit/actions/MultiIntentAction$MultiIntent;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;",
+            "Lcom/motorola/camera/detector/results/tidbit/actions/MultiIntentAction$MultiIntent;",
+            ")V"
+        }
+    .end annotation
 
     sget-object v0, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;->MULTI_INTENT:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
 

@@ -36,7 +36,7 @@
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/Trigger;
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->REVIEW_CANCEL:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->REVIEW_ACCEPT:Lcom/motorola/camera/fsm/camera/Trigger$Event;
 
     invoke-direct {v0, v1}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
 
@@ -49,26 +49,4 @@
     const/4 v0, 0x0
 
     return-object v0
-.end method
-
-.method protected onSingleTap(Landroid/graphics/PointF;JJ)V
-    .locals 4
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/motorola/camera/wear/GoogleServicesClient;->getInstance(Landroid/content/Context;)Lcom/motorola/camera/wear/GoogleServicesClient;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "/camera/timer/cancel"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/wear/GoogleServicesClient;->sendMsg(Ljava/lang/String;[B)V
-
-    invoke-super/range {p0 .. p5}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->onSingleTap(Landroid/graphics/PointF;JJ)V
-
-    return-void
 .end method

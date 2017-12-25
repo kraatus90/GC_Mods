@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->flyAnimation()V
+    value = Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->animateCards()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,32 +17,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-.field final synthetic val$dest:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-.field final synthetic val$finalScale:F
-
-.field final synthetic val$frameThickness:F
-
-.field final synthetic val$source:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-.field final synthetic val$targetSize:F
+.field final synthetic val$animateGradient:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;FFFLcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
+.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    iput p2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$targetSize:F
-
-    iput p3, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$finalScale:F
-
-    iput p4, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$frameThickness:F
-
-    iput-object p5, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$source:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    iput-object p6, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$dest:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    iput-boolean p2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$animateGradient:Z
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/animations/GeneralAnimation$GeneralAnimationCallback;-><init>()V
 
@@ -52,139 +36,66 @@
 
 # virtual methods
 .method public applyValue(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;F)V
-    .locals 5
+    .locals 2
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$finalScale:F
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap3(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
-    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$targetSize:F
-
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$finalScale:F
-
-    sub-float/2addr v1, v2
-
-    sub-float v2, v4, p2
-
-    mul-float/2addr v1, v2
-
-    add-float/2addr v0, v1
+    move-result-object v0
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get13(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
     move-result-object v1
 
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$frameThickness:F
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->subtract(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
-    add-float/2addr v2, v0
-
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$frameThickness:F
-
-    add-float/2addr v3, v0
-
-    invoke-virtual {v1, v2, v3, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;->setPostScale(FFF)V
+    invoke-virtual {v0, p2}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->multiply(F)V
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
     move-result-object v1
 
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$targetSize:F
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->add(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
-    div-float v2, v0, v2
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$targetSize:F
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get1(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
 
-    div-float/2addr v0, v3
+    move-result-object v0
 
-    invoke-virtual {v1, v2, v0, v4}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostScale(FFF)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-direct {v0}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>()V
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get1(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$source:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    move-result-object v0
 
-    iget v1, v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
+    invoke-virtual {v0, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->setAlpha(F)V
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$dest:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$animateGradient:Z
 
-    iget v2, v2, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
+    if-eqz v0, :cond_0
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$source:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    iget v3, v3, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get9(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
-    sub-float/2addr v2, v3
+    move-result-object v0
 
-    mul-float/2addr v2, p2
+    invoke-virtual {v0, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setAlpha(F)V
 
-    add-float/2addr v1, v2
-
-    iput v1, v0, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$source:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    iget v1, v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$dest:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    iget v2, v2, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$source:Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    iget v3, v3, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
-
-    sub-float/2addr v2, v3
-
-    mul-float/2addr v2, p2
-
-    add-float/2addr v1, v2
-
-    iput v1, v0, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get13(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
-
+    :cond_0
     return-void
 .end method
 
 .method public onAnimationEnd(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
     .locals 2
-
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get13(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;->setVisibility(Z)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setVisibility(Z)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
@@ -198,40 +109,45 @@
 .end method
 
 .method public onAnimationStart(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
-    .locals 4
+    .locals 3
+
+    const/4 v2, 0x0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get13(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get1(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getPostTranslation()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get13(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get1(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$targetSize:F
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->setAlpha(F)V
 
-    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$targetSize:F
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->val$animateGradient:Z
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/textures/CurvedProgressTexture;->setPostScale(FFF)V
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get9(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setAlpha(F)V
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$13;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
     iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;

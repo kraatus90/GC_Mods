@@ -67,9 +67,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 9
-
-    const/4 v8, 0x0
+    .locals 8
 
     const/4 v7, 0x1
 
@@ -79,57 +77,59 @@
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    new-instance v1, Landroid/graphics/Paint;
+    new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
+    iput-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    new-instance v1, Landroid/graphics/Path;
+    new-instance v0, Landroid/graphics/Path;
 
-    invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
+    iput-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
     iput-boolean v6, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mVerticalMirror:Z
 
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
-    iput v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mDirection:I
+    iput v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mDirection:I
 
-    iget-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    iget-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    sget-object v2, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
+    sget-object v1, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
-    iget-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    sget-object v2, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
+    sget-object v1, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    iget-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v7}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v0, v7}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroid/support/v7/appcompat/R$styleable;->DrawerArrowToggle:[I
+    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->DrawerArrowToggle:[I
 
-    sget v3, Landroid/support/v7/appcompat/R$attr;->drawerArrowStyle:I
+    sget v2, Landroid/support/v7/appcompat/R$attr;->drawerArrowStyle:I
 
-    sget v4, Landroid/support/v7/appcompat/R$style;->Base_Widget_AppCompat_DrawerArrowToggle:I
+    sget v3, Landroid/support/v7/appcompat/R$style;->Base_Widget_AppCompat_DrawerArrowToggle:I
 
-    invoke-virtual {v1, v8, v2, v3, v4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v4, v1, v2, v3}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
@@ -235,602 +235,359 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 24
+    .locals 12
 
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->getBounds()Landroid/graphics/Rect;
+    invoke-virtual {p0}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v11
+    move-result-object v3
 
-    move-object/from16 v0, p0
+    iget v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mDirection:I
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mDirection:I
-
-    move/from16 v18, v0
-
-    packed-switch v18, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     :pswitch_0
-    invoke-static/range {p0 .. p0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
+    invoke-static {p0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
 
-    move-result v18
+    move-result v0
 
-    const/16 v19, 0x1
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
+    const/4 v1, 0x1
 
     if-eq v0, v1, :cond_1
 
-    const/4 v13, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    move-object/from16 v0, p0
+    iget v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mArrowHeadLength:F
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mArrowHeadLength:F
+    iget v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mArrowHeadLength:F
 
-    move/from16 v18, v0
+    mul-float/2addr v1, v2
 
-    move-object/from16 v0, p0
+    const/high16 v2, 0x40000000    # 2.0f
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mArrowHeadLength:F
+    mul-float/2addr v1, v2
 
-    move/from16 v19, v0
+    float-to-double v4, v1
 
-    mul-float v18, v18, v19
+    invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
 
-    const/high16 v19, 0x40000000    # 2.0f
+    move-result-wide v4
 
-    mul-float v18, v18, v19
+    double-to-float v1, v4
 
-    move/from16 v0, v18
+    iget v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarLength:F
 
-    float-to-double v0, v0
+    iget v4, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
 
-    move-wide/from16 v18, v0
+    invoke-static {v2, v1, v4}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
 
-    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->sqrt(D)D
+    move-result v4
 
-    move-result-wide v18
+    iget v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarLength:F
 
-    move-wide/from16 v0, v18
+    iget v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mArrowShaftLength:F
 
-    double-to-float v5, v0
+    iget v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
 
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarLength:F
-
-    move/from16 v18, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
-
-    move/from16 v19, v0
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    invoke-static {v0, v5, v1}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+    invoke-static {v1, v2, v5}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
 
     move-result v5
 
-    move-object/from16 v0, p0
+    iget v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mMaxCutForBarSize:F
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarLength:F
+    iget v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
 
-    move/from16 v18, v0
+    const/4 v6, 0x0
 
-    move-object/from16 v0, p0
+    invoke-static {v6, v1, v2}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mArrowShaftLength:F
+    move-result v1
 
-    move/from16 v19, v0
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
-    move-object/from16 v0, p0
+    move-result v1
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
+    int-to-float v6, v1
 
-    move/from16 v20, v0
+    sget v1, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->ARROW_HEAD_ANGLE:F
 
-    invoke-static/range {v18 .. v20}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+    iget v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
+
+    const/4 v7, 0x0
+
+    invoke-static {v7, v1, v2}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+
+    move-result v7
+
+    if-nez v0, :cond_2
+
+    const/high16 v1, -0x3ccc0000    # -180.0f
+
+    move v2, v1
+
+    :goto_1
+    if-nez v0, :cond_3
+
+    const/4 v1, 0x0
+
+    :goto_2
+    iget v8, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
+
+    invoke-static {v2, v1, v8}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+
+    move-result v1
+
+    float-to-double v8, v4
+
+    float-to-double v10, v7
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v10
+
+    mul-double/2addr v8, v10
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v8
+
+    long-to-float v2, v8
+
+    float-to-double v8, v4
+
+    float-to-double v10, v7
+
+    invoke-static {v10, v11}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v10
+
+    mul-double/2addr v8, v10
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v8
+
+    long-to-float v4, v8
+
+    iget-object v7, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
+
+    invoke-virtual {v7}, Landroid/graphics/Path;->rewind()V
+
+    iget v7, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarGap:F
+
+    iget-object v8, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v8}, Landroid/graphics/Paint;->getStrokeWidth()F
 
     move-result v8
 
-    const/16 v18, 0x0
+    add-float/2addr v7, v8
 
-    move-object/from16 v0, p0
+    iget v8, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mMaxCutForBarSize:F
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mMaxCutForBarSize:F
+    neg-float v8, v8
 
-    move/from16 v19, v0
+    iget v9, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
 
-    move-object/from16 v0, p0
+    invoke-static {v7, v8, v9}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
+    move-result v7
 
-    move/from16 v20, v0
+    neg-float v8, v5
 
-    invoke-static/range {v18 .. v20}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+    const/high16 v9, 0x40000000    # 2.0f
 
-    move-result v18
+    div-float/2addr v8, v9
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Math;->round(F)I
+    iget-object v9, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    move-result v18
+    add-float v10, v8, v6
 
-    move/from16 v0, v18
+    const/4 v11, 0x0
 
-    int-to-float v7, v0
+    invoke-virtual {v9, v10, v11}, Landroid/graphics/Path;->moveTo(FF)V
 
-    const/16 v18, 0x0
+    iget-object v9, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    sget v19, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->ARROW_HEAD_ANGLE:F
+    const/high16 v10, 0x40000000    # 2.0f
 
-    move-object/from16 v0, p0
+    mul-float/2addr v6, v10
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
+    sub-float/2addr v5, v6
 
-    move/from16 v20, v0
+    const/4 v6, 0x0
 
-    invoke-static/range {v18 .. v20}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+    invoke-virtual {v9, v5, v6}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    move-result v15
+    iget-object v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    if-nez v13, :cond_2
+    invoke-virtual {v5, v8, v7}, Landroid/graphics/Path;->moveTo(FF)V
 
-    const/high16 v18, -0x3ccc0000    # -180.0f
+    iget-object v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    move/from16 v19, v18
+    invoke-virtual {v5, v2, v4}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    :goto_1
-    if-nez v13, :cond_3
+    iget-object v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    const/16 v18, 0x0
+    neg-float v6, v7
 
-    :goto_2
-    move-object/from16 v0, p0
+    invoke-virtual {v5, v8, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
+    iget-object v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    move/from16 v20, v0
+    neg-float v4, v4
 
-    move/from16 v0, v19
+    invoke-virtual {v5, v2, v4}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    move/from16 v1, v18
+    iget-object v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    move/from16 v2, v20
+    invoke-virtual {v2}, Landroid/graphics/Path;->close()V
 
-    invoke-static {v0, v1, v2}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v12
+    iget-object v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    float-to-double v0, v5
+    invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeWidth()F
 
-    move-wide/from16 v18, v0
+    move-result v2
 
-    float-to-double v0, v15
+    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
 
-    move-wide/from16 v20, v0
+    move-result v4
 
-    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->cos(D)D
+    int-to-float v4, v4
 
-    move-result-wide v20
+    const/high16 v5, 0x40400000    # 3.0f
 
-    mul-double v18, v18, v20
+    mul-float/2addr v5, v2
 
-    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->round(D)J
+    sub-float/2addr v4, v5
 
-    move-result-wide v18
+    iget v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarGap:F
 
-    move-wide/from16 v0, v18
+    const/high16 v6, 0x40000000    # 2.0f
 
-    long-to-float v9, v0
+    mul-float/2addr v5, v6
 
-    float-to-double v0, v5
+    sub-float/2addr v4, v5
 
-    move-wide/from16 v18, v0
+    float-to-int v4, v4
 
-    float-to-double v0, v15
+    div-int/lit8 v4, v4, 0x4
 
-    move-wide/from16 v20, v0
+    mul-int/lit8 v4, v4, 0x2
 
-    invoke-static/range {v20 .. v21}, Ljava/lang/Math;->sin(D)D
+    int-to-float v4, v4
 
-    move-result-wide v20
+    const/high16 v5, 0x3fc00000    # 1.5f
 
-    mul-double v18, v18, v20
+    mul-float/2addr v2, v5
 
-    invoke-static/range {v18 .. v19}, Ljava/lang/Math;->round(D)J
+    iget v5, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarGap:F
 
-    move-result-wide v18
+    add-float/2addr v2, v5
 
-    move-wide/from16 v0, v18
+    add-float/2addr v2, v4
 
-    long-to-float v6, v0
+    invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
 
-    move-object/from16 v0, p0
+    move-result v3
 
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
+    int-to-float v3, v3
 
-    move-object/from16 v18, v0
+    invoke-virtual {p1, v3, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Path;->rewind()V
+    iget-boolean v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mSpin:Z
 
-    move-object/from16 v0, p0
+    if-nez v2, :cond_4
 
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarGap:F
-
-    move/from16 v18, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v19 .. v19}, Landroid/graphics/Paint;->getStrokeWidth()F
-
-    move-result v19
-
-    add-float v18, v18, v19
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mMaxCutForBarSize:F
-
-    move/from16 v19, v0
-
-    move/from16 v0, v19
-
-    neg-float v0, v0
-
-    move/from16 v19, v0
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mProgress:F
-
-    move/from16 v20, v0
-
-    invoke-static/range {v18 .. v20}, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->lerp(FFF)F
-
-    move-result v16
-
-    neg-float v0, v8
-
-    move/from16 v18, v0
-
-    const/high16 v19, 0x40000000    # 2.0f
-
-    div-float v4, v18, v19
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    add-float v19, v4, v7
-
-    const/16 v20, 0x0
-
-    invoke-virtual/range {v18 .. v20}, Landroid/graphics/Path;->moveTo(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    const/high16 v19, 0x40000000    # 2.0f
-
-    mul-float v19, v19, v7
-
-    sub-float v19, v8, v19
-
-    const/16 v20, 0x0
-
-    invoke-virtual/range {v18 .. v20}, Landroid/graphics/Path;->rLineTo(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v4, v1}, Landroid/graphics/Path;->moveTo(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v0, v9, v6}, Landroid/graphics/Path;->rLineTo(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    move/from16 v0, v16
-
-    neg-float v0, v0
-
-    move/from16 v19, v0
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v19
-
-    invoke-virtual {v0, v4, v1}, Landroid/graphics/Path;->moveTo(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    neg-float v0, v6
-
-    move/from16 v19, v0
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v19
-
-    invoke-virtual {v0, v9, v1}, Landroid/graphics/Path;->rLineTo(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Path;->close()V
-
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v18, v0
-
-    invoke-virtual/range {v18 .. v18}, Landroid/graphics/Paint;->getStrokeWidth()F
-
-    move-result v10
-
-    invoke-virtual {v11}, Landroid/graphics/Rect;->height()I
-
-    move-result v18
-
-    move/from16 v0, v18
-
-    int-to-float v0, v0
-
-    move/from16 v18, v0
-
-    const/high16 v19, 0x40400000    # 3.0f
-
-    mul-float v19, v19, v10
-
-    sub-float v18, v18, v19
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarGap:F
-
-    move/from16 v19, v0
-
-    const/high16 v20, 0x40000000    # 2.0f
-
-    mul-float v19, v19, v20
-
-    sub-float v18, v18, v19
-
-    move/from16 v0, v18
-
-    float-to-int v14, v0
-
-    div-int/lit8 v18, v14, 0x4
-
-    mul-int/lit8 v18, v18, 0x2
-
-    move/from16 v0, v18
-
-    int-to-float v0, v0
-
-    move/from16 v17, v0
-
-    move/from16 v0, v17
-
-    float-to-double v0, v0
-
-    move-wide/from16 v18, v0
-
-    float-to-double v0, v10
-
-    move-wide/from16 v20, v0
-
-    const-wide/high16 v22, 0x3ff8000000000000L    # 1.5
-
-    mul-double v20, v20, v22
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mBarGap:F
-
-    move/from16 v22, v0
-
-    move/from16 v0, v22
-
-    float-to-double v0, v0
-
-    move-wide/from16 v22, v0
-
-    add-double v20, v20, v22
-
-    add-double v18, v18, v20
-
-    move-wide/from16 v0, v18
-
-    double-to-float v0, v0
-
-    move/from16 v17, v0
-
-    invoke-virtual {v11}, Landroid/graphics/Rect;->centerX()I
-
-    move-result v18
-
-    move/from16 v0, v18
-
-    int-to-float v0, v0
-
-    move/from16 v18, v0
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    move/from16 v2, v17
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mSpin:Z
-
-    move/from16 v18, v0
-
-    if-nez v18, :cond_4
-
-    if-nez v13, :cond_6
+    if-nez v0, :cond_6
 
     :goto_3
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
 
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPath:Landroid/graphics/Path;
+    iget-object v1, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
 
-    move-object/from16 v18, v0
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v18
-
-    move-object/from16 v2, v19
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
-
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 
     :pswitch_1
-    const/4 v13, 0x0
+    const/4 v0, 0x0
 
     goto/16 :goto_0
 
     :pswitch_2
-    const/4 v13, 0x1
+    const/4 v0, 0x1
 
     goto/16 :goto_0
 
     :pswitch_3
-    invoke-static/range {p0 .. p0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
+    invoke-static {p0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
 
-    move-result v18
+    move-result v0
 
-    if-eqz v18, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 v13, 0x0
+    const/4 v0, 0x0
 
-    :goto_4
     goto/16 :goto_0
 
     :cond_0
-    const/4 v13, 0x1
+    const/4 v0, 0x1
 
-    goto :goto_4
+    goto/16 :goto_0
 
     :cond_1
-    const/4 v13, 0x1
+    const/4 v0, 0x1
 
     goto/16 :goto_0
 
     :cond_2
-    const/16 v18, 0x0
+    const/4 v1, 0x0
 
-    move/from16 v19, v18
+    move v2, v1
 
     goto/16 :goto_1
 
     :cond_3
-    const/high16 v18, 0x43340000    # 180.0f
+    const/high16 v1, 0x43340000    # 180.0f
 
     goto/16 :goto_2
 
     :cond_4
-    move-object/from16 v0, p0
+    iget-boolean v2, p0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mVerticalMirror:Z
 
-    iget-boolean v0, v0, Landroid/support/v7/graphics/drawable/DrawerArrowDrawable;->mVerticalMirror:Z
+    xor-int/2addr v0, v2
 
-    move/from16 v18, v0
+    if-nez v0, :cond_5
 
-    xor-int v18, v18, v13
+    const/4 v0, 0x1
 
-    if-nez v18, :cond_5
-
-    const/16 v18, 0x1
-
-    :goto_5
-    move/from16 v0, v18
-
+    :goto_4
     int-to-float v0, v0
 
-    move/from16 v18, v0
+    mul-float/2addr v0, v1
 
-    mul-float v18, v18, v12
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
     goto :goto_3
 
     :cond_5
-    const/16 v18, -0x1
+    const/4 v0, -0x1
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_6
-    const/high16 v18, 0x43340000    # 180.0f
+    const/high16 v0, 0x43340000    # 180.0f
 
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
     goto :goto_3
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

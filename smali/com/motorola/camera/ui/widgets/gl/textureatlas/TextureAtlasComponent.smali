@@ -459,7 +459,7 @@
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/TextureAtlasComponent;->mDisplayDpi:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture$DPI;
 
-    const v3, 0x7f02009c
+    const v3, 0x7f0200a0
 
     invoke-direct {v1, p0, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/TextureAtlasComponent$LoadAtlasImageCallable;-><init>(Lcom/motorola/camera/ui/widgets/gl/textureatlas/TextureAtlasComponent;ILcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture$DPI;)V
 

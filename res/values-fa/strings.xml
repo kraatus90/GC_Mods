@@ -15,7 +15,7 @@
     <string name="abc_searchview_description_query">عبارت جستجو</string>
     <string name="abc_searchview_description_search">جستجو</string>
     <string name="abc_searchview_description_submit">ارسال عبارت جستجو</string>
-    <string name="abc_searchview_description_voice">جستجوی شفاهی</string>
+    <string name="abc_searchview_description_voice">جستجوی گفتاری</string>
     <string name="abc_shareactionprovider_share_with">اشتراک‌گذاری با</string>
     <string name="abc_shareactionprovider_share_with_application">‏اشتراک‌گذاری با %s</string>
     <string name="abc_toolbar_collapse_description">کوچک کردن</string>
@@ -148,7 +148,7 @@
     <string name="cancel">لغو</string>
     <string name="capture_failure">عکس گرفته نشد. دوباره امتحان کنید.</string>
     <string name="checkbox_do_not_show">دوباره نمایش داده نشود</string>
-    <string name="cloudsight_terms">تصاویر شما برای ارائه نتایج جستجو، به CloudSight ارسال خواهند شد. &lt;br/>&lt;br/> با ادامه، در واقع با &lt;a href=%1$s>سیاست حفظ حریم خصوصی&lt;/a> CloudSight موافقت کرده‌اید.</string>
+    <string name="cloudsight_terms">هر بار که از شناسایی سوژه استفاده می‌کنید، تصویر و مکان (در صورت فعال بودن) به یک شخص ثالث ارسال می‌شوند تا نتایج جستجو ارائه شود.&lt;br/>&lt;br/> با ادامه، با &lt;a href=%1$s>سیاست حفظ حریم خصوصی&lt;/a> موافقت می‌کنید.</string>
     <string name="dailog_panorama_failed">پانوراما ناموفق بود. دوباره سعی کنید.</string>
     <string name="dailog_panorama_not_taken">عکس سراسرنما گرفته نشد.</string>
     <string name="dialog_access_sd_fail">گرفتن عکس و فیلم ممکن نیست. کارت حافظه در دسترس نیست.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">دستگاه پشتیبانی نمی‌شود</string>
     <string name="dialog_disagree">موافق نیستم</string>
     <string name="dialog_dismiss">دوباره نشان داده نشود</string>
+    <string name="dialog_download">دانلود</string>
     <string name="dialog_external_sd_missing">گرفتن عکس ممکن نیست. کارت حافظه در دسترس نیست. در حال تغییر به محل ذخیره داخلی تلفن</string>
     <string name="dialog_first_time_set_pure_raw_message">"این نوع فایل پردازش نشده برای ویرایش حرفه‌ای عکس‌ها استفاده می‌شود.
 
@@ -247,6 +248,7 @@
     <string name="help_next">بعدی</string>
     <string name="image_360_desc">این یک عکس 360 است. می‌توانید این عکس را با ویرایشگر Moto 360 ویرایش کنید.</string>
     <string name="image_360_name">عکس 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">عمق فعال</string>
     <string name="indicate_mode_mono">TRUE B&amp;W</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">زاویه فوق گسترده</string>
     <string name="indicate_mode_video">ویدیو</string>
     <string name="indicate_mode_wide_angle">زاویه گسترده</string>
+    <string name="indicate_mode_wide_angle_selfie">سلفی زاویه گسترده</string>
     <string name="internal_storage">حافظه داخلی</string>
     <string name="kilo_bytes">کیلوبایت</string>
-    <string name="landmark_install_message">شناسایی مکان دیدنی، اطلاعاتی درباره مکان‌های دیدنی مشهور در سراسر دنیا ارائه می‌دهد.&lt;br/>&lt;br/>برای فعال‌سازی این ویژگی، آن را نصب کنید.</string>
-    <string name="landmark_install_over_data">اندازه دانلود شناسایی مکان دیدنی ۹۲ مگابایت است. نصب آن با استفاده از اینترنت همراه ممکن است هزینه‌های اضافی در پی داشته باشد.</string>
-    <string name="landmark_notification_downloading">دانلود شناسایی مکان دیدنی</string>
-    <string name="landmark_notification_install">نصب شناسایی مکان دیدنی</string>
-    <string name="landmark_notification_install_complete">نصب شناسایی مکان دیدنی کامل شد</string>
-    <string name="landmark_notification_install_failed">نصب شناسایی مکان دیدنی ناموفق بود</string>
+    <string name="landmark_install_message">شناسایی مکان دیدنی، اطلاعاتی درباره مکان‌های دیدنی مشهور در سراسر دنیا ارائه می‌دهد.&lt;br/>&lt;br/>برای فعال‌سازی این ویژگی، پایگاه داده مکان دیدنی را دانلود کنید.</string>
+    <string name="landmark_install_over_data">اندازه دانلود پایگاه داده مکان دیدنی ۹۲ مگابایت است. دانلود آن با استفاده از اینترنت همراه ممکن است هزینه‌های اضافی در پی داشته باشد.</string>
+    <string name="landmark_notification_downloading">در حال دانلود پایگاه داده مکان دیدنی</string>
+    <string name="landmark_notification_install">در حال نصب پایگاه داده مکان دیدنی</string>
+    <string name="landmark_notification_install_complete">نصب پایگاه داده مکان دیدنی کامل شد</string>
+    <string name="landmark_notification_install_failed">نصب پایگاه داده مکان دیدنی ناموفق بود</string>
     <string name="landmark_notification_install_invalid_url">پایگاه داده مکان‌های دیدنی در دسترس نیست، لطفاً به جدیدترین نسخه دوربین به‌روزرسانی کنید</string>
-    <string name="landmark_notification_install_out_of_space">فضای کافی برای نصب شناسایی مکان دیدنی وجود ندارد</string>
+    <string name="landmark_notification_install_out_of_space">فضای کافی برای نصب پایگاه داده مکان دیدنی وجود ندارد</string>
+    <string name="landmark_notification_paused">وقتی اینترنت در دسترس باشد، دانلود پایگاه داده مکان دیدنی ادامه می‌یابد</string>
+    <string name="landmark_notification_queued">وقتی اینترنت در دسترس باشد، دانلود پایگاه داده مکان دیدنی شروع می‌شود</string>
     <string name="main_setting_amz_barcode">اسکنر بارکد Amazon</string>
     <string name="main_setting_amz_privacy">اطلاعیه حریم خصوصی Amazon</string>
     <string name="main_setting_amz_terms">شرایط استفاده</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">اندازه عکس (دوربین عقب)</string>
     <string name="main_setting_image_ratio_front">اندازه عکس (دوربین جلو)</string>
     <string name="main_setting_landmark_detection">شناسایی مکان دیدنی</string>
+    <string name="main_setting_landmark_version_current">نسخه پایگاه داده: %s</string>
+    <string name="main_setting_landmark_version_not_installed">پایگاه داده نصب نیست</string>
     <string name="main_setting_licenses">مجوزهای منبع آزاد</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">مجوز لازم است</string>
     <string name="photos_depth_desc">برای انتخاب فوکوس، تغییر پس‌زمینه یا انتخاب ناحیه‌ای برای تغییر به سیاه و سفید، از ویرایشگر عمق استفاده کنید.</string>
     <string name="photos_depth_name">عمق فعال</string>
+    <string name="photos_notification_desc">محل ذخیره نامحدود با Google Photos</string>
+    <string name="photos_notification_title">پشتیبان‌گیری در Google Photos</string>
+    <string name="qcfa_resolution_description">انطباق با نور کم</string>
     <string name="retake">عکس گرفتن مجدد</string>
     <string name="second_10">۱۰ ثانیه</string>
     <string name="second_3">۳ ثانیه</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">حرکت آهسته</string>
     <string name="setting_mode_ultra_wide">زاویه فوق گسترده</string>
     <string name="setting_mode_video">فیلم</string>
+    <string name="setting_mode_wide_angle_selfie">سلفی زاویه گسترده</string>
     <string name="setting_off">خاموش</string>
     <string name="setting_on">روشن</string>
     <string name="setting_persist">نگهداشت</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">تایمر</string>
     <string name="setting_torch">چراغ قوه</string>
     <string name="setting_true">صحیح</string>
+    <string name="shortcut_desc_depth">عکس عمقی</string>
+    <string name="shortcut_desc_selfie">سلفی</string>
+    <string name="shortcut_desc_video">ویدیو</string>
     <string name="smartcam_landmark_notification_title">دوربین هوشمند</string>
+    <string name="smartcam_no_detections">هیچ سوژه یا مکان دیدنی ذخیره نشده است</string>
     <string name="storage_location_external">‏کارت SD</string>
     <string name="storage_location_internal">تلفن</string>
     <string name="storage_unavailable">محل ذخیره در دسترس نیست</string>
+    <string name="toast_battery_saver">در حال حاضر در حالت ذخیره نیرو هستید، ممکن است برخی ویژگی‌ها محدود شوند</string>
     <string name="toast_geotag_message_1">باید برای فعال کردن ذخیره مکان، مجوز مکان‌یابی را داشته باشید.</string>
     <string name="toast_geotag_message_2">تنظیم موقعیت مکانی فقط وقتی عمل می‌کند که تنظیم مکان‌یابی سیستم روشن شود.</string>
     <string name="tooltip_camera_switch_360">به گزینه‌های مختلف دوربین تغییر وضعیت دهید.</string>
     <string name="tooltip_capture_360">با ضربه زدن روی این دکمه شاتر، عکس یا ویدیوی ‎360°‎ بگیرید.</string>
-    <string name="tooltip_capture_key_360">سعی کنید با دکمه شاتر واقع در پشت mod نیز عکس بگیرید.</string>
-    <string name="tooltip_dual_camera_depth_photo">عکس‌هایی با اطلاعات اضافی می‌گیرد تا از ویژگی‌های ویرایش خاص استفاده کنید.</string>
+    <string name="tooltip_capture_key_360">سعی کنید با دکمه شاتر واقع در پشت Mod نیز عکس بگیرید.</string>
     <string name="tooltip_first_use_zoom_button">برای تغییر به زاویه گسترده، اینجا ضربه بزنید.</string>
     <string name="tooltip_gallery_360">ببینید چطور عکس یا ویدیوی ‎360°‎ شما با حرکت به چپ تغییر می‌کند.</string>
     <string name="tooltip_minimap_viewfinder">تصویر پایینی را به چپ یا راست حرکت دهید.</string>
     <string name="tooltip_mode_switch_360">در حالت‌های مختلف عکس ‎360°‎ بگیرید!</string>
+    <string name="tooltip_modes_list">روش‌های جدید برای گرفتن عکس‌هایتان کشف کنید.</string>
     <string name="tooltip_smart_camera">برای اطلاعات بیشتر درباره سوژه، ضربه بزنید.</string>
     <string name="tooltip_smart_camera_disable">می‌توانید آن را در تنظیمات خاموش کنید.</string>
     <string name="tooltip_spherical_viewfinder">برای کنترل مشاهده، روی صفحه حرکت کرده یا صفحه را بزرگ و کوچک کنید.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">کامل</string>
     <string name="zoom_hint_wide">گسترده</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">ضبط با تاخیر زمانی</string>
+    <string name="setting_mode_timelapse">ضبط با تاخیر زمانی</string>
+    <string name="timelapse_config_16x">‏16X</string>
+    <string name="timelapse_config_32x">‏32X</string>
+    <string name="timelapse_config_4x">‏4X</string>
+    <string name="timelapse_config_8x">‏8X</string>
 </resources>

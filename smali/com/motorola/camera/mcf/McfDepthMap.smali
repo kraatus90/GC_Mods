@@ -10,6 +10,10 @@
 
 .field public static final FORMAT_NV21:Ljava/lang/String; = "NV21"
 
+.field public static final MNAME_DEPTH_MAP:Ljava/lang/String; = "DepthMap"
+
+.field public static final MNAME_POST_PROC_FRAME:Ljava/lang/String; = "PostViewFrame"
+
 
 # instance fields
 .field private final mAuxHeight:I
@@ -69,37 +73,37 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mName:Ljava/lang/String;
+    iput-object v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mName:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mText:Ljava/lang/String;
+    iput-object v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mText:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mFormat:Ljava/lang/String;
+    iput-object v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mFormat:Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mInstance:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+    iput-object v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mInstance:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mWidth:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mWidth:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mHeight:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mHeight:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mStride:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mStride:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxWidth:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxWidth:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxHeight:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxHeight:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxStride:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxStride:I
 
-    iput-object v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mPrimaryBuffer:[B
+    iput-object v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mPrimaryBuffer:[B
 
-    iput-object v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxilaryBuffer:[B
+    iput-object v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mAuxilaryBuffer:[B
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiX:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiX:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiY:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiY:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiWidth:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiWidth:I
 
-    iput v1, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiHeight:I
+    iput v0, p0, Lcom/motorola/camera/mcf/McfDepthMap;->mGoodRoiHeight:I
 
     return-void
 .end method

@@ -138,7 +138,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$4;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap8(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap9(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     return-void
 .end method

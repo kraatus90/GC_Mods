@@ -45,36 +45,36 @@
 
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 4
+    .locals 3
 
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Landroid/support/v7/app/AlertController$AlertParams$1;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$1;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
 
-    iget-object v2, v2, Landroid/support/v7/app/AlertController$AlertParams;->mCheckedItems:[Z
+    iget-object v1, v1, Landroid/support/v7/app/AlertController$AlertParams;->mCheckedItems:[Z
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     :cond_0
     :goto_0
-    return-object v1
+    return-object v0
 
     :cond_1
-    iget-object v2, p0, Landroid/support/v7/app/AlertController$AlertParams$1;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$1;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
 
-    iget-object v2, v2, Landroid/support/v7/app/AlertController$AlertParams;->mCheckedItems:[Z
+    iget-object v1, v1, Landroid/support/v7/app/AlertController$AlertParams;->mCheckedItems:[Z
 
-    aget-boolean v0, v2, p1
+    aget-boolean v1, v1, p1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    iget-object v2, p0, Landroid/support/v7/app/AlertController$AlertParams$1;->val$listView:Landroid/support/v7/app/AlertController$RecycleListView;
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$1;->val$listView:Landroid/support/v7/app/AlertController$RecycleListView;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v2, p1, v3}, Landroid/support/v7/app/AlertController$RecycleListView;->setItemChecked(IZ)V
+    invoke-virtual {v1, p1, v2}, Landroid/support/v7/app/AlertController$RecycleListView;->setItemChecked(IZ)V
 
     goto :goto_0
 .end method

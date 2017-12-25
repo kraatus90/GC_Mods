@@ -85,13 +85,13 @@
 .method public build()Lcom/google/android/gms/common/api/Batch;
     .locals 4
 
-    const/4 v3, 0x0
-
     new-instance v0, Lcom/google/android/gms/common/api/Batch;
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zzPw:Ljava/util/List;
 
     iget-object v2, p0, Lcom/google/android/gms/common/api/Batch$Builder;->zzPx:Landroid/os/Looper;
+
+    const/4 v3, 0x0
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/Batch;-><init>(Ljava/util/List;Landroid/os/Looper;Lcom/google/android/gms/common/api/Batch$1;)V
 

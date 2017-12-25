@@ -34,6 +34,18 @@
 .method protected abstract getAllowFreeFormInput()Z
 .end method
 
+.method protected abstract getAllowedDataTypes()Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method protected abstract getChoices()[Ljava/lang/CharSequence;
 .end method
 

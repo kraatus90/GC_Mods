@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable$CreateReprocRequestRunnable_lambda$1(Landroid/hardware/camera2/CaptureRequest$Builder;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable$CreateReprocRequestRunnable_51838(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .locals 2
 
     invoke-virtual {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->onCaptureRequestBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;)V
@@ -88,39 +88,31 @@
 .method protected onCaptureRequestBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .locals 4
 
-    new-instance v1, Lcom/motorola/camera/fsm/RequestWrapper;
+    new-instance v0, Lcom/motorola/camera/fsm/RequestWrapper;
 
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
-    move-result-object v0
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    move-result-object v1
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->mCameraId:Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->isMaster(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/device/CameraStateManager;->isMaster(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v1
 
     const/4 v2, 0x4
 
     const/4 v3, 0x2
 
-    invoke-direct {v1, v2, v3, v0}, Lcom/motorola/camera/fsm/RequestWrapper;-><init>(IIZ)V
+    invoke-direct {v0, v2, v3, v1}, Lcom/motorola/camera/fsm/RequestWrapper;-><init>(IIZ)V
 
-    iput-object p1, v1, Lcom/motorola/camera/fsm/RequestWrapper;->mBuilder:Landroid/hardware/camera2/CaptureRequest$Builder;
+    iput-object p1, v0, Lcom/motorola/camera/fsm/RequestWrapper;->mBuilder:Landroid/hardware/camera2/CaptureRequest$Builder;
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->mRequestListener:Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$RequestListener;
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->mRequestListener:Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$RequestListener;
 
     iget v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->mIdx:I
 
-    invoke-interface {v0, v2, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$RequestListener;->onRequest(ILcom/motorola/camera/fsm/RequestWrapper;)V
+    invoke-interface {v1, v2, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$RequestListener;->onRequest(ILcom/motorola/camera/fsm/RequestWrapper;)V
 
     return-void
 .end method
@@ -130,9 +122,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$137;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$5;
 
-    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$137;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$5;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

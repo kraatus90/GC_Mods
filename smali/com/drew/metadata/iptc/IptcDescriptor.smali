@@ -225,7 +225,7 @@
 .end method
 
 .method public getFileFormatDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -249,17 +249,17 @@
 
     packed-switch v1, :pswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

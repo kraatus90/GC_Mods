@@ -830,7 +830,9 @@
 .end method
 
 .method public merge(Lcom/motorola/camera/detector/MocrBusinessCardExt;)Z
-    .locals 6
+    .locals 7
+
+    const/4 v6, 0x0
 
     if-eqz p1, :cond_0
 
@@ -845,9 +847,7 @@
     if-eqz v0, :cond_1
 
     :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return v6
 
     :cond_1
     invoke-virtual {p1}, Lcom/motorola/camera/detector/MocrBusinessCardExt;->getFieldMap()Ljava/util/Map;
@@ -911,6 +911,19 @@
     goto :goto_0
 
     :cond_3
+    invoke-interface {v3}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget v0, p0, Lcom/motorola/camera/detector/MocrBusinessCardExt;->mTimesMerged:I
+
+    if-lez v0, :cond_4
+
+    return v6
+
+    :cond_4
     iget-object v0, p0, Lcom/motorola/camera/detector/MocrBusinessCardExt;->mFields:Ljava/util/Map;
 
     invoke-interface {v0, v3}, Ljava/util/Map;->putAll(Ljava/util/Map;)V

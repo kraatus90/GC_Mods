@@ -76,9 +76,9 @@
 .method public constructor <init>(Lorg/apache/http/conn/ClientConnectionOperator;Lorg/apache/http/conn/params/ConnPerRoute;I)V
     .locals 7
 
-    const-wide/16 v4, -0x1
-
     sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v4, -0x1
 
     move-object v0, p0
 
@@ -692,9 +692,9 @@
 .method protected a(Lorg/apache/http/impl/conn/tsccm/RouteSpecificPool;Ljava/lang/Object;)Lorg/apache/http/impl/conn/tsccm/BasicPoolEntry;
     .locals 6
 
-    const/4 v1, 0x1
-
     const/4 v2, 0x0
+
+    const/4 v1, 0x1
 
     const/4 v0, 0x0
 

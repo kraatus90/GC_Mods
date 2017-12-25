@@ -37,64 +37,64 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "EEE, dd-MMM-yy HH:mm:ss z"
 
-    const-string/jumbo v2, "EEE, dd-MMM-yy HH:mm:ss z"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     :goto_0
     iput-object v0, p0, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->datepatterns:[Ljava/lang/String;
 
-    const-string/jumbo v0, "path"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicPathHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicPathHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicPathHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicPathHandler;-><init>()V
+    const-string/jumbo v1, "path"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "domain"
+    new-instance v0, Lorg/apache/http/impl/cookie/NetscapeDomainHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/NetscapeDomainHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/NetscapeDomainHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/NetscapeDomainHandler;-><init>()V
+    const-string/jumbo v1, "domain"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "max-age"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicMaxAgeHandler;-><init>()V
+    const-string/jumbo v1, "max-age"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "secure"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicSecureHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicSecureHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicSecureHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicSecureHandler;-><init>()V
+    const-string/jumbo v1, "secure"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "comment"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicCommentHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicCommentHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/BasicCommentHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BasicCommentHandler;-><init>()V
+    const-string/jumbo v1, "comment"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "expires"
+    new-instance v0, Lorg/apache/http/impl/cookie/BasicExpiresHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/BasicExpiresHandler;
+    iget-object v1, p0, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->datepatterns:[Ljava/lang/String;
 
-    iget-object v2, p0, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->datepatterns:[Ljava/lang/String;
+    invoke-direct {v0, v1}, Lorg/apache/http/impl/cookie/BasicExpiresHandler;-><init>([Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Lorg/apache/http/impl/cookie/BasicExpiresHandler;-><init>([Ljava/lang/String;)V
+    const-string/jumbo v1, "expires"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/NetscapeDraftSpec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
     return-void
 

@@ -45,7 +45,7 @@
 .end method
 
 .method final load(Lcom/abbyy/mobile/ocr4/RecognitionContext;Ljava/lang/Object;Ljava/util/Map;Ljava/util/Set;)V
-    .locals 10
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,22 +69,24 @@
         }
     .end annotation
 
+    const/4 v1, 0x0
+
     invoke-virtual {p0, p4}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->mapLanguagesSet(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object p4
+    move-result-object v0
 
-    invoke-static {p4}, Ljava/util/EnumSet;->copyOf(Ljava/util/Collection;)Ljava/util/EnumSet;
+    invoke-static {v0}, Ljava/util/EnumSet;->copyOf(Ljava/util/Collection;)Ljava/util/EnumSet;
 
-    move-result-object v5
+    move-result-object v2
 
     monitor-enter p2
 
     :try_start_0
     invoke-interface {p3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
@@ -92,56 +94,52 @@
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v0
 
-    if-nez v7, :cond_2
+    if-nez v0, :cond_2
 
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v2
 
     :cond_1
     :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v0
 
-    if-nez v7, :cond_3
+    if-nez v0, :cond_3
 
     invoke-interface {p3}, Ljava/util/Map;->size()I
 
-    move-result v7
+    move-result v0
 
-    new-array v6, v7, [J
-
-    const/4 v1, 0x0
+    new-array v3, v0, [J
 
     invoke-interface {p3}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
-
-    move v2, v1
+    move-result-object v4
 
     :goto_2
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v0
 
-    if-nez v7, :cond_4
+    if-nez v0, :cond_4
 
     monitor-exit p2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0, p1, v6}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->nativeSetDataArrays(Lcom/abbyy/mobile/ocr4/RecognitionContext;[J)Z
+    invoke-virtual {p0, p1, v3}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->nativeSetDataArrays(Lcom/abbyy/mobile/ocr4/RecognitionContext;[J)Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_5
+    if-eqz v0, :cond_5
 
     return-void
 
@@ -149,78 +147,78 @@
     :try_start_1
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    check-cast v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    invoke-interface {v5, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v2, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v4
 
-    if-eqz v7, :cond_0
+    if-eqz v4, :cond_0
 
-    invoke-interface {v5, v4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    invoke-interface {v2, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :catchall_0
-    move-exception v7
+    move-exception v0
 
     monitor-exit p2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v7
+    throw v0
 
     :cond_3
     :try_start_2
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
-
-    invoke-virtual {p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->hasData(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    invoke-virtual {p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->getDataArray(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Lcom/abbyy/mobile/ocr4/DataArray;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {p3, v4, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->hasData(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionData$RecognitionDataLoader;->getDataArray(Lcom/abbyy/mobile/ocr4/RecognitionLanguage;)Lcom/abbyy/mobile/ocr4/DataArray;
+
+    move-result-object v3
+
+    invoke-interface {p3, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
     :cond_4
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/DataArray;
 
-    add-int/lit8 v1, v2, 0x1
+    add-int/lit8 v2, v1, 0x1
 
     invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/DataArray;->getPointerToNativeArray()J
 
-    move-result-wide v8
+    move-result-wide v6
 
-    aput-wide v8, v6, v2
+    aput-wide v6, v3, v1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    move v2, v1
+    move v1, v2
 
     goto :goto_2
 
     :cond_5
-    new-instance v7, Ljava/lang/OutOfMemoryError;
+    new-instance v0, Ljava/lang/OutOfMemoryError;
 
-    invoke-direct {v7}, Ljava/lang/OutOfMemoryError;-><init>()V
+    invoke-direct {v0}, Ljava/lang/OutOfMemoryError;-><init>()V
 
-    throw v7
+    throw v0
 .end method
 
 .method public mapLanguagesSet(Ljava/util/Set;)Ljava/util/Set;

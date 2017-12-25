@@ -133,11 +133,11 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v5, 0x0
-
     new-instance v4, Lorg/apache/http/protocol/HttpService$HttpRequestHandlerResolverAdapter;
 
     invoke-direct {v4, p4}, Lorg/apache/http/protocol/HttpService$HttpRequestHandlerResolverAdapter;-><init>(Lorg/apache/http/protocol/HttpRequestHandlerResolver;)V
+
+    const/4 v5, 0x0
 
     move-object v0, p0
 
@@ -476,6 +476,7 @@
     invoke-interface {v4, v2, v1, p2}, Lorg/apache/http/protocol/HttpExpectationVerifier;->verify(Lorg/apache/http/HttpRequest;Lorg/apache/http/HttpResponse;Lorg/apache/http/protocol/HttpContext;)V
     :try_end_3
     .catch Lorg/apache/http/HttpException; {:try_start_3 .. :try_end_3} :catch_1
+    .catch Lorg/apache/http/HttpException; {:try_start_3 .. :try_end_3} :catch_0
 
     goto :goto_4
 

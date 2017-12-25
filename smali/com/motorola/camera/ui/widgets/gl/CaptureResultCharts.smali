@@ -5,6 +5,8 @@
 # interfaces
 .implements Lcom/motorola/camera/settings/SettingChangeListener;
 .implements Lcom/motorola/camera/fsm/camera/subfsms/DebugStateMachine$DebugListener;
+.implements Lcom/motorola/camera/Notifier$Listener;
+.implements Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatsListener;
 
 
 # static fields
@@ -13,6 +15,16 @@
 .field private static final ALPHA_NORMAL:F = 1.0f
 
 .field private static final BOTTOM_MARGIN:F = 126.0f
+
+.field private static final CPU:Ljava/lang/String; = "CPU"
+
+.field private static final CPU_UPDATE_INTERVAL:J = 0x3e8L
+
+.field private static final MAX_FPS:F = 60.0f
+
+.field private static final MIN_CPU:F = 0.0f
+
+.field private static final MIN_FPS:F = 0.0f
 
 .field private static final PLOT_MARGIN:F = 2.0f
 
@@ -118,38 +130,29 @@
     return-void
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_lambda$1(Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
-    .locals 0
+.method private addChartTexture(Ljava/lang/String;)V
+    .locals 2
 
-    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->unloadTexture()V
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;
 
-    return-void
-.end method
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_lambda$2(Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
-    .locals 1
+    invoke-direct {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
 
-    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->isLoaded()Z
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mAlpha:F
 
-    move-result v0
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setAlpha(F)V
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setTitle(Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->loadTexture()V
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
 
-    :cond_0
-    return-void
-.end method
-
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_lambda$3([F[FLjava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
-    .locals 0
-
-    invoke-virtual {p3, p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->draw([F[F)V
+    invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_lambda$5(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_13301(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)V
     .locals 4
 
     invoke-virtual {p0, p1}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -215,6 +218,37 @@
     move-result-object v0
 
     goto :goto_0
+.end method
+
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_2933(Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
+    .locals 0
+
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->unloadTexture()V
+
+    return-void
+.end method
+
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_3447(Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
+    .locals 1
+
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->isLoaded()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->loadTexture()V
+
+    :cond_0
+    return-void
+.end method
+
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_3773([F[FLjava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
+    .locals 0
+
+    invoke-virtual {p3, p0, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->draw([F[F)V
+
+    return-void
 .end method
 
 .method private declared-synchronized layout()V
@@ -629,9 +663,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$125;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$2;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$125;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$2;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Ljava/util/Map;->forEach(Ljava/util/function/BiConsumer;)V
     :try_end_0
@@ -779,11 +813,19 @@
 .method private declared-synchronized updateChartTextures()V
     .locals 6
 
-    const/4 v2, 0x0
+    const/4 v2, 0x4
+
+    const/4 v3, 0x0
 
     monitor-enter p0
 
     :try_start_0
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "updateChartTextures"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mCaptureResultKeys:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
@@ -796,7 +838,7 @@
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
 
@@ -808,7 +850,7 @@
 
     check-cast v0, [Ljava/lang/String;
 
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v1}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
 
@@ -824,47 +866,194 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_7
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_7
 
-    array-length v3, v0
+    array-length v4, v0
 
-    move v1, v2
+    move v1, v3
 
     :goto_0
-    if-ge v1, v3, :cond_0
+    if-ge v1, v4, :cond_0
 
-    aget-object v2, v0, v1
+    aget-object v5, v0, v1
 
-    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;
-
-    iget-object v5, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    invoke-direct {v4, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
-
-    iget v5, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mAlpha:F
-
-    invoke-virtual {v4, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setAlpha(F)V
-
-    invoke-virtual {v4, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setTitle(Ljava/lang/String;)V
-
-    iget-object v5, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
-
-    invoke-interface {v5, v2, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0, v5}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->addChartTexture(Ljava/lang/String;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_0
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_0_3:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_4_7:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v4
+
+    if-nez v1, :cond_1
+
+    if-eqz v4, :cond_5
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    move v0, v3
+
+    :goto_1
+    if-ge v0, v2, :cond_2
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "CPU"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->addChartTexture(Ljava/lang/String;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    if-eqz v4, :cond_3
+
+    move v0, v2
+
+    :goto_2
+    const/16 v1, 0x8
+
+    if-ge v0, v1, :cond_3
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "CPU"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->addChartTexture(Ljava/lang/String;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mHandler:Landroid/os/Handler;
+
+    const-wide/16 v2, 0x3e8
+
+    invoke-static {p0, v0, v2, v3}, Lcom/motorola/camera/fragments/CpuReportHelper;->startCpuStats(Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatsListener;Landroid/os/Handler;J)V
+
+    :goto_3
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->VIEWFINDER_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->addListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->GL_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->addListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    sget-object v0, Lcom/motorola/camera/Notifier$TYPE;->VIEWFINDER_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/Notifier$TYPE;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->addChartTexture(Ljava/lang/String;)V
+
+    sget-object v0, Lcom/motorola/camera/Notifier$TYPE;->GL_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/Notifier$TYPE;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->addChartTexture(Ljava/lang/String;)V
+
+    :goto_4
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_1
+    if-lez v0, :cond_4
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->layout()V
 
@@ -878,10 +1067,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_1
+    :cond_4
+    :goto_5
     monitor-exit p0
 
     return-void
+
+    :cond_5
+    :try_start_1
+    invoke-static {p0}, Lcom/motorola/camera/fragments/CpuReportHelper;->stopCpuStats(Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatsListener;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_3
 
     :catchall_0
     move-exception v0
@@ -889,6 +1087,33 @@
     monitor-exit p0
 
     throw v0
+
+    :cond_6
+    :try_start_2
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->VIEWFINDER_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->removeListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->GL_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->removeListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    goto :goto_4
+
+    :cond_7
+    invoke-static {p0}, Lcom/motorola/camera/fragments/CpuReportHelper;->stopCpuStats(Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatsListener;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_5
 .end method
 
 
@@ -957,17 +1182,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_lambda$4(Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
-    .locals 1
-
-    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mAlpha:F
-
-    invoke-virtual {p2, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setAlpha(F)V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_lambda$6(Landroid/hardware/camera2/CaptureResult;Ljava/lang/String;Landroid/hardware/camera2/CaptureResult$Key;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_13725(Landroid/hardware/camera2/CaptureResult;Ljava/lang/String;Landroid/hardware/camera2/CaptureResult$Key;)V
     .locals 4
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mCaptureResultIndexes:Ljava/util/Map;
@@ -1072,6 +1287,16 @@
     goto :goto_1
 .end method
 
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CaptureResultCharts_7464(Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;)V
+    .locals 1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mAlpha:F
+
+    invoke-virtual {p2, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setAlpha(F)V
+
+    return-void
+.end method
+
 .method protected loadTexturesDeferred()Z
     .locals 1
 
@@ -1089,7 +1314,29 @@
 .end method
 
 .method public onChange(Lcom/motorola/camera/settings/Setting;)V
-    .locals 0
+    .locals 3
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "setting change "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->updateChartTextures()V
 
@@ -1114,9 +1361,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$127;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$3;
 
-    invoke-direct {v1, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$127;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$3;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->forEach(Ljava/util/function/Consumer;)V
 
@@ -1134,9 +1381,9 @@
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mCaptureResultKeys:Ljava/util/Map;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$151;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$4;
 
-    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$151;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Ljava/util/Map;->forEach(Ljava/util/function/BiConsumer;)V
     :try_end_0
@@ -1162,9 +1409,9 @@
     :try_start_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$152;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$5;
 
-    invoke-direct {v1, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$152;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p1, p3}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$5;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Ljava/util/Map;->forEach(Ljava/util/function/BiConsumer;)V
     :try_end_0
@@ -1196,9 +1443,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$10;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y;
 
-    invoke-direct {v2}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$10;-><init>()V
+    invoke-direct {v2}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y;-><init>()V
 
     invoke-interface {v1, v2}, Ljava/util/Map;->forEach(Ljava/util/function/BiConsumer;)V
 
@@ -1247,11 +1494,152 @@
     return-void
 .end method
 
+.method public onStats([Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;)V
+    .locals 5
+
+    const/4 v2, 0x0
+
+    if-eqz p1, :cond_0
+
+    array-length v0, p1
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    return-void
+
+    :cond_1
+    move v3, v2
+
+    :goto_0
+    const/16 v0, 0x8
+
+    if-ge v3, v0, :cond_4
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "CPU"
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;
+
+    if-eqz v0, :cond_2
+
+    aget-object v1, p1, v3
+
+    iget-boolean v1, v1, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mOnline:Z
+
+    if-eqz v1, :cond_3
+
+    aget-object v1, p1, v3
+
+    iget v1, v1, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mCurrent:I
+
+    :goto_1
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->onValue(F)V
+
+    aget-object v1, p1, v3
+
+    iget v1, v1, Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatus;->mMaximum:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setMaximum(F)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setMinimum(F)V
+
+    :cond_2
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    goto :goto_0
+
+    :cond_3
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_4
+    return-void
+.end method
+
 .method public onSurfaceChanged(Lcom/motorola/camera/PreviewSize;Lcom/motorola/camera/PreviewSize;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->layout()V
 
+    return-void
+.end method
+
+.method public onUpdate(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
+    .locals 2
+
+    sget-object v0, Lcom/motorola/camera/Notifier$TYPE;->VIEWFINDER_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    if-eq v0, p1, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/Notifier$TYPE;->GL_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    if-ne v0, p1, :cond_1
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
+
+    invoke-virtual {p1}, Lcom/motorola/camera/Notifier$TYPE;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;
+
+    if-eqz v0, :cond_1
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->onValue(F)V
+
+    const/high16 v1, 0x42700000    # 60.0f
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setMaximum(F)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CaptureResultChartTexture;->setMinimum(F)V
+
+    :cond_1
     return-void
 .end method
 
@@ -1274,6 +1662,12 @@
 
     if-eqz v0, :cond_1
 
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "exiting app init"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->updateChartTextures()V
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
@@ -1290,11 +1684,23 @@
 
     invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;->addStateListener(Ljava/lang/Object;)V
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_0_3:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_4_7:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
@@ -1323,13 +1729,43 @@
 
     invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;->removeStateListener(Ljava/lang/Object;)V
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT:Lcom/motorola/camera/settings/SettingsManager$Key;
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->VIEWFINDER_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->removeListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->GL_FRAME_RATE:Lcom/motorola/camera/Notifier$TYPE;
+
+    invoke-virtual {v0, v1, p0}, Lcom/motorola/camera/Notifier;->removeListener(Lcom/motorola/camera/Notifier$TYPE;Lcom/motorola/camera/Notifier$Listener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_0_3:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_4_7:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, p0}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    invoke-static {p0}, Lcom/motorola/camera/fragments/CpuReportHelper;->stopCpuStats(Lcom/motorola/camera/fragments/CpuReportHelper$CpuStatsListener;)V
 
     goto :goto_0
 
@@ -1386,9 +1822,9 @@
     :try_start_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CaptureResultCharts;->mChartTextures:Ljava/util/Map;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$11;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$1;
 
-    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$11;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$AKFTRJ28YAOQ3OMO41gxOJCBJ6Y$1;-><init>()V
 
     invoke-interface {v0, v1}, Ljava/util/Map;->forEach(Ljava/util/function/BiConsumer;)V
 

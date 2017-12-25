@@ -68,23 +68,23 @@
 
     aput v1, v0, v4
 
-    const/4 v1, 0x5
+    const/16 v1, 0x20
 
-    const/16 v2, 0x20
+    const/4 v2, 0x5
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x6
+    const/16 v1, 0x40
 
-    const/16 v2, 0x40
+    const/4 v2, 0x6
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x7
+    const/16 v1, 0x80
 
-    const/16 v2, 0x80
+    const/4 v2, 0x7
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/codec/binary/BinaryCodec;->BITS:[I
 

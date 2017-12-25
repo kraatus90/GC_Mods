@@ -3,6 +3,14 @@
 .source "FragmentTransaction.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/support/v4/app/FragmentTransaction$Transit;
+    }
+.end annotation
+
+
 # static fields
 .field public static final TRANSIT_ENTER_MASK:I = 0x1000
 
@@ -112,7 +120,12 @@
     .end param
 .end method
 
+.method public abstract runOnCommit(Ljava/lang/Runnable;)Landroid/support/v4/app/FragmentTransaction;
+.end method
+
 .method public abstract setAllowOptimization(Z)Landroid/support/v4/app/FragmentTransaction;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract setBreadCrumbShortTitle(I)Landroid/support/v4/app/FragmentTransaction;
@@ -139,9 +152,15 @@
     .param p1    # I
         .annotation build Landroid/support/annotation/AnimRes;
         .end annotation
+
+        .annotation build Landroid/support/annotation/AnimatorRes;
+        .end annotation
     .end param
     .param p2    # I
         .annotation build Landroid/support/annotation/AnimRes;
+        .end annotation
+
+        .annotation build Landroid/support/annotation/AnimatorRes;
         .end annotation
     .end param
 .end method
@@ -150,19 +169,37 @@
     .param p1    # I
         .annotation build Landroid/support/annotation/AnimRes;
         .end annotation
+
+        .annotation build Landroid/support/annotation/AnimatorRes;
+        .end annotation
     .end param
     .param p2    # I
         .annotation build Landroid/support/annotation/AnimRes;
+        .end annotation
+
+        .annotation build Landroid/support/annotation/AnimatorRes;
         .end annotation
     .end param
     .param p3    # I
         .annotation build Landroid/support/annotation/AnimRes;
         .end annotation
+
+        .annotation build Landroid/support/annotation/AnimatorRes;
+        .end annotation
     .end param
     .param p4    # I
         .annotation build Landroid/support/annotation/AnimRes;
         .end annotation
+
+        .annotation build Landroid/support/annotation/AnimatorRes;
+        .end annotation
     .end param
+.end method
+
+.method public abstract setPrimaryNavigationFragment(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+.end method
+
+.method public abstract setReorderingAllowed(Z)Landroid/support/v4/app/FragmentTransaction;
 .end method
 
 .method public abstract setTransition(I)Landroid/support/v4/app/FragmentTransaction;

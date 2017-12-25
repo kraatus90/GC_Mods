@@ -35,9 +35,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v5, 0x0
+
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
@@ -231,11 +231,11 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v5, 0x2
+    const/4 v5, 0x0
+
+    const/4 v4, 0x2
 
     const/4 v3, 0x1
-
-    const/4 v4, 0x0
 
     iget-object v0, p0, Lcom/drew/metadata/exif/PanasonicMakernoteDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -322,7 +322,7 @@
     return-object v0
 
     :cond_5
-    return-object v4
+    return-object v5
 
     :cond_6
     if-ne v1, v3, :cond_0
@@ -332,7 +332,7 @@
     return-object v0
 
     :cond_7
-    if-ne v1, v5, :cond_1
+    if-ne v1, v4, :cond_1
 
     const-string/jumbo v0, "Slim High"
 
@@ -353,7 +353,7 @@
     return-object v0
 
     :cond_a
-    if-ne v1, v5, :cond_4
+    if-ne v1, v4, :cond_4
 
     const-string/jumbo v0, "Stretch High"
     :try_end_0
@@ -364,7 +364,7 @@
     :catch_0
     move-exception v0
 
-    return-object v4
+    return-object v5
 .end method
 
 

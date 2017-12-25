@@ -33,11 +33,11 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->zzzH:I
 
-    iget v2, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->zzzH:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 

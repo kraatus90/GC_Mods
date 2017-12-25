@@ -70,11 +70,11 @@
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/ListMenuItemView;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroid/support/v7/appcompat/R$styleable;->MenuView:[I
+    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->MenuView:[I
 
-    invoke-static {v1, p2, v2, p3, v3}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {v0, p2, v1, p3, v3}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
@@ -158,15 +158,15 @@
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/widget/CheckBox;
+    check-cast v0, Landroid/widget/CheckBox;
 
-    iput-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/ListMenuItemView;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ListMenuItemView;->addView(Landroid/view/View;)V
 
     return-void
 .end method
@@ -184,15 +184,15 @@
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/widget/ImageView;
+    check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {p0, v1, v2}, Landroid/support/v7/view/menu/ListMenuItemView;->addView(Landroid/view/View;I)V
+    invoke-virtual {p0, v0, v2}, Landroid/support/v7/view/menu/ListMenuItemView;->addView(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -210,15 +210,15 @@
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/widget/RadioButton;
+    check-cast v0, Landroid/widget/RadioButton;
 
-    iput-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/ListMenuItemView;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ListMenuItemView;->addView(Landroid/view/View;)V
 
     return-void
 .end method
@@ -318,6 +318,12 @@
 
     invoke-direct {p0, v0}, Landroid/support/v7/view/menu/ListMenuItemView;->setSubMenuArrowVisible(Z)V
 
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->getContentDescription()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ListMenuItemView;->setContentDescription(Ljava/lang/CharSequence;)V
+
     return-void
 .end method
 
@@ -398,9 +404,9 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     :goto_0
@@ -409,17 +415,17 @@
     return-void
 
     :cond_1
-    iget-boolean v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mPreserveIconSpacing:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mPreserveIconSpacing:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/ListMenuItemView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
@@ -433,9 +439,9 @@
 
     if-gtz v2, :cond_0
 
-    iget v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iput v2, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+    iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     goto :goto_0
 .end method
@@ -451,64 +457,64 @@
 .method public setCheckable(Z)V
     .locals 5
 
-    const/16 v3, 0x8
+    const/16 v1, 0x8
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_2
 
     :cond_0
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
+    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v4}, Landroid/support/v7/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
+    invoke-virtual {v2}, Landroid/support/v7/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_3
+    if-nez v2, :cond_3
 
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    if-eqz v4, :cond_5
+    if-eqz v2, :cond_5
 
     :goto_0
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v3, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
     iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
     :goto_1
     if-nez p1, :cond_6
 
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    if-nez v4, :cond_9
+    if-nez v0, :cond_9
 
     :goto_2
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    if-nez v4, :cond_a
+    if-nez v0, :cond_a
 
     :cond_1
     :goto_3
     return-void
 
     :cond_2
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
     return-void
 
     :cond_3
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    if-eqz v4, :cond_4
+    if-eqz v2, :cond_4
 
     :goto_4
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v3, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
     iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
@@ -531,66 +537,66 @@
 
     move-result v4
 
-    invoke-virtual {v0, v4}, Landroid/widget/CompoundButton;->setChecked(Z)V
+    invoke-virtual {v3, v4}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
     if-nez p1, :cond_7
 
-    move v1, v3
+    move v0, v1
 
     :cond_7
-    invoke-virtual {v0}, Landroid/widget/CompoundButton;->getVisibility()I
+    invoke-virtual {v3}, Landroid/widget/CompoundButton;->getVisibility()I
 
     move-result v4
 
-    if-ne v4, v1, :cond_8
+    if-ne v4, v0, :cond_8
 
     :goto_5
     if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Landroid/widget/CompoundButton;->getVisibility()I
 
-    move-result v4
+    move-result v0
 
-    if-eq v4, v3, :cond_1
+    if-eq v0, v1, :cond_1
 
-    invoke-virtual {v2, v3}, Landroid/widget/CompoundButton;->setVisibility(I)V
+    invoke-virtual {v2, v1}, Landroid/widget/CompoundButton;->setVisibility(I)V
 
     goto :goto_3
 
     :cond_8
-    invoke-virtual {v0, v1}, Landroid/widget/CompoundButton;->setVisibility(I)V
+    invoke-virtual {v3, v0}, Landroid/widget/CompoundButton;->setVisibility(I)V
 
     goto :goto_5
 
     :cond_9
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    invoke-virtual {v4, v3}, Landroid/widget/CheckBox;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setVisibility(I)V
 
     goto :goto_2
 
     :cond_a
-    iget-object v4, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    invoke-virtual {v4, v3}, Landroid/widget/RadioButton;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/RadioButton;->setVisibility(I)V
 
     goto :goto_3
 .end method
 
 .method public setChecked(Z)V
-    .locals 2
+    .locals 1
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     :goto_0
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mCheckBox:Landroid/widget/CheckBox;
@@ -601,9 +607,9 @@
     return-void
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     :goto_2
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mRadioButton:Landroid/widget/RadioButton;
@@ -638,13 +644,13 @@
 
     const/4 v1, 0x0
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->shouldShowIcon()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->shouldShowIcon()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_5
+    if-eqz v0, :cond_5
 
     :cond_0
     const/4 v0, 0x1
@@ -675,21 +681,21 @@
     :cond_4
     invoke-virtual {v3, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getVisibility()I
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getVisibility()I
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_a
+    if-nez v0, :cond_a
 
     :goto_2
     return-void
 
     :cond_5
-    iget-boolean v3, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mForceShowIcon:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mForceShowIcon:Z
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     move v0, v1
 
@@ -721,18 +727,18 @@
 
     if-nez v3, :cond_3
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    const/16 v2, 0x8
+    const/16 v1, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_2
 
     :cond_a
-    iget-object v2, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuItemView;->mIconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_2
 .end method

@@ -8,6 +8,8 @@
 
 .field public mBuilder:Landroid/hardware/camera2/CaptureRequest$Builder;
 
+.field public mCameraId:Ljava/lang/String;
+
 .field public final mId:I
 
 .field public mIsMaster:Z
@@ -31,7 +33,23 @@
 
     iput-boolean v0, p0, Lcom/motorola/camera/fsm/RequestWrapper;->mActive:Z
 
+    if-eqz p3, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_0
+    iput-object v0, p0, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
+
     return-void
+
+    :cond_0
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getBackSlaveCamera()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 
@@ -88,6 +106,18 @@
     iget-boolean v1, p0, Lcom/motorola/camera/fsm/RequestWrapper;->mIsMaster:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " cameraId:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/RequestWrapper;->mCameraId:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

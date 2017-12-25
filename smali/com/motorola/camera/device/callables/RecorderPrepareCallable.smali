@@ -383,9 +383,21 @@
     invoke-virtual {v0, v2}, Lcom/motorola/camera/CameraKpi;->endKpiRecord(Lcom/motorola/camera/CameraKpi$KPI;)V
 
     :cond_a
-    invoke-virtual {v1}, Landroid/media/MediaRecorder;->getSurface()Landroid/view/Surface;
+    invoke-virtual {p0}, Lcom/motorola/camera/device/callables/RecorderPrepareCallable;->getCameraData()Lcom/motorola/camera/device/CameraHandlerThread$CameraData;
 
     move-result-object v0
+
+    invoke-virtual {v1}, Landroid/media/MediaRecorder;->getSurface()Landroid/view/Surface;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mMediaRecorderSurface:Landroid/view/Surface;
+
+    invoke-virtual {p0}, Lcom/motorola/camera/device/callables/RecorderPrepareCallable;->getCameraData()Lcom/motorola/camera/device/CameraHandlerThread$CameraData;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mMediaRecorderSurface:Landroid/view/Surface;
 
     return-object v0
 .end method

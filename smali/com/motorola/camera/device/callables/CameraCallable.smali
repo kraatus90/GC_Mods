@@ -250,7 +250,7 @@
 .method public abstract getTag()Ljava/lang/String;
 .end method
 
-.method synthetic lambda$-com_motorola_camera_device_callables_CameraCallable_lambda$1(Lcom/motorola/camera/device/callables/CallableReturn;)V
+.method synthetic lambda$-com_motorola_camera_device_callables_CameraCallable_1629(Lcom/motorola/camera/device/callables/CallableReturn;)V
     .locals 0
 
     invoke-virtual {p0, p1}, Lcom/motorola/camera/device/callables/CameraCallable;->callback(Lcom/motorola/camera/device/callables/CallableReturn;)V
@@ -369,9 +369,9 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    new-instance v1, Lcom/motorola/camera/device/callables/-$Lambda$133;
+    new-instance v1, Lcom/motorola/camera/device/callables/-$Lambda$YlQkJlusitqeMQ_zJSL3yIBBmTU;
 
-    invoke-direct {v1, p0, v0}, Lcom/motorola/camera/device/callables/-$Lambda$133;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v0}, Lcom/motorola/camera/device/callables/-$Lambda$YlQkJlusitqeMQ_zJSL3yIBBmTU;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-static {v1}, Lcom/motorola/camera/device/callables/CameraCallable;->runOnUiThread(Ljava/lang/Runnable;)V
 

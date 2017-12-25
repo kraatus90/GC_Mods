@@ -46,18 +46,18 @@
         }
     .end annotation
 
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    if-ne p3, v1, :cond_1
+    if-ne p3, v0, :cond_1
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$3;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$3;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
-    iget-object v0, v1, Landroid/support/v7/widget/ListPopupWindow;->mDropDownList:Landroid/support/v7/widget/DropDownListView;
+    iget-object v0, v0, Landroid/support/v7/widget/ListPopupWindow;->mDropDownList:Landroid/support/v7/widget/DropDownListView;
 
     if-eqz v0, :cond_0
 

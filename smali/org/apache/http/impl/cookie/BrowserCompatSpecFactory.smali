@@ -27,9 +27,9 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     sget-object v0, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;->SECURITYLEVEL_DEFAULT:Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;-><init>([Ljava/lang/String;Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;)V
 
@@ -39,9 +39,9 @@
 .method public constructor <init>([Ljava/lang/String;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     sget-object v0, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;->SECURITYLEVEL_DEFAULT:Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;-><init>([Ljava/lang/String;Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory$SecurityLevel;)V
 

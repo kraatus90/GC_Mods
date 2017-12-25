@@ -117,15 +117,15 @@
 
     new-instance v0, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lorg/apache/http/impl/io/DefaultHttpRequestParser;->lineBuf:Lorg/apache/http/util/CharArrayBuffer;
 
-    iget-object v2, p0, Lorg/apache/http/impl/io/DefaultHttpRequestParser;->lineBuf:Lorg/apache/http/util/CharArrayBuffer;
+    invoke-virtual {v1}, Lorg/apache/http/util/CharArrayBuffer;->length()I
 
-    invoke-virtual {v2}, Lorg/apache/http/util/CharArrayBuffer;->length()I
+    move-result v1
 
-    move-result v2
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    invoke-direct {v0, v2, v1}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     iget-object v1, p0, Lorg/apache/http/impl/io/DefaultHttpRequestParser;->a:Lorg/apache/http/message/LineParser;
 

@@ -41,9 +41,9 @@
 .method constructor <init>(ILandroid/os/Parcel;Lcom/google/android/gms/common/server/response/FieldMappingDictionary;)V
     .locals 3
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
     invoke-direct {p0}, Lcom/google/android/gms/common/server/response/FastJsonResponse;-><init>()V
 
@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUN:Landroid/os/Parcel;
 
-    iput v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUO:I
+    iput v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUO:I
 
     iput-object p3, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUG:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
@@ -74,12 +74,12 @@
     iput-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->mClassName:Ljava/lang/String;
 
     :goto_0
-    iput v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUP:I
+    iput v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUP:I
 
     return-void
 
     :cond_0
-    iput-object v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->mClassName:Ljava/lang/String;
+    iput-object v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->mClassName:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -1703,8 +1703,6 @@
 .method zzmR()Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
     .locals 3
 
-    const/4 v1, 0x0
-
     iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUO:I
 
     packed-switch v0, :pswitch_data_0
@@ -1736,7 +1734,9 @@
     throw v0
 
     :pswitch_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 
     :pswitch_1
     iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzUG:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;

@@ -67,9 +67,9 @@
         }
     .end annotation
 
-    const-wide/16 v4, 0x0
-
     sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v4, 0x0
 
     move-object v0, p0
 

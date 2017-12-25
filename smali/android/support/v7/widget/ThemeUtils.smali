@@ -130,43 +130,39 @@
 .end method
 
 .method public static createDisabledStateList(II)Landroid/content/res/ColorStateList;
-    .locals 5
+    .locals 4
 
-    const/4 v3, 0x2
+    const/4 v1, 0x2
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    new-array v2, v3, [[I
+    new-array v0, v1, [[I
 
-    new-array v0, v3, [I
+    new-array v1, v1, [I
 
-    const/4 v1, 0x0
+    sget-object v2, Landroid/support/v7/widget/ThemeUtils;->DISABLED_STATE_SET:[I
 
-    sget-object v3, Landroid/support/v7/widget/ThemeUtils;->DISABLED_STATE_SET:[I
+    aput-object v2, v0, v3
 
-    aput-object v3, v2, v4
+    aput p1, v1, v3
 
-    aput p1, v0, v4
-
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     sget-object v3, Landroid/support/v7/widget/ThemeUtils;->EMPTY_STATE_SET:[I
 
-    aput-object v3, v2, v1
+    aput-object v3, v0, v2
 
-    aput p0, v0, v1
+    aput p0, v1, v2
 
-    add-int/lit8 v1, v1, 0x1
+    new-instance v2, Landroid/content/res/ColorStateList;
 
-    new-instance v3, Landroid/content/res/ColorStateList;
+    invoke-direct {v2, v0, v1}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
-    invoke-direct {v3, v2, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
-
-    return-object v3
+    return-object v2
 .end method
 
 .method public static getDisabledThemeAttrColor(Landroid/content/Context;I)I
-    .locals 6
+    .locals 4
 
     invoke-static {p0, p1}, Landroid/support/v7/widget/ThemeUtils;->getThemeAttrColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
@@ -177,62 +173,62 @@
     :cond_0
     invoke-static {}, Landroid/support/v7/widget/ThemeUtils;->getTypedValue()Landroid/util/TypedValue;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v3
+    move-result-object v1
 
-    const v4, 0x1010033
+    const/4 v2, 0x1
 
-    const/4 v5, 0x1
+    const v3, 0x1010033
 
-    invoke-virtual {v3, v4, v2, v5}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    invoke-virtual {v1, v3, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    invoke-virtual {v2}, Landroid/util/TypedValue;->getFloat()F
+    invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
 
-    move-result v1
+    move-result v0
 
-    invoke-static {p0, p1, v1}, Landroid/support/v7/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context;IF)I
+    invoke-static {p0, p1, v0}, Landroid/support/v7/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context;IF)I
 
-    move-result v3
+    move-result v0
 
-    return v3
+    return v0
 
     :cond_1
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_0
+    if-eqz v1, :cond_0
 
-    sget-object v3, Landroid/support/v7/widget/ThemeUtils;->DISABLED_STATE_SET:[I
+    sget-object v1, Landroid/support/v7/widget/ThemeUtils;->DISABLED_STATE_SET:[I
 
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
-    move-result v4
+    move-result v2
 
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
 
-    move-result v3
+    move-result v0
 
-    return v3
+    return v0
 .end method
 
 .method public static getThemeAttrColor(Landroid/content/Context;I)I
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    sget-object v0, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
 
-    sget-object v1, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
+    aput p1, v0, v1
 
-    aput p1, v1, v2
+    sget-object v0, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
 
-    sget-object v1, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
+    const/4 v1, 0x0
 
-    invoke-static {p0, v3, v1}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {p0, v1, v0}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
@@ -260,7 +256,7 @@
 .end method
 
 .method static getThemeAttrColor(Landroid/content/Context;IF)I
-    .locals 3
+    .locals 2
 
     invoke-static {p0, p1}, Landroid/support/v7/widget/ThemeUtils;->getThemeAttrColor(Landroid/content/Context;I)I
 
@@ -270,35 +266,35 @@
 
     move-result v1
 
-    int-to-float v2, v1
+    int-to-float v1, v1
 
-    mul-float/2addr v2, p2
+    mul-float/2addr v1, p2
 
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v0, v2}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v0, v1}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
 
-    move-result v2
+    move-result v0
 
-    return v2
+    return v0
 .end method
 
 .method public static getThemeAttrColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .locals 4
+    .locals 2
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    sget-object v0, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
 
-    sget-object v1, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
+    aput p1, v0, v1
 
-    aput p1, v1, v2
+    sget-object v0, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
 
-    sget-object v1, Landroid/support/v7/widget/ThemeUtils;->TEMP_ARRAY:[I
+    const/4 v1, 0x0
 
-    invoke-static {p0, v3, v1}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {p0, v1, v0}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
@@ -326,9 +322,9 @@
 .method private static getTypedValue()Landroid/util/TypedValue;
     .locals 2
 
-    sget-object v1, Landroid/support/v7/widget/ThemeUtils;->TL_TYPED_VALUE:Ljava/lang/ThreadLocal;
+    sget-object v0, Landroid/support/v7/widget/ThemeUtils;->TL_TYPED_VALUE:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v0
 

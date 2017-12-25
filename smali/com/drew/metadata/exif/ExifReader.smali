@@ -1443,17 +1443,17 @@
 
     if-nez v1, :cond_16
 
-    const-string/jumbo v1, "Panasonic\u0000\u0000\u0000"
-
-    const/16 v3, 0xc
+    const/16 v1, 0xc
 
     move-object/from16 v0, p5
 
-    invoke-virtual {v0, p1, v3}, Lcom/drew/lang/BufferReader;->getString(II)Ljava/lang/String;
+    invoke-virtual {v0, p1, v1}, Lcom/drew/lang/BufferReader;->getString(II)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "Panasonic\u0000\u0000\u0000"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 

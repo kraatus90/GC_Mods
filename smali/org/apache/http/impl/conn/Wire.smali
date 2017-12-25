@@ -223,13 +223,13 @@
 
     new-array v0, v0, [B
 
-    const/4 v1, 0x0
+    int-to-byte v1, p1
 
-    int-to-byte v2, p1
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    const/4 v2, 0x0
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     invoke-virtual {p0, v0}, Lorg/apache/http/impl/conn/Wire;->input([B)V
 
@@ -275,13 +275,13 @@
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string/jumbo v0, "<< "
+    new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    new-instance v1, Ljava/io/ByteArrayInputStream;
+    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    invoke-direct {v1, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    const-string/jumbo v1, "<< "
 
-    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
+    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
 
     return-void
 .end method
@@ -293,13 +293,13 @@
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string/jumbo v0, "<< "
+    new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    new-instance v1, Ljava/io/ByteArrayInputStream;
+    invoke-direct {v0, p1, p2, p3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
 
-    invoke-direct {v1, p1, p2, p3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
+    const-string/jumbo v1, "<< "
 
-    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
+    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
 
     return-void
 .end method
@@ -311,13 +311,13 @@
 
     new-array v0, v0, [B
 
-    const/4 v1, 0x0
+    int-to-byte v1, p1
 
-    int-to-byte v2, p1
+    int-to-byte v1, v1
 
-    int-to-byte v2, v2
+    const/4 v2, 0x0
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     invoke-virtual {p0, v0}, Lorg/apache/http/impl/conn/Wire;->output([B)V
 
@@ -363,13 +363,13 @@
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string/jumbo v0, ">> "
+    new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    new-instance v1, Ljava/io/ByteArrayInputStream;
+    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    invoke-direct {v1, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+    const-string/jumbo v1, ">> "
 
-    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
+    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
 
     return-void
 .end method
@@ -381,13 +381,13 @@
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string/jumbo v0, ">> "
+    new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    new-instance v1, Ljava/io/ByteArrayInputStream;
+    invoke-direct {v0, p1, p2, p3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
 
-    invoke-direct {v1, p1, p2, p3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
+    const-string/jumbo v1, ">> "
 
-    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
+    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/conn/Wire;->wire(Ljava/lang/String;Ljava/io/InputStream;)V
 
     return-void
 .end method

@@ -397,9 +397,9 @@
 
     iget-object v7, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->zzPM:Ljava/util/Set;
 
-    const/4 v8, -0x1
-
     iget v9, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->zzPI:I
+
+    const/4 v8, -0x1
 
     invoke-direct/range {v0 .. v9}, Lcom/google/android/gms/common/api/zzg;-><init>(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/zze;Lcom/google/android/gms/common/api/Api$zzb;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;II)V
 
@@ -421,9 +421,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->zzPF:Ljava/util/Map;
+
+    const/4 v1, 0x0
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -515,9 +515,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Lcom/google/android/gms/common/api/GoogleApiClient$Builder;->zzPF:Ljava/util/Map;
+
+    const/4 v1, 0x0
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

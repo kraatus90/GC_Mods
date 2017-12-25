@@ -3,6 +3,11 @@
 .source "ParallelExecutorCompat.java"
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # direct methods
 .method private constructor <init>()V
     .locals 0
@@ -13,22 +18,11 @@
 .end method
 
 .method public static getParallelExecutor()Ljava/util/concurrent/Executor;
-    .locals 2
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xb
-
-    if-ge v0, v1, :cond_0
-
-    sget-object v0, Landroid/support/v4/content/ModernAsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
-
-    return-object v0
-
-    :cond_0
-    invoke-static {}, Landroid/support/v4/content/ExecutorCompatHoneycomb;->getParallelExecutor()Ljava/util/concurrent/Executor;
-
-    move-result-object v0
+    sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     return-object v0
 .end method

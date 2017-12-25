@@ -3,7 +3,7 @@
 .source "AlwaysAwarePopup.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/motorola/camera/detector/ScanningEngine$DetectorCallback;
 
 
 # annotations
@@ -34,17 +34,22 @@
 
 
 # virtual methods
-.method public run()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_AlwaysAwarePopup$5_24648()V
     .locals 4
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get0()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    const-string/jumbo v1, "Requesting Amazon data for result"
 
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
     invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
@@ -55,21 +60,50 @@
 
     check-cast v0, Lcom/motorola/camera/detector/results/tidbit/Product;
 
-    iget-boolean v0, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->isAmazonPending:Z
+    invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->getInstance()Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;
 
-    if-eqz v0, :cond_2
+    move-result-object v1
+
+    iget-object v2, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->productId:Ljava/lang/String;
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v3}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mBarcodeFormat:Lcom/google/zxing/BarcodeFormat;
+
+    invoke-virtual {v1, v2, v0, v3}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->getProductSearchByBarcode(Ljava/lang/String;Lcom/motorola/camera/detector/results/tidbit/Product;Lcom/google/zxing/BarcodeFormat;)V
+
+    return-void
+.end method
+
+.method public onNewTidbit(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
+    .locals 6
+
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)I
+    invoke-static {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap1(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Z
 
     move-result v0
 
-    if-lez v0, :cond_2
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v0, p1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set10(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get0()Ljava/lang/String;
 
@@ -79,7 +113,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Waiting for Amazon, try: "
+    const-string/jumbo v2, "Processing result "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -87,27 +121,15 @@
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)I
+    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
 
-    move-result v2
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->getKey()J
 
-    move-result-object v1
+    move-result-wide v2
 
-    const-string/jumbo v2, ", delay: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
-
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get3(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -117,61 +139,129 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get2(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)I
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
 
-    move-result v1
+    move-result-object v0
 
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set0(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;I)I
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get3(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)I
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
 
-    move-result v1
+    move-result-object v0
 
-    int-to-float v1, v1
+    iget-object v0, v0, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
 
-    const/high16 v2, 0x3fc00000    # 1.5f
+    invoke-interface {v0}, Lcom/motorola/camera/detector/results/tidbit/ITidbitData;->getKind()Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
 
-    mul-float/2addr v1, v2
+    move-result-object v0
 
-    float-to-int v1, v1
+    sget-object v1, Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;->Product:Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set1(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;I)I
+    if-ne v0, v1, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->isEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
     iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->mHandler:Landroid/os/Handler;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$7KSAiobdPx7JxYCU7H8ZaW5shpw$16;
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get16(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Ljava/lang/Runnable;
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$7KSAiobdPx7JxYCU7H8ZaW5shpw$16;-><init>(Ljava/lang/Object;)V
 
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
-
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get3(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)I
-
-    move-result v2
-
-    int-to-long v2, v2
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    :cond_1
-    :goto_0
-    return-void
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_2
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap4(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)V
+    invoke-static {v0, v4}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set12(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Z)Z
 
-    goto :goto_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v0, v5}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-set6(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;Z)Z
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
+
+    move-result-object v1
+
+    iget v1, v1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mSource:I
+
+    invoke-static {v0, v1, v4, v4}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-wrap14(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;IZZ)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v0, v5}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->playHaptic(I)V
+
+    return-void
+.end method
+
+.method public onScanFailed(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onScanStarted(Lcom/motorola/camera/detector/FrameData;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onUpdatedTidbit(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mSource:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    invoke-interface {v0}, Lcom/motorola/camera/detector/results/tidbit/ITidbitData;->getFieldsCount()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;
+
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->-get11(Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;)Lcom/motorola/camera/detector/results/tidbit/Tidbit;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    invoke-interface {v1}, Lcom/motorola/camera/detector/results/tidbit/ITidbitData;->getFieldsCount()I
+
+    move-result v1
+
+    if-le v0, v1, :cond_1
+
+    :cond_0
+    invoke-virtual {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup$5;->onNewTidbit(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
+
+    :cond_1
+    return-void
 .end method

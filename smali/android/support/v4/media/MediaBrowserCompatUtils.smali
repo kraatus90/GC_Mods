@@ -129,123 +129,127 @@
 .end method
 
 .method public static hasDuplicatedItems(Landroid/os/Bundle;Landroid/os/Bundle;)Z
-    .locals 11
+    .locals 9
 
-    const/4 v10, 0x1
+    const v5, 0x7fffffff
 
-    const/4 v8, -0x1
+    const/4 v8, 0x1
+
+    const/4 v6, 0x0
+
+    const/4 v1, -0x1
 
     if-eqz p0, :cond_4
 
-    const-string/jumbo v9, "android.media.browse.extra.PAGE"
+    const-string/jumbo v0, "android.media.browse.extra.PAGE"
 
-    invoke-virtual {p0, v9, v8}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v2
+    move-result v0
 
     :goto_0
     if-eqz p1, :cond_5
 
-    const-string/jumbo v9, "android.media.browse.extra.PAGE"
+    const-string/jumbo v2, "android.media.browse.extra.PAGE"
 
-    invoke-virtual {p1, v9, v8}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v3
+    move-result v2
 
     :goto_1
     if-eqz p0, :cond_6
 
-    const-string/jumbo v9, "android.media.browse.extra.PAGE_SIZE"
+    const-string/jumbo v3, "android.media.browse.extra.PAGE_SIZE"
 
-    invoke-virtual {p0, v9, v8}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p0, v3, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v4
+    move-result v3
 
     :goto_2
     if-eqz p1, :cond_7
 
-    const-string/jumbo v9, "android.media.browse.extra.PAGE_SIZE"
+    const-string/jumbo v4, "android.media.browse.extra.PAGE_SIZE"
 
-    invoke-virtual {p1, v9, v8}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v4, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v5
+    move-result v4
 
     :goto_3
-    if-ne v2, v8, :cond_8
+    if-ne v0, v1, :cond_8
 
     :cond_0
-    const/4 v6, 0x0
+    move v3, v5
 
-    const v0, 0x7fffffff
+    move v7, v6
 
     :goto_4
-    if-ne v3, v8, :cond_9
+    if-ne v2, v1, :cond_9
 
     :cond_1
-    const/4 v7, 0x0
+    move v0, v5
 
-    const v1, 0x7fffffff
+    move v1, v6
 
     :goto_5
-    if-le v6, v7, :cond_a
+    if-le v7, v1, :cond_a
 
     :cond_2
-    if-le v6, v1, :cond_b
+    if-le v7, v0, :cond_b
 
     :cond_3
-    const/4 v8, 0x0
-
-    return v8
+    return v6
 
     :cond_4
-    move v2, v8
+    move v0, v1
 
     goto :goto_0
 
     :cond_5
-    move v3, v8
+    move v2, v1
 
     goto :goto_1
 
     :cond_6
-    move v4, v8
+    move v3, v1
 
     goto :goto_2
 
     :cond_7
-    move v5, v8
+    move v4, v1
 
     goto :goto_3
 
     :cond_8
-    if-eq v4, v8, :cond_0
+    if-eq v3, v1, :cond_0
 
-    mul-int v6, v4, v2
+    mul-int v7, v3, v0
 
-    add-int v9, v6, v4
+    add-int v0, v7, v3
 
-    add-int/lit8 v0, v9, -0x1
+    add-int/lit8 v0, v0, -0x1
+
+    move v3, v0
 
     goto :goto_4
 
     :cond_9
-    if-eq v5, v8, :cond_1
+    if-eq v4, v1, :cond_1
 
-    mul-int v7, v5, v3
+    mul-int v1, v4, v2
 
-    add-int v8, v7, v5
+    add-int v0, v1, v4
 
-    add-int/lit8 v1, v8, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_5
 
     :cond_a
-    if-gt v7, v0, :cond_2
+    if-gt v1, v3, :cond_2
 
-    return v10
+    return v8
 
     :cond_b
-    if-gt v1, v0, :cond_3
+    if-gt v0, v3, :cond_3
 
-    return v10
+    return v8
 .end method

@@ -148,7 +148,7 @@
     <string name="cancel">रद्द करें</string>
     <string name="capture_failure">कैप्चर विफल हुआ. पुनः प्रयास करें.</string>
     <string name="checkbox_do_not_show">फिर न दिखाएँ</string>
-    <string name="cloudsight_terms">खोज परिणाम प्रदान करने के लिए आपकी छवियां CloudSight पर भेजी जाएंगी. &lt;br/>&lt;br/> जारी रखकर, आप CloudSight की&lt;a href=%1$s>गोपनीयता नीति&lt;/a>से सहमत होते हैं.</string>
+    <string name="cloudsight_terms">हर बार जब भी आप ऑब्जेक्ट पहचान सुविधा का उपयोग करते हैं, छवि और स्थान जानकारी (सक्षम होने पर) खोज परिणाम प्रदान करने के लिए तृतीय पक्ष को भेजी जाएगी.&lt;br/>&lt;br/> जारी रखकर, आप &lt;a href=%1$s>गोपनीयता नीति&lt;/a> सहमत होते हैं.</string>
     <string name="dailog_panorama_failed">पैनोरमा विफल. कृपया पुनः प्रयास करें.</string>
     <string name="dailog_panorama_not_taken">पैनोरमा चित्र नहीं लिया गया.</string>
     <string name="dialog_access_sd_fail">मीडिया कैप्चर करने में समर्थ नहीं है. SD कार्ड तक नहीं पहुंच सका.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">उपकरण समर्थित नहीं</string>
     <string name="dialog_disagree">असहमत</string>
     <string name="dialog_dismiss">दुबारा न दिखाएं</string>
+    <string name="dialog_download">डाउनलोड करें</string>
     <string name="dialog_external_sd_missing">कोई चित्र कैप्चर नहीं कर सकता. SD कार्ड पहुंच-योग्य नहीं है. आंतरिक फ़ोन संग्रहण में स्विच किया जा रहा है</string>
     <string name="dialog_first_time_set_pure_raw_message">"इस असंसाधित फ़ाइल प्रकार का उपयोग फ़ोटो को पेशेवर तरीके से संपादित करने के लिए किया जाता है.
 
@@ -247,6 +248,7 @@
     <string name="help_next">अगला</string>
     <string name="image_360_desc">यह एक 360 फ़ोटो है. आप Moto 360 संपादक में यह फ़ोटो संपादित कर सकते हैं.</string>
     <string name="image_360_name">360 फ़ोटो</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">डेप्थ सक्षम की गई</string>
     <string name="indicate_mode_mono">सही श्याम और श्वेत</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">अल्ट्रा-वाइड एंगल</string>
     <string name="indicate_mode_video">वीडियो</string>
     <string name="indicate_mode_wide_angle">वाइड एंगल</string>
+    <string name="indicate_mode_wide_angle_selfie">वाइड एंगल सेल्फ़ी</string>
     <string name="internal_storage">आंतरिक संग्रहण</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">लैंडमार्क पहचान, दुनियाभर के लोकप्रिय लैंडमार्क के बारे में जानकारी देता है.&lt;br/>&lt;br/>यह सुविधा सक्षम करने के लिए स्थापित करें.</string>
-    <string name="landmark_install_over_data">लैंडमार्क पहचान का डाउनलोड आकार 92 MB है. इसे मोबाइल डेटा के माध्यम से स्थापित करने पर अतिरिक्त डेटा शुल्क लग सकते हैं.</string>
-    <string name="landmark_notification_downloading">लैंडमार्क पहचान डाउनलोड हो रहा है</string>
-    <string name="landmark_notification_install">लैंडमार्क पहचान स्थापित हो रहा है</string>
-    <string name="landmark_notification_install_complete">लैंडमार्क पहचान की स्थापना पूर्ण हुई</string>
-    <string name="landmark_notification_install_failed">लैंडमार्क पहचान की स्थापना विफल हुई</string>
+    <string name="landmark_install_message">लैंडमार्क पहचान, दुनियाभर के लोकप्रिय लैंडमार्क के बारे में जानकारी देता है.&lt;br/>&lt;br/>यह सुविधा सक्षम करने के लिए लैंडमार्क डेटाबेस डाउनलोड करें.</string>
+    <string name="landmark_install_over_data">लैंडमार्क डेटाबेस का डाउनलोड आकार 92 MB है. इसे मोबाइल डेटा के माध्यम से डाउनलोड करने पर अतिरिक्त डेटा शुल्क लग सकते हैं.</string>
+    <string name="landmark_notification_downloading">लैंडमार्क डेटाबेस डाउनलोड किया जा रहा है</string>
+    <string name="landmark_notification_install">लैंडमार्क डेटाबेस स्थापित किया जा रहा है</string>
+    <string name="landmark_notification_install_complete">लैंडमार्क डेटाबेस की स्थापना पूर्ण हुई</string>
+    <string name="landmark_notification_install_failed">लैंडमार्क डेटाबेस की स्थापना विफल हुई</string>
     <string name="landmark_notification_install_invalid_url">लैंडमार्क डेटाबेस उपलब्ध नहीं है, कृपया नवीनतम कैमरा संस्करण में अपडेट करें</string>
-    <string name="landmark_notification_install_out_of_space">लैंडमार्क पहचान स्थापित करने के लिए पर्याप्त संग्रहण स्थान उपलब्ध नहीं है</string>
+    <string name="landmark_notification_install_out_of_space">लैंडमार्क डेटाबेस स्थापित करने के लिए पर्याप्त संग्रहण स्थान उपलब्ध नहीं है</string>
+    <string name="landmark_notification_paused">इंटरनेट उपलब्ध होने पर लैंडमार्क डेटाबेस डाउनलोड होना जारी रहेगा</string>
+    <string name="landmark_notification_queued">इंटरनेट उपलब्ध होने पर लैंडमार्क डेटाबेस डाउनलोड करना प्रारंभ होगा</string>
     <string name="main_setting_amz_barcode">Amazon बारकोड स्कैनर</string>
     <string name="main_setting_amz_privacy">Amazon गोपनीयता सूचना</string>
     <string name="main_setting_amz_terms">उपयोग की शर्तें</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">फ़ोटो आकार (पीछे का)</string>
     <string name="main_setting_image_ratio_front">फ़ोटो आकार (सामने का)</string>
     <string name="main_setting_landmark_detection">लैंडमार्क पहचान</string>
+    <string name="main_setting_landmark_version_current">डेटाबेस संस्करण: %s</string>
+    <string name="main_setting_landmark_version_not_installed">डेटाबेस स्थापित नहीं है</string>
     <string name="main_setting_licenses">ओपन सोर्स लाइसेंस</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -309,7 +316,7 @@
     <string name="main_setting_sub_item_sdcard">मेमोरी कार्ड</string>
     <string name="main_setting_sub_item_shutter_button">शटर बटन</string>
     <string name="main_setting_sub_item_tap_anywhere">कही भी टैप करें</string>
-    <string name="main_setting_tap_anywhere">कैप्चर करने के लिए कही भी टैप करें</string>
+    <string name="main_setting_tap_anywhere">कैप्चर करने के लिए कहीं भी टैप करें</string>
     <string name="main_setting_tap_anywhere_summary">स्क्रीन पर कहीं भी टैप करके फ़ोटो कैप्चर करें</string>
     <string name="main_setting_video_size">वीडियो आकार (पीछे का)</string>
     <string name="main_setting_video_size_front">वीडियो आकार (सामने का)</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">अनुमतियां आवश्यक हैं</string>
     <string name="photos_depth_desc">फ़ोकस चयन करने, पृष्ठभूमि बदलने या श्वेत-श्याम में बदलने के लिए क्षेत्र का चयन करने के लिए डेप्थ संपादक उपयोग करें.</string>
     <string name="photos_depth_name">डेप्थ सक्षम किया गया</string>
+    <string name="photos_notification_desc">Google फ़ोटो के साथ असीमित संग्रहण प्राप्त करें</string>
+    <string name="photos_notification_title">Google फ़ोटो पर बैक अप लेना</string>
+    <string name="qcfa_resolution_description">अनुकूलनीय कम प्रकाश</string>
     <string name="retake">रीटेक</string>
     <string name="second_10">10 सेकंड</string>
     <string name="second_3">3 सेकंड</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">धीमी गति</string>
     <string name="setting_mode_ultra_wide">अल्ट्रा-वाइड एंगल</string>
     <string name="setting_mode_video">वीडियो</string>
+    <string name="setting_mode_wide_angle_selfie">वाइड एंगल सेल्फ़ी</string>
     <string name="setting_off">बंद</string>
     <string name="setting_on">चालू</string>
     <string name="setting_persist">होल्ड करें</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">टाइमर</string>
     <string name="setting_torch">टॉर्च</string>
     <string name="setting_true">सही</string>
+    <string name="shortcut_desc_depth">प्थ फ़ोटो</string>
+    <string name="shortcut_desc_selfie">सेल्फ़ी</string>
+    <string name="shortcut_desc_video">वीडियो</string>
     <string name="smartcam_landmark_notification_title">स्मार्ट कैमरा</string>
+    <string name="smartcam_no_detections">कोई सहेजी गईं वस्तुएं या लैंडमार्क नहीं हैं</string>
     <string name="storage_location_external">SD कार्ड</string>
     <string name="storage_location_internal">फ़ोन</string>
     <string name="storage_unavailable">संग्रहण अनुपलब्ध</string>
+    <string name="toast_battery_saver">आप अभी पावर सेवर मोड में हैं, कुछ सुविधाएं सीमित हो सकती है</string>
     <string name="toast_geotag_message_1">आपको स्थान सहेजना सक्षम करने के लिए स्थान अनुमति प्रदान करनी होगी.</string>
     <string name="toast_geotag_message_2">स्थान सेटिंग केवल सिस्टम स्थान सेटिंग चालू होने पर ही प्रभावी होगी.</string>
     <string name="tooltip_camera_switch_360">भिन्न कैमरा विकल्पों पर स्विच करने का प्रयास करें.</string>
     <string name="tooltip_capture_360">इस शटर बटन पर टैप करके 360° फ़ोटो या वीडियो कैप्चर करने का प्रयास करें.</string>
-    <string name="tooltip_capture_key_360">mod के पिछले भाग पर दिए गए शटर बटन से भी कैप्चर करने का प्रयास करें.</string>
-    <string name="tooltip_dual_camera_depth_photo">विशेष संपादन सुविधाओं को सक्षम करने के लिए अतिरिक्त जानकारी के साथ फ़ोटो कैप्चर करें.</string>
+    <string name="tooltip_capture_key_360">Mod के पिछले भाग पर दिए गए शटर बटन से भी कैप्चर करने का प्रयास करें.</string>
     <string name="tooltip_first_use_zoom_button">वाइड-एंगल पर स्विच करने के लिए यहां टैप करें.</string>
     <string name="tooltip_gallery_360">देखें कि कैसे आपका 360° फ़ोटो या वीडियो बाईं ओर स्वाइप करने पर घुमता है.</string>
     <string name="tooltip_minimap_viewfinder">नीचे दी गई छवि को बाएं या दाएं पैन करें.</string>
     <string name="tooltip_mode_switch_360">विभिन्न मोड में 360° कैप्चर करने का प्रयास करें!</string>
+    <string name="tooltip_modes_list">अपने फ़ोटो कैप्चर करने के नए तरीके खोजें.</string>
     <string name="tooltip_smart_camera">वस्तु के बारे में और अधिक जानकारी के लिए उस पर टैप करें.</string>
     <string name="tooltip_smart_camera_disable">आप सेटिंग में इसे बंद भी कर सकते हैं.</string>
     <string name="tooltip_spherical_viewfinder">दृश्य को नियंत्रित करने के लिए पैन करें या ज़ूम इन या ज़ूम आउट करें.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">पूर्ण</string>
     <string name="zoom_hint_wide">वाइड</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">TIMELAPSE</string>
+    <string name="setting_mode_timelapse">Timelapse</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

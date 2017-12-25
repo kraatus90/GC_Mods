@@ -344,15 +344,15 @@
 
     new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, ""
 
-    const-string/jumbo v2, ""
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-virtual {p0, v0}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
@@ -364,9 +364,7 @@
 .end method
 
 .method public static setLogImplementation(Ljava/lang/String;)V
-    .locals 5
-
-    const/4 v4, 0x0
+    .locals 4
 
     :try_start_0
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -377,15 +375,15 @@
 
     new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, ""
 
-    const-string/jumbo v3, ""
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v2
 
-    move-result-object v3
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     invoke-virtual {v0, v1}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
@@ -401,7 +399,9 @@
     :catch_0
     move-exception v0
 
-    sput-object v4, Lorg/apache/commons/logging/LogSource;->d:Ljava/lang/reflect/Constructor;
+    const/4 v0, 0x0
+
+    sput-object v0, Lorg/apache/commons/logging/LogSource;->d:Ljava/lang/reflect/Constructor;
 
     goto :goto_0
 .end method

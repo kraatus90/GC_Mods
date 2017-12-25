@@ -27,9 +27,9 @@
         .end annotation
     .end param
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     const-class v0, Lcom/drew/metadata/adobe/AdobeJpegDirectory;
 
@@ -68,43 +68,43 @@
 
     if-eqz v2, :cond_1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x5
 
-    const/4 v3, 0x5
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getUInt16(I)I
 
-    invoke-virtual {v1, v3}, Lcom/drew/lang/BufferReader;->getUInt16(I)I
+    move-result v2
 
-    move-result v3
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v2, v3}, Lcom/drew/metadata/Directory;->setInt(II)V
+    invoke-virtual {v0, v3, v2}, Lcom/drew/metadata/Directory;->setInt(II)V
 
-    const/4 v2, 0x1
+    const/4 v2, 0x7
 
-    const/4 v3, 0x7
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getUInt16(I)I
 
-    invoke-virtual {v1, v3}, Lcom/drew/lang/BufferReader;->getUInt16(I)I
+    move-result v2
 
-    move-result v3
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v2, v3}, Lcom/drew/metadata/Directory;->setInt(II)V
+    invoke-virtual {v0, v3, v2}, Lcom/drew/metadata/Directory;->setInt(II)V
 
-    const/4 v2, 0x2
+    const/16 v2, 0x9
 
-    const/16 v3, 0x9
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getUInt16(I)I
 
-    invoke-virtual {v1, v3}, Lcom/drew/lang/BufferReader;->getUInt16(I)I
+    move-result v2
 
-    move-result v3
+    const/4 v3, 0x2
 
-    invoke-virtual {v0, v2, v3}, Lcom/drew/metadata/Directory;->setInt(II)V
+    invoke-virtual {v0, v3, v2}, Lcom/drew/metadata/Directory;->setInt(II)V
 
-    const/4 v2, 0x3
+    const/16 v2, 0xb
 
-    const/16 v3, 0xb
-
-    invoke-virtual {v1, v3}, Lcom/drew/lang/BufferReader;->getByte(I)B
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getByte(I)B
 
     move-result v1
+
+    const/4 v2, 0x3
 
     invoke-virtual {v0, v2, v1}, Lcom/drew/metadata/Directory;->setInt(II)V
     :try_end_0
@@ -114,19 +114,19 @@
     return-void
 
     :cond_0
-    const-string/jumbo v1, "Adobe JPEG data is expected to be 12 bytes long, not %d."
+    new-array v1, v4, [Ljava/lang/Object;
 
-    new-array v2, v3, [Ljava/lang/Object;
+    array-length v2, p1
 
-    array-length v3, p1
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
 
-    move-result-object v3
+    aput-object v2, v1, v3
 
-    aput-object v3, v2, v4
+    const-string/jumbo v2, "Adobe JPEG data is expected to be 12 bytes long, not %d."
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -87,6 +87,8 @@
 
     iput-object v2, p0, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mRecorder:Landroid/media/MediaRecorder;
 
+    iput-object v2, p0, Lcom/motorola/camera/device/CameraHandlerThread$CameraData;->mMediaRecorderSurface:Landroid/view/Surface;
+
     sget-boolean v0, Lcom/motorola/camera/Util;->KPI:Z
 
     if-eqz v0, :cond_1

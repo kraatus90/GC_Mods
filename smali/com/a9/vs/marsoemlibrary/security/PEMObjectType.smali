@@ -124,9 +124,7 @@
 .end method
 
 .method public static fromBeginMarker(Ljava/lang/String;)Lcom/a9/vs/marsoemlibrary/security/PEMObjectType;
-    .locals 6
-
-    const/4 v5, 0x0
+    .locals 5
 
     const/4 v0, 0x0
 
@@ -139,7 +137,9 @@
     :goto_0
     if-lt v0, v2, :cond_0
 
-    return-object v5
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     aget-object v3, v1, v0

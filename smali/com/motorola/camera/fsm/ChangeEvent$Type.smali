@@ -27,10 +27,28 @@
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/fsm/ChangeEvent$Type;
 
 .field public static final enum ENTERING:Lcom/motorola/camera/fsm/ChangeEvent$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/fsm/ChangeEvent$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum EXITING:Lcom/motorola/camera/fsm/ChangeEvent$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/fsm/ChangeEvent$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum REENTERING:Lcom/motorola/camera/fsm/ChangeEvent$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/fsm/ChangeEvent$Type;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

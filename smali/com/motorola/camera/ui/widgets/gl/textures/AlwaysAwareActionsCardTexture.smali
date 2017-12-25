@@ -8,12 +8,6 @@
 
 .field private static final BUTTON_ROUNDING:F = 8.0f
 
-.field private static final COLUMNS:I = 0xa
-
-.field private static final MAX_ACTION_BUTTONS:I = 0x7
-
-.field private static final MAX_MULTI_ACTIONS:I = 0x5
-
 .field private static final MAX_TEXT_LENGTH:I = 0x19
 
 .field private static final NEWLINE_REGEX:Ljava/lang/String; = "[\\t\\n\\r]"
@@ -370,7 +364,7 @@
     throw v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsCardTexture_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsCardTexture_4359()V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
@@ -385,7 +379,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsCardTexture_lambda$2()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsCardTexture_4701()V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
@@ -400,7 +394,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsCardTexture_lambda$3(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionButtonTexture;FI)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_AlwaysAwareActionsCardTexture_8277(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionButtonTexture;FI)V
     .locals 4
 
     invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionButtonTexture;->loadTexture()V
@@ -461,9 +455,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->mGrid:Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$64;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$tOcjqIV9GpoL02aUSU-yvNT2gPs;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$64;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$tOcjqIV9GpoL02aUSU-yvNT2gPs;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;->setListSizeChangeListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;)V
 
@@ -503,9 +497,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->mMultiList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$65;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$tOcjqIV9GpoL02aUSU-yvNT2gPs$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$65;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$tOcjqIV9GpoL02aUSU-yvNT2gPs$1;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->setListSizeChangeListener(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;)V
 
@@ -886,9 +880,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsCardTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v5, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$168;
+    new-instance v5, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$tOcjqIV9GpoL02aUSU-yvNT2gPs$2;
 
-    invoke-direct {v5, v3, v4, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$168;-><init>(FILjava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v5, v3, v4, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$tOcjqIV9GpoL02aUSU-yvNT2gPs$2;-><init>(FILjava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v1, v5}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 

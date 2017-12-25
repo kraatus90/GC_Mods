@@ -73,20 +73,20 @@
 .end method
 
 .method protected zza(Lcom/google/android/gms/wearable/internal/zzbk;)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzax$zza;->zzaMv:Lcom/google/android/gms/wearable/NodeApi$NodeListener;
 
     invoke-virtual {p1, p0, v0}, Lcom/google/android/gms/wearable/internal/zzbk;->zza(Lcom/google/android/gms/common/api/zza$zzb;Lcom/google/android/gms/wearable/NodeApi$NodeListener;)V
 
-    iput-object v1, p0, Lcom/google/android/gms/wearable/internal/zzax$zza;->zzaMv:Lcom/google/android/gms/wearable/NodeApi$NodeListener;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/wearable/internal/zzax$zza;->zzaMv:Lcom/google/android/gms/wearable/NodeApi$NodeListener;
 
     return-void
 .end method

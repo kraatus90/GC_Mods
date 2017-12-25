@@ -60,54 +60,54 @@
 
     move-result v1
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    iput-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
 
     const/4 v0, 0x0
 
     :goto_0
     if-lt v0, v1, :cond_0
 
-    new-instance v2, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
-
-    move-result v3
-
-    iput v3, v2, Landroid/graphics/Rect;->left:I
-
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
-    move-result v3
+    move-result v1
 
-    iput v3, v2, Landroid/graphics/Rect;->top:I
+    iput v1, v0, Landroid/graphics/Rect;->left:I
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
-
-    move-result v3
-
-    iput v3, v2, Landroid/graphics/Rect;->right:I
-
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
-    move-result v3
+    move-result v1
 
-    iput v3, v2, Landroid/graphics/Rect;->bottom:I
+    iput v1, v0, Landroid/graphics/Rect;->top:I
+
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->right:I
+
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
+
+    move-result v1
+
+    iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
     return-void
 
@@ -149,75 +149,75 @@
         }
     .end annotation
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v0
 
-    invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v1
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
-    iget v2, v2, Landroid/graphics/Rect;->left:I
+    iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
-    iget v2, v2, Landroid/graphics/Rect;->top:I
+    iget v0, v0, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
-    iget v2, v2, Landroid/graphics/Rect;->right:I
+    iget v0, v0, Landroid/graphics/Rect;->right:I
 
-    invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
 
-    iget v2, v2, Landroid/graphics/Rect;->bottom:I
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
-    invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
     return-void
 
     :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/graphics/Rect;
+    check-cast v0, Landroid/graphics/Rect;
 
-    iget v2, v1, Landroid/graphics/Rect;->left:I
-
-    invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
-
-    iget v2, v1, Landroid/graphics/Rect;->top:I
+    iget v2, v0, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    iget v2, v1, Landroid/graphics/Rect;->right:I
+    iget v2, v0, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    iget v2, v1, Landroid/graphics/Rect;->bottom:I
+    iget v2, v0, Landroid/graphics/Rect;->right:I
 
     invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
     goto :goto_0
 .end method
@@ -249,57 +249,57 @@
 .end method
 
 .method public clone()Ljava/lang/Object;
-    .locals 5
+    .locals 4
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;
 
-    invoke-direct {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;-><init>()V
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;-><init>()V
 
-    iget-object v3, v0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
+    iget-object v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v2
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->ensureCapacity(I)V
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->ensureCapacity(I)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_wordRects:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    new-instance v3, Landroid/graphics/Rect;
-
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
-
-    invoke-direct {v3, v4}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
-
-    iput-object v3, v0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
-
-    return-object v0
-
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Landroid/graphics/Rect;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+
+    invoke-direct {v0, v2}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+
+    iput-object v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->_rect:Landroid/graphics/Rect;
+
+    return-object v1
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Rect;
 
     new-instance v3, Landroid/graphics/Rect;
 
-    invoke-direct {v3, v2}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    invoke-direct {v3, v0}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
 
-    invoke-virtual {v0, v3}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->addWordRect(Landroid/graphics/Rect;)V
+    invoke-virtual {v1, v3}, Lcom/abbyy/mobile/ocr4/layout/MocrPrebuiltTextLineInfo;->addWordRect(Landroid/graphics/Rect;)V
 
     goto :goto_0
 .end method

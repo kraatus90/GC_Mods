@@ -40,9 +40,9 @@
         }
     .end annotation
 
-    instance-of v1, p1, Landroid/support/v7/app/AppCompatDialog;
+    instance-of v0, p1, Landroid/support/v7/app/AppCompatDialog;
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/DialogFragment;->setupDialog(Landroid/app/Dialog;I)V
 

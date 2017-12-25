@@ -148,7 +148,7 @@
     <string name="cancel">Скасувати</string>
     <string name="capture_failure">Не вдалося зняти. Повторіть спробу.</string>
     <string name="checkbox_do_not_show">Більше не показувати</string>
-    <string name="cloudsight_terms">Ваші зображення будуть надіслані до CloudSight для формування результатів пошуку. &lt;br/>&lt;br/>Продовжуючи, ви погоджуєтеся з &lt;a href=%1$s>політикою конфіденційності&lt;/a> CloudSight.</string>
+    <string name="cloudsight_terms">Під час використання функції розпізнавання об’єктів зображення й дані про місцезнаходження (якщо відповідну службу ввімкнено) передаватимуться третій стороні, що надає результати пошуку.&lt;br/>&lt;br/> Продовжуючи, ви погоджуєтеся з&lt;a href=%1$s>Політикою конфіденційності&lt;/a>.</string>
     <string name="dailog_panorama_failed">Не вдалося зробити панорамне фото. Повторіть спробу.</string>
     <string name="dailog_panorama_not_taken">Панорамне фото не знято.</string>
     <string name="dialog_access_sd_fail">Неможливо розпізнати медіафайл. Немає доступу до карти SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Пристрій не підтримується</string>
     <string name="dialog_disagree">Відхилити</string>
     <string name="dialog_dismiss">Більше не показувати</string>
+    <string name="dialog_download">Завантажити</string>
     <string name="dialog_external_sd_missing">"Неможливо зробити знімок. Карта SD недоступна. Переключення на внутрішню пам'ять телефону"</string>
     <string name="dialog_first_time_set_pure_raw_message">"Цей тип необроблених файлів використовується для професійної обробки фотографій.
 
@@ -219,7 +220,7 @@
     <string name="help_desc_anywhere">Щоб зняти фото, торкніться будь-якої ділянки екрана, або торкніться й утримуйте палець, щоб зняти серію фото.</string>
     <string name="help_desc_dual_depth">Записуйте додаткові дані, що дозволяють змінити фон, додати кольорові вкраплення та навіть змінити фокус на вже знятому фото.</string>
     <string name="help_desc_dual_mono">Знімайте деталізовані фото професійної якості за допомогою камери, розробленої спеціально для чорно-білої зйомки.</string>
-    <string name="help_desc_dual_result">Не віддаляйтеся від об’єкта зйомки більше, ніж на 1,5 метра. Бажано, щоб об’єкт чітко виділявся на фоні, і щоб між ним і камерою не було сторонніх об’єктів.</string>
+    <string name="help_desc_dual_result">Не віддаляйтеся від об’єкта зйомки більше, ніж на 1,5 метри. Бажано, щоб об’єкт чітко виділявся на фоні, і щоб між ним і камерою не було сторонніх об’єктів.</string>
     <string name="help_desc_quick">Двічі крутніть рукою в зап’ястку для відкриття або переключення між передньою та основною камерами.</string>
     <string name="help_desc_quick_double_tap_pwr">Двічі натисніть кнопку живлення для запуску камери.</string>
     <string name="help_desc_smart_camera">Ваша камера розпізнає об’єкти та визначні місця. Вона також може сканувати візитки, QR-коди та штрих-коди.</string>
@@ -241,12 +242,13 @@
     <string name="help_header_dual_mono">Знімайте чорно-білі фото як професіонал</string>
     <string name="help_header_dual_result">Для отримання найкращого результату…</string>
     <string name="help_header_quick">Швидка зйомка</string>
-    <string name="help_header_smart_camera">Smarter Camera</string>
+    <string name="help_header_smart_camera">Інтелектуальна камера</string>
     <string name="help_header_zoom">Масштабування</string>
     <string name="help_location_description">Так, додавати дані GPS до фото</string>
     <string name="help_next">Далі</string>
     <string name="image_360_desc">Це кругова панорама. Ви можете відредагувати її за допомогою Редактора Moto 360.</string>
     <string name="image_360_name">Кругова панорама</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">РЕЖИМ РЕГУЛЮВАННЯ ГЛИБИНИ</string>
     <string name="indicate_mode_mono">СПРАВЖНІЙ Ч/Б</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">НАДЗВИЧАЙНО ШИРОКИЙ КУТ</string>
     <string name="indicate_mode_video">ВІДЕО</string>
     <string name="indicate_mode_wide_angle">ШИРОКИЙ КУТ</string>
+    <string name="indicate_mode_wide_angle_selfie">ШИРОКОКУТНЕ СЕЛФІ</string>
     <string name="internal_storage">"Внутрішня пам'ять"</string>
     <string name="kilo_bytes">" КБ"</string>
-    <string name="landmark_install_message">Функція розпізнавання визначних місць надає інформацію про відомі визначні місця по всьому світу.&lt;br/>&lt;br/>Для ввімкнення цієї функції потрібно встановити відповідну програму.</string>
-    <string name="landmark_install_over_data">Розмір програми розпізнавання визначних місць становить 92 Мб. У разі її завантаження через мобільну мережу можуть стягуватися кошти.</string>
-    <string name="landmark_notification_downloading">Завантаження програми розпізнавання визначних місць</string>
-    <string name="landmark_notification_install">Установлення програми розпізнавання визначних місць</string>
-    <string name="landmark_notification_install_complete">Установлення програми розпізнавання визначних місць завершено</string>
-    <string name="landmark_notification_install_failed">Установлення програми розпізнавання визначних місць не виконано</string>
+    <string name="landmark_install_message">Функція розпізнавання визначних місць надає інформацію про відомі визначні місця по всьому світу.&lt;br/>&lt;br/>Для ввімкнення цієї функції потрібно завантажити базу даних про визначні місця.</string>
+    <string name="landmark_install_over_data">Розмір бази даних про визначні місця становить 92 МБ. У разі її завантаження через мобільну мережу можуть стягуватися кошти.</string>
+    <string name="landmark_notification_downloading">Завантаження бази даних про визначні місця</string>
+    <string name="landmark_notification_install">Установлення бази даних про визначні місця</string>
+    <string name="landmark_notification_install_complete">Установлення бази даних про визначні місця завершено</string>
+    <string name="landmark_notification_install_failed">Установлення бази даних про визначні місця не виконано</string>
     <string name="landmark_notification_install_invalid_url">База даних про визначні місця недоступна. Оновіть програму Камера до найновішої версії</string>
-    <string name="landmark_notification_install_out_of_space">Недостатньо місця в пам’яті для встановлення програми розпізнавання визначних місць</string>
+    <string name="landmark_notification_install_out_of_space">Недостатньо місця в пам’яті для встановлення бази даних про визначні місця</string>
+    <string name="landmark_notification_paused">База даних про визначні місця продовжить завантажуватися за наявності підключення до Інтернету</string>
+    <string name="landmark_notification_queued">База даних про визначні місця почне завантажуватися за наявності підключення до Інтернету</string>
     <string name="main_setting_amz_barcode">Сканер штрих-кодів Amazon</string>
     <string name="main_setting_amz_privacy">Сповіщення про конфіденційність Amazon</string>
     <string name="main_setting_amz_terms">Умови використання</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">Розмір знімка (основна камера)</string>
     <string name="main_setting_image_ratio_front">Розмір знімка (передня камера)</string>
     <string name="main_setting_landmark_detection">Розпізнавання визначних місць</string>
+    <string name="main_setting_landmark_version_current">Версія бази даних: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Базу даних не встановлено</string>
     <string name="main_setting_licenses">Ліцензії на ПЗ із відкритим кодом</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">Необхідні дозволи</string>
     <string name="photos_depth_desc">Активуйте режим регулювання глибини фото для налаштування фокуса, зміни фону чи вибору ділянки, до якої потрібно застосувати чорно-білий фільтр.</string>
     <string name="photos_depth_name">Режим регулювання глибини</string>
+    <string name="photos_notification_desc">Необмежені можливості зберігання в Google Фото</string>
+    <string name="photos_notification_title">Резервне копіювання до Google Фото</string>
+    <string name="qcfa_resolution_description">Адапт. до освітлення</string>
     <string name="retake">Повтор</string>
     <string name="second_10">10 сек.</string>
     <string name="second_3">3 сек.</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">Уповільнена зйомка</string>
     <string name="setting_mode_ultra_wide">Надзвичайно широкий кут</string>
     <string name="setting_mode_video">Відео</string>
+    <string name="setting_mode_wide_angle_selfie">Ширококутне селфі</string>
     <string name="setting_off">Вимкнено</string>
     <string name="setting_on">Увімкнено</string>
     <string name="setting_persist">Утрим.</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">ТАЙМЕР</string>
     <string name="setting_torch">Ліхтарик</string>
     <string name="setting_true">справжній</string>
+    <string name="shortcut_desc_depth">Глиб. фото</string>
+    <string name="shortcut_desc_selfie">Селфі</string>
+    <string name="shortcut_desc_video">Відео</string>
     <string name="smartcam_landmark_notification_title">Інтелектуальна камера</string>
+    <string name="smartcam_no_detections">"Немає збережених об'єктів або визначних місць"</string>
     <string name="storage_location_external">Карта SD</string>
     <string name="storage_location_internal">Телефон</string>
     <string name="storage_unavailable">"Пам'ять недоступна"</string>
+    <string name="toast_battery_saver">Наразі ввімкнено режим енергозбереження. Роботу деяких функцій може бути обмежено</string>
     <string name="toast_geotag_message_1">Для збереження даних про місце зйомки необхідно надати дозвіл на визначення місцезнаходження.</string>
     <string name="toast_geotag_message_2">Запис даних про місцезнаходження відбуватиметься лише після ввімкнення функції визначення місцезнаходження.</string>
     <string name="tooltip_camera_switch_360">Спробуйте активувати інші опції камери.</string>
     <string name="tooltip_capture_360">Спробуйте зробити панорамне фото або відео, торкнувшись цієї кнопки спуску затвора.</string>
-    <string name="tooltip_capture_key_360">Також спробуйте скористатися кнопкою спуску затвора на тильному боці аксесуара.</string>
-    <string name="tooltip_dual_camera_depth_photo">Знімайте фото з додатковою інформацією, щоб увімкнути спеціальні функції редагування.</string>
+    <string name="tooltip_capture_key_360">Також спробуйте скористатися кнопкою спуску затвора на тильній стороні аксесуара Mod.</string>
     <string name="tooltip_first_use_zoom_button">Торкніться тут, щоб переключитися в ширококутний режим.</string>
     <string name="tooltip_gallery_360">Щоб переглянути зняті панорамні фото й відео, проведіть пальцем ліворуч.</string>
     <string name="tooltip_minimap_viewfinder">Перемістіть зображення внизу вліво або вправо.</string>
     <string name="tooltip_mode_switch_360">Спробуйте зняти панорамне фото або відео в інших режимах!</string>
+    <string name="tooltip_modes_list">Відкрийте нові методи фотографування.</string>
     <string name="tooltip_smart_camera">Торкніться, щоб дізнатися про об’єкт більше.</string>
     <string name="tooltip_smart_camera_disable">Цю функцію можна вимкнути в меню \"Налаштування\".</string>
     <string name="tooltip_spherical_viewfinder">Щоб змінити вид, рухайте телефон або масштабуйте зображення.</string>
@@ -419,6 +435,10 @@
     <string name="zoom_hint_full">ПОВНИЙ</string>
     <string name="zoom_hint_wide">ШИРОКИЙ</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Адапт. до освітлення</string>
+    <string name="indicate_mode_timelapse">СПОВІЛЬНЕНА ЗЙОМКА</string>
+    <string name="setting_mode_timelapse">Сповільнена зйомка</string>
+    <string name="timelapse_config_16x">16×</string>
+    <string name="timelapse_config_32x">32×</string>
+    <string name="timelapse_config_4x">4×</string>
+    <string name="timelapse_config_8x">8×</string>
 </resources>

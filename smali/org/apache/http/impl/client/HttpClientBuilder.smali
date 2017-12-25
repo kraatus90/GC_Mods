@@ -191,9 +191,7 @@
 .end method
 
 .method private static split(Ljava/lang/String;)[Ljava/lang/String;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-static {p0}, Lorg/apache/http/util/TextUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
@@ -210,7 +208,9 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 
@@ -527,13 +527,13 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "http"
-
     invoke-static {}, Lorg/apache/http/conn/socket/PlainConnectionSocketFactory;->getSocketFactory()Lorg/apache/http/conn/socket/PlainConnectionSocketFactory;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v3, v4, v5}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    const-string/jumbo v5, "http"
+
+    invoke-virtual {v3, v5, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v3
 
@@ -809,13 +809,13 @@
 
     aput-object v5, v0, v8
 
-    const/4 v5, 0x1
+    new-instance v5, Lorg/apache/http/protocol/RequestContent;
 
-    new-instance v6, Lorg/apache/http/protocol/RequestContent;
+    invoke-direct {v5}, Lorg/apache/http/protocol/RequestContent;-><init>()V
 
-    invoke-direct {v6}, Lorg/apache/http/protocol/RequestContent;-><init>()V
+    const/4 v6, 0x1
 
-    aput-object v6, v0, v5
+    aput-object v5, v0, v6
 
     new-instance v5, Lorg/apache/http/protocol/RequestTargetHost;
 
@@ -823,29 +823,29 @@
 
     aput-object v5, v0, v10
 
-    const/4 v5, 0x3
+    new-instance v5, Lorg/apache/http/client/protocol/RequestClientConnControl;
 
-    new-instance v6, Lorg/apache/http/client/protocol/RequestClientConnControl;
+    invoke-direct {v5}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
 
-    invoke-direct {v6}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
+    const/4 v6, 0x3
 
-    aput-object v6, v0, v5
+    aput-object v5, v0, v6
 
-    const/4 v5, 0x4
+    new-instance v5, Lorg/apache/http/protocol/RequestUserAgent;
 
-    new-instance v6, Lorg/apache/http/protocol/RequestUserAgent;
+    invoke-direct {v5, v1}, Lorg/apache/http/protocol/RequestUserAgent;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v6, v1}, Lorg/apache/http/protocol/RequestUserAgent;-><init>(Ljava/lang/String;)V
-
-    aput-object v6, v0, v5
-
-    const/4 v1, 0x5
-
-    new-instance v5, Lorg/apache/http/client/protocol/RequestExpectContinue;
-
-    invoke-direct {v5}, Lorg/apache/http/client/protocol/RequestExpectContinue;-><init>()V
+    const/4 v1, 0x4
 
     aput-object v5, v0, v1
+
+    new-instance v1, Lorg/apache/http/client/protocol/RequestExpectContinue;
+
+    invoke-direct {v1}, Lorg/apache/http/client/protocol/RequestExpectContinue;-><init>()V
+
+    const/4 v5, 0x5
+
+    aput-object v1, v0, v5
 
     invoke-virtual {v4, v0}, Lorg/apache/http/protocol/HttpProcessorBuilder;->addAll([Lorg/apache/http/HttpRequestInterceptor;)Lorg/apache/http/protocol/HttpProcessorBuilder;
 
@@ -898,15 +898,15 @@
     :goto_1f
     if-nez v0, :cond_15
 
-    const-string/jumbo v0, "org.apache.http.client"
+    const-class v0, Lorg/apache/http/impl/client/HttpClientBuilder;
 
-    const-class v1, Lorg/apache/http/impl/client/HttpClientBuilder;
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "org.apache.http.client"
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/VersionInfo;->loadVersionInfo(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/apache/http/util/VersionInfo;
+    invoke-static {v1, v0}, Lorg/apache/http/util/VersionInfo;->loadVersionInfo(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/apache/http/util/VersionInfo;
 
     move-result-object v0
 
@@ -1204,53 +1204,53 @@
 
     move-result-object v0
 
-    const-string/jumbo v4, "Basic"
+    new-instance v4, Lorg/apache/http/impl/auth/BasicSchemeFactory;
 
-    new-instance v5, Lorg/apache/http/impl/auth/BasicSchemeFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/auth/BasicSchemeFactory;-><init>()V
 
-    invoke-direct {v5}, Lorg/apache/http/impl/auth/BasicSchemeFactory;-><init>()V
+    const-string/jumbo v5, "Basic"
 
-    invoke-virtual {v0, v4, v5}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v4, "Digest"
-
-    new-instance v5, Lorg/apache/http/impl/auth/DigestSchemeFactory;
-
-    invoke-direct {v5}, Lorg/apache/http/impl/auth/DigestSchemeFactory;-><init>()V
-
-    invoke-virtual {v0, v4, v5}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v5, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 
-    const-string/jumbo v4, "NTLM"
+    new-instance v4, Lorg/apache/http/impl/auth/DigestSchemeFactory;
 
-    new-instance v5, Lorg/apache/http/impl/auth/NTLMSchemeFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/auth/DigestSchemeFactory;-><init>()V
 
-    invoke-direct {v5}, Lorg/apache/http/impl/auth/NTLMSchemeFactory;-><init>()V
+    const-string/jumbo v5, "Digest"
 
-    invoke-virtual {v0, v4, v5}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v4, "negotiate"
-
-    new-instance v5, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;
-
-    invoke-direct {v5}, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;-><init>()V
-
-    invoke-virtual {v0, v4, v5}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v5, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 
-    const-string/jumbo v4, "Kerberos"
+    new-instance v4, Lorg/apache/http/impl/auth/NTLMSchemeFactory;
 
-    new-instance v5, Lorg/apache/http/impl/auth/KerberosSchemeFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/auth/NTLMSchemeFactory;-><init>()V
 
-    invoke-direct {v5}, Lorg/apache/http/impl/auth/KerberosSchemeFactory;-><init>()V
+    const-string/jumbo v5, "NTLM"
 
-    invoke-virtual {v0, v4, v5}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v5, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+
+    move-result-object v0
+
+    new-instance v4, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;
+
+    invoke-direct {v4}, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;-><init>()V
+
+    const-string/jumbo v5, "negotiate"
+
+    invoke-virtual {v0, v5, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+
+    move-result-object v0
+
+    new-instance v4, Lorg/apache/http/impl/auth/KerberosSchemeFactory;
+
+    invoke-direct {v4}, Lorg/apache/http/impl/auth/KerberosSchemeFactory;-><init>()V
+
+    const-string/jumbo v5, "Kerberos"
+
+    invoke-virtual {v0, v5, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 
@@ -1265,73 +1265,73 @@
 
     move-result-object v0
 
-    const-string/jumbo v4, "best-match"
+    new-instance v4, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;
 
-    new-instance v6, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;-><init>()V
 
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;-><init>()V
+    const-string/jumbo v6, "best-match"
 
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v4, "standard"
-
-    new-instance v6, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;
-
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>()V
-
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 
-    const-string/jumbo v4, "compatibility"
+    new-instance v4, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;
 
-    new-instance v6, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>()V
 
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;-><init>()V
+    const-string/jumbo v6, "standard"
 
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v4, "netscape"
-
-    new-instance v6, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;
-
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;-><init>()V
-
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 
-    const-string/jumbo v4, "ignoreCookies"
+    new-instance v4, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;
 
-    new-instance v6, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;-><init>()V
 
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;-><init>()V
+    const-string/jumbo v6, "compatibility"
 
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v4, "rfc2109"
-
-    new-instance v6, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;
-
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;-><init>()V
-
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 
-    const-string/jumbo v4, "rfc2965"
+    new-instance v4, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;
 
-    new-instance v6, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;-><init>()V
 
-    invoke-direct {v6}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>()V
+    const-string/jumbo v6, "netscape"
 
-    invoke-virtual {v0, v4, v6}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+
+    move-result-object v0
+
+    new-instance v4, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;
+
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;-><init>()V
+
+    const-string/jumbo v6, "ignoreCookies"
+
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+
+    move-result-object v0
+
+    new-instance v4, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;
+
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;-><init>()V
+
+    const-string/jumbo v6, "rfc2109"
+
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
+
+    move-result-object v0
+
+    new-instance v4, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;
+
+    invoke-direct {v4}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>()V
+
+    const-string/jumbo v6, "rfc2965"
+
+    invoke-virtual {v0, v6, v4}, Lorg/apache/http/config/RegistryBuilder;->register(Ljava/lang/String;Ljava/lang/Object;)Lorg/apache/http/config/RegistryBuilder;
 
     move-result-object v0
 

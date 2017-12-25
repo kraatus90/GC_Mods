@@ -116,7 +116,7 @@
 
     sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v2, 0x7f0800cb
+    const v2, 0x7f0800cc
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -164,7 +164,7 @@
 
     sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v2, 0x7f0800cc
+    const v2, 0x7f0800cd
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -186,7 +186,11 @@
 .end method
 
 .method public onComplete(Ljava/lang/Long;)V
-    .locals 4
+    .locals 7
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x1
 
     const/4 v0, 0x0
 
@@ -225,6 +229,24 @@
     return-void
 
     :cond_0
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/RecorderStopRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->VIDEO:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "SDCARD_MOUNTED"
+
+    invoke-virtual {v2, v3, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isVideoServiceMode()Z
 
     move-result v2
@@ -250,6 +272,7 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendTrigger(Lcom/motorola/camera/fsm/camera/Trigger;)V
 
+    :goto_1
     return-void
 
     :cond_1
@@ -257,11 +280,48 @@
 
     invoke-static {v0}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
 
-    const/4 v0, 0x0
-
-    iput-object v0, v1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
+    iput-object v6, v1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
 
     goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/RecorderStopRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v0
+
+    sget-object v3, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
+
+    const v4, 0x7f080096
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v3, v4}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendNotify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
+
+    const-string/jumbo v0, "SDCARD_MOUNTED"
+
+    invoke-virtual {v2, v0, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    iget-object v0, v1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
+
+    invoke-static {v0}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    iput-object v6, v1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mFileDescriptor:Landroid/os/ParcelFileDescriptor;
+
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/RecorderStopRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->RECORDING_ERROR:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendTrigger(Lcom/motorola/camera/fsm/camera/Trigger;)V
+
+    goto :goto_1
 .end method
 
 .method public bridge synthetic onComplete(Ljava/lang/Object;)V
@@ -382,9 +442,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$36;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$1ZGZhsNNp7SeW9B43IE88LCbFd8;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$36;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$1ZGZhsNNp7SeW9B43IE88LCbFd8;-><init>(Ljava/lang/Object;)V
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/RecorderStopRunnable;->mStopRepeatingRequestListener:Lcom/motorola/camera/device/callables/CameraListener;
 

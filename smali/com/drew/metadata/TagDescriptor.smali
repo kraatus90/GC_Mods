@@ -55,11 +55,11 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
+    const/4 v1, 0x0
+
     const/16 v3, 0x30
 
     const/4 v0, 0x0
-
-    const/4 v1, 0x0
 
     if-eqz p0, :cond_1
 
@@ -134,15 +134,15 @@
 
 # virtual methods
 .method public getDescription(I)Ljava/lang/String;
-    .locals 6
+    .locals 5
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v5, 0x1
-
     const/4 v1, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
 
     iget-object v0, p0, Lcom/drew/metadata/TagDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -203,26 +203,26 @@
 
     if-le v0, v1, :cond_0
 
-    const-string/jumbo v1, "[%d byte%s]"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v2, v4
+    aput-object v2, v1, v3
 
-    if-eq v0, v5, :cond_3
+    const-string/jumbo v2, "[%d byte%s]"
+
+    if-eq v0, v4, :cond_3
 
     const-string/jumbo v0, "s"
 
     :goto_0
-    aput-object v0, v2, v5
+    aput-object v0, v1, v4
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,13 +45,13 @@
         }
     .end annotation
 
-    iget-object v1, p0, Landroid/support/v7/app/AppCompatDelegateImplN$AppCompatWindowCallbackN;->this$0:Landroid/support/v7/app/AppCompatDelegateImplN;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplN$AppCompatWindowCallbackN;->this$0:Landroid/support/v7/app/AppCompatDelegateImplN;
+
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v2, v3}, Landroid/support/v7/app/AppCompatDelegateImplN;->getPanelState(IZ)Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;
+    invoke-virtual {v0, v2, v1}, Landroid/support/v7/app/AppCompatDelegateImplN;->getPanelState(IZ)Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;
 
     move-result-object v0
 
@@ -68,9 +68,9 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;->menu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;->menu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-super {p0, p1, v1, p3}, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    invoke-super {p0, p1, v0, p3}, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
 
     goto :goto_0
 .end method

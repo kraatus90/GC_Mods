@@ -30,7 +30,7 @@
     return v0
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/app/ActivityManagerCompatKitKat;->isLowRamDevice(Landroid/app/ActivityManager;)Z
+    invoke-virtual {p0}, Landroid/app/ActivityManager;->isLowRamDevice()Z
 
     move-result v0
 

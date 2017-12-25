@@ -40,55 +40,13 @@
 
 # virtual methods
 .method public matchesNationalNumber(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;Z)Z
-    .locals 4
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lcom/google/i18n/phonenumbers/internal/RegexBasedMatcher;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
-
-    invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getNationalNumberPattern()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/google/i18n/phonenumbers/RegexCache;->getPatternForRegex(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    :cond_0
-    const/4 v1, 0x1
-
-    :cond_1
-    :goto_0
-    return v1
-
-    :cond_2
-    if-eqz p3, :cond_1
-
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->lookingAt()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    goto :goto_0
-.end method
-
-.method public matchesPossibleNumber(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;)Z
     .locals 3
+
+    const/4 v0, 0x0
 
     iget-object v1, p0, Lcom/google/i18n/phonenumbers/internal/RegexBasedMatcher;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
-    invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getPossibleNumberPattern()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getNationalNumberPattern()Ljava/lang/String;
 
     move-result-object v2
 
@@ -98,11 +56,53 @@
 
     invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :cond_1
+    :goto_0
+    return v0
+
+    :cond_2
+    if-eqz p3, :cond_1
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->lookingAt()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+.end method
+
+.method public matchesPossibleNumber(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;)Z
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/i18n/phonenumbers/internal/RegexBasedMatcher;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
+
+    invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getPossibleNumberPattern()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/i18n/phonenumbers/RegexCache;->getPatternForRegex(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 .end method

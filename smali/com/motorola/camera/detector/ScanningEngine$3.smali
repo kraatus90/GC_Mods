@@ -83,13 +83,13 @@
     :cond_0
     iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine$3;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
-    invoke-static {v1}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/motorola/camera/detector/ScanningEngine;->-get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/motorola/camera/detector/ScanningEngine$3;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
-    invoke-static {v2}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/motorola/camera/detector/ScanningEngine;->-get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
 
     move-result-object v2
 

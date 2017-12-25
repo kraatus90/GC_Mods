@@ -28,6 +28,17 @@
 # instance fields
 .field private mCapturesSkipped:I
 
+.field private mEventListener:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Lcom/motorola/camera/EventListener;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mHandlerThread:Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;
 
 .field private mLocations:Ljava/util/Set;
@@ -72,7 +83,15 @@
     return-object v0
 .end method
 
-.method static synthetic -get2(Lcom/motorola/camera/saving/location/StoragePool;)Landroid/os/Handler;
+.method static synthetic -get2(Lcom/motorola/camera/saving/location/StoragePool;)Ljava/lang/ref/WeakReference;
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mEventListener:Ljava/lang/ref/WeakReference;
+
+    return-object v0
+.end method
+
+.method static synthetic -get3(Lcom/motorola/camera/saving/location/StoragePool;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mMainHandler:Landroid/os/Handler;
@@ -129,6 +148,8 @@
 .method constructor <init>(Lcom/motorola/camera/saving/location/OnStorageChangeListener;)V
     .locals 3
 
+    const/4 v1, 0x0
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Landroid/util/ArraySet;
@@ -139,11 +160,15 @@
 
     new-instance v0, Ljava/lang/ref/WeakReference;
 
-    const/4 v1, 0x0
-
     invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mStorageListener:Ljava/lang/ref/WeakReference;
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mEventListener:Ljava/lang/ref/WeakReference;
 
     new-instance v0, Ljava/lang/ref/WeakReference;
 
@@ -258,6 +283,59 @@
     check-cast v0, Lcom/motorola/camera/saving/location/OnStorageChangeListener;
 
     invoke-interface {v0}, Lcom/motorola/camera/saving/location/OnStorageChangeListener;->onStorageChanged()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private sendMountEvent(Landroid/content/Intent;I)V
+    .locals 4
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "android.intent.action.MEDIA_EJECT"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/motorola/camera/saving/location/StoragePool;->mEventListener:Ljava/lang/ref/WeakReference;
+
+    if-eqz v1, :cond_0
+
+    if-eqz v0, :cond_0
+
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    const-string/jumbo v0, "LOCATION"
+
+    invoke-virtual {v1, v0, p2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    const-string/jumbo v0, "SDCARD_MOUNTED"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mEventListener:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/EventListener;
+
+    new-instance v2, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v3, Lcom/motorola/camera/fsm/camera/Trigger$Event;->STORAGE_CHANGED:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v2, v3, v1}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;Ljava/lang/Object;)V
+
+    invoke-interface {v0, v2}, Lcom/motorola/camera/EventListener;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
 
     :cond_0
     return-void
@@ -420,7 +498,7 @@
 .end method
 
 .method handleStorageEvent(Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -432,9 +510,19 @@
 
     move-result v0
 
+    invoke-static {}, Lcom/motorola/camera/saving/location/Storage;->getCurrentStorageLocation()Lcom/motorola/camera/saving/location/StorageLocation;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/motorola/camera/saving/location/StorageLocation;->getLocation()I
+
+    move-result v2
+
     if-eqz v0, :cond_0
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/saving/location/StoragePool;->updateStorageLocations(Landroid/content/Intent;)V
+
+    invoke-direct {p0}, Lcom/motorola/camera/saving/location/StoragePool;->notifyLocationChanged()V
 
     :goto_0
     return-void
@@ -444,17 +532,17 @@
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v3
 
     :cond_1
     :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -486,6 +574,8 @@
 
     :cond_2
     invoke-direct {p0}, Lcom/motorola/camera/saving/location/StoragePool;->notifyLocationChanged()V
+
+    invoke-direct {p0, p1, v2}, Lcom/motorola/camera/saving/location/StoragePool;->sendMountEvent(Landroid/content/Intent;I)V
 
     goto :goto_0
 .end method
@@ -557,6 +647,18 @@
     iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mHandlerThread:Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;
 
     invoke-static {v0}, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->-wrap2(Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;)V
+
+    return-void
+.end method
+
+.method public setEventListener(Lcom/motorola/camera/EventListener;)V
+    .locals 1
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool;->mEventListener:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method

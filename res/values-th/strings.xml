@@ -135,7 +135,7 @@
     <string name="aware_info_timeout">เซิร์ฟเวอร์ใช้เวลาในการตอบสนองนานเกินไป โปรดลองอีกครั้ง</string>
     <string name="aware_info_unsure">หันไปทางวัตถุในมุมอื่น</string>
     <string name="aware_info_url">URL</string>
-    <string name="aware_info_web_results">ผลลัพธ์เว็บเพิ่มเติม</string>
+    <string name="aware_info_web_results">ผลลัพธ์บนเว็บเพิ่มเติม</string>
     <string name="aware_info_wifi">Wi-Fi</string>
     <string name="aware_info_wikipedia">Wikipedia</string>
     <string name="aware_wifi_connected">เชื่อมต่อกับเครือข่าย \"%1$s\" แล้ว</string>
@@ -148,7 +148,7 @@
     <string name="cancel">ยกเลิก</string>
     <string name="capture_failure">การถ่ายภาพล้มเหลว ลองอีกครั้ง</string>
     <string name="checkbox_do_not_show">ไม่ต้องแสดงอีก</string>
-    <string name="cloudsight_terms">ภาพของคุณจะถูกส่งไปยัง CloudSight เพื่อให้ผลการค้นหา &lt;br/>&lt;br/> โดยการดำเนินการต่อ ถือว่าคุณยอมรับ &lt;a href=%1$s>นโยบายความเป็นส่วนตัว&lt;/a> ของ CloudSight</string>
+    <string name="cloudsight_terms">ทุกครั้งที่คุณใช้การจดจำวัตถุ ภาพและตำแหน่ง (หากเปิดใช้งาน) จะถูกส่งไปยังบุคคลที่สามเพื่อให้ผลการค้นหา&lt;br/>&lt;br/> โดยการดำเนินการต่อ ถือว่าคุณยอมรับ&lt;a href=%1$s>นโยบายความเป็นส่วนตัว&lt;/a></string>
     <string name="dailog_panorama_failed">พาโนรามาล้มเหลว โปรดลองอีกครั้ง</string>
     <string name="dailog_panorama_not_taken">ไม่ได้ถ่ายภาพพาโนรามา</string>
     <string name="dialog_access_sd_fail">ไม่สามารถจับภาพสื่อได้ ไม่สามารถเข้าถึงการ์ด SD</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">อุปกรณ์ไม่รองรับ</string>
     <string name="dialog_disagree">ไม่ตกลง</string>
     <string name="dialog_dismiss">ไม่ต้องแสดงอีก</string>
+    <string name="dialog_download">ดาวน์โหลด</string>
     <string name="dialog_external_sd_missing">ไม่สามารถถ่ายภาพ ไม่สามารถเข้าถึงการ์ด SD ได้ กำลังเปลี่ยนเป็นที่เก็บข้อมูลภายในเครื่อง</string>
     <string name="dialog_first_time_set_pure_raw_message">"ประเภทไฟล์ที่ไม่ได้ผ่านกระบวนการใดๆ นี้ใช้ในการแก้ไขภาพถ่ายระดับมืออาชีพ
 
@@ -247,6 +248,7 @@
     <string name="help_next">ถัดไป</string>
     <string name="image_360_desc">นี่คือภาพถ่าย 360 คุณสามารถแก้ไขภาพถ่ายนี้ด้วยโปรแกรมแก้ไข Moto 360</string>
     <string name="image_360_name">ภาพถ่าย 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ความลึกถูกเปิดใช้งาน</string>
     <string name="indicate_mode_mono">ขาวดำ</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">มุมกว้างพิเศษ</string>
     <string name="indicate_mode_video">วิดีโอ</string>
     <string name="indicate_mode_wide_angle">มุมกว้าง</string>
+    <string name="indicate_mode_wide_angle_selfie">ถ่ายภาพตนเองมุมกว้าง</string>
     <string name="internal_storage">ที่เก็บข้อมูลภายในเครื่อง</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">การจดจำจุดสังเกตให้ข้อมูลเกี่ยวกับจุดสังเกตยอดนิยมทั่วโลก&lt;br/>&lt;br/>ติดตั้งเพื่อเปิดใช้งานคุณสมบัตินี้</string>
-    <string name="landmark_install_over_data">ขนาดดาวน์โหลดการจดจำจุดสังเกตคือ 92 MB การติดตั้งผ่านข้อมูลมือถืออาจทำให้เกิดค่าบริการข้อมูลเพิ่มเติม</string>
-    <string name="landmark_notification_downloading">กำลังดาวน์โหลดการจดจำจุดสังเกต</string>
-    <string name="landmark_notification_install">กำลังติดตั้งการจดจำจุดสังเกต</string>
-    <string name="landmark_notification_install_complete">การติดตั้งการจดจำจุดสังเกตเสร็จสิ้น</string>
-    <string name="landmark_notification_install_failed">การติดตั้งการจดจำจุดสังเกตล้มเหลว</string>
+    <string name="landmark_install_message">การจดจำจุดสังเกตให้ข้อมูลเกี่ยวกับจุดสังเกตยอดนิยมทั่วโลก&lt;br/>&lt;br/>ดาวน์โหลดฐานข้อมูลจุดสังเกตเพื่อเปิดใช้งานคุณสมบัตินี้</string>
+    <string name="landmark_install_over_data">ขนาดดาวน์โหลดฐานข้อมูลจุดสังเกตคือ 92 MB การดาวน์โหลดผ่านข้อมูลมือถืออาจทำให้เกิดค่าบริการข้อมูลเพิ่มเติม</string>
+    <string name="landmark_notification_downloading">กำลังดาวน์โหลดฐานข้อมูลจุดสังเกต</string>
+    <string name="landmark_notification_install">กำลังติดตั้งฐานข้อมูลจุดสังเกต</string>
+    <string name="landmark_notification_install_complete">การติดตั้งฐานข้อมูลจุดสังเกตเสร็จสิ้น</string>
+    <string name="landmark_notification_install_failed">การติดตั้งฐานข้อมูลจุดสังเกตล้มเหลว</string>
     <string name="landmark_notification_install_invalid_url">ฐานข้อมูลจุดสังเกตใช้งานไม่ได้ โปรดอัปเดตเป็นกล้องถ่ายรูปรุ่นล่าสุด</string>
-    <string name="landmark_notification_install_out_of_space">พื้นที่จัดเก็บว่างไม่เพียงพอที่จะติดตั้งการจดจำจุดสังเกต</string>
+    <string name="landmark_notification_install_out_of_space">พื้นที่จัดเก็บว่างไม่เพียงพอที่จะติดตั้งฐานข้อมูลจุดสังเกต</string>
+    <string name="landmark_notification_paused">ฐานข้อมูลจุดสังเกตจะดาวน์โหลดต่อเมื่อมีอินเทอร์เน็ต</string>
+    <string name="landmark_notification_queued">ฐานข้อมูลจุดสังเกตจะดาวน์โหลดเมื่อมีอินเทอร์เน็ต</string>
     <string name="main_setting_amz_barcode">สแกนเนอร์บาร์โค้ด Amazon</string>
     <string name="main_setting_amz_privacy">ประกาศเตือนข้อมูลส่วนบุคคลของ Amazon</string>
     <string name="main_setting_amz_terms">เงื่อนไขการใช้งาน</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">ขนาดภาพถ่าย (ด้านหลัง)</string>
     <string name="main_setting_image_ratio_front">ขนาดภาพถ่าย (ด้านหน้า)</string>
     <string name="main_setting_landmark_detection">การจดจำจุดสังเกต</string>
+    <string name="main_setting_landmark_version_current">รุ่นฐานข้อมูล: %s</string>
+    <string name="main_setting_landmark_version_not_installed">ไม่ได้ติดตั้งฐานข้อมูล</string>
     <string name="main_setting_licenses">สัญญาอนุญาตสำหรับโอเพนซอร์ส</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">ต้องการการอนุญาต</string>
     <string name="photos_depth_desc">ใช้ตัวแก้ไขความลึกเพื่อเลือกโฟกัส เปลี่ยนพื้นหลัง หรือเลือกพื้นที่เพื่อเปลี่ยนเป็นขาวดำ</string>
     <string name="photos_depth_name">ความลึกถูกเปิดใช้งาน</string>
+    <string name="photos_notification_desc">รับพื้นที่จัดเก็บไม่จำกัดกับ Google Photos</string>
+    <string name="photos_notification_title">สำรองข้อมูลไปยัง Google Photos</string>
+    <string name="qcfa_resolution_description">ปรับเมื่อแสงน้อย</string>
     <string name="retake">ถ่ายภาพอีก</string>
     <string name="second_10">10 วินาที</string>
     <string name="second_3">3 วินาที</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">สโลว์โมชั่น</string>
     <string name="setting_mode_ultra_wide">มุมกว้างพิเศษ</string>
     <string name="setting_mode_video">วิดีโอ</string>
+    <string name="setting_mode_wide_angle_selfie">ถ่ายภาพตนเองมุมกว้าง</string>
     <string name="setting_off">ปิด</string>
     <string name="setting_on">เปิด</string>
     <string name="setting_persist">พักสาย</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">ตัวตั้งเวลา</string>
     <string name="setting_torch">ไฟฉาย</string>
     <string name="setting_true">จริง</string>
+    <string name="shortcut_desc_depth">ภาพเชิงลึก</string>
+    <string name="shortcut_desc_selfie">ภาพตนเอง</string>
+    <string name="shortcut_desc_video">วิดีโอ</string>
     <string name="smartcam_landmark_notification_title">กล้องถ่ายรูปอัจฉริยะ</string>
+    <string name="smartcam_no_detections">ไม่มีวัตถุหรือจุดสังเกตที่บันทึกไว้</string>
     <string name="storage_location_external">การ์ด SD</string>
     <string name="storage_location_internal">โทรศัพท์</string>
     <string name="storage_unavailable">ไม่มีที่เก็บข้อมูล</string>
+    <string name="toast_battery_saver">คุณกำลังอยู่ในโหมดประหยัดพลังงาน คุณสมบัติบางอย่างอาจถูกจำกัด</string>
     <string name="toast_geotag_message_1">คุณต้องให้การอนุญาตตำแหน่งเพื่อเปิดใช้งานการบันทึกตำแหน่ง</string>
     <string name="toast_geotag_message_2">การตั้งค่าตำแหน่งจะมีผลหลังจากเปิดการตั้งค่าตำแหน่งระบบแล้วเท่านั้น</string>
     <string name="tooltip_camera_switch_360">ลองเปลี่ยนเป็นตัวเลือกกล้องถ่ายรูปอื่นๆ</string>
     <string name="tooltip_capture_360">ลองถ่ายภาพหรือวิดีโอ 360° โดยแตะบนปุ่มชัตเตอร์นี้</string>
     <string name="tooltip_capture_key_360">และลองถ่ายภาพด้วยปุ่มชัตเตอร์ที่ด้านหลัง Mod</string>
-    <string name="tooltip_dual_camera_depth_photo">ถ่ายภาพพร้อมข้อมูลเพิ่มเติมเพื่อเปิดใช้งานคุณสมบัติการแก้ไขพิเศษ</string>
     <string name="tooltip_first_use_zoom_button">แตะที่นี่เพื่อสลับเป็นมุมกว้าง</string>
     <string name="tooltip_gallery_360">ดูว่าภาพถ่ายหรือวิดีโอ 360° ของคุณจะออกมาเป็นอย่างไรโดยกวาดนิ้วไปทางซ้าย</string>
     <string name="tooltip_minimap_viewfinder">แพนภาพด้านล่างไปทางซ้ายหรือขวา</string>
     <string name="tooltip_mode_switch_360">ลองถ่ายภาพ 360° ในโหมดอื่นๆ!</string>
+    <string name="tooltip_modes_list">ค้นพบวิธีการใหม่ในการถ่ายภาพและวิดีโอ</string>
     <string name="tooltip_smart_camera">แตะเพื่อค้นหาเพิ่มเติมเกี่ยวกับวัตถุ</string>
     <string name="tooltip_smart_camera_disable">คุณสามารถปิดได้ในการตั้งค่า</string>
     <string name="tooltip_spherical_viewfinder">แพนหรือขยายและย่อเพื่อควบคุมมุมมอง</string>
@@ -419,6 +435,10 @@
     <string name="zoom_hint_full">เต็ม</string>
     <string name="zoom_hint_wide">กว้าง</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">ปรับเมื่อแสงน้อย</string>
+    <string name="indicate_mode_timelapse">ไทม์แลปส์</string>
+    <string name="setting_mode_timelapse">ไทม์แลปส์</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

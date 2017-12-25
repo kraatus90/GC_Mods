@@ -68,26 +68,13 @@
 .method public onAnimationEnd(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
     .locals 2
 
-    const/4 v1, 0x0
-
-    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->val$inZoomSwitch:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/CameraPreview;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->-get3(Lcom/motorola/camera/ui/widgets/gl/CameraPreview;)Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setBlurEnable(Z)V
-
-    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/CameraPreview;
 
     invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->-get5(Lcom/motorola/camera/ui/widgets/gl/CameraPreview;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
     move-result-object v0
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setVisibility(Z)V
 
@@ -133,7 +120,7 @@
 
     iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->val$inZoomSwitch:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/CameraPreview;
 
@@ -147,11 +134,11 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$ZoomSwitchAnimationListener;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$ZoomSwitchAnimationListener;->onAnimationEnd()V
 
-    :cond_1
+    :cond_0
     return-void
 .end method
 
@@ -204,18 +191,5 @@
 
     invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderContinuesly(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
 
-    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->val$inZoomSwitch:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/CameraPreview;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->-get3(Lcom/motorola/camera/ui/widgets/gl/CameraPreview;)Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewProcessingTexture;->setBlurEnable(Z)V
-
-    :cond_0
     return-void
 .end method

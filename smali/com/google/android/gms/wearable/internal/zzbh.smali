@@ -33,31 +33,31 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->versionCode:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->versionCode:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x2
+    iget v1, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->statusCode:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->statusCode:I
+    const/4 v2, 0x2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x3
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     iget-wide v2, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->zzaMA:J
 
+    const/4 v1, 0x3
+
     invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
 
-    const/4 v1, 0x4
+    iget-object v1, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->zzaMD:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/internal/StorageInfoResponse;->zzaMD:Ljava/util/List;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x4
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;ILjava/util/List;Z)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 
@@ -89,8 +89,6 @@
 .method public zzgy(Landroid/os/Parcel;)Lcom/google/android/gms/wearable/internal/StorageInfoResponse;
     .locals 8
 
-    const/4 v6, 0x0
-
     const/4 v3, 0x0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzL(Landroid/os/Parcel;)I
@@ -98,6 +96,8 @@
     move-result v0
 
     const-wide/16 v4, 0x0
+
+    const/4 v6, 0x0
 
     move v2, v3
 

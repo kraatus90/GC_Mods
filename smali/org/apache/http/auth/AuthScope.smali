@@ -45,13 +45,13 @@
 
     sget-object v1, Lorg/apache/http/auth/AuthScope;->ANY_HOST:Ljava/lang/String;
 
-    const/4 v2, -0x1
+    sget-object v2, Lorg/apache/http/auth/AuthScope;->ANY_REALM:Ljava/lang/String;
 
-    sget-object v3, Lorg/apache/http/auth/AuthScope;->ANY_REALM:Ljava/lang/String;
+    sget-object v3, Lorg/apache/http/auth/AuthScope;->ANY_SCHEME:Ljava/lang/String;
 
-    sget-object v4, Lorg/apache/http/auth/AuthScope;->ANY_SCHEME:Ljava/lang/String;
+    const/4 v4, -0x1
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lorg/apache/http/auth/AuthScope;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v4, v2, v3}, Lorg/apache/http/auth/AuthScope;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lorg/apache/http/auth/AuthScope;->ANY:Lorg/apache/http/auth/AuthScope;
 
@@ -318,11 +318,11 @@
 .method public hashCode()I
     .locals 2
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/auth/AuthScope;->host:Ljava/lang/String;
+    iget-object v0, p0, Lorg/apache/http/auth/AuthScope;->host:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 

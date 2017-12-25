@@ -37,13 +37,13 @@
 
     sput-object v0, Lcom/motorola/camera/limitfunctionality/ThermalHandler;->TAG:Ljava/lang/String;
 
-    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->BRIGHTNESS:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->BRIGHTNESS:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-    sget-object v2, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->JUST_SHOOT:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    sget-object v2, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->MULTI_SHOT_RATE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-    sget-object v3, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->FACE_DETECTION:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+    sget-object v3, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->SURFACE_SIZE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
     invoke-static {v0, v1, v2, v3}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
 
@@ -64,7 +64,7 @@
 
 
 # virtual methods
-.method getFeatures()Ljava/util/EnumSet;
+.method getLimitedFeatures()Ljava/util/EnumSet;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {

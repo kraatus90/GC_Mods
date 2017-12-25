@@ -193,17 +193,17 @@
     :goto_3
     if-nez v2, :cond_0
 
-    const/4 v2, 0x0
-
     const-wide/16 v8, 0x1000
 
     invoke-static {v8, v9, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v8
 
-    long-to-int v7, v8
+    long-to-int v2, v8
 
-    invoke-virtual {v5, v6, v2, v7}, Ljava/io/InputStream;->read([BII)I
+    const/4 v7, 0x0
+
+    invoke-virtual {v5, v6, v7, v2}, Ljava/io/InputStream;->read([BII)I
 
     move-result v2
 

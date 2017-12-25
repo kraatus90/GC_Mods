@@ -247,12 +247,6 @@
 
     invoke-direct {v0, v2}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
 
-    const/4 v2, 0x0
-
-    cmpl-float v2, p3, v2
-
-    if-eqz v2, :cond_0
-
     invoke-interface {p4}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getTextureAtlas()Lcom/motorola/camera/ui/widgets/gl/iTextureAtlas;
 
     move-result-object v2
@@ -260,6 +254,14 @@
     invoke-interface {v2}, Lcom/motorola/camera/ui/widgets/gl/iTextureAtlas;->getAtlasSize()Landroid/graphics/Point;
 
     move-result-object v2
+
+    const/4 v4, 0x0
+
+    cmpl-float v4, p3, v4
+
+    if-eqz v4, :cond_0
+
+    if-eqz v2, :cond_0
 
     iget v4, v2, Landroid/graphics/Point;->x:I
 

@@ -260,67 +260,67 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzzH:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzzH:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->mName:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->mName:Ljava/lang/String;
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzacM:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzacM:Ljava/lang/String;
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    iget v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzMG:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzMG:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    iget v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzWv:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzWv:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    iget-boolean v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzaKC:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzaKC:Z
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    iget-boolean v1, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzaKE:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/wearable/ConnectionConfiguration;->zzaKE:Z
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 

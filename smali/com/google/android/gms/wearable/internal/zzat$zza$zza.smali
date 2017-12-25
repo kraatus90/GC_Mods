@@ -857,7 +857,7 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -868,21 +868,21 @@
     move-result-object v3
 
     :try_start_0
-    const-string/jumbo v1, "com.google.android.gms.wearable.internal.IWearableService"
+    const-string/jumbo v0, "com.google.android.gms.wearable.internal.IWearableService"
 
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     if-nez p1, :cond_0
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_0
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     if-nez p2, :cond_1
 
     :goto_1
-    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     invoke-virtual {v2, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -908,7 +908,7 @@
     :try_start_1
     invoke-interface {p1}, Lcom/google/android/gms/wearable/internal/zzar;->asBinder()Landroid/os/IBinder;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 
@@ -917,7 +917,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v0
+    move-result-object v1
 
     goto :goto_1
 
@@ -1395,9 +1395,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -1415,9 +1415,11 @@
     if-nez p1, :cond_0
 
     :goto_0
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     if-nez p2, :cond_1
+
+    move v0, v1
 
     :goto_1
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeInt(I)V
@@ -1446,7 +1448,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 
@@ -1861,7 +1863,7 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -1872,21 +1874,21 @@
     move-result-object v3
 
     :try_start_0
-    const-string/jumbo v1, "com.google.android.gms.wearable.internal.IWearableService"
+    const-string/jumbo v0, "com.google.android.gms.wearable.internal.IWearableService"
 
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     if-nez p1, :cond_0
 
-    move-object v1, v0
+    move-object v0, v1
 
     :goto_0
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     if-nez p2, :cond_1
 
     :goto_1
-    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     invoke-virtual {v2, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -1912,7 +1914,7 @@
     :try_start_1
     invoke-interface {p1}, Lcom/google/android/gms/wearable/internal/zzar;->asBinder()Landroid/os/IBinder;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 
@@ -1921,7 +1923,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v0
+    move-result-object v1
 
     goto :goto_1
 
@@ -2081,9 +2083,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v1, 0x0
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -2101,9 +2103,11 @@
     if-nez p1, :cond_0
 
     :goto_0
-    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
     if-nez p2, :cond_1
+
+    move v0, v1
 
     :goto_1
     invoke-virtual {v2, v0}, Landroid/os/Parcel;->writeInt(I)V
@@ -2132,7 +2136,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 

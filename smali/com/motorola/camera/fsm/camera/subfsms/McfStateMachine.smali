@@ -1179,7 +1179,7 @@
     return v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_subfsms_McfStateMachine_lambda$1(Lcom/motorola/camera/mcf/McfSceneProp;Lcom/motorola/camera/mcf/McfSceneProp$Key;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_subfsms_McfStateMachine_3021(Lcom/motorola/camera/mcf/McfSceneProp;Lcom/motorola/camera/mcf/McfSceneProp$Key;)V
     .locals 2
 
     invoke-virtual {p2}, Lcom/motorola/camera/mcf/McfSceneProp$Key;->getType()Ljava/lang/Class;
@@ -1279,17 +1279,77 @@
     return-void
 .end method
 
-.method public onProgressIndication(ILcom/motorola/camera/mcf/Mcf$ProgressType;Lcom/motorola/camera/mcf/Mcf$SceneMode;ILcom/motorola/camera/mcf/Mcf$InstanceType;J)V
-    .locals 3
+.method public onJpegReprocRequest(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ILcom/motorola/camera/mcf/Mcf$ReprocessType;Lcom/motorola/camera/mcf/McfMetadata;)V
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->getListeners()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;->onJpegReprocRequest(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ILcom/motorola/camera/mcf/Mcf$ReprocessType;Lcom/motorola/camera/mcf/McfMetadata;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onPostViewFrame(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/McfDepthMap;)V
+    .locals 2
+
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->getListeners()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
+
+    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;->onPostView(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/McfDepthMap;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public onProgressIndication(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/Mcf$ProgressType;Lcom/motorola/camera/mcf/Mcf$SceneMode;J)V
+    .locals 4
     .param p2    # Lcom/motorola/camera/mcf/Mcf$ProgressType;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
     .param p3    # Lcom/motorola/camera/mcf/Mcf$SceneMode;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p5    # Lcom/motorola/camera/mcf/Mcf$InstanceType;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
     .end param
@@ -1306,7 +1366,13 @@
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-direct {p0, p1, p4, p2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->storeProgressUpdate(IILcom/motorola/camera/mcf/Mcf$ProgressType;)V
+    iget v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    iget-object v1, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    iget v1, v1, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->mInstanceId:I
+
+    invoke-direct {p0, v0, v1, p2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->storeProgressUpdate(IILcom/motorola/camera/mcf/Mcf$ProgressType;)V
 
     :goto_0
     :pswitch_0
@@ -1322,7 +1388,9 @@
     :pswitch_2
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->mStateMap:Ljava/util/Map;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -1334,9 +1402,15 @@
 
     new-instance v1, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfRequestHolder;
 
-    const/4 v2, 0x0
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    invoke-direct {v1, p0, p5, v2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfRequestHolder;-><init>(Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;Lcom/motorola/camera/mcf/Mcf$InstanceType;Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfRequestHolder;)V
+    invoke-virtual {v2}, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->getInstanceTypeClass()Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, p0, v2, v3}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfRequestHolder;-><init>(Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;Lcom/motorola/camera/mcf/Mcf$InstanceType;Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfRequestHolder;)V
 
     iget-object v2, v1, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfRequestHolder;->mProgressList:Ljava/util/List;
 
@@ -1346,7 +1420,11 @@
 
     move-result-object v0
 
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    iget v2, v2, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->mInstanceId:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
@@ -1461,9 +1539,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$154;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$JCTt587tNN-T-qRXdoxC347_51s;
 
-    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$154;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/fsm/camera/subfsms/-$Lambda$JCTt587tNN-T-qRXdoxC347_51s;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Ljava/util/Collection;->forEach(Ljava/util/function/Consumer;)V
     :try_end_0

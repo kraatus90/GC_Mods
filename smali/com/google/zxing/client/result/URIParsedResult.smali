@@ -47,26 +47,26 @@
 .end method
 
 .method private static isColonFollowedByPortNumber(Ljava/lang/String;I)Z
-    .locals 3
+    .locals 2
 
     add-int/lit8 v1, p1, 0x1
 
-    const/16 v2, 0x2f
+    const/16 v0, 0x2f
 
-    invoke-virtual {p0, v2, v1}, Ljava/lang/String;->indexOf(II)I
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->indexOf(II)I
 
     move-result v0
 
     if-ltz v0, :cond_0
 
     :goto_0
-    sub-int v2, v0, v1
+    sub-int/2addr v0, v1
 
-    invoke-static {p0, v1, v2}, Lcom/google/zxing/client/result/ResultParser;->isSubstringOfDigits(Ljava/lang/CharSequence;II)Z
+    invoke-static {p0, v1, v0}, Lcom/google/zxing/client/result/ResultParser;->isSubstringOfDigits(Ljava/lang/CharSequence;II)Z
 
-    move-result v2
+    move-result v0
 
-    return v2
+    return v0
 
     :cond_0
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -81,24 +81,24 @@
 
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
     const/16 v1, 0x3a
 
-    invoke-virtual {p0, v1}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v0
+    move-result v1
 
-    if-ltz v0, :cond_0
+    if-ltz v1, :cond_0
 
-    invoke-static {p0, v0}, Lcom/google/zxing/client/result/URIParsedResult;->isColonFollowedByPortNumber(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Lcom/google/zxing/client/result/URIParsedResult;->isColonFollowedByPortNumber(Ljava/lang/String;I)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
     :goto_0
-    return-object p0
+    return-object v0
 
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -111,13 +111,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
     goto :goto_0
 
@@ -132,13 +132,13 @@
 
     move-result-object v1
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
     goto :goto_0
 .end method
@@ -164,9 +164,9 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public getTitle()Ljava/lang/String;

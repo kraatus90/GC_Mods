@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseAppRunnable$2_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseAppRunnable$2_2099()V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable$2;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;
@@ -65,9 +65,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$68;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$68;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$3;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

@@ -9,8 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/motorola/camera/LocationManager$1;,
-        Lcom/motorola/camera/LocationManager$GetAddressTask;
+        Lcom/motorola/camera/LocationManager$1;
     }
 .end annotation
 

@@ -6,9 +6,9 @@
 .method public static zza(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 9
 
-    const/4 v2, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v2, 0x0
 
     if-eqz p0, :cond_0
 

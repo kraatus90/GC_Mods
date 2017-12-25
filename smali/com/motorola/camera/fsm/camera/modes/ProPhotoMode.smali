@@ -13,7 +13,7 @@
 .end method
 
 .method private applyExp(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-    .locals 4
+    .locals 6
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->EXPOSURE_TIME:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -27,17 +27,21 @@
 
     check-cast v0, Ljava/lang/Long;
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_EXP_PRI_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_EXP_PRI_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    invoke-static {p1, v1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2, p1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -73,7 +77,7 @@
 .end method
 
 .method private applyIso(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-    .locals 4
+    .locals 6
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->ISO:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -91,15 +95,19 @@
 
     move-result v0
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_ISO_PRI_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_ISO_PRI_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
-    int-to-long v2, v0
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v2
+
+    int-to-long v4, v0
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    invoke-static {p1, v1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2, p1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     return-void
 .end method

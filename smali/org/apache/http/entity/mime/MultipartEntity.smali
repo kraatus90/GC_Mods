@@ -58,9 +58,7 @@
 .end method
 
 .method public constructor <init>(Lorg/apache/http/entity/mime/HttpMultipartMode;Ljava/lang/String;Ljava/nio/charset/Charset;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -82,7 +80,9 @@
 
     iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->builder:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
-    iput-object v1, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     return-void
 .end method
@@ -212,15 +212,15 @@
 .end method
 
 .method public addPart(Lorg/apache/http/entity/mime/FormBodyPart;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->builder:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
     invoke-virtual {v0, p1}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->a(Lorg/apache/http/entity/mime/FormBodyPart;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
-    iput-object v1, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     return-void
 .end method

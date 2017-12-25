@@ -349,9 +349,7 @@
 .end method
 
 .method public zzzr()Lcom/google/android/gms/internal/zznn;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-static {}, Lcom/google/android/gms/internal/zznn$zza;->zzzs()[Lcom/google/android/gms/internal/zznn$zza;
 
@@ -359,7 +357,9 @@
 
     iput-object v0, p0, Lcom/google/android/gms/internal/zznn;->zzaMZ:[Lcom/google/android/gms/internal/zznn$zza;
 
-    iput-object v1, p0, Lcom/google/android/gms/internal/zznn;->zzaNI:Lcom/google/android/gms/internal/zznu;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zznn;->zzaNI:Lcom/google/android/gms/internal/zznu;
 
     const/4 v0, -0x1
 

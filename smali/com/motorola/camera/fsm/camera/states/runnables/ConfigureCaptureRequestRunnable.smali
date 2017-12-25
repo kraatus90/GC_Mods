@@ -10,6 +10,8 @@
 
 
 # instance fields
+.field protected mCaptureMode:I
+
 .field protected mShotType:Lcom/motorola/camera/ShotType;
 
 
@@ -33,11 +35,17 @@
 .end method
 
 .method public constructor <init>(Lcom/motorola/camera/ShotType;)V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/CameraRunnable;-><init>()V
 
     iput-object p1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureCaptureRequestRunnable;->mCaptureMode:I
 
     return-void
 .end method

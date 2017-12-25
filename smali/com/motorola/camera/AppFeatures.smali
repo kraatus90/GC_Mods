@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/motorola/camera/AppFeatures$Feature;
+        Lcom/motorola/camera/AppFeatures$Feature;,
+        Lcom/motorola/camera/AppFeatures$RegionKey;
     }
 .end annotation
 
@@ -20,9 +21,13 @@
 
 .field private static final KEY_DEVICES:Ljava/lang/String; = "devices"
 
+.field private static final KEY_EXCLUDE_REGION:Ljava/lang/String; = "exclude-region"
+
 .field private static final KEY_FEATURE:Ljava/lang/String; = "feature"
 
 .field private static final KEY_FEATURES:Ljava/lang/String; = "features"
+
+.field private static final KEY_MIN_RAM:Ljava/lang/String; = "min-ram"
 
 .field private static final KEY_REGION:Ljava/lang/String; = "region"
 
@@ -45,6 +50,8 @@
     .end annotation
 .end field
 
+.field private mTotalRAM:I
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -65,6 +72,10 @@
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/motorola/camera/AppFeatures;->mTotalRAM:I
 
     const-class v0, Lcom/motorola/camera/AppFeatures$Feature;
 
@@ -391,6 +402,12 @@
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/AppFeatures;->supportsRegion(Lorg/json/JSONObject;)Z
 
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/AppFeatures;->supportsMinRAM(Lorg/json/JSONObject;)Z
+
     move-result v0
 
     :cond_1
@@ -437,10 +454,6 @@
     :catch_0
     move-exception v0
 
-    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v0, :cond_2
-
     sget-object v0, Lcom/motorola/camera/AppFeatures;->TAG:Ljava/lang/String;
 
     const-string/jumbo v2, "api not formatted correctly"
@@ -450,80 +463,165 @@
     move v0, v1
 
     goto :goto_0
+.end method
 
-    :cond_2
+.method private supportsMinRAM(Lorg/json/JSONObject;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const-string/jumbo v2, "min-ram"
+
+    invoke-virtual {p1, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    :try_start_0
+    const-string/jumbo v2, "min-ram"
+
+    invoke-virtual {p1, v2}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    iget v3, p0, Lcom/motorola/camera/AppFeatures;->mTotalRAM:I
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-ge v2, v3, :cond_1
+
+    :cond_0
+    :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v0, Lcom/motorola/camera/AppFeatures;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v2, "min-ram not formatted correctly"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
     move v0, v1
 
     goto :goto_0
 .end method
 
 .method private supportsRegion(Lorg/json/JSONObject;)Z
-    .locals 3
+    .locals 1
 
+    const-string/jumbo v0, "region"
+
+    invoke-direct {p0, p1, v0}, Lcom/motorola/camera/AppFeatures;->supportsRegion(Lorg/json/JSONObject;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string/jumbo v0, "exclude-region"
+
+    invoke-direct {p0, p1, v0}, Lcom/motorola/camera/AppFeatures;->supportsRegion(Lorg/json/JSONObject;Ljava/lang/String;)Z
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
     const/4 v0, 0x0
 
+    goto :goto_0
+.end method
+
+.method private supportsRegion(Lorg/json/JSONObject;Ljava/lang/String;)Z
+    .locals 5
+    .param p2    # Ljava/lang/String;
+        .annotation build Lcom/motorola/camera/AppFeatures$RegionKey;
+        .end annotation
+    .end param
+
+    const/4 v0, 0x1
+
     const-string/jumbo v1, "region"
 
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    invoke-virtual {p1, p2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lcom/motorola/camera/AppFeatures;->mCountry:Ljava/lang/String;
+    xor-int/lit8 v1, v2, 0x1
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    iget-object v3, p0, Lcom/motorola/camera/AppFeatures;->mCountry:Ljava/lang/String;
 
-    move-result v1
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    if-nez v1, :cond_0
+    move-result v3
+
+    if-nez v3, :cond_2
 
     :try_start_0
-    const-string/jumbo v1, "region"
+    invoke-virtual {p1, p2}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v1
+    const-string/jumbo v4, ","
 
-    const-string/jumbo v2, ","
+    invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v1
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    move-result-object v3
 
-    move-result-object v1
+    iget-object v4, p0, Lcom/motorola/camera/AppFeatures;->mCountry:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/motorola/camera/AppFeatures;->mCountry:Ljava/lang/String;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v3, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v0
+    move-result v1
+
+    if-ne v2, v1, :cond_1
 
     :cond_0
     :goto_0
     return v0
 
-    :catch_0
-    move-exception v1
-
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v1, :cond_0
-
-    sget-object v1, Lcom/motorola/camera/AppFeatures;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v2, "region not formatted correctly"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x1
+    :catch_0
+    move-exception v0
+
+    sget-object v0, Lcom/motorola/camera/AppFeatures;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v2, "region not formatted correctly"
+
+    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    move v0, v1
 
     goto :goto_0
 .end method
@@ -552,6 +650,17 @@
     invoke-direct {p0, p1}, Lcom/motorola/camera/AppFeatures;->generateSupportedList(Landroid/content/Context;)V
 
     :cond_0
+    iget v0, p0, Lcom/motorola/camera/AppFeatures;->mTotalRAM:I
+
+    if-nez v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/Util;->getTotalRAMMiB()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/motorola/camera/AppFeatures;->mTotalRAM:I
+
+    :cond_1
     return-void
 .end method
 

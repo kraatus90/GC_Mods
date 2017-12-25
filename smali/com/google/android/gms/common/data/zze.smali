@@ -35,45 +35,45 @@
 
     move-result v0
 
-    const/4 v1, 0x1
-
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/DataHolder;->zzlr()[Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
+    const/4 v2, 0x1
 
-    const/16 v1, 0x3e8
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/DataHolder;->getVersionCode()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    const/16 v2, 0x3e8
 
-    const/4 v1, 0x2
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/DataHolder;->zzls()[Landroid/database/CursorWindow;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/DataHolder;->getStatusCode()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    const/4 v2, 0x3
 
-    const/4 v1, 0x4
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/data/DataHolder;->zzlm()Landroid/os/Bundle;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
+    const/4 v2, 0x4
+
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 

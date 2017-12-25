@@ -29,6 +29,17 @@
 
 .method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;JLcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;II)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;",
+            "J",
+            "Lcom/motorola/camera/ui/widgets/gl/Vector3F;",
+            "Lcom/motorola/camera/ui/widgets/gl/Vector3F;",
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;",
+            "II)V"
+        }
+    .end annotation
 
     invoke-direct/range {p0 .. p7}, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;-><init>(Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;JLcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;I)V
 

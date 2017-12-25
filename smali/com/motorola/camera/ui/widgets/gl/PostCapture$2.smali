@@ -37,7 +37,7 @@
 .method public run()V
     .locals 9
 
-    const/16 v8, 0x17
+    const/16 v8, 0x18
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
@@ -66,7 +66,7 @@
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-wrap2(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
 
     move-result-object v4
 
@@ -84,15 +84,15 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;-><init>(Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;JLcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;I)V
 
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
+    new-instance v1, Landroid/view/animation/AccelerateInterpolator;
 
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
+    invoke-direct {v1}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get4(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get5(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
 
     move-result-object v1
 

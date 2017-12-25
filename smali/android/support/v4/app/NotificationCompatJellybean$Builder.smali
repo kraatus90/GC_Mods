@@ -360,31 +360,31 @@
 .end method
 
 .method public build()Landroid/app/Notification;
-    .locals 7
+    .locals 6
 
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->b:Landroid/app/Notification$Builder;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->b:Landroid/app/Notification$Builder;
 
-    invoke-virtual {v4}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
+    invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v3}, Landroid/support/v4/app/NotificationCompatJellybean;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
+    invoke-static {v1}, Landroid/support/v4/app/NotificationCompatJellybean;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    new-instance v3, Landroid/os/Bundle;
+
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
+
+    invoke-direct {v3, v0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
+
+    invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    new-instance v2, Landroid/os/Bundle;
-
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
-
-    invoke-direct {v2, v4}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
-
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mExtras:Landroid/os/Bundle;
-
-    invoke-virtual {v4}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
@@ -392,72 +392,72 @@
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+    invoke-virtual {v2, v3}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mActionExtrasList:Ljava/util/List;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mActionExtrasList:Ljava/util/List;
 
-    invoke-static {v4}, Landroid/support/v4/app/NotificationCompatJellybean;->buildActionExtrasMap(Ljava/util/List;)Landroid/util/SparseArray;
+    invoke-static {v0}, Landroid/support/v4/app/NotificationCompatJellybean;->buildActionExtrasMap(Ljava/util/List;)Landroid/util/SparseArray;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-nez v4, :cond_2
+    if-nez v0, :cond_2
 
     :goto_1
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mContentView:Landroid/widget/RemoteViews;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mContentView:Landroid/widget/RemoteViews;
 
-    if-nez v4, :cond_3
+    if-nez v0, :cond_3
 
     :goto_2
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mBigContentView:Landroid/widget/RemoteViews;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mBigContentView:Landroid/widget/RemoteViews;
 
-    if-nez v4, :cond_4
+    if-nez v0, :cond_4
 
     :goto_3
-    return-object v3
+    return-object v1
 
     :cond_1
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {v2, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    invoke-virtual {v2, v1}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+    invoke-virtual {v3, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_2
-    invoke-static {v3}, Landroid/support/v4/app/NotificationCompatJellybean;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
+    invoke-static {v1}, Landroid/support/v4/app/NotificationCompatJellybean;->getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
 
-    move-result-object v5
+    move-result-object v2
 
-    const-string/jumbo v6, "android.support.actionExtras"
+    const-string/jumbo v3, "android.support.actionExtras"
 
-    invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
+    invoke-virtual {v2, v3, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
     goto :goto_1
 
     :cond_3
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mContentView:Landroid/widget/RemoteViews;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mContentView:Landroid/widget/RemoteViews;
 
-    iput-object v4, v3, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    iput-object v0, v1, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
     goto :goto_2
 
     :cond_4
-    iget-object v4, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mBigContentView:Landroid/widget/RemoteViews;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatJellybean$Builder;->mBigContentView:Landroid/widget/RemoteViews;
 
-    iput-object v4, v3, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    iput-object v0, v1, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
     goto :goto_3
 .end method

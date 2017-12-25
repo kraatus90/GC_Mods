@@ -201,7 +201,7 @@
 .end method
 
 .method public getAmazonApiDetailsAction(I)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/detector/results/tidbit/Product;->amazonSearchResult:Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/ProductSearchResult;
 
@@ -223,7 +223,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUri(Ljava/lang/String;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
+    sget-object v1, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;->AMAZON_RESULT:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUrl(Ljava/lang/String;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Z)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
 
     move-result-object v0
 
@@ -231,11 +235,15 @@
 .end method
 
 .method public getAmazonApiResultsUrlAction()Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/detector/results/tidbit/Product;->resultsUrl:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUri(Ljava/lang/String;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
+    sget-object v1, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;->AMAZON_MORE:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUrl(Ljava/lang/String;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Z)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
 
     move-result-object v0
 
@@ -243,11 +251,15 @@
 .end method
 
 .method public getAmazonHomeAction()Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
-    .locals 1
+    .locals 3
 
     const-string/jumbo v0, "https://www.amazon.com/"
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUri(Ljava/lang/String;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
+    sget-object v1, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;->AMAZON_HOME:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/AlwaysAwarePopup;->getIntentForUrl(Ljava/lang/String;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Z)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
 
     move-result-object v0
 

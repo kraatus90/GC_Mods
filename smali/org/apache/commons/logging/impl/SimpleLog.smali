@@ -68,19 +68,19 @@
 
     sput-object v0, Lorg/apache/commons/logging/impl/SimpleLog;->b:Ljava/util/Properties;
 
-    sput-boolean v2, Lorg/apache/commons/logging/impl/SimpleLog;->d:Z
+    sput-boolean v1, Lorg/apache/commons/logging/impl/SimpleLog;->d:Z
 
     const/4 v0, 0x1
 
     sput-boolean v0, Lorg/apache/commons/logging/impl/SimpleLog;->e:Z
 
-    sput-boolean v2, Lorg/apache/commons/logging/impl/SimpleLog;->f:Z
+    sput-boolean v1, Lorg/apache/commons/logging/impl/SimpleLog;->f:Z
 
     const-string/jumbo v0, "yyyy/MM/dd HH:mm:ss:SSS zzz"
 
     sput-object v0, Lorg/apache/commons/logging/impl/SimpleLog;->g:Ljava/lang/String;
 
-    sput-object v1, Lorg/apache/commons/logging/impl/SimpleLog;->h:Ljava/text/DateFormat;
+    sput-object v2, Lorg/apache/commons/logging/impl/SimpleLog;->h:Ljava/text/DateFormat;
 
     const-string/jumbo v0, "simplelog.properties"
 
@@ -91,31 +91,31 @@
     if-nez v0, :cond_0
 
     :goto_0
-    const-string/jumbo v0, "org.apache.commons.logging.simplelog.showlogname"
+    sget-boolean v0, Lorg/apache/commons/logging/impl/SimpleLog;->d:Z
 
-    sget-boolean v1, Lorg/apache/commons/logging/impl/SimpleLog;->d:Z
+    const-string/jumbo v1, "org.apache.commons.logging.simplelog.showlogname"
 
-    invoke-static {v0, v1}, Lorg/apache/commons/logging/impl/SimpleLog;->getBooleanProperty(Ljava/lang/String;Z)Z
+    invoke-static {v1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->getBooleanProperty(Ljava/lang/String;Z)Z
 
     move-result v0
 
     sput-boolean v0, Lorg/apache/commons/logging/impl/SimpleLog;->d:Z
 
-    const-string/jumbo v0, "org.apache.commons.logging.simplelog.showShortLogname"
+    sget-boolean v0, Lorg/apache/commons/logging/impl/SimpleLog;->e:Z
 
-    sget-boolean v1, Lorg/apache/commons/logging/impl/SimpleLog;->e:Z
+    const-string/jumbo v1, "org.apache.commons.logging.simplelog.showShortLogname"
 
-    invoke-static {v0, v1}, Lorg/apache/commons/logging/impl/SimpleLog;->getBooleanProperty(Ljava/lang/String;Z)Z
+    invoke-static {v1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->getBooleanProperty(Ljava/lang/String;Z)Z
 
     move-result v0
 
     sput-boolean v0, Lorg/apache/commons/logging/impl/SimpleLog;->e:Z
 
-    const-string/jumbo v0, "org.apache.commons.logging.simplelog.showdatetime"
+    sget-boolean v0, Lorg/apache/commons/logging/impl/SimpleLog;->f:Z
 
-    sget-boolean v1, Lorg/apache/commons/logging/impl/SimpleLog;->f:Z
+    const-string/jumbo v1, "org.apache.commons.logging.simplelog.showdatetime"
 
-    invoke-static {v0, v1}, Lorg/apache/commons/logging/impl/SimpleLog;->getBooleanProperty(Ljava/lang/String;Z)Z
+    invoke-static {v1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->getBooleanProperty(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -146,11 +146,11 @@
     goto :goto_0
 
     :cond_1
-    const-string/jumbo v0, "org.apache.commons.logging.simplelog.dateTimeFormat"
+    sget-object v0, Lorg/apache/commons/logging/impl/SimpleLog;->g:Ljava/lang/String;
 
-    sget-object v1, Lorg/apache/commons/logging/impl/SimpleLog;->g:Ljava/lang/String;
+    const-string/jumbo v1, "org.apache.commons.logging.simplelog.dateTimeFormat"
 
-    invoke-static {v0, v1}, Lorg/apache/commons/logging/impl/SimpleLog;->getStringProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->getStringProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -495,11 +495,11 @@
     move-object v2, v0
 
     :goto_0
-    const-string/jumbo v3, "getContextClassLoader"
-
     const/4 v0, 0x0
 
     check-cast v0, [Ljava/lang/Class;
+
+    const-string/jumbo v3, "getContextClassLoader"
 
     invoke-virtual {v2, v3, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
@@ -568,11 +568,11 @@
 
     new-instance v2, Lorg/apache/commons/logging/LogConfigurationException;
 
-    const-string/jumbo v3, "Unexpected InvocationTargetException"
-
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
 
     move-result-object v0
+
+    const-string/jumbo v3, "Unexpected InvocationTargetException"
 
     invoke-direct {v2, v3, v0}, Lorg/apache/commons/logging/LogConfigurationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -949,9 +949,7 @@
 .end method
 
 .method public final debug(Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x2
 
@@ -965,7 +963,9 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1, p1, v2}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, p1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
@@ -991,9 +991,7 @@
 .end method
 
 .method public final error(Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x5
 
@@ -1007,7 +1005,9 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1, p1, v2}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, p1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
@@ -1033,9 +1033,7 @@
 .end method
 
 .method public final fatal(Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x6
 
@@ -1049,7 +1047,9 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1, p1, v2}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, p1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
@@ -1083,9 +1083,7 @@
 .end method
 
 .method public final info(Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x3
 
@@ -1099,7 +1097,9 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1, p1, v2}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, p1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
@@ -1205,9 +1205,7 @@
 .end method
 
 .method public final trace(Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x1
 
@@ -1221,7 +1219,9 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1, p1, v2}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, p1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method
@@ -1247,9 +1247,7 @@
 .end method
 
 .method public final warn(Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     const/4 v1, 0x4
 
@@ -1263,7 +1261,9 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v1, p1, v2}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, p1, v0}, Lorg/apache/commons/logging/impl/SimpleLog;->a(ILjava/lang/Object;Ljava/lang/Throwable;)V
 
     goto :goto_0
 .end method

@@ -13,20 +13,28 @@
 .end method
 
 .method public static isUserUnlocked(Landroid/content/Context;)Z
-    .locals 1
+    .locals 2
 
-    invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastN()Z
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-result v0
+    const/16 v1, 0x18
 
-    if-nez v0, :cond_0
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/os/UserManagerCompatApi24;->isUserUnlocked(Landroid/content/Context;)Z
+    const-class v0, Landroid/os/UserManager;
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/UserManager;
+
+    invoke-virtual {v0}, Landroid/os/UserManager;->isUserUnlocked()Z
 
     move-result v0
 

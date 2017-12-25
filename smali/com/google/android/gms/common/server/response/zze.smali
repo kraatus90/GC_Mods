@@ -35,29 +35,29 @@
 
     move-result v0
 
-    const/4 v1, 0x1
-
     invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->getVersionCode()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    const/4 v2, 0x1
 
-    const/4 v1, 0x2
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzmQ()Landroid/os/Parcel;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Parcel;Z)V
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Parcel;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->zzmR()Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    const/4 v2, 0x3
+
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 

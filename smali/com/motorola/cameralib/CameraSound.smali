@@ -41,35 +41,35 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "/system/media/audio/ui/camera_click.ogg"
 
-    const-string/jumbo v2, "/system/media/audio/ui/camera_click.ogg"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "/system/media/audio/ui/camera_focus.ogg"
 
-    const-string/jumbo v2, "/system/media/audio/ui/camera_focus.ogg"
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "/system/media/audio/ui/VideoRecord.ogg"
 
-    const-string/jumbo v2, "/system/media/audio/ui/VideoRecord.ogg"
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "/system/media/audio/ui/VideoRecord.ogg"
 
-    const-string/jumbo v2, "/system/media/audio/ui/VideoRecord.ogg"
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "/system/media/audio/ui/multishot_click.ogg"
 
-    const-string/jumbo v2, "/system/media/audio/ui/multishot_click.ogg"
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/cameralib/CameraSound;->SOUND_FILES:[Ljava/lang/String;
 
@@ -77,9 +77,11 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
+
+    const/4 v0, 0x0
 
     const/4 v3, -0x1
 
@@ -93,9 +95,7 @@
 
     new-instance v1, Landroid/media/SoundPool;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v4, v4, v2}, Landroid/media/SoundPool;-><init>(III)V
+    invoke-direct {v1, v2, v2, v0}, Landroid/media/SoundPool;-><init>(III)V
 
     iput-object v1, p0, Lcom/motorola/cameralib/CameraSound;->mSoundPool:Landroid/media/SoundPool;
 
@@ -112,8 +112,6 @@
     new-array v1, v1, [I
 
     iput-object v1, p0, Lcom/motorola/cameralib/CameraSound;->mSoundIds:[I
-
-    const/4 v0, 0x0
 
     :goto_0
     iget-object v1, p0, Lcom/motorola/cameralib/CameraSound;->mSoundIds:[I

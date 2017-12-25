@@ -1,25 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">Evə naviqasiya et</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">Yuxarı get</string>
-    <string name="abc_action_menu_overflow_description">Digər variantlar</string>
-    <string name="abc_action_mode_done">Hazırdır</string>
-    <string name="abc_activity_chooser_view_see_all">Hamısına baxın</string>
-    <string name="abc_activitychooserview_choose_application">Tətbiq seçin</string>
-    <string name="abc_capital_off">DEAKTİV</string>
-    <string name="abc_capital_on">AKTİV</string>
-    <string name="abc_search_hint">Axtarış...</string>
-    <string name="abc_searchview_description_clear">Sorğunu təmizlə</string>
-    <string name="abc_searchview_description_query">Axtarış sorğusu</string>
-    <string name="abc_searchview_description_search">Axtarış</string>
-    <string name="abc_searchview_description_submit">Sorğunu göndərin</string>
-    <string name="abc_searchview_description_voice">Səsli axtarış</string>
-    <string name="abc_shareactionprovider_share_with">Bununla paylaşın</string>
-    <string name="abc_toolbar_collapse_description">Dağıt</string>
-    <string name="search_menu_title">Axtarış</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="act_name_camcorder">Kamera</string>
     <string name="act_name_camera">Kamera</string>
     <string name="action_licenses">Açıq mənbə lisenziyaları</string>
@@ -116,7 +96,7 @@
     <string name="cancel">Ləğv et</string>
     <string name="capture_failure">Çəkmək olmadı. Yenidən cəhd edin.</string>
     <string name="checkbox_do_not_show">Yenidən göstərməyin</string>
-    <string name="cloudsight_terms">Şəkliniz axtarış nəticələri üçün CloudSight-a göndəriləcək. &lt;br/>&lt;br/> Davam etməklə siz CloudSight&lt;a href=%1$s>Məxfilik Siyasəti ilə razılaşırsınız&lt;/a>.</string>
+    <string name="cloudsight_terms">Hər dəfə obyekt tanınmasından istifadə etdiyinizdə, şəkil və yer (aktiv edildikdə) axtarış nəticələrinin təmin edilməsi üçün üçüncü tərəfə göndəriləcək.&lt;br/>&lt;br/> Davam etməklə, siz &lt;a href=%1$s>Məxfilik Siyasəti&lt;/a> ilə razılaşırsınız.</string>
     <string name="dailog_panorama_failed">Panorama alınmadı. Təkrarlayın.</string>
     <string name="dailog_panorama_not_taken">Panorama şəkli çəkilmədi.</string>
     <string name="dialog_access_sd_fail">Medianı çəkmək olmur. SD karta çıxmaq olmur.</string>
@@ -138,6 +118,7 @@
     <string name="dialog_device_not_supported">Cihaz dəstəklənmir</string>
     <string name="dialog_disagree">Razı deyiləm</string>
     <string name="dialog_dismiss">Bir daha göstərmə</string>
+    <string name="dialog_download">Endir</string>
     <string name="dialog_external_sd_missing">Şəkli çəkmək olmadı. SD karta çıxmaq olmur. Telefonun daxili yaddaşına keçirilir</string>
     <string name="dialog_first_time_set_pure_raw_message">"Bu işlənməmiş fayl növü şəkilləri peşəkar şəkildə redaktə etmək üçün istifadə edilir.
 
@@ -147,10 +128,10 @@ Qeyd: Faylın ölçüsü standart JPEG formatından 4-5 dəfə böyük olacaq."<
 
 Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</string>
     <string name="dialog_geotag_message_2">Cari məkan çəkilən hər şəkil və videoda yadda saxlandı.</string>
-    <string name="dialog_geotag_message_3">Məkan məlumatını şəkil və videolarda saxlamaq üçün Parametrlərdə Məkanı yandırın.</string>
+    <string name="dialog_geotag_message_3">Məkan məlumatını şəkil və videolarda yadda saxlamaq üçün Ayarlarda Məkan funksiyasını aktiv edin.</string>
     <string name="dialog_geotag_title">Məkanı yadda saxla</string>
     <string name="dialog_geotag_title_2">Son bir addım</string>
-    <string name="dialog_geotag_title_3">Sistemin yeri sönülüdür</string>
+    <string name="dialog_geotag_title_3">Sistemin Məkan funksiyası deaktivdir</string>
     <string name="dialog_got_it">Anladım</string>
     <string name="dialog_hold_portrait">İdeal Moto 360 Camera təcrübəsi üçün portreti saxlayın</string>
     <string name="dialog_hold_steady">Kameranı sabit saxla</string>
@@ -215,6 +196,7 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="help_next">Növbəti</string>
     <string name="image_360_desc">Bu 360 şəkildir. Bu şəkli Moto 360 Editor ilə redaktə edə bilərsiniz.</string>
     <string name="image_360_name">360 Photo</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">DƏRİNLİK AKTİV EDİLDİ</string>
     <string name="indicate_mode_mono">HƏQİQİ AvəQ</string>
@@ -226,23 +208,26 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="indicate_mode_ultra_wide">ULTRA-GENİŞ BUCAQ</string>
     <string name="indicate_mode_video">VİDEO</string>
     <string name="indicate_mode_wide_angle">GENİŞ BUCAQ</string>
+    <string name="indicate_mode_wide_angle_selfie">GENİŞ BUCAQLI SELFİ</string>
     <string name="internal_storage">daxili yaddaş</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Bina tanınması dünyanın ən məşhur binaları barədə məlumat təklif edir.&lt;br/>&lt;br/>Bu funksiyanı aktiv etmək üçün quraşdırın.</string>
-    <string name="landmark_install_over_data">Bina tanınmasının yüklənmə ölçüsü 92 MB-dır. Onun mobil data ilə yüklənməsi əlavə xərclərə səbəb ola bilər.</string>
-    <string name="landmark_notification_downloading">Bina tanınması yüklənir</string>
-    <string name="landmark_notification_install">Bina tanınmasının quraşdırılması</string>
-    <string name="landmark_notification_install_complete">Bina tanınmasının quraşdırılması bitdi</string>
-    <string name="landmark_notification_install_failed">Bina tanınmasının quraşdırılması alınmadı</string>
+    <string name="landmark_install_message">Bina tanınması dünyanın ən məşhur binaları barədə məlumat təklif edir.&lt;br/>&lt;br/>Bu funksiyanı aktiv etmək üçün Bina məlumat bazasını yükləyin.</string>
+    <string name="landmark_install_over_data">Bina məlumat bazasının yüklənmə ölçüsü 92 MB-dır. Onun mobil data ilə yüklənməsi əlavə xərclərə səbəb ola bilər.</string>
+    <string name="landmark_notification_downloading">Bina məlumat bazası yüklənir</string>
+    <string name="landmark_notification_install">Bina məlumat bazası quraşdırılır</string>
+    <string name="landmark_notification_install_complete">Bina məlumat bazasının quraşdırılması bitdi</string>
+    <string name="landmark_notification_install_failed">Bina məlumat bazasının quraşdırılması alınmadı</string>
     <string name="landmark_notification_install_invalid_url">Binanın məlumat bazası mövcud deyil, ən son Kamera versiyasına yeniləyin</string>
-    <string name="landmark_notification_install_out_of_space">Bina tanınmasını quraşdırmaq üçün yaddaş kifayət deyil</string>
+    <string name="landmark_notification_install_out_of_space">Bina məlumat bazasını quraşdırmaq üçün yaddaş kifayət deyil</string>
+    <string name="landmark_notification_paused">İnternet olduqda binanın məlumat bazası yüklənməyə davam edəcək</string>
+    <string name="landmark_notification_queued">İnternet olduqda binanın məlumat bazası yüklənməyə başlayacaq</string>
     <string name="main_setting_amz_barcode">Amazon ştrixkod skaneri</string>
     <string name="main_setting_amz_privacy">Amazon Məxfilik Qeydi</string>
     <string name="main_setting_amz_terms">İstifadə Şərtləri</string>
     <string name="main_setting_assistive_grid">Köməkçi şəbəkə</string>
     <string name="main_setting_begin_paren_suffix">" ("</string>
     <string name="main_setting_category_general">Ümumi</string>
-    <string name="main_setting_category_help">Kömək</string>
+    <string name="main_setting_category_help">Yardım</string>
     <string name="main_setting_category_photo">Şəkil</string>
     <string name="main_setting_category_smart_camera">Smart Camera</string>
     <string name="main_setting_category_video">Video</string>
@@ -258,6 +243,8 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="main_setting_image_ratio">Şəkil ölçüsü (arxa)</string>
     <string name="main_setting_image_ratio_front">Şəkil ölçüsü (ön)</string>
     <string name="main_setting_landmark_detection">Bina tanınması</string>
+    <string name="main_setting_landmark_version_current">Məlumat bazasının versiyası: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Məlumat bazası quraşdırılmayıb</string>
     <string name="main_setting_licenses">Açıq mənbə lisenziyaları</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -293,10 +280,13 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="perm_required_alert_title">İcazə tələb edilir</string>
     <string name="photos_depth_desc">Fokusu seçmək, fonu dəyişmək və ya ağ-qaraya dəyişilməli yeri seçmək üçün dərinlik redaktorundan istifadə edin.</string>
     <string name="photos_depth_name">Dərinlik aktiv edildi</string>
+    <string name="photos_notification_desc">Google Photos ilə qeyri-məhdud yaddaş əldə et</string>
+    <string name="photos_notification_title">Google Photos-da nüsxələ</string>
+    <string name="qcfa_resolution_description">Adaptiv Zəif İşıq</string>
     <string name="retake">Yenidən çəkin</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
-    <string name="select_color_use_tip">Rəngi seçmək üçün istənilən yerə vurun.</string>
+    <string name="select_color_use_tip">Rəngi seçmək üçün istənilən yerə toxunun.</string>
     <string name="setting_auto">Avto</string>
     <string name="setting_auto_flash">Avto fləş</string>
     <string name="setting_auto_flash_off">Flash deaktiv</string>
@@ -335,6 +325,7 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="setting_mode_slow_motion">Asta hərəkət</string>
     <string name="setting_mode_ultra_wide">Ultra-geniş bucaq</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Geniş bucaqlı selfi</string>
     <string name="setting_off">Deaktiv</string>
     <string name="setting_on">Aktiv</string>
     <string name="setting_persist">Saxlayın</string>
@@ -351,22 +342,27 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="setting_timer_dialog_title">TAYMER</string>
     <string name="setting_torch">Fənər</string>
     <string name="setting_true">həqiqi</string>
+    <string name="shortcut_desc_depth">Dərin şəkil</string>
+    <string name="shortcut_desc_selfie">Selfi</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Smart Camera</string>
+    <string name="smartcam_no_detections">Saxlanmış obyekt və ya bina yoxdur</string>
     <string name="storage_location_external">SD kart</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Yaddaş yoxdur</string>
+    <string name="toast_battery_saver">Siz hazırda enerjiyə qənaət rejimindəsiz, bəzi funksiyalar məhdud ola bilər</string>
     <string name="toast_geotag_message_1">Məkanın saxlanmasını aktiv etmək üçün məkan icazəsi verməlisiniz.</string>
-    <string name="toast_geotag_message_2">Məkan parametri yalnız sistemin yer parametri yandırılan zaman qüvvəyə minir.</string>
+    <string name="toast_geotag_message_2">Məkan parametri yalnız sistemin məkan parametri aktiv edildikdə qüvvəyə minir.</string>
     <string name="tooltip_camera_switch_360">Fərqli kamera seçimlərinə keçməyə çalışın.</string>
     <string name="tooltip_capture_360">Bu bağlayıcı düyməsində vurmaqla 360° şəkil və ya video çəkməyə çalışın.</string>
-    <string name="tooltip_capture_key_360">Eyni zamanda arxadakı bağlayıcı düyməni tutmağa çalışın.</string>
-    <string name="tooltip_dual_camera_depth_photo">Xüsusi redaktə funksiyalarını aktiv etmək üçün şəkilləri əlavə məlumatla çəkin.</string>
+    <string name="tooltip_capture_key_360">Eyni zamanda Mod-un arxasındakı bağlayıcı düyməni tutmağa çalışın.</string>
     <string name="tooltip_first_use_zoom_button">Geniş bucağa keçmək üçün bura toxunun.</string>
     <string name="tooltip_gallery_360">Sol sürüşdürməklə 360° şəkil və ya videonuzun necə çıxdığına baxın.</string>
     <string name="tooltip_minimap_viewfinder">Aşağı şəklin soluna və ya sağına vurun.</string>
     <string name="tooltip_mode_switch_360">Fərqli rejimlərdə 360° çəkməyə çalışın!</string>
-    <string name="tooltip_smart_camera">Obyekt barədə ətraflı məlumat almaq üçün vurun.</string>
-    <string name="tooltip_smart_camera_disable">Bunu Parametrlərdən söndürə bilərsiniz.</string>
+    <string name="tooltip_modes_list">Şəkil çəkməyin yeni yollarını kəşf edin.</string>
+    <string name="tooltip_smart_camera">Obyekt barədə ətraflı məlumat almaq üçün toxunun.</string>
+    <string name="tooltip_smart_camera_disable">Bunu Ayarlardan deaktiv edə bilərsiniz.</string>
     <string name="tooltip_spherical_viewfinder">Görünüşü idarə etmək üçün vurun və ya miqyası böyüdün və kiçildin.</string>
     <string name="tooltip_viewfinder_switch">Ekrana fərqli baxmaq üçün buna vurmağa çalışın.</string>
     <string name="video_360_desc">Bu 360 dərəcəli videodur. Bu videonu Moto 360 Redaktor ilə redaktə edə bilərsiniz.</string>
@@ -387,4 +383,10 @@ Aşağıdakılarla razılaşın və Parametrlərdə Məkanı yandırın."</strin
     <string name="zoom_hint_full">DOLU</string>
     <string name="zoom_hint_wide">GENİŞ</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">MÜDDƏT ARALIĞI</string>
+    <string name="setting_mode_timelapse">Müddət aralığı</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

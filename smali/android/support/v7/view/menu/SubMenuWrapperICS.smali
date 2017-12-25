@@ -7,10 +7,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xe
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0xe
 .end annotation

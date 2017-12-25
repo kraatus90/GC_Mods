@@ -137,13 +137,13 @@
 .end method
 
 .method public getImageResXDescription()Ljava/lang/String;
-    .locals 5
+    .locals 4
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v4, 0x1
-
     const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     iget-object v0, p0, Lcom/drew/metadata/jfif/JfifDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -157,28 +157,28 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, "%d dot%s"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
+    aput-object v0, v1, v2
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-eq v0, v4, :cond_1
+    const-string/jumbo v2, "%d dot%s"
+
+    if-eq v0, v3, :cond_1
 
     const-string/jumbo v0, "s"
 
     :goto_0
-    aput-object v0, v2, v4
+    aput-object v0, v1, v3
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -194,13 +194,13 @@
 .end method
 
 .method public getImageResYDescription()Ljava/lang/String;
-    .locals 5
+    .locals 4
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v4, 0x1
-
     const/4 v2, 0x0
+
+    const/4 v3, 0x1
 
     iget-object v0, p0, Lcom/drew/metadata/jfif/JfifDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -214,28 +214,28 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, "%d dot%s"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    aput-object v0, v2, v3
+    aput-object v0, v1, v2
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-eq v0, v4, :cond_1
+    const-string/jumbo v2, "%d dot%s"
+
+    if-eq v0, v3, :cond_1
 
     const-string/jumbo v0, "s"
 
     :goto_0
-    aput-object v0, v2, v4
+    aput-object v0, v1, v3
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -251,7 +251,7 @@
 .end method
 
 .method public getImageVersionDescription()Ljava/lang/String;
-    .locals 6
+    .locals 4
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -269,31 +269,27 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, "%d.%d"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v2
 
-    const v5, 0xff00
+    const v3, 0xff00
 
-    and-int/2addr v4, v5
+    and-int/2addr v2, v3
 
-    shr-int/lit8 v4, v4, 0x8
+    shr-int/lit8 v2, v2, 0x8
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    aput-object v2, v1, v3
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -305,9 +301,13 @@
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "%d.%d"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -32,6 +32,12 @@
 
 # instance fields
 .field private final mPersistType:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;"
+        }
+    .end annotation
+.end field
 
 .field protected mPersistedValue:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -67,6 +73,13 @@
 
 .method constructor <init>(Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
     .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;",
+            ")V"
+        }
+    .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -247,6 +260,12 @@
 
 .method public getPersistType()Lcom/motorola/camera/settings/PersistBehavior$PersistType;
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/motorola/camera/settings/PersistBehavior$PersistType;"
+        }
+    .end annotation
 
     iget-object v0, p0, Lcom/motorola/camera/settings/PersistBehavior;->mPersistType:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
 

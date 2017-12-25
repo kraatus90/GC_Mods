@@ -221,11 +221,11 @@
         }
     .end annotation
 
-    const/4 v12, 0x6
+    const/16 v12, 0x9
 
-    const/4 v11, 0x2
+    const/4 v11, 0x6
 
-    const/4 v1, 0x0
+    const/4 v10, 0x2
 
     const/16 v4, 0xe
 
@@ -237,67 +237,67 @@
 
     if-eqz p1, :cond_0
 
-    new-instance v2, Lcom/google/android/gms/internal/zznn$zza$zza$zza;
+    new-instance v1, Lcom/google/android/gms/internal/zznn$zza$zza$zza;
 
-    invoke-direct {v2}, Lcom/google/android/gms/internal/zznn$zza$zza$zza;-><init>()V
+    invoke-direct {v1}, Lcom/google/android/gms/internal/zznn$zza$zza$zza;-><init>()V
 
-    iput-object v2, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->zzaNd:Lcom/google/android/gms/internal/zznn$zza$zza$zza;
+    iput-object v1, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->zzaNd:Lcom/google/android/gms/internal/zznn$zza$zza$zza;
 
-    instance-of v2, p1, Ljava/lang/String;
+    instance-of v1, p1, Ljava/lang/String;
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
-    instance-of v2, p1, Ljava/lang/Integer;
+    instance-of v1, p1, Ljava/lang/Integer;
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
-    instance-of v2, p1, Ljava/lang/Long;
+    instance-of v1, p1, Ljava/lang/Long;
 
-    if-nez v2, :cond_3
+    if-nez v1, :cond_3
 
-    instance-of v2, p1, Ljava/lang/Double;
+    instance-of v1, p1, Ljava/lang/Double;
 
-    if-nez v2, :cond_4
+    if-nez v1, :cond_4
 
-    instance-of v2, p1, Ljava/lang/Float;
+    instance-of v1, p1, Ljava/lang/Float;
 
-    if-nez v2, :cond_5
+    if-nez v1, :cond_5
 
-    instance-of v2, p1, Ljava/lang/Boolean;
+    instance-of v1, p1, Ljava/lang/Boolean;
 
-    if-nez v2, :cond_6
+    if-nez v1, :cond_6
 
-    instance-of v2, p1, Ljava/lang/Byte;
+    instance-of v1, p1, Ljava/lang/Byte;
 
-    if-nez v2, :cond_7
+    if-nez v1, :cond_7
 
-    instance-of v2, p1, [B
+    instance-of v1, p1, [B
 
-    if-nez v2, :cond_8
+    if-nez v1, :cond_8
 
-    instance-of v2, p1, [Ljava/lang/String;
+    instance-of v1, p1, [Ljava/lang/String;
 
-    if-nez v2, :cond_9
+    if-nez v1, :cond_9
 
-    instance-of v2, p1, [J
+    instance-of v1, p1, [J
 
-    if-nez v2, :cond_a
+    if-nez v1, :cond_a
 
-    instance-of v2, p1, [F
+    instance-of v1, p1, [F
 
-    if-nez v2, :cond_b
+    if-nez v1, :cond_b
 
-    instance-of v2, p1, Lcom/google/android/gms/wearable/Asset;
+    instance-of v1, p1, Lcom/google/android/gms/wearable/Asset;
 
-    if-nez v2, :cond_c
+    if-nez v1, :cond_c
 
-    instance-of v2, p1, Lcom/google/android/gms/wearable/DataMap;
+    instance-of v1, p1, Lcom/google/android/gms/wearable/DataMap;
 
-    if-nez v2, :cond_d
+    if-nez v1, :cond_d
 
-    instance-of v2, p1, Ljava/util/ArrayList;
+    instance-of v1, p1, Ljava/util/ArrayList;
 
-    if-nez v2, :cond_f
+    if-nez v1, :cond_f
 
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -337,7 +337,7 @@
     return-object v5
 
     :cond_1
-    iput v11, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
+    iput v10, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 
     iget-object v0, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->zzaNd:Lcom/google/android/gms/internal/zznn$zza$zza$zza;
 
@@ -349,7 +349,7 @@
     return-object v5
 
     :cond_2
-    iput v12, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
+    iput v11, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 
     iget-object v0, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->zzaNd:Lcom/google/android/gms/internal/zznn$zza$zza$zza;
 
@@ -528,9 +528,7 @@
     goto/16 :goto_0
 
     :cond_d
-    const/16 v1, 0x9
-
-    iput v1, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
+    iput v12, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 
     check-cast p1, Lcom/google/android/gms/wearable/DataMap;
 
@@ -599,17 +597,19 @@
     goto :goto_1
 
     :cond_f
-    const/16 v2, 0xa
+    const/16 v1, 0xa
 
-    iput v2, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
+    iput v1, v5, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 
     check-cast p1, Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
+    move-result v1
 
-    new-array v6, v2, [Lcom/google/android/gms/internal/zznn$zza$zza;
+    new-array v6, v1, [Lcom/google/android/gms/internal/zznn$zza$zza;
+
+    const/4 v1, 0x0
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -669,17 +669,15 @@
     :cond_13
     iget v9, v8, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 
+    if-eq v9, v10, :cond_11
+
+    iget v9, v8, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
+
     if-eq v9, v11, :cond_11
 
     iget v9, v8, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 
     if-eq v9, v12, :cond_11
-
-    iget v9, v8, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
-
-    const/16 v10, 0x9
-
-    if-eq v9, v10, :cond_11
 
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
@@ -799,7 +797,7 @@
 .end method
 
 .method private static zza(Ljava/util/List;Lcom/google/android/gms/internal/zznn$zza$zza$zza;I)Ljava/util/ArrayList;
-    .locals 12
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -812,8 +810,6 @@
             "Ljava/util/ArrayList;"
         }
     .end annotation
-
-    const/4 v11, 0x0
 
     const/4 v1, 0x0
 
@@ -882,7 +878,9 @@
     throw v0
 
     :cond_1
-    invoke-virtual {v3, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const/4 v0, 0x0
+
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
     add-int/lit8 v0, v2, 0x1
@@ -963,6 +961,8 @@
         }
     .end annotation
 
+    const/4 v1, 0x0
+
     const/16 v6, 0xe
 
     const/16 v5, 0x9
@@ -970,8 +970,6 @@
     const/4 v4, 0x6
 
     const/4 v3, 0x2
-
-    const/4 v1, 0x0
 
     iget v0, p3, Lcom/google/android/gms/internal/zznn$zza$zza;->type:I
 

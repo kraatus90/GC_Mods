@@ -17,11 +17,11 @@
 
     const/4 v2, 0x0
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/zxing/aztec/encoder/SimpleToken;
 
-    invoke-direct {v0, v2, v1, v1}, Lcom/google/zxing/aztec/encoder/SimpleToken;-><init>(Lcom/google/zxing/aztec/encoder/Token;II)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, v2, v2}, Lcom/google/zxing/aztec/encoder/SimpleToken;-><init>(Lcom/google/zxing/aztec/encoder/Token;II)V
 
     sput-object v0, Lcom/google/zxing/aztec/encoder/Token;->EMPTY:Lcom/google/zxing/aztec/encoder/Token;
 

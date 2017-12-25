@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final CAMERA_REAR_FACING:Ljava/lang/String; = "Camera_rear_facing"
+
 .field public static final CAPTURE_DIRECTION_EXTRA:Ljava/lang/String; = "direction"
 
 .field public static final CAPTURE_GUIDE_POINT:Ljava/lang/String; = "guidePosition"
@@ -96,6 +98,18 @@
 
 .field public static final WIDE_SELFIE_PREVIEW_SIZE_WIDTH:I = 0x140
 
+.field private static mBooleanSettings:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static sPaddingBottom:F
 
 .field public static sPreviewAreaHeight:I
@@ -117,6 +131,12 @@
 
     sput-object v0, Lcom/motorola/camera/panorama/PanoHelper;->TAG:Ljava/lang/String;
 
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lcom/motorola/camera/panorama/PanoHelper;->mBooleanSettings:Ljava/util/HashMap;
+
     return-void
 .end method
 
@@ -125,6 +145,25 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    return-void
+.end method
+
+.method public static clearSetting(Ljava/lang/String;)V
+    .locals 1
+
+    sget-object v0, Lcom/motorola/camera/panorama/PanoHelper;->mBooleanSettings:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/panorama/PanoHelper;->mBooleanSettings:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
     return-void
 .end method
 
@@ -219,7 +258,7 @@
 
     move-result v5
 
-    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isRearCamera()Z
+    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isProcessingRearCamera()Z
 
     move-result v3
 
@@ -1655,6 +1694,75 @@
 
     :cond_0
     :goto_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_0
+.end method
+
+.method public static isProcessingRearCamera()Z
+    .locals 4
+
+    const/4 v1, 0x0
+
+    sget-object v0, Lcom/motorola/camera/panorama/PanoHelper;->mBooleanSettings:Ljava/util/HashMap;
+
+    const-string/jumbo v2, "Camera_rear_facing"
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_FACING:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    sget-object v2, Lcom/motorola/camera/panorama/PanoHelper;->mBooleanSettings:Ljava/util/HashMap;
+
+    const-string/jumbo v3, "Camera_rear_facing"
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    sget-object v0, Lcom/motorola/camera/panorama/PanoHelper;->mBooleanSettings:Ljava/util/HashMap;
+
+    const-string/jumbo v1, "Camera_rear_facing"
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
     return v0
 
     :cond_1

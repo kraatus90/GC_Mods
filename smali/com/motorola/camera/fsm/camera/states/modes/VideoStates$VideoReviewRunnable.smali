@@ -86,7 +86,7 @@
 
     move-result-object v2
 
-    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     invoke-virtual {v1}, Lcom/motorola/camera/capturedmediadata/CapturedVideoData;->getStoredUri()Landroid/net/Uri;
 
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    invoke-static {v2, v3, v1}, Lcom/motorola/camera/saving/SaveImageService;->updateMediaStoreSync(ILandroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+    invoke-static {v2, v3, v1}, Lcom/motorola/camera/saving/SaveImageService;->updateMediaStoreSync(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object v1
 

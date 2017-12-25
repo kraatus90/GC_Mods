@@ -25,15 +25,13 @@
 # static fields
 .field private static final BASE_URL:Ljava/lang/String; = "https://api.cloudsightapi.com"
 
-.field private static final DEFAULT_POLL_TIMEOUT:I = 0x3a98
-
 .field public static final EMPTY_STRING:Ljava/lang/String; = ""
 
-.field public static final IMAGE_COMPRESS_FORMAT:Landroid/graphics/Bitmap$CompressFormat;
+.field private static final IMAGE_COMPRESS_FORMAT:Landroid/graphics/Bitmap$CompressFormat;
 
-.field public static final IMAGE_COMPRESS_QUALITY:I = 0x50
+.field private static final IMAGE_COMPRESS_QUALITY:I = 0x50
 
-.field public static final IMAGE_FILENAME:Ljava/lang/String; = "image.jpg"
+.field private static final IMAGE_FILENAME:Ljava/lang/String; = "image.jpg"
 
 .field private static final IMAGE_SIZE:I = 0x400
 
@@ -49,18 +47,6 @@
 
 .field private static final PARAM_NAME_LONGITUDE:Ljava/lang/String; = "image_request[longitude]"
 
-.field private static final REASON_BLURRY:Ljava/lang/String; = "blurry"
-
-.field private static final REASON_BRIGHT:Ljava/lang/String; = "bright"
-
-.field private static final REASON_CLOSE:Ljava/lang/String; = "close"
-
-.field private static final REASON_DARK:Ljava/lang/String; = "dark"
-
-.field private static final REASON_OFFENSIVE:Ljava/lang/String; = "offensive"
-
-.field private static final REASON_UNSURE:Ljava/lang/String; = "unsure"
-
 .field private static final REQUESTS_URL:Ljava/lang/String; = "https://api.cloudsightapi.com/image_requests"
 
 .field private static final REQUEST_POLL_WAIT:I = 0x3e8
@@ -69,17 +55,15 @@
 
 .field private static final SEC_TO_MS:I = 0x3e8
 
-.field private static final STATUS_COMPLETED:Ljava/lang/String; = "completed"
-
-.field private static final STATUS_NOT_COMPLETED:Ljava/lang/String; = "not completed"
-
-.field private static final STATUS_NOT_FOUND:Ljava/lang/String; = "not found"
-
-.field private static final STATUS_SKIPPED:Ljava/lang/String; = "skipped"
-
-.field private static final STATUS_TIMEOUT:Ljava/lang/String; = "timeout"
-
 .field private static final TAG:Ljava/lang/String;
+
+
+# instance fields
+.field private mRetryMessage:Ljava/lang/String;
+
+.field private mUploadEndTime:J
+
+.field private mUploadStartTime:J
 
 
 # direct methods
@@ -105,6 +89,30 @@
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lcom/motorola/camera/detector/runnables/DetectorRunnable;-><init>(Lcom/motorola/camera/detector/FrameData;Lcom/motorola/camera/detector/Detector$OnDetectionCallback;)V
+
+    return-void
+.end method
+
+.method private setUploadEndTime()V
+    .locals 2
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mUploadEndTime:J
+
+    return-void
+.end method
+
+.method private setUploadStartTime()V
+    .locals 2
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mUploadStartTime:J
 
     return-void
 .end method
@@ -155,6 +163,14 @@
 
     move-result v1
 
+    iget-object v2, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mRetryMessage:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/2addr v1, v2
+
     int-to-long v2, v1
 
     invoke-direct {v0, v2, v3}, Lcom/motorola/camera/detector/results/tidbit/Tidbit;-><init>(J)V
@@ -183,7 +199,13 @@
 
     iput-object v2, v1, Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;->locale:Ljava/util/Locale;
 
+    iget-object v2, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mRetryMessage:Ljava/lang/String;
+
+    iput-object v2, v1, Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;->retryMessage:Ljava/lang/String;
+
     iput-object v1, v0, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    invoke-virtual {p0, v0}, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->updateCheckinData(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
 
     return-object v0
 .end method
@@ -241,14 +263,6 @@
 
     move-result-object v12
 
-    invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
-
-    move-result-object v13
-
     sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v2}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
@@ -294,7 +308,7 @@
 
     if-eqz v6, :cond_5
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_28
 
     sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -332,6 +346,8 @@
     const/4 v11, 0x0
 
     :try_start_0
+    invoke-direct/range {p0 .. p0}, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->setUploadStartTime()V
+
     new-instance v2, Ljava/net/URL;
 
     const-string/jumbo v3, "https://api.cloudsightapi.com/image_requests"
@@ -402,7 +418,7 @@
 
     const-string/jumbo v3, "image_request[language]"
 
-    invoke-virtual {v2, v3, v13}, Lcom/motorola/camera/MultipartRequest;->addField(Ljava/lang/String;Ljava/lang/String;)Lcom/motorola/camera/MultipartRequest;
+    invoke-virtual {v2, v3, v12}, Lcom/motorola/camera/MultipartRequest;->addField(Ljava/lang/String;Ljava/lang/String;)Lcom/motorola/camera/MultipartRequest;
 
     move-result-object v2
 
@@ -421,6 +437,10 @@
     invoke-virtual {v2}, Lcom/motorola/camera/MultipartRequest;->doRequest()I
 
     move-result v2
+
+    invoke-direct/range {p0 .. p0}, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->setUploadEndTime()V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->setScanStartTime()V
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
@@ -454,7 +474,7 @@
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :cond_2
@@ -505,7 +525,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :cond_7
@@ -553,7 +573,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :cond_b
@@ -605,7 +625,13 @@
 
     move-result-wide v6
 
-    const-wide/16 v8, 0x3a98
+    invoke-static {}, Lcom/motorola/camera/detector/ScanningEngine;->getInstance()Lcom/motorola/camera/detector/ScanningEngine;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/motorola/camera/detector/ScanningEngine;->getCloudSightProcessingTimeout()J
+
+    move-result-wide v8
 
     add-long/2addr v6, v8
 
@@ -759,7 +785,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :cond_13
@@ -825,7 +851,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :cond_17
@@ -869,7 +895,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     :cond_1b
@@ -902,66 +928,111 @@
 
     move-result-wide v14
 
-    cmp-long v9, v14, v6
+    const-wide/16 v16, 0x7d0
+
+    sub-long v16, v6, v16
+
+    cmp-long v9, v14, v16
 
     if-ltz v9, :cond_10
 
     :cond_1e
-    iget-object v3, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->name:Ljava/lang/String;
-
-    if-nez v3, :cond_21
-
-    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v2, :cond_1f
-
-    sget-object v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v3, "No detection found for image"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    :cond_1f
-    const/4 v2, 0x0
-
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->isRecycled()Z
-
-    move-result v3
-
-    if-nez v3, :cond_20
-
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
-
-    :cond_20
-    return-object v2
-
-    :cond_21
-    :try_start_7
     new-instance v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;
 
     move-object/from16 v0, p0
 
     invoke-direct {v3, v0}, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;-><init>(Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;)V
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    :try_start_8
+    :try_start_7
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->status:Ljava/lang/String;
+
+    const-string/jumbo v6, "skipped"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_1f
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->status:Ljava/lang/String;
+
+    const-string/jumbo v6, "not found"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_23
+
+    :cond_1f
     iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->name:Ljava/lang/String;
+
+    if-nez v5, :cond_23
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->reason:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iput-object v5, v0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mRetryMessage:Ljava/lang/String;
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->reason:Ljava/lang/String;
 
     iput-object v5, v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;->name:Ljava/lang/String;
 
+    sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v5, :cond_20
+
+    sget-object v5, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v6, "No detection found for image"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_20
+    :goto_2
+    sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v5, :cond_21
+
+    sget-object v5, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "Response: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mRetryMessage:Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_21
     iget-object v2, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->token:Ljava/lang/String;
 
     iput-object v2, v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;->token:Ljava/lang/String;
 
     iput-object v12, v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;->locale:Ljava/lang/String;
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_1
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->isRecycled()Z
 
@@ -972,19 +1043,54 @@
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_22
-    :goto_2
+    :goto_3
     return-object v3
+
+    :cond_23
+    :try_start_8
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->status:Ljava/lang/String;
+
+    const-string/jumbo v6, "not completed"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_25
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->status:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iput-object v5, v0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mRetryMessage:Ljava/lang/String;
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->status:Ljava/lang/String;
+
+    iput-object v5, v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;->name:Ljava/lang/String;
+
+    sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v5, :cond_20
+
+    sget-object v5, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v6, "No detection found for image"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
+
+    goto :goto_2
 
     :catch_0
     move-exception v2
 
-    move-object v3, v11
-
-    :goto_3
+    :goto_4
     :try_start_9
     sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v5, :cond_23
+    if-eqz v5, :cond_24
 
     sget-object v5, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->TAG:Ljava/lang/String;
 
@@ -994,7 +1100,7 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    :cond_23
+    :cond_24
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v2
@@ -1003,7 +1109,45 @@
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
-    goto :goto_2
+    goto :goto_3
+
+    :cond_25
+    :try_start_a
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->status:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iput-object v5, v0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mRetryMessage:Ljava/lang/String;
+
+    iget-object v5, v2, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResponse;->name:Ljava/lang/String;
+
+    iput-object v5, v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;->name:Ljava/lang/String;
+
+    sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v5, :cond_26
+
+    sget-object v5, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v6, "Detection found for image"
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_26
+    iget-object v5, v3, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable$CSResult;->name:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mFrameData:Lcom/motorola/camera/detector/FrameData;
+
+    const/4 v7, 0x4
+
+    invoke-static {v5, v6, v7}, Lcom/motorola/camera/detector/SmartCamUtil;->saveDetection(Ljava/lang/String;Lcom/motorola/camera/detector/FrameData;I)V
+    :try_end_a
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_0
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
+
+    goto/16 :goto_2
 
     :catchall_0
     move-exception v2
@@ -1012,19 +1156,21 @@
 
     move-result v3
 
-    if-nez v3, :cond_24
+    if-nez v3, :cond_27
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
 
-    :cond_24
+    :cond_27
     throw v2
 
     :catch_1
     move-exception v2
 
-    goto :goto_3
+    move-object v3, v11
 
-    :cond_25
+    goto :goto_4
+
+    :cond_28
     move-object v9, v3
 
     move-object v10, v5
@@ -1040,4 +1186,45 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method protected updateCheckinData(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
+    .locals 6
+
+    const-wide/16 v4, 0x0
+
+    invoke-super {p0, p1}, Lcom/motorola/camera/detector/runnables/DetectorRunnable;->updateCheckinData(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
+
+    sget-object v1, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;->OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;
+
+    sget-object v2, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;->OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
+
+    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/analytics/AlwaysAwareData;->setType(Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_SOURCE;Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;)V
+
+    iget-wide v0, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mUploadStartTime:J
+
+    cmp-long v0, v0, v4
+
+    if-eqz v0, :cond_0
+
+    iget-wide v0, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mUploadEndTime:J
+
+    cmp-long v0, v0, v4
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mAlwaysAwareData:Lcom/motorola/camera/analytics/AlwaysAwareData;
+
+    iget-wide v2, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mUploadEndTime:J
+
+    iget-wide v4, p0, Lcom/motorola/camera/detector/runnables/CloudSightDetectorRunnable;->mUploadStartTime:J
+
+    sub-long/2addr v2, v4
+
+    iput-wide v2, v0, Lcom/motorola/camera/analytics/AlwaysAwareData;->uploadTime:J
+
+    :cond_0
+    return-void
 .end method

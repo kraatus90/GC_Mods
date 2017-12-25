@@ -86,9 +86,9 @@
 .method public zzaW(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/wearable/Channel$GetOutputStreamResult;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/wearable/internal/ChannelImpl$zzb;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/android/gms/wearable/internal/ChannelImpl$zzb;-><init>(Lcom/google/android/gms/common/api/Status;Ljava/io/OutputStream;)V
 

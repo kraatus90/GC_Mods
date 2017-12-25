@@ -43,6 +43,18 @@
     return-void
 .end method
 
+.method public onJpegReprocRequest(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ILcom/motorola/camera/mcf/Mcf$ReprocessType;Lcom/motorola/camera/mcf/McfMetadata;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onPostView(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/McfDepthMap;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public onQueueEmpty()V
     .locals 0
 

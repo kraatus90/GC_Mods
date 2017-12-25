@@ -72,13 +72,13 @@
 
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x5
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x5
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -120,13 +120,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x6
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x6
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -182,13 +182,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/16 v2, 0x8
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/16 v3, 0x8
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -244,13 +244,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x7
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x7
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -306,13 +306,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x2
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -368,13 +368,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x3
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -430,13 +430,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -492,13 +492,13 @@
     :goto_0
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/zzas$zza$zza;->zzlW:Landroid/os/IBinder;
 
-    const/4 v2, 0x4
+    const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    const/4 v3, 0x4
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    invoke-interface {v0, v2, v1, v4, v3}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

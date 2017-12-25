@@ -233,11 +233,11 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
+    const/4 v1, 0x0
+
     const/16 v5, 0x88
 
     const/4 v4, 0x1
-
-    const/4 v1, 0x0
 
     const/4 v3, 0x0
 
@@ -701,9 +701,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     iget-object v0, p0, Lcom/drew/metadata/exif/NikonType2MakernoteDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -721,13 +721,13 @@
 
     move-result v1
 
-    if-eq v1, v3, :cond_1
+    if-eq v1, v2, :cond_1
 
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v3}, Lcom/drew/lang/Rational;->toSimpleString(Z)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lcom/drew/lang/Rational;->toSimpleString(Z)Ljava/lang/String;
 
     move-result-object v0
 
@@ -749,7 +749,7 @@
     return-object v0
 
     :cond_0
-    return-object v2
+    return-object v3
 
     :cond_1
     const-string/jumbo v0, "No digital zoom"
@@ -1120,11 +1120,11 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v4, 0x2
+    const/4 v4, 0x0
+
+    const/4 v2, 0x2
 
     const/4 v3, 0x1
-
-    const/4 v2, 0x0
 
     const/4 v1, 0x0
 
@@ -1132,7 +1132,7 @@
 
     check-cast v0, Lcom/drew/metadata/exif/NikonType2MakernoteDirectory;
 
-    invoke-virtual {v0, v4}, Lcom/drew/metadata/exif/NikonType2MakernoteDirectory;->getIntArray(I)[I
+    invoke-virtual {v0, v2}, Lcom/drew/metadata/exif/NikonType2MakernoteDirectory;->getIntArray(I)[I
 
     move-result-object v0
 
@@ -1157,7 +1157,7 @@
 
     check-cast v0, Lcom/drew/metadata/exif/NikonType2MakernoteDirectory;
 
-    invoke-virtual {v0, v4}, Lcom/drew/metadata/exif/NikonType2MakernoteDirectory;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lcom/drew/metadata/exif/NikonType2MakernoteDirectory;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1178,7 +1178,7 @@
     return-object v0
 
     :cond_1
-    return-object v2
+    return-object v4
 
     :cond_2
     aget v1, v0, v3
@@ -1213,11 +1213,11 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
+    const/4 v1, 0x0
+
     const/16 v4, 0x84
 
     const/16 v3, 0x2d
-
-    const/4 v1, 0x0
 
     iget-object v0, p0, Lcom/drew/metadata/exif/NikonType2MakernoteDescriptor;->_directory:Lcom/drew/metadata/Directory;
 

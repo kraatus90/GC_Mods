@@ -181,19 +181,25 @@
 
     invoke-virtual {v0}, Ljavax/net/ssl/HttpsURLConnection;->getInputStream()Ljava/io/InputStream;
 
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/motorola/camera/HttpUtil;->responseToString(Ljava/io/InputStream;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljavax/net/ssl/HttpsURLConnection;->getInputStream()Ljava/io/InputStream;
+
     move-result-object v0
 
-    invoke-static {v0}, Lcom/motorola/camera/HttpUtil;->responseToString(Ljava/io/InputStream;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
 
-    move-result-object v0
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get0()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -223,35 +229,35 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_1
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get0()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
-    new-instance v1, Lcom/google/gson/GsonBuilder;
+    new-instance v0, Lcom/google/gson/GsonBuilder;
 
-    invoke-direct {v1}, Lcom/google/gson/GsonBuilder;-><init>()V
+    invoke-direct {v0}, Lcom/google/gson/GsonBuilder;-><init>()V
 
-    invoke-virtual {v1}, Lcom/google/gson/GsonBuilder;->setPrettyPrinting()Lcom/google/gson/GsonBuilder;
+    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->setPrettyPrinting()Lcom/google/gson/GsonBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
+    invoke-virtual {v0}, Lcom/google/gson/GsonBuilder;->create()Lcom/google/gson/Gson;
 
-    move-result-object v1
+    move-result-object v0
 
     const-class v2, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$SearchResults;
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -398,9 +404,7 @@
 .end method
 
 .method protected onPostExecute(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$SearchResults;)V
-    .locals 4
-
-    const/4 v2, 0x0
+    .locals 2
 
     if-eqz p1, :cond_0
 
@@ -418,15 +422,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$SearchResults;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$SearchResults;->webPages:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$WebPagesResults;
-
-    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-wrap1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$WebPagesResults;)V
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-wrap1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
 
@@ -440,7 +436,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get3(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
     move-result-object v0
 
@@ -448,37 +444,13 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get3(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
     move-result-object v0
 
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onDirty()V
 
     :cond_2
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchAdsTask;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchAdsTask;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchAdsTask;)V
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/String;
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchSearchResultsTask;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;
-
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;->-get2(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture;)Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;->token:Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareSearchCardTexture$FetchAdsTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
     return-void
 .end method
 

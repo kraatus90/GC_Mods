@@ -52,11 +52,11 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 8
+    .locals 6
 
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     if-eq p0, p1, :cond_1
 
@@ -64,133 +64,127 @@
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-ne v1, v2, :cond_3
+    if-ne v0, v1, :cond_3
 
-    move-object v0, p1
+    check-cast p1, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;
 
-    check-cast v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;
+    iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
-    iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
+    if-eqz v0, :cond_4
 
-    if-eqz v1, :cond_4
+    iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
-    iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
+    iget-object v1, p1, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
-    iget-object v2, v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
+    invoke-virtual {v0, v1}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1, v2}, Landroid/content/ComponentName;->equals(Ljava/lang/Object;)Z
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    :cond_0
+    iget-wide v0, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
+
+    iget-wide v2, p1, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_6
+
+    return v4
+
+    :cond_1
+    return v5
+
+    :cond_2
+    return v4
+
+    :cond_3
+    return v4
+
+    :cond_4
+    iget-object v0, p1, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
+
+    if-eqz v0, :cond_0
+
+    return v4
+
+    :cond_5
+    return v4
+
+    :cond_6
+    iget v0, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->weight:F
+
+    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v0
+
+    iget v1, p1, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->weight:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-ne v0, v1, :cond_7
 
-    :cond_0
+    return v5
+
+    :cond_7
+    return v4
+.end method
+
+.method public hashCode()I
+    .locals 6
+
+    iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
+
+    invoke-virtual {v0}, Landroid/content/ComponentName;->hashCode()I
+
+    move-result v0
+
+    :goto_0
+    add-int/lit8 v0, v0, 0x1f
+
+    mul-int/lit8 v0, v0, 0x1f
+
     iget-wide v2, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    iget-wide v4, v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
+    iget-wide v4, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
 
-    cmp-long v1, v2, v4
+    const/16 v1, 0x20
 
-    if-eqz v1, :cond_6
+    ushr-long/2addr v4, v1
 
-    return v6
+    xor-long/2addr v2, v4
 
-    :cond_1
-    return v7
+    long-to-int v1, v2
 
-    :cond_2
-    return v6
+    add-int/2addr v0, v1
 
-    :cond_3
-    return v6
+    mul-int/lit8 v0, v0, 0x1f
 
-    :cond_4
-    iget-object v1, v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
-
-    if-eqz v1, :cond_0
-
-    return v6
-
-    :cond_5
-    return v6
-
-    :cond_6
     iget v1, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->weight:F
 
     invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v1
 
-    iget v2, v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->weight:F
+    add-int/2addr v0, v1
 
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_7
-
-    return v7
-
-    :cond_7
-    return v6
-.end method
-
-.method public hashCode()I
-    .locals 8
-
-    const/16 v0, 0x1f
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
-
-    invoke-virtual {v2}, Landroid/content/ComponentName;->hashCode()I
-
-    move-result v2
-
-    :goto_0
-    add-int/lit8 v1, v2, 0x1f
-
-    mul-int/lit8 v2, v1, 0x1f
-
-    iget-wide v4, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
-
-    iget-wide v6, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->time:J
-
-    const/16 v3, 0x20
-
-    ushr-long/2addr v6, v3
-
-    xor-long/2addr v4, v6
-
-    long-to-int v3, v4
-
-    add-int v1, v2, v3
-
-    mul-int/lit8 v2, v1, 0x1f
-
-    iget v3, p0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->weight:F
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    add-int v1, v2, v3
-
-    return v1
+    return v0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -248,7 +242,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

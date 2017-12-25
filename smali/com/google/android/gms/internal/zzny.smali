@@ -35,11 +35,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-static {p0, p1, v0, v1}, Lcom/google/android/gms/internal/zzny;->zzb(Lcom/google/android/gms/internal/zzny;[BII)Lcom/google/android/gms/internal/zzny;
+    invoke-static {p0, p1, v1, v0}, Lcom/google/android/gms/internal/zzny;->zzb(Lcom/google/android/gms/internal/zzny;[BII)Lcom/google/android/gms/internal/zzny;
 
     move-result-object v0
 
@@ -132,11 +132,11 @@
 
     new-array v0, v0, [B
 
-    const/4 v1, 0x0
+    array-length v1, v0
 
-    array-length v2, v0
+    const/4 v2, 0x0
 
-    invoke-static {p0, v0, v1, v2}, Lcom/google/android/gms/internal/zzny;->zza(Lcom/google/android/gms/internal/zzny;[BII)V
+    invoke-static {p0, v0, v2, v1}, Lcom/google/android/gms/internal/zzny;->zza(Lcom/google/android/gms/internal/zzny;[BII)V
 
     return-object v0
 .end method

@@ -45,35 +45,35 @@
 .end method
 
 .method public getMatrix()[B
-    .locals 6
+    .locals 5
 
-    iget-object v4, p0, Lcom/google/zxing/InvertedLuminanceSource;->delegate:Lcom/google/zxing/LuminanceSource;
+    iget-object v0, p0, Lcom/google/zxing/InvertedLuminanceSource;->delegate:Lcom/google/zxing/LuminanceSource;
 
-    invoke-virtual {v4}, Lcom/google/zxing/LuminanceSource;->getMatrix()[B
+    invoke-virtual {v0}, Lcom/google/zxing/LuminanceSource;->getMatrix()[B
 
-    move-result-object v3
+    move-result-object v1
 
     invoke-virtual {p0}, Lcom/google/zxing/InvertedLuminanceSource;->getWidth()I
 
-    move-result v4
+    move-result v0
 
     invoke-virtual {p0}, Lcom/google/zxing/InvertedLuminanceSource;->getHeight()I
 
-    move-result v5
+    move-result v2
 
-    mul-int v2, v4, v5
+    mul-int/2addr v2, v0
 
-    new-array v1, v2, [B
+    new-array v3, v2, [B
 
     const/4 v0, 0x0
 
     :goto_0
     if-lt v0, v2, :cond_0
 
-    return-object v1
+    return-object v3
 
     :cond_0
-    aget-byte v4, v3, v0
+    aget-byte v4, v1, v0
 
     and-int/lit16 v4, v4, 0xff
 
@@ -83,7 +83,7 @@
 
     int-to-byte v4, v4
 
-    aput-byte v4, v1, v0
+    aput-byte v4, v3, v0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -91,37 +91,37 @@
 .end method
 
 .method public getRow(I[B)[B
-    .locals 3
+    .locals 4
 
-    iget-object v2, p0, Lcom/google/zxing/InvertedLuminanceSource;->delegate:Lcom/google/zxing/LuminanceSource;
+    iget-object v0, p0, Lcom/google/zxing/InvertedLuminanceSource;->delegate:Lcom/google/zxing/LuminanceSource;
 
-    invoke-virtual {v2, p1, p2}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
+    invoke-virtual {v0, p1, p2}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
 
-    move-result-object p2
+    move-result-object v1
 
     invoke-virtual {p0}, Lcom/google/zxing/InvertedLuminanceSource;->getWidth()I
 
-    move-result v1
+    move-result v2
 
     const/4 v0, 0x0
 
     :goto_0
-    if-lt v0, v1, :cond_0
+    if-lt v0, v2, :cond_0
 
-    return-object p2
+    return-object v1
 
     :cond_0
-    aget-byte v2, p2, v0
+    aget-byte v3, v1, v0
 
-    and-int/lit16 v2, v2, 0xff
+    and-int/lit16 v3, v3, 0xff
 
-    rsub-int v2, v2, 0xff
+    rsub-int v3, v3, 0xff
 
-    int-to-byte v2, v2
+    int-to-byte v3, v3
 
-    int-to-byte v2, v2
+    int-to-byte v3, v3
 
-    aput-byte v2, p2, v0
+    aput-byte v3, v1, v0
 
     add-int/lit8 v0, v0, 0x1
 

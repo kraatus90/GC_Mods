@@ -148,7 +148,7 @@
     <string name="cancel">בטל</string>
     <string name="capture_failure">הצילום נכשל. נסה שוב.</string>
     <string name="checkbox_do_not_show">אל תציג שוב</string>
-    <string name="cloudsight_terms">התמונות יישלחו אל CloudSight כדי לספק תוצאות חיפוש. &lt;br/>&lt;br/> המשך פעולה מהווה הסכמה מצדך ל&lt;a href=%1$s>מדיניות הפרטיות&lt;/a> של CloudSight.</string>
+    <string name="cloudsight_terms">בכל פעם שתשתמש בזיהוי אובייקט, התמונה והמיקום (אם מופעל) יישלח אל צד שלישי כדי לספק תוצאות חיפוש.&lt;br/>&lt;br/> בכך שתמשיך, אתה מביע הסכמה לתנאי&lt;a href=%1$s>מדיניות הפרטיות&lt;/a>.</string>
     <string name="dailog_panorama_failed">פנורמה נכשל. נסה שוב.</string>
     <string name="dailog_panorama_not_taken">תמונת הפנורמה לא צולמה.</string>
     <string name="dialog_access_sd_fail">אין אפשרות לצלם מדיה. לא הייתה אפשרות לגשת לכרטיס SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">המכשיר אינו נתמך</string>
     <string name="dialog_disagree">לא מסכים</string>
     <string name="dialog_dismiss">אל תציג שוב</string>
+    <string name="dialog_download">הורד</string>
     <string name="dialog_external_sd_missing">לא ניתן לצלם תמונה. כרטיס SD אינו נגיש.עובר לשטח אחסון פנימי של הטלפון</string>
     <string name="dialog_first_time_set_pure_raw_message">"סוג קובץ לא מעובד זה משמש לעריכה מקצועית של תצלומים.
 
@@ -247,6 +248,7 @@
     <string name="help_next">הבא</string>
     <string name="image_360_desc">"זה תצלום 360. תוכל לערוך תצלום זה באמצעות 'עורך Moto 360'."</string>
     <string name="image_360_name">תצלום 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">תומך בעומק</string>
     <string name="indicate_mode_mono">שחור-לבן אמיתי</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">זווית רחבה במיוחד</string>
     <string name="indicate_mode_video">וידיאו</string>
     <string name="indicate_mode_wide_angle">זווית רחבה</string>
+    <string name="indicate_mode_wide_angle_selfie">סלפי בזווית רחבה</string>
     <string name="internal_storage">אחסון פנימי</string>
     <string name="kilo_bytes">‎ KB</string>
-    <string name="landmark_install_message">התכונה Landmark Recognition (זיהוי ציוני דרך) מציעה מידע על ציוני דרך פופולריים ברחבי העולם.&lt;br/>&lt;br/> יש להתקין את התוכנה כדי לאפשר אותה.</string>
-    <string name="landmark_install_over_data">גודל ההורדה של האפליקציה Landmark Recognition הוא 92‎ MB. התקנתה באמצעות נתונים לנייד עשויה להוביל לחיובים נוספים בגין שימוש בנתונים.</string>
-    <string name="landmark_notification_downloading">מוריד את Landmark Recognition</string>
-    <string name="landmark_notification_install">מתקין את Landmark Recognition</string>
-    <string name="landmark_notification_install_complete">התקנת Landmark Recognition הושלמה</string>
-    <string name="landmark_notification_install_failed">התקנת Landmark Recognition נכשלה</string>
+    <string name="landmark_install_message">התכונה Landmark Recognition (זיהוי ציוני דרך) מציעה מידע על ציוני דרך פופולריים ברחבי העולם.&lt;br/>&lt;br/>יש להוריד מסד הנתונים של Landmark כדי להפעיל תכונה זו.</string>
+    <string name="landmark_install_over_data">גודל ההורדה של מסד הנתונים של Landmark הוא 92‎ MB. הורדה באמצעות נתונים לנייד עשויה להוביל לחיובים נוספים בגין שימוש בנתונים.</string>
+    <string name="landmark_notification_downloading">הורדת מסד הנתונים של Landmark</string>
+    <string name="landmark_notification_install">התקנת מסד הנתונים של Landmark</string>
+    <string name="landmark_notification_install_complete">התקנת מסד הנתונים של Landmark הושלמה</string>
+    <string name="landmark_notification_install_failed">התקנת מסד הנתונים של Landmark נכשלה</string>
     <string name="landmark_notification_install_invalid_url">מסד הנתונים של ציוני הדרך לא זמין, עדכן לגרסת המצלמה החדשה ביותר</string>
-    <string name="landmark_notification_install_out_of_space">אין מספיק שטח אחסון זמין להתקנת Landmark Recognition</string>
+    <string name="landmark_notification_install_out_of_space">אין מספיק שטח אחסון זמין להתקנת מסד הנתונים של Landmark</string>
+    <string name="landmark_notification_paused">הורדת מסד הנתונים של Landmark תמשיך כאשר חיבור לאינטרנט יהיה זמין</string>
+    <string name="landmark_notification_queued">הורדת מסד הנתונים של Landmark תתחיל כאשר חיבור לאינטרנט יהיה זמין</string>
     <string name="main_setting_amz_barcode">סורק ברקודים של Amazon</string>
     <string name="main_setting_amz_privacy">הודעת פרטיות של Amazon</string>
     <string name="main_setting_amz_terms">תנאי שימוש</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">גודל תצלום (אחורית)</string>
     <string name="main_setting_image_ratio_front">גודל תצלום (קדמית)</string>
     <string name="main_setting_landmark_detection">זיהוי ציוני דרך</string>
+    <string name="main_setting_landmark_version_current">גרסת מסד נתונים: %s</string>
+    <string name="main_setting_landmark_version_not_installed">מסד הנתונים לא מותקן</string>
     <string name="main_setting_licenses">רישיונות קוד פתוח</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">נדרשות הרשאות</string>
     <string name="photos_depth_desc">השתמש בעורך העומק כדי לבחור מיקוד, להחליף את הרקע או לבחור אזור שיש לשנות לשחור ולבן.</string>
     <string name="photos_depth_name">עומק אופשר</string>
+    <string name="photos_notification_desc">קבל אחסון בלתי מוגבל עם Google Photos</string>
+    <string name="photos_notification_title">גיבוי ל-Google Photos</string>
+    <string name="qcfa_resolution_description">תאורה נמוכה מסתגלת</string>
     <string name="retake">צלם שוב</string>
     <string name="second_10">"10 שנ'"</string>
     <string name="second_3">"3 שנ'"</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">הילוך איטי</string>
     <string name="setting_mode_ultra_wide">זווית רחבה במיוחד</string>
     <string name="setting_mode_video">וידיאו</string>
+    <string name="setting_mode_wide_angle_selfie">סלפי בזווית רחבה</string>
     <string name="setting_off">כבוי</string>
     <string name="setting_on">מופעל</string>
     <string name="setting_persist">השהה</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">טיימר</string>
     <string name="setting_torch">פנס</string>
     <string name="setting_true">אמת</string>
+    <string name="shortcut_desc_depth">תמונת עומק</string>
+    <string name="shortcut_desc_selfie">סלפי</string>
+    <string name="shortcut_desc_video">וידיאו</string>
     <string name="smartcam_landmark_notification_title">מצלמה חכמה</string>
+    <string name="smartcam_no_detections">אין אובייקטים או ציוני דרך שמורים</string>
     <string name="storage_location_external">כרטיס SD</string>
     <string name="storage_location_internal">טלפון</string>
     <string name="storage_unavailable">האחסון לא זמין</string>
+    <string name="toast_battery_saver">אתה במצב חיסכון בחשמל, ייתכן שתכונות מסוימות יוגבלו</string>
     <string name="toast_geotag_message_1">עליך להעניק את הרשאת המיקום כדי לאפשר שמירת מיקום.</string>
     <string name="toast_geotag_message_2">הגדרת המיקום תיכנס לתוקף רק לאחר הפעלת הגדרת מיקום.</string>
     <string name="tooltip_camera_switch_360">נסה לעבור לאפשרויות אחרות במצלמה.</string>
     <string name="tooltip_capture_360">נסה לצלם תמונה או סרטון ב-360° על ידי הקשה על לחצן התריס.</string>
     <string name="tooltip_capture_key_360">נסה לצלם גם בעזרת לחצן התריס שבגב המודול.</string>
-    <string name="tooltip_dual_camera_depth_photo">צלם תמונות ביותר פירוט כדי לאפשר שימוש בתכונות עריכה מיוחדות.</string>
     <string name="tooltip_first_use_zoom_button">הקש כאן כדי לעבור לזווית רחבה.</string>
     <string name="tooltip_gallery_360">צפה בתוצאות: הצג את תמונת או סרטון ה-360° שצילמת על ידי החלקה לשמאל.</string>
     <string name="tooltip_minimap_viewfinder">בצע תנועה פנורמית לשמאל או לימין בתמונה התחתונה.</string>
     <string name="tooltip_mode_switch_360">נסה לצלם ב-360° באמצעות המצבים השונים!</string>
+    <string name="tooltip_modes_list">גלה דרכים חדשות לצלם תצלומים.</string>
     <string name="tooltip_smart_camera">הקש כדי לקבל פרטים נוספים על האובייקט.</string>
     <string name="tooltip_smart_camera_disable">ניתן לכבות את האפשרות בהגדרות.</string>
     <string name="tooltip_spherical_viewfinder">שלוט בתצוגה בתנועה פנורמית או על-ידי הגדלה/הקטנה של המסך.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">מלא</string>
     <string name="zoom_hint_wide">רחב</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">קיטועי זמן</string>
+    <string name="setting_mode_timelapse">קיטועי זמן</string>
+    <string name="timelapse_config_16x">‏16X</string>
+    <string name="timelapse_config_32x">‏32X</string>
+    <string name="timelapse_config_4x">‏4X</string>
+    <string name="timelapse_config_8x">‏8X</string>
 </resources>

@@ -60,15 +60,15 @@
 .end method
 
 .method private setDefaultImageOrNull()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     iget v0, p0, Lcom/android/volley/toolbox/NetworkImageView;->mDefaultImageId:I
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0, v1}, Lcom/android/volley/toolbox/NetworkImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/android/volley/toolbox/NetworkImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
     :goto_0
     return-void

@@ -31,51 +31,51 @@
 .end method
 
 .method private decodeInternal(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
         }
     .end annotation
 
-    iget-object v2, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
+    iget-object v0, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 
     :cond_1
-    iget-object v3, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
+    iget-object v1, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
-    array-length v4, v3
+    array-length v2, v1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-ge v2, v4, :cond_0
+    if-ge v0, v2, :cond_0
 
-    aget-object v1, v3, v2
+    aget-object v3, v1, v0
 
     :try_start_0
-    iget-object v5, p0, Lcom/google/zxing/MultiFormatReader;->hints:Ljava/util/Map;
+    iget-object v4, p0, Lcom/google/zxing/MultiFormatReader;->hints:Ljava/util/Map;
 
-    invoke-interface {v1, p1, v5}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    invoke-interface {v3, p1, v4}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     :try_end_0
     .catch Lcom/google/zxing/ReaderException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     :catch_0
-    move-exception v0
+    move-exception v3
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
@@ -160,34 +160,34 @@
 .method public reset()V
     .locals 4
 
-    iget-object v1, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
+    iget-object v0, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     return-void
 
     :cond_1
-    iget-object v2, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
+    iget-object v1, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
-    array-length v3, v2
+    array-length v2, v1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-ge v1, v3, :cond_0
+    if-ge v0, v2, :cond_0
 
-    aget-object v0, v2, v1
+    aget-object v3, v1, v0
 
-    invoke-interface {v0}, Lcom/google/zxing/Reader;->reset()V
+    invoke-interface {v3}, Lcom/google/zxing/Reader;->reset()V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
 
 .method public setHints(Ljava/util/Map;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -198,343 +198,339 @@
         }
     .end annotation
 
-    const/4 v5, 0x1
+    const/4 v2, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
     iput-object p1, p0, Lcom/google/zxing/MultiFormatReader;->hints:Ljava/util/Map;
 
     if-nez p1, :cond_4
 
     :cond_0
-    move v3, v6
+    move v1, v3
 
     :goto_0
     if-eqz p1, :cond_1
 
-    sget-object v4, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
+    sget-object v0, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 
-    invoke-interface {p1, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Ljava/util/Collection;
-
-    move-object v1, v4
+    check-cast v0, Ljava/util/Collection;
 
     :cond_1
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    if-nez v1, :cond_5
+    if-nez v0, :cond_5
 
     :cond_2
     :goto_1
-    invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
+    invoke-interface {v4}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_f
+    if-nez v0, :cond_f
 
     :cond_3
     :goto_2
-    invoke-interface {v2}, Ljava/util/Collection;->size()I
+    invoke-interface {v4}, Ljava/util/Collection;->size()I
 
-    move-result v4
+    move-result v0
 
-    new-array v4, v4, [Lcom/google/zxing/Reader;
+    new-array v0, v0, [Lcom/google/zxing/Reader;
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v4, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, [Lcom/google/zxing/Reader;
+    check-cast v0, [Lcom/google/zxing/Reader;
 
-    iput-object v4, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
+    iput-object v0, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
     return-void
 
     :cond_4
-    sget-object v4, Lcom/google/zxing/DecodeHintType;->TRY_HARDER:Lcom/google/zxing/DecodeHintType;
+    sget-object v1, Lcom/google/zxing/DecodeHintType;->TRY_HARDER:Lcom/google/zxing/DecodeHintType;
 
-    invoke-interface {p1, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {p1, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_0
 
-    move v3, v5
+    move v1, v2
 
     goto :goto_0
 
     :cond_5
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_8
+    if-eqz v5, :cond_8
 
     :cond_6
-    move v0, v5
+    move v3, v2
 
     :goto_3
-    if-nez v0, :cond_9
+    if-nez v3, :cond_9
 
     :cond_7
     :goto_4
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
+    sget-object v2, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_a
+    if-nez v2, :cond_a
 
     :goto_5
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
+    sget-object v2, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_b
+    if-nez v2, :cond_b
 
     :goto_6
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
+    sget-object v2, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_c
+    if-nez v2, :cond_c
 
     :goto_7
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
+    sget-object v2, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v2
 
-    if-nez v4, :cond_d
+    if-nez v2, :cond_d
 
     :goto_8
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->MAXICODE:Lcom/google/zxing/BarcodeFormat;
+    sget-object v2, Lcom/google/zxing/BarcodeFormat;->MAXICODE:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_e
+    if-nez v0, :cond_e
 
     :goto_9
-    if-eqz v0, :cond_2
-
     if-eqz v3, :cond_2
 
-    new-instance v4, Lcom/google/zxing/oned/MultiFormatOneDReader;
+    if-eqz v1, :cond_2
 
-    invoke-direct {v4, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
+    new-instance v0, Lcom/google/zxing/oned/MultiFormatOneDReader;
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-direct {v0, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
+
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
     :cond_8
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
+    if-nez v5, :cond_6
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-interface {v1, v4}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v5}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_6
-
-    move v0, v6
+    if-nez v5, :cond_6
 
     goto/16 :goto_3
 
     :cond_9
-    if-nez v3, :cond_7
+    if-nez v1, :cond_7
 
-    new-instance v4, Lcom/google/zxing/oned/MultiFormatOneDReader;
+    new-instance v2, Lcom/google/zxing/oned/MultiFormatOneDReader;
 
-    invoke-direct {v4, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
+    invoke-direct {v2, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_4
 
     :cond_a
-    new-instance v4, Lcom/google/zxing/qrcode/QRCodeReader;
+    new-instance v2, Lcom/google/zxing/qrcode/QRCodeReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/qrcode/QRCodeReader;-><init>()V
+    invoke-direct {v2}, Lcom/google/zxing/qrcode/QRCodeReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_5
 
     :cond_b
-    new-instance v4, Lcom/google/zxing/datamatrix/DataMatrixReader;
+    new-instance v2, Lcom/google/zxing/datamatrix/DataMatrixReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/datamatrix/DataMatrixReader;-><init>()V
+    invoke-direct {v2}, Lcom/google/zxing/datamatrix/DataMatrixReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_6
 
     :cond_c
-    new-instance v4, Lcom/google/zxing/aztec/AztecReader;
+    new-instance v2, Lcom/google/zxing/aztec/AztecReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/aztec/AztecReader;-><init>()V
+    invoke-direct {v2}, Lcom/google/zxing/aztec/AztecReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_7
 
     :cond_d
-    new-instance v4, Lcom/google/zxing/pdf417/PDF417Reader;
+    new-instance v2, Lcom/google/zxing/pdf417/PDF417Reader;
 
-    invoke-direct {v4}, Lcom/google/zxing/pdf417/PDF417Reader;-><init>()V
+    invoke-direct {v2}, Lcom/google/zxing/pdf417/PDF417Reader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_8
 
     :cond_e
-    new-instance v4, Lcom/google/zxing/maxicode/MaxiCodeReader;
+    new-instance v0, Lcom/google/zxing/maxicode/MaxiCodeReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/maxicode/MaxiCodeReader;-><init>()V
+    invoke-direct {v0}, Lcom/google/zxing/maxicode/MaxiCodeReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_9
 
     :cond_f
-    if-eqz v3, :cond_10
+    if-eqz v1, :cond_10
 
     :goto_a
-    new-instance v4, Lcom/google/zxing/qrcode/QRCodeReader;
+    new-instance v0, Lcom/google/zxing/qrcode/QRCodeReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/qrcode/QRCodeReader;-><init>()V
+    invoke-direct {v0}, Lcom/google/zxing/qrcode/QRCodeReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    new-instance v4, Lcom/google/zxing/datamatrix/DataMatrixReader;
+    new-instance v0, Lcom/google/zxing/datamatrix/DataMatrixReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/datamatrix/DataMatrixReader;-><init>()V
+    invoke-direct {v0}, Lcom/google/zxing/datamatrix/DataMatrixReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    new-instance v4, Lcom/google/zxing/aztec/AztecReader;
+    new-instance v0, Lcom/google/zxing/aztec/AztecReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/aztec/AztecReader;-><init>()V
+    invoke-direct {v0}, Lcom/google/zxing/aztec/AztecReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    new-instance v4, Lcom/google/zxing/pdf417/PDF417Reader;
+    new-instance v0, Lcom/google/zxing/pdf417/PDF417Reader;
 
-    invoke-direct {v4}, Lcom/google/zxing/pdf417/PDF417Reader;-><init>()V
+    invoke-direct {v0}, Lcom/google/zxing/pdf417/PDF417Reader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    new-instance v4, Lcom/google/zxing/maxicode/MaxiCodeReader;
+    new-instance v0, Lcom/google/zxing/maxicode/MaxiCodeReader;
 
-    invoke-direct {v4}, Lcom/google/zxing/maxicode/MaxiCodeReader;-><init>()V
+    invoke-direct {v0}, Lcom/google/zxing/maxicode/MaxiCodeReader;-><init>()V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    if-eqz v3, :cond_3
+    if-eqz v1, :cond_3
 
-    new-instance v4, Lcom/google/zxing/oned/MultiFormatOneDReader;
+    new-instance v0, Lcom/google/zxing/oned/MultiFormatOneDReader;
 
-    invoke-direct {v4, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
+    invoke-direct {v0, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_2
 
     :cond_10
-    new-instance v4, Lcom/google/zxing/oned/MultiFormatOneDReader;
+    new-instance v0, Lcom/google/zxing/oned/MultiFormatOneDReader;
 
-    invoke-direct {v4, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
+    invoke-direct {v0, p1}, Lcom/google/zxing/oned/MultiFormatOneDReader;-><init>(Ljava/util/Map;)V
 
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
 .end method

@@ -382,9 +382,7 @@
 .end method
 
 .method public constructor <init>(Ljavax/net/ssl/SSLSocketFactory;[Ljava/lang/String;[Ljava/lang/String;Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -400,7 +398,9 @@
 
     iput-object p4, p0, Lorg/apache/http/conn/ssl/SSLSocketFactory;->hostnameVerifier:Lorg/apache/http/conn/ssl/X509HostnameVerifier;
 
-    iput-object v1, p0, Lorg/apache/http/conn/ssl/SSLSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/conn/ssl/SSLSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
 
     return-void
 .end method
@@ -408,11 +408,11 @@
 .method public constructor <init>(Lorg/apache/http/conn/ssl/TrustStrategy;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     invoke-static {}, Lorg/apache/http/conn/ssl/SSLContexts;->custom()Lorg/apache/http/conn/ssl/SSLContextBuilder;
 
     move-result-object v0
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1, p1}, Lorg/apache/http/conn/ssl/SSLContextBuilder;->loadTrustMaterial(Ljava/security/KeyStore;Lorg/apache/http/conn/ssl/TrustStrategy;)Lorg/apache/http/conn/ssl/SSLContextBuilder;
 
@@ -432,11 +432,11 @@
 .method public constructor <init>(Lorg/apache/http/conn/ssl/TrustStrategy;Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     invoke-static {}, Lorg/apache/http/conn/ssl/SSLContexts;->custom()Lorg/apache/http/conn/ssl/SSLContextBuilder;
 
     move-result-object v0
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1, p1}, Lorg/apache/http/conn/ssl/SSLContextBuilder;->loadTrustMaterial(Ljava/security/KeyStore;Lorg/apache/http/conn/ssl/TrustStrategy;)Lorg/apache/http/conn/ssl/SSLContextBuilder;
 
@@ -538,9 +538,7 @@
 .end method
 
 .method private static split(Ljava/lang/String;)[Ljava/lang/String;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-static {p0}, Lorg/apache/http/util/TextUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
@@ -557,7 +555,9 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method private verifyHostname(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;)V
@@ -694,9 +694,9 @@
 .method public connectSocket(Ljava/net/Socket;Ljava/lang/String;ILjava/net/InetAddress;ILorg/apache/http/params/HttpParams;)Ljava/net/Socket;
     .locals 4
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     iget-object v2, p0, Lorg/apache/http/conn/ssl/SSLSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
 
@@ -756,8 +756,6 @@
 .method public connectSocket(Ljava/net/Socket;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;Lorg/apache/http/params/HttpParams;)Ljava/net/Socket;
     .locals 7
 
-    const/4 v6, 0x0
-
     const-string/jumbo v0, "Remote address"
 
     invoke-static {p2, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -788,6 +786,8 @@
     invoke-static {p4}, Lorg/apache/http/params/HttpConnectionParams;->getConnectionTimeout(Lorg/apache/http/params/HttpParams;)I
 
     move-result v1
+
+    const/4 v6, 0x0
 
     move-object v0, p0
 

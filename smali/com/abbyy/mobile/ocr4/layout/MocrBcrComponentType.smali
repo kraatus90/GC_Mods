@@ -262,83 +262,83 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->DEGREE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->DEGREE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_PREFIX:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_PREFIX:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_COUNTRY_CODE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_COUNTRY_CODE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_CODE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_CODE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_BODY:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_BODY:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_EXTENSION:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->PHONE_EXTENSION:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->ZIP_CODE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->ZIP_CODE:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->COUNTRY:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->COUNTRY:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->CITY:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->CITY:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->STREET_ADDRESS:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->STREET_ADDRESS:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->REGION:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->REGION:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->JOB_POSITION:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->JOB_POSITION:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    sget-object v1, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->JOB_DEPARTMENT:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->JOB_DEPARTMENT:Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;->$VALUES:[Lcom/abbyy/mobile/ocr4/layout/MocrBcrComponentType;
 

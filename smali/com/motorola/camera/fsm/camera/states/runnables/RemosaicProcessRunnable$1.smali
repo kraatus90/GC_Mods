@@ -52,15 +52,17 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-static {}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureHolder()Lcom/motorola/camera/saving/CaptureHolder;
+    invoke-static {}, Lcom/motorola/camera/saving/ImageCaptureManager;->getRawCaptureHolder()Lcom/motorola/camera/saving/CaptureHolder;
 
     move-result-object v2
 
-    iget-object v0, v2, Lcom/motorola/camera/saving/CaptureHolder;->mResult:Landroid/hardware/camera2/TotalCaptureResult;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LINECOUNT_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->LINECOUNT_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v1, v2, Lcom/motorola/camera/saving/CaptureHolder;->mCameraId:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCaptureResult(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v3, v2, Lcom/motorola/camera/saving/CaptureHolder;->mResult:Landroid/hardware/camera2/TotalCaptureResult;
+
+    invoke-virtual {v0, v1, v3}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -68,11 +70,13 @@
 
     check-cast v5, Ljava/lang/Integer;
 
-    iget-object v0, v2, Lcom/motorola/camera/saving/CaptureHolder;->mResult:Landroid/hardware/camera2/TotalCaptureResult;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ANALOG_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ANALOG_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v1, v2, Lcom/motorola/camera/saving/CaptureHolder;->mCameraId:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCaptureResult(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v3, v2, Lcom/motorola/camera/saving/CaptureHolder;->mResult:Landroid/hardware/camera2/TotalCaptureResult;
+
+    invoke-virtual {v0, v1, v3}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureResult;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -80,9 +84,9 @@
 
     check-cast v4, Ljava/lang/Float;
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_XTALK_DATA_BLOB_CHAR_KEY:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_XTALK_DATA_BLOB_CHAR_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;
 
-    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Lcom/motorola/camera/settings/CustomKeyHelper$CharacteristicsKey;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -92,7 +96,7 @@
 
     sget-object v3, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_GAINS:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-static {v1, v3}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeGetCaptureResult(Landroid/hardware/camera2/CaptureResult;Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Landroid/hardware/camera2/TotalCaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v1
 

@@ -126,11 +126,11 @@
 .method public zza(Lcom/google/android/gms/playlog/internal/PlayLoggerContext;Lcom/google/android/gms/playlog/internal/LogEvent;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     iget-object v0, p0, Lcom/google/android/gms/playlog/internal/zzb;->zzayu:Ljava/util/ArrayList;
 
     new-instance v1, Lcom/google/android/gms/playlog/internal/zzb$zza;
+
+    const/4 v2, 0x0
 
     invoke-direct {v1, p1, p2, v2}, Lcom/google/android/gms/playlog/internal/zzb$zza;-><init>(Lcom/google/android/gms/playlog/internal/PlayLoggerContext;Lcom/google/android/gms/playlog/internal/LogEvent;Lcom/google/android/gms/playlog/internal/zzb$1;)V
 

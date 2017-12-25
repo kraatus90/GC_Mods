@@ -156,11 +156,11 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "DEVICE_ID"
+    iget-object v1, p0, Lcom/a9/vs/marsoemlibrary/util/SharedPreferencesUtil;->deviceId:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/a9/vs/marsoemlibrary/util/SharedPreferencesUtil;->deviceId:Ljava/lang/String;
+    const-string/jumbo v2, "DEVICE_ID"
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
@@ -192,8 +192,6 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "CONFIG_FILE_TIMEOUT"
-
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -201,6 +199,8 @@
     const-wide/32 v4, 0x5265c00
 
     add-long/2addr v2, v4
+
+    const-string/jumbo v1, "CONFIG_FILE_TIMEOUT"
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 

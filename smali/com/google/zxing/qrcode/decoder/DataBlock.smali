@@ -23,363 +23,269 @@
 .end method
 
 .method static getDataBlocks([BLcom/google/zxing/qrcode/decoder/Version;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)[Lcom/google/zxing/qrcode/decoder/DataBlock;
-    .locals 23
+    .locals 13
 
-    move-object/from16 v0, p0
+    const/4 v1, 0x0
 
-    array-length v0, v0
+    array-length v0, p0
 
-    move/from16 v16, v0
+    invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/Version;->getTotalCodewords()I
 
-    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/qrcode/decoder/Version;->getTotalCodewords()I
+    move-result v2
 
-    move-result v17
+    if-ne v0, v2, :cond_1
 
-    move/from16 v0, v16
+    invoke-virtual {p1, p2}, Lcom/google/zxing/qrcode/decoder/Version;->getECBlocksForLevel(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    move/from16 v1, v17
+    move-result-object v5
 
-    if-ne v0, v1, :cond_1
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECBlocks()[Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    invoke-virtual/range {p1 .. p2}, Lcom/google/zxing/qrcode/decoder/Version;->getECBlocksForLevel(Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    move-result-object v6
 
-    move-result-object v4
+    array-length v3, v6
 
-    const/4 v15, 0x0
+    move v0, v1
 
-    invoke-virtual {v4}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECBlocks()[Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    move-result-object v3
-
-    array-length v0, v3
-
-    move/from16 v17, v0
-
-    const/16 v16, 0x0
+    move v2, v1
 
     :goto_0
-    move/from16 v0, v16
+    if-lt v0, v3, :cond_2
 
-    move/from16 v1, v17
+    new-array v8, v2, [Lcom/google/zxing/qrcode/decoder/DataBlock;
 
-    if-lt v0, v1, :cond_2
+    array-length v7, v6
 
-    new-array v0, v15, [Lcom/google/zxing/qrcode/decoder/DataBlock;
+    move v4, v1
 
-    move-object/from16 v19, v0
-
-    const/16 v17, 0x0
-
-    array-length v0, v3
-
-    move/from16 v20, v0
-
-    const/16 v16, 0x0
-
-    move/from16 v18, v16
-
-    move/from16 v16, v17
+    move v0, v1
 
     :goto_1
-    move/from16 v0, v18
+    if-lt v4, v7, :cond_3
 
-    move/from16 v1, v20
+    aget-object v2, v8, v1
 
-    if-lt v0, v1, :cond_3
+    iget-object v2, v2, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
 
-    const/16 v17, 0x0
+    array-length v3, v2
 
-    aget-object v17, v19, v17
+    array-length v2, v8
 
-    move-object/from16 v0, v17
-
-    iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    array-length v0, v0
-
-    move/from16 v18, v0
-
-    move-object/from16 v0, v19
-
-    array-length v0, v0
-
-    move/from16 v17, v0
-
-    add-int/lit8 v17, v17, -0x1
+    add-int/lit8 v2, v2, -0x1
 
     :goto_2
-    if-gez v17, :cond_5
+    if-gez v2, :cond_5
 
     :cond_0
-    add-int/lit8 v9, v17, 0x1
+    add-int/lit8 v7, v2, 0x1
 
-    invoke-virtual {v4}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECCodewordsPerBlock()I
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECCodewordsPerBlock()I
 
-    move-result v17
+    move-result v2
 
-    sub-int v6, v18, v17
+    sub-int/2addr v3, v2
 
-    const/4 v13, 0x0
+    move v2, v1
 
-    const/4 v5, 0x0
+    move v6, v1
 
     :goto_3
-    if-lt v5, v6, :cond_6
+    if-lt v6, v3, :cond_6
 
-    move v14, v13
-
-    move v8, v9
+    move v5, v7
 
     :goto_4
-    move/from16 v0, v16
+    if-lt v5, v0, :cond_8
 
-    if-lt v8, v0, :cond_8
+    aget-object v4, v8, v1
 
-    const/16 v17, 0x0
+    iget-object v4, v4, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
 
-    aget-object v17, v19, v17
-
-    move-object/from16 v0, v17
-
-    iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    array-length v10, v0
-
-    move v13, v14
-
-    move v5, v6
+    array-length v9, v4
 
     :goto_5
-    if-lt v5, v10, :cond_9
+    if-lt v3, v9, :cond_9
 
-    return-object v19
+    return-object v8
 
     :cond_1
-    new-instance v16, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct/range {v16 .. v16}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v16
+    throw v0
 
     :cond_2
-    aget-object v2, v3, v16
+    aget-object v4, v6, v0
 
-    invoke-virtual {v2}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
+    invoke-virtual {v4}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
 
-    move-result v18
+    move-result v4
 
-    add-int v15, v15, v18
+    add-int/2addr v2, v4
 
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_3
-    aget-object v2, v3, v18
+    aget-object v9, v6, v4
 
-    const/4 v5, 0x0
+    move v2, v0
+
+    move v0, v1
 
     :goto_6
-    invoke-virtual {v2}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
+    invoke-virtual {v9}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
 
-    move-result v17
+    move-result v3
 
-    move/from16 v0, v17
+    if-lt v0, v3, :cond_4
 
-    if-lt v5, v0, :cond_4
+    add-int/lit8 v0, v4, 0x1
 
-    add-int/lit8 v17, v18, 0x1
+    move v4, v0
 
-    move/from16 v18, v17
+    move v0, v2
 
     goto :goto_1
 
     :cond_4
-    invoke-virtual {v2}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getDataCodewords()I
+    invoke-virtual {v9}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getDataCodewords()I
 
-    move-result v12
+    move-result v10
 
-    invoke-virtual {v4}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECCodewordsPerBlock()I
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECCodewordsPerBlock()I
 
-    move-result v17
+    move-result v3
 
-    add-int v11, v17, v12
+    add-int v11, v3, v10
 
-    add-int/lit8 v17, v16, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    new-instance v21, Lcom/google/zxing/qrcode/decoder/DataBlock;
+    new-instance v12, Lcom/google/zxing/qrcode/decoder/DataBlock;
 
-    new-array v0, v11, [B
+    new-array v11, v11, [B
 
-    move-object/from16 v22, v0
+    invoke-direct {v12, v10, v11}, Lcom/google/zxing/qrcode/decoder/DataBlock;-><init>(I[B)V
 
-    move-object/from16 v0, v21
+    aput-object v12, v8, v2
 
-    move-object/from16 v1, v22
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-direct {v0, v12, v1}, Lcom/google/zxing/qrcode/decoder/DataBlock;-><init>(I[B)V
-
-    aput-object v21, v19, v16
-
-    add-int/lit8 v5, v5, 0x1
-
-    move/from16 v16, v17
+    move v2, v3
 
     goto :goto_6
 
     :cond_5
-    aget-object v20, v19, v17
+    aget-object v4, v8, v2
 
-    move-object/from16 v0, v20
+    iget-object v4, v4, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
 
-    iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
+    array-length v4, v4
 
-    move-object/from16 v20, v0
+    if-eq v4, v3, :cond_0
 
-    move-object/from16 v0, v20
-
-    array-length v0, v0
-
-    move/from16 v20, v0
-
-    move/from16 v0, v20
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_0
-
-    add-int/lit8 v17, v17, -0x1
+    add-int/lit8 v2, v2, -0x1
 
     goto :goto_2
 
     :cond_6
-    const/4 v8, 0x0
-
-    move v14, v13
+    move v5, v1
 
     :goto_7
-    move/from16 v0, v16
+    if-lt v5, v0, :cond_7
 
-    if-lt v8, v0, :cond_7
+    add-int/lit8 v4, v6, 0x1
 
-    add-int/lit8 v5, v5, 0x1
-
-    move v13, v14
+    move v6, v4
 
     goto :goto_3
 
     :cond_7
-    aget-object v17, v19, v8
+    aget-object v4, v8, v5
 
-    move-object/from16 v0, v17
+    iget-object v9, v4, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
 
-    iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
+    add-int/lit8 v4, v2, 0x1
 
-    move-object/from16 v17, v0
+    aget-byte v2, p0, v2
 
-    add-int/lit8 v13, v14, 0x1
+    int-to-byte v2, v2
 
-    aget-byte v18, p0, v14
+    aput-byte v2, v9, v6
 
-    move/from16 v0, v18
+    add-int/lit8 v2, v5, 0x1
 
-    int-to-byte v0, v0
+    move v5, v2
 
-    move/from16 v18, v0
-
-    aput-byte v18, v17, v5
-
-    add-int/lit8 v8, v8, 0x1
-
-    move v14, v13
+    move v2, v4
 
     goto :goto_7
 
     :cond_8
-    aget-object v17, v19, v8
+    aget-object v4, v8, v5
 
-    move-object/from16 v0, v17
+    iget-object v6, v4, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
 
-    iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
+    add-int/lit8 v4, v2, 0x1
 
-    move-object/from16 v17, v0
+    aget-byte v2, p0, v2
 
-    add-int/lit8 v13, v14, 0x1
+    int-to-byte v2, v2
 
-    aget-byte v18, p0, v14
+    aput-byte v2, v6, v3
 
-    move/from16 v0, v18
+    add-int/lit8 v2, v5, 0x1
 
-    int-to-byte v0, v0
+    move v5, v2
 
-    move/from16 v18, v0
+    move v2, v4
 
-    aput-byte v18, v17, v6
-
-    add-int/lit8 v8, v8, 0x1
-
-    move v14, v13
-
-    goto/16 :goto_4
+    goto :goto_4
 
     :cond_9
-    const/4 v8, 0x0
+    move v4, v2
 
-    move v14, v13
+    move v6, v1
 
     :goto_8
-    move/from16 v0, v16
+    if-lt v6, v0, :cond_a
 
-    if-lt v8, v0, :cond_a
+    add-int/lit8 v3, v3, 0x1
 
-    add-int/lit8 v5, v5, 0x1
+    move v2, v4
 
-    move v13, v14
-
-    goto/16 :goto_5
+    goto :goto_5
 
     :cond_a
-    if-lt v8, v9, :cond_b
+    if-lt v6, v7, :cond_b
 
-    add-int/lit8 v7, v5, 0x1
+    add-int/lit8 v2, v3, 0x1
 
     :goto_9
-    aget-object v17, v19, v8
+    aget-object v5, v8, v6
 
-    move-object/from16 v0, v17
+    iget-object v10, v5, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
 
-    iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/DataBlock;->codewords:[B
+    add-int/lit8 v5, v4, 0x1
 
-    move-object/from16 v17, v0
+    aget-byte v4, p0, v4
 
-    add-int/lit8 v13, v14, 0x1
+    int-to-byte v4, v4
 
-    aget-byte v18, p0, v14
+    aput-byte v4, v10, v2
 
-    move/from16 v0, v18
+    add-int/lit8 v2, v6, 0x1
 
-    int-to-byte v0, v0
+    move v4, v5
 
-    move/from16 v18, v0
-
-    aput-byte v18, v17, v7
-
-    add-int/lit8 v8, v8, 0x1
-
-    move v14, v13
+    move v6, v2
 
     goto :goto_8
 
     :cond_b
-    move v7, v5
+    move v2, v3
 
     goto :goto_9
 .end method

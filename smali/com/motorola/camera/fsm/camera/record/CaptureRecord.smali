@@ -6,23 +6,17 @@
 # static fields
 .field public static final EMPTY:Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
 
-.field public static final INSTANCE_MASK:I = 0xffff
-
-.field public static final SEQUENCE_MASK:I = 0x7fff0000
-
-.field private static final SEQUENCE_MAX:I = 0x7fff
-
-.field private static final SEQUENCE_MIN:I
-
 .field private static final TAG:Ljava/lang/String;
-
-.field private static mSequence:I
 
 
 # instance fields
 .field public mAnalyticsLog:Z
 
+.field public mCameraFacingId:I
+
 .field public mCameraId:Ljava/lang/String;
+
+.field public mCaptureMode:I
 
 .field public mCaptureTime:J
 
@@ -44,7 +38,7 @@
 
 .field public final mRecordExtendedInfo:Z
 
-.field public mSeqId:I
+.field public mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
 .field public final mSessionId:I
 
@@ -81,15 +75,15 @@
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->TAG:Ljava/lang/String;
 
-    sput v3, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSequence:I
-
     new-instance v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
 
-    sget-object v1, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+    new-instance v1, Landroid/os/Bundle;
 
-    const/4 v2, 0x0
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    invoke-direct {v0, v3, v3, v2, v1}, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;-><init>(IZLandroid/os/Bundle;Lcom/motorola/camera/ShotType;)V
+    sget-object v2, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+
+    invoke-direct {v0, v3, v3, v1, v2}, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;-><init>(IZLandroid/os/Bundle;Lcom/motorola/camera/ShotType;)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->EMPTY:Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
 
@@ -119,11 +113,11 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mMetaData:Landroid/os/Bundle;
 
-    invoke-static {}, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->getSequenceId()I
+    invoke-static {p4}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(Lcom/motorola/camera/ShotType;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result v0
+    move-result-object v0
 
-    iput v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     iput p1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSessionId:I
 
@@ -137,6 +131,12 @@
 
     :cond_0
     iput-object p4, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotType:Lcom/motorola/camera/ShotType;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->getCurrentMode()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
 
     return-void
 .end method
@@ -166,9 +166,9 @@
 
     iput-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mMetaData:Landroid/os/Bundle;
 
-    iget v1, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    iget-object v1, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    iput v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    iput-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     iget v1, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSessionId:I
 
@@ -214,6 +214,14 @@
     iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotType:Lcom/motorola/camera/ShotType;
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotType:Lcom/motorola/camera/ShotType;
+
+    iget v0, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
+
+    iput v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
+
+    iget v0, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraFacingId:I
+
+    iput v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraFacingId:I
 
     iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraId:Ljava/lang/String;
 
@@ -297,14 +305,10 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
     :try_end_0
     .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -319,35 +323,16 @@
     return-void
 .end method
 
-.method private static getSequenceId()I
-    .locals 2
 
-    sget v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSequence:I
+# virtual methods
+.method protected getCaptureMode()I
+    .locals 1
 
-    add-int/lit8 v0, v0, 0x1
-
-    sput v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSequence:I
-
-    sget v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSequence:I
-
-    const/16 v1, 0x7fff
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x0
-
-    sput v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSequence:I
-
-    :cond_0
-    sget v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSequence:I
-
-    shl-int/lit8 v0, v0, 0x10
+    iget v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
 
     return v0
 .end method
 
-
-# virtual methods
 .method public getCaptureTimeForRecord()J
     .locals 2
 
@@ -557,11 +542,35 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotType:Lcom/motorola/camera/ShotType;
 
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->getCaptureMode()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
+
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraId:Ljava/lang/String;
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_FACING:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraFacingId:I
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->getCaptureTimeForRecord()J
 
@@ -789,115 +798,201 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    const-string/jumbo v0, "CaptureRecord{mSeqId=0x%08x, mSessionId=%d, mCameraId=%s, mShotType=%s, mCaptureTime=%d, mGpsLocation=%s, mOrientation=%d, mExitBeforeDone=%s, mMetaData=%s, mSettingValues=%s, mStorageLocation=%s, mFileName=%s, mExtraOutput=%s}"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/16 v1, 0xd
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string/jumbo v1, "CaptureRecord{"
 
-    iget v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v0
 
-    move-result-object v2
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    aput-object v2, v1, v3
+    move-result-object v0
 
-    iget v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSessionId:I
+    const-string/jumbo v1, " mSessionId="
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/4 v3, 0x1
+    iget v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSessionId:I
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraId:Ljava/lang/String;
+    move-result-object v0
 
-    const/4 v3, 0x2
+    const-string/jumbo v1, " mCameraId="
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotType:Lcom/motorola/camera/ShotType;
+    move-result-object v0
 
-    const/4 v3, 0x3
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraId:Ljava/lang/String;
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " mCameraFacingId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraFacingId:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " mShotType="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotType:Lcom/motorola/camera/ShotType;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " mCaptureMode "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureMode:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " mCaptureTime="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-wide v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCaptureTime:J
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/4 v3, 0x4
+    const-string/jumbo v1, " mGpsLocation="
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mGpsLocation:Landroid/location/Location;
+    move-result-object v0
 
-    const/4 v3, 0x5
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mGpsLocation:Landroid/location/Location;
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mOrientation:I
+    move-result-object v0
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v1, " mOrientation="
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v3, 0x6
+    move-result-object v0
 
-    aput-object v2, v1, v3
+    iget v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mOrientation:I
 
-    iget-boolean v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mExitBeforeDone:Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v0
 
-    move-result-object v2
+    const-string/jumbo v1, " mExitBeforeDone="
 
-    const/4 v3, 0x7
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v2, v1, v3
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mMetaData:Landroid/os/Bundle;
+    iget-boolean v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mExitBeforeDone:Z
 
-    const/16 v3, 0x8
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    aput-object v2, v1, v3
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSettingValues:Ljava/util/Map;
+    const-string/jumbo v1, " mMetaData="
 
-    invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/16 v3, 0x9
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mMetaData:Landroid/os/Bundle;
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mStorageLocation:Landroid/net/Uri;
+    move-result-object v0
 
-    const/16 v3, 0xa
+    const-string/jumbo v1, " mSettingValues="
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mFileName:Lcom/motorola/camera/saving/FileName;
+    move-result-object v0
 
-    const/16 v3, 0xb
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSettingValues:Ljava/util/Map;
 
-    aput-object v2, v1, v3
+    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mExtraOutput:Landroid/net/Uri;
+    move-result-object v1
 
-    const/16 v3, 0xc
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    aput-object v2, v1, v3
+    move-result-object v0
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v1, " mStorageLocation="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mStorageLocation:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " mFileName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mFileName:Lcom/motorola/camera/saving/FileName;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " mExtraOutput="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mExtraOutput:Landroid/net/Uri;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

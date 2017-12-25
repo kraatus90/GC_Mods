@@ -27,11 +27,11 @@
 .end method
 
 .method private get32BitNumberString(I)Ljava/lang/String;
-    .locals 6
+    .locals 4
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     iget-object v0, p0, Lcom/drew/metadata/photoshop/PhotoshopDescriptor;->_directory:Lcom/drew/metadata/Directory;
 
@@ -47,18 +47,14 @@
 
     invoke-direct {v1, v0}, Lcom/drew/lang/BufferReader;-><init>([B)V
 
+    const/4 v0, 0x1
+
     :try_start_0
-    const-string/jumbo v0, "%d"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v4}, Lcom/drew/lang/BufferReader;->getInt32(I)I
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getInt32(I)I
 
     move-result v1
 
@@ -66,9 +62,13 @@
 
     move-result-object v1
 
-    aput-object v1, v2, v3
+    const/4 v2, 0x0
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "%d"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_0
     .catch Lcom/drew/lang/BufferBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -77,16 +77,16 @@
     return-object v0
 
     :cond_0
-    return-object v5
+    return-object v3
 
     :catch_0
     move-exception v0
 
-    return-object v5
+    return-object v3
 .end method
 
 .method private getBinaryDataString(I)Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -102,13 +102,9 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, "%d bytes binary data"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     array-length v0, v0
 
@@ -116,9 +112,13 @@
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "%d bytes binary data"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -147,7 +147,7 @@
 
     if-eqz v0, :cond_0
 
-    aget-byte v0, v0, v2
+    aget-byte v0, v0, v1
 
     if-eqz v0, :cond_1
 
@@ -157,7 +157,7 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    return-object v2
 
     :cond_1
     const-string/jumbo v0, "No"
@@ -354,13 +354,13 @@
 .end method
 
 .method public getJpegQualityString()Ljava/lang/String;
-    .locals 9
+    .locals 8
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v8, 0x3
+    const/4 v7, 0x3
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
     :try_start_0
     iget-object v0, p0, Lcom/drew/metadata/photoshop/PhotoshopDescriptor;->_directory:Lcom/drew/metadata/Directory;
@@ -411,81 +411,81 @@
 
     const-string/jumbo v0, "Unknown"
 
-    :goto_1
     move-object v2, v0
 
+    :goto_1
     sparse-switch v4, :sswitch_data_1
 
-    const-string/jumbo v0, "Unknown 0x%04X"
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v1
 
-    aput-object v4, v1, v6
+    const/4 v4, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v1, v0, v4
+
+    const-string/jumbo v1, "Unknown 0x%04X"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     :goto_2
     move-object v1, v0
 
-    if-ge v5, v7, :cond_4
+    if-ge v5, v6, :cond_4
 
     :cond_1
-    const-string/jumbo v0, "Unknown 0x%04X"
+    const/4 v0, 0x1
 
-    const/4 v4, 0x1
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v6
+    const/4 v5, 0x0
 
-    invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v4, v0, v5
+
+    const-string/jumbo v4, "Unknown 0x%04X"
+
+    invoke-static {v4, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     :goto_3
-    const-string/jumbo v4, "%d (%s), %s format, %s scans"
+    const/4 v4, 0x4
 
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v4, v4, [Ljava/lang/Object;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    aput-object v3, v5, v6
+    const/4 v5, 0x0
+
+    aput-object v3, v4, v5
 
     const/4 v3, 0x1
 
-    aput-object v2, v5, v3
+    aput-object v2, v4, v3
 
     const/4 v2, 0x2
 
-    aput-object v1, v5, v2
+    aput-object v1, v4, v2
 
     const/4 v1, 0x3
 
-    aput-object v0, v5, v1
+    aput-object v0, v4, v1
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v0, "%d (%s), %s format, %s scans"
+
+    invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -514,22 +514,25 @@
     :sswitch_0
     const-string/jumbo v0, "Low"
 
+    :goto_4
+    move-object v2, v0
+
     goto :goto_1
 
     :sswitch_1
     const-string/jumbo v0, "Medium"
 
-    goto :goto_1
+    goto :goto_4
 
     :sswitch_2
     const-string/jumbo v0, "High"
 
-    goto :goto_1
+    goto :goto_4
 
     :sswitch_3
     const-string/jumbo v0, "Maximum"
 
-    goto :goto_1
+    goto :goto_4
 
     :sswitch_4
     const-string/jumbo v0, "Standard"
@@ -547,25 +550,25 @@
     goto :goto_2
 
     :cond_4
-    if-gt v5, v8, :cond_1
+    if-gt v5, v7, :cond_1
 
-    const-string/jumbo v0, "%d"
+    const/4 v0, 0x1
 
-    const/4 v4, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    add-int/lit8 v4, v5, 0x2
 
-    const/4 v6, 0x0
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    add-int/lit8 v5, v5, 0x2
+    move-result-object v4
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v5, 0x0
 
-    move-result-object v5
+    aput-object v4, v0, v5
 
-    aput-object v5, v4, v6
+    const-string/jumbo v4, "%d"
 
-    invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_0
     .catch Lcom/drew/lang/BufferBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -579,8 +582,6 @@
     const/4 v0, 0x0
 
     return-object v0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -654,11 +655,11 @@
 .end method
 
 .method public getPrintScaleDescription()Ljava/lang/String;
-    .locals 8
+    .locals 7
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     :try_start_0
     iget-object v0, p0, Lcom/drew/metadata/photoshop/PhotoshopDescriptor;->_directory:Lcom/drew/metadata/Directory;
@@ -703,52 +704,52 @@
 
     packed-switch v0, :pswitch_data_0
 
-    const-string/jumbo v4, "Unknown %04X, X:%s Y:%s, Scale:%s"
+    const/4 v4, 0x4
 
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v4, v4, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, v5, v6
+    const/4 v5, 0x0
 
-    const/4 v0, 0x1
+    aput-object v0, v4, v5
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v2
+    move-result-object v0
 
-    aput-object v2, v5, v0
+    const/4 v2, 0x1
 
-    const/4 v0, 0x2
+    aput-object v0, v4, v2
 
     invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v2
+    move-result-object v0
 
-    aput-object v2, v5, v0
+    const/4 v2, 0x2
 
-    const/4 v0, 0x3
+    aput-object v0, v4, v2
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v5, v0
+    const/4 v1, 0x3
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v4, v1
+
+    const-string/jumbo v0, "Unknown %04X, X:%s Y:%s, Scale:%s"
+
+    invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
     :cond_0
-    return-object v7
+    return-object v6
 
     :pswitch_0
     new-instance v0, Ljava/lang/StringBuilder;
@@ -777,37 +778,37 @@
     return-object v0
 
     :pswitch_2
-    const-string/jumbo v0, "User defined, X:%s Y:%s, Scale:%s"
+    const/4 v0, 0x3
 
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v2
 
-    aput-object v2, v4, v5
+    const/4 v4, 0x0
 
-    const/4 v2, 0x1
+    aput-object v2, v0, v4
 
     invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v4, v2
+    const/4 v3, 0x1
 
-    const/4 v2, 0x2
+    aput-object v2, v0, v3
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
 
-    aput-object v1, v4, v2
+    const/4 v2, 0x2
 
-    invoke-static {v0, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v1, v0, v2
+
+    const-string/jumbo v1, "User defined, X:%s Y:%s, Scale:%s"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -818,7 +819,7 @@
     :catch_0
     move-exception v0
 
-    return-object v7
+    return-object v6
 
     nop
 
@@ -908,11 +909,11 @@
 .end method
 
 .method public getSlicesDescription()Ljava/lang/String;
-    .locals 7
+    .locals 6
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
     :try_start_0
     iget-object v0, p0, Lcom/drew/metadata/photoshop/PhotoshopDescriptor;->_directory:Lcom/drew/metadata/Directory;
@@ -937,13 +938,13 @@
 
     move-result v0
 
-    const/16 v2, 0x18
+    mul-int/lit8 v2, v0, 0x2
 
-    mul-int/lit8 v3, v0, 0x2
+    const-string/jumbo v3, "UTF-16"
 
-    const-string/jumbo v4, "UTF-16"
+    const/16 v4, 0x18
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v4, v2, v3}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -955,63 +956,59 @@
 
     move-result v0
 
-    const-string/jumbo v3, "%s (%d,%d,%d,%d) %d Slices"
+    const/4 v3, 0x6
 
-    const/4 v4, 0x6
+    new-array v3, v3, [Ljava/lang/Object;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
-
-    aput-object v2, v4, v5
-
-    const/4 v2, 0x1
-
-    const/4 v5, 0x4
-
-    invoke-virtual {v1, v5}, Lcom/drew/lang/BufferReader;->getInt32(I)I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v4, v2
-
-    const/4 v2, 0x2
-
-    const/16 v5, 0x8
-
-    invoke-virtual {v1, v5}, Lcom/drew/lang/BufferReader;->getInt32(I)I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v4, v2
-
-    const/4 v2, 0x3
-
-    const/16 v5, 0xc
-
-    invoke-virtual {v1, v5}, Lcom/drew/lang/BufferReader;->getInt32(I)I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v4, v2
+    aput-object v2, v3, v4
 
     const/4 v2, 0x4
 
-    const/16 v5, 0x10
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getInt32(I)I
 
-    invoke-virtual {v1, v5}, Lcom/drew/lang/BufferReader;->getInt32(I)I
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v4, 0x1
+
+    aput-object v2, v3, v4
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getInt32(I)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v4, 0x2
+
+    aput-object v2, v3, v4
+
+    const/16 v2, 0xc
+
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getInt32(I)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v4, 0x3
+
+    aput-object v2, v3, v4
+
+    const/16 v2, 0x10
+
+    invoke-virtual {v1, v2}, Lcom/drew/lang/BufferReader;->getInt32(I)I
 
     move-result v1
 
@@ -1019,17 +1016,21 @@
 
     move-result-object v1
 
-    aput-object v1, v4, v2
+    const/4 v2, 0x4
 
-    const/4 v1, 0x5
+    aput-object v1, v3, v2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, v4, v1
+    const/4 v1, 0x5
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v3, v1
+
+    const-string/jumbo v0, "%s (%d,%d,%d,%d) %d Slices"
+
+    invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_0
     .catch Lcom/drew/lang/BufferBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1038,12 +1039,12 @@
     return-object v0
 
     :cond_0
-    return-object v6
+    return-object v5
 
     :catch_0
     move-exception v0
 
-    return-object v6
+    return-object v5
 .end method
 
 .method public getThumbnailDescription(I)Ljava/lang/String;
@@ -1106,62 +1107,62 @@
 
     move-result v1
 
-    const-string/jumbo v6, "%s, %dx%d, Decomp %d bytes, %d bpp, %d bytes"
+    const/4 v6, 0x6
 
-    const/4 v7, 0x6
+    new-array v6, v6, [Ljava/lang/Object;
 
-    new-array v7, v7, [Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const-string/jumbo v8, "%s, %dx%d, Decomp %d bytes, %d bpp, %d bytes"
 
     if-eq v0, v10, :cond_1
 
     const-string/jumbo v0, "RawRGB"
 
     :goto_0
-    aput-object v0, v7, v8
-
-    const/4 v0, 0x1
+    aput-object v0, v6, v7
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v0
 
-    aput-object v2, v7, v0
+    const/4 v2, 0x1
 
-    const/4 v0, 0x2
+    aput-object v0, v6, v2
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v0
 
-    aput-object v2, v7, v0
+    const/4 v2, 0x2
 
-    const/4 v0, 0x3
+    aput-object v0, v6, v2
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v0
 
-    aput-object v2, v7, v0
+    const/4 v2, 0x3
 
-    const/4 v0, 0x4
+    aput-object v0, v6, v2
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v7, v0
+    const/4 v1, 0x4
 
-    const/4 v0, 0x5
+    aput-object v0, v6, v1
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v7, v0
+    const/4 v1, 0x5
 
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v6, v1
+
+    invoke-static {v8, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1219,13 +1220,13 @@
 
     move-result v2
 
-    const/16 v3, 0x9
+    mul-int/lit8 v3, v2, 0x2
 
-    mul-int/lit8 v4, v2, 0x2
+    const-string/jumbo v4, "UTF-16"
 
-    const-string/jumbo v5, "UTF-16"
+    const/16 v5, 0x9
 
-    invoke-virtual {v1, v3, v4, v5}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v5, v3, v4}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1255,37 +1256,37 @@
 
     move-result v1
 
-    const-string/jumbo v2, "%d (%s, %s) %d"
+    const/4 v2, 0x4
 
-    const/4 v4, 0x4
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, v4, v6
+    const/4 v4, 0x0
+
+    aput-object v0, v2, v4
 
     const/4 v0, 0x1
 
-    aput-object v3, v4, v0
+    aput-object v3, v2, v0
 
     const/4 v0, 0x2
 
-    aput-object v5, v4, v0
-
-    const/4 v0, 0x3
+    aput-object v5, v2, v0
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v4, v0
+    const/4 v1, 0x3
 
-    invoke-static {v2, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v2, v1
+
+    const-string/jumbo v0, "%d (%s, %s) %d"
+
+    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_0
     .catch Lcom/drew/lang/BufferBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 

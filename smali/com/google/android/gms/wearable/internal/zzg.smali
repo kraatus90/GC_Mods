@@ -45,9 +45,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzg$zza;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, p2, p3, v1}, Lcom/google/android/gms/wearable/internal/zzg$zza;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/wearable/CapabilityApi$CapabilityListener;Ljava/lang/String;Lcom/google/android/gms/wearable/internal/zzg$1;)V
 
@@ -151,9 +151,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzg$zzf;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, p2, p3, v1}, Lcom/google/android/gms/wearable/internal/zzg$zzf;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/wearable/CapabilityApi$CapabilityListener;Ljava/lang/String;Lcom/google/android/gms/wearable/internal/zzg$1;)V
 

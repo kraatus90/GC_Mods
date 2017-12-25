@@ -28,9 +28,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x2
-
-    invoke-static {p1, v0}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    invoke-static {p1}, Lcom/motorola/camera/mcf/MotUtil;->Base64Encode([B)Ljava/lang/String;
 
     move-result-object v0
 

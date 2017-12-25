@@ -268,13 +268,13 @@
     throw v2
 
     :cond_3
-    const/4 v2, 0x1
-
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 

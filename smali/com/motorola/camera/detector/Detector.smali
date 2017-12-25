@@ -76,9 +76,9 @@
 
     move-result v0
 
-    new-instance v1, Lcom/motorola/camera/detector/-$Lambda$124;
+    new-instance v1, Lcom/motorola/camera/detector/-$Lambda$dcQO3CH_Aopbz2U0JHoOowRcJBo;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/detector/-$Lambda$124;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/detector/-$Lambda$dcQO3CH_Aopbz2U0JHoOowRcJBo;-><init>(Ljava/lang/Object;)V
 
     invoke-static {v0, v1}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
@@ -263,7 +263,7 @@
     return v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_detector_Detector_lambda$1(Ljava/lang/Runnable;)Ljava/lang/Thread;
+.method synthetic lambda$-com_motorola_camera_detector_Detector_1573(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 2
 
     new-instance v0, Ljava/lang/Thread;

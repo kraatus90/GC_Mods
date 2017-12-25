@@ -216,22 +216,6 @@
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->setValidContext(Z)V
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView$ContextFactory;->this$0:Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView;->-get6(Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView;)Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView$SurfaceTextureRenderer;
-
-    move-result-object v1
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView$SurfaceTextureRenderer;->-set1(Lcom/motorola/camera/ui/widgets/gl/PreviewSurfaceView$SurfaceTextureRenderer;Landroid/renderscript/RenderScript;)Landroid/renderscript/RenderScript;
-
     return-object v0
 .end method
 
@@ -268,8 +252,6 @@
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/TextureManager;->unloadTextures()V
 
     :cond_1
-    invoke-static {}, Landroid/renderscript/RenderScript;->releaseAllContexts()V
-
     invoke-interface {p1, p2, p3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
     move-result v0

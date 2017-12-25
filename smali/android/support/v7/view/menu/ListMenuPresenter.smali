@@ -322,13 +322,13 @@
 .end method
 
 .method public onSaveInstanceState()Landroid/os/Parcelable;
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->mMenuView:Landroid/support/v7/view/menu/ExpandedMenuView;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->mMenuView:Landroid/support/v7/view/menu/ExpandedMenuView;
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
 
@@ -339,7 +339,7 @@
     return-object v0
 
     :cond_0
-    return-object v2
+    return-object v1
 .end method
 
 .method public onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
@@ -359,7 +359,7 @@
 
     invoke-direct {v0, p1}, Landroid/support/v7/view/menu/MenuDialogHelper;-><init>(Landroid/support/v7/view/menu/MenuBuilder;)V
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuDialogHelper;->show(Landroid/os/IBinder;)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/view/menu/MenuDialogHelper;->show(Landroid/os/IBinder;)V
 
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->mCallback:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
@@ -371,7 +371,7 @@
     return v0
 
     :cond_0
-    return v2
+    return v1
 
     :cond_1
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->mCallback:Landroid/support/v7/view/menu/MenuPresenter$Callback;
@@ -384,9 +384,9 @@
 .method public restoreHierarchyState(Landroid/os/Bundle;)V
     .locals 2
 
-    const-string/jumbo v1, "android:menu:list"
+    const-string/jumbo v0, "android:menu:list"
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
     move-result-object v0
 

@@ -9,7 +9,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/abbyy/mobile/ocr4/DataSource;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -37,13 +37,13 @@
     return-void
 
     :cond_0
-    new-instance v1, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v2, "stream is null."
+    const-string/jumbo v1, "stream is null."
 
-    invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method
 
 

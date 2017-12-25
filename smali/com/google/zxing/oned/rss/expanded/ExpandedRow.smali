@@ -51,45 +51,43 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    instance-of v2, p1, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
+    instance-of v1, p1, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move-object v0, p1
+    check-cast p1, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
 
-    check-cast v0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
+    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->pairs:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->pairs:Ljava/util/List;
+    invoke-virtual {p1}, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->getPairs()Ljava/util/List;
 
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->getPairs()Ljava/util/List;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-interface {v1, v2}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
-    invoke-interface {v2, v3}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
+    move-result v1
 
-    move-result v2
-
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
     :cond_0
     :goto_0
-    return v1
+    return v0
 
     :cond_1
-    return v1
+    return v0
 
     :cond_2
-    iget-boolean v2, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->wasReversed:Z
+    iget-boolean v1, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->wasReversed:Z
 
-    iget-boolean v3, v0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->wasReversed:Z
+    iget-boolean v2, p1, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->wasReversed:Z
 
-    if-ne v2, v3, :cond_0
+    if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

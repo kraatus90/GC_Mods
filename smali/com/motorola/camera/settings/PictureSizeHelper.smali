@@ -350,7 +350,7 @@
 
     if-eqz v3, :cond_7
 
-    const v3, 0x7f08019e
+    const v3, 0x7f0800f3
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -378,7 +378,7 @@
 
     aput-object v0, v4, v10
 
-    const v0, 0x7f080136
+    const v0, 0x7f08013e
 
     invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -386,7 +386,7 @@
 
     aput-object v0, v4, v11
 
-    const v0, 0x7f08019f
+    const v0, 0x7f08014a
 
     invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -455,7 +455,7 @@
     goto :goto_2
 
     :cond_7
-    const v3, 0x7f0800f2
+    const v3, 0x7f0800f4
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -481,7 +481,7 @@
 
     aput-object v0, v4, v10
 
-    const v0, 0x7f080136
+    const v0, 0x7f08013e
 
     invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

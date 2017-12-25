@@ -17,7 +17,7 @@
 
 # virtual methods
 .method public extract([BLcom/drew/metadata/Metadata;)V
-    .locals 9
+    .locals 8
     .param p1    # [B
         .annotation build Lcom/drew/lang/annotations/NotNull;
         .end annotation
@@ -141,13 +141,9 @@
 
     move-result-object v5
 
-    const-string/jumbo v6, "Plug-in %d Data"
+    const/4 v6, 0x1
 
-    const/4 v7, 0x1
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
+    new-array v6, v6, [Ljava/lang/Object;
 
     add-int/lit16 v3, v3, -0xfa0
 
@@ -157,9 +153,13 @@
 
     move-result-object v3
 
-    aput-object v3, v7, v8
+    const/4 v7, 0x0
 
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v3, v6, v7
+
+    const-string/jumbo v3, "Plug-in %d Data"
+
+    invoke-static {v3, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 

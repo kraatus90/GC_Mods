@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/support/v7/app/AppCompatDelegate$ApplyableNightMode;,
         Landroid/support/v7/app/AppCompatDelegate$NightMode;
     }
 .end annotation
@@ -95,57 +96,61 @@
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastN()Z
+    const/16 v1, 0x18
 
-    move-result v1
+    if-ge v0, v1, :cond_0
 
-    if-nez v1, :cond_0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-ge v0, v1, :cond_1
 
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
     const/16 v1, 0xe
 
     if-ge v0, v1, :cond_2
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xb
 
     if-ge v0, v1, :cond_3
 
-    new-instance v1, Landroid/support/v7/app/AppCompatDelegateImplV9;
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-direct {v1, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV9;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV9;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    return-object v1
+    return-object v0
 
     :cond_0
-    new-instance v1, Landroid/support/v7/app/AppCompatDelegateImplN;
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplN;
 
-    invoke-direct {v1, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplN;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplN;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    return-object v1
+    return-object v0
 
     :cond_1
-    new-instance v1, Landroid/support/v7/app/AppCompatDelegateImplV23;
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV23;
 
-    invoke-direct {v1, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV23;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV23;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    return-object v1
+    return-object v0
 
     :cond_2
-    new-instance v1, Landroid/support/v7/app/AppCompatDelegateImplV14;
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV14;
 
-    invoke-direct {v1, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV14;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV14;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    return-object v1
+    return-object v0
 
     :cond_3
-    new-instance v1, Landroid/support/v7/app/AppCompatDelegateImplV11;
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV11;
 
-    invoke-direct {v1, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV11;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV11;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static getDefaultNightMode()I
@@ -229,6 +234,14 @@
         .end annotation
     .end param
     .annotation build Landroid/support/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Landroid/view/View;",
+            ">(I)TT;"
+        }
     .end annotation
 .end method
 

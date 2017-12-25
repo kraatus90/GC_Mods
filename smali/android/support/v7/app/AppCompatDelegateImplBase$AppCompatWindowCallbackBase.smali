@@ -148,55 +148,53 @@
 .end method
 
 .method public onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    instance-of v2, p3, Landroid/support/v7/view/menu/MenuBuilder;
+    instance-of v1, p3, Landroid/support/v7/view/menu/MenuBuilder;
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     :goto_0
     if-eqz p1, :cond_2
 
     :cond_0
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     :goto_1
     invoke-super {p0, p1, p2, p3}, Landroid/support/v7/view/WindowCallbackWrapper;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v1, :cond_4
+    if-nez v0, :cond_4
 
     :goto_2
-    return v0
+    return v1
 
     :cond_1
-    move-object v2, p3
+    move-object v0, p3
 
-    check-cast v2, Landroid/support/v7/view/menu/MenuBuilder;
-
-    move-object v1, v2
+    check-cast v0, Landroid/support/v7/view/menu/MenuBuilder;
 
     goto :goto_0
 
     :cond_2
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    return v3
+    return v2
 
     :cond_3
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
 
     goto :goto_1
 
     :cond_4
-    invoke-virtual {v1, v3}, Landroid/support/v7/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
 
     goto :goto_2
 .end method

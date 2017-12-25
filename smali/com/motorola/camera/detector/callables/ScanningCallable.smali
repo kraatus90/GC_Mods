@@ -204,7 +204,7 @@
 .method public abstract getTag()Ljava/lang/String;
 .end method
 
-.method synthetic lambda$-com_motorola_camera_detector_callables_ScanningCallable_lambda$1(Lcom/motorola/camera/device/callables/CallableReturn;)V
+.method synthetic lambda$-com_motorola_camera_detector_callables_ScanningCallable_1223(Lcom/motorola/camera/device/callables/CallableReturn;)V
     .locals 0
 
     invoke-virtual {p0, p1}, Lcom/motorola/camera/detector/callables/ScanningCallable;->callback(Lcom/motorola/camera/device/callables/CallableReturn;)V
@@ -299,9 +299,9 @@
 
     if-eqz v1, :cond_2
 
-    new-instance v1, Lcom/motorola/camera/detector/callables/-$Lambda$132;
+    new-instance v1, Lcom/motorola/camera/detector/callables/-$Lambda$qpoi01W1ACFnY5hyB-2Sk3Jbh4Y;
 
-    invoke-direct {v1, p0, v0}, Lcom/motorola/camera/detector/callables/-$Lambda$132;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v0}, Lcom/motorola/camera/detector/callables/-$Lambda$qpoi01W1ACFnY5hyB-2Sk3Jbh4Y;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-static {v1}, Lcom/motorola/camera/detector/callables/ScanningCallable;->runOnUiThread(Ljava/lang/Runnable;)V
 

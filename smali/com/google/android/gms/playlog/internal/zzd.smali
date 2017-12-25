@@ -18,11 +18,11 @@
 .method public constructor <init>(Lcom/google/android/gms/internal/zzlk$zza;)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/gms/playlog/internal/zzd;->zzayz:Lcom/google/android/gms/internal/zzlk$zza;
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/playlog/internal/zzd;->zzayp:Lcom/google/android/gms/playlog/internal/zzf;
 

@@ -36,7 +36,7 @@
 
 # virtual methods
 .method public getUserRecognitionLanguageCollection()Ljava/util/Collection;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -47,39 +47,39 @@
         }
     .end annotation
 
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v2
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    return-object v2
+    return-object v1
 
     :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Integer;
 
     new-instance v3, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet$UserRecognitionLanguageImpl;
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet$UserRecognitionLanguageImpl;-><init>(I)V
+    invoke-direct {v3, v0}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet$UserRecognitionLanguageImpl;-><init>(I)V
 
-    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

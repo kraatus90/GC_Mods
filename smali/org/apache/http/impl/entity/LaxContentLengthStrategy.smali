@@ -96,11 +96,11 @@
 
     array-length v2, v0
 
-    const-string/jumbo v3, "identity"
-
     invoke-interface {v1}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
     move-result-object v1
+
+    const-string/jumbo v3, "identity"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -144,15 +144,15 @@
     return-wide v4
 
     :cond_3
-    const-string/jumbo v1, "chunked"
+    add-int/lit8 v1, v2, -0x1
 
-    add-int/lit8 v2, v2, -0x1
-
-    aget-object v0, v0, v2
+    aget-object v0, v0, v1
 
     invoke-interface {v0}, Lorg/apache/http/HeaderElement;->getName()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "chunked"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

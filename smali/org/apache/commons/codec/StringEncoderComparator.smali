@@ -13,9 +13,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/commons/codec/StringEncoderComparator;->stringEncoder:Lorg/apache/commons/codec/StringEncoder;
 
@@ -35,7 +35,9 @@
 
 # virtual methods
 .method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 3
+
+    const/4 v2, 0x0
 
     :try_start_0
     iget-object v0, p0, Lorg/apache/commons/codec/StringEncoderComparator;->stringEncoder:Lorg/apache/commons/codec/StringEncoder;
@@ -66,7 +68,7 @@
     :catch_0
     move-exception v0
 
-    const/4 v0, 0x0
+    move v0, v2
 
     goto :goto_0
 .end method

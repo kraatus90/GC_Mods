@@ -148,7 +148,7 @@
     <string name="cancel">إلغاء</string>
     <string name="capture_failure">فشل الالتقاط. حاول مرة أخرى.</string>
     <string name="checkbox_do_not_show">عدم الإظهار مرة أخرى</string>
-    <string name="cloudsight_terms">سيتم إرسال صورك إلى CloudSight لتوفير نتائج البحث. &lt;br/>&lt;br/> إذا تابعتَ، فهذا يعني أنك توافق على &lt;a href=%1$s>سياسة خصوصية&lt;/a> CloudSight.</string>
+    <string name="cloudsight_terms">في كل مرة تستخدم التعرّف على العناصر، سيتم إرسال الصورة والموقع (إذا كان الخيار ممكّنًا) إلى جهة خارجية لتوفير نتائج البحث.&lt;br/>&lt;br/> إذا تابعتَ، فهذا يعني أنك توافق على&lt;a href=%1$s>سياسة الخصوصية&lt;/a>.</string>
     <string name="dailog_panorama_failed">فشل العرض البانورامي. يرجى إعادة المحاولة.</string>
     <string name="dailog_panorama_not_taken">لم يتم التقاط صورة بانوراما.</string>
     <string name="dialog_access_sd_fail">غير قادر على التقاط الوسائط. تعذر الوصول إلى بطاقة SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">الجهاز غير مدعوم</string>
     <string name="dialog_disagree">لا أوافق</string>
     <string name="dialog_dismiss">عدم إظهار ذلك مرة أخرى</string>
+    <string name="dialog_download">تنزيل</string>
     <string name="dialog_external_sd_missing">غير قادر على التقاط صورة. لا يمكن الوصول إلى بطاقة SD. يتم الانتقال إلى وحدة التخزين الداخلية للهاتف</string>
     <string name="dialog_first_time_set_pure_raw_message">"يُستخدَم نوع الملف هذا الذي لم تتم معالجته لتحرير الصور باحتراف.
 
@@ -247,6 +248,7 @@
     <string name="help_next">التالي</string>
     <string name="image_360_desc">هذه صورة برؤية 360 درجة. يمكنك تحرير هذه الصورة باستخدام محرر Moto 360.</string>
     <string name="image_360_name">صورة برؤية 360 درجة</string>
+    <string name="image_ratio_qcfa_res_summary">‏%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">وضع التصوير الدقيق</string>
     <string name="indicate_mode_mono">أسود وأبيض أصلي</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">زاوية واسعة للغاية</string>
     <string name="indicate_mode_video">فيديو</string>
     <string name="indicate_mode_wide_angle">زاوية واسعة</string>
+    <string name="indicate_mode_wide_angle_selfie">صورة ذاتية بزاوية واسعة</string>
     <string name="internal_storage">التخزين الداخلي</string>
     <string name="kilo_bytes">" ك ب"</string>
-    <string name="landmark_install_message">توفّر ميزة التعرّف على المعالم معلومات حول المعالم المشهورة حول العالم.&lt;br/>&lt;br/>قم بتثبيت هذه الميزة لتمكينها.</string>
-    <string name="landmark_install_over_data">يبلغ حجم تنزيل التعرّف على المعالم 92 ميجابايت. قد يتسبب تثبيت هذه الميزة باستخدام بيانات الهاتف المحمول برسوم بيانات إضافية.</string>
-    <string name="landmark_notification_downloading">يتم الآن تنزيل التعرّف على المعالم</string>
-    <string name="landmark_notification_install">يتم الآن تثبيت التعرّف على المعالم</string>
-    <string name="landmark_notification_install_complete">اكتمل تثبيت التعرّف على المعالم</string>
-    <string name="landmark_notification_install_failed">فشل تثبيت التعرّف على المعالم</string>
+    <string name="landmark_install_message">توفّر ميزة التعرّف على المعالم معلومات عن المعالم المشهورة حول العالم.&lt;br/>&lt;br/>قم بتنزيل قاعدة بيانات المعالم لتمكين هذه الميزة.</string>
+    <string name="landmark_install_over_data">يبلغ حجم تنزيل قاعدة بيانات المعالم 92 ميجابايت. وقد يتسبب تنزيل القاعدة باستخدام بيانات الهاتف المحمول برسوم بيانات إضافية.</string>
+    <string name="landmark_notification_downloading">يتم الآن تنزيل قاعدة بيانات المعالم</string>
+    <string name="landmark_notification_install">يتم الآن تثبيت قاعدة بيانات المعالم</string>
+    <string name="landmark_notification_install_complete">اكتمل تثبيت قاعدة بيانات المعالم</string>
+    <string name="landmark_notification_install_failed">فشل تثبيت قاعدة بيانات المعالم</string>
     <string name="landmark_notification_install_invalid_url">قاعدة بيانات المعالم غير متوفرة، يرجى التحديث إلى آخر إصدار من الكاميرا</string>
-    <string name="landmark_notification_install_out_of_space">لا تتوفر مساحة تخزين كافية لتثبيت التعرّف على المعالم</string>
+    <string name="landmark_notification_install_out_of_space">لا تتوفر مساحة تخزين كافية لتثبيت قاعدة بيانات المعالم</string>
+    <string name="landmark_notification_paused">ستتم متابعة تنزيل قاعدة بيانات المعالم عندما يتوفر اتصال إنترنت</string>
+    <string name="landmark_notification_queued">سيبدأ تنزيل قاعدة بيانات المعالم عندما يتوفر اتصال إنترنت</string>
     <string name="main_setting_amz_barcode">ماسح الرمز الشريطي من Amazon</string>
     <string name="main_setting_amz_privacy">إخطار الخصوصية من Amazon</string>
     <string name="main_setting_amz_terms">شروط الاستخدام</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">حجم الصورة (جهة الخلف)</string>
     <string name="main_setting_image_ratio_front">حجم الصورة (جهة الأمام)</string>
     <string name="main_setting_landmark_detection">التعرّف على المعالم</string>
+    <string name="main_setting_landmark_version_current">إصدار قاعدة البيانات: %s</string>
+    <string name="main_setting_landmark_version_not_installed">قاعدة البيانات غير مثبّتة</string>
     <string name="main_setting_licenses">تراخيص مفتوحة المصدر</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">‪ (Mod)</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">الأذونات المطلوبة</string>
     <string name="photos_depth_desc">استخدم المحرر الفائق لتحديد التركيز أو استبدال الخلفية أو تحديد منطقة لتغييرها إلى اللونين الأسود والأبيض.</string>
     <string name="photos_depth_name">وضع التصوير الدقيق</string>
+    <string name="photos_notification_desc">احصل على مساحة تخزين غير محدودة مع صور Google</string>
+    <string name="photos_notification_title">النسخ الاحتياطي إلى صور Google</string>
+    <string name="qcfa_resolution_description">الضوء الخافت التكيّفي</string>
     <string name="retake">إعادة التقاط</string>
     <string name="second_10">10 ثوانٍ</string>
     <string name="second_3">3 ثوانٍ</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">حركة بطيئة</string>
     <string name="setting_mode_ultra_wide">زاوية واسعة للغاية</string>
     <string name="setting_mode_video">فيديو</string>
+    <string name="setting_mode_wide_angle_selfie">صورة ذاتية بزاوية واسعة</string>
     <string name="setting_off">إيقاف</string>
     <string name="setting_on">تشغيل</string>
     <string name="setting_persist">تعليق</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">مؤقت</string>
     <string name="setting_torch">مصباح</string>
     <string name="setting_true">صحيح</string>
+    <string name="shortcut_desc_depth">صورة دقيقة</string>
+    <string name="shortcut_desc_selfie">صورة ذاتية</string>
+    <string name="shortcut_desc_video">فيديو</string>
     <string name="smartcam_landmark_notification_title">الكاميرا الذكية</string>
+    <string name="smartcam_no_detections">ما من عناصر أو معالم محفوظة</string>
     <string name="storage_location_external">بطاقة SD</string>
     <string name="storage_location_internal">الهاتف</string>
     <string name="storage_unavailable">التخزين غير متاح</string>
+    <string name="toast_battery_saver">جهازك الآن في وضع توفير الطاقة، وقد تكون بعض الميزات محدودة</string>
     <string name="toast_geotag_message_1">عليك منح إذن الموقع لتمكين حفظ الموقع.</string>
     <string name="toast_geotag_message_2">يسري مفعول إعداد الموقع بعد تشغيل إعداد موقع النظام فقط.</string>
     <string name="tooltip_camera_switch_360">حاول التبديل إلى خيارات كاميرا مختلفة.</string>
     <string name="tooltip_capture_360">حاول التقاط صورة أو فيديو 360 درجة من خلال النقر فوق زر الغالق هذا.</string>
-    <string name="tooltip_capture_key_360">حاول أيضًا الالتقاط باستخدام زر الغالق على الجهة الخلفية لوحدة mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">التقط الصور مع معلومات إضافية، لتمكين ميزات التحرير الخاصة.</string>
+    <string name="tooltip_capture_key_360">حاول أيضًا الالتقاط باستخدام زر الغالق على الجهة الخلفية لوحدة Mod.</string>
     <string name="tooltip_first_use_zoom_button">انقر هنا للتبديل إلى زاوية واسعة.</string>
     <string name="tooltip_gallery_360">يمكنك رؤية الصورة أو الفيديو 360 درجة بالتمرير سريعًا إلى اليسار.</string>
     <string name="tooltip_minimap_viewfinder">حرّك الصورة السفلية إلى اليسار أو إلى اليمين.</string>
     <string name="tooltip_mode_switch_360">حاول التقاط 360 درجة بأوضاع مختلفة!</string>
+    <string name="tooltip_modes_list">اكتشف طرقًا جديدة لالتقاط صورك.</string>
     <string name="tooltip_smart_camera">انقر لمعرفة المزيد حول العنصر.</string>
     <string name="tooltip_smart_camera_disable">يمكنك إيقاف التشغيل في الإعدادات.</string>
     <string name="tooltip_spherical_viewfinder">يمكنك التحكم في العرض من خلال التحريك أو التكبير والتصغير.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">كامل</string>
     <string name="zoom_hint_wide">واسع</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">التسريع الزمني</string>
+    <string name="setting_mode_timelapse">التسريع الزمني</string>
+    <string name="timelapse_config_16x">‏16 ضعفًا</string>
+    <string name="timelapse_config_32x">‏32 ضعفًا</string>
+    <string name="timelapse_config_4x">‏4 أضعاف</string>
+    <string name="timelapse_config_8x">‏8 أضعاف</string>
 </resources>

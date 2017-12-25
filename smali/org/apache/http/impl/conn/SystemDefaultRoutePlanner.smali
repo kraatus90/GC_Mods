@@ -158,28 +158,28 @@
 .method protected a(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpRequest;Lorg/apache/http/protocol/HttpContext;)Lorg/apache/http/HttpHost;
     .locals 4
 
-    const/4 v0, 0x0
-
     :try_start_0
-    new-instance v1, Ljava/net/URI;
+    new-instance v0, Ljava/net/URI;
 
     invoke-virtual {p1}, Lorg/apache/http/HttpHost;->toURI()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v2, p0, Lorg/apache/http/impl/conn/SystemDefaultRoutePlanner;->proxySelector:Ljava/net/ProxySelector;
+    iget-object v1, p0, Lorg/apache/http/impl/conn/SystemDefaultRoutePlanner;->proxySelector:Ljava/net/ProxySelector;
 
-    invoke-virtual {v2, v1}, Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;
+    invoke-virtual {v1, v0}, Ljava/net/ProxySelector;->select(Ljava/net/URI;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lorg/apache/http/impl/conn/SystemDefaultRoutePlanner;->chooseProxy(Ljava/util/List;)Ljava/net/Proxy;
 
     move-result-object v1
 
-    invoke-direct {p0, v1}, Lorg/apache/http/impl/conn/SystemDefaultRoutePlanner;->chooseProxy(Ljava/util/List;)Ljava/net/Proxy;
-
-    move-result-object v1
+    const/4 v0, 0x0
 
     invoke-virtual {v1}, Ljava/net/Proxy;->type()Ljava/net/Proxy$Type;
 

@@ -39,17 +39,17 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 8
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    const/4 v7, 0x4
+    const/4 v6, 0x4
 
-    const/4 v6, 0x3
+    const/4 v5, 0x3
 
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     const/16 v0, 0x6b
 
@@ -59,39 +59,59 @@
 
     new-array v1, v1, [I
 
-    aput v5, v1, v8
+    aput v4, v1, v7
+
+    aput v3, v1, v3
 
     aput v4, v1, v4
 
-    aput v5, v1, v5
+    aput v4, v1, v5
 
-    aput v5, v1, v6
-
-    aput v5, v1, v7
+    aput v4, v1, v6
 
     const/4 v2, 0x5
 
-    aput v5, v1, v2
+    aput v4, v1, v2
 
-    aput-object v1, v0, v8
+    aput-object v1, v0, v7
 
     const/4 v1, 0x6
 
     new-array v1, v1, [I
 
-    aput v5, v1, v8
+    aput v4, v1, v7
 
-    aput v5, v1, v4
+    aput v4, v1, v3
 
-    aput v5, v1, v5
+    aput v4, v1, v4
+
+    aput v3, v1, v5
 
     aput v4, v1, v6
 
-    aput v5, v1, v7
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    aput-object v1, v0, v3
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
 
     const/4 v2, 0x5
 
-    aput v5, v1, v2
+    aput v3, v1, v2
 
     aput-object v1, v0, v4
 
@@ -99,19 +119,19 @@
 
     new-array v1, v1, [I
 
-    aput v5, v1, v8
+    aput v3, v1, v7
 
-    aput v5, v1, v4
+    aput v4, v1, v3
 
-    aput v5, v1, v5
+    aput v3, v1, v4
 
-    aput v5, v1, v6
+    aput v4, v1, v5
 
-    aput v5, v1, v7
+    aput v4, v1, v6
 
     const/4 v2, 0x5
 
-    aput v4, v1, v2
+    aput v5, v1, v2
 
     aput-object v1, v0, v5
 
@@ -119,19 +139,19 @@
 
     new-array v1, v1, [I
 
-    aput v4, v1, v8
+    aput v3, v1, v7
 
-    aput v5, v1, v4
+    aput v4, v1, v3
 
-    aput v4, v1, v5
+    aput v3, v1, v4
 
-    aput v5, v1, v6
+    aput v5, v1, v5
 
-    aput v5, v1, v7
+    aput v4, v1, v6
 
     const/4 v2, 0x5
 
-    aput v6, v1, v2
+    aput v4, v1, v2
 
     aput-object v1, v0, v6
 
@@ -139,2269 +159,2249 @@
 
     new-array v1, v1, [I
 
-    aput v4, v1, v8
+    aput v3, v1, v7
 
-    aput v5, v1, v4
+    aput v5, v1, v3
+
+    aput v3, v1, v4
 
     aput v4, v1, v5
 
-    aput v6, v1, v6
+    aput v4, v1, v6
 
-    aput v5, v1, v7
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
 
     const/4 v2, 0x5
 
     aput v5, v1, v2
 
-    aput-object v1, v0, v7
-
-    const/4 v1, 0x5
-
     const/4 v2, 0x6
 
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     const/4 v1, 0x6
 
-    const/4 v2, 0x6
+    new-array v1, v1, [I
 
-    new-array v2, v2, [I
+    aput v3, v1, v7
 
-    aput v4, v2, v8
+    aput v4, v1, v3
 
-    aput v5, v2, v4
+    aput v4, v1, v4
 
-    aput v5, v2, v5
+    aput v5, v1, v5
 
-    aput v5, v2, v6
+    aput v3, v1, v6
 
-    aput v4, v2, v7
+    const/4 v2, 0x5
 
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v6, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v6, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x16
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x17
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x18
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x19
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1a
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1b
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1c
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1d
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1e
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1f
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v6, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x20
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v6, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x21
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x22
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x23
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x24
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x25
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x26
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v5, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x27
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x28
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x29
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x2a
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x2b
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v6, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x2c
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x2d
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x2e
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v6, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x2f
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x30
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x31
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x32
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x33
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x34
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x35
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x36
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x37
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x38
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x39
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x3a
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x3b
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v6, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x3c
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v7, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x3d
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v7, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x3e
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x3f
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v7, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x40
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v7, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x41
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v7, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x42
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v7, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x43
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v7, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x44
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v7, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x45
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v7, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x46
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v7, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x47
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v7, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x48
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v5, v2, v5
-
-    aput v7, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x49
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v7, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x4a
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v7, v2, v4
-
-    aput v5, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x4b
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v7, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x4c
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v7, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x4d
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x4e
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v7, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x4f
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v7, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x50
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x51
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x52
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x53
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v7, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x54
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v7, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x55
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v5, v2, v4
-
-    aput v7, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x56
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x57
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x58
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v5, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x59
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x5a
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v7, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x5b
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v4, v2, v4
-
-    aput v5, v2, v5
-
-    aput v4, v2, v6
-
-    aput v5, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x5c
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x5d
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x5e
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v6, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x5f
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v7, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x60
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v7, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x61
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v6, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x62
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v6, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x63
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v6, v2, v5
-
-    aput v4, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x64
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v4, v2, v8
-
-    aput v4, v2, v4
-
-    aput v7, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x65
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v6, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v7, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x66
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v7, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v4, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v4, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x67
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v7, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x68
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v4, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v7, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x69
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [I
-
-    aput v5, v2, v8
-
-    aput v4, v2, v4
-
-    aput v4, v2, v5
-
-    aput v5, v2, v6
-
-    aput v6, v2, v7
-
-    const/4 v3, 0x5
-
-    aput v5, v2, v3
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x6a
+    aput v4, v1, v2
 
     const/4 v2, 0x7
 
-    new-array v2, v2, [I
+    aput-object v1, v0, v2
 
-    aput v5, v2, v8
+    const/4 v1, 0x6
 
-    aput v6, v2, v4
+    new-array v1, v1, [I
 
-    aput v6, v2, v5
+    aput v3, v1, v7
 
-    aput v4, v2, v6
+    aput v5, v1, v3
 
-    aput v4, v2, v7
+    aput v4, v1, v4
 
-    const/4 v3, 0x5
+    aput v4, v1, v5
 
-    aput v4, v2, v3
+    aput v3, v1, v6
 
-    const/4 v3, 0x6
+    const/4 v2, 0x5
 
-    aput v5, v2, v3
+    aput v4, v1, v2
 
-    aput-object v2, v0, v1
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v5, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x11
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v5, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x12
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x14
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x15
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x16
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x17
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x18
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x19
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x1a
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x1b
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x1c
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x1d
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x1e
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v5, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x1f
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v5, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x20
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x21
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x22
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x23
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x24
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x25
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v4, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x26
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x27
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x28
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x29
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x2a
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v5, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x2b
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x2c
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x2d
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v5, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x2e
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x2f
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x30
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x31
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x32
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x33
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x34
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x35
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x36
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x37
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x38
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x39
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x3a
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v5, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x3b
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v6, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x3c
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v6, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x3d
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x3e
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v6, v1, v2
+
+    const/16 v2, 0x3f
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v6, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x40
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v6, v1, v2
+
+    const/16 v2, 0x41
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v6, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x42
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v6, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x43
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v6, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x44
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v6, v1, v2
+
+    const/16 v2, 0x45
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v6, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x46
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v6, v1, v2
+
+    const/16 v2, 0x47
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v4, v1, v4
+
+    aput v6, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x48
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v6, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x49
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v6, v1, v3
+
+    aput v4, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x4a
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v6, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x4b
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v6, v1, v2
+
+    const/16 v2, 0x4c
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x4d
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v6, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x4e
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v6, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x4f
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x50
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x51
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x52
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v6, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x53
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v6, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x54
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v4, v1, v3
+
+    aput v6, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x55
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x56
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x57
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v4, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x58
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x59
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v6, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x5a
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v3, v1, v3
+
+    aput v4, v1, v4
+
+    aput v3, v1, v5
+
+    aput v4, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x5b
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x5c
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x5d
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v5, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x5e
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v6, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x5f
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v6, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x60
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v5, v1, v2
+
+    const/16 v2, 0x61
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v5, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x62
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x63
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v3, v1, v7
+
+    aput v3, v1, v3
+
+    aput v6, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x64
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v5, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v6, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x65
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v6, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v3, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/16 v2, 0x66
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v6, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x67
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v6, v1, v2
+
+    const/16 v2, 0x68
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v3, v1, v3
+
+    aput v3, v1, v4
+
+    aput v4, v1, v5
+
+    aput v5, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x69
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x7
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v7
+
+    aput v5, v1, v3
+
+    aput v5, v1, v4
+
+    aput v3, v1, v5
+
+    aput v3, v1, v6
+
+    const/4 v2, 0x5
+
+    aput v3, v1, v2
+
+    const/4 v2, 0x6
+
+    aput v4, v1, v2
+
+    const/16 v2, 0x6a
+
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
 
@@ -2417,62 +2417,62 @@
 .end method
 
 .method private static decodeCode(Lcom/google/zxing/common/BitArray;[II)I
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
         }
     .end annotation
 
+    const/4 v0, 0x0
+
     invoke-static {p0, p2, p1}, Lcom/google/zxing/oned/Code128Reader;->recordPattern(Lcom/google/zxing/common/BitArray;I[I)V
 
-    const/high16 v1, 0x3e800000    # 0.25f
+    const/high16 v2, 0x3e800000    # 0.25f
 
-    const/4 v0, -0x1
-
-    const/4 v2, 0x0
+    const/4 v1, -0x1
 
     :goto_0
-    sget-object v5, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+    sget-object v3, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
 
-    array-length v5, v5
+    array-length v3, v3
 
-    if-lt v2, v5, :cond_0
+    if-lt v0, v3, :cond_0
 
-    if-gez v0, :cond_2
+    if-gez v1, :cond_2
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v5
+    move-result-object v0
 
-    throw v5
+    throw v0
 
     :cond_0
-    sget-object v5, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+    sget-object v3, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
 
-    aget-object v3, v5, v2
+    aget-object v3, v3, v0
 
-    const v5, 0x3f333333    # 0.7f
+    const v4, 0x3f333333    # 0.7f
 
-    invoke-static {p1, v3, v5}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[IF)F
+    invoke-static {p1, v3, v4}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[IF)F
 
-    move-result v4
+    move-result v3
 
-    cmpg-float v5, v4, v1
+    cmpg-float v4, v3, v2
 
-    if-gez v5, :cond_1
+    if-gez v4, :cond_1
 
-    move v1, v4
+    move v1, v0
 
-    move v0, v2
+    move v2, v3
 
     :cond_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_2
-    return v0
+    return v1
 .end method
 
 .method private static findStartPattern(Lcom/google/zxing/common/BitArray;)[I
@@ -2483,193 +2483,196 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
+    const/4 v14, 0x2
 
-    move-result v11
-
-    const/4 v12, 0x0
-
-    invoke-virtual {p0, v12}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
-
-    move-result v8
-
-    const/4 v2, 0x0
-
-    const/4 v12, 0x6
-
-    new-array v3, v12, [I
-
-    move v7, v8
+    const/4 v6, 0x1
 
     const/4 v5, 0x0
 
-    array-length v6, v3
+    invoke-virtual {p0}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move v4, v8
+    move-result v10
+
+    invoke-virtual {p0, v5}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
+
+    move-result v0
+
+    const/4 v1, 0x6
+
+    new-array v11, v1, [I
+
+    array-length v12, v11
+
+    move v9, v0
+
+    move v7, v5
+
+    move v4, v0
+
+    move v8, v5
 
     :goto_0
-    if-lt v4, v11, :cond_0
+    if-lt v9, v10, :cond_0
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v12
+    move-result-object v0
 
-    throw v12
+    throw v0
 
     :cond_0
-    invoke-virtual {p0, v4}, Lcom/google/zxing/common/BitArray;->get(I)Z
+    invoke-virtual {p0, v9}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
-    move-result v12
+    move-result v0
 
-    xor-int/2addr v12, v5
+    xor-int/2addr v0, v7
 
-    if-nez v12, :cond_1
+    if-nez v0, :cond_1
 
-    add-int/lit8 v12, v6, -0x1
+    add-int/lit8 v0, v12, -0x1
 
-    if-eq v2, v12, :cond_2
+    if-eq v8, v0, :cond_2
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v8, 0x1
+
+    move v1, v0
+
+    move v0, v4
 
     :goto_1
-    const/4 v12, 0x1
+    aput v6, v11, v1
 
-    aput v12, v3, v2
+    if-eqz v7, :cond_7
 
-    if-eqz v5, :cond_7
-
-    const/4 v5, 0x0
+    move v2, v5
 
     :goto_2
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v3, v9, 0x1
+
+    move v9, v3
+
+    move v7, v2
+
+    move v4, v0
+
+    move v8, v1
 
     goto :goto_0
 
     :cond_1
-    aget v12, v3, v2
+    aget v0, v11, v8
 
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    aput v12, v3, v2
+    aput v0, v11, v8
+
+    move v2, v7
+
+    move v0, v4
+
+    move v1, v8
 
     goto :goto_2
 
     :cond_2
-    const/high16 v1, 0x3e800000    # 0.25f
+    const/high16 v3, 0x3e800000    # 0.25f
 
     const/4 v0, -0x1
 
-    const/16 v9, 0x67
+    const/16 v1, 0x67
 
     :goto_3
-    const/16 v12, 0x69
+    const/16 v2, 0x69
 
-    if-le v9, v12, :cond_4
+    if-le v1, v2, :cond_4
 
     if-gez v0, :cond_6
 
     :cond_3
-    const/4 v12, 0x0
+    aget v0, v11, v5
 
-    aget v12, v3, v12
+    aget v1, v11, v6
 
-    const/4 v13, 0x1
+    add-int/2addr v0, v1
 
-    aget v13, v3, v13
+    add-int/2addr v0, v4
 
-    add-int/2addr v12, v13
+    add-int/lit8 v1, v12, -0x2
 
-    add-int/2addr v7, v12
+    invoke-static {v11, v14, v11, v5, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v12, 0x2
+    add-int/lit8 v1, v12, -0x2
 
-    const/4 v13, 0x0
+    aput v5, v11, v1
 
-    add-int/lit8 v14, v6, -0x2
+    add-int/lit8 v1, v12, -0x1
 
-    invoke-static {v3, v12, v3, v13, v14}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    aput v5, v11, v1
 
-    add-int/lit8 v12, v6, -0x2
-
-    const/4 v13, 0x0
-
-    aput v13, v3, v12
-
-    add-int/lit8 v12, v6, -0x1
-
-    const/4 v13, 0x0
-
-    aput v13, v3, v12
-
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v8, -0x1
 
     goto :goto_1
 
     :cond_4
-    sget-object v12, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
+    sget-object v2, Lcom/google/zxing/oned/Code128Reader;->CODE_PATTERNS:[[I
 
-    aget-object v12, v12, v9
+    aget-object v2, v2, v1
 
     const v13, 0x3f333333    # 0.7f
 
-    invoke-static {v3, v12, v13}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[IF)F
+    invoke-static {v11, v2, v13}, Lcom/google/zxing/oned/Code128Reader;->patternMatchVariance([I[IF)F
 
-    move-result v10
+    move-result v2
 
-    cmpg-float v12, v10, v1
+    cmpg-float v13, v2, v3
 
-    if-gez v12, :cond_5
+    if-gez v13, :cond_5
 
-    move v1, v10
+    move v0, v1
 
-    move v0, v9
+    :goto_4
+    add-int/lit8 v1, v1, 0x1
 
-    :cond_5
-    add-int/lit8 v9, v9, 0x1
+    move v3, v2
 
     goto :goto_3
 
+    :cond_5
+    move v2, v3
+
+    goto :goto_4
+
     :cond_6
-    const/4 v12, 0x0
+    sub-int v1, v9, v4
 
-    sub-int v13, v4, v7
+    div-int/lit8 v1, v1, 0x2
 
-    div-int/lit8 v13, v13, 0x2
+    sub-int v1, v4, v1
 
-    sub-int v13, v7, v13
+    invoke-static {v5, v1}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v12, v13}, Ljava/lang/Math;->max(II)I
+    move-result v1
 
-    move-result v12
+    invoke-virtual {p0, v1, v4, v5}, Lcom/google/zxing/common/BitArray;->isRange(IIZ)Z
 
-    const/4 v13, 0x0
+    move-result v1
 
-    invoke-virtual {p0, v12, v7, v13}, Lcom/google/zxing/common/BitArray;->isRange(IIZ)Z
+    if-eqz v1, :cond_3
 
-    move-result v12
+    const/4 v1, 0x3
 
-    if-eqz v12, :cond_3
+    new-array v1, v1, [I
 
-    const/4 v12, 0x3
+    aput v4, v1, v5
 
-    new-array v12, v12, [I
+    aput v9, v1, v6
 
-    const/4 v13, 0x0
+    aput v0, v1, v14
 
-    aput v7, v12, v13
-
-    const/4 v13, 0x1
-
-    aput v4, v12, v13
-
-    const/4 v13, 0x2
-
-    aput v0, v12, v13
-
-    return-object v12
+    return-object v1
 
     :cond_7
-    const/4 v5, 0x1
+    move v2, v6
 
     goto :goto_2
 .end method
@@ -2677,7 +2680,7 @@
 
 # virtual methods
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
-    .locals 38
+    .locals 25
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -2701,955 +2704,1043 @@
     if-nez p3, :cond_1
 
     :cond_0
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     :goto_0
     invoke-static/range {p2 .. p2}, Lcom/google/zxing/oned/Code128Reader;->findStartPattern(Lcom/google/zxing/common/BitArray;)[I
 
-    move-result-object v29
+    move-result-object v17
 
-    const/16 v32, 0x2
+    const/4 v3, 0x2
 
-    aget v28, v29, v32
+    aget v7, v17, v3
 
-    new-instance v22, Ljava/util/ArrayList;
+    new-instance v18, Ljava/util/ArrayList;
 
-    const/16 v32, 0x14
+    const/16 v3, 0x14
 
-    move-object/from16 v0, v22
+    move-object/from16 v0, v18
 
-    move/from16 v1, v32
+    invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    int-to-byte v3, v7
 
-    move/from16 v0, v28
+    invoke-static {v3}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    int-to-byte v0, v0
+    move-result-object v3
 
-    move/from16 v32, v0
+    move-object/from16 v0, v18
 
-    invoke-static/range {v32 .. v32}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result-object v32
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v32
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    packed-switch v28, :pswitch_data_0
+    packed-switch v7, :pswitch_data_0
 
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v32
+    move-result-object v2
 
-    throw v32
+    throw v2
 
     :cond_1
-    sget-object v32, Lcom/google/zxing/DecodeHintType;->ASSUME_GS1:Lcom/google/zxing/DecodeHintType;
+    sget-object v2, Lcom/google/zxing/DecodeHintType;->ASSUME_GS1:Lcom/google/zxing/DecodeHintType;
 
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v32
+    invoke-interface {v0, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result v32
+    if-eqz v2, :cond_0
 
-    if-eqz v32, :cond_0
-
-    const/4 v8, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :pswitch_0
-    const/16 v7, 0x65
+    const/16 v3, 0x65
 
     :goto_1
+    const/4 v12, 0x0
+
     const/4 v11, 0x0
 
-    const/4 v13, 0x0
+    new-instance v19, Ljava/lang/StringBuilder;
 
-    new-instance v24, Ljava/lang/StringBuilder;
+    const/16 v4, 0x14
 
-    const/16 v32, 0x14
+    move-object/from16 v0, v19
 
-    move-object/from16 v0, v24
+    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move/from16 v1, v32
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    aget v9, v17, v4
 
-    const/16 v32, 0x0
+    const/4 v4, 0x1
 
-    aget v17, v29, v32
+    aget v13, v17, v4
 
-    const/16 v32, 0x1
+    const/4 v4, 0x6
 
-    aget v20, v29, v32
+    new-array v0, v4, [I
 
-    const/16 v32, 0x6
+    move-object/from16 v20, v0
 
-    move/from16 v0, v32
+    const/4 v14, 0x0
 
-    new-array v10, v0, [I
+    const/4 v8, 0x0
 
-    const/4 v15, 0x0
+    const/4 v4, 0x0
+
+    const/4 v10, 0x1
 
     const/4 v6, 0x0
 
-    move/from16 v5, v28
+    const/4 v5, 0x0
 
-    const/16 v19, 0x0
+    move/from16 v16, v11
 
-    const/4 v14, 0x1
+    move v11, v9
 
-    const/16 v31, 0x0
+    move v9, v3
 
-    const/16 v27, 0x0
+    move v3, v4
 
-    :cond_2
+    move v4, v7
+
+    move v7, v14
+
+    move v14, v8
+
+    move v8, v12
+
     :goto_2
-    if-eqz v11, :cond_4
+    if-eqz v8, :cond_3
 
-    sub-int v16, v20, v17
+    sub-int v2, v13, v11
 
     move-object/from16 v0, p2
 
-    move/from16 v1, v20
+    invoke-virtual {v0, v13}, Lcom/google/zxing/common/BitArray;->getNextUnset(I)I
 
-    invoke-virtual {v0, v1}, Lcom/google/zxing/common/BitArray;->getNextUnset(I)I
-
-    move-result v20
+    move-result v5
 
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v32
+    move-result v6
 
-    sub-int v33, v20, v17
+    sub-int v8, v5, v11
 
-    div-int/lit8 v33, v33, 0x2
+    div-int/lit8 v8, v8, 0x2
 
-    add-int v33, v33, v20
+    add-int/2addr v8, v5
 
-    invoke-static/range {v32 .. v33}, Ljava/lang/Math;->min(II)I
+    invoke-static {v6, v8}, Ljava/lang/Math;->min(II)I
 
-    move-result v32
+    move-result v6
 
-    const/16 v33, 0x0
+    const/4 v8, 0x0
 
     move-object/from16 v0, p2
 
-    move/from16 v1, v20
+    invoke-virtual {v0, v5, v6, v8}, Lcom/google/zxing/common/BitArray;->isRange(IIZ)Z
 
-    move/from16 v2, v32
+    move-result v5
 
-    move/from16 v3, v33
+    if-eqz v5, :cond_22
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/zxing/common/BitArray;->isRange(IIZ)Z
+    mul-int/2addr v3, v7
 
-    move-result v32
+    sub-int v3, v4, v3
 
-    if-eqz v32, :cond_20
+    rem-int/lit8 v3, v3, 0x67
 
-    mul-int v32, v19, v15
+    if-ne v3, v7, :cond_23
 
-    sub-int v5, v5, v32
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->length()I
 
-    rem-int/lit8 v32, v5, 0x67
+    move-result v3
 
-    move/from16 v0, v32
+    if-eqz v3, :cond_24
 
-    if-ne v0, v15, :cond_21
+    if-gtz v3, :cond_25
 
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v25
-
-    if-eqz v25, :cond_22
-
-    if-gtz v25, :cond_23
-
-    :cond_3
+    :cond_2
     :goto_3
-    const/16 v32, 0x1
+    const/4 v3, 0x1
 
-    aget v32, v29, v32
+    aget v3, v17, v3
 
-    const/16 v33, 0x0
+    const/4 v4, 0x0
 
-    aget v33, v29, v33
+    aget v4, v17, v4
 
-    add-int v32, v32, v33
+    add-int/2addr v3, v4
 
-    move/from16 v0, v32
+    int-to-float v3, v3
 
-    int-to-float v0, v0
+    const/high16 v4, 0x40000000    # 2.0f
 
-    move/from16 v32, v0
+    div-float v4, v3, v4
 
-    const/high16 v33, 0x40000000    # 2.0f
+    int-to-float v3, v11
 
-    div-float v18, v32, v33
+    int-to-float v2, v2
 
-    move/from16 v0, v17
+    const/high16 v5, 0x40000000    # 2.0f
 
-    int-to-float v0, v0
+    div-float/2addr v2, v5
 
-    move/from16 v32, v0
+    add-float v5, v3, v2
 
-    move/from16 v0, v16
+    invoke-interface/range {v18 .. v18}, Ljava/util/List;->size()I
 
-    int-to-float v0, v0
+    move-result v6
 
-    move/from16 v33, v0
+    new-array v7, v6, [B
 
-    const/high16 v34, 0x40000000    # 2.0f
+    const/4 v2, 0x0
 
-    div-float v33, v33, v34
-
-    add-float v26, v32, v33
-
-    invoke-interface/range {v22 .. v22}, Ljava/util/List;->size()I
-
-    move-result v23
-
-    move/from16 v0, v23
-
-    new-array v0, v0, [B
-
-    move-object/from16 v21, v0
-
-    const/4 v12, 0x0
+    move v3, v2
 
     :goto_4
-    move/from16 v0, v23
+    if-lt v3, v6, :cond_27
 
-    if-lt v12, v0, :cond_25
+    new-instance v2, Lcom/google/zxing/Result;
 
-    new-instance v32, Lcom/google/zxing/Result;
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v33
+    const/4 v6, 0x2
 
-    const/16 v34, 0x2
+    new-array v6, v6, [Lcom/google/zxing/ResultPoint;
 
-    move/from16 v0, v34
-
-    new-array v0, v0, [Lcom/google/zxing/ResultPoint;
-
-    move-object/from16 v34, v0
-
-    const/16 v35, 0x0
-
-    new-instance v36, Lcom/google/zxing/ResultPoint;
+    new-instance v8, Lcom/google/zxing/ResultPoint;
 
     move/from16 v0, p1
 
-    int-to-float v0, v0
+    int-to-float v9, v0
 
-    move/from16 v37, v0
+    invoke-direct {v8, v4, v9}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    move-object/from16 v0, v36
+    const/4 v4, 0x0
 
-    move/from16 v1, v18
+    aput-object v8, v6, v4
 
-    move/from16 v2, v37
-
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
-
-    aput-object v36, v34, v35
-
-    const/16 v35, 0x1
-
-    new-instance v36, Lcom/google/zxing/ResultPoint;
+    new-instance v4, Lcom/google/zxing/ResultPoint;
 
     move/from16 v0, p1
 
-    int-to-float v0, v0
+    int-to-float v8, v0
 
-    move/from16 v37, v0
+    invoke-direct {v4, v5, v8}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
-    move-object/from16 v0, v36
+    const/4 v5, 0x1
 
-    move/from16 v1, v26
+    aput-object v4, v6, v5
 
-    move/from16 v2, v37
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v2, v3, v7, v6, v4}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
-    aput-object v36, v34, v35
-
-    sget-object v35, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
-
-    move-object/from16 v0, v32
-
-    move-object/from16 v1, v33
-
-    move-object/from16 v2, v21
-
-    move-object/from16 v3, v34
-
-    move-object/from16 v4, v35
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
-
-    return-object v32
+    return-object v2
 
     :pswitch_1
-    const/16 v7, 0x64
+    const/16 v3, 0x64
 
     goto/16 :goto_1
 
     :pswitch_2
-    const/16 v7, 0x63
+    const/16 v3, 0x63
 
     goto/16 :goto_1
 
-    :cond_4
-    move/from16 v30, v13
-
-    const/4 v13, 0x0
-
-    move v15, v6
+    :cond_3
+    const/4 v7, 0x0
 
     move-object/from16 v0, p2
 
-    move/from16 v1, v20
+    move-object/from16 v1, v20
 
-    invoke-static {v0, v10, v1}, Lcom/google/zxing/oned/Code128Reader;->decodeCode(Lcom/google/zxing/common/BitArray;[II)I
+    invoke-static {v0, v1, v13}, Lcom/google/zxing/oned/Code128Reader;->decodeCode(Lcom/google/zxing/common/BitArray;[II)I
 
-    move-result v6
+    move-result v15
 
-    int-to-byte v0, v6
+    int-to-byte v11, v15
 
-    move/from16 v32, v0
+    invoke-static {v11}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    invoke-static/range {v32 .. v32}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    move-result-object v11
 
-    move-result-object v32
+    move-object/from16 v0, v18
 
-    move-object/from16 v0, v22
+    invoke-interface {v0, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, v32
+    const/16 v11, 0x6a
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const/16 v32, 0x6a
-
-    move/from16 v0, v32
-
-    if-ne v6, v0, :cond_6
+    if-ne v15, v11, :cond_4
 
     :goto_5
-    const/16 v32, 0x6a
+    const/16 v11, 0x6a
 
-    move/from16 v0, v32
-
-    if-ne v6, v0, :cond_7
+    if-ne v15, v11, :cond_5
 
     :goto_6
-    move/from16 v17, v20
+    move-object/from16 v0, v20
 
-    array-length v0, v10
+    array-length v0, v0
 
-    move/from16 v33, v0
+    move/from16 v21, v0
 
-    const/16 v32, 0x0
+    const/4 v11, 0x0
+
+    move v12, v13
 
     :goto_7
-    move/from16 v0, v32
+    move/from16 v0, v21
 
-    move/from16 v1, v33
+    if-lt v11, v0, :cond_6
 
-    if-lt v0, v1, :cond_8
+    packed-switch v15, :pswitch_data_1
 
-    packed-switch v6, :pswitch_data_1
+    packed-switch v9, :pswitch_data_2
 
-    packed-switch v7, :pswitch_data_2
+    move/from16 v23, v5
 
-    :cond_5
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
+
     :goto_8
-    :pswitch_3
-    if-eqz v30, :cond_2
-
-    const/16 v32, 0x65
-
-    move/from16 v0, v32
-
-    if-eq v7, v0, :cond_1f
-
-    const/16 v7, 0x65
+    if-nez v16, :cond_20
 
     :goto_9
+    move v11, v13
+
+    move/from16 v16, v9
+
+    move v13, v12
+
+    move v9, v5
+
+    move v5, v6
+
+    move v6, v7
+
+    move v7, v14
+
+    move v14, v15
+
+    move/from16 v23, v10
+
+    move v10, v8
+
+    move/from16 v8, v23
+
     goto/16 :goto_2
 
-    :cond_6
-    const/4 v14, 0x1
+    :cond_4
+    const/4 v10, 0x1
 
     goto :goto_5
 
-    :cond_7
-    add-int/lit8 v19, v19, 0x1
+    :cond_5
+    add-int/lit8 v3, v3, 0x1
 
-    mul-int v32, v19, v6
+    mul-int v11, v3, v15
 
-    add-int v5, v5, v32
+    add-int/2addr v4, v11
 
     goto :goto_6
 
-    :cond_8
-    aget v9, v10, v32
+    :cond_6
+    aget v22, v20, v11
 
-    add-int v20, v20, v9
+    add-int v12, v12, v22
 
-    add-int/lit8 v32, v32, 0x1
+    add-int/lit8 v11, v11, 0x1
 
     goto :goto_7
 
-    :pswitch_4
+    :pswitch_3
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v32
+    move-result-object v2
 
-    throw v32
+    throw v2
 
-    :pswitch_5
-    const/16 v32, 0x40
+    :pswitch_4
+    const/16 v11, 0x40
 
-    move/from16 v0, v32
+    if-lt v15, v11, :cond_8
 
-    if-lt v6, v0, :cond_9
+    const/16 v11, 0x60
 
-    const/16 v32, 0x60
+    if-lt v15, v11, :cond_a
 
-    move/from16 v0, v32
+    const/16 v11, 0x6a
 
-    if-lt v6, v0, :cond_b
-
-    const/16 v32, 0x6a
-
-    move/from16 v0, v32
-
-    if-ne v6, v0, :cond_d
+    if-ne v15, v11, :cond_c
 
     :goto_a
-    packed-switch v6, :pswitch_data_3
+    packed-switch v15, :pswitch_data_3
+
+    :cond_7
+    :goto_b
+    :pswitch_5
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto :goto_8
 
-    :pswitch_6
-    const/4 v13, 0x1
+    :cond_8
+    if-eq v5, v6, :cond_9
 
-    const/16 v7, 0x64
+    add-int/lit8 v5, v15, 0x20
+
+    add-int/lit16 v5, v5, 0x80
+
+    int-to-char v5, v5
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :goto_c
+    const/4 v5, 0x0
+
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto :goto_8
 
     :cond_9
-    move/from16 v0, v27
+    add-int/lit8 v5, v15, 0x20
 
-    move/from16 v1, v31
+    int-to-char v5, v5
 
-    if-eq v0, v1, :cond_a
+    move-object/from16 v0, v19
 
-    add-int/lit8 v32, v6, 0x20
-
-    move/from16 v0, v32
-
-    add-int/lit16 v0, v0, 0x80
-
-    move/from16 v32, v0
-
-    move/from16 v0, v32
-
-    int-to-char v0, v0
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :goto_b
-    const/16 v27, 0x0
-
-    goto :goto_8
-
-    :cond_a
-    add-int/lit8 v32, v6, 0x20
-
-    move/from16 v0, v32
-
-    int-to-char v0, v0
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_b
-
-    :cond_b
-    move/from16 v0, v27
-
-    move/from16 v1, v31
-
-    if-eq v0, v1, :cond_c
-
-    add-int/lit8 v32, v6, 0x40
-
-    move/from16 v0, v32
-
-    int-to-char v0, v0
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :goto_c
-    const/16 v27, 0x0
-
-    goto :goto_8
-
-    :cond_c
-    add-int/lit8 v32, v6, -0x40
-
-    move/from16 v0, v32
-
-    int-to-char v0, v0
-
-    move/from16 v32, v0
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_c
 
-    :cond_d
-    const/4 v14, 0x0
+    :cond_a
+    if-eq v5, v6, :cond_b
+
+    add-int/lit8 v5, v15, 0x40
+
+    int-to-char v5, v5
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :goto_d
+    const/4 v5, 0x0
+
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
+
+    goto :goto_8
+
+    :cond_b
+    add-int/lit8 v5, v15, -0x40
+
+    int-to-char v5, v5
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_d
+
+    :cond_c
+    const/4 v10, 0x0
 
     goto :goto_a
 
+    :pswitch_6
+    if-eqz v2, :cond_7
+
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v11
+
+    if-eqz v11, :cond_d
+
+    const/16 v11, 0x1d
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_b
+
+    :cond_d
+    const-string/jumbo v11, "]C1"
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_b
+
     :pswitch_7
-    if-eqz v8, :cond_5
-
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v32
-
-    if-eqz v32, :cond_e
-
-    const/16 v32, 0x1d
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_8
+    if-eqz v6, :cond_10
 
     :cond_e
-    const-string/jumbo v32, "]C1"
-
-    move-object/from16 v0, v24
-
-    move-object/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_8
-
-    :pswitch_8
-    if-eqz v31, :cond_11
+    if-nez v6, :cond_11
 
     :cond_f
-    if-nez v31, :cond_12
+    const/4 v5, 0x1
+
+    goto :goto_b
 
     :cond_10
-    const/16 v27, 0x1
+    if-eqz v5, :cond_e
 
-    goto/16 :goto_8
+    const/4 v6, 0x1
+
+    const/4 v5, 0x0
+
+    goto :goto_b
 
     :cond_11
-    if-eqz v27, :cond_f
+    if-eqz v5, :cond_f
 
-    const/16 v31, 0x1
+    const/4 v6, 0x0
 
-    const/16 v27, 0x0
+    const/4 v5, 0x0
 
-    goto/16 :goto_8
+    goto :goto_b
 
-    :cond_12
-    if-eqz v27, :cond_10
+    :pswitch_8
+    const/4 v7, 0x1
 
-    const/16 v31, 0x0
+    const/16 v9, 0x64
 
-    const/16 v27, 0x0
-
-    goto/16 :goto_8
+    goto :goto_b
 
     :pswitch_9
-    const/16 v7, 0x64
+    const/16 v9, 0x64
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     :pswitch_a
-    const/16 v7, 0x63
+    const/16 v9, 0x63
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     :pswitch_b
-    const/4 v11, 0x1
+    const/4 v8, 0x1
 
-    goto/16 :goto_8
+    goto/16 :goto_b
 
     :pswitch_c
-    const/16 v32, 0x60
+    const/16 v11, 0x60
 
-    move/from16 v0, v32
+    if-lt v15, v11, :cond_13
 
-    if-lt v6, v0, :cond_13
+    const/16 v11, 0x6a
 
-    const/16 v32, 0x6a
+    if-ne v15, v11, :cond_15
 
-    move/from16 v0, v32
+    :goto_e
+    packed-switch v15, :pswitch_data_4
 
-    if-ne v6, v0, :cond_15
-
-    :goto_d
-    packed-switch v6, :pswitch_data_4
-
-    goto/16 :goto_8
-
+    :cond_12
+    :goto_f
     :pswitch_d
-    const/4 v13, 0x1
+    move/from16 v23, v5
 
-    const/16 v7, 0x65
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto/16 :goto_8
 
     :cond_13
-    move/from16 v0, v27
+    if-eq v5, v6, :cond_14
 
-    move/from16 v1, v31
+    add-int/lit8 v5, v15, 0x20
 
-    if-eq v0, v1, :cond_14
+    add-int/lit16 v5, v5, 0x80
 
-    add-int/lit8 v32, v6, 0x20
+    int-to-char v5, v5
 
-    move/from16 v0, v32
+    move-object/from16 v0, v19
 
-    add-int/lit16 v0, v0, 0x80
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move/from16 v32, v0
+    :goto_10
+    const/4 v5, 0x0
 
-    move/from16 v0, v32
+    move/from16 v23, v5
 
-    int-to-char v0, v0
+    move v5, v9
 
-    move/from16 v32, v0
+    move v9, v7
 
-    move-object/from16 v0, v24
+    move v7, v6
 
-    move/from16 v1, v32
+    move/from16 v6, v23
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move/from16 v24, v8
 
-    :goto_e
-    const/16 v27, 0x0
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto/16 :goto_8
 
     :cond_14
-    add-int/lit8 v32, v6, 0x20
+    add-int/lit8 v5, v15, 0x20
 
-    move/from16 v0, v32
+    int-to-char v5, v5
 
-    int-to-char v0, v0
+    move-object/from16 v0, v19
 
-    move/from16 v32, v0
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, v24
+    goto :goto_10
 
-    move/from16 v1, v32
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :cond_15
+    const/4 v10, 0x0
 
     goto :goto_e
 
-    :cond_15
-    const/4 v14, 0x0
-
-    goto :goto_d
-
     :pswitch_e
-    if-eqz v8, :cond_5
+    if-eqz v2, :cond_12
 
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v32
+    move-result v11
 
-    if-eqz v32, :cond_16
+    if-eqz v11, :cond_16
 
-    const/16 v32, 0x1d
+    const/16 v11, 0x1d
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v19
 
-    move/from16 v1, v32
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_8
+    goto :goto_f
 
     :cond_16
-    const-string/jumbo v32, "]C1"
+    const-string/jumbo v11, "]C1"
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v19
 
-    move-object/from16 v1, v32
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_8
+    goto :goto_f
 
     :pswitch_f
-    if-eqz v31, :cond_19
+    if-eqz v6, :cond_19
 
     :cond_17
-    if-nez v31, :cond_1a
+    if-nez v6, :cond_1a
 
     :cond_18
-    const/16 v27, 0x1
+    const/4 v5, 0x1
 
-    goto/16 :goto_8
+    goto :goto_f
 
     :cond_19
-    if-eqz v27, :cond_17
+    if-eqz v5, :cond_17
 
-    const/16 v31, 0x1
+    const/4 v6, 0x1
 
-    const/16 v27, 0x0
+    const/4 v5, 0x0
 
-    goto/16 :goto_8
+    goto :goto_f
 
     :cond_1a
-    if-eqz v27, :cond_18
+    if-eqz v5, :cond_18
 
-    const/16 v31, 0x0
+    const/4 v6, 0x0
 
-    const/16 v27, 0x0
+    const/4 v5, 0x0
 
-    goto/16 :goto_8
+    goto :goto_f
 
     :pswitch_10
-    const/16 v7, 0x65
+    const/4 v7, 0x1
 
-    goto/16 :goto_8
+    const/16 v9, 0x65
+
+    goto :goto_f
 
     :pswitch_11
-    const/16 v7, 0x63
+    const/16 v9, 0x65
 
-    goto/16 :goto_8
+    goto :goto_f
 
     :pswitch_12
-    const/4 v11, 0x1
+    const/16 v9, 0x63
 
-    goto/16 :goto_8
+    goto :goto_f
 
     :pswitch_13
-    const/16 v32, 0x64
+    const/4 v8, 0x1
 
-    move/from16 v0, v32
-
-    if-lt v6, v0, :cond_1b
-
-    const/16 v32, 0x6a
-
-    move/from16 v0, v32
-
-    if-ne v6, v0, :cond_1d
-
-    :goto_f
-    packed-switch v6, :pswitch_data_5
-
-    goto/16 :goto_8
+    goto :goto_f
 
     :pswitch_14
-    const/16 v7, 0x64
+    const/16 v11, 0x64
+
+    if-lt v15, v11, :cond_1b
+
+    const/16 v11, 0x6a
+
+    if-ne v15, v11, :cond_1d
+
+    :goto_11
+    packed-switch v15, :pswitch_data_5
+
+    :pswitch_15
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto/16 :goto_8
 
     :cond_1b
-    const/16 v32, 0xa
+    const/16 v11, 0xa
 
-    move/from16 v0, v32
+    if-lt v15, v11, :cond_1c
 
-    if-lt v6, v0, :cond_1c
+    :goto_12
+    move-object/from16 v0, v19
 
-    :goto_10
-    move-object/from16 v0, v24
+    invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto/16 :goto_8
 
     :cond_1c
-    const/16 v32, 0x30
+    const/16 v11, 0x30
 
-    move-object/from16 v0, v24
+    move-object/from16 v0, v19
 
-    move/from16 v1, v32
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto :goto_10
+    goto :goto_12
 
     :cond_1d
-    const/4 v14, 0x0
+    const/4 v10, 0x0
 
-    goto :goto_f
+    goto :goto_11
 
-    :pswitch_15
-    if-eqz v8, :cond_5
+    :pswitch_16
+    if-nez v2, :cond_1e
 
-    invoke-virtual/range {v24 .. v24}, Ljava/lang/StringBuilder;->length()I
+    move/from16 v23, v5
 
-    move-result v32
+    move v5, v9
 
-    if-eqz v32, :cond_1e
+    move v9, v7
 
-    const/16 v32, 0x1d
+    move v7, v6
 
-    move-object/from16 v0, v24
+    move/from16 v6, v23
 
-    move/from16 v1, v32
+    move/from16 v24, v8
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto/16 :goto_8
 
     :cond_1e
-    const-string/jumbo v32, "]C1"
+    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->length()I
 
-    move-object/from16 v0, v24
+    move-result v11
 
-    move-object/from16 v1, v32
+    if-eqz v11, :cond_1f
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v11, 0x1d
 
-    goto/16 :goto_8
+    move-object/from16 v0, v19
 
-    :pswitch_16
-    const/16 v7, 0x65
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_8
+    move/from16 v23, v5
 
-    :pswitch_17
-    const/4 v11, 0x1
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
 
     goto/16 :goto_8
 
     :cond_1f
-    const/16 v7, 0x64
+    const-string/jumbo v11, "]C1"
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
+
+    goto/16 :goto_8
+
+    :pswitch_17
+    const/16 v9, 0x65
+
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
+
+    goto/16 :goto_8
+
+    :pswitch_18
+    const/16 v9, 0x64
+
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
+
+    goto/16 :goto_8
+
+    :pswitch_19
+    const/4 v8, 0x1
+
+    move/from16 v23, v5
+
+    move v5, v9
+
+    move v9, v7
+
+    move v7, v6
+
+    move/from16 v6, v23
+
+    move/from16 v24, v8
+
+    move v8, v10
+
+    move/from16 v10, v24
+
+    goto/16 :goto_8
+
+    :cond_20
+    const/16 v11, 0x65
+
+    if-eq v5, v11, :cond_21
+
+    const/16 v5, 0x65
 
     goto/16 :goto_9
 
-    :cond_20
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v32
-
-    throw v32
-
     :cond_21
-    invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
+    const/16 v5, 0x64
 
-    move-result-object v32
-
-    throw v32
+    goto/16 :goto_9
 
     :cond_22
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v32
+    move-result-object v2
 
-    throw v32
+    throw v2
 
     :cond_23
-    if-eqz v14, :cond_3
+    invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
-    const/16 v32, 0x63
+    move-result-object v2
 
-    move/from16 v0, v32
-
-    if-eq v7, v0, :cond_24
-
-    add-int/lit8 v32, v25, -0x1
-
-    move-object/from16 v0, v24
-
-    move/from16 v1, v32
-
-    move/from16 v2, v25
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_3
+    throw v2
 
     :cond_24
-    add-int/lit8 v32, v25, -0x2
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-object/from16 v0, v24
+    move-result-object v2
 
-    move/from16 v1, v32
+    throw v2
 
-    move/from16 v2, v25
+    :cond_25
+    if-eqz v10, :cond_2
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+    const/16 v4, 0x63
+
+    if-eq v9, v4, :cond_26
+
+    add-int/lit8 v4, v3, -0x1
+
+    move-object/from16 v0, v19
+
+    invoke-virtual {v0, v4, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
     goto/16 :goto_3
 
-    :cond_25
-    move-object/from16 v0, v22
+    :cond_26
+    add-int/lit8 v4, v3, -0x2
 
-    invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-object/from16 v0, v19
 
-    move-result-object v32
+    invoke-virtual {v0, v4, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    check-cast v32, Ljava/lang/Byte;
+    goto/16 :goto_3
 
-    invoke-virtual/range {v32 .. v32}, Ljava/lang/Byte;->byteValue()B
+    :cond_27
+    move-object/from16 v0, v18
 
-    move-result v32
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move/from16 v0, v32
+    move-result-object v2
 
-    int-to-byte v0, v0
+    check-cast v2, Ljava/lang/Byte;
 
-    move/from16 v32, v0
+    invoke-virtual {v2}, Ljava/lang/Byte;->byteValue()B
 
-    aput-byte v32, v21, v12
+    move-result v2
 
-    add-int/lit8 v12, v12, 0x1
+    int-to-byte v2, v2
+
+    aput-byte v2, v7, v3
+
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
 
     goto/16 :goto_4
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x67
@@ -3660,56 +3751,56 @@
 
     :pswitch_data_1
     .packed-switch 0x67
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
+        :pswitch_3
+        :pswitch_3
+        :pswitch_3
     .end packed-switch
 
     :pswitch_data_2
     .packed-switch 0x63
-        :pswitch_13
+        :pswitch_14
         :pswitch_c
-        :pswitch_5
+        :pswitch_4
     .end packed-switch
 
     :pswitch_data_3
     .packed-switch 0x60
-        :pswitch_3
-        :pswitch_3
-        :pswitch_6
+        :pswitch_5
+        :pswitch_5
+        :pswitch_8
         :pswitch_a
         :pswitch_9
-        :pswitch_8
         :pswitch_7
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
+        :pswitch_6
+        :pswitch_5
+        :pswitch_5
+        :pswitch_5
         :pswitch_b
     .end packed-switch
 
     :pswitch_data_4
     .packed-switch 0x60
-        :pswitch_3
-        :pswitch_3
         :pswitch_d
-        :pswitch_11
-        :pswitch_f
+        :pswitch_d
         :pswitch_10
-        :pswitch_e
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
         :pswitch_12
+        :pswitch_f
+        :pswitch_11
+        :pswitch_e
+        :pswitch_d
+        :pswitch_d
+        :pswitch_d
+        :pswitch_13
     .end packed-switch
 
     :pswitch_data_5
     .packed-switch 0x64
-        :pswitch_14
+        :pswitch_18
+        :pswitch_17
         :pswitch_16
         :pswitch_15
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
-        :pswitch_17
+        :pswitch_15
+        :pswitch_15
+        :pswitch_19
     .end packed-switch
 .end method

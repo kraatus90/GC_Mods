@@ -34,17 +34,17 @@
 
     new-array v0, v0, [I
 
-    const/4 v1, 0x0
+    const v1, 0x10100d4
 
-    const v2, 0x10100d4
+    const/4 v2, 0x0
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x1
+    const v1, 0x1010129
 
-    const v2, 0x1010129
+    const/4 v2, 0x1
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     sput-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
 
@@ -72,9 +72,9 @@
 
     invoke-virtual {p0, p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    sget-object v1, Landroid/support/v7/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
+    sget-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
 
-    invoke-static {p1, p2, v1, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {p1, p2, v0, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 

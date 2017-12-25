@@ -103,11 +103,11 @@
 
     const-string/jumbo v1, "EAN_18"
 
-    const/4 v2, 0x5
+    const-string/jumbo v2, "EAN_18"
 
-    const-string/jumbo v3, "EAN_18"
+    const/4 v3, 0x5
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/a9/vs/marsoemlibrary/BarcodeType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lcom/a9/vs/marsoemlibrary/BarcodeType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/BarcodeType;->EAN_18:Lcom/a9/vs/marsoemlibrary/BarcodeType;
 
@@ -115,11 +115,11 @@
 
     const-string/jumbo v1, "CODE_128"
 
-    const/4 v2, 0x6
+    const-string/jumbo v2, "CODE_128"
 
-    const-string/jumbo v3, "CODE_128"
+    const/4 v3, 0x6
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/a9/vs/marsoemlibrary/BarcodeType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lcom/a9/vs/marsoemlibrary/BarcodeType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/BarcodeType;->CODE_128:Lcom/a9/vs/marsoemlibrary/BarcodeType;
 
@@ -147,17 +147,17 @@
 
     aput-object v1, v0, v8
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/a9/vs/marsoemlibrary/BarcodeType;->EAN_18:Lcom/a9/vs/marsoemlibrary/BarcodeType;
 
-    sget-object v2, Lcom/a9/vs/marsoemlibrary/BarcodeType;->EAN_18:Lcom/a9/vs/marsoemlibrary/BarcodeType;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/a9/vs/marsoemlibrary/BarcodeType;->CODE_128:Lcom/a9/vs/marsoemlibrary/BarcodeType;
 
-    sget-object v2, Lcom/a9/vs/marsoemlibrary/BarcodeType;->CODE_128:Lcom/a9/vs/marsoemlibrary/BarcodeType;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/BarcodeType;->$VALUES:[Lcom/a9/vs/marsoemlibrary/BarcodeType;
 

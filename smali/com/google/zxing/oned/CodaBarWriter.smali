@@ -109,553 +109,481 @@
 
 # virtual methods
 .method public encode(Ljava/lang/String;)[Z
-    .locals 21
+    .locals 10
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    const/4 v1, 0x1
 
-    move-result v18
+    const/4 v3, 0x0
 
-    const/16 v19, 0x2
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move/from16 v0, v18
+    move-result v0
 
-    move/from16 v1, v19
+    const/4 v2, 0x2
 
-    if-lt v0, v1, :cond_1
+    if-lt v0, v2, :cond_1
 
-    const/16 v18, 0x0
+    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-object/from16 v0, p1
+    move-result v0
 
-    move/from16 v1, v18
+    invoke-static {v0}, Ljava/lang/Character;->toUpperCase(C)C
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+    move-result v0
 
-    move-result v18
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Character;->toUpperCase(C)C
+    move-result v2
 
-    move-result v9
+    add-int/lit8 v2, v2, -0x1
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v18
+    move-result v2
 
-    add-int/lit8 v18, v18, -0x1
+    invoke-static {v2}, Ljava/lang/Character;->toUpperCase(C)C
 
-    move-object/from16 v0, p1
+    move-result v2
 
-    move/from16 v1, v18
+    sget-object v4, Lcom/google/zxing/oned/CodaBarWriter;->START_END_CHARS:[C
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-static {v4, v0}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
-    move-result v18
+    move-result v4
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Character;->toUpperCase(C)C
+    sget-object v5, Lcom/google/zxing/oned/CodaBarWriter;->START_END_CHARS:[C
 
-    move-result v12
+    invoke-static {v5, v2}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
-    sget-object v18, Lcom/google/zxing/oned/CodaBarWriter;->START_END_CHARS:[C
+    move-result v5
 
-    move-object/from16 v0, v18
+    sget-object v6, Lcom/google/zxing/oned/CodaBarWriter;->ALT_START_END_CHARS:[C
 
-    invoke-static {v0, v9}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
+    invoke-static {v6, v0}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
-    move-result v17
+    move-result v0
 
-    sget-object v18, Lcom/google/zxing/oned/CodaBarWriter;->START_END_CHARS:[C
+    sget-object v6, Lcom/google/zxing/oned/CodaBarWriter;->ALT_START_END_CHARS:[C
 
-    move-object/from16 v0, v18
+    invoke-static {v6, v2}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
-    invoke-static {v0, v12}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
+    move-result v2
 
-    move-result v8
+    if-nez v4, :cond_3
 
-    sget-object v18, Lcom/google/zxing/oned/CodaBarWriter;->ALT_START_END_CHARS:[C
+    if-nez v0, :cond_4
 
-    move-object/from16 v0, v18
-
-    invoke-static {v0, v9}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
-
-    move-result v16
-
-    sget-object v18, Lcom/google/zxing/oned/CodaBarWriter;->ALT_START_END_CHARS:[C
-
-    move-object/from16 v0, v18
-
-    invoke-static {v0, v12}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
-
-    move-result v7
-
-    if-nez v17, :cond_3
-
-    if-nez v16, :cond_4
-
-    if-eqz v8, :cond_5
+    if-eqz v5, :cond_5
 
     :cond_0
-    new-instance v18, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v19, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v20, "Invalid start/end guards: "
+    const-string/jumbo v2, "Invalid start/end guards: "
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v19
+    move-result-object v1
 
-    move-object/from16 v0, v19
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, p1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v1
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v19
-
-    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v18
+    throw v0
 
     :cond_1
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-char v19, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
+    sget-char v2, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v0
 
-    move-object/from16 v0, v18
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, p1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-char v2, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
 
-    move-result-object v18
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    sget-char v19, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
+    move-result-object v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     :cond_2
     :goto_0
-    const/16 v15, 0x14
+    const/16 v0, 0x14
 
-    const/4 v10, 0x1
+    move v2, v0
+
+    move v0, v1
 
     :goto_1
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v18
+    move-result v4
 
-    add-int/lit8 v18, v18, -0x1
+    add-int/lit8 v4, v4, -0x1
 
-    move/from16 v0, v18
+    if-lt v0, v4, :cond_6
 
-    if-lt v10, v0, :cond_6
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    move-result v0
 
-    move-result v18
+    add-int/lit8 v0, v0, -0x1
 
-    add-int/lit8 v18, v18, -0x1
+    add-int/2addr v0, v2
 
-    add-int v15, v15, v18
+    new-array v9, v0, [Z
 
-    new-array v14, v15, [Z
+    move v0, v3
 
-    const/4 v13, 0x0
-
-    const/4 v11, 0x0
+    move v2, v3
 
     :goto_2
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v18
+    move-result v4
 
-    move/from16 v0, v18
+    if-lt v0, v4, :cond_a
 
-    if-lt v11, v0, :cond_a
-
-    return-object v14
+    return-object v9
 
     :cond_3
-    if-nez v8, :cond_2
+    if-nez v5, :cond_2
 
-    new-instance v18, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v19, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v20, "Invalid start/end guards: "
+    const-string/jumbo v2, "Invalid start/end guards: "
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v19
+    move-result-object v1
 
-    move-object/from16 v0, v19
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, p1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v1
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v19
-
-    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v18
+    throw v0
 
     :cond_4
-    if-nez v7, :cond_2
+    if-nez v2, :cond_2
 
-    new-instance v18, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v19, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v20, "Invalid start/end guards: "
+    const-string/jumbo v2, "Invalid start/end guards: "
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v19
+    move-result-object v1
 
-    move-object/from16 v0, v19
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, p1
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v19
+    move-result-object v1
 
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v19
-
-    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v18
+    throw v0
 
     :cond_5
-    if-nez v7, :cond_0
+    if-nez v2, :cond_0
 
-    new-instance v18, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v18 .. v18}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-char v19, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
+    sget-char v2, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v18
+    move-result-object v0
 
-    move-object/from16 v0, v18
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object/from16 v1, p1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-char v2, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
 
-    move-result-object v18
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    sget-char v19, Lcom/google/zxing/oned/CodaBarWriter;->DEFAULT_GUARD:C
+    move-result-object v0
 
-    invoke-virtual/range {v18 .. v19}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v18
-
-    invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :cond_6
-    move-object/from16 v0, p1
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->charAt(I)C
+    move-result v4
 
-    move-result v18
+    invoke-static {v4}, Ljava/lang/Character;->isDigit(C)Z
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Character;->isDigit(C)Z
+    move-result v4
 
-    move-result v18
-
-    if-eqz v18, :cond_8
+    if-eqz v4, :cond_8
 
     :cond_7
-    add-int/lit8 v15, v15, 0x9
+    add-int/lit8 v2, v2, 0x9
 
     :goto_3
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto/16 :goto_1
+    goto :goto_1
 
     :cond_8
-    move-object/from16 v0, p1
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->charAt(I)C
+    move-result v4
 
-    move-result v18
+    const/16 v5, 0x2d
 
-    const/16 v19, 0x2d
+    if-eq v4, v5, :cond_7
 
-    move/from16 v0, v18
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    move/from16 v1, v19
+    move-result v4
 
-    if-eq v0, v1, :cond_7
+    const/16 v5, 0x24
 
-    move-object/from16 v0, p1
+    if-eq v4, v5, :cond_7
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->charAt(I)C
+    sget-object v4, Lcom/google/zxing/oned/CodaBarWriter;->CHARS_WHICH_ARE_TEN_LENGTH_EACH_AFTER_DECODED:[C
 
-    move-result v18
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    const/16 v19, 0x24
+    move-result v5
 
-    move/from16 v0, v18
+    invoke-static {v4, v5}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
 
-    move/from16 v1, v19
+    move-result v4
 
-    if-eq v0, v1, :cond_7
+    if-nez v4, :cond_9
 
-    sget-object v18, Lcom/google/zxing/oned/CodaBarWriter;->CHARS_WHICH_ARE_TEN_LENGTH_EACH_AFTER_DECODED:[C
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    move-object/from16 v0, p1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->charAt(I)C
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result v19
+    const-string/jumbo v3, "Cannot encode : \'"
 
-    invoke-static/range {v18 .. v19}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v18
+    move-result-object v2
 
-    if-nez v18, :cond_9
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    new-instance v18, Ljava/lang/IllegalArgumentException;
+    move-result v0
 
-    new-instance v19, Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string/jumbo v20, "Cannot encode : \'"
+    const/16 v2, 0x27
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v19
+    move-result-object v0
 
-    move-object/from16 v0, p1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->charAt(I)C
+    move-result-object v0
 
-    move-result v20
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    const/16 v20, 0x27
-
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-direct/range {v18 .. v19}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v18
+    throw v1
 
     :cond_9
-    add-int/lit8 v15, v15, 0xa
+    add-int/lit8 v2, v2, 0xa
 
     goto :goto_3
 
     :cond_a
-    move-object/from16 v0, p1
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v0, v11}, Ljava/lang/String;->charAt(I)C
+    move-result v4
 
-    move-result v18
+    invoke-static {v4}, Ljava/lang/Character;->toUpperCase(C)C
 
-    invoke-static/range {v18 .. v18}, Ljava/lang/Character;->toUpperCase(C)C
+    move-result v4
 
-    move-result v3
-
-    if-nez v11, :cond_c
+    if-nez v0, :cond_c
 
     :cond_b
-    sparse-switch v3, :sswitch_data_0
+    sparse-switch v4, :sswitch_data_0
 
     :goto_4
-    const/4 v4, 0x0
-
-    const/4 v10, 0x0
+    move v5, v3
 
     :goto_5
-    sget-object v18, Lcom/google/zxing/oned/CodaBarReader;->ALPHABET:[C
+    sget-object v6, Lcom/google/zxing/oned/CodaBarReader;->ALPHABET:[C
 
-    move-object/from16 v0, v18
+    array-length v6, v6
 
-    array-length v0, v0
+    if-lt v5, v6, :cond_d
 
-    move/from16 v18, v0
-
-    move/from16 v0, v18
-
-    if-lt v10, v0, :cond_d
+    move v4, v3
 
     :goto_6
-    const/4 v5, 0x1
+    move v5, v3
 
-    const/4 v6, 0x0
+    move v6, v3
 
-    const/4 v2, 0x0
+    move v7, v1
 
     :goto_7
-    const/16 v18, 0x7
+    const/4 v8, 0x7
 
-    move/from16 v0, v18
+    if-lt v5, v8, :cond_f
 
-    if-lt v2, v0, :cond_f
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    move-result v4
 
-    move-result v18
+    add-int/lit8 v4, v4, -0x1
 
-    add-int/lit8 v18, v18, -0x1
-
-    move/from16 v0, v18
-
-    if-lt v11, v0, :cond_13
+    if-lt v0, v4, :cond_13
 
     :goto_8
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto/16 :goto_2
 
     :cond_c
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v18
+    move-result v5
 
-    add-int/lit8 v18, v18, -0x1
+    add-int/lit8 v5, v5, -0x1
 
-    move/from16 v0, v18
-
-    if-eq v11, v0, :cond_b
+    if-eq v0, v5, :cond_b
 
     goto :goto_4
 
     :sswitch_0
-    const/16 v3, 0x41
+    const/16 v4, 0x41
 
     goto :goto_4
 
     :sswitch_1
-    const/16 v3, 0x42
+    const/16 v4, 0x42
 
     goto :goto_4
 
     :sswitch_2
-    const/16 v3, 0x43
+    const/16 v4, 0x43
 
     goto :goto_4
 
     :sswitch_3
-    const/16 v3, 0x44
+    const/16 v4, 0x44
 
     goto :goto_4
 
     :cond_d
-    sget-object v18, Lcom/google/zxing/oned/CodaBarReader;->ALPHABET:[C
+    sget-object v6, Lcom/google/zxing/oned/CodaBarReader;->ALPHABET:[C
 
-    aget-char v18, v18, v10
+    aget-char v6, v6, v5
 
-    move/from16 v0, v18
+    if-eq v4, v6, :cond_e
 
-    if-eq v3, v0, :cond_e
-
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_5
 
     :cond_e
-    sget-object v18, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
+    sget-object v4, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
 
-    aget v4, v18, v10
+    aget v4, v4, v5
 
     goto :goto_6
 
     :cond_f
-    aput-boolean v5, v14, v13
+    aput-boolean v7, v9, v2
 
-    add-int/lit8 v13, v13, 0x1
+    add-int/lit8 v8, v2, 0x1
 
-    rsub-int/lit8 v18, v2, 0x6
+    rsub-int/lit8 v2, v5, 0x6
 
-    shr-int v18, v4, v18
+    shr-int v2, v4, v2
 
-    and-int/lit8 v18, v18, 0x1
+    and-int/lit8 v2, v2, 0x1
 
-    if-nez v18, :cond_11
+    if-nez v2, :cond_11
 
     :cond_10
-    if-eqz v5, :cond_12
+    if-eqz v7, :cond_12
 
-    const/4 v5, 0x0
+    move v2, v3
 
     :goto_9
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v5, v5, 0x1
 
-    const/4 v6, 0x0
+    move v6, v3
+
+    move v7, v2
+
+    move v2, v8
 
     goto :goto_7
 
     :cond_11
-    const/16 v18, 0x1
+    if-eq v6, v1, :cond_10
 
-    move/from16 v0, v18
+    add-int/lit8 v2, v6, 0x1
 
-    if-eq v6, v0, :cond_10
+    move v6, v2
 
-    add-int/lit8 v6, v6, 0x1
+    move v2, v8
 
     goto :goto_7
 
     :cond_12
-    const/4 v5, 0x1
+    move v2, v1
 
     goto :goto_9
 
     :cond_13
-    const/16 v18, 0x0
+    aput-boolean v3, v9, v2
 
-    aput-boolean v18, v14, v13
-
-    add-int/lit8 v13, v13, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_8
 

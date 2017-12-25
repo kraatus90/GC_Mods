@@ -86,9 +86,9 @@
 .method public zzaX(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/wearable/DataApi$DataItemResult;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzu$zzb;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/android/gms/wearable/internal/zzu$zzb;-><init>(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/wearable/DataItem;)V
 

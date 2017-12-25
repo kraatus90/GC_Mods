@@ -95,8 +95,6 @@
 .method public static readHeader(Ljava/io/InputStream;)Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;
     .locals 4
 
-    const/4 v3, 0x0
-
     new-instance v0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;
 
     invoke-direct {v0}, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;-><init>()V
@@ -172,7 +170,9 @@
     throw v0
 
     :cond_1
-    iput-object v3, v0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->etag:Ljava/lang/String;
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lcom/android/volley/toolbox/DiskBasedCache$CacheHeader;->etag:Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -218,9 +218,9 @@
 .method public writeHeader(Ljava/io/OutputStream;)Z
     .locals 4
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const v0, 0x20150306
 
@@ -262,7 +262,7 @@
 
     invoke-virtual {p1}, Ljava/io/OutputStream;->flush()V
 
-    return v2
+    return v3
 
     :cond_0
     const-string/jumbo v0, ""
@@ -274,17 +274,17 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v1, "%s"
-
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v3, [Ljava/lang/Object;
 
     invoke-virtual {v0}, Ljava/io/IOException;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    aput-object v0, v1, v2
 
-    invoke-static {v1, v2}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v0, "%s"
 
-    return v3
+    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return v2
 .end method

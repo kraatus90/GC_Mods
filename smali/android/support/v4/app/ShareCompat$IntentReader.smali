@@ -78,6 +78,130 @@
     return-object v0
 .end method
 
+.method private static withinStyle(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;II)V
+    .locals 5
+
+    const/16 v4, 0x20
+
+    move v0, p2
+
+    :goto_0
+    if-lt v0, p3, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v1
+
+    const/16 v2, 0x3c
+
+    if-eq v1, v2, :cond_2
+
+    const/16 v2, 0x3e
+
+    if-eq v1, v2, :cond_3
+
+    const/16 v2, 0x26
+
+    if-eq v1, v2, :cond_4
+
+    const/16 v2, 0x7e
+
+    if-le v1, v2, :cond_5
+
+    :cond_1
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "&#"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ";"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const-string/jumbo v1, "&lt;"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_3
+    const-string/jumbo v1, "&gt;"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_4
+    const-string/jumbo v1, "&amp;"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_5
+    if-lt v1, v4, :cond_1
+
+    if-eq v1, v4, :cond_7
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_6
+    const-string/jumbo v1, "&nbsp;"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    :cond_7
+    add-int/lit8 v1, v0, 0x1
+
+    if-lt v1, p3, :cond_8
+
+    :goto_2
+    invoke-virtual {p0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_8
+    add-int/lit8 v1, v0, 0x1
+
+    invoke-interface {p1, v1}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v1
+
+    if-eq v1, v4, :cond_6
+
+    goto :goto_2
+.end method
+
 
 # virtual methods
 .method public getCallingActivity()Landroid/content/ComponentName;
@@ -89,132 +213,132 @@
 .end method
 
 .method public getCallingActivityIcon()Landroid/graphics/drawable/Drawable;
-    .locals 5
-
-    const/4 v4, 0x0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingActivity:Landroid/content/ComponentName;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v2}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    :try_start_0
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingActivity:Landroid/content/ComponentName;
-
-    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getActivityIcon(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v2
-
-    return-object v2
-
-    :cond_0
-    return-object v4
-
-    :catch_0
-    move-exception v0
-
-    const-string/jumbo v2, "IntentReader"
-
-    const-string/jumbo v3, "Could not retrieve icon for calling activity"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-object v4
-.end method
-
-.method public getCallingApplicationIcon()Landroid/graphics/drawable/Drawable;
-    .locals 5
-
-    const/4 v4, 0x0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v2}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    :try_start_0
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v2
-
-    return-object v2
-
-    :cond_0
-    return-object v4
-
-    :catch_0
-    move-exception v0
-
-    const-string/jumbo v2, "IntentReader"
-
-    const-string/jumbo v3, "Could not retrieve icon for calling application"
-
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-object v4
-.end method
-
-.method public getCallingApplicationLabel()Ljava/lang/CharSequence;
-    .locals 5
-
-    const/4 v4, 0x0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v2}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    :try_start_0
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
+    .locals 4
 
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingActivity:Landroid/content/ComponentName;
 
-    move-result-object v2
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mActivity:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    :try_start_0
+    iget-object v1, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingActivity:Landroid/content/ComponentName;
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getActivityIcon(Landroid/content/ComponentName;)Landroid/graphics/drawable/Drawable;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     :cond_0
-    return-object v4
+    return-object v3
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v2, "IntentReader"
+    const-string/jumbo v1, "IntentReader"
 
-    const-string/jumbo v3, "Could not retrieve label for calling application"
+    const-string/jumbo v2, "Could not retrieve icon for calling activity"
 
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v4
+    return-object v3
+.end method
+
+.method public getCallingApplicationIcon()Landroid/graphics/drawable/Drawable;
+    .locals 4
+
+    const/4 v3, 0x0
+
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mActivity:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    :try_start_0
+    iget-object v1, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    return-object v3
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "IntentReader"
+
+    const-string/jumbo v2, "Could not retrieve icon for calling application"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-object v3
+.end method
+
+.method public getCallingApplicationLabel()Ljava/lang/CharSequence;
+    .locals 4
+
+    const/4 v3, 0x0
+
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mActivity:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    :try_start_0
+    iget-object v1, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mCallingPackage:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    return-object v3
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "IntentReader"
+
+    const-string/jumbo v2, "Could not retrieve label for calling application"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-object v3
 .end method
 
 .method public getCallingPackage()Ljava/lang/String;
@@ -270,43 +394,72 @@
 .method public getHtmlText()Ljava/lang/String;
     .locals 4
 
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
+    const/4 v3, 0x0
 
-    const-string/jumbo v3, "android.intent.extra.HTML_TEXT"
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
 
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    const-string/jumbo v1, "android.intent.extra.HTML_TEXT"
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    :goto_0
-    return-object v0
-
-    :cond_1
-    invoke-virtual {p0}, Landroid/support/v4/app/ShareCompat$IntentReader;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    instance-of v2, v1, Landroid/text/Spanned;
-
-    if-nez v2, :cond_2
-
     if-eqz v1, :cond_0
 
-    sget-object v2, Landroid/support/v4/app/ShareCompat;->IMPL:Landroid/support/v4/app/ShareCompat$ShareCompatImpl;
+    move-object v0, v1
 
-    invoke-interface {v2, v1}, Landroid/support/v4/app/ShareCompat$ShareCompatImpl;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/support/v4/app/ShareCompat$IntentReader;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    instance-of v2, v0, Landroid/text/Spanned;
+
+    if-nez v2, :cond_1
+
+    if-nez v0, :cond_2
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast v0, Landroid/text/Spanned;
+
+    invoke-static {v0}, Landroid/text/Html;->toHtml(Landroid/text/Spanned;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
     :cond_2
-    check-cast v1, Landroid/text/Spanned;
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-static {v1}, Landroid/text/Html;->toHtml(Landroid/text/Spanned;)Ljava/lang/String;
+    const/16 v2, 0x10
+
+    if-ge v1, v2, :cond_3
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v2
+
+    invoke-static {v1, v0, v3, v2}, Landroid/support/v4/app/ShareCompat$IntentReader;->withinStyle(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;II)V
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_3
+    invoke-static {v0}, Landroid/text/Html;->escapeHtml(Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -531,15 +684,15 @@
 .method public isMultipleShare()Z
     .locals 2
 
-    const-string/jumbo v0, "android.intent.action.SEND_MULTIPLE"
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
 
-    iget-object v1, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
+    invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    invoke-virtual {v1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "android.intent.action.SEND_MULTIPLE"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -549,44 +702,7 @@
 .method public isShareIntent()Z
     .locals 3
 
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
-
-    invoke-virtual {v2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "android.intent.action.SEND"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    const/4 v1, 0x1
-
-    :goto_0
-    return v1
-
-    :cond_1
-    const-string/jumbo v2, "android.intent.action.SEND_MULTIPLE"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    goto :goto_0
-.end method
-
-.method public isSingleShare()Z
-    .locals 2
-
-    const-string/jumbo v0, "android.intent.action.SEND"
+    const/4 v0, 0x0
 
     iget-object v1, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
 
@@ -594,7 +710,44 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "android.intent.action.SEND"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const-string/jumbo v2, "android.intent.action.SEND_MULTIPLE"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+.end method
+
+.method public isSingleShare()Z
+    .locals 2
+
+    iget-object v0, p0, Landroid/support/v4/app/ShareCompat$IntentReader;->mIntent:Landroid/content/Intent;
+
+    invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "android.intent.action.SEND"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 

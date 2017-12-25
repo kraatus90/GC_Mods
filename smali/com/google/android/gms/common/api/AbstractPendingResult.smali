@@ -77,43 +77,41 @@
 
 # direct methods
 .method protected constructor <init>(Landroid/os/Looper;)V
-    .locals 3
-
-    move-object v0, p0
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/lang/Object;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    new-instance v1, Ljava/util/concurrent/CountDownLatch;
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {v1, v2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzns:Ljava/util/concurrent/CountDownLatch;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzns:Ljava/util/concurrent/CountDownLatch;
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPe:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPe:Ljava/util/ArrayList;
 
-    new-instance v1, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
+    new-instance v0, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
-    invoke-direct {v1, p1}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v0, p1}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;-><init>(Landroid/os/Looper;)V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
     return-void
 .end method
 
 .method protected constructor <init>(Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;)V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,29 +120,27 @@
         }
     .end annotation
 
-    move-object v0, p0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/lang/Object;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    new-instance v1, Ljava/util/concurrent/CountDownLatch;
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {v1, v2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzns:Ljava/util/concurrent/CountDownLatch;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzns:Ljava/util/concurrent/CountDownLatch;
 
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPe:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPe:Ljava/util/ArrayList;
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
@@ -234,7 +230,7 @@
 .end method
 
 .method static zzb(Lcom/google/android/gms/common/api/Result;)V
-    .locals 5
+    .locals 4
 
     instance-of v1, p0, Lcom/google/android/gms/common/api/Releasable;
 
@@ -260,27 +256,27 @@
     :catch_0
     move-exception v1
 
-    const-string/jumbo v2, "AbstractPendingResult"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "Unable to release "
 
-    const-string/jumbo v4, "Unable to release "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    const-string/jumbo v3, "AbstractPendingResult"
 
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v3, v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -360,65 +356,63 @@
 
 # virtual methods
 .method public final addBatchCallback(Lcom/google/android/gms/common/api/PendingResult$BatchCallback;)V
-    .locals 3
+    .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    move-object v0, p0
+    iget-boolean v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
-
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     :goto_0
-    const-string/jumbo v2, "Result has already been consumed."
+    const-string/jumbo v1, "Result has already been consumed."
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
 
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isReady()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPe:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPe:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :cond_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPg:Lcom/google/android/gms/common/api/Result;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPg:Lcom/google/android/gms/common/api/Result;
 
-    invoke-interface {v1}, Lcom/google/android/gms/common/api/Result;->getStatus()Lcom/google/android/gms/common/api/Status;
+    invoke-interface {v0}, Lcom/google/android/gms/common/api/Result;->getStatus()Lcom/google/android/gms/common/api/Status;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {p1, v1}, Lcom/google/android/gms/common/api/PendingResult$BatchCallback;->zzl(Lcom/google/android/gms/common/api/Status;)V
+    invoke-interface {p1, v0}, Lcom/google/android/gms/common/api/PendingResult$BatchCallback;->zzl(Lcom/google/android/gms/common/api/Status;)V
 
     goto :goto_1
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public final await()Lcom/google/android/gms/common/api/Result;
@@ -511,106 +505,104 @@
         }
     .end annotation
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
-
-    move-object v0, p0
+    const/4 v1, 0x0
 
     const-wide/16 v4, 0x0
 
-    cmp-long v1, p1, v4
+    cmp-long v0, p1, v4
 
-    if-gtz v1, :cond_0
+    if-gtz v0, :cond_0
 
-    move v1, v3
+    move v0, v2
 
     :goto_0
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-ne v1, v4, :cond_1
+    if-ne v0, v3, :cond_1
 
-    move v1, v2
+    move v0, v1
 
     :goto_1
-    const-string/jumbo v4, "await must not be called on the UI thread when time is greater than zero."
+    const-string/jumbo v3, "await must not be called on the UI thread when time is greater than zero."
 
-    invoke-static {v1, v4}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
-    iget-boolean v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     :goto_2
-    const-string/jumbo v1, "Result has already been consumed."
+    const-string/jumbo v0, "Result has already been consumed."
 
-    invoke-static {v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
     :try_start_0
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzns:Ljava/util/concurrent/CountDownLatch;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzns:Ljava/util/concurrent/CountDownLatch;
 
-    invoke-virtual {v1, p1, p2, p3}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
+    invoke-virtual {v0, p1, p2, p3}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
     :goto_3
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isReady()Z
 
-    move-result v1
+    move-result v0
 
-    const-string/jumbo v2, "Result is not ready."
+    const-string/jumbo v1, "Result is not ready."
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
     invoke-direct {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzkB()Lcom/google/android/gms/common/api/Result;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
-    move v1, v2
+    move v0, v1
 
     goto :goto_0
 
     :cond_1
-    move v1, v3
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
-    move v2, v3
+    move v1, v2
 
     goto :goto_2
 
     :cond_3
     :try_start_1
-    sget-object v1, Lcom/google/android/gms/common/api/Status;->zzQX:Lcom/google/android/gms/common/api/Status;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->zzQX:Lcom/google/android/gms/common/api/Status;
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/AbstractPendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
     :try_end_1
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_3
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    sget-object v1, Lcom/google/android/gms/common/api/Status;->zzQV:Lcom/google/android/gms/common/api/Status;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->zzQV:Lcom/google/android/gms/common/api/Status;
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/AbstractPendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
 
     goto :goto_3
 .end method
@@ -706,47 +698,45 @@
 .end method
 
 .method public final forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
-    .locals 3
+    .locals 2
 
-    move-object v0, p0
+    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
-
-    monitor-enter v2
+    monitor-enter v1
 
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isReady()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     :goto_0
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/AbstractPendingResult;->createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/AbstractPendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->setResult(Lcom/google/android/gms/common/api/Result;)V
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPj:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPj:Z
 
     goto :goto_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public isCanceled()Z
@@ -806,116 +796,112 @@
 .end method
 
 .method protected final setCancelToken(Lcom/google/android/gms/common/internal/ICancelToken;)V
-    .locals 3
+    .locals 2
 
-    move-object v0, p0
+    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
-
-    monitor-enter v2
+    monitor-enter v1
 
     :try_start_0
     iput-object p1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPk:Lcom/google/android/gms/common/internal/ICancelToken;
 
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public final setResult(Lcom/google/android/gms/common/api/Result;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;)V"
         }
     .end annotation
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    move-object v0, p0
+    iget-object v3, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
-
-    monitor-enter v4
+    monitor-enter v3
 
     :try_start_0
-    iget-boolean v3, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPj:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPj:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
     :cond_0
     invoke-static {p1}, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzb(Lcom/google/android/gms/common/api/Result;)V
 
-    monitor-exit v4
+    monitor-exit v3
 
     return-void
 
     :cond_1
-    iget-boolean v3, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPi:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPi:Z
 
-    if-nez v3, :cond_0
+    if-nez v2, :cond_0
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isReady()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    move v3, v1
+    move v2, v0
 
     :goto_0
-    const-string/jumbo v5, "Results have already been set"
+    const-string/jumbo v4, "Results have already been set"
 
-    invoke-static {v3, v5}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v2, v4}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
-    iget-boolean v3, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v2, :cond_3
 
     :goto_1
-    const-string/jumbo v2, "Result has already been consumed"
+    const-string/jumbo v1, "Result has already been consumed"
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/AbstractPendingResult;->zza(Lcom/google/android/gms/common/api/Result;)V
 
-    monitor-exit v4
+    monitor-exit v3
 
     return-void
 
     :cond_2
-    move v3, v2
+    move v2, v1
 
     goto :goto_0
 
     :cond_3
-    move v1, v2
+    move v0, v1
 
     goto :goto_1
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v4
+    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public final setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -924,76 +910,74 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    move-object v0, p0
+    iget-boolean v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
-
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     :goto_0
-    const-string/jumbo v2, "Result has already been consumed."
+    const-string/jumbo v1, "Result has already been consumed."
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
 
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isCanceled()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isReady()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPf:Lcom/google/android/gms/common/api/ResultCallback;
 
     :goto_1
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :cond_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
     invoke-direct {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzkB()Lcom/google/android/gms/common/api/Result;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, p1, v3}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;->sendResultCallback(Lcom/google/android/gms/common/api/ResultCallback;Lcom/google/android/gms/common/api/Result;)V
+    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;->sendResultCallback(Lcom/google/android/gms/common/api/ResultCallback;Lcom/google/android/gms/common/api/Result;)V
 
     goto :goto_1
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public final setResultCallback(Lcom/google/android/gms/common/api/ResultCallback;JLjava/util/concurrent/TimeUnit;)V
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1004,96 +988,94 @@
         }
     .end annotation
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    move-object v0, p0
+    iget-boolean v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
 
-    iget-boolean v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPh:Z
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_0
-
-    move v1, v2
+    move v0, v1
 
     :goto_0
-    const-string/jumbo v4, "Result has already been consumed."
+    const-string/jumbo v3, "Result has already been consumed."
 
-    invoke-static {v1, v4}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :goto_1
-    const-string/jumbo v1, "CallbackHandler has not been set before calling setResultCallback."
+    const-string/jumbo v0, "CallbackHandler has not been set before calling setResultCallback."
 
-    invoke-static {v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/Object;)V
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPd:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
 
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isCanceled()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->isReady()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     iput-object p1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzPf:Lcom/google/android/gms/common/api/ResultCallback;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
     invoke-virtual {p4, p2, p3}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-virtual {v1, p0, v4, v5}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;->sendTimeoutResultCallback(Lcom/google/android/gms/common/api/AbstractPendingResult;J)V
+    invoke-virtual {v0, p0, v2, v3}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;->sendTimeoutResultCallback(Lcom/google/android/gms/common/api/AbstractPendingResult;J)V
 
     :goto_2
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :cond_0
-    move v1, v3
+    move v0, v2
 
     goto :goto_0
 
     :cond_1
-    move v2, v3
+    move v1, v2
 
     goto :goto_1
 
     :cond_2
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
     :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/AbstractPendingResult;->mHandler:Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;
 
     invoke-direct {p0}, Lcom/google/android/gms/common/api/AbstractPendingResult;->zzkB()Lcom/google/android/gms/common/api/Result;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, p1, v3}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;->sendResultCallback(Lcom/google/android/gms/common/api/ResultCallback;Lcom/google/android/gms/common/api/Result;)V
+    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/common/api/AbstractPendingResult$CallbackHandler;->sendResultCallback(Lcom/google/android/gms/common/api/ResultCallback;Lcom/google/android/gms/common/api/Result;)V
 
     goto :goto_2
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method

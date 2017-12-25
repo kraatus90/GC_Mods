@@ -42,14 +42,12 @@
 
 # virtual methods
 .method public zza(Lcom/google/android/gms/dynamic/LifecycleDelegate;)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
-
-    const/4 v3, 0x0
 
     iget-object v0, p0, Lcom/google/android/gms/dynamic/zza$1;->zzach:Lcom/google/android/gms/dynamic/zza;
 
@@ -82,7 +80,9 @@
 
     iget-object v0, p0, Lcom/google/android/gms/dynamic/zza$1;->zzach:Lcom/google/android/gms/dynamic/zza;
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/dynamic/zza;->zza(Lcom/google/android/gms/dynamic/zza;Landroid/os/Bundle;)Landroid/os/Bundle;
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/dynamic/zza;->zza(Lcom/google/android/gms/dynamic/zza;Landroid/os/Bundle;)Landroid/os/Bundle;
 
     return-void
 

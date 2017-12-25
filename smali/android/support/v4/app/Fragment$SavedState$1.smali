@@ -41,9 +41,9 @@
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/Fragment$SavedState;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Landroid/support/v4/app/Fragment$SavedState;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Landroid/support/v4/app/Fragment$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 

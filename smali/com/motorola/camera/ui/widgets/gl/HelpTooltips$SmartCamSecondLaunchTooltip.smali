@@ -19,18 +19,6 @@
 
 
 # direct methods
-.method constructor <init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;Z)V
-    .locals 1
-
-    invoke-direct/range {p0 .. p7}, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$Tooltip;-><init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;Z)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/HelpTooltips$SmartCamSecondLaunchTooltip;->mSecondLaunch:Z
-
-    return-void
-.end method
-
 .method constructor <init>(JIILandroid/util/SizeF;Lcom/motorola/camera/ui/widgets/gl/textures/TooltipTexture$ArrowDirection;ZZ)V
     .locals 1
 

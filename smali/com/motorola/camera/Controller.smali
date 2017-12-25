@@ -28,8 +28,6 @@
 
 .field private mActivityContext:Landroid/app/Activity;
 
-.field private mBattery:Lcom/motorola/camera/Battery;
-
 .field private mCalibrationData:Lcom/motorola/camera/instrumentreport/CalibrationData;
 
 .field private final mCameraFsmNew:Lcom/motorola/camera/fsm/camera/CameraFsm;
@@ -115,7 +113,7 @@
 .end method
 
 .method public constructor <init>(Landroid/app/Activity;Landroid/view/ViewGroup;)V
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -139,12 +137,6 @@
 
     iput-boolean v0, p0, Lcom/motorola/camera/Controller;->mResetFsm:Z
 
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
-
-    iput-object v0, p0, Lcom/motorola/camera/Controller;->mHandler:Landroid/os/Handler;
-
     new-instance v0, Lcom/motorola/camera/Controller$1;
 
     invoke-direct {v0, p0}, Lcom/motorola/camera/Controller$1;-><init>(Lcom/motorola/camera/Controller;)V
@@ -162,8 +154,21 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/motorola/camera/Controller;->mHandler:Landroid/os/Handler;
+
     iput-object p2, p0, Lcom/motorola/camera/Controller;->mRootView:Landroid/view/ViewGroup;
 
+    :try_start_0
+    invoke-static {p1}, Lcom/motorola/camera/JsonConfig;->parseJson(Landroid/content/Context;)V
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/util/MalformedJsonException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
 
     invoke-static {}, Lcom/motorola/camera/fsm/camera/states/CameraFsmFactory;->createFsm()Lcom/motorola/camera/fsm/camera/CameraFsm;
@@ -191,6 +196,25 @@
     iput-object p1, p0, Lcom/motorola/camera/Controller;->mActivityContext:Landroid/app/Activity;
 
     return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string/jumbo v1, "MotoCameraController"
+
+    const-string/jumbo v2, "Error: JSON parsing exception "
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    iget-object v0, p0, Lcom/motorola/camera/Controller;->mHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/motorola/camera/-$Lambda$DNBWVVXJnaryYXDhCh_BCoNw5uk;
+
+    invoke-direct {v1, p1}, Lcom/motorola/camera/-$Lambda$DNBWVVXJnaryYXDhCh_BCoNw5uk;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_0
 .end method
 
 .method private createComponents()V
@@ -220,28 +244,17 @@
     iput-object v0, p0, Lcom/motorola/camera/Controller;->mOrientationEventListener:Lcom/motorola/camera/OrientationEvent;
 
     :cond_1
-    iget-object v0, p0, Lcom/motorola/camera/Controller;->mBattery:Lcom/motorola/camera/Battery;
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Lcom/motorola/camera/Battery;
-
-    invoke-direct {v0, p0}, Lcom/motorola/camera/Battery;-><init>(Lcom/motorola/camera/EventListener;)V
-
-    iput-object v0, p0, Lcom/motorola/camera/Controller;->mBattery:Lcom/motorola/camera/Battery;
-
-    :cond_2
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/motorola/camera/instrumentreport/DeveloperMenu;->isReportEnabled(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mCalibrationData:Lcom/motorola/camera/instrumentreport/CalibrationData;
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     new-instance v0, Lcom/motorola/camera/instrumentreport/CalibrationData;
 
@@ -249,10 +262,10 @@
 
     iput-object v0, p0, Lcom/motorola/camera/Controller;->mCalibrationData:Lcom/motorola/camera/instrumentreport/CalibrationData;
 
-    :cond_3
+    :cond_2
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mCurrentDrain:Lcom/motorola/camera/instrumentreport/CurrentDrain;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_3
 
     new-instance v0, Lcom/motorola/camera/instrumentreport/CurrentDrain;
 
@@ -260,10 +273,10 @@
 
     iput-object v0, p0, Lcom/motorola/camera/Controller;->mCurrentDrain:Lcom/motorola/camera/instrumentreport/CurrentDrain;
 
-    :cond_4
+    :cond_3
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mMeasureKpi:Lcom/motorola/camera/instrumentreport/MeasureKpi;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     new-instance v0, Lcom/motorola/camera/instrumentreport/MeasureKpi;
 
@@ -271,10 +284,10 @@
 
     iput-object v0, p0, Lcom/motorola/camera/Controller;->mMeasureKpi:Lcom/motorola/camera/instrumentreport/MeasureKpi;
 
-    :cond_5
+    :cond_4
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mVideoAnalysisData:Lcom/motorola/camera/instrumentreport/VideoAnalysis;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
     new-instance v0, Lcom/motorola/camera/instrumentreport/VideoAnalysis;
 
@@ -282,10 +295,10 @@
 
     iput-object v0, p0, Lcom/motorola/camera/Controller;->mVideoAnalysisData:Lcom/motorola/camera/instrumentreport/VideoAnalysis;
 
-    :cond_6
+    :cond_5
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mWearable:Lcom/motorola/camera/wear/Wearable;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     new-instance v0, Lcom/motorola/camera/wear/Wearable;
 
@@ -293,7 +306,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/Controller;->mWearable:Lcom/motorola/camera/wear/Wearable;
 
-    :cond_7
+    :cond_6
     return-void
 .end method
 
@@ -400,6 +413,14 @@
     goto :goto_0
 .end method
 
+.method static synthetic lambda$-com_motorola_camera_Controller_5719(Landroid/app/Activity;)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+
+    return-void
+.end method
+
 .method private registerListeners()V
     .locals 2
 
@@ -428,19 +449,11 @@
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/Controller;->registerForRotationEvents(Lcom/motorola/camera/OrientationEvent$OnRotationChangeListener;)V
 
-    iget-object v0, p0, Lcom/motorola/camera/Controller;->mBattery:Lcom/motorola/camera/Battery;
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/Battery;->registerForEvents(Landroid/content/Context;)V
-
     invoke-static {}, Lcom/motorola/camera/saving/location/Storage;->getInstance()Lcom/motorola/camera/saving/location/Storage;
 
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mActivityContext:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/motorola/camera/saving/location/Storage;->register(Landroid/app/Activity;)Z
+    invoke-static {v0, p0}, Lcom/motorola/camera/saving/location/Storage;->register(Landroid/app/Activity;Lcom/motorola/camera/EventListener;)Z
 
     const/4 v0, 0x1
 
@@ -518,14 +531,6 @@
     iget-object v0, p0, Lcom/motorola/camera/Controller;->mOrientationEventListener:Lcom/motorola/camera/OrientationEvent;
 
     invoke-virtual {v0}, Lcom/motorola/camera/OrientationEvent;->disable()V
-
-    iget-object v0, p0, Lcom/motorola/camera/Controller;->mBattery:Lcom/motorola/camera/Battery;
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/Battery;->unregisterForEvents(Landroid/content/Context;)V
 
     invoke-static {}, Lcom/motorola/camera/saving/location/Storage;->getInstance()Lcom/motorola/camera/saving/location/Storage;
 
@@ -903,6 +908,16 @@
 .method public onStop()V
     .locals 3
 
+    iget-object v0, p0, Lcom/motorola/camera/Controller;->mCameraFsmNew:Lcom/motorola/camera/fsm/camera/CameraFsm;
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->CLOSE_APP:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/CameraFsm;->handleEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
     invoke-static {}, Lcom/motorola/camera/detector/ScanningEngine;->getInstance()Lcom/motorola/camera/detector/ScanningEngine;
 
     move-result-object v0
@@ -1048,6 +1063,33 @@
     return-void
 .end method
 
+.method public registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    .locals 3
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    :goto_0
+    if-ge v0, v1, :cond_1
+
+    aget-object v2, p1, v0
+
+    invoke-virtual {p0, v2}, Lcom/motorola/camera/Controller;->registerStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
 .method public startActivity(Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;)V
     .locals 1
 
@@ -1093,6 +1135,33 @@
     invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/fsm/camera/CameraFsm;->removeStateListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;Ljava/util/Collection;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    .locals 3
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    :goto_0
+    if-ge v0, v1, :cond_1
+
+    aget-object v2, p1, v0
+
+    invoke-virtual {p0, v2}, Lcom/motorola/camera/Controller;->unregisterStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method
 

@@ -1,4 +1,4 @@
-.class final enum Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
+.class public final enum Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;
 .super Ljava/lang/Enum;
 .source "RequestBuilderHelper.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4018
+    accessFlags = 0x4019
     name = "ModeContext"
 .end annotation
 

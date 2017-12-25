@@ -56,11 +56,11 @@
         .end annotation
     .end param
 
-    const/4 v3, 0x0
-
     const/4 v4, 0x0
 
     sget v5, Landroid/support/v7/appcompat/R$attr;->popupMenuStyle:I
+
+    const/4 v3, 0x0
 
     move-object v0, p0
 
@@ -198,77 +198,65 @@
 .end method
 
 .method private createPopup()Landroid/support/v7/view/menu/MenuPopup;
-    .locals 13
+    .locals 7
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    const/4 v9, 0x0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
 
     const-string/jumbo v2, "window"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v12
+    move-result-object v0
 
-    check-cast v12, Landroid/view/WindowManager;
+    check-cast v0, Landroid/view/WindowManager;
 
-    invoke-interface {v12}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    move-result-object v7
+    move-result-object v0
 
-    new-instance v8, Landroid/graphics/Point;
+    new-instance v2, Landroid/graphics/Point;
 
-    invoke-direct {v8}, Landroid/graphics/Point;-><init>()V
+    invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x11
+    const/16 v4, 0x11
 
-    if-ge v1, v2, :cond_0
+    if-ge v3, v4, :cond_0
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-virtual {v0, v2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
-    const/16 v2, 0xd
+    :goto_0
+    iget v0, v2, Landroid/graphics/Point;->x:I
 
-    if-ge v1, v2, :cond_1
+    iget v2, v2, Landroid/graphics/Point;->y:I
 
-    invoke-virtual {v7}, Landroid/view/Display;->getWidth()I
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {v7}, Landroid/view/Display;->getHeight()I
+    iget-object v2, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    sget v3, Landroid/support/v7/appcompat/R$dimen;->abc_cascading_menus_min_smallest_width:I
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    invoke-virtual {v8, v1, v2}, Landroid/graphics/Point;->set(II)V
+    if-ge v0, v2, :cond_1
 
-    :goto_0
-    iget v1, v8, Landroid/graphics/Point;->x:I
-
-    iget v2, v8, Landroid/graphics/Point;->y:I
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v11
-
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v2, Landroid/support/v7/appcompat/R$dimen;->abc_cascading_menus_min_smallest_width:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v10
-
-    if-ge v11, v10, :cond_2
+    move v0, v1
 
     :goto_1
-    if-nez v9, :cond_3
+    if-nez v0, :cond_2
 
     new-instance v0, Landroid/support/v7/view/menu/StandardMenuPopup;
 
@@ -314,21 +302,16 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v7, v8}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
+    invoke-virtual {v0, v2}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v7, v8}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v9, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 
-    :cond_3
+    :cond_2
     new-instance v0, Landroid/support/v7/view/menu/CascadingMenuPopup;
 
     iget-object v1, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
@@ -347,91 +330,91 @@
 .end method
 
 .method private showPopup(IIZZ)V
-    .locals 9
+    .locals 6
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuPopupHelper;->getPopup()Landroid/support/v7/view/menu/MenuPopup;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, p4}, Landroid/support/v7/view/menu/MenuPopup;->setShowTitle(Z)V
+    invoke-virtual {v0, p4}, Landroid/support/v7/view/menu/MenuPopup;->setShowTitle(Z)V
 
     if-nez p3, :cond_0
 
     :goto_0
-    invoke-virtual {v4}, Landroid/support/v7/view/menu/MenuPopup;->show()V
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuPopup;->show()V
 
     return-void
 
     :cond_0
-    iget v5, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mDropDownGravity:I
+    iget v1, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mDropDownGravity:I
 
-    iget-object v6, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mAnchorView:Landroid/view/View;
+    iget-object v2, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mAnchorView:Landroid/view/View;
 
-    invoke-static {v6}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {v2}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
 
-    move-result v6
+    move-result v2
 
-    invoke-static {v5, v6}, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(II)I
+    invoke-static {v1, v2}, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(II)I
 
-    move-result v5
+    move-result v1
 
-    and-int/lit8 v3, v5, 0x7
+    and-int/lit8 v1, v1, 0x7
 
-    const/4 v5, 0x5
+    const/4 v2, 0x5
 
-    if-eq v3, v5, :cond_1
+    if-eq v1, v2, :cond_1
 
     :goto_1
-    invoke-virtual {v4, p1}, Landroid/support/v7/view/menu/MenuPopup;->setHorizontalOffset(I)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/menu/MenuPopup;->setHorizontalOffset(I)V
 
-    invoke-virtual {v4, p2}, Landroid/support/v7/view/menu/MenuPopup;->setVerticalOffset(I)V
+    invoke-virtual {v0, p2}, Landroid/support/v7/view/menu/MenuPopup;->setVerticalOffset(I)V
 
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v5
+    move-result-object v1
 
-    iget v0, v5, Landroid/util/DisplayMetrics;->density:F
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v5, 0x42400000    # 48.0f
+    const/high16 v2, 0x42400000    # 48.0f
 
-    mul-float/2addr v5, v0
+    mul-float/2addr v1, v2
 
-    const/high16 v6, 0x40000000    # 2.0f
+    const/high16 v2, 0x40000000    # 2.0f
 
-    div-float/2addr v5, v6
+    div-float/2addr v1, v2
 
-    float-to-int v2, v5
+    float-to-int v1, v1
 
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v2, Landroid/graphics/Rect;
 
-    sub-int v5, p1, v2
+    sub-int v3, p1, v1
 
-    sub-int v6, p2, v2
+    sub-int v4, p2, v1
 
-    add-int v7, p1, v2
+    add-int v5, p1, v1
 
-    add-int v8, p2, v2
+    add-int/2addr v1, p2
 
-    invoke-direct {v1, v5, v6, v7, v8}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2, v3, v4, v5, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    invoke-virtual {v4, v1}, Landroid/support/v7/view/menu/MenuPopup;->setEpicenterBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/view/menu/MenuPopup;->setEpicenterBounds(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mAnchorView:Landroid/view/View;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuPopupHelper;->mAnchorView:Landroid/view/View;
 
-    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
 
-    move-result v5
+    move-result v1
 
-    sub-int/2addr p1, v5
+    add-int/2addr p1, v1
 
     goto :goto_1
 .end method

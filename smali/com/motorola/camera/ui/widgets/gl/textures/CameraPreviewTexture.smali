@@ -27,16 +27,7 @@
 
 .field protected mEnabled:Z
 
-.field private mFirstFrameCallback:Ljava/lang/ref/WeakReference;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/lang/ref/WeakReference",
-            "<",
-            "Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private mFirstFrameCallback:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
 
 .field private mFrameCount:I
 
@@ -354,29 +345,28 @@
     return-void
 .end method
 
-.method public declared-synchronized getFirstFrameCallback()Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
-    .locals 2
+.method public get360ViewPointBundle()Landroid/os/Bundle;
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mViewfinderTexture:Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/ViewfinderTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/ViewfinderTexture;->get360ViewPointBundle()Landroid/os/Bundle;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public declared-synchronized getFirstFrameCallback()Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
+    .locals 1
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mFirstFrameCallback:Ljava/lang/ref/WeakReference;
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mFirstFrameCallback:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mFirstFrameCallback:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
     monitor-exit p0
 
     return-object v0
@@ -724,7 +714,7 @@
     throw v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_CameraPreviewTexture_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_CameraPreviewTexture_8883()V
     .locals 3
 
     const/4 v2, 0x0
@@ -963,9 +953,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$122;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$bNfEl_S6IsUEtrfDYcvh7bqOxMk;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$122;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$bNfEl_S6IsUEtrfDYcvh7bqOxMk;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
@@ -1351,31 +1341,14 @@
 
     monitor-enter p0
 
-    if-nez p1, :cond_0
-
-    const/4 v0, 0x0
-
     :try_start_0
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mFirstFrameCallback:Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mFirstFrameCallback:Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture$FirstFrameCallback;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_0
     monitor-exit p0
 
     return-void
-
-    :cond_0
-    :try_start_1
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->mFirstFrameCallback:Ljava/lang/ref/WeakReference;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
 
     :catchall_0
     move-exception v0

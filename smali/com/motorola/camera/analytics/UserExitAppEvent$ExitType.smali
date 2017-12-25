@@ -26,6 +26,8 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
+.field public static final enum ARSELFIE:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
 .field public static final enum BACK:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
 .field public static final enum ERROR:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
@@ -34,13 +36,31 @@
 
 .field public static final enum GALLERY:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
+.field public static final enum LANDMARK:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum LIVESTREAM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
 .field public static final enum MISC:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
+.field public static final enum MOTOCAST:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum MOTO_ACTIONS:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
 .field public static final enum POWER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum PRINTER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum SETTINGS_LOCATION:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum SMART_CAM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum STORAGE_PERM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
 .field public static final enum TIMEDOUT:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
 .field public static final enum USER_REQ:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+.field public static final enum VIDEO_PLAYER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
 
 # instance fields
@@ -147,7 +167,127 @@
 
     sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->ERROR:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
-    const/16 v0, 0x8
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "SMART_CAM"
+
+    const-string/jumbo v2, "SMRTCAM"
+
+    const/16 v3, 0x8
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->SMART_CAM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "LANDMARK"
+
+    const-string/jumbo v2, "LANDMRK"
+
+    const/16 v3, 0x9
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->LANDMARK:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "LIVESTREAM"
+
+    const-string/jumbo v2, "LIVE"
+
+    const/16 v3, 0xa
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->LIVESTREAM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "ARSELFIE"
+
+    const-string/jumbo v2, "ARSLF"
+
+    const/16 v3, 0xb
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->ARSELFIE:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "PRINTER"
+
+    const-string/jumbo v2, "PRINTER"
+
+    const/16 v3, 0xc
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->PRINTER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "MOTOCAST"
+
+    const-string/jumbo v2, "MOTOCAST"
+
+    const/16 v3, 0xd
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->MOTOCAST:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "STORAGE_PERM"
+
+    const-string/jumbo v2, "STRGPERM"
+
+    const/16 v3, 0xe
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->STORAGE_PERM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "VIDEO_PLAYER"
+
+    const-string/jumbo v2, "VIDPL"
+
+    const/16 v3, 0xf
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->VIDEO_PLAYER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "SETTINGS_LOCATION"
+
+    const-string/jumbo v2, "SETSLOC"
+
+    const/16 v3, 0x10
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->SETTINGS_LOCATION:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    new-instance v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const-string/jumbo v1, "MOTO_ACTIONS"
+
+    const-string/jumbo v2, "MOTOACTS"
+
+    const/16 v3, 0x11
+
+    invoke-direct {v0, v1, v3, v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->MOTO_ACTIONS:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v0, 0x12
 
     new-array v0, v0, [Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
@@ -186,6 +326,66 @@
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->ERROR:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
 
     const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->SMART_CAM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0x8
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->LANDMARK:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->LIVESTREAM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->ARSELFIE:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->PRINTER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->MOTOCAST:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->STORAGE_PERM:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->VIDEO_PLAYER:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->SETTINGS_LOCATION:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->MOTO_ACTIONS:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
+
+    const/16 v2, 0x11
 
     aput-object v1, v0, v2
 

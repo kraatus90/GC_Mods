@@ -76,17 +76,17 @@
         }
     .end annotation
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/RecognitionContext;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;-><init>()V
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionContext;
 
-    invoke-direct {v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->tryToInstantiateNativeContext()Z
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;-><init>()V
+
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->tryToInstantiateNativeContext()Z
 
     move-result v2
 
     if-nez v2, :cond_0
-
-    const/4 v0, 0x0
 
     :goto_0
     return-object v0
@@ -95,24 +95,24 @@
     :try_start_0
     invoke-static {}, Lcom/abbyy/mobile/ocr4/Engine;->getInstance()Lcom/abbyy/mobile/ocr4/Engine;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/Engine;->getLicense()Lcom/abbyy/mobile/ocr4/License;
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/Engine;->getLicense()Lcom/abbyy/mobile/ocr4/License;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v0}, Lcom/abbyy/mobile/ocr4/License;->loadLicense(Lcom/abbyy/mobile/ocr4/RecognitionContext;)V
+    invoke-virtual {v0, v1}, Lcom/abbyy/mobile/ocr4/License;->loadLicense(Lcom/abbyy/mobile/ocr4/RecognitionContext;)V
     :try_end_0
     .catch Lcom/abbyy/mobile/ocr4/License$BadLicenseException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v0, v1
 
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    const/4 v0, 0x0
-
-    throw v1
+    throw v0
 .end method
 
 .method private destroy()V
@@ -148,8 +148,6 @@
     :cond_0
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->destroy()V
 
-    const/4 p0, 0x0
-
     goto :goto_0
 .end method
 
@@ -157,7 +155,7 @@
 .end method
 
 .method private static getRecognitionLanguagesIds(Ljava/util/Set;Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;)[I
-    .locals 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -170,79 +168,81 @@
         }
     .end annotation
 
+    const/4 v0, 0x0
+
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
-    move-result v6
+    move-result v1
 
     invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;->size()I
 
-    move-result v7
+    move-result v2
 
-    add-int/2addr v6, v7
+    add-int/2addr v1, v2
 
-    new-array v5, v6, [I
-
-    const/4 v0, 0x0
+    new-array v3, v1, [I
 
     invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v4
+
+    move v1, v0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v4
 
     :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_1
+    if-nez v0, :cond_1
 
-    return-object v5
+    return-object v3
 
     :cond_0
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
+    check-cast v0, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    invoke-virtual {v3}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->getLanguageId()I
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/RecognitionLanguage;->getLanguageId()I
 
-    move-result v6
+    move-result v0
 
-    aput v6, v5, v0
+    aput v0, v3, v1
 
-    move v0, v1
+    move v1, v2
 
     goto :goto_0
 
     :cond_1
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Integer;
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v6
+    move-result v0
 
-    aput v6, v5, v0
+    aput v0, v3, v1
 
-    move v0, v1
+    move v1, v2
 
     goto :goto_1
 .end method
@@ -271,208 +271,222 @@
 .end method
 
 .method private loadConfiguration(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
-    .locals 10
-
-    iput-object p1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getImageProcessingOptionsInternal()I
-
-    move-result v8
-
-    invoke-direct {p0, v8}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetImageProcessingOptions(I)V
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getRecognitionMode()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionMode;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionMode;->ordinal()I
-
-    move-result v8
-
-    invoke-direct {p0, v8}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetRecognitionMode(I)V
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getBarcodeTypes()I
-
-    move-result v8
-
-    iget-object v9, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v9}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getDetectBarcodeOrientation()Z
-
-    move-result v9
-
-    invoke-direct {p0, v8, v9}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetBarcodeTypes(IZ)V
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getDefaultCodePage()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->getCodePage()I
-
-    move-result v8
-
-    invoke-direct {p0, v8}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetDefaultCodePage(I)V
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getUnknownLetter()C
-
-    move-result v8
-
-    invoke-direct {p0, v8}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetUnknownLetter(C)V
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getRecognitionConfidenceLevel()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionConfidenceLevel;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionConfidenceLevel;->ordinal()I
-
-    move-result v8
-
-    invoke-direct {p0, v8}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetConfidenceLevel(I)V
-
-    const/4 v6, 0x0
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getFindTextCustomSearchRegion()Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getFindMultipleAreasMode()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$FindMultipleAreasMode;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$FindMultipleAreasMode;->ordinal()I
-
-    move-result v8
-
-    iget-object v9, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v9}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getProhibitVerticalText()Z
-
-    move-result v9
-
-    invoke-direct {p0, v8, v9, v6}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetFineFindTextParams(IZ[I)V
-
-    iget-object v8, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v8}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getRecognitionLanguages()Ljava/util/Set;
-
-    move-result-object v8
-
-    iget-object v9, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
-
-    invoke-virtual {v9}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getUserRecognitionLanguagesInternal()Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->getRecognitionLanguagesIds(Ljava/util/Set;Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;)[I
-
-    move-result-object v4
-
-    invoke-direct {p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetLanguages([I)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_2
-
-    return-void
-
-    :cond_1
-    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;->getRects()Ljava/util/Collection;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/Collection;->size()I
-
-    move-result v8
-
-    if-lez v8, :cond_0
-
-    invoke-interface {v7}, Ljava/util/Collection;->size()I
-
-    move-result v8
-
-    mul-int/lit8 v8, v8, 0x4
-
-    new-array v6, v8, [I
+    .locals 6
 
     const/4 v1, 0x0
 
-    invoke-interface {v7}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    const/4 v0, 0x0
+
+    iput-object p1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getImageProcessingOptionsInternal()I
+
+    move-result v2
+
+    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetImageProcessingOptions(I)V
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getRecognitionMode()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionMode;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionMode;->ordinal()I
+
+    move-result v2
+
+    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetRecognitionMode(I)V
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getBarcodeTypes()I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v3}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getDetectBarcodeOrientation()Z
+
+    move-result v3
+
+    invoke-direct {p0, v2, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetBarcodeTypes(IZ)V
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getDefaultCodePage()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$CodePage;->getCodePage()I
+
+    move-result v2
+
+    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetDefaultCodePage(I)V
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getUnknownLetter()C
+
+    move-result v2
+
+    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetUnknownLetter(C)V
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getRecognitionConfidenceLevel()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionConfidenceLevel;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$RecognitionConfidenceLevel;->ordinal()I
+
+    move-result v2
+
+    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetConfidenceLevel(I)V
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getFindTextCustomSearchRegion()Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;
+
+    move-result-object v2
+
+    if-nez v2, :cond_0
+
+    move-object v0, v1
+
+    :goto_0
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v1}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getFindMultipleAreasMode()Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$FindMultipleAreasMode;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration$FindMultipleAreasMode;->ordinal()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getProhibitVerticalText()Z
+
+    move-result v2
+
+    invoke-direct {p0, v1, v2, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetFineFindTextParams(IZ[I)V
+
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getRecognitionLanguages()Ljava/util/Set;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+
+    invoke-virtual {v1}, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->getUserRecognitionLanguagesInternal()Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->getRecognitionLanguagesIds(Ljava/util/Set;Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;)[I
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetLanguages([I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    return-void
+
+    :cond_0
+    invoke-virtual {v2}, Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;->getRects()Ljava/util/Collection;
 
     move-result-object v3
 
-    :goto_0
+    invoke-interface {v3}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    if-gtz v2, :cond_1
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-interface {v3}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    mul-int/lit8 v1, v1, 0x4
+
+    new-array v2, v1, [I
+
+    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v0
+
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v0
 
-    if-eqz v8, :cond_0
+    if-nez v0, :cond_2
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/graphics/Rect;
-
-    add-int/lit8 v2, v1, 0x1
-
-    iget v8, v5, Landroid/graphics/Rect;->left:I
-
-    aput v8, v6, v1
-
-    add-int/lit8 v1, v2, 0x1
-
-    iget v8, v5, Landroid/graphics/Rect;->top:I
-
-    aput v8, v6, v2
-
-    add-int/lit8 v2, v1, 0x1
-
-    iget v8, v5, Landroid/graphics/Rect;->right:I
-
-    aput v8, v6, v1
-
-    add-int/lit8 v1, v2, 0x1
-
-    iget v8, v5, Landroid/graphics/Rect;->bottom:I
-
-    aput v8, v6, v2
+    move-object v0, v2
 
     goto :goto_0
 
     :cond_2
-    new-instance v8, Ljava/lang/OutOfMemoryError;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string/jumbo v9, "Memory allocation failed in nativeSetLanguages() method."
+    move-result-object v0
 
-    invoke-direct {v8, v9}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+    check-cast v0, Landroid/graphics/Rect;
 
-    throw v8
+    add-int/lit8 v4, v1, 0x1
+
+    iget v5, v0, Landroid/graphics/Rect;->left:I
+
+    aput v5, v2, v1
+
+    add-int/lit8 v1, v4, 0x1
+
+    iget v5, v0, Landroid/graphics/Rect;->top:I
+
+    aput v5, v2, v4
+
+    add-int/lit8 v4, v1, 0x1
+
+    iget v5, v0, Landroid/graphics/Rect;->right:I
+
+    aput v5, v2, v1
+
+    add-int/lit8 v1, v4, 0x1
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    aput v0, v2, v4
+
+    goto :goto_1
+
+    :cond_3
+    new-instance v0, Ljava/lang/OutOfMemoryError;
+
+    const-string/jumbo v1, "Memory allocation failed in nativeSetLanguages() method."
+
+    invoke-direct {v0, v1}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method private native loadCurrentVideoFrame(Ljava/nio/ByteBuffer;IIIII)Z
 .end method
 
 .method private loadImage(Landroid/graphics/Bitmap;)V
-    .locals 11
+    .locals 10
 
     const/4 v2, 0x0
 
@@ -482,7 +496,7 @@
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    move-result v9
+    move-result v8
 
     iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
@@ -490,42 +504,42 @@
 
     move-result v0
 
-    invoke-direct {p0, v3, v9, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->initFineImage(III)Z
+    invoke-direct {p0, v3, v8, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->initFineImage(III)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    mul-int/lit8 v8, v3, 0x4
+    mul-int/lit8 v0, v3, 0x4
 
-    const/high16 v0, 0x100000
+    const/high16 v1, 0x100000
 
-    div-int v10, v0, v8
+    div-int v9, v1, v0
 
-    mul-int v0, v3, v10
+    mul-int v0, v3, v9
 
     new-array v1, v0, [I
 
-    const/4 v5, 0x0
+    move v5, v2
 
     :goto_0
-    if-lt v5, v9, :cond_1
+    if-lt v5, v8, :cond_1
 
     return-void
 
     :cond_0
     new-instance v0, Ljava/lang/OutOfMemoryError;
 
-    const-string/jumbo v2, "Memory allocation failed in initFineImage() method."
+    const-string/jumbo v1, "Memory allocation failed in initFineImage() method."
 
-    invoke-direct {v0, v2}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_1
-    sub-int v0, v9, v5
+    sub-int v0, v8, v5
 
-    invoke-static {v0, v10}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v9}, Ljava/lang/Math;->min(II)I
 
     move-result v7
 
@@ -550,9 +564,9 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Illegal argument was passed to pushFineImageChunk() method."
+    const-string/jumbo v1, "Illegal argument was passed to pushFineImageChunk() method."
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
@@ -606,7 +620,7 @@
 .end method
 
 .method private loadImage(Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;)V
-    .locals 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;
@@ -615,19 +629,19 @@
 
     invoke-virtual {p2}, Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;->getCropRect()Landroid/graphics/Rect;
 
-    move-result-object v9
+    move-result-object v0
 
-    if-eqz v9, :cond_0
+    if-eqz v0, :cond_0
 
     :goto_0
     :try_start_0
-    iget v2, v9, Landroid/graphics/Rect;->left:I
+    iget v2, v0, Landroid/graphics/Rect;->left:I
 
-    iget v3, v9, Landroid/graphics/Rect;->top:I
+    iget v3, v0, Landroid/graphics/Rect;->top:I
 
-    iget v4, v9, Landroid/graphics/Rect;->right:I
+    iget v4, v0, Landroid/graphics/Rect;->right:I
 
-    iget v5, v9, Landroid/graphics/Rect;->bottom:I
+    iget v5, v0, Landroid/graphics/Rect;->bottom:I
 
     invoke-virtual {p2}, Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;->getFlags()I
 
@@ -654,24 +668,24 @@
     return-void
 
     :cond_0
-    new-instance v9, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v9}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     goto :goto_0
 
     :catch_0
-    move-exception v10
+    move-exception v0
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;
 
-    invoke-virtual {v10}, Lcom/abbyy/mobile/ocr4/OutOfNativeMemoryException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/OutOfNativeMemoryException;->getMessage()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v1
 .end method
 
 .method private native loadReferenceVideoFrame(Ljava/nio/ByteBuffer;IIIII)Z
@@ -879,140 +893,138 @@
 .end method
 
 .method private readPatternFile(Ljava/io/InputStream;)Ljava/lang/String;
-    .locals 8
+    .locals 6
 
-    const/16 v6, 0xcad
+    const/16 v0, 0xcad
 
-    const/16 v1, 0xcad
+    new-array v1, v0, [C
 
-    new-array v0, v6, [C
+    const-string/jumbo v0, ""
 
-    const-string/jumbo v5, ""
+    :try_start_0
+    new-instance v2, Ljava/io/InputStreamReader;
+
+    const-string/jumbo v3, "UTF-8"
+
+    invoke-direct {v2, p1, v3}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
+
+    :goto_0
+    const/16 v3, 0xcad
 
     const/4 v4, 0x0
 
-    :try_start_0
-    new-instance v3, Ljava/io/InputStreamReader;
+    invoke-virtual {v2, v1, v4, v3}, Ljava/io/Reader;->read([CII)I
 
-    const-string/jumbo v6, "UTF-8"
+    move-result v3
 
-    invoke-direct {v3, p1, v6}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
-
-    :goto_0
-    const/4 v6, 0x0
-
-    const/16 v7, 0xcad
-
-    invoke-virtual {v3, v0, v6, v7}, Ljava/io/Reader;->read([CII)I
-
-    move-result v4
-
-    if-gtz v4, :cond_0
+    if-gtz v3, :cond_0
 
     :goto_1
-    return-object v5
+    return-object v0
 
     :cond_0
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
-    invoke-static {v0, v7, v4}, Ljava/lang/String;->copyValueOf([CII)Ljava/lang/String;
+    invoke-static {v1, v5, v3}, Ljava/lang/String;->copyValueOf([CII)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v5
+    move-result-object v0
 
     goto :goto_0
 
+    :catchall_0
+    move-exception v0
+
+    throw v0
+
     :catch_0
-    move-exception v2
+    move-exception v1
 
     goto :goto_1
-
-    :catchall_0
-    move-exception v6
-
-    throw v6
 .end method
 
 .method private setImageRegion(Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;)V
-    .locals 7
-
-    invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;->getRects()Ljava/util/Collection;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Ljava/util/Collection;->size()I
-
-    move-result v6
-
-    mul-int/lit8 v6, v6, 0x4
-
-    new-array v4, v6, [I
+    .locals 6
 
     const/4 v0, 0x0
 
-    invoke-interface {v5}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;->getRects()Ljava/util/Collection;
 
-    move-result-object v2
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    mul-int/lit8 v2, v2, 0x4
+
+    new-array v2, v2, [I
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v0
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-direct {p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetImageRegion([I)V
+    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetImageRegion([I)V
 
     return-void
 
     :cond_0
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/graphics/Rect;
+    check-cast v0, Landroid/graphics/Rect;
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v4, v1, 0x1
 
-    iget v6, v3, Landroid/graphics/Rect;->left:I
+    iget v5, v0, Landroid/graphics/Rect;->left:I
 
-    aput v6, v4, v0
+    aput v5, v2, v1
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    iget v6, v3, Landroid/graphics/Rect;->top:I
+    iget v5, v0, Landroid/graphics/Rect;->top:I
 
-    aput v6, v4, v1
+    aput v5, v2, v4
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v4, v1, 0x1
 
-    iget v6, v3, Landroid/graphics/Rect;->right:I
+    iget v5, v0, Landroid/graphics/Rect;->right:I
 
-    aput v6, v4, v0
+    aput v5, v2, v1
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    iget v6, v3, Landroid/graphics/Rect;->bottom:I
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
-    aput v6, v4, v1
+    aput v0, v2, v4
 
     goto :goto_0
 .end method
@@ -1045,7 +1057,7 @@
 
 # virtual methods
 .method public extractBarcodes(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1054,63 +1066,59 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeExtractBarcodesOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public extractBarcodes(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1120,9 +1128,9 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
@@ -1131,54 +1139,50 @@
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeExtractBarcodesOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public extractBarcodes(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;,
@@ -1188,63 +1192,59 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct/range {p0 .. p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeExtractBarcodesOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public findTextOnPhoto(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1253,83 +1253,79 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeFindTextOnImage(Z)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeFindTextOnImage(Z)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public findTextOnVideo(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;ZLcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1339,79 +1335,75 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p4, p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0, p2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->loadImage(Lcom/abbyy/mobile/ocr4/NV21Image;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0, p3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeFindTextOnImage(Z)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public hasTextOnVideo(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Landroid/graphics/Rect;
@@ -1425,20 +1417,20 @@
         }
     .end annotation
 
-    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0, p2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->loadImage(Lcom/abbyy/mobile/ocr4/NV21Image;)V
 
-    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v1, p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeHasTextOnImage()Ljava/lang/Object;
 
@@ -1466,20 +1458,20 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v1
+    throw v0
 .end method
 
 .method native nativeFreeObject(Lcom/abbyy/mobile/ocr4/NativeObject;)V
@@ -1524,7 +1516,7 @@
 .end method
 
 .method public performMotionCorrection(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;Z)Ljava/lang/Boolean;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1597,33 +1589,33 @@
 
     invoke-direct {p0, p4, p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativePerformMotionCorrection(Lcom/abbyy/mobile/ocr4/layout/MocrTextAreasOnPhoto;Z)Ljava/lang/Object;
 
-    move-result-object v7
-
-    if-nez v7, :cond_3
-
-    :cond_2
-    check-cast v7, Ljava/lang/Boolean;
-
-    return-object v7
-
-    :cond_3
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     move-result-object v0
 
-    const-class v1, Ljava/lang/String;
+    if-nez v0, :cond_3
 
-    if-ne v0, v1, :cond_2
+    :cond_2
+    check-cast v0, Ljava/lang/Boolean;
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    return-object v0
 
-    invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    :cond_3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    const-class v2, Ljava/lang/String;
 
-    throw v0
+    if-ne v1, v2, :cond_2
+
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+
+    throw v1
 .end method
 
 .method public recognizeBarcode(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;
@@ -1636,9 +1628,9 @@
         }
     .end annotation
 
-    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
@@ -1669,20 +1661,20 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v1
+    throw v0
 .end method
 
 .method public recognizeBarcode(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;
@@ -1696,9 +1688,9 @@
         }
     .end annotation
 
-    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct/range {p0 .. p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
@@ -1729,24 +1721,24 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v1
+    throw v0
 .end method
 
 .method public recognizeBusinessCard(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrBusinessCard;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1755,81 +1747,77 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadKeywords(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadKeywords(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeBusinessCardOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrBusinessCard;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeBusinessCard(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrBusinessCard;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -1839,83 +1827,79 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0, p2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->loadImage(Lcom/abbyy/mobile/ocr4/NV21Image;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadKeywords(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadKeywords(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeBusinessCardOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrBusinessCard;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeBusinessCard(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrBusinessCard;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;,
@@ -1925,81 +1909,77 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct/range {p0 .. p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadKeywords(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadKeywords(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeBusinessCardOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrBusinessCard;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeText(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -2008,75 +1988,71 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeTextOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeText(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -2085,77 +2061,73 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p4, p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0, p3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->setImageRegion(Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeTextOnImageRegion()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeText(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/NV21Image;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -2165,77 +2137,73 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p3, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
     invoke-direct {p0, p2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->loadImage(Lcom/abbyy/mobile/ocr4/NV21Image;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeTextOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeText(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/ImageLoadingFailedException;,
@@ -2245,75 +2213,71 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct/range {p0 .. p5}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/io/InputStream;Lcom/abbyy/mobile/ocr4/ImageLoadingOptions;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeTextOnImage()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method public recognizeTextRegion(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/layout/MocrImageRegion;ILcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -2322,9 +2286,9 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v0, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1, p2, p5, p6}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->prepareRecognitionData(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Landroid/graphics/Bitmap;Lcom/abbyy/mobile/ocr4/RecognitionManager$RecognitionCallback;Lcom/abbyy/mobile/ocr4/RecognitionManagerImpl$TimersListener;)V
@@ -2333,64 +2297,60 @@
 
     invoke-direct {p0, p4}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeSetBlockAttributes(I)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadPatterns(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v0, p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadDictionaries(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeRecognizeTextRegion()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-class v4, Ljava/lang/String;
+    const-class v2, Ljava/lang/String;
 
-    if-eq v3, v4, :cond_0
-
-    move-object v0, v2
+    if-eq v1, v2, :cond_0
 
     check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrLayout;
 
-    move-object v1, v0
-
-    invoke-direct {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->storeContext(Lcom/abbyy/mobile/ocr4/NativeObject;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    return-object v1
+    return-object v0
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v0
 .end method
 
 .method resetContextState()V
@@ -2459,7 +2419,7 @@
 .end method
 
 .method public translateText(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/abbyy/mobile/ocr4/RecognitionFailedException;,
@@ -2468,18 +2428,18 @@
         }
     .end annotation
 
-    sget-object v3, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
+    sget-object v1, Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;->BUSY:Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;
 
-    invoke-virtual {p0, v3}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
+    invoke-virtual {p0, v1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V
 
     :try_start_0
     invoke-direct {p0, p1}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->loadConfiguration(Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
-    iget-object v3, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
+    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_recognitionData:Lcom/abbyy/mobile/ocr4/RecognitionData;
 
-    iget-object v4, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
+    iget-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionContext;->_configuration:Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;
 
-    invoke-virtual {v3, p0, v4}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
+    invoke-virtual {v1, p0, v2}, Lcom/abbyy/mobile/ocr4/RecognitionData;->loadFindTextData(Lcom/abbyy/mobile/ocr4/RecognitionContext;Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;)V
 
     invoke-direct {p0, p2}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->nativeTranslateText(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -2495,9 +2455,9 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
     check-cast v2, Ljava/lang/String;
     :try_end_0
@@ -2509,24 +2469,24 @@
 
     :cond_0
     :try_start_1
-    new-instance v3, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v3, v4}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/abbyy/mobile/ocr4/RecognitionFailedException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :catchall_0
-    move-exception v3
+    move-exception v1
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/RecognitionContext;->resetContextState()V
 
-    throw v3
+    throw v1
 .end method
 
 .method trySetContextState(Lcom/abbyy/mobile/ocr4/RecognitionContext$ContextState;)V

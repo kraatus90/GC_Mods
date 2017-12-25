@@ -61,7 +61,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/uicomponents/ToastUIComponent;->mHandler:Landroid/os/Handler;
 
-    const v0, 0x7f0e00cf
+    const v0, 0x7f0e00e6
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -81,7 +81,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/uicomponents/ToastUIComponent;->mLayoutParams:Landroid/widget/RelativeLayout$LayoutParams;
 
-    const v0, 0x7f0e00d0
+    const v0, 0x7f0e00e7
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -231,7 +231,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0a00a8
+    const v1, 0x7f0a00bd
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -247,7 +247,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a00a9
+    const v2, 0x7f0a00be
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

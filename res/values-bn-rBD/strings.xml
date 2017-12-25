@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">হোম এ নেভিগেট করুন</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">উপরের দিকে নেভিগেট করুন</string>
-    <string name="abc_action_menu_overflow_description">আরো বিকল্প</string>
-    <string name="abc_action_mode_done">সম্পন্ন হয়েছে</string>
-    <string name="abc_activity_chooser_view_see_all">সবগুলো দেখুন</string>
-    <string name="abc_activitychooserview_choose_application">একটি অ্যাপ্লিকেশান বেছে নিন</string>
-    <string name="abc_capital_off">বন্ধ</string>
-    <string name="abc_capital_on">চালু</string>
-    <string name="abc_search_hint">অনুসন্ধান...</string>
-    <string name="abc_searchview_description_clear">ক্যোয়ারী সাফ করুন</string>
-    <string name="abc_searchview_description_query">ক্যোয়ারী অনুসন্ধান করুন</string>
-    <string name="abc_searchview_description_search">অনুসন্ধান করুন</string>
-    <string name="abc_searchview_description_submit">ক্যোয়ারী জমা দিন</string>
-    <string name="abc_searchview_description_voice">ভয়েস অনুসন্ধান</string>
-    <string name="abc_shareactionprovider_share_with">এর সাথে শেয়ার করুন</string>
-    <string name="abc_shareactionprovider_share_with_application">%s এর সাথে শেয়ার করুন</string>
-    <string name="abc_toolbar_collapse_description">সঙ্কুচিত করুন</string>
     <string name="common_android_wear_notification_needs_update_text">একটি অ্যাপ্লিকেশানের জন্য Android Wear অ্যাপ্লিকেশানটির একটি আপডেট প্রয়োজন।</string>
     <string name="common_android_wear_update_text">আপনি Android Wear অ্যাপ্লিকেশান আপডেট না করা পর্যন্ত এই অ্যাপ্লিকেশানটি চলবে না।</string>
     <string name="common_android_wear_update_title">Android Wear আপডেট করুন</string>
@@ -50,8 +31,6 @@
     <string name="common_signin_button_text">সাইন ইন করুন</string>
     <string name="common_signin_button_text_long">Google এর মাধ্যমে সাইন ইন করুন</string>
     <string name="commono_google_play_services_api_unavailable_text">এই অ্যাপ্লিকেশানটির এক বা একাধিক Google Play পরিষেবার প্রয়োজন যা বর্তমানে অনুপলব্ধ৷ সহায়তার জন্য অনুগ্রহ করে বিকাশকারীর সাথে যোগাযোগ করুন৷</string>
-    <string name="search_menu_title">অনুসন্ধান করুন</string>
-    <string name="status_bar_notification_info_overflow">৯৯৯+</string>
     <string name="act_name_camcorder">ক্যামকর্ডার</string>
     <string name="act_name_camera">ক্যামেরা</string>
     <string name="action_licenses">ওপেন সোর্স লাইসেন্সগুলো</string>
@@ -148,7 +127,7 @@
     <string name="cancel">বাতিল করুন</string>
     <string name="capture_failure">ক্যাপচার ব্যর্থ হয়েছে। আবার চেষ্টা করুন।</string>
     <string name="checkbox_do_not_show">এটি আর দেখাবেন না</string>
-    <string name="cloudsight_terms">অনুসন্ধানের ফলাফল প্রদান করতে আপনার চিত্রগুলো CloudSight-এ পাঠানো হবে। &lt;br/>&lt;br/> অবিরত রেখে আপনি CloudSight-এর&lt;a href=%1$s>গোপনীয়তা নীতির সাথে&lt;/a>সম্মত।</string>
+    <string name="cloudsight_terms">আপনি প্রতিবার বিষয়বস্তুর স্বীকৃতি ব্যবহার করলে, অনুসন্ধানের ফলাফল সরবরাহ করতে চিত্র ও অবস্থান (সক্ষম হলে) কোনো তৃতীয় পার্টিকে পাঠানো হবে।&lt;br/>&lt;br/> অবিরত রেখে, আপনি&lt;a href=%1$s>গোপনীয়তা নীতিতে&lt;/a>সম্মত হন।</string>
     <string name="dailog_panorama_failed">প্যানোরামা ব্যর্থ হয়েছে। দয়া করে পুনরায় চেষ্টা করুন।</string>
     <string name="dailog_panorama_not_taken">প্যানারোমা ছবি নেওয়া হয়নি।</string>
     <string name="dialog_access_sd_fail">মিডিয়া ক্যাপচার করতে সক্ষম নয়. SD কার্ড অ্যাক্সেস করতে পারা গেল না.</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">ডিভাইস সমর্থিত নেই</string>
     <string name="dialog_disagree">অসম্মত</string>
     <string name="dialog_dismiss">এটি আর প্রদর্শন করবেন না</string>
+    <string name="dialog_download">ডাউনলোড করুন</string>
     <string name="dialog_external_sd_missing">কোনও ছবি ক্যাপচার করতে পারে না. SD কার্ড অ্যাক্সেসযোগ্য নয়. অভ্যন্তরীণ ফোনের সঞ্চয়স্থানে স্যুইচ করা হচ্ছে.</string>
     <string name="dialog_first_time_set_pure_raw_message">"এই অপ্রক্রিয়াকৃত ফাইলের প্রকারটি পেশাদারিত্বের সাথে ফটোগুলো সম্পাদনা করতে ব্যবহার করা হয়।
 
@@ -247,6 +227,7 @@
     <string name="help_next">পরবর্তী</string>
     <string name="image_360_desc">এটি একটি 360 ফটো। আপনি এই ফটোটি Moto 360 Editor-এর সাহায্যে সম্পাদনা করতে পারেন।</string>
     <string name="image_360_name">360 ফটো</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">গভীরতা সক্ষম হয়েছে</string>
     <string name="indicate_mode_mono">প্রকৃত B&amp;W</string>
@@ -258,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">আল্ট্রা ওয়াইড অ্যাঙ্গেল</string>
     <string name="indicate_mode_video">ভিডিও</string>
     <string name="indicate_mode_wide_angle">চওড়া কোণ</string>
+    <string name="indicate_mode_wide_angle_selfie">বিস্তৃত কোণের সেলফি</string>
     <string name="internal_storage">অভ্যন্তরীণ সঞ্চয়স্থান</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">ল্যান্ডমার্ক স্বীকৃতি বিশ্বজুড়ে জনপ্রিয় ল্যান্ডমার্কগুলো সম্বন্ধে তথ্য অফার করে।&lt;br/>&lt;br/>এই বৈশিষ্ট্যটি সক্ষম করতে ইনস্টল করুন।</string>
-    <string name="landmark_install_over_data">ল্যান্ডমার্ক স্বীকৃতি ডাউনলোডের আকার 92 MB। মোবাইল ডেটা ব্যবহার করে এটি ইনস্টল করা হলে অতিরিক্ত ডেটা চার্জ লাগতে পারে।</string>
-    <string name="landmark_notification_downloading">ল্যান্ডমার্ক স্বীকৃতি ডাউনলোড করা হচ্ছে</string>
-    <string name="landmark_notification_install">ল্যান্ডমার্ক স্বীকৃতি ইনস্টল করা হচ্ছে</string>
-    <string name="landmark_notification_install_complete">ল্যান্ডমার্ক স্বীকৃতি ইনস্টলেশন সম্পূর্ণ</string>
-    <string name="landmark_notification_install_failed">ল্যান্ডমার্ক স্বীকৃতি ইনস্টলেশন ব্যর্থ হয়েছে</string>
+    <string name="landmark_install_message">ল্যান্ডমার্ক স্বীকৃতি বিশ্বজুড়ে জনপ্রিয় ল্যান্ডমার্কগুলো সম্বন্ধে তথ্য অফার করে।&lt;br/>&lt;br/>এই বৈশিষ্ট্যটি সক্ষম ল্যান্ডমার্কের ডেটাবেস ডাউনলোড করুন।</string>
+    <string name="landmark_install_over_data">ল্যান্ডমার্ক ডেটাবেসের ডাউনলোডের আকার 92 MB। মোবাইল ডেটা ব্যবহার করে এটি ডাউনলোড করা হলে অতিরিক্ত ডেটা চার্জ লাগতে পারে।</string>
+    <string name="landmark_notification_downloading">ল্যান্ডমার্কের ডেটাবেস ডাউনলোড হচ্ছে</string>
+    <string name="landmark_notification_install">ল্যান্ডমার্কের ডেটাবেস ইনস্টল হচ্ছে</string>
+    <string name="landmark_notification_install_complete">ল্যান্ডমার্কের ডেটাবেস ইনস্টলেশন সম্পূর্ণ</string>
+    <string name="landmark_notification_install_failed">ল্যান্ডমার্কের ডেটাবেস ইনস্টলেশন ব্যর্থ হয়েছে</string>
     <string name="landmark_notification_install_invalid_url">ল্যান্ডমার্ড ডেটাবেস উপলব্ধ নাই, অনুগ্রহ করে সাম্প্রতিকতম ক্যামেরার সংস্করণে আপডেট করুন</string>
-    <string name="landmark_notification_install_out_of_space">ল্যান্ডমার্ক স্বীকৃতি ইনস্টল করতে অপর্যাপ্ত সঞ্চয়স্থান উপলব্ধ</string>
+    <string name="landmark_notification_install_out_of_space">ল্যান্ডমার্কের ডেটাবেস ইনস্টল করতে অপর্যাপ্ত সঞ্চয়স্থান উপলব্ধ</string>
+    <string name="landmark_notification_paused">ইন্টারনেট উপলব্ধ হলে ল্যান্ডমার্কের ডেটাবেস ডাউনলোড করা অবিরত রাখবে</string>
+    <string name="landmark_notification_queued">ইন্টারনেট উপলব্ধ হলে ল্যান্ডমার্কের ডেটাবেস ডাউনলোড করা আরম্ভ করবে</string>
     <string name="main_setting_amz_barcode">Amazon বারকোড স্ক্যানার</string>
     <string name="main_setting_amz_privacy">Amazon গোপনীয়তা নীতি</string>
     <string name="main_setting_amz_terms">ব্যবহারের শর্তাবলী</string>
@@ -290,6 +274,8 @@
     <string name="main_setting_image_ratio">ফটোর আকার (পিছনে)</string>
     <string name="main_setting_image_ratio_front">ফটোর আকার (সম্মুখে)</string>
     <string name="main_setting_landmark_detection">ল্যান্ডমার্ক স্বীকৃতি</string>
+    <string name="main_setting_landmark_version_current">ডেটাবেস সংস্করণ: %s</string>
+    <string name="main_setting_landmark_version_not_installed">ডেটাবেস ইনস্টল হয় নাই</string>
     <string name="main_setting_licenses">ওপেন সোর্স লাইসেন্সগুলো</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +311,9 @@
     <string name="perm_required_alert_title">অনুমতিগুলো প্রয়োজনীয়</string>
     <string name="photos_depth_desc">ফোকাস নির্বাচন করতে গভীরতার সম্পাদকটি ব্যবহার করুন, ব্যাকগ্রাউন্ডটি প্রতিস্থাপন করুন বা কালো ও সাদাতে পরিবর্তন করতে এলাকা নির্বাচন করুন।</string>
     <string name="photos_depth_name">গভীরতা সক্ষমিত</string>
+    <string name="photos_notification_desc">Google ফটো-এর সাহায্যে অসীমিত সঞ্চয়স্থান পান</string>
+    <string name="photos_notification_title">Google ফটো-এ ব্যাক আপ নিন</string>
+    <string name="qcfa_resolution_description">স্বল্প আলো: অনুকূলিত</string>
     <string name="retake">পুনরায় নিন</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +356,7 @@
     <string name="setting_mode_slow_motion">ধীর গতি</string>
     <string name="setting_mode_ultra_wide">আল্ট্রা ওয়াইড অ্যাঙ্গেল</string>
     <string name="setting_mode_video">ভিডিও</string>
+    <string name="setting_mode_wide_angle_selfie">বিস্তৃত কোণের সেলফি</string>
     <string name="setting_off">"বন্ধ "</string>
     <string name="setting_on">চালু</string>
     <string name="setting_persist">ধরে থাকুন</string>
@@ -383,20 +373,25 @@
     <string name="setting_timer_dialog_title">টাইমার</string>
     <string name="setting_torch">টর্চ</string>
     <string name="setting_true">সত্য</string>
+    <string name="shortcut_desc_depth">গভীর ফটো</string>
+    <string name="shortcut_desc_selfie">সেলফি</string>
+    <string name="shortcut_desc_video">ভিডিও</string>
     <string name="smartcam_landmark_notification_title">স্মার্ট ক্যামেরা</string>
+    <string name="smartcam_no_detections">সংরক্ষিত কোনও বস্তু বা ল্যান্ডমার্ক নাই</string>
     <string name="storage_location_external">SD কার্ড</string>
     <string name="storage_location_internal">ফোন</string>
     <string name="storage_unavailable">সঞ্চয়স্থান অসুলভ</string>
+    <string name="toast_battery_saver">আপনি বর্তমানে পাওয়ার সাশ্রয় মোডে রয়েছেন, কিছু বৈশিষ্ট্য সীমিত হতে পারে</string>
     <string name="toast_geotag_message_1">সংরক্ষণের অবস্থানটি সক্ষম করতে আপনাকে অবশ্যই অবস্থানের অনুমতির অনুমোদন দিতে হবে।</string>
     <string name="toast_geotag_message_2">অবস্থান সেটিং শুধুমাত্র অবস্থানের সেটিং চালু হওয়ার পরে প্রভাবিত হয়।</string>
     <string name="tooltip_camera_switch_360">বিভিন্ন ক্যামেরার বিকল্পে স্যুইচ করার চেষ্টা করুন।</string>
     <string name="tooltip_capture_360">এই শাটার বোতামে আলতো চাপ দিয়ে 360° ফটো বা ভিডিও ক্যাপচার করার চেষ্টা করুন।</string>
     <string name="tooltip_capture_key_360">মডের পিছনে শাটার বোতামের সাহায্যেও ক্যাপচার করার চেষ্টা করুন।</string>
-    <string name="tooltip_dual_camera_depth_photo">বিশেষ সম্পাদনার বৈশিষ্ট্যগুলো সক্ষম করতে অতিরিক্ত তথ্য সহ ছবিগুলো ক্যাপচার করুন।</string>
     <string name="tooltip_first_use_zoom_button">প্রশস্ত কোণে স্যুইচ করতে এখানে আলতো চাপ দিন।</string>
     <string name="tooltip_gallery_360">বামদিকে সোয়াইপ করে আপনার 360° ফটো বা ভিডিও কেমন হয় তা দেখুন।</string>
     <string name="tooltip_minimap_viewfinder">নীচের চিত্রটি বাম বা ডানদিকে প্যান করুন।</string>
     <string name="tooltip_mode_switch_360">বিভিন্ন মোডে 360° ক্যাপচার করার চেষ্টা করুন!</string>
+    <string name="tooltip_modes_list">আপনার ছবিগুলো ক্যাপচার করার নতুন উপায় আবিষ্কার করুন।</string>
     <string name="tooltip_smart_camera">বস্তুটি সম্বন্ধে আরো জানতে আলতো করে চাপ দিন।</string>
     <string name="tooltip_smart_camera_disable">আপনি এটি সেটিংসে বন্ধ করতে পারেন।</string>
     <string name="tooltip_spherical_viewfinder">দৃশ্যটি নিয়ন্ত্রণ করতে প্যান বা জুম ইন ও আউট করুন।</string>
@@ -419,6 +414,10 @@
     <string name="zoom_hint_full">পূর্ণ</string>
     <string name="zoom_hint_wide">প্রশস্ত</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">স্বল্প আলো: অনুকূলিত</string>
+    <string name="indicate_mode_timelapse">সময় ব্যয়</string>
+    <string name="setting_mode_timelapse">সময় ব্যয়</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

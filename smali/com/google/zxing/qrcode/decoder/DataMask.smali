@@ -32,69 +32,69 @@
 
     new-array v0, v0, [Lcom/google/zxing/qrcode/decoder/DataMask;
 
-    const/4 v1, 0x0
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask000;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask000;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask000;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask000;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask010;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask010;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask010;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask010;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask011;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask011;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask011;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask011;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask100;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask100;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask100;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask100;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask101;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask101;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask101;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask101;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask110;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask110;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask110;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask110;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask111;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask111;
+    invoke-direct {v1, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask111;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
 
-    invoke-direct {v2, v3}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask111;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/DataMask;->DATA_MASKS:[Lcom/google/zxing/qrcode/decoder/DataMask;
 
@@ -147,39 +147,43 @@
 .end method
 
 .method final unmaskBitMatrix(Lcom/google/zxing/common/BitMatrix;I)V
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
+
+    move v2, v1
 
     :goto_0
-    if-lt v0, p2, :cond_0
+    if-lt v2, p2, :cond_0
 
     return-void
 
     :cond_0
-    const/4 v1, 0x0
+    move v0, v1
 
     :goto_1
-    if-lt v1, p2, :cond_1
+    if-lt v0, p2, :cond_1
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/qrcode/decoder/DataMask;->isMasked(II)Z
+    invoke-virtual {p0, v2, v0}, Lcom/google/zxing/qrcode/decoder/DataMask;->isMasked(II)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
     :goto_2
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {p1, v1, v0}, Lcom/google/zxing/common/BitMatrix;->flip(II)V
+    invoke-virtual {p1, v0, v2}, Lcom/google/zxing/common/BitMatrix;->flip(II)V
 
     goto :goto_2
 .end method

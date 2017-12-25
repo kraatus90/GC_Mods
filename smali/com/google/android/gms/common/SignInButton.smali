@@ -53,13 +53,13 @@
 
     const/4 v1, 0x0
 
-    const/4 v0, 0x0
-
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/SignInButton;->zzPc:Landroid/view/View$OnClickListener;
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, v0}, Lcom/google/android/gms/common/SignInButton;->setStyle(II)V
+    iput-object v0, p0, Lcom/google/android/gms/common/SignInButton;->zzPc:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {p0, v1, v1}, Lcom/google/android/gms/common/SignInButton;->setStyle(II)V
 
     return-void
 .end method
@@ -227,7 +227,7 @@
 .end method
 
 .method public setStyle(II)V
-    .locals 6
+    .locals 5
 
     const/4 v1, 0x1
 
@@ -239,17 +239,17 @@
     move v0, v2
 
     :goto_0
-    const-string/jumbo v3, "Unknown button size %d"
-
-    new-array v4, v1, [Ljava/lang/Object;
+    new-array v3, v1, [Ljava/lang/Object;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v4, v2
+    aput-object v4, v3, v2
 
-    invoke-static {v0, v3, v4}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v4, "Unknown button size %d"
+
+    invoke-static {v0, v4, v3}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     if-gez p2, :cond_3
 
@@ -257,17 +257,17 @@
     move v0, v2
 
     :goto_1
-    const-string/jumbo v3, "Unknown color scheme %s"
-
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object v3
 
-    aput-object v4, v1, v2
+    aput-object v3, v1, v2
 
-    invoke-static {v0, v3, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v2, "Unknown color scheme %s"
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     iput p1, p0, Lcom/google/android/gms/common/SignInButton;->mSize:I
 

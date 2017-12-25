@@ -290,30 +290,30 @@
 .end method
 
 .method private dispatchPresenterUpdate(Z)V
-    .locals 4
+    .locals 3
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
 
@@ -325,142 +325,142 @@
     :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
     move-result-object v0
 
-    check-cast v0, Landroid/support/v7/view/menu/MenuPresenter;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-eqz v0, :cond_2
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->updateMenuView(Z)V
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v1, p1}, Landroid/support/v7/view/menu/MenuPresenter;->updateMenuView(Z)V
 
     goto :goto_0
 
     :cond_2
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
 
 .method private dispatchRestoreInstanceState(Landroid/os/Bundle;)V
-    .locals 7
+    .locals 4
 
-    const-string/jumbo v5, "android:menu:presenters"
+    const-string/jumbo v0, "android:menu:presenters"
 
-    invoke-virtual {p1, v5}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-nez v3, :cond_1
+    if-nez v2, :cond_1
 
     :cond_0
     return-void
 
     :cond_1
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v3
 
     :cond_2
     :goto_0
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_3
+    if-nez v0, :cond_3
 
     return-void
 
     :cond_3
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Ljava/lang/ref/WeakReference;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v4}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Landroid/support/v7/view/menu/MenuPresenter;
+    check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
 
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_4
 
-    invoke-interface {v2}, Landroid/support/v7/view/menu/MenuPresenter;->getId()I
+    invoke-interface {v1}, Landroid/support/v7/view/menu/MenuPresenter;->getId()I
 
     move-result v0
 
     if-lez v0, :cond_2
 
-    invoke-virtual {v3, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/os/Parcelable;
+    check-cast v0, Landroid/os/Parcelable;
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
-    invoke-interface {v2, v1}, Landroid/support/v7/view/menu/MenuPresenter;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-interface {v1, v0}, Landroid/support/v7/view/menu/MenuPresenter;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     goto :goto_0
 
     :cond_4
-    iget-object v6, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v6, v4}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
 
 .method private dispatchSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 7
+    .locals 4
 
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_1
+    if-nez v0, :cond_1
 
     new-instance v2, Landroid/util/SparseArray;
 
     invoke-direct {v2}, Landroid/util/SparseArray;-><init>()V
 
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v3
 
     :cond_0
     :goto_0
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_2
+    if-nez v0, :cond_2
 
-    const-string/jumbo v5, "android:menu:presenters"
+    const-string/jumbo v0, "android:menu:presenters"
 
-    invoke-virtual {p1, v5, v2}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
+    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
     return-void
 
@@ -468,13 +468,13 @@
     return-void
 
     :cond_2
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Ljava/lang/ref/WeakReference;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -490,99 +490,110 @@
 
     invoke-interface {v1}, Landroid/support/v7/view/menu/MenuPresenter;->onSaveInstanceState()Landroid/os/Parcelable;
 
-    move-result-object v4
+    move-result-object v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v2, v0, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v2, v0, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     goto :goto_0
 
     :cond_3
-    iget-object v6, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v6, v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
 
 .method private dispatchSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;Landroid/support/v7/view/menu/MenuPresenter;)Z
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_1
+    if-nez v1, :cond_0
 
-    const/4 v2, 0x0
-
-    if-nez p2, :cond_2
+    if-nez p2, :cond_1
 
     :goto_0
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :cond_0
+    move v2, v0
+
     :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_3
+    if-nez v0, :cond_2
 
     return v2
 
-    :cond_1
-    return v4
+    :cond_0
+    return v0
 
-    :cond_2
+    :cond_1
     invoke-interface {p2, p1}, Landroid/support/v7/view/menu/MenuPresenter;->onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
 
-    move-result v2
+    move-result v0
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/support/v7/view/menu/MenuPresenter;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-eqz v0, :cond_4
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    if-nez v2, :cond_0
+    move-result-object v1
 
-    invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
+    check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
+
+    if-eqz v1, :cond_3
+
+    if-eqz v2, :cond_4
+
+    move v0, v2
+
+    :goto_2
+    move v2, v0
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+
+    move v0, v2
+
+    goto :goto_2
+
+    :cond_4
+    invoke-interface {v1, p1}, Landroid/support/v7/view/menu/MenuPresenter;->onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
 
     move-result v2
 
-    goto :goto_1
+    move v0, v2
 
-    :cond_4
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v4, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_1
+    goto :goto_2
 .end method
 
 .method private static findInsertIndex(Ljava/util/ArrayList;I)I
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -593,61 +604,65 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
-    move-result v2
-
-    add-int/lit8 v0, v2, -0x1
-
-    :goto_0
-    if-gez v0, :cond_0
-
-    return v3
-
-    :cond_0
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getOrdering()I
-
-    move-result v2
-
-    if-le v2, p1, :cond_1
+    move-result v0
 
     add-int/lit8 v0, v0, -0x1
+
+    move v1, v0
+
+    :goto_0
+    if-gez v1, :cond_0
+
+    return v2
+
+    :cond_0
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
+
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getOrdering()I
+
+    move-result v0
+
+    if-le v0, p1, :cond_1
+
+    add-int/lit8 v0, v1, -0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v2, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    return v2
+    return v0
 .end method
 
 .method private static getOrdering(I)I
-    .locals 3
+    .locals 2
 
-    const/high16 v1, -0x10000
+    const/high16 v0, -0x10000
 
-    and-int/2addr v1, p0
+    and-int/2addr v0, p0
 
-    shr-int/lit8 v0, v1, 0x10
+    shr-int/lit8 v0, v0, 0x10
 
     if-gez v0, :cond_1
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "order does not contain a valid category."
+    const-string/jumbo v1, "order does not contain a valid category."
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_1
     sget-object v1, Landroid/support/v7/view/menu/MenuBuilder;->sCategoryToOrder:[I
@@ -658,17 +673,17 @@
 
     sget-object v1, Landroid/support/v7/view/menu/MenuBuilder;->sCategoryToOrder:[I
 
-    aget v1, v1, v0
+    aget v0, v1, v0
 
-    shl-int/lit8 v1, v1, 0x10
+    shl-int/lit8 v0, v0, 0x10
 
-    const v2, 0xffff
+    const v1, 0xffff
 
-    and-int/2addr v2, p0
+    and-int/2addr v1, p0
 
-    or-int/2addr v1, v2
+    or-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method private removeItemAtInt(IZ)V
@@ -706,11 +721,11 @@
 .end method
 
 .method private setHeaderInternal(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v2, 0x0
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getResources()Landroid/content/res/Resources;
 
@@ -728,28 +743,28 @@
     if-nez p4, :cond_4
 
     :goto_1
-    iput-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderView:Landroid/view/View;
+    iput-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderView:Landroid/view/View;
 
     :goto_2
-    invoke-virtual {p0, v3}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
+    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
     return-void
 
     :cond_0
     iput-object p5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderView:Landroid/view/View;
 
-    iput-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderTitle:Ljava/lang/CharSequence;
+    iput-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderTitle:Ljava/lang/CharSequence;
 
-    iput-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderIcon:Landroid/graphics/drawable/Drawable;
+    iput-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderIcon:Landroid/graphics/drawable/Drawable;
 
     goto :goto_2
 
     :cond_1
     invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderTitle:Ljava/lang/CharSequence;
+    iput-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderTitle:Ljava/lang/CharSequence;
 
     goto :goto_0
 
@@ -761,13 +776,13 @@
     :cond_3
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, p3}, Landroid/support/v4/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p3}, Landroid/support/v4/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderIcon:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mHeaderIcon:Landroid/graphics/drawable/Drawable;
 
     goto :goto_1
 
@@ -878,47 +893,47 @@
 .end method
 
 .method public addIntentOptions(IIILandroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I[Landroid/view/MenuItem;)I
-    .locals 13
+    .locals 9
 
-    iget-object v10, p0, Landroid/support/v7/view/menu/MenuBuilder;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v10}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v7
+    move-result-object v4
 
-    const/4 v10, 0x0
+    const/4 v0, 0x0
 
-    move-object/from16 v0, p4
+    invoke-virtual {v4, p4, p5, p6, v0}, Landroid/content/pm/PackageManager;->queryIntentActivityOptions(Landroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I)Ljava/util/List;
 
-    move-object/from16 v1, p5
+    move-result-object v5
 
-    move-object/from16 v2, p6
+    if-nez v5, :cond_0
 
-    invoke-virtual {v7, v0, v1, v2, v10}, Landroid/content/pm/PackageManager;->queryIntentActivityOptions(Landroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I)Ljava/util/List;
+    const/4 v0, 0x0
 
-    move-result-object v6
-
-    if-nez v6, :cond_0
-
-    const/4 v3, 0x0
+    move v1, v0
 
     :goto_0
-    and-int/lit8 v10, p7, 0x1
+    and-int/lit8 v0, p7, 0x1
 
-    if-eqz v10, :cond_1
+    if-eqz v0, :cond_1
 
     :goto_1
-    const/4 v4, 0x0
+    const/4 v0, 0x0
+
+    move v3, v0
 
     :goto_2
-    if-lt v4, v3, :cond_2
+    if-lt v3, v1, :cond_2
 
-    return v3
+    return v1
 
     :cond_0
-    invoke-interface {v6}, Ljava/util/List;->size()I
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v0
+
+    move v1, v0
 
     goto :goto_0
 
@@ -928,90 +943,90 @@
     goto :goto_1
 
     :cond_2
-    invoke-interface {v6, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v0
 
-    check-cast v8, Landroid/content/pm/ResolveInfo;
+    check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    new-instance v9, Landroid/content/Intent;
+    new-instance v6, Landroid/content/Intent;
 
-    iget v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex:I
+    iget v2, v0, Landroid/content/pm/ResolveInfo;->specificIndex:I
 
-    if-ltz v10, :cond_4
+    if-ltz v2, :cond_4
 
-    iget v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex:I
+    iget v2, v0, Landroid/content/pm/ResolveInfo;->specificIndex:I
 
-    aget-object v10, p5, v10
+    aget-object v2, p5, v2
 
     :goto_3
-    invoke-direct {v9, v10}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v6, v2}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    new-instance v10, Landroid/content/ComponentName;
+    new-instance v2, Landroid/content/ComponentName;
 
-    iget-object v11, v8, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    iget-object v7, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v11, v11, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v7, v7, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    iget-object v11, v11, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
+    iget-object v7, v7, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    iget-object v12, v8, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    iget-object v8, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v12, v12, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
+    iget-object v8, v8, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
-    invoke-direct {v10, v11, v12}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v2, v7, v8}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v9, v10}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {v6, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    invoke-virtual {v8, v7}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v4}, Landroid/content/pm/ResolveInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
 
-    move-result-object v10
+    move-result-object v2
 
-    move/from16 v0, p3
+    invoke-virtual {p0, p1, p2, p3, v2}, Landroid/support/v7/view/menu/MenuBuilder;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
 
-    invoke-virtual {p0, p1, p2, v0, v10}, Landroid/support/v7/view/menu/MenuBuilder;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
+    move-result-object v2
 
-    move-result-object v10
+    invoke-virtual {v0, v4}, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v8, v7}, Landroid/content/pm/ResolveInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
+    move-result-object v7
 
-    move-result-object v11
+    invoke-interface {v2, v7}, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
 
-    invoke-interface {v10, v11}, Landroid/view/MenuItem;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
+    move-result-object v2
 
-    move-result-object v10
+    invoke-interface {v2, v6}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
 
-    invoke-interface {v10, v9}, Landroid/view/MenuItem;->setIntent(Landroid/content/Intent;)Landroid/view/MenuItem;
-
-    move-result-object v5
+    move-result-object v2
 
     if-nez p8, :cond_5
 
     :cond_3
     :goto_4
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
 
     goto :goto_2
 
     :cond_4
-    move-object/from16 v10, p6
+    move-object v2, p6
 
     goto :goto_3
 
     :cond_5
-    iget v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex:I
+    iget v6, v0, Landroid/content/pm/ResolveInfo;->specificIndex:I
 
-    if-ltz v10, :cond_3
+    if-ltz v6, :cond_3
 
-    iget v10, v8, Landroid/content/pm/ResolveInfo;->specificIndex:I
+    iget v0, v0, Landroid/content/pm/ResolveInfo;->specificIndex:I
 
-    aput-object v5, p8, v10
+    aput-object v2, p8, v0
 
     goto :goto_4
 .end method
 
 .method protected addInternal(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
-    .locals 8
+    .locals 7
 
     invoke-static {p3}, Landroid/support/v7/view/menu/MenuBuilder;->getOrdering(I)I
 
@@ -1031,33 +1046,33 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/support/v7/view/menu/MenuBuilder;->createNewMenuItem(IIIILjava/lang/CharSequence;I)Landroid/support/v7/view/menu/MenuItemImpl;
 
-    move-result-object v7
+    move-result-object v0
 
-    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mCurrentMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mCurrentMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
     :goto_0
-    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
-
     iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-static {v1, v4}, Landroid/support/v7/view/menu/MenuBuilder;->findInsertIndex(Ljava/util/ArrayList;I)I
+    iget-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    move-result v1
+    invoke-static {v2, v4}, Landroid/support/v7/view/menu/MenuBuilder;->findInsertIndex(Ljava/util/ArrayList;I)I
 
-    invoke-virtual {v0, v1, v7}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    move-result v2
 
-    const/4 v0, 0x1
+    invoke-virtual {v1, v2, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
+    const/4 v1, 0x1
 
-    return-object v7
+    invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
+
+    return-object v0
 
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mCurrentMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mCurrentMenuInfo:Landroid/view/ContextMenu$ContextMenuInfo;
 
-    invoke-virtual {v7, v0}, Landroid/support/v7/view/menu/MenuItemImpl;->setMenuInfo(Landroid/view/ContextMenu$ContextMenuInfo;)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuItemImpl;->setMenuInfo(Landroid/view/ContextMenu$ContextMenuInfo;)V
 
     goto :goto_0
 .end method
@@ -1255,32 +1270,32 @@
 .end method
 
 .method public final close(Z)V
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    iget-boolean v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsClosing:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsClosing:Z
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsClosing:Z
+    iput-boolean v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsClosing:Z
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
-    iput-boolean v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsClosing:Z
+    iput-boolean v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsClosing:Z
 
     return-void
 
@@ -1290,112 +1305,122 @@
     :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
     move-result-object v0
 
-    check-cast v0, Landroid/support/v7/view/menu/MenuPresenter;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0, p0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_0
-.end method
-
-.method public collapseItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
-    .locals 6
-
-    const/4 v5, 0x0
-
-    const/4 v4, 0x0
-
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    :cond_0
-    return v4
-
-    :cond_1
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mExpandedItem:Landroid/support/v7/view/menu/MenuItemImpl;
-
-    if-ne v3, p1, :cond_0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
-
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    :cond_2
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
-
-    if-nez v0, :cond_5
-
-    :goto_1
-    return v0
-
-    :cond_3
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_2
 
-    invoke-interface {v1, p0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->collapseItemActionView(Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)Z
+    invoke-interface {v1, p0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+
+    goto :goto_0
+.end method
+
+.method public collapseItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
+    .locals 5
+
+    const/4 v4, 0x0
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    return v0
+
+    :cond_1
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mExpandedItem:Landroid/support/v7/view/menu/MenuItemImpl;
+
+    if-ne v1, p1, :cond_0
+
+    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
+
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v2, v0
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
+    :goto_1
+    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+
+    if-nez v2, :cond_5
+
+    :goto_2
+    return v2
+
+    :cond_2
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v1, p0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->collapseItemActionView(Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    :goto_3
+    move v2, v0
+
     goto :goto_0
+
+    :cond_3
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+
+    move v0, v2
+
+    goto :goto_3
 
     :cond_4
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v4, v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_5
-    iput-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mExpandedItem:Landroid/support/v7/view/menu/MenuItemImpl;
+    move v2, v0
 
     goto :goto_1
+
+    :cond_5
+    iput-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mExpandedItem:Landroid/support/v7/view/menu/MenuItemImpl;
+
+    goto :goto_2
 .end method
 
 .method dispatchMenuItemSelected(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
@@ -1426,80 +1451,90 @@
 .end method
 
 .method public expandItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
-    .locals 5
-
-    const/4 v4, 0x0
-
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
+    .locals 4
 
     const/4 v0, 0x0
 
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
+
+    move v2, v0
 
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_2
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
-
-    if-nez v0, :cond_4
+    if-nez v0, :cond_1
 
     :goto_1
+    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
+
+    if-nez v2, :cond_4
+
+    :goto_2
+    return v2
+
+    :cond_0
     return v0
 
     :cond_1
-    return v4
-
-    :cond_2
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Ljava/lang/ref/WeakReference;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     invoke-interface {v1, p0, p1}, Landroid/support/v7/view/menu/MenuPresenter;->expandItemActionView(Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_3
+
+    :goto_3
+    move v2, v0
 
     goto :goto_0
+
+    :cond_2
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+
+    move v0, v2
+
+    goto :goto_3
 
     :cond_3
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    move v2, v0
 
-    invoke-virtual {v4, v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_4
     iput-object p1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mExpandedItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    goto :goto_1
+    goto :goto_2
 .end method
 
 .method public findGroupIndex(I)I
@@ -1515,113 +1550,116 @@
 .end method
 
 .method public findGroupIndex(II)I
-    .locals 4
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
+
+    move-result v1
+
+    if-ltz p2, :cond_0
+
+    :goto_0
+    if-lt p2, v1, :cond_1
+
+    const/4 v0, -0x1
+
+    return v0
+
+    :cond_0
+    move p2, v0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
+
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+
+    move-result v0
+
+    if-eq v0, p1, :cond_2
+
+    add-int/lit8 p2, p2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return p2
+.end method
+
+.method public findItem(I)Landroid/view/MenuItem;
+    .locals 5
+
+    const/4 v4, 0x0
+
+    const/4 v0, 0x0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
 
     move-result v2
 
-    if-ltz p2, :cond_0
+    move v1, v0
 
     :goto_0
-    move v0, p2
+    if-lt v1, v2, :cond_0
 
-    :goto_1
-    if-lt v0, v2, :cond_1
-
-    const/4 v3, -0x1
-
-    return v3
+    return-object v4
 
     :cond_0
-    const/4 p2, 0x0
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    :cond_1
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    move-result-object v0
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    move-result-object v1
-
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
 
     move-result v3
 
     if-eq v3, p1, :cond_2
 
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    return v0
-.end method
-
-.method public findItem(I)Landroid/view/MenuItem;
-    .locals 6
-
-    const/4 v5, 0x0
-
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
 
     move-result v3
 
-    const/4 v0, 0x0
-
-    :goto_0
-    if-lt v0, v3, :cond_0
-
-    return-object v5
-
-    :cond_0
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
-
-    move-result v4
-
-    if-eq v4, p1, :cond_2
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
+    if-nez v3, :cond_3
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_2
-    return-object v1
+    return-object v0
 
     :cond_3
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v4, p1}, Landroid/view/SubMenu;->findItem(I)Landroid/view/MenuItem;
+    invoke-interface {v0, p1}, Landroid/view/SubMenu;->findItem(I)Landroid/view/MenuItem;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-eqz v2, :cond_1
+    if-eqz v0, :cond_1
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public findItemIndex(I)I
-    .locals 4
+    .locals 3
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
 
@@ -1629,34 +1667,38 @@
 
     const/4 v0, 0x0
 
+    move v1, v0
+
     :goto_0
-    if-lt v0, v2, :cond_0
+    if-lt v1, v2, :cond_0
 
-    const/4 v3, -0x1
+    const/4 v0, -0x1
 
-    return v3
+    return v0
 
     :cond_0
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
 
-    move-result v3
+    move-result v0
 
-    if-eq v3, p1, :cond_1
+    if-eq v0, p1, :cond_1
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_1
-    return v0
+    return v1
 .end method
 
 .method findItemWithShortcutForKey(ILandroid/view/KeyEvent;)Landroid/support/v7/view/menu/MenuItemImpl;
@@ -1664,46 +1706,46 @@
 
     const/4 v11, 0x0
 
-    const/4 v10, 0x0
+    const/4 v3, 0x0
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mTempShortcutItemList:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mTempShortcutItemList:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    invoke-virtual {p0, v2, p1, p2}, Landroid/support/v7/view/menu/MenuBuilder;->findItemsWithShortcutForKey(Ljava/util/List;ILandroid/view/KeyEvent;)V
+    invoke-virtual {p0, v4, p1, p2}, Landroid/support/v7/view/menu/MenuBuilder;->findItemsWithShortcutForKey(Ljava/util/List;ILandroid/view/KeyEvent;)V
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result v8
+    move-result v0
 
-    if-nez v8, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getMetaState()I
 
-    move-result v3
+    move-result v5
 
-    new-instance v4, Landroid/view/KeyCharacterMap$KeyData;
+    new-instance v6, Landroid/view/KeyCharacterMap$KeyData;
 
-    invoke-direct {v4}, Landroid/view/KeyCharacterMap$KeyData;-><init>()V
+    invoke-direct {v6}, Landroid/view/KeyCharacterMap$KeyData;-><init>()V
 
-    invoke-virtual {p2, v4}, Landroid/view/KeyEvent;->getKeyData(Landroid/view/KeyCharacterMap$KeyData;)Z
+    invoke-virtual {p2, v6}, Landroid/view/KeyEvent;->getKeyData(Landroid/view/KeyCharacterMap$KeyData;)Z
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    const/4 v8, 0x1
+    const/4 v0, 0x1
 
-    if-eq v7, v8, :cond_1
+    if-eq v7, v0, :cond_1
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->isQwertyMode()Z
 
-    move-result v5
+    move-result v8
 
-    const/4 v0, 0x0
+    move v2, v3
 
     :goto_0
-    if-lt v0, v7, :cond_2
+    if-lt v2, v7, :cond_2
 
     return-object v11
 
@@ -1711,83 +1753,85 @@
     return-object v11
 
     :cond_1
-    invoke-virtual {v2, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v0
 
-    check-cast v8, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    return-object v8
+    return-object v0
 
     :cond_2
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    if-nez v5, :cond_6
+    if-nez v8, :cond_6
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getNumericShortcut()C
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getNumericShortcut()C
 
-    move-result v6
+    move-result v1
 
     :goto_1
-    iget-object v8, v4, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
+    iget-object v9, v6, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
 
-    aget-char v8, v8, v10
+    aget-char v9, v9, v3
 
-    if-eq v6, v8, :cond_7
+    if-eq v1, v9, :cond_7
 
     :cond_3
-    iget-object v8, v4, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
+    iget-object v9, v6, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
 
-    const/4 v9, 0x2
+    const/4 v10, 0x2
 
-    aget-char v8, v8, v9
+    aget-char v9, v9, v10
 
-    if-eq v6, v8, :cond_9
+    if-eq v1, v9, :cond_9
 
     :cond_4
-    if-nez v5, :cond_a
+    if-nez v8, :cond_a
 
     :cond_5
     :goto_2
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_6
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getAlphabeticShortcut()C
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getAlphabeticShortcut()C
 
-    move-result v6
+    move-result v1
 
     goto :goto_1
 
     :cond_7
-    and-int/lit8 v8, v3, 0x2
+    and-int/lit8 v9, v5, 0x2
 
-    if-nez v8, :cond_3
+    if-nez v9, :cond_3
 
     :cond_8
     :goto_3
-    return-object v1
+    return-object v0
 
     :cond_9
-    and-int/lit8 v8, v3, 0x2
+    and-int/lit8 v9, v5, 0x2
 
-    if-eqz v8, :cond_4
+    if-eqz v9, :cond_4
 
     goto :goto_3
 
     :cond_a
-    const/16 v8, 0x8
+    const/16 v9, 0x8
 
-    if-ne v6, v8, :cond_5
+    if-ne v1, v9, :cond_5
 
-    const/16 v8, 0x43
+    const/16 v1, 0x43
 
-    if-eq p1, v8, :cond_8
+    if-eq p1, v1, :cond_8
 
     goto :goto_2
 .end method
@@ -1806,186 +1850,216 @@
         }
     .end annotation
 
-    const/16 v11, 0x43
+    const v11, 0x1100f
 
-    const/4 v10, 0x0
+    const/16 v10, 0x43
+
+    const/4 v3, 0x0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->isQwertyMode()Z
 
+    move-result v5
+
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getModifiers()I
+
     move-result v6
 
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getMetaState()I
+    new-instance v7, Landroid/view/KeyCharacterMap$KeyData;
 
-    move-result v4
+    invoke-direct {v7}, Landroid/view/KeyCharacterMap$KeyData;-><init>()V
 
-    new-instance v5, Landroid/view/KeyCharacterMap$KeyData;
-
-    invoke-direct {v5}, Landroid/view/KeyCharacterMap$KeyData;-><init>()V
-
-    invoke-virtual {p3, v5}, Landroid/view/KeyEvent;->getKeyData(Landroid/view/KeyCharacterMap$KeyData;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    :cond_0
-    iget-object v8, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p3, v7}, Landroid/view/KeyEvent;->getKeyData(Landroid/view/KeyCharacterMap$KeyData;)Z
 
     move-result v0
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
+
+    :cond_0
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v8
+
+    move v4, v3
 
     :goto_0
-    if-lt v1, v0, :cond_2
+    if-lt v4, v8, :cond_2
 
     return-void
 
     :cond_1
-    if-eq p2, v11, :cond_0
+    if-eq p2, v10, :cond_0
 
     return-void
 
     :cond_2
-    iget-object v8, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
 
-    move-result v8
+    move-result v1
 
-    if-nez v8, :cond_4
+    if-nez v1, :cond_4
 
     :goto_1
-    if-nez v6, :cond_5
+    if-nez v5, :cond_5
 
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->getNumericShortcut()C
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getNumericShortcut()C
 
-    move-result v7
+    move-result v1
 
     :goto_2
-    and-int/lit8 v8, v4, 0x5
+    if-nez v5, :cond_6
 
-    if-eqz v8, :cond_6
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getNumericModifiers()I
+
+    move-result v2
+
+    :goto_3
+    and-int v9, v6, v11
+
+    and-int/2addr v2, v11
+
+    if-eq v9, v2, :cond_7
+
+    move v2, v3
+
+    :goto_4
+    if-nez v2, :cond_8
 
     :cond_3
-    :goto_3
-    add-int/lit8 v1, v1, 0x1
+    :goto_5
+    add-int/lit8 v0, v4, 0x1
+
+    move v4, v0
 
     goto :goto_0
 
     :cond_4
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
 
-    move-result-object v8
+    move-result-object v1
 
-    check-cast v8, Landroid/support/v7/view/menu/MenuBuilder;
+    check-cast v1, Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v8, p1, p2, p3}, Landroid/support/v7/view/menu/MenuBuilder;->findItemsWithShortcutForKey(Ljava/util/List;ILandroid/view/KeyEvent;)V
+    invoke-virtual {v1, p1, p2, p3}, Landroid/support/v7/view/menu/MenuBuilder;->findItemsWithShortcutForKey(Ljava/util/List;ILandroid/view/KeyEvent;)V
 
     goto :goto_1
 
     :cond_5
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->getAlphabeticShortcut()C
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getAlphabeticShortcut()C
 
-    move-result v7
+    move-result v1
 
     goto :goto_2
 
     :cond_6
-    if-eqz v7, :cond_3
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getAlphabeticModifiers()I
 
-    iget-object v8, v5, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
-
-    aget-char v8, v8, v10
-
-    if-ne v7, v8, :cond_8
-
-    :cond_7
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->isEnabled()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_3
-
-    invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result v2
 
     goto :goto_3
 
+    :cond_7
+    const/4 v2, 0x1
+
+    goto :goto_4
+
     :cond_8
-    iget-object v8, v5, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
+    if-eqz v1, :cond_3
+
+    iget-object v2, v7, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
+
+    aget-char v2, v2, v3
+
+    if-ne v1, v2, :cond_a
+
+    :cond_9
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isEnabled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_5
+
+    :cond_a
+    iget-object v2, v7, Landroid/view/KeyCharacterMap$KeyData;->meta:[C
 
     const/4 v9, 0x2
 
-    aget-char v8, v8, v9
+    aget-char v2, v2, v9
 
-    if-eq v7, v8, :cond_7
+    if-eq v1, v2, :cond_9
 
-    if-eqz v6, :cond_3
+    if-eqz v5, :cond_3
 
-    const/16 v8, 0x8
+    const/16 v2, 0x8
 
-    if-ne v7, v8, :cond_3
+    if-ne v1, v2, :cond_3
 
-    if-eq p2, v11, :cond_7
+    if-eq p2, v10, :cond_9
 
-    goto :goto_3
+    goto :goto_5
 .end method
 
 .method public flagActionItems()V
-    .locals 10
+    .locals 6
 
-    const/4 v9, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
 
-    move-result-object v6
+    move-result-object v4
 
-    iget-boolean v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsActionItemsStale:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsActionItemsStale:Z
 
-    if-eqz v7, :cond_1
+    if-eqz v0, :cond_1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v7}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    move-result-object v5
 
-    move-result-object v7
+    move v2, v3
 
     :goto_0
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v0
 
-    if-nez v8, :cond_2
+    if-nez v0, :cond_2
 
-    if-nez v0, :cond_4
+    if-nez v2, :cond_4
 
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mActionItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mActionItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
     :cond_0
-    iput-boolean v9, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsActionItemsStale:Z
+    iput-boolean v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsActionItemsStale:Z
 
     return-void
 
@@ -1993,80 +2067,87 @@
     return-void
 
     :cond_2
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Ljava/lang/ref/WeakReference;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v5}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v1
 
-    check-cast v4, Landroid/support/v7/view/menu/MenuPresenter;
+    check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
 
-    if-eqz v4, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-interface {v4}, Landroid/support/v7/view/menu/MenuPresenter;->flagActionItems()Z
+    invoke-interface {v1}, Landroid/support/v7/view/menu/MenuPresenter;->flagActionItems()Z
 
-    move-result v8
+    move-result v0
 
-    or-int/2addr v0, v8
+    or-int/2addr v0, v2
+
+    :goto_1
+    move v2, v0
 
     goto :goto_0
 
     :cond_3
-    iget-object v8, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v8, v5}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_0
-
-    :cond_4
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mActionItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
-
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v7}, Ljava/util/ArrayList;->clear()V
-
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    const/4 v1, 0x0
-
-    :goto_1
-    if-ge v1, v3, :cond_0
-
-    invoke-virtual {v6, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    invoke-virtual {v2}, Landroid/support/v7/view/menu/MenuItemImpl;->isActionButton()Z
-
-    move-result v7
-
-    if-nez v7, :cond_5
-
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :goto_2
-    add-int/lit8 v1, v1, 0x1
+    move v0, v2
 
     goto :goto_1
 
-    :cond_5
-    iget-object v7, p0, Landroid/support/v7/view/menu/MenuBuilder;->mActionItems:Ljava/util/ArrayList;
+    :cond_4
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mActionItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    move v1, v3
+
+    :goto_2
+    if-ge v1, v2, :cond_0
+
+    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
+
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isActionButton()Z
+
+    move-result v5
+
+    if-nez v5, :cond_5
+
+    iget-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mNonActionItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_3
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_2
+
+    :cond_5
+    iget-object v5, p0, Landroid/support/v7/view/menu/MenuBuilder;->mActionItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_3
 .end method
 
 .method public getActionItems()Ljava/util/ArrayList;
@@ -2206,116 +2287,120 @@
         }
     .end annotation
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    iget-boolean v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsVisibleItemsStale:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsVisibleItemsStale:Z
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-lt v0, v2, :cond_1
-
-    iput-boolean v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsVisibleItemsStale:Z
-
-    const/4 v3, 0x1
-
-    iput-boolean v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsActionItemsStale:Z
-
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
-
-    return-object v3
-
-    :cond_0
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
-
-    return-object v3
-
-    :cond_1
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->isVisible()Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    if-nez v3, :cond_2
+    move v1, v2
+
+    :goto_0
+    if-lt v1, v3, :cond_1
+
+    iput-boolean v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsVisibleItemsStale:Z
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mIsActionItemsStale:Z
+
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
+
+    return-object v0
+
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
+
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isVisible()Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
 
     :goto_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_2
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
+    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mVisibleItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 .end method
 
 .method public hasVisibleItems()Z
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    iget-boolean v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mOverrideVisibleItems:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mOverrideVisibleItems:Z
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
 
-    move-result v2
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-lt v0, v2, :cond_1
-
-    return v4
-
-    :cond_0
-    return v5
-
-    :cond_1
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->isVisible()Z
-
     move-result v3
 
-    if-nez v3, :cond_2
+    move v1, v2
 
-    add-int/lit8 v0, v0, 0x1
+    :goto_0
+    if-lt v1, v3, :cond_1
+
+    return v2
+
+    :cond_0
+    return v4
+
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
+
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isVisible()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_2
-    return v5
+    return v4
 .end method
 
 .method isQwertyMode()Z
@@ -2442,81 +2527,79 @@
 .end method
 
 .method public performItemAction(Landroid/view/MenuItem;Landroid/support/v7/view/menu/MenuPresenter;I)Z
-    .locals 8
+    .locals 6
 
-    const/4 v5, 0x1
+    const/4 v2, 0x1
 
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    move-object v1, p1
+    check-cast p1, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
-
-    if-nez v1, :cond_1
+    if-nez p1, :cond_1
 
     :cond_0
-    return v6
+    return v0
 
     :cond_1
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->isEnabled()Z
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->isEnabled()Z
 
-    move-result v7
+    move-result v1
 
-    if-eqz v7, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->invoke()Z
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->invoke()Z
 
-    move-result v0
+    move-result v3
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getSupportActionProvider()Landroid/support/v4/view/ActionProvider;
-
-    move-result-object v2
-
-    if-nez v2, :cond_5
-
-    :cond_2
-    move v3, v6
-
-    :goto_0
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasCollapsibleActionView()Z
-
-    move-result v7
-
-    if-nez v7, :cond_6
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_7
-
-    :cond_3
-    and-int/lit8 v7, p3, 0x4
-
-    if-eqz v7, :cond_8
-
-    :goto_1
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_9
-
-    :goto_2
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->getSupportActionProvider()Landroid/support/v4/view/ActionProvider;
 
     move-result-object v4
 
-    check-cast v4, Landroid/support/v7/view/menu/SubMenuBuilder;
+    if-nez v4, :cond_5
 
-    if-nez v3, :cond_a
+    :cond_2
+    move v1, v0
+
+    :goto_0
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasCollapsibleActionView()Z
+
+    move-result v5
+
+    if-nez v5, :cond_6
+
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_7
+
+    :cond_3
+    and-int/lit8 v5, p3, 0x4
+
+    if-eqz v5, :cond_8
+
+    :goto_1
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->hasSubMenu()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    :goto_2
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->getSubMenu()Landroid/view/SubMenu;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/SubMenuBuilder;
+
+    if-nez v1, :cond_a
 
     :goto_3
-    invoke-direct {p0, v4, p2}, Landroid/support/v7/view/menu/MenuBuilder;->dispatchSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;Landroid/support/v7/view/menu/MenuPresenter;)Z
+    invoke-direct {p0, v0, p2}, Landroid/support/v7/view/menu/MenuBuilder;->dispatchSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;Landroid/support/v7/view/menu/MenuPresenter;)Z
 
-    move-result v6
+    move-result v0
 
-    or-int/2addr v0, v6
+    or-int/2addr v0, v3
 
     if-eqz v0, :cond_b
 
@@ -2525,84 +2608,91 @@
     return v0
 
     :cond_5
-    invoke-virtual {v2}, Landroid/support/v4/view/ActionProvider;->hasSubMenu()Z
+    invoke-virtual {v4}, Landroid/support/v4/view/ActionProvider;->hasSubMenu()Z
 
-    move-result v7
+    move-result v1
 
-    if-eqz v7, :cond_2
+    if-eqz v1, :cond_2
 
-    move v3, v5
+    move v1, v2
 
     goto :goto_0
 
     :cond_6
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->expandActionView()Z
+    invoke-virtual {p1}, Landroid/support/v7/view/menu/MenuItemImpl;->expandActionView()Z
 
-    move-result v6
+    move-result v0
 
-    or-int/2addr v0, v6
+    or-int/2addr v0, v3
 
     if-eqz v0, :cond_4
 
-    invoke-virtual {p0, v5}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
 
     goto :goto_4
 
     :cond_7
-    if-nez v3, :cond_3
+    if-nez v1, :cond_3
 
-    and-int/lit8 v6, p3, 0x1
+    and-int/lit8 v0, p3, 0x1
 
-    if-nez v6, :cond_4
+    if-eqz v0, :cond_c
 
-    invoke-virtual {p0, v5}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+    move v0, v3
 
     goto :goto_4
 
     :cond_8
-    invoke-virtual {p0, v6}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
 
     goto :goto_1
 
     :cond_9
-    new-instance v6, Landroid/support/v7/view/menu/SubMenuBuilder;
+    new-instance v0, Landroid/support/v7/view/menu/SubMenuBuilder;
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getContext()Landroid/content/Context;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-direct {v6, v7, p0, v1}, Landroid/support/v7/view/menu/SubMenuBuilder;-><init>(Landroid/content/Context;Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)V
+    invoke-direct {v0, v5, p0, p1}, Landroid/support/v7/view/menu/SubMenuBuilder;-><init>(Landroid/content/Context;Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)V
 
-    invoke-virtual {v1, v6}, Landroid/support/v7/view/menu/MenuItemImpl;->setSubMenu(Landroid/support/v7/view/menu/SubMenuBuilder;)V
+    invoke-virtual {p1, v0}, Landroid/support/v7/view/menu/MenuItemImpl;->setSubMenu(Landroid/support/v7/view/menu/SubMenuBuilder;)V
 
     goto :goto_2
 
     :cond_a
-    invoke-virtual {v2, v4}, Landroid/support/v4/view/ActionProvider;->onPrepareSubMenu(Landroid/view/SubMenu;)V
+    invoke-virtual {v4, v0}, Landroid/support/v4/view/ActionProvider;->onPrepareSubMenu(Landroid/view/SubMenu;)V
 
     goto :goto_3
 
     :cond_b
-    invoke-virtual {p0, v5}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+
+    goto :goto_4
+
+    :cond_c
+    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+
+    move v0, v3
 
     goto :goto_4
 .end method
 
 .method public performShortcut(ILandroid/view/KeyEvent;I)Z
-    .locals 3
+    .locals 2
+
+    const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/view/menu/MenuBuilder;->findItemWithShortcutForKey(ILandroid/view/KeyEvent;)Landroid/support/v7/view/menu/MenuItemImpl;
 
     move-result-object v1
 
-    const/4 v0, 0x0
-
     if-nez v1, :cond_0
 
     :goto_0
-    and-int/lit8 v2, p3, 0x2
+    and-int/lit8 v1, p3, 0x2
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     :goto_1
     return v0
@@ -2615,70 +2705,68 @@
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
+    invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->close(Z)V
 
     goto :goto_1
 .end method
 
 .method public removeGroup(I)V
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->findGroupIndex(I)I
 
-    move-result v0
+    move-result v3
 
-    if-gez v0, :cond_0
+    if-gez v3, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v4
+    move-result v0
 
-    sub-int v1, v4, v0
+    sub-int v4, v0, v3
 
-    const/4 v2, 0x0
-
-    move v3, v2
+    move v0, v1
 
     :goto_1
-    add-int/lit8 v2, v3, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    if-lt v3, v1, :cond_2
+    if-lt v0, v4, :cond_2
 
     :cond_1
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, v4}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
     goto :goto_0
 
     :cond_2
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v4}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
 
-    move-result v4
+    move-result v0
 
-    if-ne v4, p1, :cond_1
+    if-ne v0, p1, :cond_1
 
-    invoke-direct {p0, v0, v5}, Landroid/support/v7/view/menu/MenuBuilder;->removeItemAtInt(IZ)V
+    invoke-direct {p0, v3, v1}, Landroid/support/v7/view/menu/MenuBuilder;->removeItemAtInt(IZ)V
 
-    move v3, v2
+    move v0, v2
 
     goto :goto_1
 .end method
@@ -2708,76 +2796,78 @@
 .end method
 
 .method public removeMenuPresenter(Landroid/support/v7/view/menu/MenuPresenter;)V
-    .locals 4
+    .locals 3
 
-    iget-object v2, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
     move-result-object v0
 
-    check-cast v0, Landroid/support/v7/view/menu/MenuPresenter;
+    check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-nez v0, :cond_2
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v7/view/menu/MenuPresenter;
+
+    if-nez v1, :cond_2
 
     :cond_1
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mPresenters:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_2
-    if-eq v0, p1, :cond_1
+    if-eq v1, p1, :cond_1
 
     goto :goto_0
 .end method
 
 .method public restoreActionViewStates(Landroid/os/Bundle;)V
-    .locals 10
+    .locals 7
+
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_1
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getActionViewStatesKey()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {p1, v8}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
-    move-result-object v7
+    move-result-object v2
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
 
     move-result v3
 
-    const/4 v1, 0x0
+    move v1, v0
 
     :goto_0
     if-lt v1, v3, :cond_2
 
-    const-string/jumbo v8, "android:menu:expandedactionview"
+    const-string/jumbo v0, "android:menu:expandedactionview"
 
-    invoke-virtual {p1, v8}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
@@ -2793,59 +2883,61 @@
     :cond_2
     invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Landroid/support/v4/view/MenuItemCompat;->getActionView(Landroid/view/MenuItem;)Landroid/view/View;
+    invoke-interface {v0}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
 
-    move-result-object v6
+    move-result-object v4
 
-    if-nez v6, :cond_4
+    if-nez v4, :cond_4
 
     :cond_3
     :goto_2
-    invoke-interface {v2}, Landroid/view/MenuItem;->hasSubMenu()Z
+    invoke-interface {v0}, Landroid/view/MenuItem;->hasSubMenu()Z
 
-    move-result v8
+    move-result v4
 
-    if-nez v8, :cond_5
+    if-nez v4, :cond_5
 
     :goto_3
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_4
-    invoke-virtual {v6}, Landroid/view/View;->getId()I
+    invoke-virtual {v4}, Landroid/view/View;->getId()I
 
-    move-result v8
+    move-result v5
 
-    const/4 v9, -0x1
+    const/4 v6, -0x1
 
-    if-eq v8, v9, :cond_3
+    if-eq v5, v6, :cond_3
 
-    invoke-virtual {v6, v7}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
+    invoke-virtual {v4, v2}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
     goto :goto_2
 
     :cond_5
-    invoke-interface {v2}, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
+    invoke-interface {v0}, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Landroid/support/v7/view/menu/SubMenuBuilder;
+    check-cast v0, Landroid/support/v7/view/menu/SubMenuBuilder;
 
-    invoke-virtual {v5, p1}, Landroid/support/v7/view/menu/SubMenuBuilder;->restoreActionViewStates(Landroid/os/Bundle;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/menu/SubMenuBuilder;->restoreActionViewStates(Landroid/os/Bundle;)V
 
     goto :goto_3
 
     :cond_6
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->findItem(I)Landroid/view/MenuItem;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-eqz v4, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-static {v4}, Landroid/support/v4/view/MenuItemCompat;->expandActionView(Landroid/view/MenuItem;)Z
+    invoke-interface {v0}, Landroid/view/MenuItem;->expandActionView()Z
 
     goto :goto_1
 .end method
@@ -2859,102 +2951,119 @@
 .end method
 
 .method public saveActionViewStates(Landroid/os/Bundle;)V
-    .locals 8
-
-    const/4 v5, 0x0
-
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
-
-    move-result v2
+    .locals 7
 
     const/4 v0, 0x0
 
-    :goto_0
-    if-lt v0, v2, :cond_0
+    const/4 v1, 0x0
 
-    if-nez v5, :cond_5
+    invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->size()I
+
+    move-result v3
+
+    move v2, v0
+
+    move-object v0, v1
+
+    :goto_0
+    if-lt v2, v3, :cond_0
+
+    if-nez v0, :cond_6
 
     :goto_1
     return-void
 
     :cond_0
-    invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/support/v4/view/MenuItemCompat;->getActionView(Landroid/view/MenuItem;)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v4
 
-    if-nez v4, :cond_2
+    invoke-interface {v4}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
+
+    move-result-object v1
+
+    if-nez v1, :cond_2
 
     :cond_1
+    move-object v1, v0
+
     :goto_2
-    invoke-interface {v1}, Landroid/view/MenuItem;->hasSubMenu()Z
+    invoke-interface {v4}, Landroid/view/MenuItem;->hasSubMenu()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_4
+    if-nez v0, :cond_5
 
     :goto_3
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    move-object v0, v1
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v4}, Landroid/view/View;->getId()I
+    invoke-virtual {v1}, Landroid/view/View;->getId()I
 
-    move-result v6
+    move-result v5
 
-    const/4 v7, -0x1
+    const/4 v6, -0x1
 
-    if-eq v6, v7, :cond_1
+    if-eq v5, v6, :cond_1
 
-    if-eqz v5, :cond_3
+    if-eqz v0, :cond_3
 
     :goto_4
-    invoke-virtual {v4, v5}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
 
-    invoke-static {v1}, Landroid/support/v4/view/MenuItemCompat;->isActionViewExpanded(Landroid/view/MenuItem;)Z
+    invoke-interface {v4}, Landroid/view/MenuItem;->isActionViewExpanded()Z
 
-    move-result v6
+    move-result v1
 
-    if-eqz v6, :cond_1
+    if-nez v1, :cond_4
 
-    const-string/jumbo v6, "android:menu:expandedactionview"
-
-    invoke-interface {v1}, Landroid/view/MenuItem;->getItemId()I
-
-    move-result v7
-
-    invoke-virtual {p1, v6, v7}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    move-object v1, v0
 
     goto :goto_2
 
     :cond_3
-    new-instance v5, Landroid/util/SparseArray;
+    new-instance v0, Landroid/util/SparseArray;
 
-    invoke-direct {v5}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     goto :goto_4
 
     :cond_4
-    invoke-interface {v1}, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
+    invoke-interface {v4}, Landroid/view/MenuItem;->getItemId()I
 
-    move-result-object v3
+    move-result v1
 
-    check-cast v3, Landroid/support/v7/view/menu/SubMenuBuilder;
+    const-string/jumbo v5, "android:menu:expandedactionview"
 
-    invoke-virtual {v3, p1}, Landroid/support/v7/view/menu/SubMenuBuilder;->saveActionViewStates(Landroid/os/Bundle;)V
+    invoke-virtual {p1, v5, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    move-object v1, v0
+
+    goto :goto_2
+
+    :cond_5
+    invoke-interface {v4}, Landroid/view/MenuItem;->getSubMenu()Landroid/view/SubMenu;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/SubMenuBuilder;
+
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/menu/SubMenuBuilder;->saveActionViewStates(Landroid/os/Bundle;)V
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->getActionViewStatesKey()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {p1, v6, v5}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
     goto :goto_1
 .end method
@@ -2994,74 +3103,76 @@
 .method setExclusiveItemChecked(Landroid/view/MenuItem;)V
     .locals 6
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getGroupId()I
 
-    move-result v2
+    move-result v4
 
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v5
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
-    if-lt v3, v0, :cond_0
+    if-lt v3, v5, :cond_0
 
     invoke-virtual {p0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
 
     return-void
 
     :cond_0
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
 
-    move-result v4
+    move-result v1
 
-    if-eq v4, v2, :cond_2
+    if-eq v1, v4, :cond_2
 
     :cond_1
     :goto_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isExclusiveCheckable()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->isCheckable()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isCheckable()Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_1
+    if-eqz v1, :cond_1
 
-    if-eq v1, p1, :cond_3
+    if-eq v0, p1, :cond_3
 
-    move v4, v5
+    move v1, v2
 
     :goto_2
-    invoke-virtual {v1, v4}, Landroid/support/v7/view/menu/MenuItemImpl;->setCheckedInt(Z)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuItemImpl;->setCheckedInt(Z)V
 
     goto :goto_1
 
     :cond_3
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
     goto :goto_2
 .end method
@@ -3069,43 +3180,47 @@
 .method public setGroupCheckable(IZZ)V
     .locals 4
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
+
+    move v1, v0
 
     :goto_0
-    if-lt v1, v0, :cond_0
+    if-lt v1, v2, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v2}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
 
     move-result v3
 
     if-eq v3, p1, :cond_1
 
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v2, p3}, Landroid/support/v7/view/menu/MenuItemImpl;->setExclusiveCheckable(Z)V
+    invoke-virtual {v0, p3}, Landroid/support/v7/view/menu/MenuItemImpl;->setExclusiveCheckable(Z)V
 
-    invoke-virtual {v2, p2}, Landroid/support/v7/view/menu/MenuItemImpl;->setCheckable(Z)Landroid/view/MenuItem;
+    invoke-virtual {v0, p2}, Landroid/support/v7/view/menu/MenuItemImpl;->setCheckable(Z)Landroid/view/MenuItem;
 
     goto :goto_1
 .end method
@@ -3113,60 +3228,68 @@
 .method public setGroupEnabled(IZ)V
     .locals 4
 
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
+
+    move v1, v0
 
     :goto_0
-    if-lt v1, v0, :cond_0
+    if-lt v1, v2, :cond_0
 
     return-void
 
     :cond_0
-    iget-object v3, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v2}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
 
     move-result v3
 
     if-eq v3, p1, :cond_1
 
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v2, p2}, Landroid/support/v7/view/menu/MenuItemImpl;->setEnabled(Z)Landroid/view/MenuItem;
+    invoke-virtual {v0, p2}, Landroid/support/v7/view/menu/MenuItemImpl;->setEnabled(Z)Landroid/view/MenuItem;
 
     goto :goto_1
 .end method
 
 .method public setGroupVisible(IZ)V
-    .locals 5
+    .locals 6
 
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    const/4 v2, 0x1
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    const/4 v0, 0x0
 
-    move-result v0
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    const/4 v2, 0x0
+    move-result v4
+
+    move v3, v0
+
+    move v1, v0
 
     :goto_0
-    if-lt v2, v0, :cond_0
+    if-lt v3, v4, :cond_0
 
     if-nez v1, :cond_3
 
@@ -3174,41 +3297,49 @@
     return-void
 
     :cond_0
-    iget-object v4, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuBuilder;->mItems:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v3}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getGroupId()I
 
-    move-result v4
+    move-result v5
 
-    if-eq v4, p1, :cond_2
+    if-eq v5, p1, :cond_1
 
-    :cond_1
+    move v0, v1
+
     :goto_2
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v3, 0x1
+
+    move v3, v1
+
+    move v1, v0
 
     goto :goto_0
 
+    :cond_1
+    invoke-virtual {v0, p2}, Landroid/support/v7/view/menu/MenuItemImpl;->setVisibleInt(Z)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    move v0, v1
+
+    goto :goto_2
+
     :cond_2
-    invoke-virtual {v3, p2}, Landroid/support/v7/view/menu/MenuItemImpl;->setVisibleInt(Z)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    const/4 v1, 0x1
+    move v0, v2
 
     goto :goto_2
 
     :cond_3
-    const/4 v4, 0x1
-
-    invoke-virtual {p0, v4}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
+    invoke-virtual {p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
     goto :goto_1
 .end method
@@ -3236,9 +3367,9 @@
 .method protected setHeaderIconInt(Landroid/graphics/drawable/Drawable;)Landroid/support/v7/view/menu/MenuBuilder;
     .locals 6
 
-    const/4 v1, 0x0
-
     const/4 v2, 0x0
+
+    const/4 v1, 0x0
 
     move-object v0, p0
 
@@ -3276,9 +3407,9 @@
 .method protected setHeaderTitleInt(Ljava/lang/CharSequence;)Landroid/support/v7/view/menu/MenuBuilder;
     .locals 6
 
-    const/4 v1, 0x0
-
     const/4 v4, 0x0
+
+    const/4 v1, 0x0
 
     move-object v0, p0
 
@@ -3296,9 +3427,9 @@
 .method protected setHeaderViewInt(Landroid/view/View;)Landroid/support/v7/view/menu/MenuBuilder;
     .locals 6
 
-    const/4 v1, 0x0
-
     const/4 v2, 0x0
+
+    const/4 v1, 0x0
 
     move-object v0, p0
 

@@ -283,89 +283,89 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->LOW_LIGHT_FRAME_STACK:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->LOW_LIGHT_FRAME_STACK:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FAST_EXPOSURE:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FAST_EXPOSURE:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->BEST_SHOT:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->BEST_SHOT:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FAMILY_PORTRAIT:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FAMILY_PORTRAIT:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FUSION:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FUSION:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FUSION_FRAME_STACK:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FUSION_FRAME_STACK:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->BURST_ENHANCED:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->BURST_ENHANCED:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->RAW:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->RAW:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->AUTO_VIDEO:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->AUTO_VIDEO:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->SMART_CAPTURE:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->SMART_CAPTURE:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FLASH_REC:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FLASH_REC:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->ENHANCE_NORMAL:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->ENHANCE_NORMAL:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL_ONDEMAND:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    sget-object v2, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL_ONDEMAND:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/motorola/camera/mcf/Mcf$InstanceType;->$VALUES:[Lcom/motorola/camera/mcf/Mcf$InstanceType;
 

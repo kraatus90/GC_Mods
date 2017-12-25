@@ -7,7 +7,7 @@
 .implements Lcom/motorola/camera/settings/SettingChangeListener;
 .implements Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine$EnvInfoListener;
 .implements Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine$AutoFocusStateListener;
-.implements Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;
+.implements Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
         ">;",
         "Lcom/motorola/camera/fsm/camera/subfsms/EnvInfoStateMachine$EnvInfoListener;",
         "Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine$AutoFocusStateListener;",
-        "Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;"
+        "Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;"
     }
 .end annotation
 
@@ -83,7 +83,7 @@
             "Ljava/util/LinkedHashMap",
             "<",
             "Ljava/lang/String;",
-            "Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;",
+            "Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;",
             ">;"
         }
     .end annotation
@@ -919,7 +919,7 @@
     return-object v0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_EnvFdbkTexture_lambda$1(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;)V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_EnvFdbkTexture_10911(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;)V
     .locals 9
 
     const/4 v1, 0x1
@@ -928,9 +928,9 @@
 
     if-eqz p1, :cond_0
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->OPEN:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v2, Lcom/motorola/camera/device/CameraStateManager$Status;->OPEN:Lcom/motorola/camera/device/CameraStateManager$Status;
 
-    iget-object v3, p1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;->mOpen:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    iget-object v3, p1, Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;->mOpen:Lcom/motorola/camera/device/CameraStateManager$Status;
 
     if-ne v2, v3, :cond_0
 
@@ -956,9 +956,9 @@
 
     aput-object p0, v6, v0
 
-    sget-object v7, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;->STOPPED:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;
+    sget-object v7, Lcom/motorola/camera/device/CameraStateManager$StreamStatus;->STOPPED:Lcom/motorola/camera/device/CameraStateManager$StreamStatus;
 
-    iget-object v8, p1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;->mPreview:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;
+    iget-object v8, p1, Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;->mPreview:Lcom/motorola/camera/device/CameraStateManager$StreamStatus;
 
     if-ne v7, v8, :cond_1
 
@@ -1682,7 +1682,7 @@
     return-void
 .end method
 
-.method public onStatus(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;)V
+.method public onStatus(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;)V
     .locals 4
 
     const/4 v3, 0x0
@@ -1736,9 +1736,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture;->mCachedCameraStatusHolder:Ljava/util/LinkedHashMap;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$12;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$Wv_u2zSMkovntjP_30OvVe8UrfU;
 
-    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$12;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$Wv_u2zSMkovntjP_30OvVe8UrfU;-><init>()V
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->forEach(Ljava/util/function/BiConsumer;)V
 
@@ -1891,9 +1891,9 @@
     iput-object v1, v0, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture$Components;->mValue:Ljava/lang/String;
 
     :cond_1
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_IDX_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_IDX_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1911,9 +1911,9 @@
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    sget-object v4, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_IDX_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v4, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_IDX_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v4}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1934,9 +1934,9 @@
     iput-object v1, v0, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture$Components;->mValue:Ljava/lang/String;
 
     :cond_2
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_STANDARD_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_STANDARD_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1954,9 +1954,9 @@
 
     new-array v3, v6, [Ljava/lang/Object;
 
-    sget-object v4, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_STANDARD_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v4, Lcom/motorola/camera/settings/CustomKeyHelper;->LUX_STANDARD_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v4}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v4
 
@@ -1977,9 +1977,9 @@
     iput-object v1, v0, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture$Components;->mValue:Ljava/lang/String;
 
     :cond_3
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_CCT_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_CCT_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2001,9 +2001,9 @@
 
     move-result-object v1
 
-    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_CCT_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_CCT_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v2}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2022,9 +2022,9 @@
     iput-object v1, v0, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture$Components;->mValue:Ljava/lang/String;
 
     :cond_4
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_DECISION_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_DECISION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2046,9 +2046,9 @@
 
     move-result-object v1
 
-    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_DECISION_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->AWB_DECISION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v2}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2116,9 +2116,9 @@
     iput-object v0, v1, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture$Components;->mValue:Ljava/lang/String;
 
     :cond_6
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LENS_POSITION_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->LENS_POSITION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2140,9 +2140,9 @@
 
     move-result-object v1
 
-    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->LENS_POSITION_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v2, Lcom/motorola/camera/settings/CustomKeyHelper;->LENS_POSITION_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v2}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v2
 
@@ -2173,9 +2173,9 @@
 
     if-eqz v0, :cond_8
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2207,9 +2207,9 @@
 
     move-result v0
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->ISO100_GAIN_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;
 
-    invoke-virtual {v1}, Landroid/hardware/camera2/CaptureResult$Key;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureResultKey;->getName()Ljava/lang/String;
 
     move-result-object v1
 
@@ -2553,13 +2553,9 @@
 
     check-cast v1, Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {p1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v2
-
-    check-cast v2, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
 
     if-eqz p2, :cond_0
 
@@ -2567,7 +2563,7 @@
 
     invoke-virtual {v1, p0}, Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;->addStateListener(Ljava/lang/Object;)V
 
-    invoke-virtual {v2, p0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->addStateListener(Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;)V
+    invoke-virtual {v2, p0}, Lcom/motorola/camera/device/CameraStateManager;->addStateListener(Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;)V
 
     :goto_0
     return-void
@@ -2577,7 +2573,7 @@
 
     invoke-virtual {v1, p0}, Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine;->removeStateListener(Ljava/lang/Object;)V
 
-    invoke-virtual {v2, p0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->removeStateListener(Ljava/lang/Object;)V
+    invoke-virtual {v2, p0}, Lcom/motorola/camera/device/CameraStateManager;->removeStateListener(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method

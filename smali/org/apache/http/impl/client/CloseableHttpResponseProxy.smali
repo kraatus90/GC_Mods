@@ -38,11 +38,11 @@
 
     new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-class v2, Lorg/apache/http/client/methods/CloseableHttpResponse;
 
-    const-class v3, Lorg/apache/http/client/methods/CloseableHttpResponse;
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     new-instance v2, Lorg/apache/http/impl/client/CloseableHttpResponseProxy;
 

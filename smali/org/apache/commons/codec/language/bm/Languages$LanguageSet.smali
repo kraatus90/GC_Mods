@@ -35,8 +35,6 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-interface {p0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v0
@@ -44,6 +42,8 @@
     if-nez v0, :cond_0
 
     new-instance v0, Lorg/apache/commons/codec/language/bm/Languages$SomeLanguages;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lorg/apache/commons/codec/language/bm/Languages$SomeLanguages;-><init>(Ljava/util/Set;Lorg/apache/commons/codec/language/bm/Languages$1;)V
 

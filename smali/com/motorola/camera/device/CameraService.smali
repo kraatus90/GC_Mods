@@ -18,7 +18,9 @@
 
 
 # instance fields
-.field private volatile mServiceHandler:Landroid/os/Handler;
+.field private final mCameraStateManager:Lcom/motorola/camera/device/CameraStateManager;
+
+.field private final mServiceHandler:Landroid/os/Handler;
 
 
 # direct methods
@@ -39,13 +41,19 @@
 
     move-result-object v0
 
-    new-instance v2, Lcom/motorola/camera/device/-$Lambda$4;
+    new-instance v2, Lcom/motorola/camera/device/-$Lambda$egPTPqYL-jRDu-sGnidzXOp3k0I;
 
-    invoke-direct {v2}, Lcom/motorola/camera/device/-$Lambda$4;-><init>()V
+    invoke-direct {v2}, Lcom/motorola/camera/device/-$Lambda$egPTPqYL-jRDu-sGnidzXOp3k0I;-><init>()V
 
     invoke-direct {v1, v0, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
     iput-object v1, p0, Lcom/motorola/camera/device/CameraService;->mServiceHandler:Landroid/os/Handler;
+
+    new-instance v0, Lcom/motorola/camera/device/CameraStateManager;
+
+    invoke-direct {v0}, Lcom/motorola/camera/device/CameraStateManager;-><init>()V
+
+    iput-object v0, p0, Lcom/motorola/camera/device/CameraService;->mCameraStateManager:Lcom/motorola/camera/device/CameraStateManager;
 
     return-void
 .end method
@@ -413,6 +421,18 @@
     return-void
 .end method
 
+.method public static getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
+    .locals 1
+
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getInstance()Lcom/motorola/camera/device/CameraService;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/motorola/camera/device/CameraService;->mCameraStateManager:Lcom/motorola/camera/device/CameraStateManager;
+
+    return-object v0
+.end method
+
 .method private getHandler()Landroid/os/Handler;
     .locals 1
 
@@ -431,7 +451,7 @@
     return-object v0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_device_CameraService_lambda$1(Landroid/os/Message;)Z
+.method static synthetic lambda$-com_motorola_camera_device_CameraService_3821(Landroid/os/Message;)Z
     .locals 1
 
     iget-object v0, p0, Landroid/os/Message;->obj:Ljava/lang/Object;

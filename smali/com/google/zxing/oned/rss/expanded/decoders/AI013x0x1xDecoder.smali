@@ -31,68 +31,66 @@
 .end method
 
 .method private encodeCompressedDate(Ljava/lang/StringBuilder;I)V
-    .locals 7
+    .locals 5
 
-    const/16 v6, 0x30
+    const/16 v4, 0x30
 
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const/16 v5, 0x10
+    const/16 v1, 0x10
 
-    invoke-virtual {v4, p2, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
+    invoke-virtual {v0, p2, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
-    move-result v2
+    move-result v0
 
-    const v4, 0x9600
+    const v1, 0x9600
 
-    if-eq v2, v4, :cond_0
+    if-eq v0, v1, :cond_0
 
-    const/16 v4, 0x28
+    const/16 v1, 0x28
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->dateCode:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->dateCode:Ljava/lang/String;
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v4, 0x29
+    const/16 v1, 0x29
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    rem-int/lit8 v0, v2, 0x20
+    rem-int/lit8 v1, v0, 0x20
 
-    div-int/lit8 v2, v2, 0x20
+    div-int/lit8 v0, v0, 0x20
 
-    rem-int/lit8 v4, v2, 0xc
+    rem-int/lit8 v2, v0, 0xc
 
-    add-int/lit8 v1, v4, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    div-int/lit8 v2, v2, 0xc
+    div-int/lit8 v0, v0, 0xc
 
-    move v3, v2
+    div-int/lit8 v3, v0, 0xa
 
-    div-int/lit8 v4, v3, 0xa
-
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
     :goto_0
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    div-int/lit8 v4, v1, 0xa
+    div-int/lit8 v0, v2, 0xa
 
-    if-eqz v4, :cond_2
+    if-eqz v0, :cond_2
 
     :goto_1
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    div-int/lit8 v4, v0, 0xa
+    div-int/lit8 v0, v1, 0xa
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
     :goto_2
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     return-void
 
@@ -100,17 +98,17 @@
     return-void
 
     :cond_1
-    invoke-virtual {p1, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p1, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual {p1, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 .end method
@@ -120,9 +118,9 @@
 .method protected addWeightCode(Ljava/lang/StringBuilder;I)V
     .locals 2
 
-    const v1, 0x186a0
+    const v0, 0x186a0
 
-    div-int v0, p2, v1
+    div-int v0, p2, v0
 
     const/16 v1, 0x28
 
@@ -134,9 +132,9 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/16 v1, 0x29
+    const/16 v0, 0x29
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     return-void
 .end method
@@ -161,15 +159,15 @@
 
     invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
+    invoke-virtual {v0}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v1
+    move-result v0
 
-    const/16 v2, 0x54
+    const/16 v1, 0x54
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -191,14 +189,14 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
 .end method

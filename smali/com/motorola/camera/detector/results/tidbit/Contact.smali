@@ -1475,6 +1475,15 @@
 
 .method public static getDialOrSmsAction(Lcom/motorola/camera/detector/results/tidbit/Contact;Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;)Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
     .locals 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/detector/results/tidbit/Contact;",
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;",
+            ")",
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;"
+        }
+    .end annotation
 
     const/4 v6, 0x0
 

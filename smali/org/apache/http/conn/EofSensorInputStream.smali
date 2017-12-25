@@ -365,11 +365,11 @@
 .method public read([B)I
     .locals 2
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/conn/EofSensorInputStream;->read([BII)I
+    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/conn/EofSensorInputStream;->read([BII)I
 
     move-result v0
 

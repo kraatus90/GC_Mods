@@ -133,15 +133,15 @@
 
     if-eqz p2, :cond_2
 
-    const/4 v0, 0x2
-
     check-cast v1, Lorg/w3c/dom/ProcessingInstruction;
 
     invoke-interface {v1}, Lorg/w3c/dom/ProcessingInstruction;->getData()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, p2, v0
+    const/4 v1, 0x2
+
+    aput-object v0, p2, v1
 
     goto :goto_1
 
@@ -232,11 +232,11 @@
     :cond_a
     aput-object v1, p2, v3
 
-    const/4 v0, 0x1
+    sget-object v0, Lcom/adobe/xmp/impl/XMPMetaParser;->XMP_RDF:Ljava/lang/Object;
 
-    sget-object v1, Lcom/adobe/xmp/impl/XMPMetaParser;->XMP_RDF:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    aput-object v1, p2, v0
+    aput-object v0, p2, v1
 
     goto :goto_3
 .end method

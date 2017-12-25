@@ -13,7 +13,7 @@
 .end method
 
 .method static buildBitArray(Ljava/util/List;)Lcom/google/zxing/common/BitArray;
-    .locals 14
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -25,178 +25,194 @@
         }
     .end annotation
 
-    const/4 v13, 0x1
+    const/16 v4, 0xb
 
-    const/4 v12, 0x0
+    const/4 v2, 0x1
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v11
-
-    mul-int/lit8 v11, v11, 0x2
-
-    add-int/lit8 v2, v11, -0x1
+    const/4 v3, 0x0
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
-    move-result v11
+    move-result v0
 
-    add-int/lit8 v11, v11, -0x1
+    mul-int/lit8 v0, v0, 0x2
 
-    invoke-interface {p0, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    add-int/lit8 v1, v0, -0x1
 
-    move-result-object v11
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    check-cast v11, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    move-result v0
 
-    invoke-virtual {v11}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
+    add-int/lit8 v0, v0, -0x1
 
-    move-result-object v11
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eqz v11, :cond_0
+    move-result-object v0
+
+    check-cast v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    move v0, v1
 
     :goto_0
-    mul-int/lit8 v10, v2, 0xc
+    mul-int/lit8 v0, v0, 0xc
 
-    new-instance v1, Lcom/google/zxing/common/BitArray;
+    new-instance v7, Lcom/google/zxing/common/BitArray;
 
-    invoke-direct {v1, v10}, Lcom/google/zxing/common/BitArray;-><init>(I)V
+    invoke-direct {v7, v0}, Lcom/google/zxing/common/BitArray;-><init>(I)V
 
-    const/4 v0, 0x0
+    invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {p0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v4
+    check-cast v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
 
-    check-cast v4, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
 
-    invoke-virtual {v4}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
+    move-result-object v0
 
-    move-result-object v11
-
-    invoke-virtual {v11}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
 
     move-result v5
 
-    const/16 v6, 0xb
+    move v1, v4
+
+    move v0, v3
 
     :goto_1
-    if-gez v6, :cond_1
+    if-gez v1, :cond_1
 
-    const/4 v6, 0x1
+    move v1, v2
+
+    move v3, v0
 
     :goto_2
     invoke-interface {p0}, Ljava/util/List;->size()I
 
-    move-result v11
+    move-result v0
 
-    if-lt v6, v11, :cond_3
+    if-lt v1, v0, :cond_3
 
-    return-object v1
+    return-object v7
 
     :cond_0
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v0, v1, -0x1
 
     goto :goto_0
 
     :cond_1
-    shl-int v11, v13, v6
+    shl-int v3, v2, v1
 
-    and-int/2addr v11, v5
+    and-int/2addr v3, v5
 
-    if-nez v11, :cond_2
+    if-nez v3, :cond_2
 
     :goto_3
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v3, v0, 0x1
 
-    add-int/lit8 v6, v6, -0x1
+    add-int/lit8 v0, v1, -0x1
+
+    move v1, v0
+
+    move v0, v3
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v1, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
+    invoke-virtual {v7, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     goto :goto_3
 
     :cond_3
-    invoke-interface {p0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    check-cast v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
 
-    invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getLeftChar()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getLeftChar()Lcom/google/zxing/oned/rss/DataCharacter;
 
-    move-result-object v11
+    move-result-object v5
 
-    invoke-virtual {v11}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
+    invoke-virtual {v5}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
 
     move-result v8
 
-    const/16 v7, 0xb
+    move v5, v4
 
     :goto_4
-    if-gez v7, :cond_5
+    if-gez v5, :cond_5
 
-    invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
 
-    move-result-object v11
+    move-result-object v5
 
-    if-nez v11, :cond_7
+    if-nez v5, :cond_7
 
     :cond_4
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_2
 
     :cond_5
-    shl-int v11, v13, v7
+    shl-int v6, v2, v5
 
-    and-int/2addr v11, v8
+    and-int/2addr v6, v8
 
-    if-nez v11, :cond_6
+    if-nez v6, :cond_6
 
     :goto_5
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v6, v3, 0x1
 
-    add-int/lit8 v7, v7, -0x1
+    add-int/lit8 v3, v5, -0x1
+
+    move v5, v3
+
+    move v3, v6
 
     goto :goto_4
 
     :cond_6
-    invoke-virtual {v1, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
+    invoke-virtual {v7, v3}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     goto :goto_5
 
     :cond_7
-    invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
 
-    move-result-object v11
+    move-result-object v0
 
-    invoke-virtual {v11}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/DataCharacter;->getValue()I
 
-    move-result v9
+    move-result v5
 
-    const/16 v7, 0xb
+    move v0, v4
 
     :goto_6
-    if-ltz v7, :cond_4
+    if-ltz v0, :cond_4
 
-    shl-int v11, v13, v7
+    shl-int v6, v2, v0
 
-    and-int/2addr v11, v9
+    and-int/2addr v6, v5
 
-    if-nez v11, :cond_8
+    if-nez v6, :cond_8
 
     :goto_7
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    add-int/lit8 v7, v7, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_6
 
     :cond_8
-    invoke-virtual {v1, v0}, Lcom/google/zxing/common/BitArray;->set(I)V
+    invoke-virtual {v7, v3}, Lcom/google/zxing/common/BitArray;->set(I)V
 
     goto :goto_7
 .end method

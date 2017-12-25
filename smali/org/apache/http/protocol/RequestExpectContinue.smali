@@ -103,11 +103,11 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "http.protocol.expect-continue"
+    iget-boolean v1, p0, Lorg/apache/http/protocol/RequestExpectContinue;->activeByDefault:Z
 
-    iget-boolean v2, p0, Lorg/apache/http/protocol/RequestExpectContinue;->activeByDefault:Z
+    const-string/jumbo v2, "http.protocol.expect-continue"
 
-    invoke-interface {v0, v1, v2}, Lorg/apache/http/params/HttpParams;->getBooleanParameter(Ljava/lang/String;Z)Z
+    invoke-interface {v0, v2, v1}, Lorg/apache/http/params/HttpParams;->getBooleanParameter(Ljava/lang/String;Z)Z
 
     move-result v0
 

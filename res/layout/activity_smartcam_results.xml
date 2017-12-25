@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <GridView android:gravity="center" android:id="@id/smartcam_gridview" android:padding="@dimen/smartcam_grid_spacing" android:layout_width="fill_parent" android:layout_height="fill_parent" android:horizontalSpacing="@dimen/smartcam_grid_spacing" android:verticalSpacing="@dimen/smartcam_grid_spacing" android:stretchMode="columnWidth" android:numColumns="3" />
+    <TextView android:textSize="@dimen/smartcam_card_detection" android:textColor="@color/smartcam_card_line" android:gravity="center" android:id="@id/smartcam_empty_msg" android:paddingTop="@dimen/smartcam_card_small_spacing" android:paddingBottom="@dimen/smartcam_card_small_spacing" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/smartcam_no_detections" />
+</LinearLayout>

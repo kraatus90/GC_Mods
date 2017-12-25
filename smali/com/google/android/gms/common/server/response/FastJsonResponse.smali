@@ -442,7 +442,7 @@
 .end method
 
 .method protected zzb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
 
     const/4 v2, 0x1
 
@@ -482,17 +482,17 @@
     move v0, v1
 
     :goto_0
-    const-string/jumbo v4, "Concrete field shouldn\'t be value object: %s"
-
     new-array v2, v2, [Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->zzmE()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v2, v1
+    aput-object v4, v2, v1
 
-    invoke-static {v0, v4, v2}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v1, "Concrete field shouldn\'t be value object: %s"
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zza(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p1}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->zzmD()Z
 

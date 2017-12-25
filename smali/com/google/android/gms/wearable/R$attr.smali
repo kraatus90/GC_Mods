@@ -15,11 +15,11 @@
 
 
 # static fields
-.field public static final circleCrop:I = 0x7f0100d9
+.field public static final circleCrop:I = 0x7f0100ee
 
-.field public static final imageAspectRatio:I = 0x7f0100d8
+.field public static final imageAspectRatio:I = 0x7f0100ed
 
-.field public static final imageAspectRatioAdjust:I = 0x7f0100d7
+.field public static final imageAspectRatioAdjust:I = 0x7f0100ec
 
 
 # direct methods

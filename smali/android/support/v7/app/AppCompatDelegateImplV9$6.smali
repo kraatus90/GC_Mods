@@ -42,7 +42,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setAlpha(Landroid/view/View;F)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
 
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV9;
 

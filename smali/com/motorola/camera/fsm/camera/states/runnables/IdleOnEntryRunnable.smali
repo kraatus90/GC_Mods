@@ -152,7 +152,9 @@
 .end method
 
 .method public run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
-    .locals 2
+    .locals 6
+
+    const/4 v5, 0x1
 
     invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/CameraRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
@@ -176,10 +178,60 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x1
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/IdleOnEntryRunnable;->enableAutoFocusStateListener(Z)V
+    invoke-direct {p0, v5}, Lcom/motorola/camera/fsm/camera/states/runnables/IdleOnEntryRunnable;->enableAutoFocusStateListener(Z)V
 
     :cond_0
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/BatteryHandler;->TAG:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isHandlerLimited(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/BatterySaverHandler;->TAG:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isHandlerLimited(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->BATTER_SAVER_SHOW_TOAST:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
+
+    new-instance v2, Lcom/motorola/camera/ui/uicomponents/ToastUIComponent$ToastFeature;
+
+    const/4 v3, 0x0
+
+    const v4, 0x7f080193
+
+    invoke-direct {v2, v5, v3, v4}, Lcom/motorola/camera/ui/uicomponents/ToastUIComponent$ToastFeature;-><init>(ZZI)V
+
+    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/Notifier;->notify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
+
+    :cond_2
     return-void
 .end method

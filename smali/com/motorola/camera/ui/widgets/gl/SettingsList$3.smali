@@ -185,7 +185,7 @@
     :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap7(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap8(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 

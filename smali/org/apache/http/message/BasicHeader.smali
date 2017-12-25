@@ -99,9 +99,9 @@
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    const/4 v1, 0x0
-
     sget-object v0, Lorg/apache/http/message/BasicLineFormatter;->INSTANCE:Lorg/apache/http/message/BasicLineFormatter;
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1, p0}, Lorg/apache/http/message/BasicLineFormatter;->formatHeader(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/Header;)Lorg/apache/http/util/CharArrayBuffer;
 

@@ -50,82 +50,86 @@
 .end method
 
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/concurrent/atomic/AtomicIntegerArray;
-    .locals 7
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    new-instance v5, Ljava/util/ArrayList;
+    const/4 v0, 0x0
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
 
     :goto_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
 
-    move-result v6
+    move-result v1
 
-    if-nez v6, :cond_0
+    if-nez v1, :cond_0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
 
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v3
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicIntegerArray;
+    new-instance v4, Ljava/util/concurrent/atomic/AtomicIntegerArray;
 
-    invoke-direct {v0, v4}, Ljava/util/concurrent/atomic/AtomicIntegerArray;-><init>(I)V
+    invoke-direct {v4, v3}, Ljava/util/concurrent/atomic/AtomicIntegerArray;-><init>(I)V
 
-    const/4 v2, 0x0
+    move v1, v0
 
     :goto_1
-    if-lt v2, v4, :cond_1
+    if-lt v1, v3, :cond_1
 
-    return-object v0
+    return-object v4
 
     :cond_0
     :try_start_0
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextInt()I
 
-    move-result v3
+    move-result v1
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    new-instance v6, Lcom/google/gson/JsonSyntaxException;
+    new-instance v1, Lcom/google/gson/JsonSyntaxException;
 
-    invoke-direct {v6, v1}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonSyntaxException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v6
+    throw v1
 
     :cond_1
-    invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v6
+    move-result v0
 
-    invoke-virtual {v0, v2, v6}, Ljava/util/concurrent/atomic/AtomicIntegerArray;->set(II)V
+    invoke-virtual {v4, v1, v0}, Ljava/util/concurrent/atomic/AtomicIntegerArray;->set(II)V
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_1
 .end method

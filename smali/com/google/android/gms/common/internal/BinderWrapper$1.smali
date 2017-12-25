@@ -60,9 +60,9 @@
 .method public zzF(Landroid/os/Parcel;)Lcom/google/android/gms/common/internal/BinderWrapper;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/common/internal/BinderWrapper;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/android/gms/common/internal/BinderWrapper;-><init>(Landroid/os/Parcel;Lcom/google/android/gms/common/internal/BinderWrapper$1;)V
 

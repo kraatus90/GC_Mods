@@ -71,7 +71,7 @@
     <string name="aware_action_search">Procurar</string>
     <string name="aware_action_share">Partilhar</string>
     <string name="aware_action_sms">Enviar mensagem</string>
-    <string name="aware_action_web">Ver website</string>
+    <string name="aware_action_web">Ver Web site</string>
     <string name="aware_action_wifi">Ligar a uma rede</string>
     <string name="aware_copy_contact_address">Endereço</string>
     <string name="aware_copy_contact_birthday">Data de nascimento</string>
@@ -135,7 +135,7 @@
     <string name="aware_info_timeout">O servidor está a demorar demasiado tempo a responder. Tente novamente.</string>
     <string name="aware_info_unsure">Aponte para o objeto a partir de um ângulo diferente</string>
     <string name="aware_info_url">URL</string>
-    <string name="aware_info_web_results">Mais resultados web</string>
+    <string name="aware_info_web_results">Mais resultados na Web</string>
     <string name="aware_info_wifi">Wi-Fi</string>
     <string name="aware_info_wikipedia">Wikipédia</string>
     <string name="aware_wifi_connected">Ligado à rede \"%1$s\"</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Cancelar</string>
     <string name="capture_failure">Falha ao captar. Tente novamente.</string>
     <string name="checkbox_do_not_show">Não mostrar novamente</string>
-    <string name="cloudsight_terms">As suas imagens serão enviadas para o CloudSight para obter resultados da pesquisa. &lt;br/>&lt;br/> Ao continuar, concorda com a &lt;a href=%1$s>Política de privacidade&lt;/a> do CloudSight.</string>
+    <string name="cloudsight_terms">Sempre que utilizar o reconhecimento de objetos, a imagem e a localização (se ativada) serão enviadas a um fornecedor externo, para que possa receber resultados de pesquisa.&lt;br/>&lt;br/> Ao continuar, concorda com a &lt;a href=%1$s>Política de privacidade&lt;/a>.</string>
     <string name="dailog_panorama_failed">Ocorreu um erro no panorama. Tente novamente.</string>
     <string name="dailog_panorama_not_taken">Imagem de panorama não tirada.</string>
     <string name="dialog_access_sd_fail">Não é possível gravar multimédia. Não foi possível aceder ao cartão SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Dispositivo não suportado</string>
     <string name="dialog_disagree">Não aceito</string>
     <string name="dialog_dismiss">Não mostrar novamente</string>
+    <string name="dialog_download">Transferir</string>
     <string name="dialog_external_sd_missing">Não é possível capturar imagens. O cartão SD não está disponível. A mudar para o armazenamento interno do telemóvel.</string>
     <string name="dialog_first_time_set_pure_raw_message">"Ficheiro não processado utilizado para editar fotografias de forma profissional.
 
@@ -219,7 +220,7 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="help_desc_anywhere">Toque em qualquer lugar para tirar uma fotografia ou toque sem soltar para tirar várias fotografias.</string>
     <string name="help_desc_dual_depth">Capte dados adicionais que lhe permitem alternar um plano de fundo, adicionar um toque de cor ou mesmo alterar a focagem depois de tirar uma fotografia.</string>
     <string name="help_desc_dual_mono">Consiga fotografias mais ricas e com um aspeto mais profissional, com uma câmara concebida para preto e branco.</string>
-    <string name="help_desc_dual_result">Certifique-se de que se encontra até 1,5 metros do objeto. O ideal é que nada esteja a bloquear a vista e o objeto esteja em destaque.</string>
+    <string name="help_desc_dual_result">Certifique-se de que se encontra a uma distância máxima de 1,5 metros do objeto. O ideal é que nada esteja a bloquear a vista e o objeto esteja em destaque.</string>
     <string name="help_desc_quick">Gire duas vezes para abrir a câmara ou alternar entre as câmaras frontal e traseira.</string>
     <string name="help_desc_quick_double_tap_pwr">Dois toques no botão ligar/desligar abrem a câmara.</string>
     <string name="help_desc_smart_camera">A sua câmara reconhece objetos e pontos de referência. Também pode ler códigos QR, cartões de visita e códigos de barras.</string>
@@ -247,6 +248,7 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="help_next">Seguinte</string>
     <string name="image_360_desc">Esta é uma fotografia em 360. Pode editar esta fotografia com o editor Moto 360.</string>
     <string name="image_360_name">Fotografia em 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">PROFUNDIDADE ATIVADA</string>
     <string name="indicate_mode_mono">P&amp;B VERDADEIRO</string>
@@ -258,16 +260,19 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="indicate_mode_ultra_wide">ULTRAGRANDE ANGULAR</string>
     <string name="indicate_mode_video">VÍDEO</string>
     <string name="indicate_mode_wide_angle">GRANDE ANGULAR</string>
+    <string name="indicate_mode_wide_angle_selfie">SELFIE GRANDE ANGULAR</string>
     <string name="internal_storage">armazenamento interno</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">O reconhecimento de pontos de referência fornece informações sobre pontos de referência populares em todo o mundo.&lt;br/>&lt;br/>Instale para ativar esta funcionalidade.</string>
-    <string name="landmark_install_over_data">O tamanho da transferência do reconhecimento de pontos de referência é de 92 MB. A instalação através dos dados na rede móvel pode resultar em custos de dados adicionais.</string>
-    <string name="landmark_notification_downloading">A transferir o reconhecimento de pontos de referência...</string>
-    <string name="landmark_notification_install">A instalar o reconhecimento de pontos de referência...</string>
-    <string name="landmark_notification_install_complete">Instalação do reconhecimento de pontos de referência concluída</string>
-    <string name="landmark_notification_install_failed">Não foi possível concluir a instalação do reconhecimento de pontos de referência</string>
+    <string name="landmark_install_message">O reconhecimento de pontos de referência fornece informações sobre pontos de referência populares em todo o mundo.&lt;br/>&lt;br/>Transfira a base de dados de pontos de referência para ativar esta funcionalidade.</string>
+    <string name="landmark_install_over_data">O tamanho da transferência da base de dados de pontos de referência é de 92 MB. A transferência através da utilização de dados na rede móvel pode resultar em custos de dados adicionais.</string>
+    <string name="landmark_notification_downloading">A transferir a base de dados de pontos de referência</string>
+    <string name="landmark_notification_install">A instalar a base de dados de pontos de referência</string>
+    <string name="landmark_notification_install_complete">Instalação da base de dados de pontos de referência concluída</string>
+    <string name="landmark_notification_install_failed">Não foi possível concluir a instalação da base de dados de pontos de referência</string>
     <string name="landmark_notification_install_invalid_url">A base de dados de pontos de referência não está disponível; atualize para a versão de Câmara mais recente</string>
-    <string name="landmark_notification_install_out_of_space">Espaço de armazenamento disponível insuficiente para instalar o reconhecimento de pontos de referência</string>
+    <string name="landmark_notification_install_out_of_space">Espaço de armazenamento disponível insuficiente para instalar a base de dados de pontos de referência</string>
+    <string name="landmark_notification_paused">A transferência da base de dados de pontos de referência será retomada quando a ligação à internet ficar disponível</string>
+    <string name="landmark_notification_queued">A transferência da base de dados de pontos de referência será iniciada quando a ligação à internet ficar disponível</string>
     <string name="main_setting_amz_barcode">Leitor de códigos de barras Amazon</string>
     <string name="main_setting_amz_privacy">Aviso de Privacidade Amazon</string>
     <string name="main_setting_amz_terms">Termos de utilização</string>
@@ -290,6 +295,8 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="main_setting_image_ratio">Tamanho da foto (câmara traseira)</string>
     <string name="main_setting_image_ratio_front">Tamanho da foto (câmara frontal)</string>
     <string name="main_setting_landmark_detection">Reconhecimento de pontos de referência</string>
+    <string name="main_setting_landmark_version_current">Versão da base de dados: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Base de dados não instalada</string>
     <string name="main_setting_licenses">Licenças open source</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -309,8 +316,8 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="main_setting_sub_item_sdcard">Cartão de memória</string>
     <string name="main_setting_sub_item_shutter_button">Botão Obturador</string>
     <string name="main_setting_sub_item_tap_anywhere">Tocar em qualquer lugar</string>
-    <string name="main_setting_tap_anywhere">Toque em qualquer lugar para captar</string>
-    <string name="main_setting_tap_anywhere_summary">Tire fotografias tocando em qualquer parte do ecrã</string>
+    <string name="main_setting_tap_anywhere">Tocar em qualquer lugar para captar</string>
+    <string name="main_setting_tap_anywhere_summary">Tocar em qualquer parte do ecrã para tirar fotografias</string>
     <string name="main_setting_video_size">Tamanho do vídeo (câmara traseira)</string>
     <string name="main_setting_video_size_front">Tamanho do vídeo (câmara frontal)</string>
     <string name="mcf_bg_processing">A GUARDAR...</string>
@@ -325,6 +332,9 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="perm_required_alert_title">Permissões necessárias</string>
     <string name="photos_depth_desc">Utilize o editor de profundidade para selecionar a focagem, substituir o fundo ou selecionar a área a alterar para preto e branco.</string>
     <string name="photos_depth_name">Profundidade ativada</string>
+    <string name="photos_notification_desc">Obtenha armazenamento ilimitado com o Google Fotos</string>
+    <string name="photos_notification_title">Criar cópia de segurança no Google Fotos</string>
+    <string name="qcfa_resolution_description">Adaptável a pouca luz</string>
     <string name="retake">Voltar a tirar</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="setting_mode_slow_motion">Câmara lenta</string>
     <string name="setting_mode_ultra_wide">Ultragrande angular</string>
     <string name="setting_mode_video">Vídeo</string>
+    <string name="setting_mode_wide_angle_selfie">Selfie grande angular</string>
     <string name="setting_off">Desativado</string>
     <string name="setting_on">Ativado</string>
     <string name="setting_persist">Suspender</string>
@@ -383,20 +394,25 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="setting_timer_dialog_title">TEMPORIZADOR</string>
     <string name="setting_torch">Lanterna</string>
     <string name="setting_true">Sim</string>
+    <string name="shortcut_desc_depth">Fotografia de profundidade</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Vídeo</string>
     <string name="smartcam_landmark_notification_title">Câmara inteligente</string>
+    <string name="smartcam_no_detections">Não existem objetos nem pontos de referência guardados</string>
     <string name="storage_location_external">Cartão SD</string>
     <string name="storage_location_internal">Telefone</string>
     <string name="storage_unavailable">Unidade indisponível</string>
+    <string name="toast_battery_saver">Está atualmente no modo de poupança de energia; algumas funcionalidades poderão estar limitadas</string>
     <string name="toast_geotag_message_1">Tem de autorizar acesso à localização para permitir guardar a localização.</string>
     <string name="toast_geotag_message_2">As definições de localização só são implementadas depois de ativar as definições de localização do sistema.</string>
     <string name="tooltip_camera_switch_360">Tente mudar para diferentes opções da câmara.</string>
     <string name="tooltip_capture_360">Experimente tirar fotografias ou filmar vídeos a 360° tocando neste botão do obturador.</string>
-    <string name="tooltip_capture_key_360">Tente também captar com o botão de obturador na parte de trás do mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Tire fotografias com informações adicionais para ativar as funcionalidades de edição especial.</string>
+    <string name="tooltip_capture_key_360">Tente também tirar fotografias com o botão de obturador na parte de trás do mod.</string>
     <string name="tooltip_first_use_zoom_button">Toque aqui para mudar para grande angular.</string>
     <string name="tooltip_gallery_360">Veja como ficaram as fotos ou vídeos a 360° deslizando p/ a esquerda.</string>
     <string name="tooltip_minimap_viewfinder">Rode a imagem da parte inferior para a esquerda ou para a direita.</string>
     <string name="tooltip_mode_switch_360">Experimente tirar fotografias a 360° em modos diferentes.</string>
+    <string name="tooltip_modes_list">Descubra novas formas de tirar fotografias.</string>
     <string name="tooltip_smart_camera">Toque para saber mais sobre o objeto.</string>
     <string name="tooltip_smart_camera_disable">Pode desativar esta funcionalidade nas Definições.</string>
     <string name="tooltip_spherical_viewfinder">Rode ou aumente e diminua o zoom para controlar a visualização.</string>
@@ -419,4 +435,10 @@ Selecione a opção Sim em baixo e, em seguida, ative a Localização em Defini�
     <string name="zoom_hint_full">COMPLETO</string>
     <string name="zoom_hint_wide">PANORÂMICO</string>
     <string name="zoom_pattern">%1$s,%2$sX</string>
+    <string name="indicate_mode_timelapse">TIMELAPSE</string>
+    <string name="setting_mode_timelapse">Timelapse</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

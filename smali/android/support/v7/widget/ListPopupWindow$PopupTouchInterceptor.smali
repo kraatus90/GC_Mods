@@ -35,9 +35,9 @@
 
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 8
+    .locals 5
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -45,25 +45,25 @@
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v3
+    move-result v1
 
-    float-to-int v1, v3
+    float-to-int v1, v1
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v3
+    move-result v2
 
-    float-to-int v2, v3
+    float-to-int v2, v2
 
     if-eqz v0, :cond_1
 
     :cond_0
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v1, :cond_2
 
     :goto_0
-    return v5
+    return v4
 
     :cond_1
     iget-object v3, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
@@ -96,40 +96,40 @@
 
     if-ltz v2, :cond_0
 
-    iget-object v3, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
-    iget-object v3, v3, Landroid/support/v7/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
+    iget-object v1, v1, Landroid/support/v7/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
-    invoke-virtual {v3}, Landroid/widget/PopupWindow;->getHeight()I
+    invoke-virtual {v1}, Landroid/widget/PopupWindow;->getHeight()I
 
-    move-result v3
+    move-result v1
 
-    if-ge v2, v3, :cond_0
+    if-ge v2, v1, :cond_0
 
-    iget-object v3, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
-    iget-object v3, v3, Landroid/support/v7/widget/ListPopupWindow;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Landroid/support/v7/widget/ListPopupWindow;->mHandler:Landroid/os/Handler;
 
-    iget-object v4, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
-    iget-object v4, v4, Landroid/support/v7/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
+    iget-object v1, v1, Landroid/support/v7/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
 
-    const-wide/16 v6, 0xfa
+    const-wide/16 v2, 0xfa
 
-    invoke-virtual {v3, v4, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 
     :cond_2
-    iget-object v3, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
-    iget-object v3, v3, Landroid/support/v7/widget/ListPopupWindow;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Landroid/support/v7/widget/ListPopupWindow;->mHandler:Landroid/os/Handler;
 
-    iget-object v4, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/support/v7/widget/ListPopupWindow;
 
-    iget-object v4, v4, Landroid/support/v7/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
+    iget-object v1, v1, Landroid/support/v7/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
 
-    invoke-virtual {v3, v4}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     goto :goto_0
 .end method

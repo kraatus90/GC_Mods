@@ -225,15 +225,15 @@
 
 # virtual methods
 .method public disableMicrMode()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_isMicrModeEnabled:Z
 
-    iput-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_micrLanguage:Lcom/abbyy/mobile/ocr4/UserRecognitionLanguage;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_micrLanguage:Lcom/abbyy/mobile/ocr4/UserRecognitionLanguage;
 
     return-void
 .end method
@@ -522,13 +522,13 @@
 .method getUserRecognitionLanguagesInternal()Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
     .locals 2
 
-    iget-boolean v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_isMicrModeEnabled:Z
+    iget-boolean v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_isMicrModeEnabled:Z
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_userLanguages:Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_userLanguages:Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
 
-    return-object v1
+    return-object v0
 
     :cond_0
     new-instance v0, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
@@ -620,7 +620,9 @@
 .end method
 
 .method public setImageResolution(I)V
-    .locals 0
+    .locals 1
+
+    const/4 v0, 0x0
 
     if-ltz p1, :cond_0
 
@@ -630,7 +632,7 @@
     return-void
 
     :cond_0
-    const/4 p1, 0x0
+    move p1, v0
 
     goto :goto_0
 .end method
@@ -726,7 +728,7 @@
 .end method
 
 .method public setUserRecognitionLanguages(Ljava/lang/String;Ljava/util/Collection;)V
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -749,67 +751,67 @@
     if-eqz p1, :cond_2
 
     :cond_0
-    new-instance v2, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
 
-    invoke-direct {v2}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;-><init>()V
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;-><init>()V
 
     invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v2
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_3
+    if-nez v0, :cond_3
 
     iput-object p1, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_userPatternsDataFileName:Ljava/lang/String;
 
-    iput-object v2, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_userLanguages:Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
+    iput-object v1, p0, Lcom/abbyy/mobile/ocr4/RecognitionConfiguration;->_userLanguages:Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;
 
     return-void
 
     :cond_1
-    new-instance v3, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v4, "userLanguages is null."
+    const-string/jumbo v1, "userLanguages is null."
 
-    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     :cond_2
     invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    new-instance v3, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v4, "userPatternsDataFileName is null while userLanguages is not null."
+    const-string/jumbo v1, "userPatternsDataFileName is null while userLanguages is not null."
 
-    invoke-direct {v3, v4}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     :cond_3
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/abbyy/mobile/ocr4/UserRecognitionLanguage;
+    check-cast v0, Lcom/abbyy/mobile/ocr4/UserRecognitionLanguage;
 
-    invoke-interface {v1}, Lcom/abbyy/mobile/ocr4/UserRecognitionLanguage;->getLanguageId()I
+    invoke-interface {v0}, Lcom/abbyy/mobile/ocr4/UserRecognitionLanguage;->getLanguageId()I
 
-    move-result v3
+    move-result v0
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Lcom/abbyy/mobile/ocr4/UserRecognitionLangaugesSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

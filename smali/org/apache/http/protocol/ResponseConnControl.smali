@@ -108,11 +108,11 @@
     return-void
 
     :cond_5
-    const-string/jumbo v3, "Close"
-
     invoke-interface {v2}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string/jumbo v3, "Close"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -202,13 +202,13 @@
     goto :goto_1
 
     :cond_b
-    const-string/jumbo v0, "Connection"
-
     invoke-interface {v1}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {p1, v0, v1}, Lorg/apache/http/HttpResponse;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v1, "Connection"
+
+    invoke-interface {p1, v1, v0}, Lorg/apache/http/HttpResponse;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 .end method

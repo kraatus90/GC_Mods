@@ -55,7 +55,7 @@
         }
     .end annotation
 
-    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isRearCamera()Z
+    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isProcessingRearCamera()Z
 
     move-result v0
 
@@ -68,6 +68,10 @@
     invoke-virtual {v0}, Lcom/motorola/camera/panorama/morpho/MorphoEngine;->finishEngine()V
 
     :goto_0
+    const-string/jumbo v0, "Camera_rear_facing"
+
+    invoke-static {v0}, Lcom/motorola/camera/panorama/PanoHelper;->clearSetting(Ljava/lang/String;)V
+
     new-instance v1, Lcom/motorola/camera/panorama/PanoCallableReturn;
 
     const/4 v0, 0x0

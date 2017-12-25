@@ -193,9 +193,7 @@
 .end method
 
 .method public zzas(I)V
-    .locals 7
-
-    const/4 v6, 0x0
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -226,7 +224,9 @@
     :goto_2
     iget-object v0, p0, Lcom/google/android/gms/common/api/zzd;->zzPQ:Lcom/google/android/gms/common/api/zzg;
 
-    invoke-virtual {v0, v6}, Lcom/google/android/gms/common/api/zzg;->zzg(Lcom/google/android/gms/common/ConnectionResult;)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/common/api/zzg;->zzg(Lcom/google/android/gms/common/ConnectionResult;)V
 
     if-eqz v1, :cond_3
 
@@ -268,11 +268,11 @@
 
     new-instance v3, Lcom/google/android/gms/common/api/Status;
 
-    const/16 v4, 0x8
+    const-string/jumbo v4, "The connection to Google Play services was lost"
 
-    const-string/jumbo v5, "The connection to Google Play services was lost"
+    const/16 v5, 0x8
 
-    invoke-direct {v3, v4, v5}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+    invoke-direct {v3, v5, v4}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
     invoke-interface {v0, v3}, Lcom/google/android/gms/common/api/zzg$zze;->forceFailureUnlessReady(Lcom/google/android/gms/common/api/Status;)V
 

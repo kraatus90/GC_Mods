@@ -191,17 +191,17 @@
 
     invoke-virtual {p0, v0}, Lcom/android/volley/VolleyLog$MarkerLog;->finish(Ljava/lang/String;)V
 
-    const-string/jumbo v0, "Marker log finalized without finish() - uncaught exit point for request"
+    new-array v0, v1, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string/jumbo v1, "Marker log finalized without finish() - uncaught exit point for request"
 
-    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
 
 .method public declared-synchronized finish(Ljava/lang/String;)V
-    .locals 10
+    .locals 7
 
     const/4 v0, 0x1
 
@@ -252,25 +252,25 @@
 
     iget-wide v0, v0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->time:J
 
-    const-string/jumbo v4, "(%-4d ms) %s"
+    const/4 v4, 0x2
 
-    const/4 v5, 0x2
-
-    new-array v5, v5, [Ljava/lang/Object;
-
-    const/4 v6, 0x0
+    new-array v4, v4, [Ljava/lang/Object;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    aput-object v2, v5, v6
+    const/4 v3, 0x0
+
+    aput-object v2, v4, v3
 
     const/4 v2, 0x1
 
-    aput-object p1, v5, v2
+    aput-object p1, v4, v2
 
-    invoke-static {v4, v5}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v2, "(%-4d ms) %s"
+
+    invoke-static {v2, v4}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     iget-object v2, p0, Lcom/android/volley/VolleyLog$MarkerLog;->mMarkers:Ljava/util/List;
 
@@ -303,13 +303,9 @@
 
     iget-wide v4, v0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->time:J
 
-    const-string/jumbo v1, "(+%-4d) [%2d] %s"
+    const/4 v1, 0x3
 
-    const/4 v7, 0x3
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v8, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     sub-long v2, v4, v2
 
@@ -317,25 +313,29 @@
 
     move-result-object v2
 
-    aput-object v2, v7, v8
+    const/4 v3, 0x0
 
-    const/4 v2, 0x1
+    aput-object v2, v1, v3
 
-    iget-wide v8, v0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->thread:J
+    iget-wide v2, v0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->thread:J
 
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v3
+    move-result-object v2
 
-    aput-object v3, v7, v2
+    const/4 v3, 0x1
 
-    const/4 v2, 0x2
+    aput-object v2, v1, v3
 
     iget-object v0, v0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->name:Ljava/lang/String;
 
-    aput-object v0, v7, v2
+    const/4 v2, 0x2
 
-    invoke-static {v1, v7}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "(+%-4d) [%2d] %s"
+
+    invoke-static {v0, v1}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 

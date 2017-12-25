@@ -35,59 +35,59 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->versionCode:I
 
-    iget v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->versionCode:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->packageName:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->packageName:Ljava/lang/String;
+    const/4 v2, 0x2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/4 v1, 0x3
+    iget v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayB:I
 
-    iget v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayB:I
+    const/4 v2, 0x3
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x4
+    iget v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayC:I
 
-    iget v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayC:I
+    const/4 v2, 0x4
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
-    const/4 v1, 0x5
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayD:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayD:Ljava/lang/String;
+    const/4 v2, 0x5
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/4 v1, 0x6
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayE:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayE:Ljava/lang/String;
+    const/4 v2, 0x6
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/4 v1, 0x7
+    iget-boolean v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayF:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayF:Z
+    const/4 v2, 0x7
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
 
-    const/16 v1, 0x8
+    iget-object v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayG:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayG:Ljava/lang/String;
+    const/16 v2, 0x8
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    const/16 v1, 0x9
+    iget-boolean v1, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayH:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/playlog/internal/PlayLoggerContext;->zzayH:Z
+    const/16 v2, 0x9
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IZ)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 
@@ -119,9 +119,9 @@
 .method public zzeP(Landroid/os/Parcel;)Lcom/google/android/gms/playlog/internal/PlayLoggerContext;
     .locals 12
 
-    const/4 v9, 0x0
-
     const/4 v8, 0x0
+
+    const/4 v9, 0x0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzL(Landroid/os/Parcel;)I
 

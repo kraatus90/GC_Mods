@@ -100,7 +100,7 @@
     <string name="aware_copy_number">Nummer</string>
     <string name="aware_copy_type">" (%1$s)"</string>
     <string name="aware_copy_wifi_hidden">Skjult</string>
-    <string name="aware_copy_wifi_hidden_no">no</string>
+    <string name="aware_copy_wifi_hidden_no">nej</string>
     <string name="aware_copy_wifi_hidden_yes">ja</string>
     <string name="aware_copy_wifi_password">Adgangskode</string>
     <string name="aware_copy_wifi_security">Sikkerhedstype</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Annuller</string>
     <string name="capture_failure">Kunne ikke optage. Prøv igen.</string>
     <string name="checkbox_do_not_show">Vis ikke igen</string>
-    <string name="cloudsight_terms">Dine billeder sendes til CloudSight for søgeresultater. &lt;br/>&lt;br/> Ved at fortsætte accepterer du CloudSights&lt;a href=%1$s>Fortrolighedspolitik&lt;/a>.</string>
+    <string name="cloudsight_terms">Hver gang du bruger genkendelse af objekt, sendes billedet og lokationen (hvis aktiveret) til en tredjepart for søgeresultater.&lt;br/>&lt;br/> Ved at fortsætte accepterer du&lt;a href=%1$s>Fortrolighedspolitikken&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama mislykkedes. Prøv igen.</string>
     <string name="dailog_panorama_not_taken">Panoramabillede ikke taget.</string>
     <string name="dialog_access_sd_fail">Kunne ikke optage medie. Kunne ikke få adgang til SD-kort.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Enheden understøttes ikke</string>
     <string name="dialog_disagree">Afvis</string>
     <string name="dialog_dismiss">Vis ikke igen</string>
+    <string name="dialog_download">Download</string>
     <string name="dialog_external_sd_missing">Kan ikke tage et billede. SD-kortet er ikke tilgængeligt. Skifter til telefonens interne lager.</string>
     <string name="dialog_first_time_set_pure_raw_message">"Denne ubehandlede filtype bruges til professionel fotoredigering.
 
@@ -247,6 +248,7 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="help_next">Næste</string>
     <string name="image_360_desc">Det er et 360 graders billede. Du kan redigere dette billede med Moto 360-redigeringsværktøj.</string>
     <string name="image_360_name">360 foto</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">DYBDE AKTIVERET</string>
     <string name="indicate_mode_mono">ÆGTE SORT-HVID</string>
@@ -258,16 +260,19 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="indicate_mode_ultra_wide">SUPERVIDVINKEL</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">VIDVINKEL</string>
+    <string name="indicate_mode_wide_angle_selfie">SELFIE I VIDVINKEL</string>
     <string name="internal_storage">intern lagring</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Genkendelse af vartegn leverer oplysninger om populære vartegn over hele verden.&lt;br/>&lt;br/>Installer for at aktivere funktionen.</string>
-    <string name="landmark_install_over_data">Downloadstørrelse for Genkendelse af vartegn er 92 MB. Hvis du installerer over mobildata kan det medføre ekstra datagebyrer.</string>
-    <string name="landmark_notification_downloading">Downloader Genkendelse af vartegn</string>
-    <string name="landmark_notification_install">Installerer Genkendelse af vartegn</string>
-    <string name="landmark_notification_install_complete">Installation af Genkendelse af vartegn udført</string>
-    <string name="landmark_notification_install_failed">Installation af Genkendelse af vartegn mislykkedes</string>
+    <string name="landmark_install_message">Genkendelse af vartegn leverer oplysninger om populære vartegn over hele verden.&lt;br/>&lt;br/>Download Databasen med vartegn for at aktivere funktionen.</string>
+    <string name="landmark_install_over_data">Downloadstørrelse for Database med vartegn er 92 MB. Hvis du downloader over mobildata kan det medføre ekstra datagebyrer.</string>
+    <string name="landmark_notification_downloading">Downloader Database med vartegn</string>
+    <string name="landmark_notification_install">Installerer Database med vartegn</string>
+    <string name="landmark_notification_install_complete">Installation af Database med vartegn udført</string>
+    <string name="landmark_notification_install_failed">Installation af Database med vartegn mislykkedes</string>
     <string name="landmark_notification_install_invalid_url">Databasen med vartegn er ikke tilgængelig, opdater til den nyeste kameraversion</string>
-    <string name="landmark_notification_install_out_of_space">Der er ikke tilstrækkelig lagerplads til at installere Genkendelse af vartegn</string>
+    <string name="landmark_notification_install_out_of_space">Der er ikke tilstrækkelig lagerplads til at installere Database med vartegn</string>
+    <string name="landmark_notification_paused">Database med vartegn fortsætter med at downloade, når der er internetforbindelse</string>
+    <string name="landmark_notification_queued">Database med vartegn begynder at downloade, når der er internetforbindelse</string>
     <string name="main_setting_amz_barcode">Amazon stregkodescanner</string>
     <string name="main_setting_amz_privacy">Meddelelse om beskyttelse af personlige oplysninger for Amazon</string>
     <string name="main_setting_amz_terms">Anvendelsesbetingelser</string>
@@ -290,6 +295,8 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="main_setting_image_ratio">Fotostørrelse (bagside)</string>
     <string name="main_setting_image_ratio_front">Fotostørrelse (forside)</string>
     <string name="main_setting_landmark_detection">Genkendelse af vartegn</string>
+    <string name="main_setting_landmark_version_current">Databaseversion: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Database ikke installeret</string>
     <string name="main_setting_licenses">Open source-licenser</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="perm_required_alert_title">Tilladelser påkrævet</string>
     <string name="photos_depth_desc">Brug dybderedigeringsprogrammet til at vælge fokus, udskift baggrunden, eller vælg et område, der skal ændres til sort og hvid.</string>
     <string name="photos_depth_name">Dybde aktiveret</string>
+    <string name="photos_notification_desc">Få ubegrænset lagerplads med Google Fotos</string>
+    <string name="photos_notification_title">Sikkerhedskopier til Google Fotos</string>
+    <string name="qcfa_resolution_description">Tilpasset lavt lys</string>
     <string name="retake">Tag om</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +377,7 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="setting_mode_slow_motion">Slow motion</string>
     <string name="setting_mode_ultra_wide">Supervidvinkel</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Selfie i vidvinkel</string>
     <string name="setting_off">Fra</string>
     <string name="setting_on">Til</string>
     <string name="setting_persist">Hold</string>
@@ -383,20 +394,25 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="setting_timer_dialog_title">TIMER</string>
     <string name="setting_torch">Fakkel</string>
     <string name="setting_true">sand</string>
+    <string name="shortcut_desc_depth">Dybdefoto</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Intelligent kamera</string>
+    <string name="smartcam_no_detections">Ingen gemte objekter eller vartegn</string>
     <string name="storage_location_external">SD-kort</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Lager ikke tilgængeligt</string>
+    <string name="toast_battery_saver">Du er i øjeblikket i strømsparertilstand, nogle funktioner kan være begrænsede</string>
     <string name="toast_geotag_message_1">Du skal give lokationen tilladelse til at aktivere Gem lokation.</string>
     <string name="toast_geotag_message_2">Lokationsindstilling træder først i kraft, når indstilling for Systemlokation er slået til.</string>
     <string name="tooltip_camera_switch_360">Prøv at skifte til forskellige kameramuligheder.</string>
     <string name="tooltip_capture_360">Prøv at optage 360° foto eller video ved at trykke på denne lukkerknap.</string>
-    <string name="tooltip_capture_key_360">Prøv også at optage med lukkerknappen på bagsiden af Mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Tag fotos med flere oplysninger for at aktivere specielle redigeringsfunktioner.</string>
+    <string name="tooltip_capture_key_360">Prøv også at optage med lukkerknappen på bagsiden af din Mod.</string>
     <string name="tooltip_first_use_zoom_button">Tryk her for at skifte til vidvinkel.</string>
     <string name="tooltip_gallery_360">Se hvordan dit 360° foto eller video blev ved at stryge til venstre.</string>
     <string name="tooltip_minimap_viewfinder">Panorer det nederste billede til venstre eller højre.</string>
     <string name="tooltip_mode_switch_360">Prøv at optage 360° i forskellige tilstande!</string>
+    <string name="tooltip_modes_list">Opdag nye måder at optage dine fotos.</string>
     <string name="tooltip_smart_camera">Tryk for at få mere at vide om objektet.</string>
     <string name="tooltip_smart_camera_disable">Du kan slå det fra i Indstillinger.</string>
     <string name="tooltip_spherical_viewfinder">Panorer eller zoom ind og ud for at styre visningen.</string>
@@ -419,4 +435,10 @@ Accepter nedenfor, og slå derefter Placering til under Indstillinger."</string>
     <string name="zoom_hint_full">FULD</string>
     <string name="zoom_hint_wide">BRED</string>
     <string name="zoom_pattern">%1$s.%2$s ×</string>
+    <string name="indicate_mode_timelapse">TIDSFORLØB</string>
+    <string name="setting_mode_timelapse">Tidsforløb</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

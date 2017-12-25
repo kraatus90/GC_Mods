@@ -23,165 +23,165 @@
 
     new-array v0, v0, [Lcom/google/zxing/client/result/ResultParser;
 
-    const/4 v1, 0x0
+    new-instance v1, Lcom/google/zxing/client/result/BookmarkDoCoMoResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/BookmarkDoCoMoResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/BookmarkDoCoMoResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/BookmarkDoCoMoResultParser;-><init>()V
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    new-instance v1, Lcom/google/zxing/client/result/AddressBookDoCoMoResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/AddressBookDoCoMoResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/AddressBookDoCoMoResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/AddressBookDoCoMoResultParser;-><init>()V
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    new-instance v1, Lcom/google/zxing/client/result/EmailDoCoMoResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/EmailDoCoMoResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/EmailDoCoMoResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/EmailDoCoMoResultParser;-><init>()V
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    new-instance v1, Lcom/google/zxing/client/result/AddressBookAUResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/AddressBookAUResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/AddressBookAUResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/AddressBookAUResultParser;-><init>()V
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    new-instance v1, Lcom/google/zxing/client/result/VCardResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/VCardResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/VCardResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/VCardResultParser;-><init>()V
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    new-instance v1, Lcom/google/zxing/client/result/BizcardResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/BizcardResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/BizcardResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/BizcardResultParser;-><init>()V
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    new-instance v1, Lcom/google/zxing/client/result/VEventResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/VEventResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/VEventResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/VEventResultParser;-><init>()V
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    new-instance v1, Lcom/google/zxing/client/result/EmailAddressResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/EmailAddressResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/EmailAddressResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/EmailAddressResultParser;-><init>()V
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    new-instance v1, Lcom/google/zxing/client/result/SMTPResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/SMTPResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/SMTPResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/SMTPResultParser;-><init>()V
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    new-instance v1, Lcom/google/zxing/client/result/TelResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/TelResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/TelResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/TelResultParser;-><init>()V
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    new-instance v1, Lcom/google/zxing/client/result/SMSMMSResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/SMSMMSResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/SMSMMSResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/SMSMMSResultParser;-><init>()V
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    new-instance v1, Lcom/google/zxing/client/result/SMSTOMMSTOResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/SMSTOMMSTOResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/SMSTOMMSTOResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/SMSTOMMSTOResultParser;-><init>()V
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    new-instance v1, Lcom/google/zxing/client/result/GeoResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/GeoResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/GeoResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/GeoResultParser;-><init>()V
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    new-instance v1, Lcom/google/zxing/client/result/WifiResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/WifiResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/WifiResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/WifiResultParser;-><init>()V
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    new-instance v1, Lcom/google/zxing/client/result/URLTOResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/URLTOResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/URLTOResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/URLTOResultParser;-><init>()V
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    new-instance v1, Lcom/google/zxing/client/result/URIResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/URIResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/URIResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/URIResultParser;-><init>()V
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    new-instance v1, Lcom/google/zxing/client/result/ISBNResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/ISBNResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/ISBNResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/ISBNResultParser;-><init>()V
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    new-instance v1, Lcom/google/zxing/client/result/ProductResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/ProductResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/ProductResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/ProductResultParser;-><init>()V
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    new-instance v1, Lcom/google/zxing/client/result/ExpandedProductResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/ExpandedProductResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/ExpandedProductResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/ExpandedProductResultParser;-><init>()V
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    new-instance v1, Lcom/google/zxing/client/result/VINResultParser;
 
-    new-instance v2, Lcom/google/zxing/client/result/VINResultParser;
+    invoke-direct {v1}, Lcom/google/zxing/client/result/VINResultParser;-><init>()V
 
-    invoke-direct {v2}, Lcom/google/zxing/client/result/VINResultParser;-><init>()V
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/client/result/ResultParser;->PARSERS:[Lcom/google/zxing/client/result/ResultParser;
 
@@ -221,7 +221,7 @@
 .end method
 
 .method private static appendKeyValue(Ljava/lang/CharSequence;Ljava/util/Map;)V
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -234,43 +234,43 @@
         }
     .end annotation
 
-    const/4 v4, 0x2
+    const/4 v2, 0x2
 
-    sget-object v3, Lcom/google/zxing/client/result/ResultParser;->EQUALS:Ljava/util/regex/Pattern;
+    sget-object v0, Lcom/google/zxing/client/result/ResultParser;->EQUALS:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v3, p0, v4}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;I)[Ljava/lang/String;
+    invoke-virtual {v0, p0, v2}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;I)[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    array-length v3, v1
+    array-length v1, v0
 
-    if-eq v3, v4, :cond_0
+    if-eq v1, v2, :cond_0
 
     :goto_0
     return-void
 
     :cond_0
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    aget-object v0, v1, v3
+    aget-object v1, v0, v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    aget-object v2, v1, v3
+    aget-object v0, v0, v2
 
     :try_start_0
-    invoke-static {v2}, Lcom/google/zxing/client/result/ResultParser;->urlDecode(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/zxing/client/result/ResultParser;->urlDecode(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {p1, v0, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v3
+    move-exception v0
 
     goto :goto_0
 .end method
@@ -278,18 +278,18 @@
 .method private static countPrecedingBackslashes(Ljava/lang/CharSequence;I)I
     .locals 4
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    add-int/lit8 v1, p1, -0x1
+    add-int/lit8 v0, p1, -0x1
 
     :goto_0
-    if-gez v1, :cond_1
+    if-gez v0, :cond_1
 
     :cond_0
-    return v0
+    return v1
 
     :cond_1
-    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v2
 
@@ -297,9 +297,9 @@
 
     if-ne v2, v3, :cond_0
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 .end method
@@ -370,209 +370,226 @@
 .end method
 
 .method protected static isSubstringOfDigits(Ljava/lang/CharSequence;II)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     if-nez p0, :cond_1
 
     :cond_0
-    return v1
+    return v0
 
     :cond_1
     if-lez p2, :cond_0
 
-    add-int v0, p1, p2
+    add-int v1, p1, p2
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-ge v2, v0, :cond_3
+    if-ge v2, v1, :cond_3
 
     :cond_2
     :goto_0
-    return v1
+    return v0
 
     :cond_3
     sget-object v2, Lcom/google/zxing/client/result/ResultParser;->DIGITS:Ljava/util/regex/Pattern;
 
-    invoke-interface {p0, p1, v0}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    invoke-interface {p0, p1, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v2, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
 .method static matchPrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)[Ljava/lang/String;
-    .locals 8
+    .locals 9
 
-    const/4 v7, 0x0
+    const/4 v5, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v1, 0x0
-
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v6
+
+    move v3, v2
+
+    move-object v1, v5
+
+    :goto_0
+    if-lt v3, v6, :cond_2
 
     :cond_0
-    if-lt v1, v3, :cond_3
+    if-nez v1, :cond_9
 
     :cond_1
-    if-nez v2, :cond_9
+    return-object v5
 
     :cond_2
-    return-object v7
+    invoke-virtual {p1, p0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
-    :cond_3
-    invoke-virtual {p1, p0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+    move-result v0
 
-    move-result v1
-
-    if-ltz v1, :cond_1
+    if-ltz v0, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v6
+    move-result v3
 
-    add-int/2addr v1, v6
+    add-int v4, v0, v3
 
-    move v5, v1
+    const/4 v0, 0x1
 
-    const/4 v4, 0x1
+    move v3, v4
 
-    :goto_0
-    if-eqz v4, :cond_0
+    move v8, v0
 
-    invoke-virtual {p1, p2, v1}, Ljava/lang/String;->indexOf(II)I
+    move-object v0, v1
 
-    move-result v1
-
-    if-ltz v1, :cond_4
-
-    invoke-static {p1, v1}, Lcom/google/zxing/client/result/ResultParser;->countPrecedingBackslashes(Ljava/lang/CharSequence;I)I
-
-    move-result v6
-
-    rem-int/lit8 v6, v6, 0x2
-
-    if-nez v6, :cond_5
-
-    if-eqz v2, :cond_6
+    move v1, v8
 
     :goto_1
-    invoke-virtual {p1, v5, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    if-nez v1, :cond_3
 
-    move-result-object v6
+    move-object v1, v0
 
-    invoke-static {v6}, Lcom/google/zxing/client/result/ResultParser;->unescapeBackslash(Ljava/lang/String;)Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_3
+    invoke-virtual {p1, p2, v3}, Ljava/lang/String;->indexOf(II)I
+
+    move-result v3
+
+    if-ltz v3, :cond_4
+
+    invoke-static {p1, v3}, Lcom/google/zxing/client/result/ResultParser;->countPrecedingBackslashes(Ljava/lang/CharSequence;I)I
+
+    move-result v7
+
+    rem-int/lit8 v7, v7, 0x2
+
+    if-nez v7, :cond_5
+
+    if-eqz v0, :cond_6
+
+    :goto_2
+    invoke-virtual {p1, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/zxing/client/result/ResultParser;->unescapeBackslash(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
 
     if-nez p3, :cond_7
 
-    :goto_2
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_8
-
     :goto_3
-    add-int/lit8 v1, v1, 0x1
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
-    const/4 v4, 0x0
+    move-result v7
 
-    goto :goto_0
+    if-eqz v7, :cond_8
+
+    :goto_4
+    add-int/lit8 v1, v3, 0x1
+
+    move v3, v1
+
+    move v1, v2
+
+    goto :goto_1
 
     :cond_4
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    const/4 v4, 0x0
+    move v3, v1
 
-    goto :goto_0
-
-    :cond_5
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_6
-    new-instance v2, Ljava/util/ArrayList;
-
-    const/4 v6, 0x3
-
-    invoke-direct {v2, v6}, Ljava/util/ArrayList;-><init>(I)V
+    move v1, v2
 
     goto :goto_1
 
-    :cond_7
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+    :cond_5
+    add-int/lit8 v3, v3, 0x1
 
-    move-result-object v0
+    goto :goto_1
+
+    :cond_6
+    new-instance v0, Ljava/util/ArrayList;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
     goto :goto_2
 
-    :cond_8
-    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :cond_7
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
 
     goto :goto_3
 
+    :cond_8
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_4
+
     :cond_9
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_2
+    if-nez v0, :cond_1
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v6
+    move-result v0
 
-    new-array v6, v6, [Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/String;
 
-    invoke-interface {v2, v6}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, [Ljava/lang/String;
+    check-cast v0, [Ljava/lang/String;
 
-    return-object v6
+    return-object v0
 .end method
 
 .method static matchSinglePrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)Ljava/lang/String;
     .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, p3}, Lcom/google/zxing/client/result/ResultParser;->matchPrefixedField(Ljava/lang/String;Ljava/lang/String;CZ)[Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    aget-object v1, v0, v1
+    aget-object v0, v1, v0
 
     :cond_0
-    return-object v1
+    return-object v0
 .end method
 
 .method protected static maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
@@ -602,22 +619,22 @@
     return-void
 
     :cond_1
-    array-length v2, p0
+    array-length v1, p0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-ge v1, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
-    aget-object v0, p0, v1
+    aget-object v2, p0, v0
 
     const/16 v3, 0xa
 
     invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
@@ -696,7 +713,7 @@
 .end method
 
 .method static parseNameValuePairs(Ljava/lang/String;)Ljava/util/Map;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -710,13 +727,11 @@
         }
     .end annotation
 
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/16 v1, 0x3f
 
-    const/16 v4, 0x3f
-
-    invoke-virtual {p0, v4}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {p0, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v1
 
@@ -724,91 +739,93 @@
 
     new-instance v2, Ljava/util/HashMap;
 
-    const/4 v4, 0x3
+    const/4 v3, 0x3
 
-    invoke-direct {v2, v4}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v2, v3}, Ljava/util/HashMap;-><init>(I)V
 
-    sget-object v4, Lcom/google/zxing/client/result/ResultParser;->AMPERSAND:Ljava/util/regex/Pattern;
+    sget-object v3, Lcom/google/zxing/client/result/ResultParser;->AMPERSAND:Ljava/util/regex/Pattern;
 
-    add-int/lit8 v5, v1, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    invoke-virtual {p0, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v4, v5}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
+    invoke-virtual {v3, v1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    array-length v5, v4
+    array-length v3, v1
 
     :goto_0
-    if-lt v3, v5, :cond_1
+    if-lt v0, v3, :cond_1
 
     return-object v2
 
     :cond_0
-    return-object v5
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
-    aget-object v0, v4, v3
+    aget-object v4, v1, v0
 
-    invoke-static {v0, v2}, Lcom/google/zxing/client/result/ResultParser;->appendKeyValue(Ljava/lang/CharSequence;Ljava/util/Map;)V
+    invoke-static {v4, v2}, Lcom/google/zxing/client/result/ResultParser;->appendKeyValue(Ljava/lang/CharSequence;Ljava/util/Map;)V
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
 
 .method public static parseResult(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    sget-object v3, Lcom/google/zxing/client/result/ResultParser;->PARSERS:[Lcom/google/zxing/client/result/ResultParser;
+    sget-object v1, Lcom/google/zxing/client/result/ResultParser;->PARSERS:[Lcom/google/zxing/client/result/ResultParser;
 
-    array-length v4, v3
+    array-length v2, v1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-lt v2, v4, :cond_0
+    if-lt v0, v2, :cond_0
 
-    new-instance v2, Lcom/google/zxing/client/result/TextParsedResult;
+    new-instance v0, Lcom/google/zxing/client/result/TextParsedResult;
 
     invoke-virtual {p0}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
-    move-result-object v3
-
-    invoke-direct {v2, v3, v5}, Lcom/google/zxing/client/result/TextParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v2
-
-    :cond_0
-    aget-object v0, v3, v2
-
-    invoke-virtual {v0, p0}, Lcom/google/zxing/client/result/ResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
-
     move-result-object v1
 
-    if-nez v1, :cond_1
+    invoke-direct {v0, v1, v4}, Lcom/google/zxing/client/result/TextParsedResult;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    add-int/lit8 v2, v2, 0x1
+    return-object v0
+
+    :cond_0
+    aget-object v3, v1, v0
+
+    invoke-virtual {v3, p0}, Lcom/google/zxing/client/result/ResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/ParsedResult;
+
+    move-result-object v3
+
+    if-nez v3, :cond_1
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    return-object v1
+    return-object v3
 .end method
 
 .method protected static unescapeBackslash(Ljava/lang/String;)Ljava/lang/String;
-    .locals 9
+    .locals 7
 
-    const/16 v8, 0x5c
+    const/16 v6, 0x5c
 
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v8}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {p0, v6}, Ljava/lang/String;->indexOf(I)I
 
     move-result v0
 
@@ -818,30 +835,30 @@
 
     move-result v3
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    add-int/lit8 v6, v3, -0x1
+    add-int/lit8 v2, v3, -0x1
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v5, v6, v7, v0}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
-
-    const/4 v4, 0x0
+    invoke-virtual {v4, v2, v1, v0}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     move v2, v0
+
+    move v0, v1
 
     :goto_0
     if-lt v2, v3, :cond_1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    return-object v6
+    return-object v0
 
     :cond_0
     return-object p0
@@ -849,14 +866,14 @@
     :cond_1
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v0, :cond_3
 
     :cond_2
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    move v0, v1
 
     :goto_1
     add-int/lit8 v2, v2, 0x1
@@ -864,9 +881,9 @@
     goto :goto_0
 
     :cond_3
-    if-ne v1, v8, :cond_2
+    if-ne v5, v6, :cond_2
 
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 .end method
@@ -875,15 +892,15 @@
     .locals 2
 
     :try_start_0
-    const-string/jumbo v1, "UTF-8"
+    const-string/jumbo v0, "UTF-8"
 
-    invoke-static {p0, v1}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Ljava/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :catch_0
     move-exception v0

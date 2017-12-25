@@ -12,11 +12,11 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const-string/jumbo v0, "text/plain"
+    sget-object v0, Lorg/apache/http/Consts;->ASCII:Ljava/nio/charset/Charset;
 
-    sget-object v1, Lorg/apache/http/Consts;->ASCII:Ljava/nio/charset/Charset;
+    const-string/jumbo v1, "text/plain"
 
-    invoke-direct {p0, p1, v0, v1}, Lorg/apache/http/entity/mime/content/StringBody;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;)V
+    invoke-direct {p0, p1, v1, v0}, Lorg/apache/http/entity/mime/content/StringBody;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/nio/charset/Charset;)V
 
     return-void
 .end method

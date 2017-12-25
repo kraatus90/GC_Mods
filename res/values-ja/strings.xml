@@ -148,7 +148,7 @@
     <string name="cancel">キャンセル</string>
     <string name="capture_failure">撮影に失敗しました。もう一度試してください。</string>
     <string name="checkbox_do_not_show">今後表示しない</string>
-    <string name="cloudsight_terms">検索結果を提供するために、画像がCloudSightに送信されます。&lt;br/>&lt;br/>続行すると、CloudSightの&lt;a href=%1$s>プライバシー保護方針&lt;/a>に同意したことになります。</string>
+    <string name="cloudsight_terms">被写体認識を使用するたびに、画像と位置情報(有効な場合)がサードパーティに送信され、検索結果が提供されます。&lt;br/>&lt;br/>続行すると、&lt;a href=%1$s>プライバシー保護方針&lt;/a>に同意したことになります。</string>
     <string name="dailog_panorama_failed">パノラマに失敗しました。やり直してください。</string>
     <string name="dailog_panorama_not_taken">パノラマ写真が撮影されませんでした。</string>
     <string name="dialog_access_sd_fail">メディアをキャプチャできません。SDカードにアクセスできませんでした。</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">デバイスはサポートされていません</string>
     <string name="dialog_disagree">同意しない</string>
     <string name="dialog_dismiss">今後は表示しない</string>
+    <string name="dialog_download">ダウンロード</string>
     <string name="dialog_external_sd_missing">写真を撮れません。SDカードにアクセスできません。内部電話ストレージに切り替え</string>
     <string name="dialog_first_time_set_pure_raw_message">"この未処理のファイル形式はプロが写真を編集する際に使用します。
 
@@ -247,6 +248,7 @@
     <string name="help_next">次へ</string>
     <string name="image_360_desc">これは360写真です。この写真はMoto 360エディタで編集できます。</string>
     <string name="image_360_name">360写真</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">深度の有効化</string>
     <string name="indicate_mode_mono">トゥルーモノクロ</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">ウルトラワイドアングル</string>
     <string name="indicate_mode_video">ビデオ</string>
     <string name="indicate_mode_wide_angle">広角</string>
+    <string name="indicate_mode_wide_angle_selfie">広角セルフィー</string>
     <string name="internal_storage">内部ストレージ</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">ランドマーク認識は世界中の人気のランドマークについての情報を提供します。&lt;br/>&lt;br/>インストールしてこの機能を有効にします。</string>
-    <string name="landmark_install_over_data">ランドマーク認識のダウンロードサイズは92 MBです。モバイルデータ経由でインストールすると追加のデータ料金が発生する場合があります。</string>
-    <string name="landmark_notification_downloading">ランドマーク認識のダウンロード中</string>
-    <string name="landmark_notification_install">ランドマーク認識のインストール中</string>
-    <string name="landmark_notification_install_complete">ランドマーク認識のインストールが完了しました</string>
-    <string name="landmark_notification_install_failed">ランドマーク認識のインストールに失敗しました</string>
+    <string name="landmark_install_message">ランドマーク認識は世界中の人気のランドマークについての情報を提供します。&lt;br/>&lt;br/>ランドマークデータベースをダウンロードしてこの機能を有効にします。</string>
+    <string name="landmark_install_over_data">ランドマークデータベースのダウンロードサイズは92MBです。モバイルデータ経由でダウンロードすると追加のデータ料金が発生する場合があります。</string>
+    <string name="landmark_notification_downloading">ランドマークデータベースのダウンロード中</string>
+    <string name="landmark_notification_install">ランドマークデータベースのインストール中</string>
+    <string name="landmark_notification_install_complete">ランドマークデータベースのインストールが完了しました</string>
+    <string name="landmark_notification_install_failed">ランドマークデータベースのインストールが失敗しました</string>
     <string name="landmark_notification_install_invalid_url">ランドマークのデータベースは利用できません。最新のカメラバージョンにアップデートしてください。</string>
-    <string name="landmark_notification_install_out_of_space">ランドマーク認識をインストールするための空き容量が不足しています</string>
+    <string name="landmark_notification_install_out_of_space">ランドマークデータベースをインストールするための空き容量が不足しています</string>
+    <string name="landmark_notification_paused">インターネットが使用可能になるとランドマークデータベースのダウンロードを続行します</string>
+    <string name="landmark_notification_queued">インターネットが使用可能になるとランドマークデータベースのダウンロードを開始します</string>
     <string name="main_setting_amz_barcode">Amazonバーコードスキャナ</string>
     <string name="main_setting_amz_privacy">Amazonプライバシー通知</string>
     <string name="main_setting_amz_terms">使用条件</string>
@@ -277,7 +282,7 @@
     <string name="main_setting_category_help">ヘルプ</string>
     <string name="main_setting_category_photo">写真</string>
     <string name="main_setting_category_smart_camera">スマートカメラ</string>
-    <string name="main_setting_category_video">動画</string>
+    <string name="main_setting_category_video">ビデオ</string>
     <string name="main_setting_debug_ui">デバッグ</string>
     <string name="main_setting_digital_zoom">デジタルズームの使用</string>
     <string name="main_setting_end_paren_suffix">)</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">写真サイズ(背面)</string>
     <string name="main_setting_image_ratio_front">写真サイズ(前面)</string>
     <string name="main_setting_landmark_detection">ランドマーク認識</string>
+    <string name="main_setting_landmark_version_current">データベースのバージョン: %s</string>
+    <string name="main_setting_landmark_version_not_installed">データベースがインストールされていません</string>
     <string name="main_setting_licenses">オープンソースライセンス</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod™)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">必要な権限</string>
     <string name="photos_depth_desc">高品質エディタを使用して、フォーカスの選択、背景の置き換えまたは領域を選択してモノクロに変更します。</string>
     <string name="photos_depth_name">深度の有効化</string>
+    <string name="photos_notification_desc">Google Photosで無制限のストレージを入手する</string>
+    <string name="photos_notification_title">Google Photosにバックアップする</string>
+    <string name="qcfa_resolution_description">低光量撮影</string>
     <string name="retake">撮り直し</string>
     <string name="second_10">10秒</string>
     <string name="second_3">3秒</string>
@@ -356,7 +366,7 @@
     <string name="setting_hdr_dialog_title">HDR</string>
     <string name="setting_hdr_on">HDR ON</string>
     <string name="setting_iso_dialog_title">ISO</string>
-    <string name="setting_mode_arselfie">顔フィルタ</string>
+    <string name="setting_mode_arselfie">フェースフィルター</string>
     <string name="setting_mode_depth">深度の有効化</string>
     <string name="setting_mode_live_streaming">ライブストリーミングに移動</string>
     <string name="setting_mode_mono">トゥルーモノクロ</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">スローモーション</string>
     <string name="setting_mode_ultra_wide">ウルトラワイドアングル</string>
     <string name="setting_mode_video">動画</string>
+    <string name="setting_mode_wide_angle_selfie">広角セルフィー</string>
     <string name="setting_off">OFF</string>
     <string name="setting_on">ON</string>
     <string name="setting_persist">保留</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">タイマー</string>
     <string name="setting_torch">トーチ</string>
     <string name="setting_true">真</string>
+    <string name="shortcut_desc_depth">深度写真</string>
+    <string name="shortcut_desc_selfie">自撮り</string>
+    <string name="shortcut_desc_video">ビデオ</string>
     <string name="smartcam_landmark_notification_title">スマートカメラ</string>
+    <string name="smartcam_no_detections">保存されたオブジェクトやランドマークはありません</string>
     <string name="storage_location_external">SDカード</string>
     <string name="storage_location_internal">電話</string>
     <string name="storage_unavailable">ストレージは利用できません</string>
+    <string name="toast_battery_saver">現在、電力節約モードです。一部の機能が制限される場合があります。</string>
     <string name="toast_geotag_message_1">位置情報を保存するには、位置情報の使用を許可する必要があります。</string>
     <string name="toast_geotag_message_2">位置情報の設定は、システムの位置情報に関する設定がONにならないと有効になりません。</string>
     <string name="tooltip_camera_switch_360">異なるカメラオプションに切り替えてみます。</string>
     <string name="tooltip_capture_360">シャッターボタンをタップして360°写真やビデオの撮影をしてみます。</string>
     <string name="tooltip_capture_key_360">また、Mod™の背面にあるシャッターボタンで撮影してみます。</string>
-    <string name="tooltip_dual_camera_depth_photo">追加情報付きで写真を撮影して、特別な編集機能を有効にします。</string>
     <string name="tooltip_first_use_zoom_button">広角に切り替えるには、ここをタップします。</string>
     <string name="tooltip_gallery_360">左にスワイプして360°写真やビデオの操作方法をご確認ください。</string>
     <string name="tooltip_minimap_viewfinder">下の画像を右か左にパンします。</string>
     <string name="tooltip_mode_switch_360">異なるモードで360°の撮影をしてみる</string>
+    <string name="tooltip_modes_list">写真撮影の新しい方法を発見しましょう。</string>
     <string name="tooltip_smart_camera">タップして被写体の詳細を確認します。</string>
     <string name="tooltip_smart_camera_disable">[設定]でオフにできます。</string>
     <string name="tooltip_spherical_viewfinder">パンまたは拡大/縮小操作で表示を制御できます。</string>
@@ -419,5 +435,10 @@
     <string name="zoom_hint_full">フル</string>
     <string name="zoom_hint_wide">ワイド</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">低光量撮影</string>
+    <string name="indicate_mode_timelapse">低速度撮影</string>
+    <string name="setting_mode_timelapse">低速度撮影</string>
+    <string name="timelapse_config_16x">16倍</string>
+    <string name="timelapse_config_32x">32倍</string>
+    <string name="timelapse_config_4x">4倍</string>
+    <string name="timelapse_config_8x">8倍</string>
 </resources>

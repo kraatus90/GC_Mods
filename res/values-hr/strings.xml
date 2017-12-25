@@ -148,7 +148,7 @@
     <string name="cancel">Odustani</string>
     <string name="capture_failure">Snimanje nije uspjelo. Pokušajte ponovno.</string>
     <string name="checkbox_do_not_show">Nemoj ponovo prikazivati</string>
-    <string name="cloudsight_terms">Slike će se poslati na CloudSight radi pružanja rezultata pretraživanja. &lt;br/>&lt;br/> Ako nastavite, to znači da prihvaćate&lt;a href=%1$s>Pravila privatnosti&lt;/a> za CloudSight.</string>
+    <string name="cloudsight_terms">Svaki put kada upotrijebite prepoznavanje objekta, slika i lokacija (ako je omogućena) poslat će se trećoj strani radi pružanja rezultata pretraživanja.&lt;br/>&lt;br/> Ako nastavite, prihvaćate&lt;a href=%1$s>Pravila privatnosti&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama nije uspjela. Pokušajte ponovo.</string>
     <string name="dailog_panorama_not_taken">Panoramska snimka nije snimljena.</string>
     <string name="dialog_access_sd_fail">Snimanje multimedije nije moguće. Ne može se pristupiti SD kartici.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Uređaj nije podržan</string>
     <string name="dialog_disagree">Ne slažem se</string>
     <string name="dialog_dismiss">Nemoj opet prikazati</string>
+    <string name="dialog_download">Preuzmi</string>
     <string name="dialog_external_sd_missing">Fotografija se ne može snimiti. Pristup SD kartici nije moguć. U tijeku je prelazak na internu memoriju telefona</string>
     <string name="dialog_first_time_set_pure_raw_message">"Neobrađena vrsta datoteke koristi se za profesionalno uređivanje fotografija.
 
@@ -247,6 +248,7 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="help_next">Sljedeće</string>
     <string name="image_360_desc">Ovo je 360 fotografija. Fotografiju možete urediti pomoću uređivača Moto 360.</string>
     <string name="image_360_name">360 fotografija</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">OMOGUĆENA DUBINA</string>
     <string name="indicate_mode_mono">REALISTIČNA CRNO-BIJELA</string>
@@ -258,16 +260,19 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="indicate_mode_ultra_wide">IZUZETNO ŠIROK KUT</string>
     <string name="indicate_mode_video">VIDEOZAPIS</string>
     <string name="indicate_mode_wide_angle">ŠIROKOKUTNO</string>
+    <string name="indicate_mode_wide_angle_selfie">ŠIROKOKUTNI AUTOPORTRET</string>
     <string name="internal_storage">interna memorija</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Prepoznavanje znamenitosti pruža informacije o popularnim znamenitostima diljem svijeta.&lt;br/>&lt;br/>Instalirajte kako biste omogućili tu značajku.</string>
-    <string name="landmark_install_over_data">Veličina preuzimanja Prepoznavanja znamenitosti je 92 MB. Instaliranje putem mobilne podatkovne veze može rezultirati dodatnim troškovima.</string>
-    <string name="landmark_notification_downloading">Preuzimanje značajke Prepoznavanje znamenitosti</string>
-    <string name="landmark_notification_install">Instaliranje značajke Prepoznavanje znamenitosti</string>
-    <string name="landmark_notification_install_complete">Dovršeno je instaliranje značajke Prepoznavanje znamenitosti</string>
-    <string name="landmark_notification_install_failed">Instaliranje značajke Prepoznavanje znamenitosti nije uspjelo</string>
+    <string name="landmark_install_message">Prepoznavanje znamenitosti pruža informacije o popularnim znamenitostima diljem svijeta.&lt;br/>&lt;br/>Preuzmite Bazu podataka znamenitosti kako biste omogućili tu značajku.</string>
+    <string name="landmark_install_over_data">Veličina preuzimanja Baze podataka znamenitosti je 92 MB. Preuzimanje putem mobilne podatkovne veze može rezultirati dodatnim troškovima.</string>
+    <string name="landmark_notification_downloading">Preuzimanje Baze podataka znamenitosti</string>
+    <string name="landmark_notification_install">Instaliranje Baze podataka znamenitosti</string>
+    <string name="landmark_notification_install_complete">Dovršeno je instaliranje Baze podataka znamenitosti</string>
+    <string name="landmark_notification_install_failed">Instaliranje Baze podataka znamenitosti nije uspjelo</string>
     <string name="landmark_notification_install_invalid_url">Baza podataka za znamenitosti nije dostupna, ažurirajte na najnoviju verziju aplikacije Fotoaparat</string>
-    <string name="landmark_notification_install_out_of_space">Nema dovoljno prostora u memoriji za instaliranje značajke Prepoznavanje znamenitosti</string>
+    <string name="landmark_notification_install_out_of_space">Nema dovoljno prostora u memoriji za instaliranje Baze podataka znamenitosti</string>
+    <string name="landmark_notification_paused">Baza podataka znamenitosti nastavit će se preuzimati kada internet bude dostupan</string>
+    <string name="landmark_notification_queued">Baza podataka znamenitosti počet će se preuzimati kada internet bude dostupan</string>
     <string name="main_setting_amz_barcode">Amazon skener crtičnih kodova</string>
     <string name="main_setting_amz_privacy">Amazon obavijest o privatnosti</string>
     <string name="main_setting_amz_terms">Uvjeti upotrebe</string>
@@ -290,6 +295,8 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="main_setting_image_ratio">Veličina fotografije (stražnji)</string>
     <string name="main_setting_image_ratio_front">Veličina fotografije (sprijeda)</string>
     <string name="main_setting_landmark_detection">Prepoznavanje znamenitosti</string>
+    <string name="main_setting_landmark_version_current">Verzija baze podataka: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Baza podataka nije instalirana</string>
     <string name="main_setting_licenses">Licence otvorenog koda</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="perm_required_alert_title">Potrebna dopuštenja</string>
     <string name="photos_depth_desc">Koristite uređivač dubine kako biste odabrali fokus, zamijenili pozadinu ili odabrali područje za promjenu u crno-bijelo.</string>
     <string name="photos_depth_name">Omogućena dubina</string>
+    <string name="photos_notification_desc">Osigurajte neograničenu pohranu uz Google fotografije</string>
+    <string name="photos_notification_title">Sigurnosno kopiranje u Google fotografije</string>
+    <string name="qcfa_resolution_description">Prilagodba slabom osvjetljenju</string>
     <string name="retake">Ponovo snimi</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="setting_mode_slow_motion">Usporeno</string>
     <string name="setting_mode_ultra_wide">Izuzetno širok kut</string>
     <string name="setting_mode_video">Videozapis</string>
+    <string name="setting_mode_wide_angle_selfie">Širokokutni autoportret</string>
     <string name="setting_off">Isključeno</string>
     <string name="setting_on">Uključeno</string>
     <string name="setting_persist">Na čekanju</string>
@@ -383,20 +394,25 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="setting_timer_dialog_title">MJERAČ VREMENA</string>
     <string name="setting_torch">Svjetlo</string>
     <string name="setting_true">točno</string>
+    <string name="shortcut_desc_depth">Fotografija s dubinom</string>
+    <string name="shortcut_desc_selfie">Autoportret</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Smart Camera</string>
+    <string name="smartcam_no_detections">Nema spremljenih objekata ili znamenitosti</string>
     <string name="storage_location_external">SD kartica</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Memorija nije dostupna</string>
+    <string name="toast_battery_saver">Trenutačno ste u načinu rada za uštedu energije pa neke značajke mogu biti ograničene</string>
     <string name="toast_geotag_message_1">Kako biste omogućili lokaciju spremanja, morate dodijeliti dopuštenje za lokaciju.</string>
     <string name="toast_geotag_message_2">Postavke lokacije stupit će na snagu tek nakon uključivanja postavke za lokaciju sustava.</string>
     <string name="tooltip_camera_switch_360">Pokušajte koristiti druge opcije fotoaparata.</string>
     <string name="tooltip_capture_360">Pokušajte snimiti 360° fotografiju ili videozapis tako da dodirnete tipku zatvarača.</string>
-    <string name="tooltip_capture_key_360">Pokušajte snimiti i pomoću tipke zatvarača na stražnjoj strani Mod dodatka.</string>
-    <string name="tooltip_dual_camera_depth_photo">Fotografirajte s dodatnim informacijama za posebne značajke za uređivanje.</string>
+    <string name="tooltip_capture_key_360">Pokušajte snimiti i pomoću tipke zatvarača na stražnjoj strani dodatka Mod.</string>
     <string name="tooltip_first_use_zoom_button">Dodirnite ovdje za prelazak na širokokutno.</string>
     <string name="tooltip_gallery_360">Pogledajte rezultate snimanja 360° fotografije ili videozapisa pomicanjem ulijevo.</string>
     <string name="tooltip_minimap_viewfinder">Pomaknite donju sliku ulijevo ili udesno.</string>
     <string name="tooltip_mode_switch_360">Pokušajte snimiti 360° u drugim načinima rada!</string>
+    <string name="tooltip_modes_list">Otkrijte nove načine snimanja fotografija.</string>
     <string name="tooltip_smart_camera">Dodirnite kako biste saznali više o objektu.</string>
     <string name="tooltip_smart_camera_disable">Opciju možete isključiti u Postavkama.</string>
     <string name="tooltip_spherical_viewfinder">Pomičite i povećajte/smanjite zumiranjem kako biste kontrolirali prikaz.</string>
@@ -419,6 +435,10 @@ U nastavku označite slažete li se pa uključite opciju Lokacija u izborniku Po
     <string name="zoom_hint_full">PUNO</string>
     <string name="zoom_hint_wide">ŠIROKO</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Prilagodba slabom osvjetljenju</string>
+    <string name="indicate_mode_timelapse">PROTOK VREMENA</string>
+    <string name="setting_mode_timelapse">Protok vremena</string>
+    <string name="timelapse_config_16x">16x</string>
+    <string name="timelapse_config_32x">32x</string>
+    <string name="timelapse_config_4x">4x</string>
+    <string name="timelapse_config_8x">8x</string>
 </resources>

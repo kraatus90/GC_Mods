@@ -153,9 +153,7 @@
 .end method
 
 .method public zzAd()Lcom/google/android/gms/internal/zzoc$zza;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     sget-object v0, Lcom/google/android/gms/internal/zzob;->zzaOa:[Ljava/lang/String;
 
@@ -169,7 +167,9 @@
 
     iput-object v0, p0, Lcom/google/android/gms/internal/zzoc$zza;->zzaOf:[I
 
-    iput-object v1, p0, Lcom/google/android/gms/internal/zzoc$zza;->zzaNI:Lcom/google/android/gms/internal/zznu;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzoc$zza;->zzaNI:Lcom/google/android/gms/internal/zznu;
 
     const/4 v0, -0x1
 
@@ -600,13 +600,13 @@
 
     if-ge v1, v0, :cond_2
 
-    const/4 v0, 0x3
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzoc$zza;->zzaOf:[I
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzoc$zza;->zzaOf:[I
+    aget v0, v0, v1
 
-    aget v2, v2, v1
+    const/4 v2, 0x3
 
-    invoke-virtual {p1, v0, v2}, Lcom/google/android/gms/internal/zznr;->zzx(II)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/android/gms/internal/zznr;->zzx(II)V
 
     add-int/lit8 v1, v1, 0x1
 

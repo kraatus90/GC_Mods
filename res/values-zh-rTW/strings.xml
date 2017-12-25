@@ -148,7 +148,7 @@
     <string name="cancel">取消</string>
     <string name="capture_failure">拍攝失敗。請再試一次。</string>
     <string name="checkbox_do_not_show">不要再顯示</string>
-    <string name="cloudsight_terms">您的圖片會傳送給 CloudSight to 以提供搜尋結果。&lt;br/>&lt;br/> 若繼續進行，即表示您同意 CloudSight 的&lt;a href=%1$s>隱私權政策&lt;/a>。</string>
+    <string name="cloudsight_terms">每次您使用物體辨識時，圖片和位置 (若啟用) 便會傳送給協力廠商以提供搜尋結果。&lt;br/>&lt;br/> 若繼續進行，即表示您同意&lt;a href=%1$s>隱私權政策&lt;/a>。</string>
     <string name="dailog_panorama_failed">全景拍攝失敗。請重試。</string>
     <string name="dailog_panorama_not_taken">未拍下全景相片。</string>
     <string name="dialog_access_sd_fail">無法擷取媒體。無法存取 SD 卡。</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">不支援的裝置</string>
     <string name="dialog_disagree">不同意</string>
     <string name="dialog_dismiss">不要再顯示</string>
+    <string name="dialog_download">下載</string>
     <string name="dialog_external_sd_missing">無法擷取圖片。無法存取 SD 卡。正在切換至手機內部儲存空間</string>
     <string name="dialog_first_time_set_pure_raw_message">"這個未經處理的檔案類型是用來進行專業相片編輯的。
 
@@ -247,6 +248,7 @@
     <string name="help_next">下一步</string>
     <string name="image_360_desc">這是 360 相片。您可以使用 Moto 360 編輯器來編輯此相片。</string>
     <string name="image_360_name">360 相片</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">已啟用景深</string>
     <string name="indicate_mode_mono">鮮明黑白</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">超廣角</string>
     <string name="indicate_mode_video">影片</string>
     <string name="indicate_mode_wide_angle">廣角</string>
+    <string name="indicate_mode_wide_angle_selfie">廣角自拍</string>
     <string name="internal_storage">內部儲存空間</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">地標辨識功能可提供全球熱門地標的相關資訊。&lt;br/>&lt;br/>安裝以啟用此功能。</string>
-    <string name="landmark_install_over_data">地標辨識的下載大小為 92 MB。透過行動資料安裝可能會產生額外的資料費用。</string>
-    <string name="landmark_notification_downloading">正在下載地標辨識功能</string>
-    <string name="landmark_notification_install">正在安裝地標辨識功能</string>
-    <string name="landmark_notification_install_complete">地標辨識功能安裝完成</string>
-    <string name="landmark_notification_install_failed">地標辨識功能安裝失敗</string>
+    <string name="landmark_install_message">地標辨識功能可提供全球熱門地標的相關資訊。&lt;br/>&lt;br/>下載地標資料庫以啟用此功能。</string>
+    <string name="landmark_install_over_data">地標資料庫的下載大小為 92 MB。透過行動資料下載可能會產生額外的資料費用。</string>
+    <string name="landmark_notification_downloading">正在下載地標資料庫</string>
+    <string name="landmark_notification_install">正在安裝地標資料庫</string>
+    <string name="landmark_notification_install_complete">地標資料庫安裝完成</string>
+    <string name="landmark_notification_install_failed">地標資料庫安裝失敗</string>
     <string name="landmark_notification_install_invalid_url">地標資料庫無法使用，請更新為最新的相機版本</string>
-    <string name="landmark_notification_install_out_of_space">儲存空間不足，無法安裝地標辨識功能</string>
+    <string name="landmark_notification_install_out_of_space">儲存空間不足，無法安裝地標資料庫</string>
+    <string name="landmark_notification_paused">當可以使用網際網路時，將會繼續下載地標資料庫</string>
+    <string name="landmark_notification_queued">當可以使用網際網路時，將會開始下載地標資料庫</string>
     <string name="main_setting_amz_barcode">Amazon 條碼掃描器</string>
     <string name="main_setting_amz_privacy">Amazon 隱私權注意事項</string>
     <string name="main_setting_amz_terms">使用條件</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">相片大小 (背面)</string>
     <string name="main_setting_image_ratio_front">相片大小 (正面)</string>
     <string name="main_setting_landmark_detection">地標辨識</string>
+    <string name="main_setting_landmark_version_current">資料庫版本：%s</string>
+    <string name="main_setting_landmark_version_not_installed">未安裝資料庫</string>
     <string name="main_setting_licenses">開放原始碼授權</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">需要權限</string>
     <string name="photos_depth_desc">請使用優質編輯器來選擇焦點、取代背景，或選擇要變更為黑色及白色的區域。</string>
     <string name="photos_depth_name">已啟用優質編輯器</string>
+    <string name="photos_notification_desc">取得 Google 相簿的無限容量儲存空間</string>
+    <string name="photos_notification_title">備份到 Google 相簿</string>
+    <string name="qcfa_resolution_description">低光環境自動調整</string>
     <string name="retake">重拍</string>
     <string name="second_10">10 秒</string>
     <string name="second_3">3 秒</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">慢動作</string>
     <string name="setting_mode_ultra_wide">超廣角</string>
     <string name="setting_mode_video">影片</string>
+    <string name="setting_mode_wide_angle_selfie">廣角自拍</string>
     <string name="setting_off">關閉</string>
     <string name="setting_on">開啟</string>
     <string name="setting_persist">保留</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">計時器</string>
     <string name="setting_torch">照明</string>
     <string name="setting_true">true</string>
+    <string name="shortcut_desc_depth">景深相片</string>
+    <string name="shortcut_desc_selfie">自拍</string>
+    <string name="shortcut_desc_video">影片</string>
     <string name="smartcam_landmark_notification_title">智慧型相機</string>
+    <string name="smartcam_no_detections">沒有儲存任何物體或地標</string>
     <string name="storage_location_external">SD 卡</string>
     <string name="storage_location_internal">手機</string>
     <string name="storage_unavailable">儲存裝置無法使用</string>
+    <string name="toast_battery_saver">您目前處於省電模式，部分功能可能會受限</string>
     <string name="toast_geotag_message_1">您必須授予位置權限才能啟用儲存位置。</string>
     <string name="toast_geotag_message_2">[位置] 設定只會在系統位置設定開啟後生效。</string>
     <string name="tooltip_camera_switch_360">試著切換至不同的相機選項。</string>
     <string name="tooltip_capture_360">輕按快門按鈕試著拍攝 360° 相片或影片。</string>
-    <string name="tooltip_capture_key_360">也試試看使用 mod 背面的快門按鈕拍攝。</string>
-    <string name="tooltip_dual_camera_depth_photo">拍攝包含額外資訊的相片，讓您能夠進行特殊編輯。</string>
+    <string name="tooltip_capture_key_360">也試試看使用 Mod 背面的快門按鈕拍攝。</string>
     <string name="tooltip_first_use_zoom_button">輕按這裡即可切換為廣角。</string>
     <string name="tooltip_gallery_360">向左滑動，看看 360° 相片或影片如何變化。</string>
     <string name="tooltip_minimap_viewfinder">將底部的圖片向左或向右平移。</string>
     <string name="tooltip_mode_switch_360">試試看用不同模式拍攝 360° 影像！</string>
+    <string name="tooltip_modes_list">探索拍攝相片的全新方式。</string>
     <string name="tooltip_smart_camera">輕按以查看物體的相關資訊。</string>
     <string name="tooltip_smart_camera_disable">您可以在 [設定] 中關閉此功能。</string>
     <string name="tooltip_spherical_viewfinder">平移或放大、縮小以控制檢視。</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">全螢幕</string>
     <string name="zoom_hint_wide">寬螢幕</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">縮時攝影</string>
+    <string name="setting_mode_timelapse">縮時攝影</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

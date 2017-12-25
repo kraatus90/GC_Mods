@@ -23,9 +23,7 @@
 
 # direct methods
 .method private constructor <init>(Lcom/google/android/gms/playlog/internal/PlayLoggerContext;Lcom/google/android/gms/playlog/internal/LogEvent;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,7 +43,9 @@
 
     iput-object v0, p0, Lcom/google/android/gms/playlog/internal/zzb$zza;->zzayx:Lcom/google/android/gms/playlog/internal/LogEvent;
 
-    iput-object v1, p0, Lcom/google/android/gms/playlog/internal/zzb$zza;->zzayy:Lcom/google/android/gms/internal/zzoc$zzd;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/playlog/internal/zzb$zza;->zzayy:Lcom/google/android/gms/internal/zzoc$zzd;
 
     return-void
 .end method

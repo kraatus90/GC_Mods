@@ -60,205 +60,205 @@
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "TERMINATOR"
+    new-array v1, v8, [I
 
-    new-array v2, v8, [I
+    aput v5, v1, v5
 
-    aput v5, v2, v5
+    aput v5, v1, v6
 
-    aput v5, v2, v6
+    aput v5, v1, v7
 
-    aput v5, v2, v7
+    const-string/jumbo v2, "TERMINATOR"
 
-    invoke-direct {v0, v1, v5, v2, v5}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v5, v1, v5}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->TERMINATOR:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "NUMERIC"
+    new-array v1, v8, [I
 
-    new-array v2, v8, [I
+    const/16 v2, 0xa
 
-    const/16 v3, 0xa
+    aput v2, v1, v5
 
-    aput v3, v2, v5
+    const/16 v2, 0xc
 
-    const/16 v3, 0xc
+    aput v2, v1, v6
 
-    aput v3, v2, v6
+    const/16 v2, 0xe
 
-    const/16 v3, 0xe
+    aput v2, v1, v7
 
-    aput v3, v2, v7
+    const-string/jumbo v2, "NUMERIC"
 
-    invoke-direct {v0, v1, v6, v2, v6}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v6, v1, v6}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->NUMERIC:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "ALPHANUMERIC"
+    new-array v1, v8, [I
 
-    new-array v2, v8, [I
+    const/16 v2, 0x9
 
-    const/16 v3, 0x9
+    aput v2, v1, v5
 
-    aput v3, v2, v5
+    const/16 v2, 0xb
 
-    const/16 v3, 0xb
+    aput v2, v1, v6
 
-    aput v3, v2, v6
+    const/16 v2, 0xd
 
-    const/16 v3, 0xd
+    aput v2, v1, v7
 
-    aput v3, v2, v7
+    const-string/jumbo v2, "ALPHANUMERIC"
 
-    invoke-direct {v0, v1, v7, v2, v7}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v7, v1, v7}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->ALPHANUMERIC:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "STRUCTURED_APPEND"
+    new-array v1, v8, [I
 
-    new-array v2, v8, [I
+    aput v5, v1, v5
 
-    aput v5, v2, v5
+    aput v5, v1, v6
 
-    aput v5, v2, v6
+    aput v5, v1, v7
 
-    aput v5, v2, v7
+    const-string/jumbo v2, "STRUCTURED_APPEND"
 
-    invoke-direct {v0, v1, v8, v2, v8}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v8, v1, v8}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->STRUCTURED_APPEND:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "BYTE"
+    new-array v1, v8, [I
 
-    const/4 v2, 0x4
+    aput v9, v1, v5
 
-    new-array v3, v8, [I
+    const/16 v2, 0x10
 
-    aput v9, v3, v5
+    aput v2, v1, v6
 
-    const/16 v4, 0x10
+    const/16 v2, 0x10
 
-    aput v4, v3, v6
+    aput v2, v1, v7
 
-    const/16 v4, 0x10
+    const-string/jumbo v2, "BYTE"
 
-    aput v4, v3, v7
+    const/4 v3, 0x4
 
     const/4 v4, 0x4
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->BYTE:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "ECI"
+    new-array v1, v8, [I
 
-    const/4 v2, 0x5
+    aput v5, v1, v5
 
-    new-array v3, v8, [I
+    aput v5, v1, v6
 
-    aput v5, v3, v5
+    aput v5, v1, v7
 
-    aput v5, v3, v6
+    const-string/jumbo v2, "ECI"
 
-    aput v5, v3, v7
+    const/4 v3, 0x5
 
     const/4 v4, 0x7
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->ECI:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "KANJI"
+    new-array v1, v8, [I
 
-    const/4 v2, 0x6
+    aput v9, v1, v5
 
-    new-array v3, v8, [I
+    const/16 v2, 0xa
 
-    aput v9, v3, v5
+    aput v2, v1, v6
 
-    const/16 v4, 0xa
+    const/16 v2, 0xc
 
-    aput v4, v3, v6
+    aput v2, v1, v7
 
-    const/16 v4, 0xc
+    const-string/jumbo v2, "KANJI"
 
-    aput v4, v3, v7
+    const/4 v3, 0x6
 
-    invoke-direct {v0, v1, v2, v3, v9}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v3, v1, v9}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->KANJI:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "FNC1_FIRST_POSITION"
+    new-array v1, v8, [I
 
-    const/4 v2, 0x7
+    aput v5, v1, v5
 
-    new-array v3, v8, [I
+    aput v5, v1, v6
 
-    aput v5, v3, v5
+    aput v5, v1, v7
 
-    aput v5, v3, v6
+    const-string/jumbo v2, "FNC1_FIRST_POSITION"
 
-    aput v5, v3, v7
+    const/4 v3, 0x7
 
     const/4 v4, 0x5
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_FIRST_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "FNC1_SECOND_POSITION"
+    new-array v1, v8, [I
 
-    new-array v2, v8, [I
+    aput v5, v1, v5
 
-    aput v5, v2, v5
+    aput v5, v1, v6
 
-    aput v5, v2, v6
+    aput v5, v1, v7
 
-    aput v5, v2, v7
+    const-string/jumbo v2, "FNC1_SECOND_POSITION"
 
     const/16 v3, 0x9
 
-    invoke-direct {v0, v1, v9, v2, v3}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v9, v1, v3}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_SECOND_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
 
     new-instance v0, Lcom/google/zxing/qrcode/decoder/Mode;
 
-    const-string/jumbo v1, "HANZI"
+    new-array v1, v8, [I
 
-    const/16 v2, 0x9
+    aput v9, v1, v5
 
-    new-array v3, v8, [I
+    const/16 v2, 0xa
 
-    aput v9, v3, v5
+    aput v2, v1, v6
 
-    const/16 v4, 0xa
+    const/16 v2, 0xc
 
-    aput v4, v3, v6
+    aput v2, v1, v7
 
-    const/16 v4, 0xc
+    const-string/jumbo v2, "HANZI"
 
-    aput v4, v3, v7
+    const/16 v3, 0x9
 
     const/16 v4, 0xd
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
+    invoke-direct {v0, v2, v3, v1, v4}, Lcom/google/zxing/qrcode/decoder/Mode;-><init>(Ljava/lang/String;I[II)V
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->HANZI:Lcom/google/zxing/qrcode/decoder/Mode;
 
@@ -282,39 +282,39 @@
 
     aput-object v1, v0, v8
 
-    const/4 v1, 0x4
+    sget-object v1, Lcom/google/zxing/qrcode/decoder/Mode;->BYTE:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    sget-object v2, Lcom/google/zxing/qrcode/decoder/Mode;->BYTE:Lcom/google/zxing/qrcode/decoder/Mode;
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/google/zxing/qrcode/decoder/Mode;->ECI:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    sget-object v2, Lcom/google/zxing/qrcode/decoder/Mode;->ECI:Lcom/google/zxing/qrcode/decoder/Mode;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/google/zxing/qrcode/decoder/Mode;->KANJI:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    sget-object v2, Lcom/google/zxing/qrcode/decoder/Mode;->KANJI:Lcom/google/zxing/qrcode/decoder/Mode;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_FIRST_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    sget-object v2, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_FIRST_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sget-object v1, Lcom/google/zxing/qrcode/decoder/Mode;->FNC1_SECOND_POSITION:Lcom/google/zxing/qrcode/decoder/Mode;
 
     aput-object v1, v0, v9
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/google/zxing/qrcode/decoder/Mode;->HANZI:Lcom/google/zxing/qrcode/decoder/Mode;
 
-    sget-object v2, Lcom/google/zxing/qrcode/decoder/Mode;->HANZI:Lcom/google/zxing/qrcode/decoder/Mode;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->$VALUES:[Lcom/google/zxing/qrcode/decoder/Mode;
 
@@ -460,36 +460,36 @@
 .end method
 
 .method public getCharacterCountBits(Lcom/google/zxing/qrcode/decoder/Version;)I
-    .locals 3
+    .locals 2
 
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionNumber()I
 
     move-result v0
 
-    const/16 v2, 0x9
+    const/16 v1, 0x9
 
-    if-le v0, v2, :cond_0
+    if-le v0, v1, :cond_0
 
-    const/16 v2, 0x1a
+    const/16 v1, 0x1a
 
-    if-le v0, v2, :cond_1
+    if-le v0, v1, :cond_1
 
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
     :goto_0
-    iget-object v2, p0, Lcom/google/zxing/qrcode/decoder/Mode;->characterCountBitsForVersions:[I
+    iget-object v1, p0, Lcom/google/zxing/qrcode/decoder/Mode;->characterCountBitsForVersions:[I
 
-    aget v2, v2, v1
+    aget v0, v1, v0
 
-    return v2
+    return v0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

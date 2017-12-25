@@ -39,66 +39,66 @@
 
 # virtual methods
 .method protected onMeasure(II)V
-    .locals 11
+    .locals 6
 
-    const/4 v10, 0x0
+    const/4 v5, 0x0
 
-    const/4 v9, 0x0
+    const/4 v4, 0x0
 
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
     invoke-virtual {p0}, Landroid/support/v7/widget/DialogTitle;->getLayout()Landroid/text/Layout;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     :goto_0
     return-void
 
     :cond_1
-    invoke-virtual {v2}, Landroid/text/Layout;->getLineCount()I
-
-    move-result v3
-
-    if-lez v3, :cond_0
-
-    add-int/lit8 v5, v3, -0x1
-
-    invoke-virtual {v2, v5}, Landroid/text/Layout;->getEllipsisCount(I)I
+    invoke-virtual {v0}, Landroid/text/Layout;->getLineCount()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    invoke-virtual {p0, v9}, Landroid/support/v7/widget/DialogTitle;->setSingleLine(Z)V
+    add-int/lit8 v1, v1, -0x1
 
-    const/4 v5, 0x2
+    invoke-virtual {v0, v1}, Landroid/text/Layout;->getEllipsisCount(I)I
 
-    invoke-virtual {p0, v5}, Landroid/support/v7/widget/DialogTitle;->setMaxLines(I)V
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    invoke-virtual {p0, v4}, Landroid/support/v7/widget/DialogTitle;->setSingleLine(Z)V
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/DialogTitle;->setMaxLines(I)V
 
     invoke-virtual {p0}, Landroid/support/v7/widget/DialogTitle;->getContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v0
 
-    sget-object v6, Landroid/support/v7/appcompat/R$styleable;->TextAppearance:[I
+    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->TextAppearance:[I
 
-    const v7, 0x1010041
+    const v2, 0x1010041
 
-    const v8, 0x1030044
+    const v3, 0x1030044
 
-    invoke-virtual {v5, v10, v6, v7, v8}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v5, v1, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    sget v5, Landroid/support/v7/appcompat/R$styleable;->TextAppearance_android_textSize:I
+    sget v1, Landroid/support/v7/appcompat/R$styleable;->TextAppearance_android_textSize:I
 
-    invoke-virtual {v0, v5, v9}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_2
+    if-nez v1, :cond_2
 
     :goto_1
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -108,9 +108,9 @@
     goto :goto_0
 
     :cond_2
-    int-to-float v5, v4
+    int-to-float v1, v1
 
-    invoke-virtual {p0, v9, v5}, Landroid/support/v7/widget/DialogTitle;->setTextSize(IF)V
+    invoke-virtual {p0, v4, v1}, Landroid/support/v7/widget/DialogTitle;->setTextSize(IF)V
 
     goto :goto_1
 .end method

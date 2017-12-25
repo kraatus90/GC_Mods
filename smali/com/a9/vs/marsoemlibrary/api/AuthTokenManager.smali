@@ -32,7 +32,7 @@
 .end method
 
 .method private generateAuthTokenAndHeader(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -64,25 +64,25 @@
 
     move-result-object v0
 
-    const-string/jumbo v2, "%s|%s|%s"
+    const/4 v2, 0x3
 
-    const/4 v3, 0x3
+    new-array v2, v2, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    aput-object p2, v2, v3
 
-    aput-object p2, v3, v4
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    aput-object v0, v2, v3
 
-    aput-object v0, v3, v4
+    const/4 v3, 0x2
 
-    const/4 v4, 0x2
+    aput-object v1, v2, v3
 
-    aput-object v1, v3, v4
+    const-string/jumbo v1, "%s|%s|%s"
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 

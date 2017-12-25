@@ -103,7 +103,7 @@
 
     invoke-direct {v1}, Lcom/motorola/camera/panorama/PanoCameraInfo;-><init>()V
 
-    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isRearCamera()Z
+    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isProcessingRearCamera()Z
 
     move-result v0
 

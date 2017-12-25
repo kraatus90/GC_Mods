@@ -14,6 +14,8 @@
         Lcom/motorola/camera/ui/widgets/gl/SettingsList$3;,
         Lcom/motorola/camera/ui/widgets/gl/SettingsList$4;,
         Lcom/motorola/camera/ui/widgets/gl/SettingsList$5;,
+        Lcom/motorola/camera/ui/widgets/gl/SettingsList$6;,
+        Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;,
         Lcom/motorola/camera/ui/widgets/gl/SettingsList$ListDragBehavior;,
         Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
     }
@@ -74,6 +76,17 @@
 
 .field private mIsPortrait:Z
 
+.field private mLandmarkChangeListener:Lcom/motorola/camera/settings/SettingChangeListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/settings/SettingChangeListener",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private volatile mLoadNewTextures:Z
 
 .field private mMainListener:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$OnItemClickListener;
@@ -98,6 +111,8 @@
 .end field
 
 .field private mPopupListener:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$OnItemClickListener;
+
+.field mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
 
 .field private mSelectedElement:Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
@@ -269,7 +284,7 @@
 .method static synthetic -wrap6(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->show()V
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->setMainListSettings()V
 
     return-void
 .end method
@@ -277,12 +292,20 @@
 .method static synthetic -wrap7(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->updatePopupListTranslation()V
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->show()V
 
     return-void
 .end method
 
 .method static synthetic -wrap8(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->updatePopupListTranslation()V
+
+    return-void
+.end method
+
+.method static synthetic -wrap9(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->updateSettings()V
@@ -305,7 +328,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0070
+    const v1, 0x7f0c0079
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -417,6 +440,18 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingChangeListener:Lcom/motorola/camera/settings/SettingChangeListener;
 
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$6;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mLandmarkChangeListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mTextureManager:Lcom/motorola/camera/ui/widgets/gl/iTextureManager;
@@ -521,9 +556,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$166;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$6;
 
-    invoke-direct {v2, v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$166;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$6;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -601,9 +636,9 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$12;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$12;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
@@ -717,9 +752,9 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$9;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$11;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$9;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$11;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
@@ -770,9 +805,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$146;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$5;
 
-    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$146;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$5;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -815,9 +850,9 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$8;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$8;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
@@ -882,9 +917,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$9;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$9;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     const-wide/16 v2, 0x1f4
 
@@ -1122,17 +1157,19 @@
 .end method
 
 .method private initializeButtonList()V
-    .locals 11
+    .locals 13
 
-    const/4 v10, 0x0
+    const v9, 0x7f08012a
+
+    const/4 v11, 0x0
 
     const/4 v5, 0x1
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
-    move-result-object v7
+    move-result-object v12
 
-    invoke-static {v7, v5}, Lcom/motorola/camera/QuickLaunch;->supports(Landroid/content/Context;I)Z
+    invoke-static {v12, v5}, Lcom/motorola/camera/QuickLaunch;->supports(Landroid/content/Context;I)Z
 
     move-result v3
 
@@ -1144,13 +1181,13 @@
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v6, 0x7f08010c
+    const v6, 0x7f080112
 
-    invoke-virtual {v7, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-direct {v2, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListCategoryElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Z)V
+    invoke-direct {v2, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListCategoryElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1162,15 +1199,15 @@
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v6, 0x7f080129
+    const v6, 0x7f080131
 
-    invoke-virtual {v7, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    sget-object v8, Lcom/motorola/camera/settings/SettingsManager;->SHUTTER_TONE:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v7, Lcom/motorola/camera/settings/SettingsManager;->SHUTTER_TONE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    invoke-direct {v2, v4, v6, v8, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
+    invoke-direct {v2, v4, v6, v7, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1182,37 +1219,37 @@
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v6, 0x7f08012a
+    const v6, 0x7f080132
 
-    invoke-virtual {v7, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v6}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    sget-object v8, Lcom/motorola/camera/settings/SettingsManager;->STORAGE:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v7, Lcom/motorola/camera/settings/SettingsManager;->STORAGE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    invoke-direct {v2, v4, v6, v8, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
+    invoke-direct {v2, v4, v6, v7, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
-    sget-object v8, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->QUICK_CAPTURE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+    sget-object v7, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->QUICK_CAPTURE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v2, 0x7f080123
+    const v2, 0x7f08012b
 
-    invoke-virtual {v7, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     if-eqz v3, :cond_0
 
-    const v3, 0x7f080125
+    const v3, 0x7f08012d
 
-    invoke-virtual {v7, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1221,7 +1258,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
 
-    invoke-virtual {v6, v8, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
@@ -1231,15 +1268,15 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080118
+    const v4, 0x7f08011e
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     sget-object v6, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    invoke-direct {v2, v3, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
+    invoke-direct {v2, v3, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1251,9 +1288,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f08010e
+    const v4, 0x7f080114
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1269,9 +1306,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f08011a
+    const v4, 0x7f080120
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1289,9 +1326,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080117
+    const v4, 0x7f08011d
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1301,23 +1338,23 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v8, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
+    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
-    sget-object v9, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CAPTURE_TAP_ANYWHERE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+    sget-object v8, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CAPTURE_TAP_ANYWHERE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v2, 0x7f080130
+    const v2, 0x7f080138
 
-    invoke-virtual {v7, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f080131
+    const v3, 0x7f080139
 
-    invoke-virtual {v7, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -1327,7 +1364,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;ZZ)V
 
-    invoke-virtual {v8, v9, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, v8, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
@@ -1337,9 +1374,7 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080122
-
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v9}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1357,9 +1392,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080112
+    const v4, 0x7f080118
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1377,9 +1412,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f08010a
+    const v4, 0x7f080110
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1391,15 +1426,33 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-virtual {v12, v9}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    sget-object v6, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-direct {v2, v3, v4, v6, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
+
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->VIDEO_CAT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
     new-instance v2, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListCategoryElement;
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080110
+    const v4, 0x7f080116
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1415,15 +1468,15 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080132
+    const v4, 0x7f08013a
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     sget-object v6, Lcom/motorola/camera/settings/SettingsManager;->VIDEO_SIZE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    invoke-direct {v2, v3, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
+    invoke-direct {v2, v3, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1435,15 +1488,15 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080126
+    const v4, 0x7f08012e
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     sget-object v6, Lcom/motorola/camera/settings/SettingsManager;->VIDEO_SLOW_MO_SIZE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    invoke-direct {v2, v3, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
+    invoke-direct {v2, v3, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListPopupElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1455,9 +1508,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f08010f
+    const v4, 0x7f080115
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1467,25 +1520,25 @@
 
     iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
-    sget-object v8, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->AMAZON_BARCODE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+    sget-object v7, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->AMAZON_BARCODE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v2, 0x7f080107
+    const v2, 0x7f08010d
 
-    invoke-virtual {v7, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     sget-object v3, Lcom/motorola/camera/settings/SettingsManager;->AMAZON_SEARCH_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    move v4, v10
+    move v4, v11
 
     invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;ZZ)V
 
-    invoke-virtual {v6, v8, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
@@ -1495,15 +1548,15 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080109
+    const v4, 0x7f08010f
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     const-string/jumbo v6, "https://www.amazon.com/gp/help/customer/display.html?nodeId=508088"
 
-    invoke-direct {v2, v3, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {v2, v3, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1515,39 +1568,39 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080108
+    const v4, 0x7f08010e
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     const-string/jumbo v6, "https://www.amazon.com/gp/help/customer/display.html?nodeId=468496"
 
-    invoke-direct {v2, v3, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {v2, v3, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
-    sget-object v8, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CLOUDSIGHT_OBJECT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+    sget-object v7, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CLOUDSIGHT_OBJECT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v2, 0x7f080120
+    const v2, 0x7f080128
 
-    invoke-virtual {v7, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     sget-object v3, Lcom/motorola/camera/settings/SettingsManager;->CLOUDSIGHT_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    move v4, v10
+    move v4, v11
 
     invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;ZZ)V
 
-    invoke-virtual {v6, v8, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v6, v7, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
@@ -1557,39 +1610,61 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080121
+    const v4, 0x7f080129
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     const-string/jumbo v6, "https://cloudsight.ai/client_privacy_policy?client=motorola"
 
-    invoke-direct {v2, v3, v4, v6, v10}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-direct {v2, v3, v4, v6, v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Ljava/lang/String;Z)V
 
     invoke-virtual {v0, v1, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
+
+    sget-object v7, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    const v2, 0x7f080122
+
+    invoke-virtual {v12, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    move v4, v11
+
+    invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;ZZ)V
+
+    invoke-virtual {v6, v7, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
-    sget-object v8, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK_VERSION:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;
+    new-instance v6, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListSubtitleHiddenActionElement;
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v3, 0x7f08011c
+    invoke-static {v12}, Lcom/motorola/camera/landmarkdownload/LandmarkModelHelper;->getLandmarkModelStatus(Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-virtual {v7, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    move-result-object v8
 
-    move-result-object v3
+    new-instance v9, Lcom/motorola/camera/ui/widgets/gl/textures/settings/callbacks/LandmarkModelUpdateAction;
 
-    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
+    invoke-direct {v9}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/callbacks/LandmarkModelUpdateAction;-><init>()V
 
-    move v6, v5
+    const/4 v10, 0x5
 
-    invoke-direct/range {v1 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/settings/SettingsManager$Key;ZZ)V
+    invoke-direct/range {v6 .. v11}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListSubtitleHiddenActionElement;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Ljava/lang/String;Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListSubtitleHiddenActionElement$ActionCallback;IZ)V
 
-    invoke-virtual {v0, v8, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v6}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
@@ -1599,9 +1674,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f08010d
+    const v4, 0x7f080113
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1617,9 +1692,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080119
+    const v4, 0x7f08011f
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1637,9 +1712,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f080111
+    const v4, 0x7f080117
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1657,9 +1732,9 @@
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    const v4, 0x7f08011d
+    const v4, 0x7f080125
 
-    invoke-virtual {v7, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v4}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -1672,9 +1747,9 @@
     return-void
 
     :cond_0
-    const v3, 0x7f080124
+    const v3, 0x7f08012c
 
-    invoke-virtual {v7, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
+    invoke-virtual {v12, v3}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -2157,9 +2232,9 @@
 .method private setMainListSettings()V
     .locals 10
 
-    const/4 v9, 0x2
-
     const/4 v2, 0x0
+
+    const/4 v9, 0x2
 
     const/4 v8, 0x1
 
@@ -2251,7 +2326,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_15
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->MOD_TITLE:Ljava/util/List;
 
@@ -2329,7 +2404,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    const v1, 0x7f08011a
+    const v1, 0x7f080120
 
     invoke-virtual {v3, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2347,7 +2422,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    const v1, 0x7f080132
+    const v1, 0x7f08013a
 
     invoke-virtual {v3, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2365,7 +2440,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    const v1, 0x7f080126
+    const v1, 0x7f08012e
 
     invoke-virtual {v3, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2388,7 +2463,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_17
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->HELP_360:Lcom/motorola/camera/fsm/camera/Trigger$Event;
 
@@ -2592,6 +2667,27 @@
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
 
     :cond_d
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0, v9}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->isAllowedSupportedValuesSizeAtLeast(Lcom/motorola/camera/settings/SettingsManager$Key;I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
+
+    sget-object v3, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    invoke-virtual {v1, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
+
+    :cond_e
     invoke-static {}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/AmazonSearch;->isSupported()Z
 
     move-result v0
@@ -2604,7 +2700,7 @@
 
     move-result v3
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2642,8 +2738,8 @@
 
     invoke-virtual {v4, v5}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
 
-    :cond_e
-    if-nez v3, :cond_f
+    :cond_f
+    if-nez v3, :cond_10
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2669,8 +2765,8 @@
 
     invoke-virtual {v4, v5}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
 
-    :cond_f
-    if-nez v1, :cond_10
+    :cond_10
+    if-nez v1, :cond_11
 
     iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2684,16 +2780,28 @@
 
     invoke-virtual {v4, v5}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
 
-    :cond_10
-    if-nez v0, :cond_11
+    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
+
+    iget-object v5, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
+
+    sget-object v6, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK_VERSION:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    invoke-virtual {v5, v6}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
+
+    :cond_11
+    if-nez v0, :cond_12
 
     xor-int/lit8 v0, v1, 0x1
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     xor-int/lit8 v0, v3, 0x1
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2707,7 +2815,7 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->remove(Ljava/lang/Object;)Z
 
-    :cond_11
+    :cond_12
     move v1, v2
 
     :goto_5
@@ -2717,7 +2825,7 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_19
+    if-ge v1, v0, :cond_1a
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2727,7 +2835,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_13
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2737,9 +2845,9 @@
 
     instance-of v3, v3, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListCategoryElement;
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_14
 
-    :cond_12
+    :cond_13
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
     invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->size()I
@@ -2748,9 +2856,9 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    if-ne v1, v3, :cond_17
+    if-ne v1, v3, :cond_18
 
-    :cond_13
+    :cond_14
     invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;->showSeparator(Z)V
 
     :goto_6
@@ -2760,7 +2868,7 @@
 
     goto :goto_5
 
-    :cond_14
+    :cond_15
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->MOD_TITLE:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2772,7 +2880,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2794,7 +2902,7 @@
 
     goto :goto_7
 
-    :cond_15
+    :cond_16
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingListMap:Ljava/util/LinkedHashMap;
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->PHOTO_SIZE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
@@ -2805,7 +2913,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    const v1, 0x7f08011b
+    const v1, 0x7f080121
 
     invoke-virtual {v3, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2823,7 +2931,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    const v1, 0x7f080133
+    const v1, 0x7f08013b
 
     invoke-virtual {v3, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2841,7 +2949,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;
 
-    const v1, 0x7f080127
+    const v1, 0x7f08012f
 
     invoke-virtual {v3, v1}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2851,12 +2959,12 @@
 
     goto/16 :goto_3
 
-    :cond_16
+    :cond_17
     sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->HELP:Lcom/motorola/camera/fsm/camera/Trigger$Event;
 
     goto/16 :goto_4
 
-    :cond_17
+    :cond_18
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
     invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->size()I
@@ -2865,7 +2973,7 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    if-ge v1, v3, :cond_18
+    if-ge v1, v3, :cond_19
 
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -2877,9 +2985,9 @@
 
     instance-of v3, v3, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListCategoryElement;
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_14
 
-    :cond_18
+    :cond_19
     iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
     add-int/lit8 v4, v1, 0x1
@@ -2888,15 +2996,15 @@
 
     move-result-object v3
 
-    instance-of v3, v3, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListUrlElement;
+    instance-of v3, v3, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListSubtitleElement;
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_14
 
     invoke-virtual {v0, v8}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListElement;->showSeparator(Z)V
 
     goto/16 :goto_6
 
-    :cond_19
+    :cond_1a
     return-void
 .end method
 
@@ -2966,27 +3074,27 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;-><init>()V
 
-    const v1, 0x7f0800b1
+    const v1, 0x7f0800b2
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v1, 0x7f0800ae
+    const v1, 0x7f0800af
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$55;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$55;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800b8
+    const v2, 0x7f0800b9
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$56;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$56;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$1;-><init>(Ljava/lang/Object;)V
 
-    const v2, 0x7f0800be
+    const v2, 0x7f0800bf
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setNegativeButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
@@ -3488,9 +3596,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$113;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$4;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$113;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$4;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -3639,7 +3747,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_lambda$1(I)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_14955(I)V
     .locals 3
 
     const/4 v0, 0x0
@@ -3673,8 +3781,8 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_lambda$2()V
-    .locals 3
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_40094()V
+    .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingsListAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 
@@ -3706,20 +3814,10 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setDirty()V
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
-
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->SETTINGS_DRAW_FINISHED:Lcom/motorola/camera/fsm/camera/Trigger$Event;
-
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
-
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_lambda$4(Lcom/motorola/camera/fsm/camera/Trigger;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_65315(Lcom/motorola/camera/fsm/camera/Trigger;)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -3729,7 +3827,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_lambda$5(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_66780(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
     .locals 5
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
@@ -3765,7 +3863,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_lambda$6(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList_67381(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
     .locals 3
 
     invoke-static {}, Lcom/motorola/camera/Notifier;->getInstance()Lcom/motorola/camera/Notifier;
@@ -3774,7 +3872,7 @@
 
     sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v2, 0x7f08017f
+    const v2, 0x7f080195
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3962,7 +4060,19 @@
 
     invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mLandmarkChangeListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
     invoke-static {p0}, Lcom/motorola/camera/saving/location/Storage;->addStorageChangeListener(Lcom/motorola/camera/saving/location/OnStorageChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->registerChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->updateSettings()V
 
@@ -5175,9 +5285,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$6;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$8;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$6;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$8;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     const-wide/16 v2, 0x1f4
 
@@ -5235,9 +5345,21 @@
     return-void
 
     :cond_0
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mPrintModListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->STORAGE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mSettingChangeListener:Lcom/motorola/camera/settings/SettingChangeListener;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_ENABLED:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mLandmarkChangeListener:Lcom/motorola/camera/settings/SettingChangeListener;
 
     invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->unregisterChangeListener(Lcom/motorola/camera/settings/SettingsManager$Key;Lcom/motorola/camera/settings/SettingChangeListener;)V
 

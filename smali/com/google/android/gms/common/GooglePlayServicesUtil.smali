@@ -42,9 +42,9 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/google/android/gms/common/GooglePlayServicesUtil;->zzOV:Z
 
@@ -375,9 +375,7 @@
 .end method
 
 .method public static getRemoteContext(Landroid/content/Context;)Landroid/content/Context;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     :try_start_0
     const-string/jumbo v0, "com.google.android.gms"
@@ -395,13 +393,13 @@
     :catch_0
     move-exception v0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static getRemoteResource(Landroid/content/Context;)Landroid/content/res/Resources;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -421,7 +419,9 @@
     :catch_0
     move-exception v0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static isGooglePlayServicesAvailable(Landroid/content/Context;)I
@@ -534,13 +534,13 @@
     goto :goto_0
 
     :cond_4
-    const-string/jumbo v0, "com.google.android.gms"
-
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "com.google.android.gms"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -673,27 +673,27 @@
     return v7
 
     :cond_9
-    const-string/jumbo v1, "GooglePlayServicesUtil"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "Google Play services out of date.  Requires 7327000 but found "
 
-    const-string/jumbo v3, "Google Play services out of date.  Requires 7327000 but found "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    move-result-object v1
 
     iget v0, v0, Landroid/content/pm/PackageInfo;->versionCode:I
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "GooglePlayServicesUtil"
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -919,7 +919,7 @@
 .end method
 
 .method public static zzM(Landroid/content/Context;)V
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/gms/common/GooglePlayServicesRepairableException;,
@@ -943,27 +943,27 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "GooglePlayServicesUtil"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "GooglePlayServices not available due to error "
 
-    const-string/jumbo v4, "GooglePlayServices not available due to error "
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v3
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    const-string/jumbo v3, "GooglePlayServicesUtil"
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     if-eqz v1, :cond_1
 
@@ -1421,11 +1421,11 @@
 
     move-result-object v2
 
-    const v3, 0x1010309
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const v4, 0x1010309
 
-    invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    invoke-virtual {v2, v4, v1, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
     invoke-virtual {p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
@@ -1540,11 +1540,11 @@
 
     new-instance v0, Landroid/app/Notification;
 
-    const v5, 0x108008a
-
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
+
+    const v5, 0x108008a
 
     invoke-direct {v0, v5, v4, v6, v7}, Landroid/app/Notification;-><init>(ILjava/lang/CharSequence;J)V
 
@@ -1776,9 +1776,9 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v0, 0x0
-
     sparse-switch p0, :sswitch_data_0
+
+    const/4 v0, 0x0
 
     return-object v0
 
@@ -1826,7 +1826,7 @@
 .end method
 
 .method public static zzb(Landroid/content/pm/PackageManager;)Z
-    .locals 9
+    .locals 8
 
     const/4 v1, 0x1
 
@@ -1873,15 +1873,15 @@
 
     new-array v5, v5, [Lcom/google/android/gms/common/zzb$zza;
 
-    const/4 v6, 0x0
+    sget-object v6, Lcom/google/android/gms/common/zzb;->zzON:[Lcom/google/android/gms/common/zzb$zza;
 
-    sget-object v7, Lcom/google/android/gms/common/zzb;->zzON:[Lcom/google/android/gms/common/zzb$zza;
+    const/4 v7, 0x1
 
-    const/4 v8, 0x1
+    aget-object v6, v6, v7
 
-    aget-object v7, v7, v8
+    const/4 v7, 0x0
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v7
 
     invoke-virtual {v4, v3, v5}, Lcom/google/android/gms/common/zzc;->zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzb$zza;)Lcom/google/android/gms/common/zzb$zza;
 
@@ -2157,11 +2157,11 @@
 
     if-nez v0, :cond_0
 
-    const-string/jumbo v0, "user"
+    sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->TYPE:Ljava/lang/String;
+    const-string/jumbo v1, "user"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 

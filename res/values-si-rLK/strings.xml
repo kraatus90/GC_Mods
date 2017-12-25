@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">ගෙදරට සංචාලනය කරන්න</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">ඉහලට සංචාලනය කරන්න</string>
-    <string name="abc_action_menu_overflow_description">තවත් විකල්ප</string>
-    <string name="abc_action_mode_done">අවසාන වූ</string>
-    <string name="abc_activity_chooser_view_see_all">සියල්ල බලන්න</string>
-    <string name="abc_activitychooserview_choose_application">යෙදුමක් තෝරන්න</string>
-    <string name="abc_capital_off">ක්‍රියාවිරහිතයි</string>
-    <string name="abc_capital_on">ක්‍රියාත්මකයි</string>
-    <string name="abc_search_hint">සොයන්න...</string>
-    <string name="abc_searchview_description_clear">විමසුම හිස් කරන්න</string>
-    <string name="abc_searchview_description_query">සෙවුම් විමසුම</string>
-    <string name="abc_searchview_description_search">සෙවීම</string>
-    <string name="abc_searchview_description_submit">විමසුම යොමු කරන්න</string>
-    <string name="abc_searchview_description_voice">හඬ සෙවීම</string>
-    <string name="abc_shareactionprovider_share_with">සමඟ බෙදාගන්න</string>
-    <string name="abc_shareactionprovider_share_with_application">%s සමඟ බෙදාගන්න</string>
-    <string name="abc_toolbar_collapse_description">හකුළන්න</string>
     <string name="common_android_wear_notification_needs_update_text">Android Wear යෙදුම යාවත්කාලීන කිරීමට යෙදුමක් අවශ්‍යය.</string>
     <string name="common_android_wear_update_text">Android Wear යෙදුම ඔබ යාවත්කාලීන කළේ නැති නම් මෙම යෙදුම ධාවනය කළ නොහැක.</string>
     <string name="common_android_wear_update_title">Android Wear යාවත්කාලීන කරන්න</string>
@@ -50,11 +31,9 @@
     <string name="common_signin_button_text">පිවිසෙන්න</string>
     <string name="common_signin_button_text_long">Google සමගින් පුරනය වන්න</string>
     <string name="commono_google_play_services_api_unavailable_text">මෙම යෙදුම සඳහා දැනට නොපවතින Google Play සේවා එකක් හෝ කිහිපයක් අවශ්‍යයි. කරුණාකර සහාය සඳහා සංවර්ධක සබඳ කරගන්න.</string>
-    <string name="search_menu_title">සොයන්න</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="act_name_camcorder">කැම්කෝඩරය</string>
     <string name="act_name_camera">කැමරාව</string>
-    <string name="action_licenses">විවෘත මූලාශ්ර බලපත්ර</string>
+    <string name="action_licenses">විවෘත මූලාශ්‍ර බලපත්‍ර</string>
     <string name="amazon_terms">ඔබේ රූප ගැළපෙන නිෂ්පාදන සොයා ගැනීමට Amazon වෙත යවනු ලැබේ. Amazon විසින් එහි සේවා සැපයීම හා වැඩි දියුණු කර ගැනීම සඳහා මෙම රූප සකස් කරයි. &lt;br/>&lt;br/>ඉදිරියට යාමෙන් ඔබ Amazon හි &lt;a href=%1$s>පරිහරණ කොන්දේසි&lt;/a> සහ &lt;a href=%2$s>රහස්යතා නිවේදනය&lt;/a> වෙත එකඟ වේ.</string>
     <string name="android_flashlight_app">Android සැණෙළිය</string>
     <string name="app_name">කැමරාව</string>
@@ -148,7 +127,7 @@
     <string name="cancel">අවලංගු කරන්න</string>
     <string name="capture_failure">ග්‍රහණය අසමත් විය. නැවත උත්සාහ කරන්න.</string>
     <string name="checkbox_do_not_show">නැවත පෙන්වන්න එපා</string>
-    <string name="cloudsight_terms">සෙවුම් ප්රතිඵල සැපයීම සඳහා ඔබේ රූප CloudSight වෙත යැවෙනු ඇත. &lt;br/>&lt;br/> ඉදිරියට යාමෙන් ඔබ CloudSight හි&lt;a href=%1$s>රහස්යතා ප්රතිපත්තියට&lt;/a> එකඟ වේ.</string>
+    <string name="cloudsight_terms">ඔබ වස්තුව හැඳුනුම භාවිතා කරන එක් එක් වතාවේ, රූපය හා ස්ථානය (සබල නම්) සෙවුම් ප්රතිඵල සැපයීම සඳහා තෙවන පාර්ශ්වයක් වෙත යවනු ලැබේ.&lt;br/>&lt;br/> ඉදිරියට යාමෙන්, ඔබ &lt;a href=%1$s>රහස්යතා ප්රතිපත්තියට&lt;/a> එකඟ වේ.</string>
     <string name="dailog_panorama_failed">පරිදර්ශනය අසමත් විය. යළි උත්සාහ කරන්න.</string>
     <string name="dailog_panorama_not_taken">පරිදර්ශන පින්තූරය ගෙන නැත.</string>
     <string name="dialog_access_sd_fail">මාධ්‍ය ග්‍රහණය කර ගැනීමට හැකි වූයේ නැත. SD කාඩ්පතට ප්‍රවේශ විය නොහැක.</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">උපාංගය සහාය නොදක්වයි</string>
     <string name="dialog_disagree">එකඟ නොවේ</string>
     <string name="dialog_dismiss">නැවත නොපෙන්වන්න</string>
+    <string name="dialog_download">බාගන්න</string>
     <string name="dialog_external_sd_missing">පින්තූරයක් ග්‍රහණය කර ගැනීමට නොහැක. SD කාඩ්පතට ප්‍රවේශ විය නොහැක. අභ්‍යන්තර දුරකථන ගබඩාවට මාරු වෙමින්</string>
     <string name="dialog_first_time_set_pure_raw_message">"මෙම සැකසුම් නොකළ ගොනු වර්ගය ඡායාරූප වෘත්තීමයව සංස්කරණය කිරීමට භාවිතා කරයි.
 
@@ -222,7 +202,7 @@
     <string name="help_desc_dual_result">ඔබ ඔබේ වස්තුවෙන් මීටර් 1.5ක් (අඩි 5ක්) තුළ සිටින බවට වග බලා ගන්න. මාර්ගයේ කිසිවක් නැති සහ වස්තුව හොඳින් පෙනේ නම් හොඳයි.</string>
     <string name="help_desc_quick">විවෘත කිරීමට හෝ ඉදිරිපස සහ පිටුපස කැමරා අතර මාරු වීම සඳහා දෙවරක් කරකවන්න.</string>
     <string name="help_desc_quick_double_tap_pwr">කැමරාව විවෘත කිරීමට බල බොත්තම දෙවරක් තට්ටු කරන්න.</string>
-    <string name="help_desc_smart_camera">ඔබේ කැමරාව වස්තු සහ බිම් සලකුණු හඳුනා ගනී. එයට QR කේත, ව්යාපාරික කාඩ්පත් සහ තීරු කේතත් ස්කෑන් කළ හැකිය.</string>
+    <string name="help_desc_smart_camera">ඔබේ කැමරාව වස්තු සහ බිම් සලකුණු හඳුනා ගනී. එයට QR කේත, ව්‍යාපාරික කාඩ්පත් සහ තීරු කේතත් ස්කෑන් කළ හැකිය.</string>
     <string name="help_desc_smart_camera_landmark_only">ඔබේ කැමරාව බිම් සලකුණු හඳුනා ගනී. එයට QR කේත, ව්යාපාරික කාඩ්පත් සහ තීරු කේතත් ස්කෑන් කළ හැකිය.</string>
     <string name="help_desc_zoom">විශාලනය සඳහා උඩට සහ පහළට අදින්න.</string>
     <string name="help_done">නිමයි</string>
@@ -247,6 +227,7 @@
     <string name="help_next">ඊළඟ</string>
     <string name="image_360_desc">මෙය 360 ඡායාරූපයකි. ඔබට Moto 360 සංස්කාරක සමඟ මෙම ඡායාරූපය සංස්කරණය කළ හැක.</string>
     <string name="image_360_name">360 ඡායාරූපය</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ගැඹුර සබලයි</string>
     <string name="indicate_mode_mono">සැබෑ ක&amp;සු</string>
@@ -258,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">අති-පුළුල් කෝණය</string>
     <string name="indicate_mode_video">වීඩියෝව</string>
     <string name="indicate_mode_wide_angle">පුළුල් කෝණ</string>
+    <string name="indicate_mode_wide_angle_selfie">පුළුල් කෝණ සෙල්ෆි</string>
     <string name="internal_storage">අභ්‍යන්තර ගබඩාව</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">බිම් සලකුණු හැඳුනුම විසින් ලොව පුරා ජනප්රිය සන්ධිස්ථාන පිළිබඳ තොරතුරු පිරිනමයි.&lt;br/>&lt;br/>මෙම විශේෂාංගය සබල කිරීමට ස්ථාපනය කරන්න.</string>
-    <string name="landmark_install_over_data">බිම් සලකුණු හැඳුනුම් බාගැනීමේ ප්රමාණය 92 MB වේ. ජංගම දත්ත හරහා එය ස්ථාපනය කිරීම මගින් අතිරේක දත්ත ගාස්තු අය විය හැක.</string>
-    <string name="landmark_notification_downloading">බිම් සලකුණු හැඳුනුම බාගනිමින්</string>
-    <string name="landmark_notification_install">බිම් සලකුණු හැඳුනුම ස්ථාපනය කරමින්</string>
-    <string name="landmark_notification_install_complete">බිම් සලකුණු හැඳුනුම ස්ථාපනය සම්පූර්ණයි</string>
-    <string name="landmark_notification_install_failed">බිම් සලකුණු හැඳුනුම ස්ථාපනය අසමත් විය</string>
+    <string name="landmark_install_message">බිම් සලකුණු හැඳුනුම විසින් ලොව පුරා ජනප්‍රිය බිම් සලකුණු පිළිබඳ තොරතුරු පිරිනමයි.&lt;br/>&lt;br/>මෙම විශේෂාංගය සබල කිරීමට බිම් සලකුණු දත්ත සමුදාය ස්ථාපනය කරන්න.</string>
+    <string name="landmark_install_over_data">බිම් සලකුණු දත්ත සමුදාය බාගැනීමේ ප්රමාණය 92 MB වේ. ජංගම දත්ත හරහා එය ස්ථාපනය කිරීම මගින් අතිරේක දත්ත ගාස්තු අය විය හැක.</string>
+    <string name="landmark_notification_downloading">බිම් සලකුණු දත්ත සමුදාය බාගනිමින්</string>
+    <string name="landmark_notification_install">බිම් සලකුණු දත්ත සමුදාය ස්ථාපනය කරමින්</string>
+    <string name="landmark_notification_install_complete">බිම් සලකුණු දත්ත සමුදාය ස්ථාපනය සම්පූර්ණයි</string>
+    <string name="landmark_notification_install_failed">බිම් සලකුණු දත්ත සමුදාය ස්ථාපනය අසමත් විය</string>
     <string name="landmark_notification_install_invalid_url">බිම් සලකුණු දත්ත සමුදාය නොමැත, නවතම කැමරා අනුවාදයට යාවත්කාලීන කරන්න</string>
-    <string name="landmark_notification_install_out_of_space">බිම් සලකුණු හැඳුනුම ස්ථාපනයට ප්රමාණවත් ඉඩක් නොමැත</string>
+    <string name="landmark_notification_install_out_of_space">බිම් සලකුණු දත්ත සමුදාය ස්ථාපනයට ප්රමාණවත් ඉඩක් නොමැත</string>
+    <string name="landmark_notification_paused">අන්තර්ජාලය ඇති විටදී බිම් සලකුණු දත්ත සමුදාය දිගටම බාගනු ඇත</string>
+    <string name="landmark_notification_queued">අන්තර්ජාලය ඇති විටදී බිම් සලකුණු දත්ත සමුදාය බාගැනීම ඇරඹෙනු ඇත</string>
     <string name="main_setting_amz_barcode">Amazon තීරු කේත ස්කෑනරය</string>
     <string name="main_setting_amz_privacy">Amazon රහස්‍යතා නිවේදනය</string>
     <string name="main_setting_amz_terms">පරිහරණ කොන්දේසි</string>
@@ -290,7 +274,9 @@
     <string name="main_setting_image_ratio">ඡායාරූපයේ තරම (පසුපස)</string>
     <string name="main_setting_image_ratio_front">ඡායාරූපයේ තරම (ඉදිරිපස)</string>
     <string name="main_setting_landmark_detection">බිම් සලකුණු හැඳුනුම</string>
-    <string name="main_setting_licenses">විවෘත මූලාශ්ර බලපත්ර</string>
+    <string name="main_setting_landmark_version_current">දත්ත සමුදා අනුවාදය: %s</string>
+    <string name="main_setting_landmark_version_not_installed">දත්ත සමුදාය ස්ථාපනය කර නැත</string>
+    <string name="main_setting_licenses">විවෘත මූලාශ්‍ර බලපත්‍ර</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (ප්‍රකාරය)"</string>
     <string name="main_setting_object_detect">වස්තු හැඳුනුම</string>
@@ -298,7 +284,7 @@
     <string name="main_setting_post_capture_review">පසු ග්‍රහණ සමාලෝචනය</string>
     <string name="main_setting_quick_launch">යුහු ග්‍රහණය</string>
     <string name="main_setting_quick_launch_double_tap_pwr_summary">කැමරාව විවෘත කිරීමට බල බොත්තම දෙවරක් තට්ටු කරන්න</string>
-    <string name="main_setting_quick_launch_summary">ඉදිරිපස සහ පිටුපස කැමරා අතර විවෘත හෝ මාරු වීම සඳහා දෙවරක් කරකැවෙන්න</string>
+    <string name="main_setting_quick_launch_summary">ඉදිරිපස සහ පිටුපස කැමරා විවෘත කිරීමට හෝ ඒවා අතර මාරු වීම සඳහා දෙවරක් කරකවන්න</string>
     <string name="main_setting_slow_motion_size">මන්දගාමී චලන තරම (පසුපස)</string>
     <string name="main_setting_slow_motion_size_front">මන්දගාමී චලන තරම (ඉදිරිපස)</string>
     <string name="main_setting_smart_camera_about">ස්මාර්ට් කැමරාව ගැන</string>
@@ -325,6 +311,9 @@
     <string name="perm_required_alert_title">අවසර අවශ්‍යයි</string>
     <string name="photos_depth_desc">නාභිගත වීම තේරීමට, පසුබිම ආදේශ කිරීමට හෝ කළු සහ සුදු වෙත වෙනස් කිරීමට ප්රදේශයක් තේරීමට ගැඹුරු සංස්කාරක භාවිතා කරන්න.</string>
     <string name="photos_depth_name">ගැඹුර සබලයි</string>
+    <string name="photos_notification_desc">Google ඡායාරූප සමඟ අසීමිත ගබඩාවක් ලබා ගන්න</string>
+    <string name="photos_notification_title">Google ඡායාරූප වෙත උපස්ථ කරන්න</string>
+    <string name="qcfa_resolution_description">අඩු අාලෝක කැමරාව</string>
     <string name="retake">යළි ගන්න</string>
     <string name="second_10">ත10</string>
     <string name="second_3">ත3</string>
@@ -367,6 +356,7 @@
     <string name="setting_mode_slow_motion">මන්දගාමී චලනය</string>
     <string name="setting_mode_ultra_wide">අති-පුළුල් කෝණය</string>
     <string name="setting_mode_video">වීඩියෝ</string>
+    <string name="setting_mode_wide_angle_selfie">පුළුල් කෝණ සෙල්ෆි</string>
     <string name="setting_off">ක්‍රියාවිරහිතයි</string>
     <string name="setting_on">ක්‍රියාත්මකයි</string>
     <string name="setting_persist">රඳවා සිටින්න</string>
@@ -383,20 +373,25 @@
     <string name="setting_timer_dialog_title">කාල ගණකය</string>
     <string name="setting_torch">පන්දම</string>
     <string name="setting_true">සත්‍ය</string>
+    <string name="shortcut_desc_depth">ගැඹු. ඡාය.</string>
+    <string name="shortcut_desc_selfie">සෙල්ෆි</string>
+    <string name="shortcut_desc_video">වීඩියෝව</string>
     <string name="smartcam_landmark_notification_title">ස්මාර්ට් කැමරාව</string>
+    <string name="smartcam_no_detections">සුරැකි වස්තු හෝ බිම් සලකුණු නැත</string>
     <string name="storage_location_external">SD කාඩ්පත</string>
     <string name="storage_location_internal">දුරකථනය</string>
     <string name="storage_unavailable">ගබඩාව නොතිබේ</string>
+    <string name="toast_battery_saver">ඔබ දැනට බල සුරැකුම් ප්‍රකාරයේ සිටින අතර, සමහර විශේෂාංග සීමා විය හැක</string>
     <string name="toast_geotag_message_1">ඔබ පිහිටීම සුරැකීම සබල කිරීමට පිහිටීම් අවසරය ලබා දිය යුතුය.</string>
     <string name="toast_geotag_message_2">පිහිටීමේ සැකසුම පද්ධතියේ පිහිටීමේ සැකසුම ක්‍රියාත්මක කිරීමෙන් පසු පමණක් බලාත්මක වේ.</string>
     <string name="tooltip_camera_switch_360">විවිධ කැමරා විකල්පවලට මාරු වීමට උත්සාහ කරන්න.</string>
     <string name="tooltip_capture_360">මෙම ෂටර් බොත්තම මත තට්ටු කිරීමෙන් 360° ඡායාරූප හෝ වීඩියෝ ග්‍රහණයට උත්සාහ කරන්න.</string>
     <string name="tooltip_capture_key_360">mod පිටුපස පැත්තේ ඇති ෂටර් බොත්තම සමඟත් ග්‍රහණයට උත්සාහ කරන්න.</string>
-    <string name="tooltip_dual_camera_depth_photo">විශේෂ සංස්කරණ විශේෂාංග සබල කිරීමට අමතර තතු සමඟ ඡායාරූප ග්‍රහණය කරන්න.</string>
     <string name="tooltip_first_use_zoom_button">පුළුල් කෝණයට මාරු කිරීමට මෙතැන තට්ටු කරන්න.</string>
     <string name="tooltip_gallery_360">ඔබේ 360° ඡායාරූපය හෝ වීඩියෝව වමට ස්වයිප් කිරීමෙන් හැරුණු ආකාරය බලන්න.</string>
     <string name="tooltip_minimap_viewfinder">පහළ රූපය වමට හෝ දකුණට අතුල්ලන්න.</string>
     <string name="tooltip_mode_switch_360">වෙනස් ප්‍රකාරවලින් 360° ග්‍රහණයට උත්සාහ කරන්න!</string>
+    <string name="tooltip_modes_list">ඔබේ ඡායාරූප ග්‍රහණයට නව ක්‍රම සොයා ගන්න.</string>
     <string name="tooltip_smart_camera">වස්තුව ගැන වැඩිදුර දැන ගැනීමට තට්ටු කරන්න.</string>
     <string name="tooltip_smart_camera_disable">ඔබට සැකසුම්වල මෙය ක්රියා විරහිත කළ හැකිය.</string>
     <string name="tooltip_spherical_viewfinder">දසුන පාලනය කිරීමට අතුල්ලන්න හෝ විශාලනය වැඩි සහ අඩු කරන්න.</string>
@@ -419,5 +414,10 @@
     <string name="zoom_hint_full">පූර්ණ</string>
     <string name="zoom_hint_wide">පුළුල්</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">අඩු අාලෝක කැමරාව</string>
+    <string name="indicate_mode_timelapse">කාලය ගෙවීම</string>
+    <string name="setting_mode_timelapse">කාලය ගෙවීම</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

@@ -9,7 +9,7 @@
     <string name="abc_activity_chooser_view_see_all">Afișați-le pe toate</string>
     <string name="abc_activitychooserview_choose_application">Alegeți o aplicație</string>
     <string name="abc_capital_off">DEZACTIVAȚI</string>
-    <string name="abc_capital_on">ACTIVAȚI</string>
+    <string name="abc_capital_on">ACTIVAT</string>
     <string name="abc_search_hint">Căutați…</string>
     <string name="abc_searchview_description_clear">Ștergeți interogarea</string>
     <string name="abc_searchview_description_query">Interogare de căutare</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Anulare</string>
     <string name="capture_failure">Captură eşuată. Încercaţi din nou.</string>
     <string name="checkbox_do_not_show">Nu afişa din nou</string>
-    <string name="cloudsight_terms">Mesajul dvs. va fi trimis la CloudSight pentru a furniza rezultate de căutare. &lt;br/>&lt;br/> Continuând, sunteţi de acord cu &lt;a href=%1$s>Politica de confidenţialitate&lt;/a> CloudSight.</string>
+    <string name="cloudsight_terms">De fiecare dată când utilizaţi funcţia de recunoaştere a obiectului, imaginea şi locaţia (dacă sunt activate) vor fi trimise unei terţe părţi pentru furnizarea de rezultate ale căutării.&lt;br/>&lt;br/> Continuând, sunteţi de acord cu&lt;a href=%1$s>Politica de confidenţialitate&lt;/a>.</string>
     <string name="dailog_panorama_failed">Eroare la crearea panoramei. Încercați din nou.</string>
     <string name="dailog_panorama_not_taken">Fotografia tip panoramă nu a fost realizată.</string>
     <string name="dialog_access_sd_fail">Nu se poate captura niciun fişier media. Cardul SD nu a putut fi accesat.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Dispozitivul nu este acceptat</string>
     <string name="dialog_disagree">Nu accept</string>
     <string name="dialog_dismiss">Nu se mai afișează</string>
+    <string name="dialog_download">Descărcare</string>
     <string name="dialog_external_sd_missing">Nu se poate fotografia. Cardul SD nu este accesibil. Se comută la memoria internă a telefonului</string>
     <string name="dialog_first_time_set_pure_raw_message">"Acest tip de fişier neprocesat e utilizat pentru a edita profesional fotografiile.
 
@@ -219,7 +220,7 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="help_desc_anywhere">Atingeți oriunde pentru a realiza o fotografie sau apăsaţi prelung pentru mai multe fotografii.</string>
     <string name="help_desc_dual_depth">Capturaţi date suplimentare care permit să schimbaţi un fundal, adăugaţi o pată de culoare sau să schimbaţi focalizarea după un instantaneu.</string>
     <string name="help_desc_dual_mono">Imagini mai bogate, cu aspect mai profesional, cu o cameră construită special pentru alb şi negru.</string>
-    <string name="help_desc_dual_result">Asiguraţi-vă că vă aflaţi la maxim 1,5 m faţă de subiect. Cel mai bine ar fi să nu existe niciun obiect pe acest traseu şi subiectul să iasă în evidenţă.</string>
+    <string name="help_desc_dual_result">Asigurați-vă că vă aflați la maximum 1,5 m față de subiect. Cel mai bine ar fi să nu existe niciun obiect pe acest traseu și subiectul să iasă în evidență.</string>
     <string name="help_desc_quick">Rotiţi de două ori pentru a deschide sau comuta între camera frontală şi cea din spate.</string>
     <string name="help_desc_quick_double_tap_pwr">Atingerea dublă pe butonul pornire deschide camera.</string>
     <string name="help_desc_smart_camera">Camera dvs. recunoaşte obiecte şi repere. De asemenea, poate scana coduri QR, cărţi de vizită şi coduri de bare.</string>
@@ -247,6 +248,7 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="help_next">Înainte</string>
     <string name="image_360_desc">Aceasta este o fotografie 360. O puteţi edita cu Editorul Moto 360.</string>
     <string name="image_360_name">Fotografie 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ADÂNCIME ACTIVATĂ</string>
     <string name="indicate_mode_mono">ALB-NEGRU ADEVĂRAT</string>
@@ -258,16 +260,19 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="indicate_mode_ultra_wide">UNGHI ULTRA-LARG</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">OBIECTIV SUPERANGULAR</string>
+    <string name="indicate_mode_wide_angle_selfie">SELFIE SUPERANGULAR</string>
     <string name="internal_storage">Memoria internă</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Recunoaşterea reperului oferă informaţii despre repere populare din jurul lumii.&lt;br/>&lt;br/>Instalaţi pentru a activa această funcţie.</string>
-    <string name="landmark_install_over_data">Dimensiunea de descărcare a funcţiei Recunoaşterea reperului este de 92 MB. Instalarea folosind datele mobile poate genera costuri suplimentare.</string>
-    <string name="landmark_notification_downloading">Se descarcă funcţia Recunoaşterea reperului</string>
-    <string name="landmark_notification_install">Instalarea funcţiei Recunoaşterea reperului</string>
-    <string name="landmark_notification_install_complete">Instalarea funcţiei Recunoaşterea reperului finalizată</string>
-    <string name="landmark_notification_install_failed">Instalarea funcţiei Recunoaşterea reperului nereuşită</string>
+    <string name="landmark_install_message">Recunoaşterea reperului oferă informaţii despre repere populare din întreaga lume.&lt;br/>&lt;br/>Descărcaţi baza de date pentru Reper pentru a activa această funcţie.</string>
+    <string name="landmark_install_over_data">Dimensiunea de descărcare a bazei de date pentru Reper este de 92 MB. Descărcarea acesteia folosind datele mobile poate genera costuri suplimentare.</string>
+    <string name="landmark_notification_downloading">Descărcarea bazei de date pentru Reper</string>
+    <string name="landmark_notification_install">Instalarea bazei de date pentru Reper</string>
+    <string name="landmark_notification_install_complete">Instalarea bazei de date pentru Reper a fost finalizată</string>
+    <string name="landmark_notification_install_failed">Instalarea bazei de date pentru Reper nu a reuşit</string>
     <string name="landmark_notification_install_invalid_url">Baza de date pentru reper nu este disponibilă, actualizaţi la cea mai recentă versiune a camerei</string>
-    <string name="landmark_notification_install_out_of_space">Spaţiu de stocare insuficient pentru instalarea funcţiei Recunoaşterea reperului</string>
+    <string name="landmark_notification_install_out_of_space">Spaţiu de stocare insuficient pentru instalarea bazei de date pentru Reper</string>
+    <string name="landmark_notification_paused">Baza de date pentru Reper va continua descărcarea după conectarea la internet</string>
+    <string name="landmark_notification_queued">Baza de date pentru Reper va începe descărcarea după conectarea la internet</string>
     <string name="main_setting_amz_barcode">Scaner cod de bare Amazon</string>
     <string name="main_setting_amz_privacy">Notificarea privind confidenţialitatea Amazon</string>
     <string name="main_setting_amz_terms">Condiţiile de utilizare</string>
@@ -290,6 +295,8 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="main_setting_image_ratio">Dimensiune fotografie (spate)</string>
     <string name="main_setting_image_ratio_front">Dimensiune fotografie (faţă)</string>
     <string name="main_setting_landmark_detection">Recunoaşterea reperului</string>
+    <string name="main_setting_landmark_version_current">Versiunea bazei de date: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Baza de date nu este instalată</string>
     <string name="main_setting_licenses">Licenţe open source</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="perm_required_alert_title">Permisiuni necesare</string>
     <string name="photos_depth_desc">Utilizați editorul de adâncime pentru a selecta focalizarea, a înlocui fundalul sau a selecta zona de modificare în alb și negru.</string>
     <string name="photos_depth_name">Adâncime activată</string>
+    <string name="photos_notification_desc">Primiţi stocare nelimitată cu Fotografii Google</string>
+    <string name="photos_notification_title">Creaţi o copie backup pe Fotografii Google</string>
+    <string name="qcfa_resolution_description">Adaptare la lumină slabă</string>
     <string name="retake">Repetă</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="setting_mode_slow_motion">Mişcare cu încetinitorul</string>
     <string name="setting_mode_ultra_wide">Unghi ultra-larg</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Selfie superangular</string>
     <string name="setting_off">Dezactivat</string>
     <string name="setting_on">Activat</string>
     <string name="setting_persist">Reţineţi</string>
@@ -383,20 +394,25 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="setting_timer_dialog_title">CRONOMETRU</string>
     <string name="setting_torch">Lanternă</string>
     <string name="setting_true">adevărat</string>
+    <string name="shortcut_desc_depth">Foto adâncime</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Videoclip</string>
     <string name="smartcam_landmark_notification_title">Camera inteligentă</string>
+    <string name="smartcam_no_detections">Niciun obiect sau reper salvat</string>
     <string name="storage_location_external">Card SD</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Stocare indisponibilă</string>
+    <string name="toast_battery_saver">În prezent, sunteţi în modul economizor de energie, unele caracteristici ar putea fi limitate</string>
     <string name="toast_geotag_message_1">Trebuie să acordaţi permisiuni de locație pentru a activa salvarea locaţiei.</string>
     <string name="toast_geotag_message_2">Setarea locației are efect numai după ce setarea locaţiei sistemului este activată.</string>
     <string name="tooltip_camera_switch_360">Încercaţi să comutaţi pe opţiuni diferite ale camerei.</string>
     <string name="tooltip_capture_360">Încercaţi să surprindeţi fotografii sau videoclipuri la 360° atingând acest buton declanşator.</string>
-    <string name="tooltip_capture_key_360">Încercați să înregistrați și cu butonul declanșator de pe partea din spate a Mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Pentru a activa funcțiile spreciale de editare, fotografiați cu detalii suplimentare.</string>
+    <string name="tooltip_capture_key_360">Încercați să înregistrați și cu butonul declanșator de pe partea din spate a dispozitivului Mod.</string>
     <string name="tooltip_first_use_zoom_button">Atingeţi aici pentru a trece la obiectiv rectangular.</string>
     <string name="tooltip_gallery_360">Vedeţi rezultatul fotografiei sau videoclipului dvs. la 360° glisând spre stânga.</string>
     <string name="tooltip_minimap_viewfinder">Panoramaţi imaginea de la bază spre stânga sau spre dreapta.</string>
     <string name="tooltip_mode_switch_360">Încercaţi să surprindeţi la 360° în moduri diferite!</string>
+    <string name="tooltip_modes_list">Descoperiţi modalităţi noi de captare a fotografiilor.</string>
     <string name="tooltip_smart_camera">Atingeţi pentru a afla mai multe despre obiect.</string>
     <string name="tooltip_smart_camera_disable">Puteţi dezactiva această funcţie în Setări.</string>
     <string name="tooltip_spherical_viewfinder">Panoramaţi sau măriţi şi micşoraţi pentru a controla vizualizarea.</string>
@@ -419,6 +435,10 @@ Confirmați mai jos, apoi activați opțiunea Locație din Setări."</string>
     <string name="zoom_hint_full">COMPLET</string>
     <string name="zoom_hint_wide">LAT</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Adaptare la lumină slabă</string>
+    <string name="indicate_mode_timelapse">INTERVAL DE TIMP</string>
+    <string name="setting_mode_timelapse">Interval de timp</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

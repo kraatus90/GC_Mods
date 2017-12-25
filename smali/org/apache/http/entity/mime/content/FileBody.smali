@@ -36,11 +36,11 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-static {p2}, Lorg/apache/http/entity/ContentType;->create(Ljava/lang/String;)Lorg/apache/http/entity/ContentType;
 
     move-result-object v0
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lorg/apache/http/entity/mime/content/FileBody;-><init>(Ljava/io/File;Lorg/apache/http/entity/ContentType;Ljava/lang/String;)V
 

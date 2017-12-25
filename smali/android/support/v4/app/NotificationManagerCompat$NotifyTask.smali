@@ -28,7 +28,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
+.method constructor <init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

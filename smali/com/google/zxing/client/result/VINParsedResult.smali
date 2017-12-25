@@ -132,9 +132,9 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
     iget-object v1, p0, Lcom/google/zxing/client/result/VINParsedResult;->countryCode:Ljava/lang/String;

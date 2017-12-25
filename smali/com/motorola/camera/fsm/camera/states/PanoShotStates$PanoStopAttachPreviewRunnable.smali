@@ -46,7 +46,7 @@
 
     invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/CameraRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
-    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isRearCamera()Z
+    invoke-static {}, Lcom/motorola/camera/panorama/PanoHelper;->isProcessingRearCamera()Z
 
     move-result v0
 

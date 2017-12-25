@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public build()Lorg/apache/http/HttpEntity;
-    .locals 5
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -186,15 +186,15 @@
 
     iget-object v1, p0, Lorg/apache/http/client/entity/EntityBuilder;->stream:Ljava/io/InputStream;
 
-    const-wide/16 v2, 0x1
+    sget-object v2, Lorg/apache/http/entity/ContentType;->DEFAULT_BINARY:Lorg/apache/http/entity/ContentType;
 
-    sget-object v4, Lorg/apache/http/entity/ContentType;->DEFAULT_BINARY:Lorg/apache/http/entity/ContentType;
+    invoke-direct {p0, v2}, Lorg/apache/http/client/entity/EntityBuilder;->getContentOrDefault(Lorg/apache/http/entity/ContentType;)Lorg/apache/http/entity/ContentType;
 
-    invoke-direct {p0, v4}, Lorg/apache/http/client/entity/EntityBuilder;->getContentOrDefault(Lorg/apache/http/entity/ContentType;)Lorg/apache/http/entity/ContentType;
+    move-result-object v2
 
-    move-result-object v4
+    const-wide/16 v4, 0x1
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lorg/apache/http/entity/InputStreamEntity;-><init>(Ljava/io/InputStream;JLorg/apache/http/entity/ContentType;)V
+    invoke-direct {v0, v1, v4, v5, v2}, Lorg/apache/http/entity/InputStreamEntity;-><init>(Ljava/io/InputStream;JLorg/apache/http/entity/ContentType;)V
 
     goto :goto_0
 

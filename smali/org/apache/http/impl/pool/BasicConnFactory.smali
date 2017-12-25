@@ -48,11 +48,11 @@
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x0
-
     sget-object v4, Lorg/apache/http/config/SocketConfig;->DEFAULT:Lorg/apache/http/config/SocketConfig;
 
     sget-object v5, Lorg/apache/http/config/ConnectionConfig;->DEFAULT:Lorg/apache/http/config/ConnectionConfig;
+
+    const/4 v3, 0x0
 
     move-object v0, p0
 
@@ -120,15 +120,15 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-string/jumbo v0, "HTTP params"
 
     invoke-static {p2, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    iput-object v1, p0, Lorg/apache/http/impl/pool/BasicConnFactory;->plainfactory:Ljavax/net/SocketFactory;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/impl/pool/BasicConnFactory;->plainfactory:Ljavax/net/SocketFactory;
 
     iput-object p1, p0, Lorg/apache/http/impl/pool/BasicConnFactory;->sslfactory:Ljavax/net/ssl/SSLSocketFactory;
 

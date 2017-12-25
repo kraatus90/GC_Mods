@@ -54,11 +54,11 @@
 .method private constructor <init>(ILandroid/net/Uri;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2, v0, v1}, Lcom/google/android/gms/wearable/PutDataRequest;-><init>(ILandroid/net/Uri;Landroid/os/Bundle;[B)V
 

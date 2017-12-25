@@ -905,7 +905,7 @@
 .end method
 
 .method public getDetailsString()Ljava/lang/String;
-    .locals 1
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -913,12 +913,31 @@
 
     move-result-object v0
 
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lcom/motorola/camera/detector/results/tidbit/Event;->summary:Ljava/lang/String;
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const/16 v2, 0xa
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     if-nez v0, :cond_0
 
     const-string/jumbo v0, ""
 
-    :cond_0
+    :goto_0
     return-object v0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 .method public getFieldsCount()I

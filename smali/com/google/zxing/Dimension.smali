@@ -37,39 +37,37 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    instance-of v2, p1, Lcom/google/zxing/Dimension;
+    instance-of v1, p1, Lcom/google/zxing/Dimension;
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
-    return v1
+    return v0
 
     :cond_0
-    move-object v0, p1
+    check-cast p1, Lcom/google/zxing/Dimension;
 
-    check-cast v0, Lcom/google/zxing/Dimension;
+    iget v1, p0, Lcom/google/zxing/Dimension;->width:I
 
-    iget v2, p0, Lcom/google/zxing/Dimension;->width:I
+    iget v2, p1, Lcom/google/zxing/Dimension;->width:I
 
-    iget v3, v0, Lcom/google/zxing/Dimension;->width:I
-
-    if-eq v2, v3, :cond_2
+    if-eq v1, v2, :cond_2
 
     :cond_1
     :goto_0
-    return v1
+    return v0
 
     :cond_2
-    iget v2, p0, Lcom/google/zxing/Dimension;->height:I
+    iget v1, p0, Lcom/google/zxing/Dimension;->height:I
 
-    iget v3, v0, Lcom/google/zxing/Dimension;->height:I
+    iget v2, p1, Lcom/google/zxing/Dimension;->height:I
 
-    if-ne v2, v3, :cond_1
+    if-ne v1, v2, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

@@ -24,16 +24,16 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    const/4 v0, 0x0
+
     :try_start_0
-    const-class v0, Ljava/io/Closeable;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const-string/jumbo v1, "close"
+    const-class v1, Ljava/io/Closeable;
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, "close"
 
-    new-array v2, v2, [Ljava/lang/Class;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 

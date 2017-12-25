@@ -314,27 +314,27 @@
 
     move-result-object v2
 
-    const/4 v3, 0x1
-
     invoke-interface {v0}, Lcom/adobe/xmp/XMPDateTime;->getYear()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v2, v3, v4}, Ljava/util/Calendar;->set(II)V
+    const/4 v4, 0x1
 
-    const/4 v3, 0x2
+    invoke-virtual {v2, v4, v3}, Ljava/util/Calendar;->set(II)V
 
     invoke-interface {v0}, Lcom/adobe/xmp/XMPDateTime;->getMonth()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v2, v3, v4}, Ljava/util/Calendar;->set(II)V
+    const/4 v4, 0x2
 
-    const/4 v3, 0x5
+    invoke-virtual {v2, v4, v3}, Ljava/util/Calendar;->set(II)V
 
     invoke-interface {v0}, Lcom/adobe/xmp/XMPDateTime;->getDay()I
 
     move-result v0
+
+    const/4 v3, 0x5
 
     invoke-virtual {v2, v3, v0}, Ljava/util/Calendar;->set(II)V
 
@@ -601,9 +601,9 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v5, 0x0
-
     add-int/lit8 v3, v3, 0x2
+
+    const/4 v5, 0x0
 
     invoke-virtual {v2, v5, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -1179,9 +1179,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x1
-
     const/4 v5, 0x0
+
+    const/4 v1, 0x1
 
     if-nez p0, :cond_1
 
@@ -1335,49 +1335,49 @@
 
     check-cast v0, Lcom/adobe/xmp/impl/XMPNode;
 
-    const-string/jumbo v2, "http://purl.org/dc/elements/1.1/"
-
     invoke-virtual {v0}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "http://purl.org/dc/elements/1.1/"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    const-string/jumbo v2, "http://ns.adobe.com/exif/1.0/"
-
     invoke-virtual {v0}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "http://ns.adobe.com/exif/1.0/"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_3
 
-    const-string/jumbo v2, "http://ns.adobe.com/xmp/1.0/DynamicMedia/"
-
     invoke-virtual {v0}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "http://ns.adobe.com/xmp/1.0/DynamicMedia/"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_4
 
-    const-string/jumbo v2, "http://ns.adobe.com/xap/1.0/rights/"
-
     invoke-virtual {v0}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "http://ns.adobe.com/xap/1.0/rights/"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -1437,8 +1437,6 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
-
     invoke-virtual {p2}, Lcom/adobe/xmp/impl/XMPNode;->getOptions()Lcom/adobe/xmp/options/PropertyOptions;
 
     move-result-object v0
@@ -1476,6 +1474,8 @@
     const-string/jumbo v1, "xml:lang"
 
     const-string/jumbo v2, "x-default"
+
+    const/4 v3, 0x0
 
     invoke-direct {v0, v1, v2, v3}, Lcom/adobe/xmp/impl/XMPNode;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/adobe/xmp/options/PropertyOptions;)V
 

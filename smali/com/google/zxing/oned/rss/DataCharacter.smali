@@ -25,39 +25,37 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    instance-of v2, p1, Lcom/google/zxing/oned/rss/DataCharacter;
+    instance-of v1, p1, Lcom/google/zxing/oned/rss/DataCharacter;
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    move-object v0, p1
+    check-cast p1, Lcom/google/zxing/oned/rss/DataCharacter;
 
-    check-cast v0, Lcom/google/zxing/oned/rss/DataCharacter;
+    iget v1, p0, Lcom/google/zxing/oned/rss/DataCharacter;->value:I
 
-    iget v2, p0, Lcom/google/zxing/oned/rss/DataCharacter;->value:I
+    iget v2, p1, Lcom/google/zxing/oned/rss/DataCharacter;->value:I
 
-    iget v3, v0, Lcom/google/zxing/oned/rss/DataCharacter;->value:I
-
-    if-eq v2, v3, :cond_2
+    if-eq v1, v2, :cond_2
 
     :cond_0
     :goto_0
-    return v1
+    return v0
 
     :cond_1
-    return v1
+    return v0
 
     :cond_2
-    iget v2, p0, Lcom/google/zxing/oned/rss/DataCharacter;->checksumPortion:I
+    iget v1, p0, Lcom/google/zxing/oned/rss/DataCharacter;->checksumPortion:I
 
-    iget v3, v0, Lcom/google/zxing/oned/rss/DataCharacter;->checksumPortion:I
+    iget v2, p1, Lcom/google/zxing/oned/rss/DataCharacter;->checksumPortion:I
 
-    if-ne v2, v3, :cond_0
+    if-ne v1, v2, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

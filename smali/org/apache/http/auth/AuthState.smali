@@ -319,9 +319,7 @@
 .end method
 
 .method public update(Lorg/apache/http/auth/AuthScheme;Lorg/apache/http/auth/Credentials;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const-string/jumbo v0, "Auth scheme"
 
@@ -335,7 +333,9 @@
 
     iput-object p2, p0, Lorg/apache/http/auth/AuthState;->credentials:Lorg/apache/http/auth/Credentials;
 
-    iput-object v1, p0, Lorg/apache/http/auth/AuthState;->authOptions:Ljava/util/Queue;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/auth/AuthState;->authOptions:Ljava/util/Queue;
 
     return-void
 .end method

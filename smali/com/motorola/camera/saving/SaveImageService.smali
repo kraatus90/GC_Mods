@@ -42,6 +42,8 @@
 
 .field private static final HEIGHT:Ljava/lang/String; = "height"
 
+.field private static final INSTA_PRINT_RATIO:F = 0.6666667f
+
 .field private static final IS_RAW:Ljava/lang/String; = "is_raw"
 
 .field private static final JPEG_HEADER:S = -0x28s
@@ -651,11 +653,9 @@
 
     if-ne v1, v6, :cond_7
 
-    iget v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    const v6, 0xffff
-
-    and-int/2addr v1, v6
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mShotCount:I
 
     add-int/lit8 v6, v1, -0x1
 
@@ -1029,7 +1029,7 @@
     throw v0
 .end method
 
-.method private static copyExifForUltraWide(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
+.method private static copyExifForCrop(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
     .locals 18
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1999,15 +1999,13 @@
 
     move-result-object v4
 
-    iget v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    const v6, 0xffff
-
-    and-int/2addr v1, v6
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mShotCount:I
 
     add-int/lit8 v1, v1, -0x1
 
-    if-nez v1, :cond_6
+    if-nez v1, :cond_7
 
     const/4 v1, 0x1
 
@@ -2038,11 +2036,62 @@
     invoke-static {p0, v5}, Lcom/motorola/camera/saving/SaveImageService;->setPanoXmp(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;Lcom/motorola/camera/saving/XmpData;)V
 
     :cond_2
+    invoke-static {v0}, Lcom/motorola/camera/saving/SaveImageService;->hasViewPoint(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    :try_start_0
+    new-instance v1, Ljava/io/ByteArrayInputStream;
+
+    invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->-get0(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->getByteBuffer()Ljava/nio/ByteBuffer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    invoke-static {v1}, Lcom/motorola/camera/saving/XmpUtil;->extractXmpMetadata(Ljava/io/InputStream;)Lcom/motorola/camera/saving/XmpData;
+
+    move-result-object v3
+
+    invoke-static {v1}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {v3}, Lcom/motorola/camera/saving/XmpData;->getMetadata()Lcom/adobe/xmp/XMPMeta;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v3}, Lcom/motorola/camera/saving/XmpData;->getMetadata()Lcom/adobe/xmp/XMPMeta;
+
+    move-result-object v1
+
+    invoke-virtual {v5, v1}, Lcom/motorola/camera/saving/XmpData;->add(Lcom/adobe/xmp/XMPMeta;)Lcom/motorola/camera/saving/XmpData;
+
+    iget-object v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mViewPoint:Lcom/motorola/camera/saving/ViewPoint;
+
+    invoke-virtual {v5, v1}, Lcom/motorola/camera/saving/XmpData;->add(Lcom/motorola/camera/saving/ViewPoint;)Lcom/motorola/camera/saving/XmpData;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_3
+    :goto_1
     invoke-static {v0}, Lcom/motorola/camera/saving/SaveImageService;->hasDepth(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     iget-object v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMcfAuxData:Lcom/motorola/camera/mcf/McfAuxiliaryData;
 
@@ -2054,7 +2103,7 @@
 
     check-cast v1, Lcom/motorola/camera/mcf/McfDepthMap;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
     new-instance v4, Lcom/motorola/camera/saving/XmpData$GDepth;
 
@@ -2070,19 +2119,19 @@
 
     check-cast v0, Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasArray()Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v0
 
-    :goto_1
+    :goto_2
     new-instance v3, Lcom/motorola/camera/saving/XmpData$GImage;
 
     invoke-static {v0}, Lcom/motorola/camera/saving/SaveImageService;->stripAppSegments([B)[B
@@ -2117,17 +2166,17 @@
 
     move-object v1, v4
 
-    :goto_2
-    if-eqz v1, :cond_3
+    :goto_3
+    if-eqz v1, :cond_4
 
     invoke-virtual {v5, v1}, Lcom/motorola/camera/saving/XmpData;->add(Lcom/motorola/camera/saving/XmpData$GDepth;)Lcom/motorola/camera/saving/XmpData;
 
-    :cond_3
-    if-eqz v0, :cond_4
+    :cond_4
+    if-eqz v0, :cond_5
 
     invoke-virtual {v5, v0}, Lcom/motorola/camera/saving/XmpData;->add(Lcom/motorola/camera/saving/XmpData$GImage;)Lcom/motorola/camera/saving/XmpData;
 
-    :cond_4
+    :cond_5
     new-instance v0, Lcom/motorola/camera/saving/XmpData$PhotosOem;
 
     sget-object v1, Lcom/motorola/camera/provider/photos/PhotosProvider$SpecialType;->Depth:Lcom/motorola/camera/provider/photos/PhotosProvider$SpecialType;
@@ -2140,15 +2189,26 @@
 
     invoke-virtual {v5, v0}, Lcom/motorola/camera/saving/XmpData;->add(Lcom/motorola/camera/saving/XmpData$PhotosOem;)Lcom/motorola/camera/saving/XmpData;
 
-    :cond_5
+    :cond_6
     return-object v5
 
-    :cond_6
+    :cond_7
     move-object v1, v2
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_7
+    :catch_0
+    move-exception v1
+
+    sget-object v3, Lcom/motorola/camera/saving/SaveImageService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v4, "Error adding 360 InitialView"
+
+    invoke-static {v3, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    :cond_8
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
@@ -2159,21 +2219,314 @@
 
     move-object v0, v3
 
-    goto :goto_1
-
-    :cond_8
-    move-object v0, v2
-
-    move-object v1, v4
-
     goto :goto_2
 
     :cond_9
     move-object v0, v2
 
+    move-object v1, v4
+
+    goto :goto_3
+
+    :cond_a
+    move-object v0, v2
+
     move-object v1, v2
 
+    goto :goto_3
+.end method
+
+.method private static cropForInstaPrint(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
+    .locals 9
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    :try_start_0
+    new-instance v1, Ljava/io/BufferedInputStream;
+
+    new-instance v0, Ljava/io/ByteArrayInputStream;
+
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v5
+
+    invoke-direct {v0, v5}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    invoke-direct {v1, v0}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_5
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
+
+    move-result-object v5
+
+    invoke-static {v1}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v6
+
+    iget v0, p1, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->mOrientation:I
+
+    const/16 v7, 0x5a
+
+    if-ne v0, v7, :cond_1
+
+    move v0, v3
+
+    :goto_0
+    iget v7, p1, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->mOrientation:I
+
+    const/16 v8, 0x10e
+
+    if-ne v7, v8, :cond_2
+
+    :goto_1
+    or-int/2addr v0, v3
+
+    if-eqz v0, :cond_3
+
+    const/high16 v0, 0x3fc00000    # 1.5f
+
+    :goto_2
+    invoke-static {v1, v6, v0}, Lcom/motorola/camera/saving/SaveImageService;->getSizeForNewRatio(IIF)Landroid/util/Size;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
+
+    move-result v0
+
+    sub-int/2addr v1, v3
+
+    div-int/lit8 v1, v1, 0x2
+
+    sub-int v4, v6, v0
+
+    div-int/lit8 v4, v4, 0x2
+
+    :try_start_2
+    invoke-static {v5, v1, v4, v3, v0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+    :try_end_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    move-result-object v4
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
+
+    :try_start_3
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+    :try_end_3
+    .catch Ljava/lang/NullPointerException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_2
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+
+    :try_start_4
+    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v5, 0x5f
+
+    invoke-virtual {v4, v2, v5, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+    :try_end_4
+    .catch Ljava/lang/NullPointerException; {:try_start_4 .. :try_end_4} :catch_4
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
+
+    move-result-object v2
+
+    invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
+
+    invoke-static {v1}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    iput v3, p1, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->mWidth:I
+
+    iput v0, p1, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->mHeight:I
+
+    :try_start_5
+    invoke-static {v2, p1}, Lcom/motorola/camera/saving/SaveImageService;->copyExifForCrop(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+
+    move-result-object v0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    move-object v1, v2
+
+    :goto_3
+    :try_start_6
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Lcom/motorola/camera/saving/SaveImageService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v3, "Error decoding jpeg"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_4
+
+    :cond_0
+    invoke-static {v1}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    return-object p0
+
+    :catchall_0
+    move-exception v0
+
+    move-object v1, v2
+
+    :goto_4
+    invoke-static {v1}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    throw v0
+
+    :cond_1
+    move v0, v4
+
+    goto :goto_0
+
+    :cond_2
+    move v3, v4
+
+    goto :goto_1
+
+    :cond_3
+    const v0, 0x3f2aaaab
+
     goto :goto_2
+
+    :catch_1
+    move-exception v0
+
+    :try_start_7
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_4
+
+    sget-object v1, Lcom/motorola/camera/saving/SaveImageService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v2, "Error cropping bitmap"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+
+    :cond_4
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
+
+    return-object p0
+
+    :catchall_1
+    move-exception v0
+
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
+
+    throw v0
+
+    :catch_2
+    move-exception v0
+
+    :goto_5
+    :try_start_8
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_5
+
+    sget-object v1, Lcom/motorola/camera/saving/SaveImageService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v3, "Error creating jpeg"
+
+    invoke-static {v1, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
+
+    :cond_5
+    invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
+
+    invoke-static {v2}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    return-object p0
+
+    :catchall_2
+    move-exception v0
+
+    :goto_6
+    invoke-virtual {v4}, Landroid/graphics/Bitmap;->recycle()V
+
+    invoke-static {v2}, Lcom/motorola/camera/Util;->closeSilently(Ljava/io/Closeable;)V
+
+    throw v0
+
+    :catch_3
+    move-exception v0
+
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_6
+
+    sget-object v1, Lcom/motorola/camera/saving/SaveImageService;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v3, "Error copying exif data"
+
+    invoke-static {v1, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_6
+    return-object v2
+
+    :catchall_3
+    move-exception v0
+
+    move-object v2, v1
+
+    goto :goto_6
+
+    :catch_4
+    move-exception v0
+
+    move-object v2, v1
+
+    goto :goto_5
+
+    :catchall_4
+    move-exception v0
+
+    goto :goto_4
+
+    :catch_5
+    move-exception v0
+
+    goto :goto_3
 .end method
 
 .method private static cropForUltraWide(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
@@ -2422,7 +2775,7 @@
     iput v6, p1, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->mHeight:I
 
     :try_start_5
-    invoke-static {v1, p1}, Lcom/motorola/camera/saving/SaveImageService;->copyExifForUltraWide(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
+    invoke-static {v1, p1}, Lcom/motorola/camera/saving/SaveImageService;->copyExifForCrop(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
 
@@ -2776,6 +3129,56 @@
     throw v0
 .end method
 
+.method private static getSizeForNewRatio(IIF)Landroid/util/Size;
+    .locals 2
+
+    int-to-float v0, p0
+
+    int-to-float v1, p1
+
+    div-float/2addr v0, v1
+
+    cmpg-float v1, v0, p2
+
+    if-gez v1, :cond_0
+
+    int-to-float v0, p0
+
+    div-float/2addr v0, p2
+
+    float-to-int v0, v0
+
+    new-instance v1, Landroid/util/Size;
+
+    invoke-direct {v1, p0, v0}, Landroid/util/Size;-><init>(II)V
+
+    return-object v1
+
+    :cond_0
+    cmpl-float v0, v0, p2
+
+    if-lez v0, :cond_1
+
+    int-to-float v0, p1
+
+    mul-float/2addr v0, p2
+
+    float-to-int v0, v0
+
+    new-instance v1, Landroid/util/Size;
+
+    invoke-direct {v1, v0, p1}, Landroid/util/Size;-><init>(II)V
+
+    return-object v1
+
+    :cond_1
+    new-instance v0, Landroid/util/Size;
+
+    invoke-direct {v0, p0, p1}, Landroid/util/Size;-><init>(II)V
+
+    return-object v0
+.end method
+
 .method private static getTitle(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
@@ -2823,6 +3226,24 @@
 
     :cond_0
     return v0
+.end method
+
+.method private static hasViewPoint(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mViewPoint:Lcom/motorola/camera/saving/ViewPoint;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private static insertFileInMediaStore(Landroid/os/Bundle;)Landroid/net/Uri;
@@ -3327,7 +3748,7 @@
     goto :goto_3
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_saving_SaveImageService_lambda$2()V
+.method static synthetic lambda$-com_motorola_camera_saving_SaveImageService_11285()V
     .locals 1
 
     invoke-static {}, Lcom/motorola/camera/saving/SaveImageService;->getInstance()Lcom/motorola/camera/saving/SaveImageService;
@@ -3347,7 +3768,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_saving_SaveImageService_lambda$3(Landroid/os/Bundle;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;Ljava/lang/String;Landroid/os/Bundle;)V
+.method static synthetic lambda$-com_motorola_camera_saving_SaveImageService_39338(Landroid/os/Bundle;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 5
 
     const/4 v4, 0x0
@@ -3420,7 +3841,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_saving_SaveImageService_lambda$4(ZLcom/motorola/camera/CameraData;)V
+.method static synthetic lambda$-com_motorola_camera_saving_SaveImageService_51086(ZLcom/motorola/camera/CameraData;)V
     .locals 3
 
     invoke-static {}, Lcom/motorola/camera/saving/SaveImageService;->getInstance()Lcom/motorola/camera/saving/SaveImageService;
@@ -3745,9 +4166,9 @@
 
     const-string/jumbo v7, "seq_id"
 
-    iget v8, v3, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v8, v3, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-virtual {v1, v7, v8}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v7, v8}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     const-string/jumbo v7, "snap_type"
 
@@ -3801,13 +4222,9 @@
 
     const-string/jumbo v0, "SEQ_ID"
 
-    const-string/jumbo v7, "seq_id"
+    iget-object v7, v3, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-virtual {v1, v7}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v7
-
-    invoke-virtual {v5, v0, v7}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v5, v0, v7}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     const-string/jumbo v0, "snap_type"
 
@@ -3851,11 +4268,11 @@
     :goto_1
     invoke-virtual {v5, v0, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    new-instance v0, Lcom/motorola/camera/saving/-$Lambda$164;
+    new-instance v0, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM$2;
 
     move-object v2, p0
 
-    invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/saving/-$Lambda$164;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM$2;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/4 v1, 0x3
 
@@ -4122,7 +4539,7 @@
 .end method
 
 .method public static saveImage(Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;)V
-    .locals 5
+    .locals 4
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -4130,27 +4547,27 @@
 
     sget-object v0, Lcom/motorola/camera/saving/SaveImageService;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v1, "saveImage seqId:0x%08x"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const-string/jumbo v2, "saveImage "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     invoke-virtual {p0}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->getCaptureRecord()Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
 
-    move-result-object v3
+    move-result-object v2
 
-    iget v3, v3, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -4173,9 +4590,9 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v1, Lcom/motorola/camera/saving/-$Lambda$79;
+    new-instance v1, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM$1;
 
-    invoke-direct {v1, v0}, Lcom/motorola/camera/saving/-$Lambda$79;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, v0}, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM$1;-><init>(Ljava/lang/Object;)V
 
     invoke-direct {v0, v1}, Lcom/motorola/camera/saving/SaveImageService;->addSaveRunnable(Ljava/lang/Runnable;)V
 
@@ -4189,9 +4606,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/saving/-$Lambda$169;
+    new-instance v1, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM$3;
 
-    invoke-direct {v1, p1, p0}, Lcom/motorola/camera/saving/-$Lambda$169;-><init>(ZLjava/lang/Object;)V
+    invoke-direct {v1, p1, p0}, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM$3;-><init>(ZLjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->postRunnable(Ljava/lang/Runnable;)V
 
@@ -4623,7 +5040,7 @@
 
     new-instance v0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;
 
-    iget v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:I
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mStorageLocation:Landroid/net/Uri;
 
@@ -4633,13 +5050,13 @@
 
     move-object v4, p1
 
-    invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(ILandroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
+    invoke-direct/range {v0 .. v5}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
 
     invoke-virtual {v7, v0}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
 
-    new-instance v0, Lcom/motorola/camera/saving/-$Lambda$7;
+    new-instance v0, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM;
 
-    invoke-direct {v0}, Lcom/motorola/camera/saving/-$Lambda$7;-><init>()V
+    invoke-direct {v0}, Lcom/motorola/camera/saving/-$Lambda$dba4saCW-KMxyadRtcKaKR95wCM;-><init>()V
 
     invoke-direct {v6, v0}, Lcom/motorola/camera/saving/SaveImageService;->addMediaStoreRunnable(Ljava/lang/Runnable;)V
 
@@ -4746,11 +5163,11 @@
 
     const-string/jumbo v2, "SEQ_ID"
 
-    invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->-get2(Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)I
+    invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->-get2(Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result v4
+    move-result-object v4
 
-    invoke-virtual {v1, v2, v4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     new-instance v2, Lcom/motorola/camera/CameraData;
 
@@ -4855,14 +5272,14 @@
     throw v0
 .end method
 
-.method public static updateMediaStoreSync(ILandroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
+.method public static updateMediaStoreSync(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
     .locals 2
 
     new-instance v0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, p1, p2, v1}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(ILandroid/net/Uri;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
+    invoke-direct {v0, p0, p1, p2, v1}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
 
     invoke-static {v0}, Lcom/motorola/camera/saving/SaveImageService;->updateMediaStorePriv(Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)Landroid/net/Uri;
 
@@ -5007,6 +5424,10 @@
 
     invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService;->createXmpData(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Lcom/motorola/camera/saving/XmpData;
 
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->mXmpData:Lcom/motorola/camera/saving/XmpData;
+
     invoke-virtual {v2}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->getByteBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v0
@@ -5027,52 +5448,68 @@
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
+    iget-boolean v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mCropInstaPrint:Z
+
+    if-eqz v0, :cond_3
+
+    invoke-static {v1, p0}, Lcom/motorola/camera/saving/SaveImageService;->cropForInstaPrint(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    :cond_3
+    invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->-get0(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->getCaptureRecord()Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+
     iget-boolean v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mUltraWide:Z
 
     if-eqz v0, :cond_4
 
     invoke-static {v1, p0}, Lcom/motorola/camera/saving/SaveImageService;->cropForUltraWide(Ljava/nio/ByteBuffer;Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Ljava/nio/ByteBuffer;
 
-    move-result-object v0
+    move-result-object v1
 
-    :goto_1
-    if-eqz v0, :cond_3
+    :cond_4
+    if-eqz v1, :cond_5
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasArray()Z
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_5
 
     invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService$ImageContainer;->-get0(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->array()[B
 
     move-result-object v4
 
     array-length v4, v4
 
-    invoke-virtual {v1, v4}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->setDataSize(I)V
+    invoke-virtual {v0, v4}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->setDataSize(I)V
 
-    :cond_3
+    :cond_5
     invoke-virtual {v2}, Lcom/motorola/camera/capturedmediadata/CapturedImageMediaData;->getStoredUri()Landroid/net/Uri;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1, v3}, Lcom/motorola/camera/saving/SaveImageService;->writeToFile(Ljava/nio/ByteBuffer;Landroid/net/Uri;Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Z
+    invoke-static {v1, v0, v3}, Lcom/motorola/camera/saving/SaveImageService;->writeToFile(Ljava/nio/ByteBuffer;Landroid/net/Uri;Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Z
 
     invoke-static {p0, p1}, Lcom/motorola/camera/saving/SaveImageService;->processForMediaStore(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;Landroid/os/Handler;)V
 
     invoke-static {p0}, Lcom/motorola/camera/saving/SaveImageService;->saveDuplicatePhoto(Lcom/motorola/camera/saving/SaveImageService$ImageContainer;)V
 
-    goto :goto_0
-
-    :cond_4
-    move-object v0, v1
-
-    goto :goto_1
+    goto/16 :goto_0
 .end method
 
 .method private static writeToFile(Ljava/nio/ByteBuffer;Ljava/io/FileOutputStream;)I

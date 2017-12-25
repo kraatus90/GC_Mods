@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar$6_lambda$1(I)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar$6_31723(I)V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar$6;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;
@@ -165,9 +165,9 @@
 
     iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$165;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$5;
 
-    invoke-direct {v1, p3, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$165;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, p3, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$5;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

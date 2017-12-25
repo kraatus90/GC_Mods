@@ -194,7 +194,7 @@
 .method private changeButtonState(IZ)V
     .locals 3
 
-    const v2, 0x7f0800f4
+    const v2, 0x7f0800f6
 
     packed-switch p1, :pswitch_data_0
 
@@ -202,7 +202,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mProcessingIcon:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0x107
+    const/16 v1, 0x108
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
@@ -229,7 +229,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800f5
+    const v2, 0x7f0800f7
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -248,7 +248,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800f8
+    const v2, 0x7f0800fa
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -267,7 +267,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800f7
+    const v2, 0x7f0800f9
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -286,7 +286,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800f6
+    const v2, 0x7f0800f8
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -305,7 +305,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800fa
+    const v2, 0x7f0800fd
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -324,7 +324,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800f3
+    const v2, 0x7f0800f5
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -360,7 +360,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800fb
+    const v2, 0x7f0800fe
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -379,7 +379,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0800f9
+    const v2, 0x7f0800fb
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -451,9 +451,9 @@
 
     const/16 v3, 0x2b
 
-    const/16 v4, 0xbc
+    const/16 v4, 0xbd
 
-    const/16 v5, 0xbd
+    const/16 v5, 0xbe
 
     move-object v0, p0
 
@@ -1079,9 +1079,21 @@
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
     xor-int/lit8 v0, v0, 0x1
 
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private shouldTranslate(I)Z
@@ -1546,11 +1558,9 @@
 .end method
 
 .method public declared-synchronized animateShow()V
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x5
-
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/4 v1, 0x5
 
     monitor-enter p0
 
@@ -1594,7 +1604,7 @@
     :cond_2
     iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mSeconds:I
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mIndicateTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -1658,29 +1668,18 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mVideoTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->getAlpha()F
-
-    move-result v0
-
-    cmpl-float v0, v0, v1
-
-    if-nez v0, :cond_6
-
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mCaptureTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->show()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->animateShow()V
 
     :cond_5
-    :goto_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mVideoTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->animateShow()V
 
     iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mSeconds:I
 
-    if-ne v0, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mIndicateTexture:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
@@ -1696,36 +1695,18 @@
 
     goto :goto_0
 
-    :cond_6
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mCaptureTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->animateShow()V
-
-    goto :goto_1
-
     :pswitch_4
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->shouldShowCaptureButton()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mVideoTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->getAlpha()F
-
-    move-result v0
-
-    cmpl-float v0, v0, v1
-
-    if-nez v0, :cond_8
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mCaptureTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->show()V
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->animateShow()V
 
-    :cond_7
-    :goto_2
+    :cond_6
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mVideoTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->animateShow()V
@@ -1735,19 +1716,10 @@
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setVisibility(Z)V
-
-    goto/16 :goto_0
-
-    :cond_8
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mCaptureTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->animateShow()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_2
-
-    nop
+    goto :goto_0
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -2115,6 +2087,14 @@
     throw v0
 .end method
 
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_textures_ShutterButtonTexture_14216()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->startAnimate()V
+
+    return-void
+.end method
+
 .method public loadTexture()V
     .locals 2
 
@@ -2346,7 +2326,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f080134
+    const v2, 0x7f08013c
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/CameraApp;->getString(I)Ljava/lang/String;
 
@@ -2460,7 +2440,13 @@
 
     invoke-direct {p0, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->changeButtonState(IZ)V
 
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->startAnimate()V
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$Y83ynkftmA231ulH8PVMFLOAdeQ$1;
+
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/-$Lambda$Y83ynkftmA231ulH8PVMFLOAdeQ$1;-><init>(Ljava/lang/Object;)V
+
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
     :goto_0
     return-void
@@ -2567,6 +2553,68 @@
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
     return-void
+.end method
+
+.method public declared-synchronized update()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->shouldShowCaptureButton()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mCaptureTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->show()V
+
+    :goto_0
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->shouldShowVideoButton()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mVideoTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->show()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_1
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mCaptureTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->hide()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    :try_start_2
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/ShutterButtonTexture;->mVideoTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->hide()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
 .end method
 
 .method public videoCapture()V

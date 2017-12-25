@@ -221,71 +221,33 @@
 .end method
 
 .method public getLayoutSize()Landroid/graphics/PointF;
-    .locals 5
+    .locals 3
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    new-instance v0, Landroid/graphics/PointF;
 
-    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getSurfaceSize()Landroid/graphics/Point;
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->getWidth()F
 
-    move-result-object v0
+    move-result v1
 
-    new-instance v1, Landroid/graphics/PointF;
+    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->getHeight()F
 
-    iget v0, v0, Landroid/graphics/Point;->x:I
+    move-result v2
 
-    int-to-float v0, v0
+    invoke-direct {v0, v1, v2}, Landroid/graphics/PointF;-><init>(FF)V
 
-    const/high16 v2, 0x40800000    # 4.0f
-
-    div-float/2addr v0, v2
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->mEnvFdbkTexture:Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture;
-
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture;->getLayoutSize()Landroid/graphics/PointF;
-
-    move-result-object v2
-
-    iget v2, v2, Landroid/graphics/PointF;->y:F
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->mMemoryTexture:Lcom/motorola/camera/ui/widgets/gl/textures/MemoryTexture;
-
-    invoke-virtual {v3}, Lcom/motorola/camera/ui/widgets/gl/textures/MemoryTexture;->getLayoutSize()Landroid/graphics/PointF;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/graphics/PointF;->y:F
-
-    add-float/2addr v2, v3
-
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->mCompPadding:F
-
-    const/high16 v4, 0x40400000    # 3.0f
-
-    mul-float/2addr v3, v4
-
-    add-float/2addr v2, v3
-
-    invoke-direct {v1, v0, v2}, Landroid/graphics/PointF;-><init>(FF)V
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public getWidth()F
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/HudTexture;->mEnvFdbkTexture:Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture;
 
-    invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getSurfaceSize()Landroid/graphics/Point;
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/EnvFdbkTexture;->getLayoutSize()Landroid/graphics/PointF;
 
     move-result-object v0
 
-    iget v0, v0, Landroid/graphics/Point;->x:I
-
-    int-to-float v0, v0
-
-    const/high16 v1, 0x40800000    # 4.0f
-
-    div-float/2addr v0, v1
+    iget v0, v0, Landroid/graphics/PointF;->x:F
 
     return v0
 .end method

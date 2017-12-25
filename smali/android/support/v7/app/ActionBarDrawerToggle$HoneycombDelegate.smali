@@ -7,10 +7,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xb
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0xb
 .end annotation
@@ -65,32 +61,32 @@
 .end method
 
 .method public isNavigationVisible()Z
-    .locals 3
+    .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iget-object v2, p0, Landroid/support/v7/app/ActionBarDrawerToggle$HoneycombDelegate;->mActivity:Landroid/app/Activity;
+    iget-object v1, p0, Landroid/support/v7/app/ActionBarDrawerToggle$HoneycombDelegate;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v2}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     :cond_0
     :goto_0
-    return v1
+    return v0
 
     :cond_1
-    invoke-virtual {v0}, Landroid/app/ActionBar;->getDisplayOptions()I
+    invoke-virtual {v1}, Landroid/app/ActionBar;->getDisplayOptions()I
 
-    move-result v2
+    move-result v1
 
-    and-int/lit8 v2, v2, 0x4
+    and-int/lit8 v1, v1, 0x4
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
@@ -114,9 +110,9 @@
 .method public setActionBarUpIndicator(Landroid/graphics/drawable/Drawable;I)V
     .locals 3
 
-    iget-object v1, p0, Landroid/support/v7/app/ActionBarDrawerToggle$HoneycombDelegate;->mActivity:Landroid/app/Activity;
+    iget-object v0, p0, Landroid/support/v7/app/ActionBarDrawerToggle$HoneycombDelegate;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+    invoke-virtual {v0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 

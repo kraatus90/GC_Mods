@@ -69,9 +69,11 @@
 
 .field private mLaunchGalleryOnSave:Z
 
+.field private mLaunchPrinterOnSave:Z
+
 .field private mMsCapturing:Z
 
-.field private mMsSeqId:I
+.field private mMsSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
 .field private final mMultiShotAdapter:Lcom/motorola/camera/fsm/camera/subfsms/MultiShotStateMachine$MultiShotStateAdapter;
 
@@ -164,12 +166,12 @@
     return-object v0
 .end method
 
-.method static synthetic -get5(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;)I
+.method static synthetic -get5(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
     .locals 1
 
-    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:I
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    return v0
+    return-object v0
 .end method
 
 .method static synthetic -get6(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;)I
@@ -236,12 +238,12 @@
     return-object p1
 .end method
 
-.method static synthetic -set4(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;I)I
+.method static synthetic -set4(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
     .locals 0
 
-    iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:I
+    iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    return p1
+    return-object p1
 .end method
 
 .method static synthetic -set5(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;Lcom/motorola/camera/ui/widgets/gl/photoroll/QueryLastCaptureTask;)Lcom/motorola/camera/ui/widgets/gl/photoroll/QueryLastCaptureTask;
@@ -252,10 +254,10 @@
     return-object p1
 .end method
 
-.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;I)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+.method static synthetic -wrap0(Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
     .locals 1
 
-    invoke-direct {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;I)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    invoke-direct {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     move-result-object v0
 
@@ -438,20 +440,28 @@
     return-void
 .end method
 
-.method private addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;I)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+.method private addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
     .locals 1
+    .param p2    # Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;ILcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    invoke-direct {p0, p1, p2, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private declared-synchronized addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;ILcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
-    .locals 8
+.method private declared-synchronized addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    .locals 7
+    .param p2    # Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
 
     const/4 v0, 0x0
 
@@ -497,7 +507,7 @@
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    if-eqz p3, :cond_4
+    if-eqz p3, :cond_5
 
     invoke-virtual {p3}, Lcom/motorola/camera/CameraData;->getBundle()Landroid/os/Bundle;
 
@@ -506,14 +516,21 @@
     move-object v3, v1
 
     :goto_0
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_e
 
     const-string/jumbo v0, "SEQ_ID"
 
-    invoke-virtual {v3, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v3, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result p2
+    move-result-object v0
 
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    if-eqz v0, :cond_1
+
+    move-object p2, v0
+
+    :cond_1
     const-string/jumbo v0, "BEST_SHOT"
 
     invoke-virtual {v3, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -533,63 +550,65 @@
     :goto_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
 
-    invoke-virtual {v0, p2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->getSeqId(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+    invoke-virtual {v0, p2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->getSeqId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
 
     move-result-object v0
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
+
+    iget v1, p2, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    sget-object v4, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+
+    invoke-static {v1, v4}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(ILcom/motorola/camera/ShotType;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-result-object v4
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
 
-    const/high16 v4, 0x7fff0000
-
-    and-int/2addr v4, p2
-
-    invoke-virtual {v1, v4}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->getSeqId(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+    invoke-virtual {v1, v4}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->getSeqId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
 
     move-result-object v1
 
     check-cast v1, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    invoke-virtual {v1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setSeqId(I)V
+    invoke-virtual {v1, p2}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setSeqId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v4, "addPhoto update seqId:0x%08x->0x%08x"
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x2
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v5, v5, [Ljava/lang/Object;
+    const-string/jumbo v6, "addPhoto update "
 
-    const/high16 v6, 0x7fff0000
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    and-int/2addr v6, p2
+    move-result-object v5
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v4
 
-    const/4 v7, 0x0
+    const-string/jumbo v5, " to "
 
-    aput-object v6, v5, v7
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v4
 
-    move-result-object v6
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v7, 0x1
+    move-result-object v4
 
-    aput-object v6, v5, v7
-
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -597,62 +616,66 @@
 
     move-object v0, v1
 
-    :cond_1
+    :cond_2
     :goto_2
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v2, "addPhoto update seqId:0x%08x->0x%08x bestShot:%s"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x3
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v4, v4, [Ljava/lang/Object;
+    const-string/jumbo v4, "addPhoto update "
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()I
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v5
+    move-result-object v2
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v5
+    move-result-object v4
 
-    const/4 v6, 0x0
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    aput-object v5, v4, v6
+    move-result-object v2
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v4, " to "
 
-    move-result-object v5
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v6, 0x1
+    move-result-object v2
 
-    aput-object v5, v4, v6
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v2
 
-    move-result-object v3
+    const-string/jumbo v4, " bestShot:"
 
-    const/4 v5, 0x2
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v3, v4, v5
+    move-result-object v2
 
-    invoke-static {v2, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_2
-    if-eqz p3, :cond_3
+    :cond_3
+    if-eqz p3, :cond_4
 
     invoke-virtual {v0, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setCameraData(Lcom/motorola/camera/CameraData;)V
 
-    :cond_3
+    :cond_4
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setPhotoScale(Z)V
@@ -668,12 +691,12 @@
 
     return-object v0
 
-    :cond_4
+    :cond_5
     move-object v3, v2
 
     goto/16 :goto_0
 
-    :cond_5
+    :cond_6
     :try_start_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
 
@@ -681,7 +704,7 @@
 
     move-result v0
 
-    if-lez v0, :cond_7
+    if-lez v0, :cond_8
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
 
@@ -694,25 +717,29 @@
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     :goto_4
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()I
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result v0
+    move-result-object v0
 
-    if-le v0, p2, :cond_8
+    iget v0, v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
-    if-eqz p3, :cond_8
+    iget v1, p2, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    if-le v0, v1, :cond_9
+
+    if-eqz p3, :cond_9
 
     invoke-virtual {p3}, Lcom/motorola/camera/CameraData;->getDataType()I
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_9
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
@@ -722,58 +749,60 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_6
+    :cond_7
     monitor-exit p0
 
     return-object v2
 
-    :cond_7
+    :cond_8
     move-object v0, v2
 
     goto :goto_4
 
-    :cond_8
+    :cond_9
     :try_start_2
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_a
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v1, "addPhoto create seqId:0x%08x bestShot:%s"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x2
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const-string/jumbo v2, "addPhoto create "
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/4 v5, 0x0
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    aput-object v4, v2, v5
+    move-result-object v1
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const-string/jumbo v2, " bestShot:"
 
-    move-result-object v3
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x1
+    move-result-object v1
 
-    aput-object v3, v2, v4
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_9
+    :cond_a
     new-instance v1, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    invoke-direct {v1, v0, p2, p1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;ILcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRollInterface;)V
+    invoke-direct {v1, v0, p2, p1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRollInterface;)V
 
     new-instance v0, Lcom/motorola/camera/PreviewSize;
 
@@ -789,11 +818,11 @@
 
     invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setViewSize(Lcom/motorola/camera/PreviewSize;)V
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_b
 
     invoke-virtual {v1, p3}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setCameraData(Lcom/motorola/camera/CameraData;)V
 
-    :cond_a
+    :cond_b
     iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mOrientation:I
 
     invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setDisplayOrientation(I)V
@@ -824,7 +853,7 @@
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_c
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mRemoveList:Ljava/util/List;
 
@@ -843,17 +872,17 @@
 
     throw v0
 
-    :cond_b
+    :cond_c
     move-object v0, v1
 
     goto/16 :goto_3
 
-    :cond_c
+    :cond_d
     move-object v0, v1
 
     goto/16 :goto_2
 
-    :cond_d
+    :cond_e
     move v1, v0
 
     move v3, v0
@@ -862,13 +891,19 @@
 .end method
 
 .method private addPhoto(Lcom/motorola/camera/CameraData;)V
-    .locals 2
+    .locals 3
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->PLACE_HOLDER:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
 
-    const/4 v1, 0x0
+    sget-object v1, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
 
-    invoke-direct {p0, v0, v1, p1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;ILcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    const/4 v2, 0x0
+
+    invoke-static {v2, v1}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(ILcom/motorola/camera/ShotType;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1, p1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     move-result-object v0
 
@@ -887,11 +922,17 @@
 .method private addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;)V
     .locals 2
 
-    const/4 v0, 0x0
+    sget-object v0, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, p1, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;ILcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    invoke-static {v1, v0}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(ILcom/motorola/camera/ShotType;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, p1, v0, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/CameraData;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     return-void
 .end method
@@ -1379,9 +1420,9 @@
     :goto_0
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$150;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$8;
 
-    invoke-direct {v2, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$150;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$8;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2378,9 +2419,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$117;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$2;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$117;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$2;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2447,6 +2488,134 @@
     div-float v0, v1, v2
 
     goto :goto_1
+.end method
+
+.method private declared-synchronized getPlaceHolderThumbnail()Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    .locals 4
+
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    :try_start_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->get(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getThumbnailType()Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->PLACE_HOLDER:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-ne v2, v3, :cond_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method private declared-synchronized getThumbnailFor(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    .locals 4
+
+    monitor-enter p0
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    :try_start_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->get(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-result-object v2
+
+    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    iget v3, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-ne v2, v3, :cond_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
 .method private getThumbnailIndexForTouchLocation(Landroid/graphics/PointF;)I
@@ -3178,9 +3347,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$119;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$4;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$119;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$4;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -3192,6 +3361,38 @@
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->getLastCapture()V
 
     goto :goto_0
+.end method
+
+.method private renderToThumbnailTextureFbo(Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;[F[F)V
+    .locals 2
+
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getFbo()Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getFb()I
+
+    move-result v0
+
+    const v1, 0x8d40
+
+    invoke-static {v1, v0}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
+
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getFbo()Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setViewPort()V
+
+    invoke-direct {p0, p3}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->getViewMatrix([F)[F
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0, p4}, Lcom/motorola/camera/ui/widgets/gl/textures/Texture;->draw([F[F)V
+
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setCapturedFbo()V
+
+    return-void
 .end method
 
 .method private declared-synchronized setPhotosVisibility(Z)V
@@ -3251,6 +3452,407 @@
     monitor-exit p0
 
     throw v0
+.end method
+
+.method private setupFbo(Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;)[F
+    .locals 10
+
+    const/high16 v9, 0x3f000000    # 0.5f
+
+    const/16 v7, 0x10e
+
+    const/16 v6, 0x5a
+
+    const/4 v1, 0x0
+
+    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mOrientation:I
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v2, v3, v0}, Lcom/motorola/camera/Util;->correctOrientationRelativeToSensor(III)I
+
+    move-result v3
+
+    new-instance v4, Lcom/motorola/camera/PreviewSize;
+
+    if-eq v3, v6, :cond_0
+
+    if-ne v3, v7, :cond_6
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    move v2, v0
+
+    :goto_0
+    if-eq v3, v6, :cond_1
+
+    if-ne v3, v7, :cond_7
+
+    :cond_1
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    :goto_1
+    invoke-direct {v4, v2, v0}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
+
+    new-instance v0, Lcom/motorola/camera/PreviewSize;
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v2, v2, Lcom/motorola/camera/PreviewSize;->width:I
+
+    iget-object v5, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v5, v5, Lcom/motorola/camera/PreviewSize;->height:I
+
+    invoke-direct {v0, v2, v5}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    if-eq v3, v6, :cond_2
+
+    if-ne v3, v7, :cond_8
+
+    :cond_2
+    :goto_2
+    new-instance v0, Lcom/motorola/camera/PreviewSize;
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v2, v2, Lcom/motorola/camera/PreviewSize;->height:I
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
+
+    invoke-direct {v0, v2, v3}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
+
+    :cond_3
+    iget v2, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    iget v3, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    if-lt v2, v3, :cond_9
+
+    iget v2, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    iget v3, v4, Lcom/motorola/camera/PreviewSize;->height:I
+
+    if-lt v2, v3, :cond_9
+
+    iget v3, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    iget v2, v4, Lcom/motorola/camera/PreviewSize;->height:I
+
+    :goto_3
+    iget v5, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v5, v5
+
+    int-to-float v6, v3
+
+    div-float/2addr v5, v6
+
+    iget v6, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v6, v6
+
+    int-to-float v7, v2
+
+    div-float/2addr v6, v7
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(FF)F
+
+    move-result v5
+
+    sget-boolean v6, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v6, :cond_4
+
+    sget-object v6, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v8, "viewSize:"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v7, " previewSize:"
+
+    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v4, " "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v4, " x "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v4, " scaleRatio:"
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v6, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_4
+    invoke-virtual {p1}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getFbo()Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setSize(II)V
+
+    invoke-virtual {v8}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setViewScale()V
+
+    invoke-virtual {v8}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->resizeTexture()V
+
+    int-to-float v0, v3
+
+    mul-float/2addr v0, v5
+
+    mul-float v3, v0, v9
+
+    int-to-float v0, v2
+
+    mul-float/2addr v0, v5
+
+    mul-float v5, v0, v9
+
+    const/16 v0, 0x10
+
+    new-array v0, v0, [F
+
+    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+
+    neg-float v2, v3
+
+    neg-float v4, v5
+
+    const/high16 v6, 0x41200000    # 10.0f
+
+    const/high16 v7, 0x41a00000    # 20.0f
+
+    invoke-static/range {v0 .. v7}, Landroid/opengl/Matrix;->orthoM([FIFFFFFF)V
+
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_5
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "onPostView mViewSize:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " mPreviewSize:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " fboSize:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v8}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getSize()Landroid/graphics/Point;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " fboPreScale:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v8}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getPreScale()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_5
+    return-object v0
+
+    :cond_6
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    move v2, v0
+
+    goto/16 :goto_0
+
+    :cond_7
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    goto/16 :goto_1
+
+    :cond_8
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    if-eqz v3, :cond_2
+
+    const/16 v2, 0xb4
+
+    if-ne v3, v2, :cond_3
+
+    goto/16 :goto_2
+
+    :cond_9
+    iget v2, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    iget v3, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    if-ge v2, v3, :cond_a
+
+    iget v3, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    iget v2, v4, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v2, v2
+
+    iget v5, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v5, v5
+
+    iget v6, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v6, v6
+
+    div-float/2addr v5, v6
+
+    mul-float/2addr v2, v5
+
+    float-to-int v2, v2
+
+    goto/16 :goto_3
+
+    :cond_a
+    iget v2, v4, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v2, v2
+
+    iget v3, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v3, v3
+
+    iget v5, v4, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v5, v5
+
+    div-float/2addr v3, v5
+
+    mul-float/2addr v2, v3
+
+    float-to-int v3, v2
+
+    iget v2, v0, Lcom/motorola/camera/PreviewSize;->height:I
+
+    goto/16 :goto_3
 .end method
 
 .method private declared-synchronized updateDrawList()V
@@ -3528,69 +4130,296 @@
     return-void
 .end method
 
+.method private updateProjectionForCrop([FLcom/motorola/camera/mcf/McfMetadata;)V
+    .locals 12
+    .param p1    # [F
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
+    .param p2    # Lcom/motorola/camera/mcf/McfMetadata;
+        .annotation build Landroid/support/annotation/NonNull;
+        .end annotation
+    .end param
 
-# virtual methods
-.method public declared-synchronized getPlaceHolderThumbnail()Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
-    .locals 4
+    const/high16 v11, -0x41000000    # -0.5f
 
-    monitor-enter p0
+    const/4 v10, 0x3
 
-    const/4 v0, 0x0
+    const/4 v9, 0x2
 
-    move v1, v0
+    const/4 v8, 0x1
 
-    :goto_0
-    :try_start_0
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->size()I
+    sget-object v0, Lcom/motorola/camera/mcf/McfMetadata;->QCAMERA3_JPEG_ENCODE_CROP_RECT:Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    move-result v0
-
-    if-ge v1, v0, :cond_1
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->get(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+    invoke-virtual {p2, v0}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    check-cast v0, [I
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getThumbnailType()Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
 
     move-result-object v2
 
-    sget-object v3, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->PLACE_HOLDER:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v2, v8}, Lcom/motorola/camera/settings/SettingsHelper;->getYuvImageSize(Ljava/lang/String;Z)Landroid/util/Size;
 
-    if-ne v2, v3, :cond_0
+    move-result-object v2
 
-    monitor-exit p0
+    if-eqz v0, :cond_1
 
-    return-object v0
+    if-eqz v2, :cond_1
+
+    const/4 v3, 0x4
+
+    new-array v5, v3, [F
+
+    aget v3, v0, v1
+
+    int-to-float v3, v3
+
+    aput v3, v5, v1
+
+    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+
+    move-result v3
+
+    aget v4, v0, v8
+
+    sub-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    aput v3, v5, v8
+
+    aget v3, v0, v1
+
+    aget v4, v0, v9
+
+    add-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    aput v3, v5, v9
+
+    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+
+    move-result v3
+
+    aget v4, v0, v8
+
+    aget v0, v0, v10
+
+    add-int/2addr v0, v4
+
+    sub-int v0, v3, v0
+
+    int-to-float v0, v0
+
+    aput v0, v5, v10
+
+    new-instance v3, Landroid/graphics/Matrix;
+
+    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
+
+    new-instance v4, Landroid/graphics/Matrix;
+
+    invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
+
+    new-instance v6, Landroid/graphics/Matrix;
+
+    invoke-direct {v6}, Landroid/graphics/Matrix;-><init>()V
+
+    invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, v11
+
+    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    mul-float/2addr v7, v11
+
+    invoke-virtual {v3, v0, v7}, Landroid/graphics/Matrix;->setTranslate(FF)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
+
+    int-to-float v0, v0
+
+    invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    div-float/2addr v0, v7
+
+    iget-object v7, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    iget v7, v7, Lcom/motorola/camera/PreviewSize;->height:I
+
+    int-to-float v7, v7
+
+    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    div-float v2, v7, v2
+
+    invoke-virtual {v4, v0, v2}, Landroid/graphics/Matrix;->setScale(FF)V
+
+    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mOrientation:I
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v2, v7, v0}, Lcom/motorola/camera/Util;->correctOrientationRelativeToSensor(III)I
+
+    move-result v0
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {v6, v0}, Landroid/graphics/Matrix;->setRotate(F)V
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0, v3}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
+
+    invoke-virtual {v0, v4}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
+
+    invoke-virtual {v0, v6}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
+
+    invoke-virtual {v0, v5}, Landroid/graphics/Matrix;->mapPoints([F)V
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "test mPreviewSize:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, " updateFboProj:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-static {v5}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    add-int/lit8 v0, v1, 0x1
+    aget v0, v5, v1
 
-    move v1, v0
+    aget v2, v5, v9
 
-    goto :goto_0
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
+
+    move-result v2
+
+    aget v0, v5, v1
+
+    aget v3, v5, v9
+
+    invoke-static {v0, v3}, Ljava/lang/Math;->max(FF)F
+
+    move-result v3
+
+    aget v0, v5, v8
+
+    aget v4, v5, v10
+
+    invoke-static {v0, v4}, Ljava/lang/Math;->min(FF)F
+
+    move-result v4
+
+    aget v0, v5, v8
+
+    aget v5, v5, v10
+
+    invoke-static {v0, v5}, Ljava/lang/Math;->max(FF)F
+
+    move-result v5
+
+    const/high16 v6, 0x41200000    # 10.0f
+
+    const/high16 v7, 0x41a00000    # 20.0f
+
+    move-object v0, p1
+
+    invoke-static/range {v0 .. v7}, Landroid/opengl/Matrix;->orthoM([FIFFFFFF)V
 
     :cond_1
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    monitor-exit p0
 
-    return-object v0
+# virtual methods
+.method synthetic -com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll-mthref-0()V
+    .locals 0
 
-    :catchall_0
-    move-exception v0
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->reLayoutPhotos()V
 
-    monitor-exit p0
-
-    throw v0
+    return-void
 .end method
 
 .method public getStatesToListenFor()Ljava/util/Collection;
@@ -3628,7 +4457,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xa
+    const/16 v1, 0xc
 
     new-array v1, v1, [Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -3644,51 +4473,63 @@
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x2
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_PRINT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x3
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_BOUNCE_TAB_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MS_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x4
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_CLEANUP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x5
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_DRAG_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_BOUNCE_TAB_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x6
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_EMPTY_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_CLEANUP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x7
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_OPEN_PHOTO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_DRAG_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x8
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_SECURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_EMPTY_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x9
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_OPEN_PHOTO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0xa
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_SECURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0xb
 
     aput-object v2, v1, v3
 
@@ -3711,7 +4552,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_14268()V
     .locals 3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -3727,7 +4568,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$2()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_16923()V
     .locals 1
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->SECURE_LOCK:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
@@ -3741,15 +4582,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$3()V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->reLayoutPhotos()V
-
-    return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$4()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_30267()V
     .locals 5
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll$4;
@@ -3783,7 +4616,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$5(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_37978(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
@@ -3797,7 +4630,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$9()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_53517()V
     .locals 1
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->SECURE_LOCK:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
@@ -3833,9 +4666,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$118;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$118;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$3;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0
@@ -3927,27 +4760,29 @@
     return-void
 .end method
 
-.method public declared-synchronized onPostView(Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;[F)V
-    .locals 13
-
-    const/16 v4, 0x10e
-
-    const/16 v3, 0x5a
-
-    const/high16 v5, 0x40000000    # 2.0f
+.method public declared-synchronized onPostView(Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;[FLcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;)V
+    .locals 3
 
     monitor-enter p0
 
+    if-eqz p3, :cond_0
+
     :try_start_0
-    invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->getPlaceHolderThumbnail()Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    iget-object v0, p3, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v11
+    if-nez v0, :cond_1
 
-    if-nez v11, :cond_0
+    :cond_0
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->getPlaceHolderThumbnail()Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+
+    move-result-object v0
+
+    :goto_0
+    if-nez v0, :cond_2
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v1, "No place holder thumbnail found!"
+    const-string/jumbo v1, "onPostView: No thumbnail found or placeholder"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
@@ -3957,408 +4792,39 @@
 
     return-void
 
-    :cond_0
-    :try_start_1
-    invoke-virtual {v11}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getFbo()Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
-
-    move-result-object v12
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isMod360()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mOrientation:I
-
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v1, v2, v0}, Lcom/motorola/camera/Util;->correctOrientationRelativeToSensor(III)I
-
-    move-result v2
-
-    if-eq v2, v3, :cond_1
-
-    if-ne v2, v4, :cond_3
-
     :cond_1
-    new-instance v1, Lcom/motorola/camera/PreviewSize;
+    :try_start_1
+    iget-object v0, p3, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->getThumbnailFor(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
-
-    invoke-direct {v1, v0, v3}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    new-instance v0, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->height:I
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v4, v4, Lcom/motorola/camera/PreviewSize;->width:I
-
-    invoke-direct {v0, v3, v4}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    move-object v8, v0
-
-    move-object v9, v1
-
-    move v10, v2
-
-    :goto_0
-    iget v0, v8, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget v1, v9, Lcom/motorola/camera/PreviewSize;->width:I
-
-    if-lt v0, v1, :cond_7
-
-    iget v0, v8, Lcom/motorola/camera/PreviewSize;->height:I
-
-    iget v1, v9, Lcom/motorola/camera/PreviewSize;->height:I
-
-    if-lt v0, v1, :cond_7
-
-    iget v1, v9, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget v0, v9, Lcom/motorola/camera/PreviewSize;->height:I
-
-    :goto_1
-    invoke-virtual {v12, v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setSize(II)V
-
-    invoke-virtual {v12}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setViewScale()V
-
-    invoke-virtual {v12}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->resizeTexture()V
-
-    int-to-float v1, v1
-
-    div-float v3, v1, v5
-
-    int-to-float v0, v0
-
-    div-float v5, v0, v5
-
-    const/16 v0, 0x10
-
-    new-array v0, v0, [F
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
-
-    neg-float v2, v3
-
-    neg-float v4, v5
-
-    const/4 v1, 0x0
-
-    const/high16 v6, 0x41200000    # 10.0f
-
-    const/high16 v7, 0x41a00000    # 20.0f
-
-    invoke-static/range {v0 .. v7}, Landroid/opengl/Matrix;->orthoM([FIFFFFFF)V
-
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v1, :cond_2
-
-    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "orien:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " fbo:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v12}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getSize()Landroid/graphics/Point;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " viewSize:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " previewSize:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_0
 
     :cond_2
-    invoke-virtual {v12}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getFb()I
-
-    move-result v1
-
-    const v2, 0x8d40
-
-    invoke-static {v2, v1}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
-
-    invoke-virtual {v12}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setViewPort()V
-
-    invoke-direct {p0, p2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->getViewMatrix([F)[F
+    invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->setupFbo(Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;)[F
 
     move-result-object v1
 
-    invoke-virtual {p1, v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/CameraPreviewTexture;->draw([F[F)V
+    if-eqz p3, :cond_3
 
-    invoke-virtual {v11}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->setCapturedFbo()V
+    iget-object v2, p3, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;->mMcfMetadata:Lcom/motorola/camera/mcf/McfMetadata;
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p3, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;->mMcfMetadata:Lcom/motorola/camera/mcf/McfMetadata;
+
+    invoke-direct {p0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->updateProjectionForCrop([FLcom/motorola/camera/mcf/McfMetadata;)V
+
+    :cond_3
+    invoke-direct {p0, v0, p1, p2, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->renderToThumbnailTextureFbo(Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;[F[F)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
     return-void
-
-    :cond_3
-    :try_start_2
-    new-instance v1, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->height:I
-
-    invoke-direct {v1, v0, v3}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    new-instance v0, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v4, v4, Lcom/motorola/camera/PreviewSize;->height:I
-
-    invoke-direct {v0, v3, v4}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    move-object v8, v0
-
-    move-object v9, v1
-
-    move v10, v2
-
-    goto/16 :goto_0
-
-    :cond_4
-    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mOrientation:I
-
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getCameraCharacteristic(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v1, v2, v0}, Lcom/motorola/camera/Util;->correctOrientationRelativeToSensor(III)I
-
-    move-result v2
-
-    if-eq v2, v3, :cond_5
-
-    if-ne v2, v4, :cond_6
-
-    :cond_5
-    new-instance v1, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->height:I
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
-
-    invoke-direct {v1, v0, v3}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    new-instance v0, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v4, v4, Lcom/motorola/camera/PreviewSize;->height:I
-
-    invoke-direct {v0, v3, v4}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    move-object v8, v0
-
-    move-object v9, v1
-
-    move v10, v2
-
-    goto/16 :goto_0
-
-    :cond_6
-    new-instance v1, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v0, v0, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPreviewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->height:I
-
-    invoke-direct {v1, v0, v3}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    new-instance v0, Lcom/motorola/camera/PreviewSize;
-
-    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v3, v3, Lcom/motorola/camera/PreviewSize;->height:I
-
-    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mViewSize:Lcom/motorola/camera/PreviewSize;
-
-    iget v4, v4, Lcom/motorola/camera/PreviewSize;->width:I
-
-    invoke-direct {v0, v3, v4}, Lcom/motorola/camera/PreviewSize;-><init>(II)V
-
-    move-object v8, v0
-
-    move-object v9, v1
-
-    move v10, v2
-
-    goto/16 :goto_0
-
-    :cond_7
-    iget v0, v8, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget v1, v9, Lcom/motorola/camera/PreviewSize;->width:I
-
-    if-ge v0, v1, :cond_8
-
-    iget v1, v8, Lcom/motorola/camera/PreviewSize;->width:I
-
-    iget v0, v9, Lcom/motorola/camera/PreviewSize;->height:I
-
-    int-to-float v0, v0
-
-    iget v2, v8, Lcom/motorola/camera/PreviewSize;->width:I
-
-    int-to-float v2, v2
-
-    iget v3, v9, Lcom/motorola/camera/PreviewSize;->width:I
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    mul-float/2addr v0, v2
-
-    float-to-int v0, v0
-
-    goto/16 :goto_1
-
-    :cond_8
-    iget v0, v9, Lcom/motorola/camera/PreviewSize;->width:I
-
-    int-to-float v0, v0
-
-    iget v1, v8, Lcom/motorola/camera/PreviewSize;->height:I
-
-    int-to-float v1, v1
-
-    iget v2, v9, Lcom/motorola/camera/PreviewSize;->height:I
-
-    int-to-float v2, v2
-
-    div-float/2addr v1, v2
-
-    mul-float/2addr v0, v1
-
-    float-to-int v1, v0
-
-    iget v0, v8, Lcom/motorola/camera/PreviewSize;->height:I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto/16 :goto_1
 
     :catchall_0
     move-exception v0
@@ -4672,34 +5138,32 @@
 .method public declared-synchronized onSaveComplete(Lcom/motorola/camera/CameraData;)V
     .locals 5
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
 
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mClosing:Z
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mClosing:Z
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->isTexInitialized()Z
 
-    move-result v2
+    move-result v0
 
-    xor-int/lit8 v2, v2, 0x1
+    xor-int/lit8 v0, v0, 0x1
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
 
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->isEmpty()Z
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->isEmpty()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
     if-nez p1, :cond_1
 
@@ -4710,44 +5174,44 @@
 
     :cond_1
     :try_start_1
-    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_2
 
-    sget-object v2, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "onSaveComplete begin "
+    const-string/jumbo v3, "onSaveComplete begin "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
-    iget-boolean v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsCapturing:Z
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsCapturing:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->isSecure()Z
 
-    move-result v2
+    move-result v0
 
-    xor-int/lit8 v2, v2, 0x1
+    xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mLastMsCameraData:Lcom/motorola/camera/CameraData;
 
@@ -4807,59 +5271,83 @@
 
     :cond_4
     :try_start_2
-    iget-boolean v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mLaunchGalleryOnSave:Z
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mLaunchGalleryOnSave:Z
 
-    if-eqz v2, :cond_8
+    if-eqz v0, :cond_8
 
     invoke-virtual {p1}, Lcom/motorola/camera/CameraData;->getBundle()Landroid/os/Bundle;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-eqz v2, :cond_5
+    if-eqz v0, :cond_5
 
-    const-string/jumbo v1, "SEQ_ID"
+    const-string/jumbo v2, "SEQ_ID"
 
-    invoke-virtual {v2, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    :cond_5
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
-
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->size()I
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-lez v2, :cond_6
+    if-eqz v2, :cond_5
+
+    const-string/jumbo v2, "SEQ_ID"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-object v2, v0
+
+    :goto_1
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_6
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mPhotos:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->get(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailQueue;->get(I)Lcom/motorola/camera/ui/widgets/gl/photoroll/iThumbnail;
 
     move-result-object v0
 
     check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
-    :cond_6
+    :goto_2
     if-eqz v0, :cond_7
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()I
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;->getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    move-result-object v0
+
+    invoke-static {v0, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     move-result v0
 
-    const/high16 v2, 0x7fff0000
+    xor-int/lit8 v0, v0, 0x1
 
-    and-int/2addr v1, v2
-
-    if-eq v0, v1, :cond_7
+    if-eqz v0, :cond_7
 
     monitor-exit p0
 
     return-void
+
+    :cond_5
+    move-object v2, v1
+
+    goto :goto_1
+
+    :cond_6
+    move-object v0, v1
+
+    goto :goto_2
 
     :cond_7
     :try_start_3
@@ -4891,7 +5379,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :catchall_0
     move-exception v0
@@ -4902,6 +5390,39 @@
 
     :cond_8
     :try_start_4
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mLaunchPrinterOnSave:Z
+
+    if-eqz v0, :cond_9
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/LaunchPrinterTask;
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-direct {v1, p1, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/LaunchPrinterTask;-><init>(Lcom/motorola/camera/CameraData;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
+
+    sget-object v2, Landroid/os/AsyncTask;->SERIAL_EXECUTOR:Ljava/util/concurrent/Executor;
+
+    const/4 v0, 0x1
+
+    new-array v3, v0, [Ljava/lang/Void;
+
+    const/4 v0, 0x0
+
+    check-cast v0, Ljava/lang/Void;
+
+    const/4 v4, 0x0
+
+    aput-object v0, v3, v4
+
+    invoke-virtual {v1, v2, v3}, Lcom/motorola/camera/ui/widgets/gl/photoroll/LaunchPrinterTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mLaunchPrinterOnSave:Z
+
+    goto/16 :goto_0
+
+    :cond_9
     invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/CameraData;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
@@ -4981,9 +5502,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$120;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$5;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$120;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$5;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -4991,7 +5512,7 @@
 .end method
 
 .method public stateChanged(Lcom/motorola/camera/fsm/ChangeEvent;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5005,7 +5526,7 @@
 
     const/4 v1, 0x0
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
     const/4 v2, 0x0
 
@@ -5158,7 +5679,7 @@
     :cond_5
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_MCF_CAPTURE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -5178,9 +5699,11 @@
 
     const-string/jumbo v3, "SEQ_ID"
 
-    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result v0
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     sget-boolean v3, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -5188,17 +5711,21 @@
 
     sget-object v3, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v4, "MCF_CAPTURE seqId:0x%08x"
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    new-array v5, v7, [Ljava/lang/Object;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v5, "MCF_CAPTURE "
 
-    move-result-object v6
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v6, v5, v2
+    move-result-object v4
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -5209,7 +5736,7 @@
 
     sget-object v3, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->PLACE_HOLDER:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
 
-    invoke-direct {p0, v3, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;I)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    invoke-direct {p0, v3, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     goto/16 :goto_0
 
@@ -5330,7 +5857,7 @@
     :cond_d
     monitor-exit p0
 
-    invoke-direct {p0, v7}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->setPhotosVisibility(Z)V
+    invoke-direct {p0, v6}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->setPhotosVisibility(Z)V
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -5417,9 +5944,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$121;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$6;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$121;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/-$Lambda$1-Apq9dcNfQuo0_oVd5PsqchjFI$6;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -5512,7 +6039,7 @@
 
     if-eqz v0, :cond_13
 
-    invoke-direct {p0, v7}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->setPhotosVisibility(Z)V
+    invoke-direct {p0, v6}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->setPhotosVisibility(Z)V
 
     goto/16 :goto_3
 
@@ -5601,9 +6128,11 @@
 
     const-string/jumbo v1, "SEQ_ID"
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result v0
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -5611,26 +6140,32 @@
 
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v3, "SS_CAPTURE seqId:0x%08x"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-array v4, v7, [Ljava/lang/Object;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v3, "SS_CAPTURE"
 
-    move-result-object v5
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v5, v4, v2
+    move-result-object v2
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_16
+    if-eqz v0, :cond_a
+
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;->PLACE_HOLDER:Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;
 
-    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;I)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
+    invoke-direct {p0, v1, v0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->addPhoto(Lcom/motorola/camera/ui/widgets/gl/photoroll/ThumbnailType;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/ui/widgets/gl/textures/ThumbnailTexture;
 
     goto/16 :goto_3
 
@@ -5641,7 +6176,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_18
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -5657,11 +6192,13 @@
 
     const-string/jumbo v1, "SEQ_ID"
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result v0
+    move-result-object v0
 
-    iput v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:I
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -5669,23 +6206,73 @@
 
     sget-object v0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v1, "MS_CAPTURE seqId:0x%08x"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-array v3, v7, [Ljava/lang/Object;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget v4, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:I
+    const-string/jumbo v2, "MS_CAPTURE "
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    aput-object v4, v3, v2
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mMsSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_3
+
+    :cond_18
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_PRINT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    iput-boolean v6, p0, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->mLaunchPrinterOnSave:Z
+
+    goto/16 :goto_3
+
+    :cond_19
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_REVIEW_RESULT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SINGLE_SHOT:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "REVIEW_ACCEPT"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_a
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->removeLastCapture()V
 
     goto/16 :goto_3
 .end method

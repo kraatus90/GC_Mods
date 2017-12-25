@@ -78,29 +78,29 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "org.apache.commons.logging.impl.Log4JLogger"
 
-    const-string/jumbo v2, "org.apache.commons.logging.impl.Log4JLogger"
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "org.apache.commons.logging.impl.Jdk14Logger"
 
-    const-string/jumbo v2, "org.apache.commons.logging.impl.Jdk14Logger"
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "org.apache.commons.logging.impl.Jdk13LumberjackLogger"
 
-    const-string/jumbo v2, "org.apache.commons.logging.impl.Jdk13LumberjackLogger"
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "org.apache.commons.logging.impl.SimpleLog"
 
-    const-string/jumbo v2, "org.apache.commons.logging.impl.SimpleLog"
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/commons/logging/impl/LogFactoryImpl;->classesToDiscover:[Ljava/lang/String;
 
@@ -834,11 +834,11 @@
     iput-object v5, p0, Lorg/apache/commons/logging/impl/LogFactoryImpl;->i:Ljava/lang/reflect/Constructor;
 
     :try_start_a
-    const-string/jumbo v0, "setLogFactory"
+    iget-object v0, p0, Lorg/apache/commons/logging/impl/LogFactoryImpl;->l:[Ljava/lang/Class;
 
-    iget-object v5, p0, Lorg/apache/commons/logging/impl/LogFactoryImpl;->l:[Ljava/lang/Class;
+    const-string/jumbo v5, "setLogFactory"
 
-    invoke-virtual {v2, v0, v5}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v2, v5, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
@@ -1901,9 +1901,7 @@
 .end method
 
 .method private getParentClassLoader(Ljava/lang/ClassLoader;)Ljava/lang/ClassLoader;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     :try_start_0
     new-instance v0, Lorg/apache/commons/logging/impl/LogFactoryImpl$3;
@@ -1927,7 +1925,9 @@
 
     invoke-virtual {p0, v0}, Lorg/apache/commons/logging/impl/LogFactoryImpl;->d(Ljava/lang/String;)V
 
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method private static getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

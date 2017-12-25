@@ -17,6 +17,14 @@
 # direct methods
 .method public constructor <init>(Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;Landroid/content/Intent;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;",
+            "Landroid/content/Intent;",
+            ")V"
+        }
+    .end annotation
 
     sget-object v0, Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;->INTENT:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
 

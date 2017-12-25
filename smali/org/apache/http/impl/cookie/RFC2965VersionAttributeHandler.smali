@@ -32,9 +32,11 @@
 .method public parse(Lorg/apache/http/cookie/SetCookie;Ljava/lang/String;)V
     .locals 2
 
-    const-string/jumbo v0, "Cookie"
+    const/4 v0, -0x1
 
-    invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const-string/jumbo v1, "Cookie"
+
+    invoke-static {p1, v1}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     if-eqz p2, :cond_0
 
@@ -62,9 +64,7 @@
     throw v0
 
     :catch_0
-    move-exception v0
-
-    const/4 v0, -0x1
+    move-exception v1
 
     goto :goto_0
 

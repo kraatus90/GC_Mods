@@ -341,6 +341,16 @@
     return v0
 .end method
 
+.method public resetFeedback()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/SettingTopBarButtonTexture;->mTouchTex:Lcom/motorola/camera/ui/widgets/gl/textures/TouchFeedbackTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TouchFeedbackTexture;->resetFeedback()V
+
+    return-void
+.end method
+
 .method public rotate()V
     .locals 8
 

@@ -462,11 +462,11 @@
     move-object v2, v0
 
     :goto_0
-    const-string/jumbo v3, "getContextClassLoader"
-
     const/4 v0, 0x0
 
     check-cast v0, [Ljava/lang/Class;
+
+    const-string/jumbo v3, "getContextClassLoader"
 
     invoke-virtual {v2, v3, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
@@ -553,11 +553,11 @@
 
     new-instance v1, Lorg/apache/commons/logging/LogConfigurationException;
 
-    const-string/jumbo v2, "Unexpected InvocationTargetException"
-
     invoke-virtual {v0}, Ljava/lang/reflect/InvocationTargetException;->getTargetException()Ljava/lang/Throwable;
 
     move-result-object v0
+
+    const-string/jumbo v2, "Unexpected InvocationTargetException"
 
     invoke-direct {v1, v2, v0}, Lorg/apache/commons/logging/LogConfigurationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -1231,9 +1231,9 @@
     :goto_0
     if-eqz v0, :cond_0
 
-    :goto_1
     move-object v1, v0
 
+    :goto_1
     :try_start_1
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -1262,6 +1262,8 @@
 
     :cond_0
     const-string/jumbo v0, "org.apache.commons.logging.impl.WeakHashtable"
+
+    move-object v1, v0
 
     goto :goto_1
 
@@ -2382,11 +2384,11 @@
     if-nez v0, :cond_19
 
     :goto_10
-    const-string/jumbo v0, "org.apache.commons.logging.impl.LogFactoryImpl"
+    sget-object v0, Lorg/apache/commons/logging/LogFactory;->thisClassLoader:Ljava/lang/ClassLoader;
 
-    sget-object v2, Lorg/apache/commons/logging/LogFactory;->thisClassLoader:Ljava/lang/ClassLoader;
+    const-string/jumbo v2, "org.apache.commons.logging.impl.LogFactoryImpl"
 
-    invoke-static {v0, v2, v1}, Lorg/apache/commons/logging/LogFactory;->a(Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;)Lorg/apache/commons/logging/LogFactory;
+    invoke-static {v2, v0, v1}, Lorg/apache/commons/logging/LogFactory;->a(Ljava/lang/String;Ljava/lang/ClassLoader;Ljava/lang/ClassLoader;)Lorg/apache/commons/logging/LogFactory;
 
     move-result-object v0
 

@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c001e
+    const v1, 0x7f0c001f
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -61,7 +61,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c002c
+    const v1, 0x7f0c002d
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 

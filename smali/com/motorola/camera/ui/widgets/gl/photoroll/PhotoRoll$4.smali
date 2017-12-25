@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_lambda$4()V
+    value = Lcom/motorola/camera/ui/widgets/gl/photoroll/PhotoRoll;->lambda$-com_motorola_camera_ui_widgets_gl_photoroll_PhotoRoll_30267()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

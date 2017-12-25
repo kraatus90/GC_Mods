@@ -8,7 +8,7 @@
 
 .field private static final BUTTON_ROUNDING:F = 8.0f
 
-.field private static final MAX_AMAZON_CARDS:I = 0x2
+.field private static final MAX_AMAZON_CARDS:I = 0x3
 
 .field public static final PADDING:F = 16.0f
 
@@ -50,6 +50,8 @@
 .field private mMaxAmazonCards:I
 
 .field private mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
+
+.field private mResultsCount:I
 
 .field private mViewSize:Lcom/motorola/camera/PreviewSize;
 
@@ -109,7 +111,7 @@
     iput-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonTexturesList:Ljava/util/List;
 
     :goto_0
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     if-ge v0, v1, :cond_0
 
@@ -156,7 +158,7 @@
 
     const-string/jumbo v2, " "
 
-    const/16 v3, 0xff
+    const/16 v3, 0x100
 
     invoke-direct {v0, p0, v1, v3, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture$3;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;Lcom/motorola/camera/ui/widgets/gl/iRenderer;ILjava/lang/String;)V
 
@@ -243,6 +245,14 @@
     monitor-exit p0
 
     throw v0
+.end method
+
+.method public getResultsCount()I
+    .locals 1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mResultsCount:I
+
+    return v0
 .end method
 
 .method public declared-synchronized loadTexture()V
@@ -594,19 +604,15 @@
 
     iget v1, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->resultsCount:I
 
-    if-lez v1, :cond_5
+    iput v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mResultsCount:I
 
-    iget-object v1, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->amazonSearchResult:Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/ProductSearchResult;
+    iget v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mResultsCount:I
 
-    invoke-virtual {v1}, Lcom/motorola/camera/detector/results/tidbit/actions/AmazonProduct/ProductSearchResult;->getSearchResult()Ljava/util/List;
+    if-lez v1, :cond_6
 
-    move-result-object v1
+    iget v1, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->resultsCount:I
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
@@ -650,15 +656,23 @@
     goto :goto_1
 
     :cond_3
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonMoreResultsButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;
+    iget v1, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->resultsCount:I
+
+    iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mMaxAmazonCards:I
+
+    sub-int/2addr v1, v2
+
+    if-lez v1, :cond_7
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonMoreResultsButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/detector/results/tidbit/Product;->getAmazonApiResultsUrlAction()Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;->setAction(Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;)V
+    invoke-virtual {v2, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;->setAction(Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction;)V
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonMoreResultsButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonMoreResultsButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -672,21 +686,23 @@
 
     new-array v5, v4, [Ljava/lang/Object;
 
-    iget v0, v0, Lcom/motorola/camera/detector/results/tidbit/Product;->resultsCount:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v0
-
-    aput-object v0, v5, v3
+    aput-object v1, v5, v3
 
     invoke-static {v2, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;->setText(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;->setText(Ljava/lang/String;)V
+
+    move v0, v4
 
     :goto_2
+    if-eqz v0, :cond_4
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonMoreResultsButtonTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;->updateTranslations()V
@@ -711,20 +727,21 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter;->add(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)Z
 
+    :cond_4
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->updateTranslations()V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onDirty()V
 
-    :cond_4
+    :cond_5
     return v4
 
-    :cond_5
+    :cond_6
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mAmazonNoResultsTexture:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonNoResultsTexture;
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareAmazonCardTexture;->mContentTextureList:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
@@ -766,6 +783,13 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareMoreResultsButtonTexture;->setText(Ljava/lang/String;)V
+
+    move v0, v4
+
+    goto :goto_2
+
+    :cond_7
+    move v0, v3
 
     goto :goto_2
 .end method

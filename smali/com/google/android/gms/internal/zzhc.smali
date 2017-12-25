@@ -49,9 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     new-instance v0, Ljava/lang/Object;
 
@@ -59,7 +57,9 @@
 
     sput-object v0, Lcom/google/android/gms/internal/zzhc;->zznu:Ljava/lang/Object;
 
-    sput-object v1, Lcom/google/android/gms/internal/zzhc;->zzRo:Lcom/google/android/gms/internal/zzhc$zza;
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/google/android/gms/internal/zzhc;->zzRo:Lcom/google/android/gms/internal/zzhc$zza;
 
     const/4 v0, 0x0
 
@@ -78,9 +78,9 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/internal/zzhc;->zzHW:Ljava/lang/Object;
 

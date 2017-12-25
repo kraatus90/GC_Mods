@@ -72,7 +72,7 @@
 .end method
 
 .method public static newInstance(Ljava/lang/String;Ljava/lang/CharSequence;ILandroid/os/Bundle;)Ljava/lang/Object;
-    .locals 2
+    .locals 1
 
     new-instance v0, Landroid/media/session/PlaybackState$CustomAction$Builder;
 
@@ -82,7 +82,7 @@
 
     invoke-virtual {v0}, Landroid/media/session/PlaybackState$CustomAction$Builder;->build()Landroid/media/session/PlaybackState$CustomAction;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

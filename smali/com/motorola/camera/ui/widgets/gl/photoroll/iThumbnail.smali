@@ -7,7 +7,7 @@
 .method public abstract getCameraData()Lcom/motorola/camera/CameraData;
 .end method
 
-.method public abstract getSeqId()I
+.method public abstract getSeqId()Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 .end method
 
 .method public abstract isBestShot()Z

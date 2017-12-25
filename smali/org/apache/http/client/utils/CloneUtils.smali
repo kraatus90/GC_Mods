@@ -58,12 +58,12 @@
 
     move-result-object v1
 
-    :try_start_0
-    const-string/jumbo v2, "clone"
-
     const/4 v0, 0x0
 
+    :try_start_0
     check-cast v0, [Ljava/lang/Class;
+
+    const-string/jumbo v2, "clone"
 
     invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0

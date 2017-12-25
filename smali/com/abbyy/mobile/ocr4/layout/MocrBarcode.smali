@@ -86,25 +86,25 @@
 .method public clone()Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;
+    new-instance v1, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;
 
-    invoke-direct {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;-><init>()V
+    invoke-direct {v1}, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;-><init>()V
 
-    iget v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->type:I
+    iget v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->type:I
 
-    iput v1, v0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->type:I
+    iput v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->type:I
 
-    iget-object v1, p0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->text:Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;
+    iget-object v0, p0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->text:Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;
 
-    invoke-virtual {v1}, Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;->clone()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;
+    check-cast v0, Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;
 
-    iput-object v1, v0, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->text:Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;
+    iput-object v0, v1, Lcom/abbyy/mobile/ocr4/layout/MocrBarcode;->text:Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;
 
-    return-object v0
+    return-object v1
 .end method
 
 .method public getText()Lcom/abbyy/mobile/ocr4/layout/MocrTextLine;

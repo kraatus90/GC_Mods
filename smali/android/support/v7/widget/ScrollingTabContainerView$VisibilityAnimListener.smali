@@ -1,9 +1,6 @@
 .class public Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "ScrollingTabContainerView.java"
-
-# interfaces
-.implements Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
 
 # annotations
@@ -31,7 +28,7 @@
 
     iput-object p1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     const/4 v0, 0x0
 
@@ -42,7 +39,7 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/view/View;)V
+.method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
     const/4 v0, 0x1
@@ -52,10 +49,8 @@
     return-void
 .end method
 
-.method public onAnimationEnd(Landroid/view/View;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
-
-    const/4 v1, 0x0
 
     iget-boolean v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;->mCanceled:Z
 
@@ -63,7 +58,9 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
-    iput-object v1, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mVisibilityAnim:Landroid/view/ViewPropertyAnimator;
 
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
@@ -77,7 +74,7 @@
     return-void
 .end method
 
-.method public onAnimationStart(Landroid/view/View;)V
+.method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
     const/4 v1, 0x0
@@ -91,14 +88,14 @@
     return-void
 .end method
 
-.method public withFinalVisibility(Landroid/support/v4/view/ViewPropertyAnimatorCompat;I)Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;
+.method public withFinalVisibility(Landroid/view/ViewPropertyAnimator;I)Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;
     .locals 1
 
     iput p2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;->mFinalVisibility:I
 
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$VisibilityAnimListener;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
 
-    iput-object p1, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    iput-object p1, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mVisibilityAnim:Landroid/view/ViewPropertyAnimator;
 
     return-object p0
 .end method

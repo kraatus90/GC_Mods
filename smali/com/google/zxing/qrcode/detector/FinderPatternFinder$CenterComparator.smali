@@ -55,52 +55,52 @@
 
 # virtual methods
 .method public compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
-    .locals 4
+    .locals 3
 
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getCount()I
 
-    move-result v2
+    move-result v0
 
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getCount()I
 
-    move-result v3
+    move-result v1
 
-    if-eq v2, v3, :cond_0
+    if-eq v0, v1, :cond_0
 
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getCount()I
 
-    move-result v2
+    move-result v0
 
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getCount()I
 
-    move-result v3
+    move-result v1
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v0, v1
 
-    return v2
+    return v0
 
     :cond_0
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
-    move-result v2
+    move-result v0
 
-    iget v3, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->average:F
+    iget v1, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->average:F
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v0, v1
 
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
-    move-result v2
+    move-result v1
 
-    iget v3, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->average:F
+    iget v2, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->average:F
 
-    sub-float/2addr v2, v3
+    sub-float/2addr v1, v2
 
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
 
@@ -108,22 +108,22 @@
 
     if-gez v2, :cond_1
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     :goto_0
-    return v2
+    return v0
 
     :cond_1
-    cmpl-float v2, v0, v1
+    cmpl-float v0, v0, v1
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_2
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
     goto :goto_0
 .end method

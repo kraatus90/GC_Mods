@@ -3,12 +3,12 @@
 .source "ModesComponent.java"
 
 # interfaces
-.implements Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$OnItemClickListener;
+.implements Lcom/motorola/camera/settings/SettingChangeListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/ModesComponent;-><init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/motorola/camera/ui/widgets/gl/ModesComponent;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,38 +34,18 @@
 
 
 # virtual methods
-.method public onEmptySpaceTouched(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;)V
-    .locals 3
+.method public onChange(Lcom/motorola/camera/settings/Setting;)V
+    .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/ModesComponent;
 
-    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/ModesComponent;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2$1;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->BACK_KEY:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/ModesComponent$2;)V
 
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
-
-    return-void
-.end method
-
-.method public onItemClick(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onItemTouchDown(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public onItemTouchUp(Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
-    .locals 0
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

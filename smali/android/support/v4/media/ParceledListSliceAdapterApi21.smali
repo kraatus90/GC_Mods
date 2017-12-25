@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x15
 .end annotation
@@ -19,30 +15,30 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 4
 
     :try_start_0
-    const-string/jumbo v2, "android.content.pm.ParceledListSlice"
+    const-string/jumbo v0, "android.content.pm.ParceledListSlice"
 
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    new-array v2, v2, [Ljava/lang/Class;
+    new-array v1, v1, [Ljava/lang/Class;
+
+    const-class v2, Ljava/util/List;
 
     const/4 v3, 0x0
 
-    const-class v4, Ljava/util/List;
+    aput-object v2, v1, v3
 
-    aput-object v4, v2, v3
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    move-result-object v0
 
-    move-result-object v2
-
-    sput-object v2, Landroid/support/v4/media/ParceledListSliceAdapterApi21;->sConstructor:Ljava/lang/reflect/Constructor;
+    sput-object v0, Landroid/support/v4/media/ParceledListSliceAdapterApi21;->sConstructor:Ljava/lang/reflect/Constructor;
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
@@ -67,7 +63,7 @@
 .end method
 
 .method static newInstance(Ljava/util/List;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,31 +78,33 @@
     const/4 v1, 0x0
 
     :try_start_0
-    sget-object v2, Landroid/support/v4/media/ParceledListSliceAdapterApi21;->sConstructor:Ljava/lang/reflect/Constructor;
+    sget-object v0, Landroid/support/v4/media/ParceledListSliceAdapterApi21;->sConstructor:Ljava/lang/reflect/Constructor;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    aput-object p0, v3, v4
+    aput-object p0, v2, v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    move-result-object v0
 
     :goto_0
-    return-object v1
+    return-object v0
 
     :catch_0
     move-exception v0
 
     invoke-virtual {v0}, Ljava/lang/ReflectiveOperationException;->printStackTrace()V
+
+    move-object v0, v1
 
     goto :goto_0
 .end method

@@ -255,9 +255,9 @@
         value = "NP_BOOLEAN_RETURN_NULL"
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v3, 0x0
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0, p1}, Lcom/drew/metadata/Directory;->getObject(I)Ljava/lang/Object;
 
@@ -517,9 +517,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v1, 0x0
-
     const/4 v6, 0x0
+
+    const/4 v1, 0x0
 
     invoke-virtual {p0, p1}, Lcom/drew/metadata/Directory;->getObject(I)Ljava/lang/Object;
 
@@ -555,35 +555,35 @@
 
     aput-object v3, v2, v1
 
-    const/4 v3, 0x1
+    const-string/jumbo v3, "yyyy:MM:dd HH:mm"
 
-    const-string/jumbo v4, "yyyy:MM:dd HH:mm"
+    const/4 v4, 0x1
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
-    const/4 v3, 0x2
+    const-string/jumbo v3, "yyyy-MM-dd HH:mm:ss"
 
-    const-string/jumbo v4, "yyyy-MM-dd HH:mm:ss"
+    const/4 v4, 0x2
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
-    const/4 v3, 0x3
+    const-string/jumbo v3, "yyyy-MM-dd HH:mm"
 
-    const-string/jumbo v4, "yyyy-MM-dd HH:mm"
+    const/4 v4, 0x3
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
-    const/4 v3, 0x4
+    const-string/jumbo v3, "yyyy.MM.dd HH:mm:ss"
 
-    const-string/jumbo v4, "yyyy.MM.dd HH:mm:ss"
+    const/4 v4, 0x4
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
-    const/4 v3, 0x5
+    const-string/jumbo v3, "yyyy.MM.dd HH:mm"
 
-    const-string/jumbo v4, "yyyy.MM.dd HH:mm"
+    const/4 v4, 0x5
 
-    aput-object v4, v2, v3
+    aput-object v3, v2, v4
 
     check-cast v0, Ljava/lang/String;
 
@@ -1279,9 +1279,9 @@
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
-    const/4 v6, 0x1
+    const/4 v6, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
     const/4 v4, 0x0
 
@@ -1312,10 +1312,10 @@
     if-nez v2, :cond_7
 
     :cond_0
-    return-object v5
+    return-object v6
 
     :cond_1
-    return-object v5
+    return-object v6
 
     :cond_2
     :try_start_0
@@ -1404,7 +1404,7 @@
 
     array-length v2, v3
 
-    if-ne v2, v6, :cond_0
+    if-ne v2, v5, :cond_0
 
     aget-object v2, v3, v4
 
@@ -1425,7 +1425,7 @@
 
     array-length v2, v3
 
-    if-ne v2, v6, :cond_0
+    if-ne v2, v5, :cond_0
 
     aget-byte v2, v3, v4
 
@@ -1442,7 +1442,7 @@
 
     array-length v2, v3
 
-    if-ne v2, v6, :cond_0
+    if-ne v2, v5, :cond_0
 
     aget v2, v3, v4
 

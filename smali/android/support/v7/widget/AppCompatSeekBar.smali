@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private mAppCompatSeekBarHelper:Landroid/support/v7/widget/AppCompatSeekBarHelper;
+.field private final mAppCompatSeekBarHelper:Landroid/support/v7/widget/AppCompatSeekBarHelper;
 
 
 # direct methods
@@ -62,10 +62,6 @@
 
 .method public jumpDrawablesToCurrentState()V
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
-
     .annotation build Landroid/support/annotation/RequiresApi;
         value = 0xb
     .end annotation
@@ -79,14 +75,28 @@
     return-void
 .end method
 
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method protected declared-synchronized onDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
+    monitor-enter p0
+
+    :try_start_0
     invoke-super {p0, p1}, Landroid/widget/SeekBar;->onDraw(Landroid/graphics/Canvas;)V
 
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSeekBar;->mAppCompatSeekBarHelper:Landroid/support/v7/widget/AppCompatSeekBarHelper;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatSeekBarHelper;->drawTickMarks(Landroid/graphics/Canvas;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

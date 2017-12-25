@@ -36,209 +36,209 @@
 
     new-array v0, v0, [I
 
-    const/4 v1, 0x0
+    const/16 v1, 0x7c94
 
-    const/16 v2, 0x7c94
+    const/4 v2, 0x0
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x1
+    const v1, 0x85bc
 
-    const v2, 0x85bc
+    const/4 v2, 0x1
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x2
+    const v1, 0x9a99
 
-    const v2, 0x9a99
+    const/4 v2, 0x2
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x3
+    const v1, 0xa4d3
 
-    const v2, 0xa4d3
+    const/4 v2, 0x3
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x4
+    const v1, 0xbbf6
 
-    const v2, 0xbbf6
+    const/4 v2, 0x4
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x5
+    const v1, 0xc762
 
-    const v2, 0xc762
+    const/4 v2, 0x5
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x6
+    const v1, 0xd847
 
-    const v2, 0xd847
+    const/4 v2, 0x6
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/4 v1, 0x7
+    const v1, 0xe60d
 
-    const v2, 0xe60d
+    const/4 v2, 0x7
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x8
+    const v1, 0xf928
 
-    const v2, 0xf928
+    const/16 v2, 0x8
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x9
+    const v1, 0x10b78
 
-    const v2, 0x10b78
+    const/16 v2, 0x9
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0xa
+    const v1, 0x1145d
 
-    const v2, 0x1145d
+    const/16 v2, 0xa
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0xb
+    const v1, 0x12a17
 
-    const v2, 0x12a17
+    const/16 v2, 0xb
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0xc
+    const v1, 0x13532
 
-    const v2, 0x13532
+    const/16 v2, 0xc
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0xd
+    const v1, 0x149a6
 
-    const v2, 0x149a6
+    const/16 v2, 0xd
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0xe
+    const v1, 0x15683
 
-    const v2, 0x15683
+    const/16 v2, 0xe
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0xf
+    const v1, 0x168c9
 
-    const v2, 0x168c9
+    const/16 v2, 0xf
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x10
+    const v1, 0x177ec
 
-    const v2, 0x177ec
+    const/16 v2, 0x10
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x11
+    const v1, 0x18ec4
 
-    const v2, 0x18ec4
+    const/16 v2, 0x11
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x12
+    const v1, 0x191e1
 
-    const v2, 0x191e1
+    const/16 v2, 0x12
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x13
+    const v1, 0x1afab
 
-    const v2, 0x1afab
+    const/16 v2, 0x13
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x14
+    const v1, 0x1b08e
 
-    const v2, 0x1b08e
+    const/16 v2, 0x14
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x15
+    const v1, 0x1cc1a
 
-    const v2, 0x1cc1a
+    const/16 v2, 0x15
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x16
+    const v1, 0x1d33f
 
-    const v2, 0x1d33f
+    const/16 v2, 0x16
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x17
+    const v1, 0x1ed75
 
-    const v2, 0x1ed75
+    const/16 v2, 0x17
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x18
+    const v1, 0x1f250
 
-    const v2, 0x1f250
+    const/16 v2, 0x18
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x19
+    const v1, 0x209d5
 
-    const v2, 0x209d5
+    const/16 v2, 0x19
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x1a
+    const v1, 0x216f0
 
-    const v2, 0x216f0
+    const/16 v2, 0x1a
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x1b
+    const v1, 0x228ba
 
-    const v2, 0x228ba
+    const/16 v2, 0x1b
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x1c
+    const v1, 0x2379f
 
-    const v2, 0x2379f
+    const/16 v2, 0x1c
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x1d
+    const v1, 0x24b0b
 
-    const v2, 0x24b0b
+    const/16 v2, 0x1d
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x1e
+    const v1, 0x2542e
 
-    const v2, 0x2542e
+    const/16 v2, 0x1e
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x1f
+    const v1, 0x26a64
 
-    const v2, 0x26a64
+    const/16 v2, 0x1f
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x20
+    const v1, 0x27541
 
-    const v2, 0x27541
+    const/16 v2, 0x20
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
-    const/16 v1, 0x21
+    const v1, 0x28c69
 
-    const v2, 0x28c69
+    const/16 v2, 0x21
 
-    aput v2, v0, v1
+    aput v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/qrcode/decoder/Version;->VERSION_DECODE_INFO:[I
 
@@ -252,9 +252,9 @@
 .end method
 
 .method private varargs constructor <init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-    .locals 8
+    .locals 7
 
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -264,47 +264,47 @@
 
     iput-object p3, p0, Lcom/google/zxing/qrcode/decoder/Version;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v3, 0x0
+    aget-object v1, p3, v0
 
-    aget-object v5, p3, v4
+    invoke-virtual {v1}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECCodewordsPerBlock()I
 
-    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECCodewordsPerBlock()I
+    move-result v2
 
-    move-result v1
+    aget-object v1, p3, v0
 
-    aget-object v5, p3, v4
+    invoke-virtual {v1}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECBlocks()[Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->getECBlocks()[Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    move-result-object v3
 
-    move-result-object v2
+    array-length v4, v3
 
-    array-length v5, v2
+    move v1, v0
 
     :goto_0
-    if-lt v4, v5, :cond_0
+    if-lt v0, v4, :cond_0
 
-    iput v3, p0, Lcom/google/zxing/qrcode/decoder/Version;->totalCodewords:I
+    iput v1, p0, Lcom/google/zxing/qrcode/decoder/Version;->totalCodewords:I
 
     return-void
 
     :cond_0
-    aget-object v0, v2, v4
+    aget-object v5, v3, v0
 
-    invoke-virtual {v0}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getCount()I
 
     move-result v6
 
-    invoke-virtual {v0}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getDataCodewords()I
+    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version$ECB;->getDataCodewords()I
 
-    move-result v7
+    move-result v5
 
-    add-int/2addr v7, v1
+    add-int/2addr v5, v2
 
-    mul-int/2addr v6, v7
+    mul-int/2addr v5, v6
 
-    add-int/2addr v3, v6
+    add-int/2addr v1, v5
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method
@@ -312,7605 +312,5715 @@
 .method private static buildVersions()[Lcom/google/zxing/qrcode/decoder/Version;
     .locals 14
 
+    const/4 v13, 0x3
+
+    const/4 v12, 0x4
+
+    const/4 v11, 0x0
+
+    const/4 v10, 0x2
+
+    const/4 v9, 0x1
+
     const/16 v0, 0x28
 
     new-array v0, v0, [Lcom/google/zxing/qrcode/decoder/Version;
 
-    const/4 v1, 0x0
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    new-array v2, v11, [I
 
-    const/4 v3, 0x1
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v4, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    new-array v4, v4, [I
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x4
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    const/16 v7, 0x13
 
-    const/4 v6, 0x0
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    aput-object v6, v5, v11
 
-    const/4 v8, 0x7
+    const/4 v6, 0x7
 
-    const/4 v9, 0x1
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v4, v3, v11
 
-    const/4 v10, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v12, 0x1
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v13, 0x13
+    const/16 v7, 0x10
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput-object v11, v9, v10
+    aput-object v6, v5, v11
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    const/16 v6, 0xa
 
-    aput-object v7, v5, v6
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v6, 0x1
+    aput-object v4, v3, v9
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v8, 0xa
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v9, 0x1
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v7, 0xd
 
-    const/4 v10, 0x0
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v6, v5, v11
 
-    const/4 v12, 0x1
+    const/16 v6, 0xd
 
-    const/16 v13, 0x10
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v4, v3, v10
 
-    aput-object v11, v9, v10
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput-object v7, v5, v6
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v6, 0x2
+    const/16 v7, 0x9
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v8, 0xd
+    aput-object v6, v5, v11
 
-    const/4 v9, 0x1
+    const/16 v6, 0x11
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v10, 0x0
+    aput-object v4, v3, v13
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v1, v9, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    const/4 v12, 0x1
+    aput-object v1, v0, v11
 
-    const/16 v13, 0xd
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x11
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x9
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x12
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0xa
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x22
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x10
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x1c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x16
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0xf
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x37
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x2c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/4 v3, 0x4
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x14
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x50
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x20
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x10
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x9
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x4
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/4 v3, 0x5
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x6c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x2b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xb
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xc
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x5
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    new-array v2, v10, [I
 
     const/4 v3, 0x6
 
-    const/4 v4, 0x2
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x22
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x44
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x10
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x1b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x13
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/4 v3, 0x7
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x16
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x26
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x14
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x4e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x1f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x8
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x18
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x2a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x61
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x26
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x27
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x12
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x13
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x9
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x2e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x24
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x25
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x14
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xc
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0xa
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1c
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x32
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x12
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x44
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x45
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x2b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x2c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x13
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x14
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0xb
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x14
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x51
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x32
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x33
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0xc
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0xc
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x20
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x5c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x5d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x24
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x25
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x14
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x15
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0xd
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x22
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x6b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0x25
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x26
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0x14
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x15
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xc
-
-    const/16 v13, 0xb
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0xc
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0xe
-
-    const/4 v4, 0x4
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x2e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x42
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x28
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x29
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x14
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0xc
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0xf
-
-    const/4 v4, 0x4
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x30
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x46
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x16
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x57
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x58
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x29
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x2a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0xc
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x10
-
-    const/4 v4, 0x4
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x32
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x4a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x62
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x63
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x2d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xf
-
-    const/16 v13, 0x13
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x14
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x11
-
-    const/4 v4, 0x4
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x4e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x6b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x6c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xf
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    aput v3, v2, v11
 
     const/16 v3, 0x12
 
-    const/4 v4, 0x4
+    aput v3, v2, v9
 
-    new-array v4, v4, [I
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v6, 0x6
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x1
+    const/16 v7, 0x22
 
-    const/16 v6, 0x1e
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput v6, v4, v5
+    aput-object v6, v5, v11
 
-    const/4 v5, 0x2
+    const/16 v6, 0xa
 
-    const/16 v6, 0x38
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput v6, v4, v5
+    aput-object v4, v3, v11
 
-    const/4 v5, 0x3
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v6, 0x52
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x4
+    const/16 v7, 0x1c
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v11
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    const/16 v6, 0x10
 
-    const/16 v8, 0x1e
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v9, 0x2
+    aput-object v4, v3, v9
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v10, 0x0
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v12, 0x5
+    const/16 v7, 0x16
 
-    const/16 v13, 0x78
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v6, v5, v11
 
-    aput-object v11, v9, v10
+    const/16 v6, 0x16
 
-    const/4 v10, 0x1
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v4, v3, v10
 
-    const/4 v12, 0x1
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v13, 0x79
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput-object v11, v9, v10
+    const/16 v7, 0x10
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x9
-
-    const/16 v13, 0x2b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x2c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x13
-
-    const/4 v4, 0x4
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x56
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x71
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x72
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x2c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0x2d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x15
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x9
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x10
-
-    const/16 v13, 0xe
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x14
-
-    const/4 v4, 0x4
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x22
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x5a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x6b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x6c
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x29
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x2a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xf
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xf
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x15
-
-    const/4 v4, 0x5
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
+    aput-object v6, v5, v11
 
     const/16 v6, 0x1c
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v13
 
-    const/16 v6, 0x32
+    invoke-direct {v1, v10, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    aput v6, v4, v5
+    aput-object v1, v0, v9
 
-    const/4 v5, 0x3
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    const/16 v6, 0x48
+    new-array v2, v10, [I
 
-    aput v6, v4, v5
+    const/4 v3, 0x6
 
-    const/4 v5, 0x4
-
-    const/16 v6, 0x5e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x75
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x2a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    aput v3, v2, v11
 
     const/16 v3, 0x16
 
-    const/4 v4, 0x5
+    aput v3, v2, v9
 
-    new-array v4, v4, [I
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v6, 0x6
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x1
+    const/16 v7, 0x37
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0xf
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2c
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
 
     const/16 v6, 0x1a
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v9
 
-    const/16 v6, 0x32
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput v6, v4, v5
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x3
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v6, 0x4a
+    const/16 v7, 0x11
 
-    aput v6, v4, v5
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v5, 0x4
+    aput-object v6, v5, v11
 
-    const/16 v6, 0x62
+    const/16 v6, 0x12
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x4
+    aput-object v4, v3, v10
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v6, 0x0
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v8, 0x1c
+    const/16 v7, 0xd
 
-    const/4 v9, 0x2
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v6, v5, v11
 
-    const/4 v10, 0x0
+    const/16 v6, 0x16
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v12, 0x2
+    aput-object v4, v3, v13
 
-    const/16 v13, 0x6f
+    invoke-direct {v1, v13, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v1, v0, v10
 
-    aput-object v11, v9, v10
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    const/4 v10, 0x1
+    new-array v2, v10, [I
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/4 v3, 0x6
 
-    const/4 v12, 0x7
-
-    const/16 v13, 0x70
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x10
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x18
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x22
-
-    const/16 v13, 0xd
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x16
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x17
-
-    const/4 v4, 0x5
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x4e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x66
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x79
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x7a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x30
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x10
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x17
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x18
-
-    const/4 v4, 0x5
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1c
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x50
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x6a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x75
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x76
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x2d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x10
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1e
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x18
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x19
-
-    const/4 v4, 0x5
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x20
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x54
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x6e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1a
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0x6a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x6b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x30
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x16
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x16
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x19
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    aput v3, v2, v11
 
     const/16 v3, 0x1a
 
-    const/4 v4, 0x5
+    aput v3, v2, v9
 
-    new-array v4, v4, [I
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v6, 0x6
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x1
+    const/16 v7, 0x50
 
-    const/16 v6, 0x1e
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput v6, v4, v5
+    aput-object v6, v5, v11
 
-    const/4 v5, 0x2
+    const/16 v6, 0x14
 
-    const/16 v6, 0x3a
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput v6, v4, v5
+    aput-object v4, v3, v11
 
-    const/4 v5, 0x3
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v6, 0x56
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x4
+    const/16 v7, 0x20
 
-    const/16 v6, 0x72
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput v6, v4, v5
+    aput-object v6, v5, v11
 
-    const/4 v5, 0x4
+    const/16 v6, 0x12
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v6, 0x0
+    aput-object v4, v3, v9
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v8, 0x1c
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v9, 0x2
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v7, 0x18
 
-    const/4 v10, 0x0
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x72
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1c
-
-    const/16 v13, 0x16
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x21
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1a
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x1b
-
-    const/4 v4, 0x5
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x22
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x5a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x76
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0x7a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x7b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x16
-
-    const/16 v13, 0x2d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x8
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1a
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xc
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1c
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1b
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x1c
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
+    aput-object v6, v5, v11
 
     const/16 v6, 0x1a
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v10
 
-    const/16 v6, 0x32
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput v6, v4, v5
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x3
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v6, 0x4a
+    const/16 v7, 0x9
 
-    aput v6, v4, v5
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v5, 0x4
+    aput-object v6, v5, v11
 
-    const/16 v6, 0x62
+    const/16 v6, 0x10
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x5
+    aput-object v4, v3, v13
 
-    const/16 v6, 0x7a
+    invoke-direct {v1, v12, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    aput v6, v4, v5
+    aput-object v1, v0, v13
 
-    const/4 v5, 0x4
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-array v2, v10, [I
 
-    const/4 v6, 0x0
+    const/4 v3, 0x6
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x75
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x76
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x2d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x17
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1f
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1f
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1c
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x1d
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x4e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x66
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x7e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x75
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x15
-
-    const/16 v13, 0x2d
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x17
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x25
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1a
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1d
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    aput v3, v2, v11
 
     const/16 v3, 0x1e
 
-    const/4 v4, 0x6
+    aput v3, v2, v9
 
-    new-array v4, v4, [I
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v6, 0x6
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x1
+    const/16 v7, 0x6c
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
 
     const/16 v6, 0x1a
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v11
 
-    const/16 v6, 0x34
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput v6, v4, v5
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x3
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v6, 0x4e
+    const/16 v7, 0x2b
 
-    aput v6, v4, v5
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v5, 0x4
-
-    const/16 v6, 0x68
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x82
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x5
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x30
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xf
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x19
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x17
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x19
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1e
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x1f
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x38
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x52
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x6c
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x86
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x3
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1d
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x2a
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x17
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1c
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1f
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x20
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x22
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3c
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x56
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x70
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x8a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x17
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x23
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x23
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x20
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x21
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x56
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x72
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x8e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x15
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1d
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x13
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xb
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x2e
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x21
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x22
-
-    const/4 v4, 0x6
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x22
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x3e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x5a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x76
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x92
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x73
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x6
-
-    const/16 v13, 0x74
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x17
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x2c
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x3b
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x1
-
-    const/16 v13, 0x11
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x22
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x23
-
-    const/4 v4, 0x7
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
-
-    const/16 v6, 0x1e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x4e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x66
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x7e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x6
-
-    const/16 v6, 0x96
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xc
-
-    const/16 v13, 0x79
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x7a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xc
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1a
-
-    const/16 v13, 0x30
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x27
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x16
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x29
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x23
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x24
-
-    const/4 v4, 0x7
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
+    aput-object v6, v5, v11
 
     const/16 v6, 0x18
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v9
 
-    const/16 v6, 0x32
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput v6, v4, v5
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x3
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v6, 0x4c
+    const/16 v7, 0xf
 
-    aput v6, v4, v5
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v5, 0x4
+    aput-object v6, v5, v11
 
-    const/16 v6, 0x66
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    const/16 v7, 0x10
 
-    const/4 v5, 0x5
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v6, 0x80
+    aput-object v6, v5, v9
 
-    aput v6, v4, v5
+    const/16 v6, 0x12
 
-    const/4 v5, 0x6
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/16 v6, 0x9a
+    aput-object v4, v3, v10
 
-    aput v6, v4, v5
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x4
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v6, 0x0
+    const/16 v7, 0xb
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v8, 0x1e
+    aput-object v6, v5, v11
 
-    const/4 v9, 0x2
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v7, 0xc
 
-    const/4 v10, 0x0
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v6, v5, v9
 
-    const/4 v12, 0x6
+    const/16 v6, 0x16
 
-    const/16 v13, 0x79
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v4, v3, v13
 
-    aput-object v11, v9, v10
+    const/4 v4, 0x5
 
-    const/4 v10, 0x1
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v1, v0, v12
 
-    const/16 v12, 0xe
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    const/16 v13, 0x7a
+    new-array v2, v10, [I
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    const/4 v3, 0x6
 
-    aput-object v11, v9, v10
+    aput v3, v2, v11
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    const/16 v3, 0x22
 
-    aput-object v7, v5, v6
+    aput v3, v2, v9
 
-    const/4 v6, 0x1
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v8, 0x1c
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v9, 0x2
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v7, 0x44
 
-    const/4 v10, 0x0
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v6, v5, v11
 
-    const/4 v12, 0x6
+    const/16 v6, 0x12
 
-    const/16 v13, 0x2f
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v4, v3, v11
 
-    aput-object v11, v9, v10
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v10, 0x1
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v12, 0x22
+    const/16 v7, 0x1b
 
-    const/16 v13, 0x30
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v6, v5, v11
 
-    aput-object v11, v9, v10
+    const/16 v6, 0x10
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput-object v7, v5, v6
+    aput-object v4, v3, v9
 
-    const/4 v6, 0x2
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v8, 0x1e
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v9, 0x2
+    const/16 v7, 0x13
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v10, 0x0
+    aput-object v6, v5, v11
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v6, 0x18
 
-    const/16 v12, 0x2e
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/16 v13, 0x18
+    aput-object v4, v3, v10
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput-object v11, v9, v10
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v10, 0x1
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v7, 0xf
 
-    const/16 v12, 0xa
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x2
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x40
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x24
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x25
-
-    const/4 v4, 0x7
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
+    aput-object v6, v5, v11
 
     const/16 v6, 0x1c
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v13
 
-    const/16 v6, 0x36
+    const/4 v4, 0x6
 
-    aput v6, v4, v5
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    const/4 v5, 0x3
+    const/4 v2, 0x5
 
-    const/16 v6, 0x50
+    aput-object v1, v0, v2
 
-    aput v6, v4, v5
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    const/4 v5, 0x4
+    new-array v2, v13, [I
 
-    const/16 v6, 0x6a
+    const/4 v3, 0x6
 
-    aput v6, v4, v5
+    aput v3, v2, v11
 
-    const/4 v5, 0x5
+    const/16 v3, 0x16
 
-    const/16 v6, 0x84
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x6
-
-    const/16 v6, 0x9e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x11
-
-    const/16 v13, 0x7a
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x7b
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x1d
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x31
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x18
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x2e
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x25
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
+    aput v3, v2, v9
 
     const/16 v3, 0x26
 
-    const/4 v4, 0x7
+    aput v3, v2, v10
 
-    new-array v4, v4, [I
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v6, 0x6
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x1
+    const/16 v7, 0x4e
 
-    const/16 v6, 0x20
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput v6, v4, v5
+    aput-object v6, v5, v11
 
-    const/4 v5, 0x2
+    const/16 v6, 0x14
 
-    const/16 v6, 0x3a
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput v6, v4, v5
+    aput-object v4, v3, v11
 
-    const/4 v5, 0x3
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v6, 0x54
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x4
+    const/16 v7, 0x1f
 
-    const/16 v6, 0x6e
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput v6, v4, v5
+    aput-object v6, v5, v11
 
-    const/4 v5, 0x5
+    const/16 v6, 0x12
 
-    const/16 v6, 0x88
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput v6, v4, v5
+    aput-object v4, v3, v9
 
-    const/4 v5, 0x6
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/16 v6, 0xa2
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x4
+    const/16 v7, 0xe
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v6, 0x0
+    aput-object v6, v5, v11
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v8, 0x1e
+    const/16 v7, 0xf
 
-    const/4 v9, 0x2
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v6, v5, v9
 
-    const/4 v10, 0x0
+    const/16 v6, 0x12
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v12, 0x4
+    aput-object v4, v3, v10
 
-    const/16 v13, 0x7a
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput-object v11, v9, v10
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v10, 0x1
+    const/16 v7, 0xd
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v12, 0x12
+    aput-object v6, v5, v11
 
-    const/16 v13, 0x7b
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    const/16 v7, 0xe
 
-    aput-object v11, v9, v10
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xd
-
-    const/16 v13, 0x2e
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x20
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x30
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xe
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x2a
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x20
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x26
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x27
-
-    const/4 v4, 0x7
-
-    new-array v4, v4, [I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x1
+    aput-object v6, v5, v9
 
     const/16 v6, 0x1a
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
-
-    const/16 v6, 0x36
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x3
-
-    const/16 v6, 0x52
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    const/16 v6, 0x6e
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x5
-
-    const/16 v6, 0x8a
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x6
-
-    const/16 v6, 0xa6
-
-    aput v6, v4, v5
-
-    const/4 v5, 0x4
-
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/4 v6, 0x0
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x14
-
-    const/16 v13, 0x75
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x4
-
-    const/16 v13, 0x76
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x1
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1c
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x28
-
-    const/16 v13, 0x2f
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v12, 0x7
-
-    const/16 v13, 0x30
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x2
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x2b
-
-    const/16 v13, 0x18
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x16
-
-    const/16 v13, 0x19
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    const/4 v6, 0x3
-
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
-
-    const/16 v8, 0x1e
-
-    const/4 v9, 0x2
-
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v10, 0x0
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0xa
-
-    const/16 v13, 0xf
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    const/4 v10, 0x1
-
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/16 v12, 0x43
-
-    const/16 v13, 0x10
-
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
-
-    aput-object v11, v9, v10
-
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-
-    aput-object v7, v5, v6
-
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x27
-
-    new-instance v2, Lcom/google/zxing/qrcode/decoder/Version;
-
-    const/16 v3, 0x28
+    aput-object v4, v3, v13
 
     const/4 v4, 0x7
 
-    new-array v4, v4, [I
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    const/4 v5, 0x0
+    const/4 v2, 0x6
 
-    const/4 v6, 0x6
+    aput-object v1, v0, v2
 
-    aput v6, v4, v5
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    const/4 v5, 0x1
+    new-array v2, v13, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x18
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x2a
+
+    aput v3, v2, v10
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x61
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x26
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x27
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x16
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x12
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x16
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x8
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v13, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x2e
+
+    aput v3, v2, v10
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x74
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
 
     const/16 v6, 0x1e
 
-    aput v6, v4, v5
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v5, 0x2
+    aput-object v4, v3, v11
 
-    const/16 v6, 0x3a
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput v6, v4, v5
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v5, 0x3
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v6, 0x56
+    const/16 v7, 0x24
 
-    aput v6, v4, v5
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v5, 0x4
+    aput-object v6, v5, v11
 
-    const/16 v6, 0x72
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput v6, v4, v5
+    const/16 v7, 0x25
 
-    const/4 v5, 0x5
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v6, 0x8e
+    aput-object v6, v5, v9
 
-    aput v6, v4, v5
+    const/16 v6, 0x16
 
-    const/4 v5, 0x6
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/16 v6, 0xaa
+    aput-object v4, v3, v9
 
-    aput v6, v4, v5
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v5, 0x4
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v5, v5, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v6, 0x0
+    const/16 v7, 0x10
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v8, 0x1e
+    aput-object v6, v5, v11
 
-    const/4 v9, 0x2
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v7, 0x11
 
-    const/4 v10, 0x0
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v6, v5, v9
 
-    const/16 v12, 0x13
+    const/16 v6, 0x14
 
-    const/16 v13, 0x76
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v4, v3, v10
 
-    aput-object v11, v9, v10
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    const/4 v10, 0x1
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v12, 0x6
+    const/16 v7, 0xc
 
-    const/16 v13, 0x77
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v6, v5, v11
 
-    aput-object v11, v9, v10
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    const/16 v7, 0xd
 
-    aput-object v7, v5, v6
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v6, 0x1
+    aput-object v6, v5, v9
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    const/16 v6, 0x18
 
-    const/16 v8, 0x1c
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    const/4 v9, 0x2
+    aput-object v4, v3, v13
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v4, 0x9
 
-    const/4 v10, 0x0
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v2, 0x8
 
-    const/16 v12, 0x12
+    aput-object v1, v0, v2
 
-    const/16 v13, 0x2f
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    new-array v2, v13, [I
 
-    aput-object v11, v9, v10
+    const/4 v3, 0x6
 
-    const/4 v10, 0x1
+    aput v3, v2, v11
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    const/16 v3, 0x1c
 
-    const/16 v12, 0x1f
+    aput v3, v2, v9
 
-    const/16 v13, 0x30
+    const/16 v3, 0x32
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput v3, v2, v10
 
-    aput-object v11, v9, v10
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput-object v7, v5, v6
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v6, 0x2
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    const/16 v7, 0x44
 
-    const/16 v8, 0x1e
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v9, 0x2
+    aput-object v6, v5, v11
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/4 v10, 0x0
+    const/16 v7, 0x45
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/16 v12, 0x22
+    aput-object v6, v5, v9
 
-    const/16 v13, 0x18
+    const/16 v6, 0x12
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput-object v11, v9, v10
+    aput-object v4, v3, v11
 
-    const/4 v10, 0x1
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v12, 0x22
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v13, 0x19
+    const/16 v7, 0x2b
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    aput-object v11, v9, v10
+    aput-object v6, v5, v11
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    aput-object v7, v5, v6
+    const/16 v7, 0x2c
 
-    const/4 v6, 0x3
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+    aput-object v6, v5, v9
 
-    const/16 v8, 0x1e
+    const/16 v6, 0x1a
 
-    const/4 v9, 0x2
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    new-array v9, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    aput-object v4, v3, v9
 
-    const/4 v10, 0x0
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v12, 0x14
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v13, 0xf
+    const/4 v7, 0x6
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    const/16 v8, 0x13
 
-    aput-object v11, v9, v10
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    const/4 v10, 0x1
+    aput-object v6, v5, v11
 
-    new-instance v11, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    const/16 v12, 0x3d
+    const/16 v7, 0x14
 
-    const/16 v13, 0x10
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
 
-    invoke-direct {v11, v12, v13}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+    aput-object v6, v5, v9
 
-    aput-object v11, v9, v10
+    const/16 v6, 0x18
 
-    invoke-direct {v7, v8, v9}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
 
-    aput-object v7, v5, v6
+    aput-object v4, v3, v10
 
-    invoke-direct {v2, v3, v4, v5}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
 
-    aput-object v2, v0, v1
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x10
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0xa
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v13, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x51
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x14
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x32
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x33
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xc
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0xd
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0xb
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v13, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x20
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x5c
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x5d
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x24
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x25
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x16
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x14
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x15
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0xe
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0xc
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v13, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x22
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3e
+
+    aput v3, v2, v10
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x6b
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0x25
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x26
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x16
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0x14
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x15
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xc
+
+    const/16 v8, 0xb
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xc
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x16
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0xd
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x2e
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x42
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x73
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x74
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x28
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x29
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x11
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x14
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0xc
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0xd
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0xe
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0xd
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x30
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x46
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x57
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x58
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x16
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x29
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x2a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0xc
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0xd
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0xf
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0xe
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x32
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4a
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x62
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x63
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x2d
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2e
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    const/16 v8, 0x13
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x14
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x10
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4e
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x6b
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x6c
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2f
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    const/16 v8, 0x17
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x11
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x38
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x52
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x78
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x79
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x9
+
+    const/16 v8, 0x2b
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2c
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x16
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x12
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x11
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x56
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x71
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x72
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2c
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0x2d
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x15
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x9
+
+    const/16 v8, 0xd
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x10
+
+    const/16 v8, 0xe
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x13
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x12
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    new-array v2, v12, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x22
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3e
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x5a
+
+    aput v3, v2, v13
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x6b
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x6c
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x29
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x2a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x14
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1c
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x32
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x48
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x5e
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x74
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x75
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x2a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x16
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x17
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x11
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x15
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x14
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x32
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4a
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x62
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x6f
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x70
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x10
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x22
+
+    const/16 v8, 0xd
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x18
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x16
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x15
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4e
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x66
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x79
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x7a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2f
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x10
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x17
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x16
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1c
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x50
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x6a
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x75
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x76
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x2d
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x10
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1e
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x18
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x17
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x20
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x54
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x6e
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0x6a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x6b
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1a
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x19
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x18
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x56
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x72
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x72
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x73
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2f
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1c
+
+    const/16 v8, 0x16
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x17
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x21
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x1a
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x19
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x5
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x22
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3e
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x5a
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x76
+
+    aput v3, v2, v12
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0x7a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x7b
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    const/16 v8, 0x2d
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2e
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x8
+
+    const/16 v8, 0x17
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1a
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xc
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1c
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x1b
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x1a
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x32
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4a
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x62
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x7a
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x75
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x76
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2d
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x18
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1f
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1f
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x1c
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x1b
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4e
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x66
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x7e
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x74
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x75
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x15
+
+    const/16 v8, 0x2d
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x25
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1a
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x1d
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x1c
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x34
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4e
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x68
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x82
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x5
+
+    const/16 v8, 0x73
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x74
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x19
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x19
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x1e
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x1d
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x38
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x52
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x6c
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x86
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x73
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x74
+
+    invoke-direct {v6, v13, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2e
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1d
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2a
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x19
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1c
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x1f
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x1e
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x22
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3c
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x56
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x70
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x8a
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v9, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x73
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x23
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x23
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x20
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x1f
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x56
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x72
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x8e
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x73
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x74
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x15
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1d
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xb
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2e
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x21
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x20
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x6
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x22
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3e
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x5a
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x76
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x92
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x73
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x74
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x17
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2c
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x3b
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    invoke-direct {v6, v9, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x22
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x21
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x7
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4e
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x66
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x7e
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    const/16 v3, 0x96
+
+    const/4 v4, 0x6
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xc
+
+    const/16 v8, 0x79
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x7a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xc
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1a
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x27
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x29
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x23
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x22
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x7
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x18
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x32
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x4c
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x66
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x80
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    const/16 v3, 0x9a
+
+    const/4 v4, 0x6
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x79
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x7a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x22
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2e
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xf
+
+    invoke-direct {v6, v10, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x40
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x24
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x23
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x7
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1c
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x50
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x6a
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x84
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    const/16 v3, 0x9e
+
+    const/4 v4, 0x6
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x11
+
+    const/16 v8, 0x7a
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x7b
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1d
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x31
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x18
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2e
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x25
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x24
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x7
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x20
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x54
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x6e
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x88
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    const/16 v3, 0xa2
+
+    const/4 v4, 0x6
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x7a
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x12
+
+    const/16 v8, 0x7b
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xd
+
+    const/16 v8, 0x2e
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x20
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x30
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xe
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2a
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x20
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x26
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x25
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x7
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1a
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x36
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x52
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x6e
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x8a
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    const/16 v3, 0xa6
+
+    const/4 v4, 0x6
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x14
+
+    const/16 v8, 0x75
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x76
+
+    invoke-direct {v6, v12, v7}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x28
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x7
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x2b
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x16
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0xa
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x43
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x27
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x26
+
+    aput-object v1, v0, v2
+
+    new-instance v1, Lcom/google/zxing/qrcode/decoder/Version;
+
+    const/4 v2, 0x7
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x6
+
+    aput v3, v2, v11
+
+    const/16 v3, 0x1e
+
+    aput v3, v2, v9
+
+    const/16 v3, 0x3a
+
+    aput v3, v2, v10
+
+    const/16 v3, 0x56
+
+    aput v3, v2, v13
+
+    const/16 v3, 0x72
+
+    aput v3, v2, v12
+
+    const/16 v3, 0x8e
+
+    const/4 v4, 0x5
+
+    aput v3, v2, v4
+
+    const/16 v3, 0xaa
+
+    const/4 v4, 0x6
+
+    aput v3, v2, v4
+
+    new-array v3, v12, [Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x13
+
+    const/16 v8, 0x76
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/4 v7, 0x6
+
+    const/16 v8, 0x77
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v11
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x12
+
+    const/16 v8, 0x2f
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x1f
+
+    const/16 v8, 0x30
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1c
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v9
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x22
+
+    const/16 v8, 0x18
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x22
+
+    const/16 v8, 0x19
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v10
+
+    new-instance v4, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;
+
+    new-array v5, v10, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x14
+
+    const/16 v8, 0xf
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v11
+
+    new-instance v6, Lcom/google/zxing/qrcode/decoder/Version$ECB;
+
+    const/16 v7, 0x3d
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v7, v8}, Lcom/google/zxing/qrcode/decoder/Version$ECB;-><init>(II)V
+
+    aput-object v6, v5, v9
+
+    const/16 v6, 0x1e
+
+    invoke-direct {v4, v6, v5}, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;-><init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+
+    aput-object v4, v3, v13
+
+    const/16 v4, 0x28
+
+    invoke-direct {v1, v4, v2, v3}, Lcom/google/zxing/qrcode/decoder/Version;-><init>(I[I[Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;)V
+
+    const/16 v2, 0x27
+
+    aput-object v1, v0, v2
 
     return-object v0
 .end method
 
 .method static decodeVersionInformation(I)Lcom/google/zxing/qrcode/decoder/Version;
-    .locals 7
+    .locals 4
 
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    const v0, 0x7fffffff
+    const v1, 0x7fffffff
 
-    const/4 v1, 0x0
+    move v2, v1
 
-    const/4 v3, 0x0
+    move v1, v0
 
     :goto_0
-    sget-object v5, Lcom/google/zxing/qrcode/decoder/Version;->VERSION_DECODE_INFO:[I
+    sget-object v3, Lcom/google/zxing/qrcode/decoder/Version;->VERSION_DECODE_INFO:[I
 
-    array-length v5, v5
+    array-length v3, v3
 
-    if-lt v3, v5, :cond_0
+    if-lt v0, v3, :cond_0
 
-    const/4 v5, 0x3
+    const/4 v0, 0x3
 
-    if-le v0, v5, :cond_3
+    if-le v2, v0, :cond_3
 
-    return-object v6
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
-    sget-object v5, Lcom/google/zxing/qrcode/decoder/Version;->VERSION_DECODE_INFO:[I
+    sget-object v3, Lcom/google/zxing/qrcode/decoder/Version;->VERSION_DECODE_INFO:[I
 
-    aget v4, v5, v3
+    aget v3, v3, v0
 
-    if-eq v4, p0, :cond_1
+    if-eq v3, p0, :cond_1
 
-    invoke-static {p0, v4}, Lcom/google/zxing/qrcode/decoder/FormatInformation;->numBitsDiffering(II)I
+    invoke-static {p0, v3}, Lcom/google/zxing/qrcode/decoder/FormatInformation;->numBitsDiffering(II)I
 
-    move-result v2
+    move-result v3
 
-    if-lt v2, v0, :cond_2
+    if-lt v3, v2, :cond_2
 
     :goto_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    add-int/lit8 v5, v3, 0x7
+    add-int/lit8 v0, v0, 0x7
 
-    invoke-static {v5}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
+    invoke-static {v0}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
 
-    move-result-object v5
+    move-result-object v0
 
-    return-object v5
+    return-object v0
 
     :cond_2
-    add-int/lit8 v1, v3, 0x7
+    add-int/lit8 v1, v0, 0x7
 
-    move v0, v2
+    move v2, v3
 
     goto :goto_1
 
     :cond_3
     invoke-static {v1}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
 
-    move-result-object v5
+    move-result-object v0
 
-    return-object v5
+    return-object v0
 .end method
 
 .method public static getProvisionalVersionForDimension(I)Lcom/google/zxing/qrcode/decoder/Version;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
         }
     .end annotation
 
-    rem-int/lit8 v1, p0, 0x4
+    rem-int/lit8 v0, p0, 0x4
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
-    add-int/lit8 v1, p0, -0x11
+    add-int/lit8 v0, p0, -0x11
 
     :try_start_0
-    div-int/lit8 v1, v1, 0x4
+    div-int/lit8 v0, v0, 0x4
 
-    invoke-static {v1}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
+    invoke-static {v0}, Lcom/google/zxing/qrcode/decoder/Version;->getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
 
     :catch_0
     move-exception v0
 
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
 .end method
 
 .method public static getVersionForNumber(I)Lcom/google/zxing/qrcode/decoder/Version;
@@ -7954,119 +6064,121 @@
 
     const/16 v10, 0x9
 
-    const/4 v9, 0x0
+    const/4 v1, 0x0
 
     invoke-virtual {p0}, Lcom/google/zxing/qrcode/decoder/Version;->getDimensionForVersion()I
 
-    move-result v1
+    move-result v3
 
-    new-instance v0, Lcom/google/zxing/common/BitMatrix;
+    new-instance v4, Lcom/google/zxing/common/BitMatrix;
 
-    invoke-direct {v0, v1}, Lcom/google/zxing/common/BitMatrix;-><init>(I)V
+    invoke-direct {v4, v3}, Lcom/google/zxing/common/BitMatrix;-><init>(I)V
 
-    invoke-virtual {v0, v9, v9, v10, v10}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v1, v1, v10, v10}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
-    add-int/lit8 v6, v1, -0x8
+    add-int/lit8 v0, v3, -0x8
 
-    const/16 v7, 0x8
+    const/16 v2, 0x8
 
-    invoke-virtual {v0, v6, v9, v7, v10}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v0, v1, v2, v10}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
-    add-int/lit8 v6, v1, -0x8
+    add-int/lit8 v0, v3, -0x8
 
-    const/16 v7, 0x8
+    const/16 v2, 0x8
 
-    invoke-virtual {v0, v9, v6, v10, v7}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v1, v0, v10, v2}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
-    iget-object v6, p0, Lcom/google/zxing/qrcode/decoder/Version;->alignmentPatternCenters:[I
+    iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/Version;->alignmentPatternCenters:[I
 
-    array-length v3, v6
+    array-length v5, v0
 
-    const/4 v4, 0x0
+    move v2, v1
 
     :goto_0
-    if-lt v4, v3, :cond_0
+    if-lt v2, v5, :cond_0
 
-    add-int/lit8 v6, v1, -0x11
+    add-int/lit8 v0, v3, -0x11
 
-    invoke-virtual {v0, v11, v10, v12, v6}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v11, v10, v12, v0}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
-    add-int/lit8 v6, v1, -0x11
+    add-int/lit8 v0, v3, -0x11
 
-    invoke-virtual {v0, v10, v11, v6, v12}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v10, v11, v0, v12}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
-    iget v6, p0, Lcom/google/zxing/qrcode/decoder/Version;->versionNumber:I
+    iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version;->versionNumber:I
 
-    if-gt v6, v11, :cond_6
+    if-gt v0, v11, :cond_6
 
     :goto_1
-    return-object v0
+    return-object v4
 
     :cond_0
-    iget-object v6, p0, Lcom/google/zxing/qrcode/decoder/Version;->alignmentPatternCenters:[I
+    iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/Version;->alignmentPatternCenters:[I
 
-    aget v6, v6, v4
+    aget v0, v0, v2
 
-    add-int/lit8 v2, v6, -0x2
+    add-int/lit8 v6, v0, -0x2
 
-    const/4 v5, 0x0
+    move v0, v1
 
     :goto_2
-    if-lt v5, v3, :cond_1
+    if-lt v0, v5, :cond_1
 
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    if-eqz v4, :cond_4
+    if-eqz v2, :cond_4
 
     :cond_2
-    add-int/lit8 v6, v3, -0x1
+    add-int/lit8 v7, v5, -0x1
 
-    if-eq v4, v6, :cond_5
+    if-eq v2, v7, :cond_5
 
     :goto_3
-    iget-object v6, p0, Lcom/google/zxing/qrcode/decoder/Version;->alignmentPatternCenters:[I
+    iget-object v7, p0, Lcom/google/zxing/qrcode/decoder/Version;->alignmentPatternCenters:[I
 
-    aget v6, v6, v5
+    aget v7, v7, v0
 
-    add-int/lit8 v6, v6, -0x2
-
-    const/4 v7, 0x5
+    add-int/lit8 v7, v7, -0x2
 
     const/4 v8, 0x5
 
-    invoke-virtual {v0, v6, v2, v7, v8}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    const/4 v9, 0x5
+
+    invoke-virtual {v4, v7, v6, v8, v9}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
     :cond_3
     :goto_4
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
     :cond_4
-    if-eqz v5, :cond_3
+    if-eqz v0, :cond_3
 
-    add-int/lit8 v6, v3, -0x1
+    add-int/lit8 v7, v5, -0x1
 
-    if-ne v5, v6, :cond_2
+    if-ne v0, v7, :cond_2
 
     goto :goto_4
 
     :cond_5
-    if-eqz v5, :cond_3
+    if-eqz v0, :cond_3
 
     goto :goto_3
 
     :cond_6
-    add-int/lit8 v6, v1, -0xb
+    add-int/lit8 v0, v3, -0xb
 
-    invoke-virtual {v0, v6, v9, v13, v11}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v0, v1, v13, v11}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
-    add-int/lit8 v6, v1, -0xb
+    add-int/lit8 v0, v3, -0xb
 
-    invoke-virtual {v0, v9, v6, v11, v13}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
+    invoke-virtual {v4, v1, v0, v11, v13}, Lcom/google/zxing/common/BitMatrix;->setRegion(IIII)V
 
     goto :goto_1
 .end method

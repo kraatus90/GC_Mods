@@ -38,8 +38,6 @@
 .method public constructor <init>(Lorg/apache/http/HttpHost;)V
     .locals 7
 
-    const/4 v2, 0x0
-
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v3
@@ -47,6 +45,8 @@
     sget-object v5, Lorg/apache/http/conn/routing/RouteInfo$TunnelType;->PLAIN:Lorg/apache/http/conn/routing/RouteInfo$TunnelType;
 
     sget-object v6, Lorg/apache/http/conn/routing/RouteInfo$LayerType;->PLAIN:Lorg/apache/http/conn/routing/RouteInfo$LayerType;
+
+    const/4 v2, 0x0
 
     const/4 v4, 0x0
 
@@ -289,11 +289,11 @@
 .method public constructor <init>(Lorg/apache/http/HttpHost;Lorg/apache/http/HttpHost;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v1, p2, v0}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Lorg/apache/http/HttpHost;Z)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, p1, v0, p2, v1}, Lorg/apache/http/conn/routing/HttpRoute;-><init>(Lorg/apache/http/HttpHost;Ljava/net/InetAddress;Lorg/apache/http/HttpHost;Z)V
 
     return-void
 .end method
@@ -553,11 +553,11 @@
 .method public final hashCode()I
     .locals 3
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/conn/routing/HttpRoute;->targetHost:Lorg/apache/http/HttpHost;
+    iget-object v0, p0, Lorg/apache/http/conn/routing/HttpRoute;->targetHost:Lorg/apache/http/HttpHost;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 

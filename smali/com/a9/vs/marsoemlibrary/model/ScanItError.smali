@@ -107,11 +107,11 @@
 
     const-string/jumbo v1, "ERROR_CLIENT"
 
-    const/4 v2, 0x5
+    const-string/jumbo v2, "Client error"
 
-    const-string/jumbo v3, "Client error"
+    const/4 v3, 0x5
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_CLIENT:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
@@ -119,11 +119,11 @@
 
     const-string/jumbo v1, "ERROR_TIMEOUT"
 
-    const/4 v2, 0x6
+    const-string/jumbo v2, "Timeout error"
 
-    const-string/jumbo v3, "Timeout error"
+    const/4 v3, 0x6
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_TIMEOUT:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
@@ -131,11 +131,11 @@
 
     const-string/jumbo v1, "ERROR_UNKNOWN"
 
-    const/4 v2, 0x7
+    const-string/jumbo v2, "Unknown error"
 
-    const-string/jumbo v3, "Unknown error"
+    const/4 v3, 0x7
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_UNKNOWN:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
@@ -143,11 +143,11 @@
 
     const-string/jumbo v1, "ERROR_NOT_INITIALIZED"
 
-    const/16 v2, 0x8
+    const-string/jumbo v2, "Not Initialized"
 
-    const-string/jumbo v3, "Not Initialized"
+    const/16 v3, 0x8
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    invoke-direct {v0, v1, v3, v2}, Lcom/a9/vs/marsoemlibrary/model/ScanItError;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_NOT_INITIALIZED:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
@@ -175,29 +175,29 @@
 
     aput-object v1, v0, v8
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_CLIENT:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
-    sget-object v2, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_CLIENT:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_TIMEOUT:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
-    sget-object v2, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_TIMEOUT:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_UNKNOWN:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
-    sget-object v2, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_UNKNOWN:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_NOT_INITIALIZED:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 
-    sget-object v2, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->ERROR_NOT_INITIALIZED:Lcom/a9/vs/marsoemlibrary/model/ScanItError;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/a9/vs/marsoemlibrary/model/ScanItError;->$VALUES:[Lcom/a9/vs/marsoemlibrary/model/ScanItError;
 

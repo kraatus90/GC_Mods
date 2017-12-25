@@ -35,99 +35,99 @@
 
     move-result v0
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzzH:I
 
-    iget v2, p0, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzzH:I
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
-
-    const/4 v1, 0x2
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->getId()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    const/4 v2, 0x2
 
-    const/4 v1, 0x3
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzqT()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x3
 
-    const/4 v1, 0x4
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzza()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x4
 
-    const/4 v1, 0x5
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzzb()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x5
 
-    const/4 v1, 0x6
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->getTitle()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x6
 
-    const/4 v1, 0x7
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzqk()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/4 v2, 0x7
 
-    const/16 v1, 0x8
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->getDisplayName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    const/16 v2, 0x8
 
-    const/16 v1, 0x9
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzzc()B
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
+    const/16 v2, 0x9
 
-    const/16 v1, 0xa
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzzd()B
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
+    const/16 v2, 0xa
 
-    const/16 v1, 0xb
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzze()B
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
+    const/16 v2, 0xb
 
-    const/16 v1, 0xc
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/wearable/internal/AncsNotificationParcelable;->zzzf()B
 
-    move-result v2
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
+    const/16 v2, 0xc
+
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IB)V
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzH(Landroid/os/Parcel;I)V
 

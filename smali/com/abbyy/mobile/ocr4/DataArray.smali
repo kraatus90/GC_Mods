@@ -79,7 +79,9 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
+
+    move v0, v1
 
     :goto_0
     iget v2, p0, Lcom/abbyy/mobile/ocr4/DataArray;->size:I
@@ -99,19 +101,17 @@
 
     invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v2
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/DataArray;->readBuffer:[B
+    sget-object v3, Lcom/abbyy/mobile/ocr4/DataArray;->readBuffer:[B
 
-    const/4 v3, 0x0
+    invoke-virtual {p1, v3, v1, v2}, Lcom/abbyy/mobile/ocr4/SizedInputStream;->read([BII)I
 
-    invoke-virtual {p1, v2, v3, v1}, Lcom/abbyy/mobile/ocr4/SizedInputStream;->read([BII)I
+    sget-object v3, Lcom/abbyy/mobile/ocr4/DataArray;->readBuffer:[B
 
-    sget-object v2, Lcom/abbyy/mobile/ocr4/DataArray;->readBuffer:[B
+    invoke-direct {p0, v3, v2}, Lcom/abbyy/mobile/ocr4/DataArray;->pushChunk([BI)V
 
-    invoke-direct {p0, v2, v1}, Lcom/abbyy/mobile/ocr4/DataArray;->pushChunk([BI)V
-
-    add-int/2addr v0, v1
+    add-int/2addr v0, v2
 
     goto :goto_0
 .end method
@@ -132,7 +132,7 @@
 .end method
 
 .method public setData(Lcom/abbyy/mobile/ocr4/SizedInputStream;)V
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -141,13 +141,13 @@
 
     if-eqz p1, :cond_1
 
-    iget-wide v2, p0, Lcom/abbyy/mobile/ocr4/DataArray;->pointerToNativeArray:J
+    iget-wide v0, p0, Lcom/abbyy/mobile/ocr4/DataArray;->pointerToNativeArray:J
 
-    const-wide/16 v4, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v2, v2, v4
+    cmp-long v0, v0, v2
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/abbyy/mobile/ocr4/DataArray;->free()V
 
@@ -159,57 +159,59 @@
 
     move-result-wide v2
 
-    long-to-int v2, v2
+    long-to-int v0, v2
 
-    invoke-direct {p0, v2}, Lcom/abbyy/mobile/ocr4/DataArray;->create(I)Z
+    invoke-direct {p0, v0}, Lcom/abbyy/mobile/ocr4/DataArray;->create(I)Z
     :try_end_0
     .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result v1
+    move-result v0
 
     :goto_0
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_2
 
     invoke-virtual {p1}, Lcom/abbyy/mobile/ocr4/SizedInputStream;->getSize()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    long-to-int v2, v2
+    long-to-int v0, v0
 
-    iput v2, p0, Lcom/abbyy/mobile/ocr4/DataArray;->size:I
+    iput v0, p0, Lcom/abbyy/mobile/ocr4/DataArray;->size:I
 
     invoke-direct {p0, p1}, Lcom/abbyy/mobile/ocr4/DataArray;->transfer(Lcom/abbyy/mobile/ocr4/SizedInputStream;)V
 
     return-void
 
     :cond_1
-    new-instance v2, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v3, "data is null."
+    const-string/jumbo v1, "data is null."
 
-    invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v2, "DataArray"
-
     invoke-virtual {v0}, Ljava/lang/Error;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const-string/jumbo v2, "DataArray"
+
+    invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    move v0, v1
 
     goto :goto_0
 
     :cond_2
-    new-instance v2, Ljava/lang/OutOfMemoryError;
+    new-instance v0, Ljava/lang/OutOfMemoryError;
 
-    invoke-direct {v2}, Ljava/lang/OutOfMemoryError;-><init>()V
+    invoke-direct {v0}, Ljava/lang/OutOfMemoryError;-><init>()V
 
-    throw v2
+    throw v0
 .end method
 
 .method public size()I

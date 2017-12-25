@@ -470,13 +470,13 @@
     goto :goto_0
 
     :cond_5
-    const-string/jumbo v2, "rdf:value"
-
     invoke-virtual {v1}, Lcom/adobe/xmp/impl/XMPNode;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "rdf:value"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -619,19 +619,19 @@
 
     if-eqz v2, :cond_0
 
-    const-string/jumbo v2, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-
     check-cast p0, Lorg/w3c/dom/Attr;
 
     invoke-interface {p0}, Lorg/w3c/dom/Attr;->getOwnerElement()Lorg/w3c/dom/Element;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v3}, Lorg/w3c/dom/Element;->getNamespaceURI()Ljava/lang/String;
+    invoke-interface {v2}, Lorg/w3c/dom/Element;->getNamespaceURI()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -1053,13 +1053,13 @@
 
     move-result-object v6
 
-    const-string/jumbo v7, "xmlns"
-
     invoke-interface {v6}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "xmlns"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -1098,13 +1098,13 @@
     throw v0
 
     :cond_6
-    const-string/jumbo v7, "xmlns"
-
     invoke-interface {v6}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "xmlns"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -1166,24 +1166,24 @@
     throw v0
 
     :pswitch_4
-    const-string/jumbo v7, "value"
-
     invoke-interface {v6}, Lorg/w3c/dom/Node;->getLocalName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "value"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
     if-nez v7, :cond_b
 
     :cond_a
-    const-string/jumbo v7, "xml:lang"
-
     invoke-interface {v6}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
     move-result-object v6
+
+    const-string/jumbo v7, "xml:lang"
 
     invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1196,13 +1196,13 @@
     goto :goto_5
 
     :cond_b
-    const-string/jumbo v7, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-
     invoke-interface {v6}, Lorg/w3c/dom/Node;->getNamespaceURI()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -1281,13 +1281,13 @@
     goto/16 :goto_4
 
     :cond_12
-    const-string/jumbo v4, "xmlns"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xmlns"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1318,13 +1318,13 @@
     throw v0
 
     :cond_13
-    const-string/jumbo v4, "xmlns"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xmlns"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1333,11 +1333,11 @@
     goto :goto_8
 
     :pswitch_7
-    const-string/jumbo v4, "rdf:resource"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
 
     move-result-object v3
+
+    const-string/jumbo v4, "rdf:resource"
 
     invoke-static {v6, v4, v3}, Lcom/adobe/xmp/impl/ParseRDF;->addQualifierNode(Lcom/adobe/xmp/impl/XMPNode;Ljava/lang/String;Ljava/lang/String;)Lcom/adobe/xmp/impl/XMPNode;
 
@@ -1346,13 +1346,13 @@
     :pswitch_8
     if-eqz v0, :cond_14
 
-    const-string/jumbo v4, "xml:lang"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xml:lang"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1382,11 +1382,11 @@
     goto :goto_7
 
     :cond_15
-    const-string/jumbo v4, "xml:lang"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
 
     move-result-object v3
+
+    const-string/jumbo v4, "xml:lang"
 
     invoke-static {v6, v4, v3}, Lcom/adobe/xmp/impl/ParseRDF;->addQualifierNode(Lcom/adobe/xmp/impl/XMPNode;Ljava/lang/String;Ljava/lang/String;)Lcom/adobe/xmp/impl/XMPNode;
 
@@ -1423,9 +1423,9 @@
         }
     .end annotation
 
-    const/16 v8, 0xca
-
     const/4 v0, 0x0
+
+    const/16 v8, 0xca
 
     const/4 v1, 0x0
 
@@ -1472,13 +1472,13 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "xmlns"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xmlns"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1506,13 +1506,13 @@
 
     move-result-object v5
 
-    const-string/jumbo v6, "xml:lang"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v7, "xml:lang"
+
+    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
@@ -1536,13 +1536,13 @@
     throw v0
 
     :cond_3
-    const-string/jumbo v4, "xmlns"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xmlns"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -1551,11 +1551,11 @@
     goto :goto_3
 
     :cond_4
-    const-string/jumbo v4, "xml:lang"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
 
     move-result-object v3
+
+    const-string/jumbo v4, "xml:lang"
 
     invoke-static {v2, v4, v3}, Lcom/adobe/xmp/impl/ParseRDF;->addQualifierNode(Lcom/adobe/xmp/impl/XMPNode;Ljava/lang/String;Ljava/lang/String;)Lcom/adobe/xmp/impl/XMPNode;
 
@@ -1720,13 +1720,13 @@
 
     move-result-object v2
 
-    const-string/jumbo v3, "xmlns"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v4, "xmlns"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -1762,13 +1762,13 @@
     throw v0
 
     :cond_3
-    const-string/jumbo v3, "xmlns"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v4, "xmlns"
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
@@ -2032,13 +2032,13 @@
 
     move-result-object v3
 
-    const-string/jumbo v4, "xmlns"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xmlns"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -2066,13 +2066,13 @@
 
     move-result-object v5
 
-    const-string/jumbo v6, "xml:lang"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v7, "xml:lang"
+
+    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v6
 
@@ -2098,13 +2098,13 @@
     throw v0
 
     :cond_3
-    const-string/jumbo v4, "xmlns"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v5, "xmlns"
+
+    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
@@ -2113,11 +2113,11 @@
     goto :goto_3
 
     :cond_4
-    const-string/jumbo v4, "xml:lang"
-
     invoke-interface {v3}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
 
     move-result-object v3
+
+    const-string/jumbo v4, "xml:lang"
 
     invoke-static {v2, v4, v3}, Lcom/adobe/xmp/impl/ParseRDF;->addQualifierNode(Lcom/adobe/xmp/impl/XMPNode;Ljava/lang/String;Ljava/lang/String;)Lcom/adobe/xmp/impl/XMPNode;
 
@@ -2232,13 +2232,13 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "xmlns"
-
     invoke-interface {v4}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v6, "xmlns"
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -2267,13 +2267,13 @@
 
     if-nez v5, :cond_4
 
-    const-string/jumbo v5, "xmlns"
-
     invoke-interface {v4}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v6, "xmlns"
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -2332,11 +2332,11 @@
 
     move-result-object v6
 
-    const-string/jumbo v7, "xml:lang"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string/jumbo v7, "xml:lang"
 
     invoke-virtual {v7, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2651,13 +2651,13 @@
     return-void
 
     :cond_1
-    const-string/jumbo v0, "iX:changes"
-
     invoke-interface {p2}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "iX:changes"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -2674,13 +2674,13 @@
 
     move-result-object v2
 
-    const-string/jumbo v5, "xmlns"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getPrefix()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v6, "xmlns"
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -2708,13 +2708,13 @@
 
     move-result-object v6
 
-    const-string/jumbo v7, "xml:lang"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v7
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "xml:lang"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -2738,13 +2738,13 @@
     throw v0
 
     :cond_5
-    const-string/jumbo v5, "xmlns"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getNodeName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v6, "xmlns"
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 
@@ -2753,11 +2753,11 @@
     goto :goto_3
 
     :cond_6
-    const-string/jumbo v5, "xml:lang"
-
     invoke-interface {v2}, Lorg/w3c/dom/Node;->getNodeValue()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string/jumbo v5, "xml:lang"
 
     invoke-static {v4, v5, v2}, Lcom/adobe/xmp/impl/ParseRDF;->addQualifierNode(Lcom/adobe/xmp/impl/XMPNode;Ljava/lang/String;Ljava/lang/String;)Lcom/adobe/xmp/impl/XMPNode;
 
@@ -2815,13 +2815,13 @@
     :cond_b
     if-nez v2, :cond_a
 
-    const-string/jumbo v2, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-
     invoke-interface {v5}, Lorg/w3c/dom/Node;->getNamespaceURI()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v6, "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+
+    invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 

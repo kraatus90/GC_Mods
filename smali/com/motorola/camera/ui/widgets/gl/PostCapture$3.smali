@@ -1,9 +1,6 @@
 .class Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;
-.super Ljava/lang/Object;
+.super Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
 .source "PostCapture.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,92 +24,138 @@
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 9
+.method public onJpegReprocRequest(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ILcom/motorola/camera/mcf/Mcf$ReprocessType;Lcom/motorola/camera/mcf/McfMetadata;)V
+    .locals 3
 
-    const/16 v8, 0x18
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get1(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
-
-    move-result-object v0
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->hasAnimation(Ljava/lang/Integer;)Z
-
-    move-result v0
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    return-void
+    invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get0()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "add to Jpeg Queue "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3$1;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get3(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Ljava/util/List;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;)V
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;
 
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-wrap1(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    invoke-direct {v1, p1, p2, p3, p4}, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ILcom/motorola/camera/mcf/Mcf$ReprocessType;Lcom/motorola/camera/mcf/McfMetadata;)V
 
-    move-result-object v4
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+    return-void
+.end method
 
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-wrap2(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+.method public onPostView(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/McfDepthMap;)V
+    .locals 3
 
-    move-result-object v5
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    sget-object v6, Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;->RESTART:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
+    if-eqz v0, :cond_0
 
-    const-wide/16 v2, 0xc8
+    invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get0()Ljava/lang/String;
 
-    const/4 v7, 0x0
+    move-result-object v0
 
-    invoke-direct/range {v0 .. v7}, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;-><init>(Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;JLcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/Vector3F;Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;I)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v1, Landroid/view/animation/DecelerateInterpolator;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    const-string/jumbo v2, "add postview to Jpeg Queue "
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get4(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
-    iget v2, v2, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->mOrientation:I
-
-    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/animations/TranslateAnimation;->startAnimation(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
-
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get1(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v0, v2}, Lcom/motorola/camera/ui/widgets/gl/AnimationTracker;->addAnimation(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;Ljava/lang/Integer;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get3(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Ljava/util/List;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;
+
+    invoke-direct {v1, p1}, Lcom/motorola/camera/ui/widgets/gl/McfJpegRequestHolder;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get6(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Lcom/motorola/camera/ui/widgets/gl/PostCapture$CameraPreviewTextureExt;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/PostCapture$CameraPreviewTextureExt;->setFrameData(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Lcom/motorola/camera/mcf/McfDepthMap;)V
+
+    return-void
+.end method
+
+.method public onQueueEmpty()V
+    .locals 2
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get0()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "MCF.onQueueEmpty"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCapture$3;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCapture;
+
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCapture;->-get3(Lcom/motorola/camera/ui/widgets/gl/PostCapture;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
     return-void
 .end method

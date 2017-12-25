@@ -52,11 +52,11 @@
 
     invoke-static {p0, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    array-length v0, p0
 
-    array-length v1, p0
+    const/4 v1, 0x0
 
-    invoke-static {p0, v0, v1}, Lorg/apache/http/util/EncodingUtils;->getAsciiString([BII)Ljava/lang/String;
+    invoke-static {p0, v1, v0}, Lorg/apache/http/util/EncodingUtils;->getAsciiString([BII)Ljava/lang/String;
 
     move-result-object v0
 
@@ -164,11 +164,11 @@
 
     invoke-static {p0, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    array-length v0, p0
 
-    array-length v1, p0
+    const/4 v1, 0x0
 
-    invoke-static {p0, v0, v1, p1}, Lorg/apache/http/util/EncodingUtils;->getString([BIILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1, v0, p1}, Lorg/apache/http/util/EncodingUtils;->getString([BIILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -61,9 +61,9 @@
 
     const/4 v9, -0x1
 
-    const/4 v4, 0x0
-
     const/4 v0, 0x0
+
+    const/4 v4, 0x0
 
     new-instance v5, Ljava/util/ArrayList;
 

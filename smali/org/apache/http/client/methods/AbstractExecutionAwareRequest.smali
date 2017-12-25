@@ -95,9 +95,7 @@
 .end method
 
 .method public clone()Ljava/lang/Object;
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
@@ -131,7 +129,9 @@
 
     iput-object v1, v0, Lorg/apache/http/client/methods/AbstractExecutionAwareRequest;->abortLock:Ljava/util/concurrent/locks/Lock;
 
-    iput-object v2, v0, Lorg/apache/http/client/methods/AbstractExecutionAwareRequest;->cancellable:Lorg/apache/http/concurrent/Cancellable;
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lorg/apache/http/client/methods/AbstractExecutionAwareRequest;->cancellable:Lorg/apache/http/concurrent/Cancellable;
 
     const/4 v1, 0x0
 

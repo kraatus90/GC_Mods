@@ -19,7 +19,7 @@
 
 .field private mFileDescripter:Landroid/os/ParcelFileDescriptor;
 
-.field private final mSeqId:I
+.field private final mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
 .field private final mUri:Landroid/net/Uri;
 
@@ -41,12 +41,12 @@
     return-object v0
 .end method
 
-.method static synthetic -get2(Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)I
+.method static synthetic -get2(Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
     .locals 1
 
-    iget v0, p0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->mSeqId:I
+    iget-object v0, p0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    return v0
+    return-object v0
 .end method
 
 .method static synthetic -set0(Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;Landroid/os/ParcelFileDescriptor;)Landroid/os/ParcelFileDescriptor;
@@ -57,30 +57,30 @@
     return-object p1
 .end method
 
-.method private constructor <init>(ILandroid/net/Uri;Landroid/content/ContentValues;)V
+.method private constructor <init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/content/ContentValues;)V
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, v0, p3}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(ILandroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;)V
+    invoke-direct {p0, p1, p2, v0, p3}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;)V
 
     return-void
 .end method
 
-.method synthetic constructor <init>(ILandroid/net/Uri;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
+.method synthetic constructor <init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(ILandroid/net/Uri;Landroid/content/ContentValues;)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/content/ContentValues;)V
 
     return-void
 .end method
 
-.method private constructor <init>(ILandroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;)V
+.method private constructor <init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->mSeqId:I
+    iput-object p1, p0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     iput-object p2, p0, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;->mUri:Landroid/net/Uri;
 
@@ -91,10 +91,10 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(ILandroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
+.method synthetic constructor <init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(ILandroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/motorola/camera/saving/SaveImageService$UpdateContainer;-><init>(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;Landroid/content/ContentValues;)V
 
     return-void
 .end method

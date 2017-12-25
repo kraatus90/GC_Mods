@@ -14,12 +14,26 @@
 # instance fields
 .field private mInflater:Landroid/view/LayoutInflater;
 
+.field private mOverrideConfiguration:Landroid/content/res/Configuration;
+
+.field private mResources:Landroid/content/res/Resources;
+
 .field private mTheme:Landroid/content/res/Resources$Theme;
 
 .field private mThemeResource:I
 
 
 # direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 0
     .param p2    # I
@@ -44,25 +58,73 @@
     return-void
 .end method
 
+.method private getResourcesInternal()Landroid/content/res/Resources;
+    .locals 2
+
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mResources:Landroid/content/res/Resources;
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mResources:Landroid/content/res/Resources;
+
+    return-object v0
+
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mOverrideConfiguration:Landroid/content/res/Configuration;
+
+    if-eqz v0, :cond_2
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x11
+
+    if-lt v0, v1, :cond_0
+
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mOverrideConfiguration:Landroid/content/res/Configuration;
+
+    invoke-virtual {p0, v0}, Landroid/support/v7/view/ContextThemeWrapper;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mResources:Landroid/content/res/Resources;
+
+    goto :goto_0
+
+    :cond_2
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mResources:Landroid/content/res/Resources;
+
+    goto :goto_0
+.end method
+
 .method private initializeTheme()V
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x0
 
-    iget-object v2, p0, Landroid/support/v7/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
+    iget-object v1, p0, Landroid/support/v7/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
     :goto_0
     if-nez v0, :cond_2
 
     :cond_0
     :goto_1
-    iget-object v2, p0, Landroid/support/v7/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
+    iget-object v1, p0, Landroid/support/v7/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    iget v3, p0, Landroid/support/v7/view/ContextThemeWrapper;->mThemeResource:I
+    iget v2, p0, Landroid/support/v7/view/ContextThemeWrapper;->mThemeResource:I
 
-    invoke-virtual {p0, v2, v3, v0}, Landroid/support/v7/view/ContextThemeWrapper;->onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
+    invoke-virtual {p0, v1, v2, v0}, Landroid/support/v7/view/ContextThemeWrapper;->onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
 
     return-void
 
@@ -74,19 +136,19 @@
     :cond_2
     invoke-virtual {p0}, Landroid/support/v7/view/ContextThemeWrapper;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, p0, Landroid/support/v7/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
+    iput-object v1, p0, Landroid/support/v7/view/ContextThemeWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     invoke-virtual {p0}, Landroid/support/v7/view/ContextThemeWrapper;->getBaseContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual {v1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
 
@@ -101,6 +163,52 @@
 
 
 # virtual methods
+.method public applyOverrideConfiguration(Landroid/content/res/Configuration;)V
+    .locals 2
+
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mResources:Landroid/content/res/Resources;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mOverrideConfiguration:Landroid/content/res/Configuration;
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Landroid/content/res/Configuration;
+
+    invoke-direct {v0, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    iput-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mOverrideConfiguration:Landroid/content/res/Configuration;
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "getResources() or getAssets() has already been called"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "Override configuration has already been set"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method protected attachBaseContext(Landroid/content/Context;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
+
+    return-void
+.end method
+
 .method public getAssets()Landroid/content/res/AssetManager;
     .locals 1
 
@@ -109,6 +217,24 @@
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getOverrideConfiguration()Landroid/content/res/Configuration;
+    .locals 1
+
+    iget-object v0, p0, Landroid/support/v7/view/ContextThemeWrapper;->mOverrideConfiguration:Landroid/content/res/Configuration;
+
+    return-object v0
+.end method
+
+.method public getResources()Landroid/content/res/Resources;
+    .locals 1
+
+    invoke-direct {p0}, Landroid/support/v7/view/ContextThemeWrapper;->getResourcesInternal()Landroid/content/res/Resources;
 
     move-result-object v0
 

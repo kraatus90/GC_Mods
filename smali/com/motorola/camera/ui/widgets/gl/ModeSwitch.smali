@@ -656,6 +656,8 @@
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/ui/widgets/gl/ModeSwitch;->setButtonState(Lcom/motorola/camera/ui/widgets/gl/ModeSwitch$ButtonState;)V
 
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/ModeSwitch;->checkIfModesSupported()V
+
     const/4 v0, 0x1
 
     return v0

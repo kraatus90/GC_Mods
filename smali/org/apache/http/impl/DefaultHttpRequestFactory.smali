@@ -72,17 +72,17 @@
 
     aput-object v1, v0, v4
 
-    const/4 v1, 0x3
+    const-string/jumbo v1, "TRACE"
 
-    const-string/jumbo v2, "TRACE"
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    const-string/jumbo v1, "CONNECT"
 
-    const-string/jumbo v2, "CONNECT"
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lorg/apache/http/impl/DefaultHttpRequestFactory;->RFC2616_SPECIAL_METHODS:[Ljava/lang/String;
 

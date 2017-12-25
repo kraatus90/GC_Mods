@@ -27,8 +27,20 @@
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/ui/widgets/gl/animations/Animation$Type;
 
 .field public static final enum DURATION:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum VELOCITY:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$Type;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

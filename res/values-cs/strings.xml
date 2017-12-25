@@ -148,7 +148,7 @@
     <string name="cancel">Zrušit</string>
     <string name="capture_failure">Snímání se nezdařilo. Zkuste to znovu.</string>
     <string name="checkbox_do_not_show">Nezobrazovat znovu</string>
-    <string name="cloudsight_terms">Vaše obrázky budou zaslány společnosti CloudSight pro získání výsledků hledání. &lt;br/>&lt;br/> Pokračováním souhlasíte se&lt;a href=%1$s>Zásadami ochrany soukromí&lt;/a> společnosti CloudSight.</string>
+    <string name="cloudsight_terms">Při použití rozpoznání předmětu je obrázek a poloha (pokud je povolena) odeslána třetí straně pro získání výsledků hledání.&lt;br/>&lt;br/> Pokračováním souhlasíte se&lt;a href=%1$s>Zásadami ochrany soukromí&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama se nevyfotilo. Zkuste to znovu.</string>
     <string name="dailog_panorama_not_taken">Panoramatický snímek nebyl pořízen.</string>
     <string name="dialog_access_sd_fail">Nelze pořizovat záznamy. Byl odepřen přístup na kartu SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Nepodporované zařízení</string>
     <string name="dialog_disagree">Nesouhlasím</string>
     <string name="dialog_dismiss">Již nezobrazovat</string>
+    <string name="dialog_download">Stáhnout</string>
     <string name="dialog_external_sd_missing">Snímek nelze pořídit. Karta SD není přístupná. Přepínání na vnitřní paměť telefonu</string>
     <string name="dialog_first_time_set_pure_raw_message">"Tento neupravený typ souboru se používá k profesionálním úpravám fotografií.
 
@@ -247,6 +248,7 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="help_next">Další</string>
     <string name="image_360_desc">Jedná se o 360° fotku. Můžete ji upravit pomocí editoru Moto 360.</string>
     <string name="image_360_name">360° fotka</string>
+    <string name="image_ratio_qcfa_res_summary">%5$s %1$d:%2$d (%3$s %4$s)</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">HLOUBKA ZAPNUTA</string>
     <string name="indicate_mode_mono">SKUTEČNÁ ČERNÁ&amp;BÍLÁ</string>
@@ -258,16 +260,19 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="indicate_mode_ultra_wide">ULTRAŠIROKÝ ÚHEL</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">ŠIROKOÚHLÉ</string>
+    <string name="indicate_mode_wide_angle_selfie">ŠIROKOÚHLÉ SELFIE</string>
     <string name="internal_storage">interní úložiště</string>
     <string name="kilo_bytes">" kB"</string>
-    <string name="landmark_install_message">Rozpoznání orientačního bodu nabízí informace o oblíbených místech po celém světě.&lt;br/>&lt;br/>Pokud chcete tuto funkci používat, nainstalujte ji.</string>
-    <string name="landmark_install_over_data">Velikost stahovaných dat funkce Rozpoznání orientačního bodu je 92 MB. Při instalaci přes mobilní datové připojení vám mohou být účtovány poplatky za přenos dat navíc.</string>
-    <string name="landmark_notification_downloading">Probíhá stahování funkce Rozpoznání orientačního bodu</string>
-    <string name="landmark_notification_install">Probíhá instalace funkce Rozpoznání orientačního bodu</string>
-    <string name="landmark_notification_install_complete">Instalace funkce Rozpoznání orientačního bodu byla dokončena</string>
-    <string name="landmark_notification_install_failed">Instalace funkce Rozpoznání orientačního bodu se nezdařila</string>
+    <string name="landmark_install_message">Rozpoznání orientačního bodu nabízí informace o oblíbených místech po celém světě.&lt;br/>&lt;br/>Stáhněte si databázi orientačních bodů, pokud chcete tuto funkci používat.</string>
+    <string name="landmark_install_over_data">Velikost databáze orientačních bodů je 92 MB. Při stahování přes mobilní datové připojení vám mohou být účtovány poplatky za přenos dat navíc.</string>
+    <string name="landmark_notification_downloading">Probíhá stahování databáze orientačních bodů</string>
+    <string name="landmark_notification_install">Probíhá instalace databáze orientačních bodů</string>
+    <string name="landmark_notification_install_complete">Instalace databáze orientačních bodů byla dokončena</string>
+    <string name="landmark_notification_install_failed">Instalace databáze orientačních bodů se nezdařila</string>
     <string name="landmark_notification_install_invalid_url">Databáze orientačních bodů není dostupná, aktualizujte fotoaparát na nejnovější verzi</string>
-    <string name="landmark_notification_install_out_of_space">Pro instalaci funkce Rozpoznání orientačního bodu není v úložišti dostatek volného místa.</string>
+    <string name="landmark_notification_install_out_of_space">Pro instalaci databáze orientačních bodů není v úložišti dostatek volného místa</string>
+    <string name="landmark_notification_paused">Databáze orientačních bodů bude pokračovat ve stahování, jakmile bude dostupné připojení k internetu</string>
+    <string name="landmark_notification_queued">Databáze orientačních bodů se začne stahovat, jakmile bude dostupné připojení k internetu</string>
     <string name="main_setting_amz_barcode">Čtečka čárových kódů Amazon</string>
     <string name="main_setting_amz_privacy">Oznámení o ochraně osobních údajů společnosti Amazon</string>
     <string name="main_setting_amz_terms">Podmínky použití</string>
@@ -290,6 +295,8 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="main_setting_image_ratio">Velikost fotky (zadní fotoaparát)</string>
     <string name="main_setting_image_ratio_front">Velikost fotky (přední fotoaparát)</string>
     <string name="main_setting_landmark_detection">Rozpoznání orientačního bodu</string>
+    <string name="main_setting_landmark_version_current">Verze databáze: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Databáze není nainstalována</string>
     <string name="main_setting_licenses">Licence Open Source</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="perm_required_alert_title">Vyžadována oprávnění</string>
     <string name="photos_depth_desc">Využijte editor hloubky k výběru zaostření, změně pozadí nebo k výběru oblasti, kterou chcete změnit na černobílou.</string>
     <string name="photos_depth_name">Hloubka zapnuta</string>
+    <string name="photos_notification_desc">Získejte neomezené úložiště ve Fotkách Google</string>
+    <string name="photos_notification_title">Zálohovat do Fotek Google</string>
+    <string name="qcfa_resolution_description">Pro slabé světlo</string>
     <string name="retake">Zkusit znovu</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="setting_mode_slow_motion">Pomalý pohyb</string>
     <string name="setting_mode_ultra_wide">Ultraširoký úhel</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Širokoúhlé selfie</string>
     <string name="setting_off">Vypnuto</string>
     <string name="setting_on">Zapnuto</string>
     <string name="setting_persist">Přidržet</string>
@@ -383,20 +394,25 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="setting_timer_dialog_title">SAMOSPOUŠŤ</string>
     <string name="setting_torch">Svítilna</string>
     <string name="setting_true">pravda</string>
+    <string name="shortcut_desc_depth">Hl. ostr.</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Chytrý fotoaparát</string>
+    <string name="smartcam_no_detections">Žádné uložené objekty nebo orientační body</string>
     <string name="storage_location_external">Karta SD</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Paměť není k dispozici</string>
+    <string name="toast_battery_saver">Momentálně máte aktivní režim úspory energie, některé funkce mohou být omezeny</string>
     <string name="toast_geotag_message_1">Chcete-li povolit ukládání polohy, je třeba poskytnout oprávnění ke zjištění polohy.</string>
     <string name="toast_geotag_message_2">Nastavení polohy se projeví až po zapnutí zjišťování polohy systému.</string>
     <string name="tooltip_camera_switch_360">Zkuste přepnout do různých možností fotoaparátu.</string>
     <string name="tooltip_capture_360">Zkuste vytvořit 360° snímek nebo video klepnutím na toto tlačítko závěrky.</string>
-    <string name="tooltip_capture_key_360">Zkuste fotit také pomocí tlačítka závěrky na zadní straně.</string>
-    <string name="tooltip_dual_camera_depth_photo">Pořizováním fotek s dalšími informacemi získáte speciální funkce úprav.</string>
+    <string name="tooltip_capture_key_360">Zkuste fotit také pomocí tlačítka závěrky na zadní straně modulu.</string>
     <string name="tooltip_first_use_zoom_button">Klepnutím sem přepnete na široký úhel.</string>
     <string name="tooltip_gallery_360">Přejetím prstem vlevo se můžete podívat, jak se 360° snímek nebo video povedly.</string>
     <string name="tooltip_minimap_viewfinder">Posuňte spodní obrázek doleva nebo doprava.</string>
     <string name="tooltip_mode_switch_360">Zkuste fotit 360° snímky v různých režimech!</string>
+    <string name="tooltip_modes_list">Objevte nové způsoby, jak fotografovat.</string>
     <string name="tooltip_smart_camera">Klepnutím získáte více informací o předmětu.</string>
     <string name="tooltip_smart_camera_disable">Tuto funkci můžete vypnout v nabídce Nastavení.</string>
     <string name="tooltip_spherical_viewfinder">Zobrazení můžete ovládat posunutím nebo přiblížením a oddálením.</string>
@@ -419,6 +435,10 @@ Potvrďte svůj souhlas níže a v nastavení zapněte položku Poloha."</stri
     <string name="zoom_hint_full">CELÁ OBRAZOVKA</string>
     <string name="zoom_hint_wide">ŠIROKOÚHLE</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%5$s %1$d:%2$d (%3$s %4$s)</string>
-    <string name="qcfa_resolution_description">Pro slabé světlo</string>
+    <string name="indicate_mode_timelapse">ČASOSBĚR</string>
+    <string name="setting_mode_timelapse">Časosběr</string>
+    <string name="timelapse_config_16x">16x</string>
+    <string name="timelapse_config_32x">32x</string>
+    <string name="timelapse_config_4x">4x</string>
+    <string name="timelapse_config_8x">8x</string>
 </resources>

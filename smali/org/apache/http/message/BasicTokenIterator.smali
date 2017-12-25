@@ -54,9 +54,7 @@
 
 # virtual methods
 .method protected a(I)I
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v2, -0x1
 
@@ -116,7 +114,9 @@
     return v2
 
     :cond_2
-    iput-object v3, p0, Lorg/apache/http/message/BasicTokenIterator;->c:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/message/BasicTokenIterator;->c:Ljava/lang/String;
 
     return v2
 .end method

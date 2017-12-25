@@ -10,9 +10,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -20,28 +18,30 @@
 
     iput v0, p0, Lcom/adobe/xmp/options/Options;->options:I
 
-    iput-object v1, p0, Lcom/adobe/xmp/options/Options;->optionNames:Ljava/util/Map;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/adobe/xmp/options/Options;->optionNames:Ljava/util/Map;
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/adobe/xmp/XMPException;
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/adobe/xmp/options/Options;->options:I
 
-    iput-object v1, p0, Lcom/adobe/xmp/options/Options;->optionNames:Ljava/util/Map;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/adobe/xmp/options/Options;->optionNames:Ljava/util/Map;
 
     invoke-direct {p0, p1}, Lcom/adobe/xmp/options/Options;->assertOptionsValid(I)V
 

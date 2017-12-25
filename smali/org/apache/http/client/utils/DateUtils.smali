@@ -47,11 +47,11 @@
 
     aput-object v1, v0, v3
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "EEE MMM d HH:mm:ss yyyy"
 
-    const-string/jumbo v4, "EEE MMM d HH:mm:ss yyyy"
+    const/4 v4, 0x2
 
-    aput-object v4, v0, v1
+    aput-object v1, v0, v4
 
     sput-object v0, Lorg/apache/http/client/utils/DateUtils;->DEFAULT_PATTERNS:[Ljava/lang/String;
 

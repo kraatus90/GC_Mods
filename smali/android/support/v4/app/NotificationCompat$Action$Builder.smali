@@ -41,11 +41,11 @@
 .method public constructor <init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
     .locals 7
 
-    const/4 v5, 0x0
-
     new-instance v4, Landroid/os/Bundle;
 
     invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x1
 
@@ -176,15 +176,65 @@
 .end method
 
 .method public build()Landroid/support/v4/app/NotificationCompat$Action;
-    .locals 7
+    .locals 8
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [Landroid/support/v4/app/RemoteInput;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Landroid/support/v4/app/RemoteInput;
+
+    move-object v6, v0
 
     :goto_0
+    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [Landroid/support/v4/app/RemoteInput;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Landroid/support/v4/app/RemoteInput;
+
+    move-object v5, v0
+
+    :goto_1
     new-instance v0, Landroid/support/v4/app/NotificationCompat$Action;
 
     iget v1, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mIcon:I
@@ -195,32 +245,56 @@
 
     iget-object v4, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mExtras:Landroid/os/Bundle;
 
-    iget-boolean v6, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mAllowGeneratedReplies:Z
+    iget-boolean v7, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mAllowGeneratedReplies:Z
 
-    invoke-direct/range {v0 .. v6}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;Z)V
+    invoke-direct/range {v0 .. v7}, Landroid/support/v4/app/NotificationCompat$Action;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;Landroid/os/Bundle;[Landroid/support/v4/app/RemoteInput;[Landroid/support/v4/app/RemoteInput;Z)V
 
     return-object v0
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Landroid/support/v4/app/NotificationCompat$Action$Builder;->mRemoteInputs:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    move-result-object v4
 
-    move-result v1
+    :goto_2
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    new-array v1, v1, [Landroid/support/v4/app/RemoteInput;
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    if-eqz v0, :cond_0
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Landroid/support/v4/app/RemoteInput;
+    check-cast v0, Landroid/support/v4/app/RemoteInput;
 
-    move-object v5, v0
+    invoke-virtual {v0}, Landroid/support/v4/app/RemoteInput;->isDataOnly()Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    :cond_2
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    :cond_3
+    move-object v6, v1
 
     goto :goto_0
+
+    :cond_4
+    move-object v5, v1
+
+    goto :goto_1
 .end method
 
 .method public extend(Landroid/support/v4/app/NotificationCompat$Action$Extender;)Landroid/support/v4/app/NotificationCompat$Action$Builder;

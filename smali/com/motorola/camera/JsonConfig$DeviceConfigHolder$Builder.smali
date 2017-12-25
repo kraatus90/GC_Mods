@@ -33,15 +33,25 @@
 
 .field mDualDepthConfigMaxJobCnt:I
 
+.field mDualFusionStreaming:Z
+
 .field mDualPrimaryCamera:Ljava/lang/String;
 
 .field mNormalConfigInputBufferCnt:[I
 
 .field mNormalConfigOutputBufferCnt:[I
 
+.field mPreviewRateDepthLimit:[I
+
+.field mPreviewRateLimitLvl1:[I
+
+.field mPreviewRateLimitLvl2:[I
+
 .field mRetryCount:I
 
 .field mRetryDelays:[I
+
+.field mSingleConfigMaxJobCnt:I
 
 
 # direct methods
@@ -63,6 +73,30 @@
     return-void
 .end method
 
+.method static synthetic -wrap10(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setRetryCount(I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap11(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;[I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setRetryDelays([I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap12(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setSingleMaxJobCnt(I)V
+
+    return-void
+.end method
+
 .method static synthetic -wrap2(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;Lcom/motorola/camera/JsonConfig$Mode;Lcom/motorola/camera/JsonConfig$Path;[I)V
     .locals 0
 
@@ -79,7 +113,15 @@
     return-void
 .end method
 
-.method static synthetic -wrap4(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;I)V
+.method static synthetic -wrap4(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setDualFusionStreaming(Z)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap5(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;I)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setDualMaxJobCnt(I)V
@@ -87,7 +129,7 @@
     return-void
 .end method
 
-.method static synthetic -wrap5(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;Ljava/lang/String;)V
+.method static synthetic -wrap6(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setDualPrimaryCamera(Ljava/lang/String;)V
@@ -95,18 +137,26 @@
     return-void
 .end method
 
-.method static synthetic -wrap6(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;I)V
+.method static synthetic -wrap7(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;[I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setRetryCount(I)V
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setPreviewRateDepthLimit([I)V
 
     return-void
 .end method
 
-.method static synthetic -wrap7(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;[I)V
+.method static synthetic -wrap8(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;[I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setRetryDelays([I)V
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setPreviewRateLimitLvl1([I)V
+
+    return-void
+.end method
+
+.method static synthetic -wrap9(Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;[I)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->setPreviewRateLimitLvl2([I)V
 
     return-void
 .end method
@@ -114,13 +164,13 @@
 .method private constructor <init>()V
     .locals 4
 
-    const/4 v2, 0x2
-
     const/16 v0, 0x14
 
-    const/16 v1, 0xe
+    const/16 v2, 0xe
 
     const/4 v3, 0x3
+
+    const/4 v1, 0x2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -130,7 +180,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->DEFAULT_INPUT_BUFFER_CNT_ARY:[I
 
-    filled-new-array {v1, v1, v1}, [I
+    filled-new-array {v2, v2, v2}, [I
 
     move-result-object v0
 
@@ -160,9 +210,19 @@
 
     iput-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDepthDualConfigOutputBufferCnt:[I
 
-    iput v2, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigMaxJobCnt:I
+    iput v1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mSingleConfigMaxJobCnt:I
 
-    iput v2, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualDepthConfigMaxJobCnt:I
+    iput v1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigMaxJobCnt:I
+
+    iput v1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualDepthConfigMaxJobCnt:I
+
+    const-string/jumbo v0, "0"
+
+    iput-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualPrimaryCamera:Ljava/lang/String;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualFusionStreaming:Z
 
     const/high16 v0, -0x40800000    # -1.0f
 
@@ -202,39 +262,89 @@
 .end method
 
 .method private build()Lcom/motorola/camera/JsonConfig$DeviceConfigHolder;
-    .locals 14
+    .locals 20
 
-    new-instance v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder;
+    new-instance v1, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder;
 
-    iget-object v1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mNormalConfigInputBufferCnt:[I
+    move-object/from16 v0, p0
 
-    iget-object v2, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mNormalConfigOutputBufferCnt:[I
+    iget-object v2, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mNormalConfigInputBufferCnt:[I
 
-    iget-object v3, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigInputBufferCnt:[I
+    move-object/from16 v0, p0
 
-    iget-object v4, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigOutputBufferCnt:[I
+    iget-object v3, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mNormalConfigOutputBufferCnt:[I
 
-    iget-object v5, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDepthDualConfigInputBufferCnt:[I
+    move-object/from16 v0, p0
 
-    iget-object v6, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDepthDualConfigOutputBufferCnt:[I
+    iget-object v4, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigInputBufferCnt:[I
 
-    iget v7, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigMaxJobCnt:I
+    move-object/from16 v0, p0
 
-    iget v8, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualDepthConfigMaxJobCnt:I
+    iget-object v5, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigOutputBufferCnt:[I
 
-    iget-object v9, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualPrimaryCamera:Ljava/lang/String;
+    move-object/from16 v0, p0
 
-    iget v10, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mAnalogGainThreshold:F
+    iget-object v6, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDepthDualConfigInputBufferCnt:[I
 
-    iget v11, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mRetryCount:I
+    move-object/from16 v0, p0
 
-    iget-object v12, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mRetryDelays:[I
+    iget-object v7, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDepthDualConfigOutputBufferCnt:[I
 
-    const/4 v13, 0x0
+    move-object/from16 v0, p0
 
-    invoke-direct/range {v0 .. v13}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder;-><init>([I[I[I[I[I[IIILjava/lang/String;FI[ILcom/motorola/camera/JsonConfig$DeviceConfigHolder;)V
+    iget v8, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mSingleConfigMaxJobCnt:I
 
-    return-object v0
+    move-object/from16 v0, p0
+
+    iget v9, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualConfigMaxJobCnt:I
+
+    move-object/from16 v0, p0
+
+    iget v10, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualDepthConfigMaxJobCnt:I
+
+    move-object/from16 v0, p0
+
+    iget-object v11, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualPrimaryCamera:Ljava/lang/String;
+
+    move-object/from16 v0, p0
+
+    iget-boolean v12, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualFusionStreaming:Z
+
+    move-object/from16 v0, p0
+
+    iget v13, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mAnalogGainThreshold:F
+
+    move-object/from16 v0, p0
+
+    iget v14, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mRetryCount:I
+
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mRetryDelays:[I
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateLimitLvl1:[I
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateLimitLvl2:[I
+
+    move-object/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateDepthLimit:[I
+
+    move-object/from16 v18, v0
+
+    const/16 v19, 0x0
+
+    invoke-direct/range {v1 .. v19}, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder;-><init>([I[I[I[I[I[IIIILjava/lang/String;ZFI[I[I[I[ILcom/motorola/camera/JsonConfig$DeviceConfigHolder;)V
+
+    return-object v1
 .end method
 
 .method private setAnalogGainThreshold(F)V
@@ -374,6 +484,14 @@
     return-void
 .end method
 
+.method private setDualFusionStreaming(Z)V
+    .locals 0
+
+    iput-boolean p1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualFusionStreaming:Z
+
+    return-void
+.end method
+
 .method private setDualMaxJobCnt(I)V
     .locals 0
 
@@ -386,6 +504,81 @@
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mDualPrimaryCamera:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method private setPreviewRateDepthLimit([I)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    array-length v0, p1
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateDepthLimit:[I
+
+    iget-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateDepthLimit:[I
+
+    array-length v1, p1
+
+    invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-void
+.end method
+
+.method private setPreviewRateLimitLvl1([I)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    array-length v0, p1
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateLimitLvl1:[I
+
+    iget-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateLimitLvl1:[I
+
+    array-length v1, p1
+
+    invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-void
+.end method
+
+.method private setPreviewRateLimitLvl2([I)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    array-length v0, p1
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateLimitLvl2:[I
+
+    iget-object v0, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mPreviewRateLimitLvl2:[I
+
+    array-length v1, p1
+
+    invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-void
 .end method
@@ -419,6 +612,14 @@
     array-length v1, p1
 
     invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-void
+.end method
+
+.method private setSingleMaxJobCnt(I)V
+    .locals 0
+
+    iput p1, p0, Lcom/motorola/camera/JsonConfig$DeviceConfigHolder$Builder;->mSingleConfigMaxJobCnt:I
 
     return-void
 .end method

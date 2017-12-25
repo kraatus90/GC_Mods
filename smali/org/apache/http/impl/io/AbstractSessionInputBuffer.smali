@@ -971,9 +971,7 @@
 .end method
 
 .method public readLine()Ljava/lang/String;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     new-instance v0, Lorg/apache/http/util/CharArrayBuffer;
 
@@ -989,7 +987,9 @@
 
     if-ne v1, v2, :cond_0
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     invoke-virtual {v0}, Lorg/apache/http/util/CharArrayBuffer;->toString()Ljava/lang/String;

@@ -27,9 +27,9 @@
 .method constructor <init>(Ljava/lang/String;)V
     .locals 4
 
-    const/16 v2, 0x14
-
     const/4 v3, 0x0
+
+    const/16 v2, 0x14
 
     const/4 v0, 0x2
 

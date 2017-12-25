@@ -41,8 +41,6 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     const-string/jumbo v0, "client is null"
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/zzv;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -52,6 +50,8 @@
     invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/zzv;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzi$zza;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, p2, v1}, Lcom/google/android/gms/wearable/internal/zzi$zza;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/wearable/ChannelApi$ChannelListener;Ljava/lang/String;)V
 
@@ -116,8 +116,6 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     const-string/jumbo v0, "client is null"
 
     invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/zzv;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -127,6 +125,8 @@
     invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/zzv;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzi$zzc;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, p2, v1}, Lcom/google/android/gms/wearable/internal/zzi$zzc;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/wearable/ChannelApi$ChannelListener;Ljava/lang/String;)V
 

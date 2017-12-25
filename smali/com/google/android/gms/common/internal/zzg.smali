@@ -19,11 +19,11 @@
 .method public constructor <init>(Landroid/app/Activity;Landroid/content/Intent;I)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/gms/common/internal/zzg;->zzpf:Landroid/app/Activity;
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/zzg;->zzTb:Landroid/support/v4/app/Fragment;
 
@@ -37,9 +37,9 @@
 .method public constructor <init>(Landroid/support/v4/app/Fragment;Landroid/content/Intent;I)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/android/gms/common/internal/zzg;->zzpf:Landroid/app/Activity;
 

@@ -317,7 +317,7 @@
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 11
 
-    const v8, 0x7f0e0097
+    const v8, 0x7f0e00a9
 
     const/4 v7, 0x2
 
@@ -327,7 +327,7 @@
 
     const/4 v3, 0x0
 
-    const v0, 0x7f040028
+    const v0, 0x7f04002b
 
     invoke-virtual {p1, v0, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -346,7 +346,7 @@
     throw v0
 
     :cond_0
-    const v0, 0x7f0e009a
+    const v0, 0x7f0e00ac
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const v0, 0x7f0e009c
+    const v0, 0x7f0e00ae
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -394,7 +394,7 @@
 
     aput-object v1, v4, v6
 
-    const v1, 0x7f0e0098
+    const v1, 0x7f0e00aa
 
     filled-new-array {v8, v1}, [I
 
@@ -410,15 +410,15 @@
 
     aput-object v1, v7, v6
 
-    const v1, 0x7f0e0098
+    const v1, 0x7f0e00aa
 
     filled-new-array {v8, v1}, [I
 
     move-result-object v8
 
-    const v3, 0x7f040029
+    const v3, 0x7f04002c
 
-    const v6, 0x7f040027
+    const v6, 0x7f04002a
 
     move-object v1, p0
 
@@ -450,7 +450,7 @@
 
     move-result v1
 
-    const v0, 0x7f0e009b
+    const v0, 0x7f0e00ad
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

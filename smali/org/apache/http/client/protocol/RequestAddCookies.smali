@@ -104,9 +104,9 @@
 
     if-eqz v0, :cond_a
 
-    :goto_0
     move-object v1, v0
 
+    :goto_0
     iget-object v0, p0, Lorg/apache/http/client/protocol/RequestAddCookies;->log:Lorg/apache/commons/logging/Log;
 
     invoke-interface {v0}, Lorg/apache/commons/logging/Log;->isDebugEnabled()Z
@@ -280,6 +280,8 @@
 
     :cond_a
     const-string/jumbo v0, "best-match"
+
+    move-object v1, v0
 
     goto/16 :goto_0
 

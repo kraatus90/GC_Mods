@@ -102,17 +102,17 @@
 .method private zza(Landroid/os/RemoteException;)V
     .locals 4
 
-    const/4 v3, 0x0
-
     new-instance v0, Lcom/google/android/gms/common/api/Status;
-
-    const/16 v1, 0x8
 
     invoke-virtual {p1}, Landroid/os/RemoteException;->getLocalizedMessage()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;Landroid/app/PendingIntent;)V
+    const/4 v2, 0x0
+
+    const/16 v3, 0x8
+
+    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;Landroid/app/PendingIntent;)V
 
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/zza$zza;->zzk(Lcom/google/android/gms/common/api/Status;)V
 

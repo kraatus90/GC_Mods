@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/SettingsList;->animateHide(F)V
+    value = Lcom/motorola/camera/ui/widgets/gl/SettingsList;->firstUseAnimateShow()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -31,16 +31,14 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
-    .locals 3
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingsList$10_46587()V
+    .locals 2
+
+    const/4 v1, 0x1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
-    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderWhenDirty(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
@@ -48,35 +46,65 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setVisibility(Z)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setClickable(Z)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-get6(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->SETTINGS_CLOSED_FINISHED:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->setLongClickable(Z)V
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap3(Lcom/motorola/camera/ui/widgets/gl/SettingsList;Lcom/motorola/camera/fsm/camera/Trigger;)V
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FIRST_TIME_WHEEL_USE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public onAnimationStart(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
-    .locals 2
+.method public onAnimationEnd(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
+    .locals 6
 
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
+
+    monitor-enter v1
+
+    :try_start_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-get6(Lcom/motorola/camera/ui/widgets/gl/SettingsList;)Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    move-result-object v0
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$2;
 
-    const/4 v1, 0x0
+    invoke-direct {v2, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$Z4TYMsgNuhHHcBIm7IyeMURLAM4$2;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ScrollableListTexture;->showScrollBar(Z)V
+    const-wide/16 v4, 0x4b0
+
+    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method public onAnimationStart(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
+    .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
@@ -85,20 +113,6 @@
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
     invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderContinuesly(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
-
-    return-void
-.end method
-
-.method public onAnimationStep(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;I)V
-    .locals 2
-
-    invoke-super {p0, p1, p2}, Lcom/motorola/camera/ui/widgets/gl/animations/AnimationCallbackAdapter;->onAnimationStep(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;I)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$10;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->-wrap5(Lcom/motorola/camera/ui/widgets/gl/SettingsList;Z)V
 
     return-void
 .end method

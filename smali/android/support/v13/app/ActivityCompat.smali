@@ -3,16 +3,6 @@
 .source "ActivityCompat.java"
 
 
-# annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xd
-.end annotation
-
-.annotation build Landroid/support/annotation/RequiresApi;
-    value = 0xd
-.end annotation
-
-
 # direct methods
 .method protected constructor <init>()V
     .locals 0

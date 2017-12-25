@@ -158,11 +158,11 @@
     return v1
 
     :cond_3
-    const-string/jumbo v4, "chunked"
-
     invoke-interface {v0}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v4, "chunked"
 
     invoke-virtual {v4, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

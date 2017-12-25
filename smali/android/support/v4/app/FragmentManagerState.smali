@@ -26,6 +26,10 @@
 
 .field mBackStack:[Landroid/support/v4/app/BackStackState;
 
+.field mNextFragmentIndex:I
+
+.field mPrimaryNavActiveIndex:I
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -41,9 +45,13 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Landroid/support/v4/app/FragmentManagerState;->mPrimaryNavActiveIndex:I
 
     return-void
 .end method
@@ -52,6 +60,10 @@
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Landroid/support/v4/app/FragmentManagerState;->mPrimaryNavActiveIndex:I
 
     sget-object v0, Landroid/support/v4/app/FragmentState;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -78,6 +90,18 @@
     check-cast v0, [Landroid/support/v4/app/BackStackState;
 
     iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mBackStack:[Landroid/support/v4/app/BackStackState;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/v4/app/FragmentManagerState;->mPrimaryNavActiveIndex:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/v4/app/FragmentManagerState;->mNextFragmentIndex:I
 
     return-void
 .end method
@@ -106,6 +130,14 @@
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mBackStack:[Landroid/support/v4/app/BackStackState;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
+
+    iget v0, p0, Landroid/support/v4/app/FragmentManagerState;->mPrimaryNavActiveIndex:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget v0, p0, Landroid/support/v4/app/FragmentManagerState;->mNextFragmentIndex:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 .end method

@@ -287,31 +287,31 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzSr:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/images/WebImage;->zzSr:Landroid/net/Uri;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzma:I
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->zzma:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzmb:I
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->zzmb:I
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzu;->hashCode([Ljava/lang/Object;)I
 
@@ -328,27 +328,27 @@
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
     :try_start_0
-    const-string/jumbo v1, "url"
+    iget-object v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzSr:Landroid/net/Uri;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/images/WebImage;->zzSr:Landroid/net/Uri;
+    invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v2
+    const-string/jumbo v2, "url"
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string/jumbo v1, "width"
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzma:I
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->zzma:I
+    const-string/jumbo v2, "width"
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    const-string/jumbo v1, "height"
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzmb:I
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->zzmb:I
+    const-string/jumbo v2, "height"
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -362,45 +362,45 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    const-string/jumbo v0, "Image %dx%d %s"
+    const/4 v0, 0x3
 
-    const/4 v1, 0x3
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzma:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
 
     const/4 v2, 0x0
 
-    iget v3, p0, Lcom/google/android/gms/common/images/WebImage;->zzma:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzmb:I
 
-    move-result-object v3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x1
 
-    iget v3, p0, Lcom/google/android/gms/common/images/WebImage;->zzmb:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, p0, Lcom/google/android/gms/common/images/WebImage;->zzSr:Landroid/net/Uri;
 
-    move-result-object v3
+    invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x2
 
-    iget-object v3, p0, Lcom/google/android/gms/common/images/WebImage;->zzSr:Landroid/net/Uri;
+    aput-object v1, v0, v2
 
-    invoke-virtual {v3}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    const-string/jumbo v1, "Image %dx%d %s"
 
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

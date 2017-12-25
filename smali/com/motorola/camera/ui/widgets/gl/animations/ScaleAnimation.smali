@@ -32,6 +32,12 @@
 .field private final mRepeatCount:I
 
 .field private final mRepeatMode:Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;"
+        }
+    .end annotation
+.end field
 
 .field private mReverseUpdate:Z
 
@@ -120,6 +126,15 @@
 
 .method public constructor <init>(Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;JFFLcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;I)V
     .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;",
+            "JFF",
+            "Lcom/motorola/camera/ui/widgets/gl/animations/Animation$RepeatMode;",
+            "I)V"
+        }
+    .end annotation
 
     invoke-direct {p0, p1}, Lcom/motorola/camera/ui/widgets/gl/animations/Animation;-><init>(Lcom/motorola/camera/ui/widgets/gl/animations/Animation$AnimationCallback;)V
 

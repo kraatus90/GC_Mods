@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">முகப்பிற்கு வழிசெலுத்து</string>
-    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
-    <string name="abc_action_bar_up_description">மேலே வழிசெலுத்து</string>
-    <string name="abc_action_menu_overflow_description">மேலும் விருப்பங்கள்</string>
-    <string name="abc_action_mode_done">முடிந்தது</string>
-    <string name="abc_activity_chooser_view_see_all">எல்லாம் காட்டு</string>
-    <string name="abc_activitychooserview_choose_application">பயன்பாட்டைத் தேர்வுசெய்க</string>
-    <string name="abc_capital_off">முடக்கு</string>
-    <string name="abc_capital_on">இயக்கு</string>
-    <string name="abc_search_hint">தேடு...</string>
-    <string name="abc_searchview_description_clear">வினவலை அழி</string>
-    <string name="abc_searchview_description_query">தேடல் வினவல்</string>
-    <string name="abc_searchview_description_search">தேடு</string>
-    <string name="abc_searchview_description_submit">வினவலைச் சமர்ப்பி</string>
-    <string name="abc_searchview_description_voice">குரல் தேடல்</string>
-    <string name="abc_shareactionprovider_share_with">இதனுடன் பகிர்</string>
-    <string name="abc_shareactionprovider_share_with_application">%s உடன் பகிர்</string>
-    <string name="abc_toolbar_collapse_description">சுருக்கு</string>
     <string name="common_android_wear_notification_needs_update_text">Android வியருக்குப் பயன்பாட்டைப் புதுப்பிக்க வேண்டும்.</string>
     <string name="common_android_wear_update_text">Android வியருக்குப் புதுப்பிக்கும் வரை, பயன்பாடு செயல்படாது.</string>
     <string name="common_android_wear_update_title">Android வியரைப் புதுப்பி</string>
@@ -50,8 +31,6 @@
     <string name="common_signin_button_text">உள்நுழைக</string>
     <string name="common_signin_button_text_long">Google மூலம் உள்நுழை</string>
     <string name="commono_google_play_services_api_unavailable_text">இந்தப் பயன்பாட்டிற்கு தற்போது இல்லாத ஒன்று அல்லது அதற்கு மேற்பட்ட Google Play சேவைகள் தேவை. உதவிக்காக டெவெலப்பரைத் தொடர்பு கொள்ளவும்.</string>
-    <string name="search_menu_title">தேடு</string>
-    <string name="status_bar_notification_info_overflow">999+</string>
     <string name="act_name_camcorder">கேம்கார்டர்</string>
     <string name="act_name_camera">கேமரா</string>
     <string name="action_licenses">ஓப்பன் சோர்ஸ் உரிமங்கள்</string>
@@ -109,7 +88,7 @@
     <string name="aware_info_amazon">Amazon</string>
     <string name="aware_info_amazon_no_results">Amazon-ஆல் இந்த பார்கோடில் பொருந்தக்கூடிய தயாரிப்பை கண்டறிய முடியவில்லை (%1$s)</string>
     <string name="aware_info_amazon_results">Amazon-இல் மேலும் %1$d முடிவுகளை காணவும்</string>
-    <string name="aware_info_barcode_loading">கேமரா இடக்குறியீட்டை அங்கீகரிக்கிறது</string>
+    <string name="aware_info_barcode_loading">கேமரா பார்கோடை அடையாளம் காண்கிறது</string>
     <string name="aware_info_blurry">பொருளில் நிலைப்படுத்தும் போது, அசையாமல் பிடிக்கவும்</string>
     <string name="aware_info_bright">பொருளின் மீதான ஒளியின் அளவைக் குறைக்கவும்</string>
     <string name="aware_info_close">பொருளைக் கேமராவிலிருந்து இன்னும் தூரத்தில் நகர்த்தவும்</string>
@@ -121,12 +100,12 @@
     <string name="aware_info_failed">தோல்வி</string>
     <string name="aware_info_geo">இருப்பிடம்</string>
     <string name="aware_info_landmark">இடக்குறியீடு</string>
-    <string name="aware_info_landmark_loading">கேமரா இடக்குறியீட்டை அங்கீகரிக்கிறது</string>
+    <string name="aware_info_landmark_loading">கேமரா இடக்குறியீட்டை அடையாளம் காண்கிறது</string>
     <string name="aware_info_message">செய்தி</string>
     <string name="aware_info_more_wikipedia">Wikipedia-இல் மேலும் காண்க</string>
     <string name="aware_info_no_results">முடிவுகள் ஏதும் கிடைக்கவில்லை</string>
     <string name="aware_info_object">பொருள்</string>
-    <string name="aware_info_object_loading">கேமரா பொருளை அங்கீகரிக்கிறது</string>
+    <string name="aware_info_object_loading">கேமரா பொருளை அடையாளம் காண்கிறது</string>
     <string name="aware_info_processing">செயல்படுத்துகிறது</string>
     <string name="aware_info_product">தயாரிப்பு</string>
     <string name="aware_info_search_amazon">Amazon-இல் தேடவும்</string>
@@ -148,7 +127,7 @@
     <string name="cancel">ரத்துசெய்</string>
     <string name="capture_failure">படப்பிடிப்பு தோல்வியடைந்தது. மீண்டும் முயலவும்.</string>
     <string name="checkbox_do_not_show">மீண்டும் காட்ட வேண்டாம்</string>
-    <string name="cloudsight_terms">தேடல் முடிவுகளை வழங்க உங்கள் படிமங்கள் CloudSight-க்கு அனுப்பப்படும். &lt;br/>&lt;br/> தொடர்வதன் மூலம் நீங்கள் CloudSight-இன்&lt;a href=%1$s>தனியுரிமைக் கொள்கையை&lt;/a> ஏற்கிறீர்கள்.</string>
+    <string name="cloudsight_terms">நீங்கள் பொருள் அங்கீகரிப்பைப் பயன்படுத்தும் ஒவ்வொரு முறையும், தேடல் முடிவுகளை வழங்குவதற்காக படிமமும் இருப்பிடமும் (செயல்படுத்தப்பட்டிருந்தால்) மூன்றாம் தரப்பினருக்கு அனுப்பப்படும்.&lt;br/>&lt;br/> தொடர்வதன் மூலம், &lt;a href=%1$s>தனியுரிமைக் கொள்கையை&lt;/a> நீங்கள் ஏற்கிறீர்கள்.</string>
     <string name="dailog_panorama_failed">பனோரமா தோல்வியுற்றது. மீண்டும் முயற்சிக்கவும்.</string>
     <string name="dailog_panorama_not_taken">பனோரமா படம் எடுக்கப்படவில்லை.</string>
     <string name="dialog_access_sd_fail">ஊடகத்தை படம் எடுக்க இயலவில்லை. SD அட்டையை அணுக இயலாது.</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">சாதனம் ஆதரிக்கப்படவில்லை</string>
     <string name="dialog_disagree">ஏற்கவில்லை</string>
     <string name="dialog_dismiss">மீண்டும் காட்டாதே</string>
+    <string name="dialog_download">பதிவிறக்கம்</string>
     <string name="dialog_external_sd_missing">படத்தை பிடிக்க இயலவில்லை. SD அட்டை அணுகக்கூடியதில்லை. உள்ளக ஃபோன் சேமிப்பகம் மாற்றப்படுகிறது</string>
     <string name="dialog_first_time_set_pure_raw_message">"செயலாக்கப்படாத இவ்வகைக் கோப்பு தொழில்முறையில் புகைப்படங்களைத் திருத்தப் பயனாகிறது.
 
@@ -222,7 +202,7 @@
     <string name="help_desc_dual_result">உங்கள் பொருளில் இருந்து 1.5 மீட்டர்களுக்குள் (5 அடி) இருப்பதை உறுதிப்படுத்திக் கொள்ளுங்கள். வேறு எதுவும் இல்லாது பொருள் மட்டும் இருப்பது இன்னும் சிறப்பானது.</string>
     <string name="help_desc_quick">முன் மற்றும் பின் கேமராக்களுக்கு இடையே மாற அல்லது திறக்க இருமுறை திருப்பவும்.</string>
     <string name="help_desc_quick_double_tap_pwr">கேமராவைத் திறக்க பவர் பொத்தானை இருமுறை தட்டவும்.</string>
-    <string name="help_desc_smart_camera">உங்கள் கேமராவானது பொருட்கள் மற்றும் இடக்குறியீடுகளை அங்கீகரிக்கிறது. இது QR குறியீடுகள், வர்த்தக அட்டைகள் மற்றும் பார்கோடுகளையும் ஸ்கேன் செய்கிறது.</string>
+    <string name="help_desc_smart_camera">உங்கள் கேமராவானது பொருட்கள் மற்றும் இடக்குறியீடுகளை அடையாளம் காண்கிறது. இது QR குறியீடுகள், வர்த்தக அட்டைகள் மற்றும் பார்கோடுகளையும் ஸ்கேன் செய்கிறது.</string>
     <string name="help_desc_smart_camera_landmark_only">உங்கள் கேமராவானது இடக்குறியீடுகளை அங்கீகரிக்கிறது. இது QR குறியீடுகள், வர்த்தக அட்டைகள் மற்றும் பார்கோடுகளையும் ஸ்கேன் செய்கிறது.</string>
     <string name="help_desc_zoom">பெரிதாக்க, மேல் மற்றும் கீழ்நோக்கி இழுக்கவும்.</string>
     <string name="help_done">முடிந்தது</string>
@@ -247,6 +227,7 @@
     <string name="help_next">அடுத்து</string>
     <string name="image_360_desc">இது ஒரு 360 டிகிரி புகைப்படம். இந்தப் புகைப்படத்தை Moto 360 திருத்தி மூலம் திருத்தலாம்.</string>
     <string name="image_360_name">360 டிகிரி புகைப்படம்</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ஆழம் இயக்கப்பட்டுள்ளது</string>
     <string name="indicate_mode_mono">அசல் க&amp;வெ</string>
@@ -258,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">அல்ட்ரா-வைட் ஆங்கிள்</string>
     <string name="indicate_mode_video">வீடியோ</string>
     <string name="indicate_mode_wide_angle">அகலக் கோணம்</string>
+    <string name="indicate_mode_wide_angle_selfie">அகலக் கோண செல்ஃபீ</string>
     <string name="internal_storage">உள்ளக சேமிப்பகம்</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">இடக்குறியீடு அங்கீகரிப்பானது, உலகம் முழுவதிலும் உள்ள பிரபலமான இடக்குறியீடுகள் பற்றிய தகவலை வழங்குகிறது.&lt;br/>&lt;br/>இந்த அம்சத்தை செயல்படுத்த நிறுவவும்.</string>
-    <string name="landmark_install_over_data">இடக்குறியீடு அங்கீகரிப்புப் பதிவிறக்க அளவு 92 MB ஆகும். மொபைல் தரவு வழியே அதை நிறுவுவது கூடுதல் தரவுக் கட்டணங்களை விளைவிக்கக்கூடும்.</string>
-    <string name="landmark_notification_downloading">இடக்குறியீடு அங்கீகரிப்பைப் பதிவிறக்குகிறது</string>
-    <string name="landmark_notification_install">இடக்குறியீடு அங்கீகரிப்பை நிறுவுகிறது</string>
-    <string name="landmark_notification_install_complete">இடக்குறியீடு அங்கீகரிப்பை நிறுவுதல் முடிவடைந்தது</string>
-    <string name="landmark_notification_install_failed">இடக்குறியீடு அங்கீகரிப்பை நிறுவுதல் தோல்வியுற்றது</string>
+    <string name="landmark_install_message">இடக்குறியீட்டு அங்கீகரிப்பானது, உலகம் முழுவதிலும் உள்ள பிரபலமான இடக்குறியீடுகள் பற்றிய தகவலை வழங்குகிறது.&lt;br/>&lt;br/>இந்த அம்சத்தைச் செயல்படுத்த இடக்குறியீட்டுத் தரவுத்தளத்தைப் பதிவிறக்கவும்.</string>
+    <string name="landmark_install_over_data">இடக்குறியீட்டுத் தரவுத்தளத்தின் பதிவிறக்க அளவு 92 MB ஆகும். மொபைல் தரவு வழியே அதைப் பதிவிறக்குவது கூடுதல் தரவுக் கட்டணங்களை விளைவிக்கக்கூடும்.</string>
+    <string name="landmark_notification_downloading">இடக்குறியீட்டுத் தரவுத்தளத்தைப் பதிவிறக்குதல்</string>
+    <string name="landmark_notification_install">இடக்குறியீட்டுத் தரவுத்தளத்தை நிறுவுதல்</string>
+    <string name="landmark_notification_install_complete">இடக்குறியீட்டுத் தரவுத்தளம் நிறுவப்பட்டது</string>
+    <string name="landmark_notification_install_failed">இடக்குறியீட்டுத் தரவுத்தளத்தை நிறுவ முடியவில்லை</string>
     <string name="landmark_notification_install_invalid_url">இடக்குறியீட்டுத் தரவுத் தளம் கிடைக்கவில்லை, சமீபத்திய கேமராப் பதிப்பிற்கு புதுப்பிக்கவும்</string>
-    <string name="landmark_notification_install_out_of_space">இடக்குறியீடு அங்கீகரிப்பை நிறுவுவதற்குப் போதுமான சேமிப்பக இடமில்லை</string>
+    <string name="landmark_notification_install_out_of_space">இடக்குறியீட்டுத் தரவுத்தளத்தை நிறுவுவதற்குச் சேமிப்பகத்தில் போதுமான இடமில்லை</string>
+    <string name="landmark_notification_paused">இணையம் கிடைக்கும் போது, இடக்குறியீடுத் தரவுத்தளம் பதிவிறக்கம் செய்வதைத் தொடரும்</string>
+    <string name="landmark_notification_queued">இணையம் கிடைக்கும் போது, இடக்குறியீட்டுத் தரவுத்தளம் பதிவிறக்கம் செய்யப்படும்</string>
     <string name="main_setting_amz_barcode">Amazon பார்கோடு ஸ்கேனர்</string>
     <string name="main_setting_amz_privacy">Amazon தனியுரிமை அறிவிப்பு</string>
     <string name="main_setting_amz_terms">பயன்பாட்டு நிபந்தனைகள்</string>
@@ -289,7 +273,9 @@
     <string name="main_setting_help_ui">டுடோரியலை மீண்டும் இயக்கு</string>
     <string name="main_setting_image_ratio">புகைப்பட அளவு (பின்)</string>
     <string name="main_setting_image_ratio_front">புகைப்பட அளவு (முன்)</string>
-    <string name="main_setting_landmark_detection">இடக்குறியீடு அங்கீகரிப்பு</string>
+    <string name="main_setting_landmark_detection">இடக்குறியீடு அடையாளம்</string>
+    <string name="main_setting_landmark_version_current">தரவுத்தளப் பதிப்பு: %s</string>
+    <string name="main_setting_landmark_version_not_installed">தரவுத்தளம் நிறுவப்படவில்லை</string>
     <string name="main_setting_licenses">ஓப்பன் சோர்ஸ் உரிமங்கள்</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +311,9 @@
     <string name="perm_required_alert_title">அனுமதிகள் தேவை</string>
     <string name="photos_depth_desc">குவியத்தைத் தேர்வுசெய்ய, பின்னணியை மாற்ற அல்லது கருப்பு வெள்ளையாக மாற்றுவதற்கான பகுதியைத் தேர்வுசெய்ய, ஆழத் திருத்தியைப் பயன்படுத்தவும்.</string>
     <string name="photos_depth_name">ஆழம் இயக்கப்பட்டுள்ளது</string>
+    <string name="photos_notification_desc">Google Photos-இன் மூலம் வரம்பற்ற சேமிப்பகத்தைப் பெறவும்</string>
+    <string name="photos_notification_title">Google Photos-இல் காப்புப்பிரதி செய்</string>
+    <string name="qcfa_resolution_description">குறைந்த ஒளி தகவமைப்பு</string>
     <string name="retake">மீண்டும் எடு</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +356,7 @@
     <string name="setting_mode_slow_motion">மெதுவான இயக்கம்</string>
     <string name="setting_mode_ultra_wide">அல்ட்ரா-வைட் ஆங்கிள்</string>
     <string name="setting_mode_video">வீடியோ</string>
+    <string name="setting_mode_wide_angle_selfie">அகலக் கோண செல்ஃபீ</string>
     <string name="setting_off">ஆஃப்</string>
     <string name="setting_on">ஆன்</string>
     <string name="setting_persist">காத்திரு</string>
@@ -383,20 +373,25 @@
     <string name="setting_timer_dialog_title">டைமர்</string>
     <string name="setting_torch">டார்ச்</string>
     <string name="setting_true">உண்மை</string>
+    <string name="shortcut_desc_depth">ஆழப் புகைப்படம்</string>
+    <string name="shortcut_desc_selfie">செல்ஃபீ</string>
+    <string name="shortcut_desc_video">டியோ</string>
     <string name="smartcam_landmark_notification_title">ஸ்மார்ட் கேமரா</string>
+    <string name="smartcam_no_detections">சேமிக்கப்பட்ட பொருட்கள் அல்லது இடக்குறியீடுகள் எதுவுமில்லை</string>
     <string name="storage_location_external">SD கார்டு</string>
     <string name="storage_location_internal">ஃபோன்</string>
     <string name="storage_unavailable">சேமிப்பகம் கிடைக்கவில்லை</string>
+    <string name="toast_battery_saver">நீங்கள் தற்போது பவர் சேமிப்புப் பயன்முறையில் இருப்பதால், சில அம்சங்கள் குறிப்பிட்ட வரம்பிற்குள் இருக்கலாம்</string>
     <string name="toast_geotag_message_1">இருப்பிடத்தைச் சேமி என்பதை செயல்படுத்த இருப்பிட அனுமதியை நீங்கள் அனுமதிக்க வேண்டும்.</string>
     <string name="toast_geotag_message_2">முறைமை இருப்பிட அமைப்புகள் ஆன் செய்யப்பட்ட பிறகே இருப்பிட அமைப்புகள் வேலை செய்யும்.</string>
     <string name="tooltip_camera_switch_360">வெவ்வேறு கேமரா தெரிவுகளில் மாற முயற்சிக்கவும்.</string>
     <string name="tooltip_capture_360">இந்த ஷட்டர் பொத்தானை டேப் செய்வதன் மூலம் 360° புகைப்படம் அல்லது வீடியோவை எடுக்க முயற்சிக்கவும்.</string>
-    <string name="tooltip_capture_key_360">மோடின் பின்புறத்தில் உள்ள ஷட்டர் பொத்தானின் மூலமும் படம் பிடிக்க முயற்சிக்கவும்.</string>
-    <string name="tooltip_dual_camera_depth_photo">சிறப்பு திருத்த அம்சங்களுக்கு, கூடுதல் விவரங்களுடன் புகைப்படமெடுக்கவும்.</string>
+    <string name="tooltip_capture_key_360">Mod-இன் பின்புறத்தில் உள்ள ஷட்டர் பொத்தானின் மூலமும் படம் பிடிக்க முயற்சி செய்யலாம்.</string>
     <string name="tooltip_first_use_zoom_button">அகலக் கோணத்திற்கு மாறுவதற்கு இங்கே தட்டவும்.</string>
     <string name="tooltip_gallery_360">இடப்புறத்தில் ஸ்வைப் செய்வதன் மூலம் உங்கள் 360° புகைப்படம் அல்லது வீடியோ எப்படி தோன்றுகிறது என்பதைக் காண்க.</string>
     <string name="tooltip_minimap_viewfinder">கீழே உள்ள படத்தை வலதுபுறமாக அல்லது இடதுபுறமாக நகர்த்தவும்.</string>
     <string name="tooltip_mode_switch_360">வெவ்வேறு முறைகளில் 360°-இல் படம் பிடிக்க முயற்சிக்கவும்!</string>
+    <string name="tooltip_modes_list">உங்கள் புகைப்படங்களைப் படமெடுக்க புதிய வழிகளைக் கண்டறியுங்கள்.</string>
     <string name="tooltip_smart_camera">பொருளைப் பற்றி மேலும் அறிவதற்கு தட்டவும்.</string>
     <string name="tooltip_smart_camera_disable">நீங்கள் அமைப்புகளில் இதை ஆஃப் செய்யலாம்.</string>
     <string name="tooltip_spherical_viewfinder">காட்சியைக் கட்டுபடுத்த நகர்த்தவும் அல்லது பெரிதாக மற்றும் சிறிதாக ஆக்கவும்.</string>
@@ -419,4 +414,10 @@
     <string name="zoom_hint_full">முழுவதும்</string>
     <string name="zoom_hint_wide">பரவலான</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">நேர முடிவு</string>
+    <string name="setting_mode_timelapse">நேர முடிவு</string>
+    <string name="timelapse_config_16x">16x</string>
+    <string name="timelapse_config_32x">32x</string>
+    <string name="timelapse_config_4x">4x</string>
+    <string name="timelapse_config_8x">8x</string>
 </resources>

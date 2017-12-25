@@ -56,7 +56,7 @@
 .end method
 
 .method public static getLegacyAudioStream(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Landroid/support/v4/media/session/MediaControllerCompatApi21$PlaybackInfo;->getAudioAttributes(Ljava/lang/Object;)Landroid/media/AudioAttributes;
 
@@ -64,9 +64,9 @@
 
     invoke-static {v0}, Landroid/support/v4/media/session/MediaControllerCompatApi21$PlaybackInfo;->toLegacyStreamType(Landroid/media/AudioAttributes;)I
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 .end method
 
 .method public static getMaxVolume(Ljava/lang/Object;)I

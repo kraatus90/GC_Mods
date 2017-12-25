@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x15
 .end annotation
@@ -19,6 +15,10 @@
         Landroid/support/v4/media/session/MediaSessionCompatApi21$QueueItem;
     }
 .end annotation
+
+
+# static fields
+.field static final TAG:Ljava/lang/String; = "MediaSessionCompatApi21"
 
 
 # direct methods
@@ -60,6 +60,63 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static hasCallback(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "mCallback"
+
+    invoke-virtual {v2, v3}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v2
+
+    if-nez v2, :cond_0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+
+    invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    :goto_1
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v1
+
+    const-string/jumbo v1, "MediaSessionCompatApi21"
+
+    const-string/jumbo v2, "Failed to get mCallback object."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method public static isActive(Ljava/lang/Object;)Z
@@ -171,7 +228,7 @@
 .end method
 
 .method public static setPlaybackToLocal(Ljava/lang/Object;I)V
-    .locals 2
+    .locals 1
 
     new-instance v0, Landroid/media/AudioAttributes$Builder;
 
@@ -183,9 +240,9 @@
 
     invoke-virtual {v0}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, v1}, Landroid/media/session/MediaSession;->setPlaybackToLocal(Landroid/media/AudioAttributes;)V
+    invoke-virtual {p0, v0}, Landroid/media/session/MediaSession;->setPlaybackToLocal(Landroid/media/AudioAttributes;)V
 
     return-void
 .end method
@@ -203,7 +260,7 @@
 .end method
 
 .method public static setQueue(Ljava/lang/Object;Ljava/util/List;)V
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,7 +272,7 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
@@ -230,9 +287,9 @@
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
     check-cast p0, Landroid/media/session/MediaSession;
 
@@ -243,7 +300,7 @@
     :cond_0
     check-cast p0, Landroid/media/session/MediaSession;
 
-    invoke-virtual {p0, v2}, Landroid/media/session/MediaSession;->setQueue(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Landroid/media/session/MediaSession;->setQueue(Ljava/util/List;)V
 
     return-void
 

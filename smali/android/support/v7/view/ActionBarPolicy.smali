@@ -85,102 +85,100 @@
 .end method
 
 .method public getMaxActionButtons()I
-    .locals 10
+    .locals 8
 
-    const/16 v9, 0x3c0
+    const/16 v7, 0x3c0
 
-    const/16 v8, 0x2d0
+    const/16 v6, 0x2d0
 
-    const/16 v7, 0x280
+    const/16 v5, 0x280
 
-    const/16 v6, 0x258
+    const/16 v4, 0x258
 
-    const/16 v5, 0x1e0
+    const/16 v3, 0x1e0
 
-    iget-object v4, p0, Landroid/support/v7/view/ActionBarPolicy;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/support/v4/content/res/ConfigurationHelper;->getScreenWidthDp(Landroid/content/res/Resources;)I
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
-    move-result v3
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/support/v4/content/res/ConfigurationHelper;->getScreenHeightDp(Landroid/content/res/Resources;)I
+    iget v1, v0, Landroid/content/res/Configuration;->screenWidthDp:I
 
-    move-result v0
+    iget v2, v0, Landroid/content/res/Configuration;->screenHeightDp:I
 
-    invoke-static {v1}, Landroid/support/v4/content/res/ConfigurationHelper;->getSmallestScreenWidthDp(Landroid/content/res/Resources;)I
+    iget v0, v0, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
-    move-result v2
-
-    if-le v2, v6, :cond_1
+    if-le v0, v4, :cond_1
 
     :cond_0
     :goto_0
-    const/4 v4, 0x5
+    const/4 v0, 0x5
 
-    return v4
+    return v0
 
     :cond_1
-    if-gt v3, v6, :cond_0
+    if-gt v1, v4, :cond_0
 
-    if-gt v3, v9, :cond_4
+    if-gt v1, v7, :cond_4
 
     :cond_2
-    if-gt v3, v8, :cond_5
+    if-gt v1, v6, :cond_5
 
     :goto_1
-    const/16 v4, 0x1f4
+    const/16 v0, 0x1f4
 
-    if-lt v3, v4, :cond_6
+    if-lt v1, v0, :cond_6
 
     :cond_3
     :goto_2
-    const/4 v4, 0x4
+    const/4 v0, 0x4
 
-    return v4
+    return v0
 
     :cond_4
-    if-le v0, v8, :cond_2
+    if-le v2, v6, :cond_2
 
     goto :goto_0
 
     :cond_5
-    if-gt v0, v9, :cond_0
+    if-gt v2, v7, :cond_0
 
     goto :goto_1
 
     :cond_6
-    if-gt v3, v7, :cond_8
+    if-gt v1, v5, :cond_8
 
     :cond_7
-    if-gt v3, v5, :cond_9
+    if-gt v1, v3, :cond_9
 
     :goto_3
-    const/16 v4, 0x168
+    const/16 v0, 0x168
 
-    if-ge v3, v4, :cond_a
+    if-ge v1, v0, :cond_a
 
-    const/4 v4, 0x2
+    const/4 v0, 0x2
 
-    return v4
+    return v0
 
     :cond_8
-    if-le v0, v5, :cond_7
+    if-le v2, v3, :cond_7
 
     goto :goto_2
 
     :cond_9
-    if-gt v0, v7, :cond_3
+    if-gt v2, v5, :cond_3
 
     goto :goto_3
 
     :cond_a
-    const/4 v4, 0x3
+    const/4 v0, 0x3
 
-    return v4
+    return v0
 .end method
 
 .method public getStackedTabMaxWidth()I
@@ -202,31 +200,31 @@
 .end method
 
 .method public getTabContainerHeight()I
-    .locals 8
+    .locals 5
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Landroid/support/v7/view/ActionBarPolicy;->mContext:Landroid/content/Context;
+    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->ActionBar:[I
 
-    sget-object v4, Landroid/support/v7/appcompat/R$styleable;->ActionBar:[I
+    sget v2, Landroid/support/v7/appcompat/R$attr;->actionBarStyle:I
 
-    sget v5, Landroid/support/v7/appcompat/R$attr;->actionBarStyle:I
+    const/4 v3, 0x0
 
-    invoke-virtual {v3, v7, v4, v5, v6}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, v3, v1, v2, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget v3, Landroid/support/v7/appcompat/R$styleable;->ActionBar_height:I
+    sget v0, Landroid/support/v7/appcompat/R$styleable;->ActionBar_height:I
 
-    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
+    invoke-virtual {v1, v0, v4}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
-    move-result v1
+    move-result v0
 
-    iget-object v3, p0, Landroid/support/v7/view/ActionBarPolicy;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Landroid/support/v7/view/ActionBarPolicy;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -237,20 +235,20 @@
     if-eqz v3, :cond_0
 
     :goto_0
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    return v1
+    return v0
 
     :cond_0
     sget v3, Landroid/support/v7/appcompat/R$dimen;->abc_action_bar_stacked_max_height:I
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v3
+    move-result v2
 
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
     goto :goto_0
 .end method
@@ -292,7 +290,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Landroid/support/v4/view/ViewConfigurationCompat;->hasPermanentMenuKey(Landroid/view/ViewConfiguration;)Z
+    invoke-virtual {v2}, Landroid/view/ViewConfiguration;->hasPermanentMenuKey()Z
 
     move-result v2
 

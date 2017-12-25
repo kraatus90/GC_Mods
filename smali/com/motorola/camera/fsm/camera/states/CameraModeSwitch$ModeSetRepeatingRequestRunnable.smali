@@ -73,9 +73,9 @@
     :goto_0
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeSetRepeatingRequestRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/fsm/camera/states/-$Lambda$160;
+    new-instance v2, Lcom/motorola/camera/fsm/camera/states/-$Lambda$00yCi-3I1SWqp_JYRIkGICwyg3E$2;
 
-    invoke-direct {v2, p0, p2, p1, p3}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$160;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$00yCi-3I1SWqp_JYRIkGICwyg3E$2;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     int-to-long v4, v0
 
@@ -91,7 +91,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_CameraModeSwitch$ModeSetRepeatingRequestRunnable_lambda$1(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_CameraModeSwitch$ModeSetRepeatingRequestRunnable_46070(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeSetRepeatingRequestRunnable;->runSuper(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
@@ -99,7 +99,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_CameraModeSwitch$ModeSetRepeatingRequestRunnable_lambda$2(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_CameraModeSwitch$ModeSetRepeatingRequestRunnable_46218(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeSetRepeatingRequestRunnable;->runSuper(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
@@ -107,24 +107,20 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_CameraModeSwitch$ModeSetRepeatingRequestRunnable_lambda$3(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/fsm/camera/StateKey;Ljava/lang/Object;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_CameraModeSwitch$ModeSetRepeatingRequestRunnable_46846(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
     .locals 1
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCameraSessionsClosed()Z
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->allCameraSessionsClosed()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-super {p0, p2, p1, p3}, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
+    invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/runnables/SetRepeatingRequestRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
     :cond_0
     return-void
@@ -159,9 +155,9 @@
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/EarlyCaptureRunnable;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/-$Lambda$157;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/-$Lambda$00yCi-3I1SWqp_JYRIkGICwyg3E;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$157;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$00yCi-3I1SWqp_JYRIkGICwyg3E;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-direct {v0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/EarlyCaptureRunnable;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/EarlyCaptureRunnable$EarlyCaptureListener;)V
 
@@ -173,9 +169,9 @@
     :cond_0
     new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/LinkCamerasRunnable;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/-$Lambda$158;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/-$Lambda$00yCi-3I1SWqp_JYRIkGICwyg3E$1;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$158;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$00yCi-3I1SWqp_JYRIkGICwyg3E$1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/4 v2, 0x1
 

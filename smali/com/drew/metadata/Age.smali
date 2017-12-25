@@ -437,75 +437,75 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 4
+    .locals 3
 
-    const-string/jumbo v0, "%04d:%02d:%02d %02d:%02d:%02d"
+    const/4 v0, 0x6
 
-    const/4 v1, 0x6
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iget v1, p0, Lcom/drew/metadata/Age;->_years:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
 
     const/4 v2, 0x0
 
-    iget v3, p0, Lcom/drew/metadata/Age;->_years:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p0, Lcom/drew/metadata/Age;->_months:I
 
-    move-result-object v3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x1
 
-    iget v3, p0, Lcom/drew/metadata/Age;->_months:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p0, Lcom/drew/metadata/Age;->_days:I
 
-    move-result-object v3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x2
 
-    iget v3, p0, Lcom/drew/metadata/Age;->_days:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p0, Lcom/drew/metadata/Age;->_hours:I
 
-    move-result-object v3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x3
 
-    iget v3, p0, Lcom/drew/metadata/Age;->_hours:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p0, Lcom/drew/metadata/Age;->_minutes:I
 
-    move-result-object v3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x4
 
-    iget v3, p0, Lcom/drew/metadata/Age;->_minutes:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v1, p0, Lcom/drew/metadata/Age;->_seconds:I
 
-    move-result-object v3
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v3, v1, v2
+    move-result-object v1
 
     const/4 v2, 0x5
 
-    iget v3, p0, Lcom/drew/metadata/Age;->_seconds:I
+    aput-object v1, v0, v2
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v1, "%04d:%02d:%02d %02d:%02d:%02d"
 
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

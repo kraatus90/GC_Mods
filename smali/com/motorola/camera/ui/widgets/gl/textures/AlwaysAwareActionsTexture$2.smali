@@ -44,11 +44,15 @@
 .method public onResultReady(Lcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
-
     const/4 v1, 0x1
 
-    invoke-static {v0, v1, p1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;ILcom/motorola/camera/ui/widgets/gl/textures/Texture;)V
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
+
+    invoke-static {v0, p1, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->-wrap0(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;Lcom/motorola/camera/ui/widgets/gl/textures/Texture;I)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture$2;->this$0:Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;
+
+    invoke-static {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;->-set1(Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareActionsTexture;Z)Z
 
     return-void
 .end method

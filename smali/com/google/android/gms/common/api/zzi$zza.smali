@@ -31,28 +31,26 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+    .locals 2
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    move-object v0, p0
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    iget v2, p1, Landroid/os/Message;->what:I
+    if-eq v1, v0, :cond_0
 
-    if-eq v2, v1, :cond_0
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :cond_0
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzv;->zzQ(Z)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzv;->zzQ(Z)V
 
-    iget-object v2, p0, Lcom/google/android/gms/common/api/zzi$zza;->zzQR:Lcom/google/android/gms/common/api/zzi;
+    iget-object v1, p0, Lcom/google/android/gms/common/api/zzi$zza;->zzQR:Lcom/google/android/gms/common/api/zzi;
 
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v1, Lcom/google/android/gms/common/api/zzi$zzb;
+    check-cast v0, Lcom/google/android/gms/common/api/zzi$zzb;
 
-    invoke-virtual {v2, v1}, Lcom/google/android/gms/common/api/zzi;->zzb(Lcom/google/android/gms/common/api/zzi$zzb;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/common/api/zzi;->zzb(Lcom/google/android/gms/common/api/zzi$zzb;)V
 
     return-void
 .end method

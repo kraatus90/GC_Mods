@@ -28,29 +28,29 @@
 
     new-instance v1, Lorg/apache/http/conn/scheme/Scheme;
 
-    const-string/jumbo v2, "http"
-
-    const/16 v3, 0x50
-
     invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v1, v2, v3, v4}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
+    const-string/jumbo v3, "http"
+
+    const/16 v4, 0x50
+
+    invoke-direct {v1, v3, v4, v2}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
 
     invoke-virtual {v0, v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
     new-instance v1, Lorg/apache/http/conn/scheme/Scheme;
 
-    const-string/jumbo v2, "https"
-
-    const/16 v3, 0x1bb
-
     invoke-static {}, Lorg/apache/http/conn/ssl/SSLSocketFactory;->getSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v1, v2, v3, v4}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
+    const-string/jumbo v3, "https"
+
+    const/16 v4, 0x1bb
+
+    invoke-direct {v1, v3, v4, v2}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
 
     invoke-virtual {v0, v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
@@ -66,29 +66,29 @@
 
     new-instance v1, Lorg/apache/http/conn/scheme/Scheme;
 
-    const-string/jumbo v2, "http"
-
-    const/16 v3, 0x50
-
     invoke-static {}, Lorg/apache/http/conn/scheme/PlainSocketFactory;->getSocketFactory()Lorg/apache/http/conn/scheme/PlainSocketFactory;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v1, v2, v3, v4}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
+    const-string/jumbo v3, "http"
+
+    const/16 v4, 0x50
+
+    invoke-direct {v1, v3, v4, v2}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
 
     invoke-virtual {v0, v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 
     new-instance v1, Lorg/apache/http/conn/scheme/Scheme;
 
-    const-string/jumbo v2, "https"
-
-    const/16 v3, 0x1bb
-
     invoke-static {}, Lorg/apache/http/conn/ssl/SSLSocketFactory;->getSystemSocketFactory()Lorg/apache/http/conn/ssl/SSLSocketFactory;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v1, v2, v3, v4}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
+    const-string/jumbo v3, "https"
+
+    const/16 v4, 0x1bb
+
+    invoke-direct {v1, v3, v4, v2}, Lorg/apache/http/conn/scheme/Scheme;-><init>(Ljava/lang/String;ILorg/apache/http/conn/scheme/SchemeSocketFactory;)V
 
     invoke-virtual {v0, v1}, Lorg/apache/http/conn/scheme/SchemeRegistry;->register(Lorg/apache/http/conn/scheme/Scheme;)Lorg/apache/http/conn/scheme/Scheme;
 

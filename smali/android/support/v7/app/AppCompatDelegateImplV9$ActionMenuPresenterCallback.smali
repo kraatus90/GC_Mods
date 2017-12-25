@@ -47,18 +47,18 @@
 .method public onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
     .locals 2
 
-    iget-object v1, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV9;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-virtual {v1}, Landroid/support/v7/app/AppCompatDelegateImplV9;->getWindowCallback()Landroid/view/Window$Callback;
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImplV9;->getWindowCallback()Landroid/view/Window$Callback;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
     :goto_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    return v1
+    return v0
 
     :cond_0
     const/16 v1, 0x6c

@@ -7,6 +7,14 @@
 .implements Landroid/content/DialogInterface$OnDismissListener;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/support/v4/app/DialogFragment$DialogStyle;
+    }
+.end annotation
+
+
 # static fields
 .field private static final SAVED_BACK_STACK_ID:Ljava/lang/String; = "android:backStackId"
 
@@ -97,38 +105,38 @@
 .end method
 
 .method dismissInternal(Z)V
-    .locals 5
+    .locals 4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    iget-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    iput-boolean v3, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
+    iput-boolean v2, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
 
-    iput-boolean v2, p0, Landroid/support/v4/app/DialogFragment;->mShownByMe:Z
+    iput-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mShownByMe:Z
 
-    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :goto_0
-    iput-boolean v3, p0, Landroid/support/v4/app/DialogFragment;->mViewDestroyed:Z
+    iput-boolean v2, p0, Landroid/support/v4/app/DialogFragment;->mViewDestroyed:Z
 
-    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
 
-    if-gez v1, :cond_2
+    if-gez v0, :cond_2
 
     invoke-virtual {p0}, Landroid/support/v4/app/DialogFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
 
@@ -145,26 +153,26 @@
     return-void
 
     :cond_1
-    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    iput-object v4, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iput-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
     goto :goto_0
 
     :cond_2
     invoke-virtual {p0}, Landroid/support/v4/app/DialogFragment;->getFragmentManager()Landroid/support/v4/app/FragmentManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget v2, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
+    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
 
-    invoke-virtual {v1, v2, v3}, Landroid/support/v4/app/FragmentManager;->popBackStack(II)V
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentManager;->popBackStack(II)V
 
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    iput v1, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
+    iput v0, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
 
     goto :goto_1
 
@@ -178,75 +186,6 @@
     .locals 1
 
     iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    return-object v0
-.end method
-
-.method public getLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater;
-    .locals 2
-    .annotation build Landroid/support/annotation/RestrictTo;
-        value = {
-            .enum Landroid/support/annotation/RestrictTo$Scope;->LIBRARY_GROUP:Landroid/support/annotation/RestrictTo$Scope;
-        }
-    .end annotation
-
-    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/DialogFragment;->onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mHost:Landroid/support/v4/app/FragmentHostCallback;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentHostCallback;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "layout_inflater"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/LayoutInflater;
-
-    return-object v0
-
-    :cond_0
-    invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->getLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_1
-    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mStyle:I
-
-    invoke-virtual {p0, v0, v1}, Landroid/support/v4/app/DialogFragment;->setupDialog(Landroid/app/Dialog;I)V
-
-    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "layout_inflater"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/LayoutInflater;
 
     return-object v0
 .end method
@@ -278,19 +217,19 @@
 .end method
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
-    .locals 5
+    .locals 2
 
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
-    iget-boolean v3, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroid/support/v4/app/DialogFragment;->getView()Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-nez v2, :cond_2
+    if-nez v0, :cond_2
 
     :goto_0
     invoke-virtual {p0}, Landroid/support/v4/app/DialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -300,19 +239,19 @@
     if-nez v0, :cond_4
 
     :goto_1
-    iget-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    iget-boolean v4, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
+    iget-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
 
-    invoke-virtual {v3, v4}, Landroid/app/Dialog;->setCancelable(Z)V
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    iget-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v3, p0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    iget-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v3, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+    invoke-virtual {v0, p0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
     if-nez p1, :cond_5
 
@@ -324,46 +263,46 @@
     return-void
 
     :cond_2
-    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v3
+    move-result-object v1
 
-    if-nez v3, :cond_3
+    if-nez v1, :cond_3
 
-    iget-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v2}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
     goto :goto_0
 
     :cond_3
-    new-instance v3, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v4, "DialogFragment can not be attached to a container view"
+    const-string/jumbo v1, "DialogFragment can not be attached to a container view"
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     :cond_4
-    iget-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v0}, Landroid/app/Dialog;->setOwnerActivity(Landroid/app/Activity;)V
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->setOwnerActivity(Landroid/app/Activity;)V
 
     goto :goto_1
 
     :cond_5
-    const-string/jumbo v3, "android:savedDialogState"
+    const-string/jumbo v0, "android:savedDialogState"
 
-    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    iget-object v3, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v3, v1}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
     goto :goto_2
 .end method
@@ -451,11 +390,11 @@
 
     iput-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
 
-    const-string/jumbo v0, "android:showsDialog"
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
 
-    iget-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
+    const-string/jumbo v1, "android:showsDialog"
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -565,50 +504,114 @@
     goto :goto_0
 .end method
 
+.method public onGetLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater;
+    .locals 2
+
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/DialogFragment;->onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mHost:Landroid/support/v4/app/FragmentHostCallback;
+
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentHostCallback;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "layout_inflater"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/LayoutInflater;
+
+    return-object v0
+
+    :cond_0
+    invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onGetLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_1
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mStyle:I
+
+    invoke-virtual {p0, v0, v1}, Landroid/support/v4/app/DialogFragment;->setupDialog(Landroid/app/Dialog;I)V
+
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "layout_inflater"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/LayoutInflater;
+
+    return-object v0
+.end method
+
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 2
 
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
     :cond_0
     :goto_0
-    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mStyle:I
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mStyle:I
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
     :goto_1
-    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mTheme:I
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mTheme:I
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     :goto_2
-    iget-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
 
-    if-eqz v1, :cond_4
+    if-eqz v0, :cond_4
 
     :goto_3
-    iget-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v0, :cond_5
 
     :goto_4
-    iget v1, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
 
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
-    if-ne v1, v2, :cond_6
+    if-ne v0, v1, :cond_6
 
     :goto_5
     return-void
 
     :cond_1
-    iget-object v1, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
+    iget-object v0, p0, Landroid/support/v4/app/DialogFragment;->mDialog:Landroid/app/Dialog;
 
-    invoke-virtual {v1}, Landroid/app/Dialog;->onSaveInstanceState()Landroid/os/Bundle;
+    invoke-virtual {v0}, Landroid/app/Dialog;->onSaveInstanceState()Landroid/os/Bundle;
 
     move-result-object v0
 
@@ -621,47 +624,47 @@
     goto :goto_0
 
     :cond_2
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mStyle:I
+
     const-string/jumbo v1, "android:style"
 
-    iget v2, p0, Landroid/support/v4/app/DialogFragment;->mStyle:I
-
-    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_1
 
     :cond_3
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mTheme:I
+
     const-string/jumbo v1, "android:theme"
 
-    iget v2, p0, Landroid/support/v4/app/DialogFragment;->mTheme:I
-
-    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_2
 
     :cond_4
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
+
     const-string/jumbo v1, "android:cancelable"
 
-    iget-boolean v2, p0, Landroid/support/v4/app/DialogFragment;->mCancelable:Z
-
-    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     goto :goto_3
 
     :cond_5
+    iget-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
+
     const-string/jumbo v1, "android:showsDialog"
 
-    iget-boolean v2, p0, Landroid/support/v4/app/DialogFragment;->mShowsDialog:Z
-
-    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     goto :goto_4
 
     :cond_6
+    iget v0, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
+
     const-string/jumbo v1, "android:backStackId"
 
-    iget v2, p0, Landroid/support/v4/app/DialogFragment;->mBackStackId:I
-
-    invoke-virtual {p1, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     goto :goto_5
 .end method
@@ -843,15 +846,15 @@
 .end method
 
 .method public show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
+    iput-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mDismissed:Z
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Landroid/support/v4/app/DialogFragment;->mShownByMe:Z
+    iput-boolean v0, p0, Landroid/support/v4/app/DialogFragment;->mShownByMe:Z
 
     invoke-virtual {p1}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
 

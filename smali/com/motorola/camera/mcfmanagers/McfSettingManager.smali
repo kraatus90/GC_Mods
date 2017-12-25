@@ -62,15 +62,15 @@
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/StateChangeListener;-><init>()V
 
-    new-instance v0, Lcom/motorola/camera/mcfmanagers/-$Lambda$39;
+    new-instance v0, Lcom/motorola/camera/mcfmanagers/-$Lambda$gwwXTCC-IAGRVIHih13QAECPp08;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/mcfmanagers/-$Lambda$39;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/mcfmanagers/-$Lambda$gwwXTCC-IAGRVIHih13QAECPp08;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/mcfmanagers/McfSettingManager;->mSettingListener:Lcom/motorola/camera/settings/SettingChangeListener;
 
-    new-instance v0, Lcom/motorola/camera/mcfmanagers/-$Lambda$40;
+    new-instance v0, Lcom/motorola/camera/mcfmanagers/-$Lambda$gwwXTCC-IAGRVIHih13QAECPp08$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/mcfmanagers/-$Lambda$40;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/mcfmanagers/-$Lambda$gwwXTCC-IAGRVIHih13QAECPp08$1;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/mcfmanagers/McfSettingManager;->mSettingListener2:Lcom/motorola/camera/settings/SettingChangeListener;
 
@@ -90,8 +90,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    const/4 v0, 0x3
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->isDualFusionStreaming()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getBackCamera()Ljava/lang/String;
 
     move-result-object v0
@@ -107,12 +124,12 @@
     :goto_0
     return-void
 
-    :cond_0
+    :cond_1
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCamera()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getBackCamera()Ljava/lang/String;
 
@@ -128,7 +145,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCameraId()Ljava/lang/String;
 
     move-result-object v0
@@ -1147,7 +1164,7 @@
     return-object v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_mcfmanagers_McfSettingManager_lambda$1(Lcom/motorola/camera/settings/Setting;)V
+.method synthetic lambda$-com_motorola_camera_mcfmanagers_McfSettingManager_2006(Lcom/motorola/camera/settings/Setting;)V
     .locals 2
 
     iget-boolean v0, p0, Lcom/motorola/camera/mcfmanagers/McfSettingManager;->mEnable:Z
@@ -1491,7 +1508,7 @@
     goto/16 :goto_0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_mcfmanagers_McfSettingManager_lambda$2(Lcom/motorola/camera/settings/Setting;)V
+.method synthetic lambda$-com_motorola_camera_mcfmanagers_McfSettingManager_4054(Lcom/motorola/camera/settings/Setting;)V
     .locals 1
 
     iget-boolean v0, p0, Lcom/motorola/camera/mcfmanagers/McfSettingManager;->mEnable:Z

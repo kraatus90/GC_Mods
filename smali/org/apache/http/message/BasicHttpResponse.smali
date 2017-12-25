@@ -250,11 +250,9 @@
 .end method
 
 .method public setLocale(Ljava/util/Locale;)V
-    .locals 2
+    .locals 1
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
-
-    const/4 v1, 0x0
 
     const-string/jumbo v0, "Locale"
 
@@ -266,7 +264,9 @@
 
     iput-object v0, p0, Lorg/apache/http/message/BasicHttpResponse;->locale:Ljava/util/Locale;
 
-    iput-object v1, p0, Lorg/apache/http/message/BasicHttpResponse;->statusline:Lorg/apache/http/StatusLine;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/message/BasicHttpResponse;->statusline:Lorg/apache/http/StatusLine;
 
     return-void
 .end method
@@ -284,15 +284,15 @@
 .end method
 
 .method public setStatusCode(I)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const-string/jumbo v0, "Status code"
 
     invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNegative(ILjava/lang/String;)I
 
-    iput-object v1, p0, Lorg/apache/http/message/BasicHttpResponse;->statusline:Lorg/apache/http/StatusLine;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/message/BasicHttpResponse;->statusline:Lorg/apache/http/StatusLine;
 
     iput p1, p0, Lorg/apache/http/message/BasicHttpResponse;->code:I
 
@@ -320,15 +320,15 @@
 .end method
 
 .method public setStatusLine(Lorg/apache/http/ProtocolVersion;ILjava/lang/String;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     const-string/jumbo v0, "Status code"
 
     invoke-static {p2, v0}, Lorg/apache/http/util/Args;->notNegative(ILjava/lang/String;)I
 
-    iput-object v1, p0, Lorg/apache/http/message/BasicHttpResponse;->statusline:Lorg/apache/http/StatusLine;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/message/BasicHttpResponse;->statusline:Lorg/apache/http/StatusLine;
 
     iput-object p1, p0, Lorg/apache/http/message/BasicHttpResponse;->ver:Lorg/apache/http/ProtocolVersion;
 

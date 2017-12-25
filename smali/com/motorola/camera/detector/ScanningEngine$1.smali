@@ -51,26 +51,35 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_0
 
+    iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine$1;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
+
+    invoke-static {v0}, Lcom/motorola/camera/detector/ScanningEngine;->-get1(Lcom/motorola/camera/detector/ScanningEngine;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    :cond_0
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-static {}, Lcom/motorola/camera/detector/ScanningEngine;->-get0()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string/jumbo v1, "initialize: STATUS_LOADED_PAUSED"
+    const-string/jumbo v1, "Detectors initialized"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine$1;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
     const-wide/16 v2, -0x1
 
-    invoke-static {v0, v2, v3}, Lcom/motorola/camera/detector/ScanningEngine;->-set1(Lcom/motorola/camera/detector/ScanningEngine;J)J
+    invoke-static {v0, v2, v3}, Lcom/motorola/camera/detector/ScanningEngine;->-set2(Lcom/motorola/camera/detector/ScanningEngine;J)J
 
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine$1;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
@@ -81,7 +90,7 @@
     :goto_0
     return-void
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine$1;->this$0:Lcom/motorola/camera/detector/ScanningEngine;
 
     const/4 v1, 0x0

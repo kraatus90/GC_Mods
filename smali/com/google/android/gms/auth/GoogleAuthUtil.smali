@@ -446,13 +446,13 @@
 
     invoke-static {v0}, Lcom/google/android/gms/auth/GoogleAuthUtil;->zzM(Landroid/content/Context;)V
 
-    const-string/jumbo v0, "^^_account_id_^^"
+    new-instance v0, Landroid/os/Bundle;
 
-    new-instance v1, Landroid/os/Bundle;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    const-string/jumbo v1, "^^_account_id_^^"
 
-    invoke-static {p0, p1, v0, v1}, Lcom/google/android/gms/auth/GoogleAuthUtil;->getToken(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
+    invoke-static {p0, p1, v1, v0}, Lcom/google/android/gms/auth/GoogleAuthUtil;->getToken(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1021,13 +1021,13 @@
     goto :goto_1
 
     :cond_2
-    const-string/jumbo v2, "UseCache"
-
     invoke-virtual {p4}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    const-string/jumbo v3, "UseCache"
+
+    invoke-virtual {v0, v3, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     goto :goto_2
 

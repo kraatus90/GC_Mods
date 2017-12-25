@@ -69,9 +69,7 @@
 .end method
 
 .method private gc()V
-    .locals 9
-
-    const/4 v8, 0x0
+    .locals 8
 
     const/4 v2, 0x0
 
@@ -121,7 +119,9 @@
 
     aput-object v6, v5, v0
 
-    aput-object v8, v5, v1
+    const/4 v6, 0x0
+
+    aput-object v6, v5, v1
 
     goto :goto_2
 .end method
@@ -616,9 +616,7 @@
 .end method
 
 .method public zzjC(I)Lcom/google/android/gms/internal/zznv;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/internal/zznu;->zzjE(I)I
 
@@ -627,7 +625,9 @@
     if-gez v0, :cond_1
 
     :cond_0
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     iget-object v1, p0, Lcom/google/android/gms/internal/zznu;->zzaNO:[Lcom/google/android/gms/internal/zznv;

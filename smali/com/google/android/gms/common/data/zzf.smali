@@ -220,30 +220,28 @@
 
 # virtual methods
 .method public final get(I)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TT;"
         }
     .end annotation
 
-    move-object v0, p0
-
     invoke-direct {p0}, Lcom/google/android/gms/common/data/zzf;->zzlu()V
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/data/zzf;->zzaG(I)I
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/data/zzf;->zzaH(I)I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/common/data/zzf;->zzh(II)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/common/data/zzf;->zzh(II)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public getCount()I

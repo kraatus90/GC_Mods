@@ -65,11 +65,11 @@
 
     sub-double/2addr v0, v2
 
-    const-wide/high16 v2, 0x4024000000000000L    # 10.0
+    int-to-double v2, p2
 
-    int-to-double v4, p2
+    const-wide/high16 v4, 0x4024000000000000L    # 10.0
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v2
 
@@ -269,7 +269,7 @@
 .end method
 
 .method private getPlatformDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -296,17 +296,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%s)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%s)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -358,7 +358,7 @@
 .end method
 
 .method private getProfileClassDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -385,17 +385,17 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%s)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%s)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -459,7 +459,7 @@
 .end method
 
 .method private getProfileVersionDescription()Ljava/lang/String;
-    .locals 6
+    .locals 5
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -507,37 +507,37 @@
 
     shr-int/lit8 v0, v0, 0x10
 
-    const-string/jumbo v3, "%d.%d.%d"
+    const/4 v3, 0x3
 
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    new-array v3, v3, [Ljava/lang/Object;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v4, v5
+    const/4 v4, 0x0
 
-    const/4 v1, 0x1
+    aput-object v1, v3, v4
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    aput-object v2, v4, v1
+    const/4 v2, 0x1
 
-    const/4 v1, 0x2
+    aput-object v1, v3, v2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, v4, v1
+    const/4 v1, 0x2
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v3, v1
+
+    const-string/jumbo v0, "%d.%d.%d"
+
+    invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -548,7 +548,7 @@
 .end method
 
 .method private getRenderingIntentDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -572,17 +572,17 @@
 
     packed-switch v1, :pswitch_data_0
 
-    const-string/jumbo v1, "Unknown (%d)"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v0, v1, v2
 
-    aput-object v0, v2, v3
+    const-string/jumbo v0, "Unknown (%d)"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -623,7 +623,7 @@
 .end method
 
 .method private getTagDataString(I)Ljava/lang/String;
-    .locals 11
+    .locals 10
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -650,39 +650,39 @@
 
     sparse-switch v0, :sswitch_data_0
 
-    const-string/jumbo v1, "%s(0x%08X): %d bytes"
+    const/4 v1, 0x3
 
-    const/4 v3, 0x3
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/drew/metadata/icc/IccReader;->getStringFromInt32(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v3, v4
+    const/4 v4, 0x0
 
-    const/4 v4, 0x1
+    aput-object v3, v1, v4
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    aput-object v0, v3, v4
+    const/4 v3, 0x1
 
-    const/4 v0, 0x2
+    aput-object v0, v1, v3
 
-    array-length v2, v2
+    array-length v0, v2
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v0
 
-    aput-object v2, v3, v0
+    const/4 v2, 0x2
 
-    invoke-static {v1, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "%s(0x%08X): %d bytes"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
     :try_end_0
     .catch Lcom/drew/lang/BufferBoundsException; {:try_start_0 .. :try_end_0} :catch_1
 
@@ -694,17 +694,17 @@
     :try_start_1
     new-instance v0, Ljava/lang/String;
 
-    const/16 v1, 0x8
+    array-length v1, v2
 
-    array-length v3, v2
+    add-int/lit8 v1, v1, -0x8
 
-    add-int/lit8 v3, v3, -0x8
+    add-int/lit8 v1, v1, -0x1
 
-    add-int/lit8 v3, v3, -0x1
+    const-string/jumbo v3, "ASCII"
 
-    const-string/jumbo v4, "ASCII"
+    const/16 v4, 0x8
 
-    invoke-direct {v0, v2, v1, v3, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v0, v2, v4, v1, v3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
     :try_end_1
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_1 .. :try_end_1} :catch_0
     .catch Lcom/drew/lang/BufferBoundsException; {:try_start_1 .. :try_end_1} :catch_1
@@ -717,15 +717,15 @@
     :try_start_2
     new-instance v0, Ljava/lang/String;
 
-    const/16 v1, 0x8
+    array-length v1, v2
 
-    array-length v3, v2
+    add-int/lit8 v1, v1, -0x8
 
-    add-int/lit8 v3, v3, -0x8
+    add-int/lit8 v1, v1, -0x1
 
-    add-int/lit8 v3, v3, -0x1
+    const/16 v3, 0x8
 
-    invoke-direct {v0, v2, v1, v3}, Ljava/lang/String;-><init>([BII)V
+    invoke-direct {v0, v2, v3, v1}, Ljava/lang/String;-><init>([BII)V
 
     return-object v0
 
@@ -738,9 +738,9 @@
 
     new-instance v1, Ljava/lang/String;
 
-    const/16 v3, 0xc
-
     add-int/lit8 v0, v0, -0x1
+
+    const/16 v3, 0xc
 
     invoke-direct {v1, v2, v3, v0}, Ljava/lang/String;-><init>([BII)V
 
@@ -804,21 +804,21 @@
 
     packed-switch v1, :pswitch_data_0
 
-    const-string/jumbo v0, "Unknown %d"
+    const/4 v0, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v9, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v10
+    move-result-object v2
 
-    aput-object v10, v2, v9
+    const/4 v9, 0x0
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v2, v0, v9
+
+    const-string/jumbo v2, "Unknown %d"
+
+    invoke-static {v2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -827,21 +827,21 @@
 
     packed-switch v7, :pswitch_data_1
 
-    const-string/jumbo v0, "Unknown %d"
+    const/4 v0, 0x1
 
-    const/4 v7, 0x1
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v9, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v7, v9
+    const/4 v7, 0x0
 
-    invoke-static {v0, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v1, v0, v7
+
+    const-string/jumbo v1, "Unknown %d"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -850,84 +850,84 @@
 
     packed-switch v3, :pswitch_data_2
 
-    const-string/jumbo v0, "Unknown %d"
+    const/4 v0, 0x1
 
-    const/4 v7, 0x1
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const/4 v9, 0x0
+    new-array v0, v0, [Ljava/lang/Object;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    aput-object v3, v7, v9
+    const/4 v7, 0x0
 
-    invoke-static {v0, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v3, v0, v7
+
+    const-string/jumbo v3, "Unknown %d"
+
+    invoke-static {v3, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     :goto_2
-    const-string/jumbo v3, "%s Observer, Backing (%s, %s, %s), Geometry %s, Flare %d%%, Illuminant %s"
+    const/4 v3, 0x7
 
-    const/4 v7, 0x7
+    new-array v3, v3, [Ljava/lang/Object;
 
-    new-array v7, v7, [Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    const/4 v9, 0x0
-
-    aput-object v2, v7, v9
-
-    const/4 v2, 0x1
+    aput-object v2, v3, v7
 
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v7, v2
+    const/4 v4, 0x1
 
-    const/4 v2, 0x2
+    aput-object v2, v3, v4
 
     invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v7, v2
+    const/4 v4, 0x2
 
-    const/4 v2, 0x3
+    aput-object v2, v3, v4
 
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v7, v2
+    const/4 v4, 0x3
+
+    aput-object v2, v3, v4
 
     const/4 v2, 0x4
 
-    aput-object v1, v7, v2
+    aput-object v1, v3, v2
 
-    const/4 v1, 0x5
+    const/high16 v1, 0x42c80000    # 100.0f
 
-    const/high16 v2, 0x42c80000    # 100.0f
+    mul-float/2addr v1, v8
 
-    mul-float/2addr v2, v8
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
+    move-result v1
 
-    move-result v2
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v2
+    const/4 v2, 0x5
 
-    aput-object v2, v7, v1
+    aput-object v1, v3, v2
 
     const/4 v1, 0x6
 
-    aput-object v0, v7, v1
+    aput-object v0, v3, v1
 
-    invoke-static {v3, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v0, "%s Observer, Backing (%s, %s, %s), Geometry %s, Flare %d%%, Illuminant %s"
+
+    invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1260,11 +1260,11 @@
 
     div-double/2addr v6, v8
 
-    const/4 v1, 0x7
+    const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x7
 
-    invoke-static {v6, v7, v1, v5}, Lcom/drew/metadata/icc/IccDescriptor;->formatDoubleAsString(DIZ)Ljava/lang/String;
+    invoke-static {v6, v7, v5, v1}, Lcom/drew/metadata/icc/IccDescriptor;->formatDoubleAsString(DIZ)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1399,7 +1399,7 @@
 .end method
 
 .method public getProfileBytesDescription()Ljava/lang/String;
-    .locals 4
+    .locals 3
     .annotation build Lcom/drew/lang/annotations/Nullable;
     .end annotation
 
@@ -1417,13 +1417,9 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v1, "%d bytes binary data"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     array-length v0, v0
 
@@ -1431,9 +1427,13 @@
 
     move-result-object v0
 
-    aput-object v0, v2, v3
+    const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    aput-object v0, v1, v2
+
+    const-string/jumbo v0, "%d bytes binary data"
+
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x13
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x13
 .end annotation
@@ -29,30 +25,30 @@
 .end method
 
 .method public static getAction(Landroid/app/Notification;ILandroid/support/v4/app/NotificationCompatBase$Action$Factory;Landroid/support/v4/app/RemoteInputCompatBase$RemoteInput$Factory;)Landroid/support/v4/app/NotificationCompatBase$Action;
-    .locals 8
-
-    iget-object v0, p0, Landroid/app/Notification;->actions:[Landroid/app/Notification$Action;
-
-    aget-object v6, v0, p1
+    .locals 6
 
     const/4 v5, 0x0
 
+    iget-object v0, p0, Landroid/app/Notification;->actions:[Landroid/app/Notification$Action;
+
+    aget-object v1, v0, p1
+
     iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    const-string/jumbo v1, "android.support.actionExtras"
+    const-string/jumbo v2, "android.support.actionExtras"
 
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
-    move-result-object v7
+    move-result-object v0
 
-    if-nez v7, :cond_0
+    if-nez v0, :cond_0
 
     :goto_0
-    iget v2, v6, Landroid/app/Notification$Action;->icon:I
+    iget v2, v1, Landroid/app/Notification$Action;->icon:I
 
-    iget-object v3, v6, Landroid/app/Notification$Action;->title:Ljava/lang/CharSequence;
+    iget-object v3, v1, Landroid/app/Notification$Action;->title:Ljava/lang/CharSequence;
 
-    iget-object v4, v6, Landroid/app/Notification$Action;->actionIntent:Landroid/app/PendingIntent;
+    iget-object v4, v1, Landroid/app/Notification$Action;->actionIntent:Landroid/app/PendingIntent;
 
     move-object v0, p2
 
@@ -65,95 +61,13 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {v7, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/os/Bundle;
-
-    goto :goto_0
-.end method
-
-.method public static getActionCount(Landroid/app/Notification;)I
-    .locals 1
-
-    iget-object v0, p0, Landroid/app/Notification;->actions:[Landroid/app/Notification$Action;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    iget-object v0, p0, Landroid/app/Notification;->actions:[Landroid/app/Notification$Action;
-
-    array-length v0, v0
-
-    goto :goto_0
-.end method
-
-.method public static getExtras(Landroid/app/Notification;)Landroid/os/Bundle;
-    .locals 1
-
-    iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
-
-    return-object v0
-.end method
-
-.method public static getGroup(Landroid/app/Notification;)Ljava/lang/String;
-    .locals 2
-
-    iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
-
-    const-string/jumbo v1, "android.support.groupKey"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Landroid/os/Bundle;
 
-.method public static getLocalOnly(Landroid/app/Notification;)Z
-    .locals 2
+    move-object v5, v0
 
-    iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
-
-    const-string/jumbo v1, "android.support.localOnly"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static getSortKey(Landroid/app/Notification;)Ljava/lang/String;
-    .locals 2
-
-    iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
-
-    const-string/jumbo v1, "android.support.sortKey"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static isGroupSummary(Landroid/app/Notification;)Z
-    .locals 2
-
-    iget-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
-
-    const-string/jumbo v1, "android.support.isGroupSummary"
-
-    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method

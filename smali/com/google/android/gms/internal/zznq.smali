@@ -100,11 +100,11 @@
 .method public static zzv([B)Lcom/google/android/gms/internal/zznq;
     .locals 2
 
-    const/4 v0, 0x0
+    array-length v0, p0
 
-    array-length v1, p0
+    const/4 v1, 0x0
 
-    invoke-static {p0, v0, v1}, Lcom/google/android/gms/internal/zznq;->zza([BII)Lcom/google/android/gms/internal/zznq;
+    invoke-static {p0, v1, v0}, Lcom/google/android/gms/internal/zznq;->zza([BII)Lcom/google/android/gms/internal/zznq;
 
     move-result-object v0
 

@@ -40,9 +40,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     new-instance v0, Lcom/google/android/gms/wearable/internal/zzav$zza;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, p2, p3, v1}, Lcom/google/android/gms/wearable/internal/zzav$zza;-><init>(Lcom/google/android/gms/common/api/GoogleApiClient;Lcom/google/android/gms/wearable/MessageApi$MessageListener;[Landroid/content/IntentFilter;Lcom/google/android/gms/wearable/internal/zzav$1;)V
 

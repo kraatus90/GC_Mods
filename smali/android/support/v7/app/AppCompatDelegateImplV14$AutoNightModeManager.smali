@@ -83,9 +83,9 @@
 .method final dispatchTimeChanged()V
     .locals 2
 
-    iget-object v1, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->mTwilightManager:Landroid/support/v7/app/TwilightManager;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->mTwilightManager:Landroid/support/v7/app/TwilightManager;
 
-    invoke-virtual {v1}, Landroid/support/v7/app/TwilightManager;->isNight()Z
+    invoke-virtual {v0}, Landroid/support/v7/app/TwilightManager;->isNight()Z
 
     move-result v0
 
@@ -99,9 +99,9 @@
     :cond_0
     iput-boolean v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->mIsNight:Z
 
-    iget-object v1, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV14;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV14;
 
-    invoke-virtual {v1}, Landroid/support/v7/app/AppCompatDelegateImplV14;->applyDayNight()Z
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImplV14;->applyDayNight()Z
 
     goto :goto_0
 .end method

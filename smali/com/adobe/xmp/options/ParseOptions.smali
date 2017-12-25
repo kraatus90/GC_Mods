@@ -20,11 +20,11 @@
 
     invoke-direct {p0}, Lcom/adobe/xmp/options/Options;-><init>()V
 
-    const/16 v0, 0x18
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/16 v1, 0x18
 
-    invoke-virtual {p0, v0, v1}, Lcom/adobe/xmp/options/ParseOptions;->setOption(IZ)V
+    invoke-virtual {p0, v1, v0}, Lcom/adobe/xmp/options/ParseOptions;->setOption(IZ)V
 
     return-void
 .end method
@@ -34,9 +34,9 @@
 .method protected defineOptionName(I)Ljava/lang/String;
     .locals 1
 
-    const/4 v0, 0x0
-
     sparse-switch p1, :sswitch_data_0
+
+    const/4 v0, 0x0
 
     return-object v0
 

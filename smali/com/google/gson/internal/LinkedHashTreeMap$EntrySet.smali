@@ -29,9 +29,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/gson/internal/LinkedHashTreeMap;)V
-    .locals 1
-
-    move-object v0, p0
+    .locals 0
 
     iput-object p1, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
 
@@ -43,50 +41,46 @@
 
 # virtual methods
 .method public clear()V
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
 
-    iget-object v1, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
-
-    invoke-virtual {v1}, Lcom/google/gson/internal/LinkedHashTreeMap;->clear()V
+    invoke-virtual {v0}, Lcom/google/gson/internal/LinkedHashTreeMap;->clear()V
 
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    move-object v0, p0
+    instance-of v1, p1, Ljava/util/Map$Entry;
 
-    instance-of v2, p1, Ljava/util/Map$Entry;
-
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     :cond_0
     :goto_0
-    return v1
+    return v0
 
     :cond_1
-    iget-object v2, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
+    iget-object v1, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
 
     check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-virtual {v2, p1}, Lcom/google/gson/internal/LinkedHashTreeMap;->findByEntry(Ljava/util/Map$Entry;)Lcom/google/gson/internal/LinkedHashTreeMap$Node;
+    invoke-virtual {v1, p1}, Lcom/google/gson/internal/LinkedHashTreeMap;->findByEntry(Ljava/util/Map$Entry;)Lcom/google/gson/internal/LinkedHashTreeMap$Node;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -97,59 +91,53 @@
         }
     .end annotation
 
-    move-object v0, p0
+    new-instance v0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet$1;
 
-    new-instance v1, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet$1;
+    invoke-direct {v0, p0}, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet$1;-><init>(Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;)V
 
-    invoke-direct {v1, p0}, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet$1;-><init>(Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;)V
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .locals 5
+    .locals 3
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    move-object v1, p0
+    instance-of v0, p1, Ljava/util/Map$Entry;
 
-    instance-of v2, p1, Ljava/util/Map$Entry;
+    if-eqz v0, :cond_0
 
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
+    iget-object v0, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
 
     check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-virtual {v2, p1}, Lcom/google/gson/internal/LinkedHashTreeMap;->findByEntry(Ljava/util/Map$Entry;)Lcom/google/gson/internal/LinkedHashTreeMap$Node;
+    invoke-virtual {v0, p1}, Lcom/google/gson/internal/LinkedHashTreeMap;->findByEntry(Ljava/util/Map$Entry;)Lcom/google/gson/internal/LinkedHashTreeMap$Node;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
+    iget-object v1, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
 
-    invoke-virtual {v2, v0, v4}, Lcom/google/gson/internal/LinkedHashTreeMap;->removeInternal(Lcom/google/gson/internal/LinkedHashTreeMap$Node;Z)V
+    invoke-virtual {v1, v0, v2}, Lcom/google/gson/internal/LinkedHashTreeMap;->removeInternal(Lcom/google/gson/internal/LinkedHashTreeMap$Node;Z)V
 
-    return v4
+    return v2
 
     :cond_0
-    return v3
+    return v1
 
     :cond_1
-    return v3
+    return v1
 .end method
 
 .method public size()I
-    .locals 2
+    .locals 1
 
-    move-object v0, p0
+    iget-object v0, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
 
-    iget-object v1, p0, Lcom/google/gson/internal/LinkedHashTreeMap$EntrySet;->this$0:Lcom/google/gson/internal/LinkedHashTreeMap;
+    iget v0, v0, Lcom/google/gson/internal/LinkedHashTreeMap;->size:I
 
-    iget v1, v1, Lcom/google/gson/internal/LinkedHashTreeMap;->size:I
-
-    return v1
+    return v0
 .end method

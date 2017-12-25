@@ -51,7 +51,7 @@
 
     const-string/jumbo v1, "CAM_360"
 
-    const v4, 0x7f0801ae
+    const v4, 0x7f0801c2
 
     const/16 v5, 0x14
 

@@ -12,7 +12,7 @@
 
 .field public static final FLAVOR:Ljava/lang/String; = ""
 
-.field public static final MOT_CFG:Ljava/lang/String; = "7NB9Fpwr"
+.field public static final MOT_CFG:Ljava/lang/String; = "48IY8JzT"
 
 .field public static final VERSION_CODE:I = 0x1
 

@@ -791,49 +791,49 @@
 
     invoke-direct {v0}, Lorg/apache/http/protocol/BasicHttpContext;-><init>()V
 
-    const-string/jumbo v1, "http.scheme-registry"
-
     invoke-virtual {p0}, Lorg/apache/http/impl/client/AbstractHttpClient;->getConnectionManager()Lorg/apache/http/conn/ClientConnectionManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Lorg/apache/http/conn/ClientConnectionManager;->getSchemeRegistry()Lorg/apache/http/conn/scheme/SchemeRegistry;
+    invoke-interface {v1}, Lorg/apache/http/conn/ClientConnectionManager;->getSchemeRegistry()Lorg/apache/http/conn/scheme/SchemeRegistry;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string/jumbo v2, "http.scheme-registry"
 
-    const-string/jumbo v1, "http.authscheme-registry"
+    invoke-interface {v0, v2, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lorg/apache/http/impl/client/AbstractHttpClient;->getAuthSchemes()Lorg/apache/http/auth/AuthSchemeRegistry;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string/jumbo v2, "http.authscheme-registry"
 
-    const-string/jumbo v1, "http.cookiespec-registry"
+    invoke-interface {v0, v2, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lorg/apache/http/impl/client/AbstractHttpClient;->getCookieSpecs()Lorg/apache/http/cookie/CookieSpecRegistry;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string/jumbo v2, "http.cookiespec-registry"
 
-    const-string/jumbo v1, "http.cookie-store"
+    invoke-interface {v0, v2, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lorg/apache/http/impl/client/AbstractHttpClient;->getCookieStore()Lorg/apache/http/client/CookieStore;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string/jumbo v2, "http.cookie-store"
 
-    const-string/jumbo v1, "http.auth.credentials-provider"
+    invoke-interface {v0, v2, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lorg/apache/http/impl/client/AbstractHttpClient;->getCredentialsProvider()Lorg/apache/http/client/CredentialsProvider;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string/jumbo v2, "http.auth.credentials-provider"
+
+    invoke-interface {v0, v2, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-object v0
 .end method
@@ -1035,45 +1035,45 @@
 
     invoke-direct {v0}, Lorg/apache/http/auth/AuthSchemeRegistry;-><init>()V
 
-    const-string/jumbo v1, "Basic"
+    new-instance v1, Lorg/apache/http/impl/auth/BasicSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/BasicSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/BasicSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/BasicSchemeFactory;-><init>()V
+    const-string/jumbo v2, "Basic"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
-    const-string/jumbo v1, "Digest"
+    new-instance v1, Lorg/apache/http/impl/auth/DigestSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/DigestSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/DigestSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/DigestSchemeFactory;-><init>()V
+    const-string/jumbo v2, "Digest"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
-    const-string/jumbo v1, "NTLM"
+    new-instance v1, Lorg/apache/http/impl/auth/NTLMSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/NTLMSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/NTLMSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/NTLMSchemeFactory;-><init>()V
+    const-string/jumbo v2, "NTLM"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
-    const-string/jumbo v1, "negotiate"
+    new-instance v1, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;-><init>()V
+    const-string/jumbo v2, "negotiate"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
-    const-string/jumbo v1, "Kerberos"
+    new-instance v1, Lorg/apache/http/impl/auth/KerberosSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/KerberosSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/KerberosSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/KerberosSchemeFactory;-><init>()V
+    const-string/jumbo v2, "Kerberos"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
     return-object v0
 .end method
@@ -1085,53 +1085,53 @@
 
     invoke-direct {v0}, Lorg/apache/http/cookie/CookieSpecRegistry;-><init>()V
 
-    const-string/jumbo v1, "best-match"
+    new-instance v1, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;
 
-    new-instance v2, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/cookie/BestMatchSpecFactory;-><init>()V
+    const-string/jumbo v2, "best-match"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
 
-    const-string/jumbo v1, "compatibility"
+    new-instance v1, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;
 
-    new-instance v2, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/cookie/BrowserCompatSpecFactory;-><init>()V
+    const-string/jumbo v2, "compatibility"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
 
-    const-string/jumbo v1, "netscape"
+    new-instance v1, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;
 
-    new-instance v2, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/cookie/NetscapeDraftSpecFactory;-><init>()V
+    const-string/jumbo v2, "netscape"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
 
-    const-string/jumbo v1, "rfc2109"
+    new-instance v1, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;
 
-    new-instance v2, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/cookie/RFC2109SpecFactory;-><init>()V
+    const-string/jumbo v2, "rfc2109"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
 
-    const-string/jumbo v1, "rfc2965"
+    new-instance v1, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;
 
-    new-instance v2, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>()V
+    const-string/jumbo v2, "rfc2965"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
 
-    const-string/jumbo v1, "ignoreCookies"
+    new-instance v1, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;
 
-    new-instance v2, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/cookie/IgnoreSpecFactory;-><init>()V
+    const-string/jumbo v2, "ignoreCookies"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/cookie/CookieSpecRegistry;->register(Ljava/lang/String;Lorg/apache/http/cookie/CookieSpecFactory;)V
 
     return-object v0
 .end method

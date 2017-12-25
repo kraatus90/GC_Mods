@@ -11,11 +11,11 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
-    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965Spec;-><init>([Ljava/lang/String;Z)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965Spec;-><init>([Ljava/lang/String;Z)V
 
     return-void
 .end method
@@ -25,45 +25,45 @@
 
     invoke-direct {p0, p1, p2}, Lorg/apache/http/impl/cookie/RFC2109Spec;-><init>([Ljava/lang/String;Z)V
 
-    const-string/jumbo v0, "domain"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2965DomainAttributeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2965DomainAttributeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2965DomainAttributeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2965DomainAttributeHandler;-><init>()V
+    const-string/jumbo v1, "domain"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "port"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2965PortAttributeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2965PortAttributeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2965PortAttributeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2965PortAttributeHandler;-><init>()V
+    const-string/jumbo v1, "port"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "commenturl"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2965CommentUrlAttributeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2965CommentUrlAttributeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2965CommentUrlAttributeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2965CommentUrlAttributeHandler;-><init>()V
+    const-string/jumbo v1, "commenturl"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "discard"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2965DiscardAttributeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2965DiscardAttributeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2965DiscardAttributeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2965DiscardAttributeHandler;-><init>()V
+    const-string/jumbo v1, "discard"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
-    const-string/jumbo v0, "version"
+    new-instance v0, Lorg/apache/http/impl/cookie/RFC2965VersionAttributeHandler;
 
-    new-instance v1, Lorg/apache/http/impl/cookie/RFC2965VersionAttributeHandler;
+    invoke-direct {v0}, Lorg/apache/http/impl/cookie/RFC2965VersionAttributeHandler;-><init>()V
 
-    invoke-direct {v1}, Lorg/apache/http/impl/cookie/RFC2965VersionAttributeHandler;-><init>()V
+    const-string/jumbo v1, "version"
 
-    invoke-virtual {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
+    invoke-virtual {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965Spec;->registerAttribHandler(Ljava/lang/String;Lorg/apache/http/cookie/CookieAttributeHandler;)V
 
     return-void
 .end method

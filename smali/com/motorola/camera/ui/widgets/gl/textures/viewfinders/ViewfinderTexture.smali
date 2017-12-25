@@ -58,6 +58,16 @@
     return v0
 .end method
 
+.method public get360ViewPointBundle()Landroid/os/Bundle;
+    .locals 1
+
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    return-object v0
+.end method
+
 .method public getPreviewOffset()F
     .locals 1
 

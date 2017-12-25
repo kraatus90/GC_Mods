@@ -415,11 +415,11 @@
 .method public indexOf(B)I
     .locals 2
 
-    const/4 v0, 0x0
+    iget v0, p0, Lorg/apache/http/util/ByteArrayBuffer;->len:I
 
-    iget v1, p0, Lorg/apache/http/util/ByteArrayBuffer;->len:I
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lorg/apache/http/util/ByteArrayBuffer;->indexOf(BII)I
+    invoke-virtual {p0, p1, v1, v0}, Lorg/apache/http/util/ByteArrayBuffer;->indexOf(BII)I
 
     move-result v0
 

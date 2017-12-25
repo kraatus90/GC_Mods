@@ -21,11 +21,11 @@
 .method protected constructor <init>(Lorg/apache/http/impl/conn/SingleClientConnManager;)V
     .locals 2
 
-    const/4 v1, 0x0
-
     iput-object p1, p0, Lorg/apache/http/impl/conn/SingleClientConnManager$PoolEntry;->f:Lorg/apache/http/impl/conn/SingleClientConnManager;
 
     iget-object v0, p1, Lorg/apache/http/impl/conn/SingleClientConnManager;->b:Lorg/apache/http/conn/ClientConnectionOperator;
+
+    const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/conn/AbstractPoolEntry;-><init>(Lorg/apache/http/conn/ClientConnectionOperator;Lorg/apache/http/conn/routing/HttpRoute;)V
 

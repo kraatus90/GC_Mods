@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -38,15 +38,15 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-class v2, Lcom/google/gson/annotations/JsonAdapter;
+    const-class v1, Lcom/google/gson/annotations/JsonAdapter;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
 
@@ -54,20 +54,20 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
+    iget-object v1, p0, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->constructorConstructor:Lcom/google/gson/internal/ConstructorConstructor;
 
-    invoke-virtual {p0, v2, p1, p2, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->getTypeAdapter(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/annotations/JsonAdapter;)Lcom/google/gson/TypeAdapter;
+    invoke-virtual {p0, v1, p1, p2, v0}, Lcom/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory;->getTypeAdapter(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/annotations/JsonAdapter;)Lcom/google/gson/TypeAdapter;
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     :cond_0
-    return-object v3
+    return-object v2
 .end method
 
 .method getTypeAdapter(Lcom/google/gson/internal/ConstructorConstructor;Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;Lcom/google/gson/annotations/JsonAdapter;)Lcom/google/gson/TypeAdapter;
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,43 +86,43 @@
 
     invoke-interface {p4}, Lcom/google/gson/annotations/JsonAdapter;->value()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-static {v3}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/Class;)Lcom/google/gson/reflect/TypeToken;
+    invoke-static {v0}, Lcom/google/gson/reflect/TypeToken;->get(Ljava/lang/Class;)Lcom/google/gson/reflect/TypeToken;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {p1, v3}, Lcom/google/gson/internal/ConstructorConstructor;->get(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/internal/ObjectConstructor;
+    invoke-virtual {p1, v0}, Lcom/google/gson/internal/ConstructorConstructor;->get(Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/internal/ObjectConstructor;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v3}, Lcom/google/gson/internal/ObjectConstructor;->construct()Ljava/lang/Object;
+    invoke-interface {v0}, Lcom/google/gson/internal/ObjectConstructor;->construct()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    instance-of v3, v6, Lcom/google/gson/TypeAdapter;
+    instance-of v1, v0, Lcom/google/gson/TypeAdapter;
 
-    if-nez v3, :cond_2
+    if-nez v1, :cond_2
 
-    instance-of v3, v6, Lcom/google/gson/TypeAdapterFactory;
+    instance-of v1, v0, Lcom/google/gson/TypeAdapterFactory;
 
-    if-nez v3, :cond_3
+    if-nez v1, :cond_3
 
-    instance-of v3, v6, Lcom/google/gson/JsonSerializer;
+    instance-of v1, v0, Lcom/google/gson/JsonSerializer;
 
-    if-eqz v3, :cond_4
+    if-eqz v1, :cond_4
 
     :cond_0
-    instance-of v3, v6, Lcom/google/gson/JsonSerializer;
+    instance-of v1, v0, Lcom/google/gson/JsonSerializer;
 
-    if-nez v3, :cond_5
+    if-nez v1, :cond_5
 
     move-object v1, v5
 
     :goto_0
-    instance-of v3, v6, Lcom/google/gson/JsonDeserializer;
+    instance-of v2, v0, Lcom/google/gson/JsonDeserializer;
 
-    if-nez v3, :cond_6
+    if-nez v2, :cond_6
 
     move-object v2, v5
 
@@ -143,106 +143,102 @@
     return-object v0
 
     :cond_2
-    move-object v0, v6
-
     check-cast v0, Lcom/google/gson/TypeAdapter;
 
     goto :goto_2
 
     :cond_3
-    check-cast v6, Lcom/google/gson/TypeAdapterFactory;
+    check-cast v0, Lcom/google/gson/TypeAdapterFactory;
 
-    invoke-interface {v6, p2, p3}, Lcom/google/gson/TypeAdapterFactory;->create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+    invoke-interface {v0, p2, p3}, Lcom/google/gson/TypeAdapterFactory;->create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
 
     move-result-object v0
 
     goto :goto_2
 
     :cond_4
-    instance-of v3, v6, Lcom/google/gson/JsonDeserializer;
+    instance-of v1, v0, Lcom/google/gson/JsonDeserializer;
 
-    if-nez v3, :cond_0
+    if-nez v1, :cond_0
 
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Invalid attempt to bind an instance of "
+    const-string/jumbo v3, "Invalid attempt to bind an instance of "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, " as a @JsonAdapter for "
+    const-string/jumbo v2, " as a @JsonAdapter for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
     invoke-virtual {p3}, Lcom/google/gson/reflect/TypeToken;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory,"
+    const-string/jumbo v2, ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory,"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, " JsonSerializer or JsonDeserializer."
+    const-string/jumbo v2, " JsonSerializer or JsonDeserializer."
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
 
     :cond_5
-    move-object v3, v6
+    move-object v1, v0
 
-    check-cast v3, Lcom/google/gson/JsonSerializer;
-
-    move-object v1, v3
+    check-cast v1, Lcom/google/gson/JsonSerializer;
 
     goto :goto_0
 
     :cond_6
-    check-cast v6, Lcom/google/gson/JsonDeserializer;
+    check-cast v0, Lcom/google/gson/JsonDeserializer;
 
-    move-object v2, v6
+    move-object v2, v0
 
     goto :goto_1
 
     :cond_7
     invoke-interface {p4}, Lcom/google/gson/annotations/JsonAdapter;->nullSafe()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_1
+    if-eqz v1, :cond_1
 
     invoke-virtual {v0}, Lcom/google/gson/TypeAdapter;->nullSafe()Lcom/google/gson/TypeAdapter;
 

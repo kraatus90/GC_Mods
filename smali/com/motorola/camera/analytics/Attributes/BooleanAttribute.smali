@@ -106,12 +106,12 @@
     return-object v0
 .end method
 
-.method public record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+.method public record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/analytics/Attributes/BooleanAttribute;->mName:Ljava/lang/String;
 
-    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p2, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 

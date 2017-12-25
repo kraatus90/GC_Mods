@@ -28,13 +28,13 @@
 
     const/4 v1, 0x0
 
-    const-string/jumbo v0, "UTF-8"
-
     invoke-virtual {p0}, Lcom/adobe/xmp/impl/ByteBuffer;->getEncoding()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "UTF-8"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -255,11 +255,11 @@
     :try_start_0
     new-array v0, v0, [B
 
-    const/4 v1, 0x0
+    const/16 v1, 0x20
 
-    const/16 v2, 0x20
+    const/4 v2, 0x0
 
-    aput-byte v2, v0, v1
+    aput-byte v1, v0, v2
 
     return-object v0
 
@@ -286,11 +286,11 @@
 
     new-array v1, v1, [B
 
-    const/4 v2, 0x0
+    int-to-byte v2, p0
 
-    int-to-byte v3, p0
+    const/4 v3, 0x0
 
-    aput-byte v3, v1, v2
+    aput-byte v2, v1, v3
 
     const-string/jumbo v2, "cp1252"
 

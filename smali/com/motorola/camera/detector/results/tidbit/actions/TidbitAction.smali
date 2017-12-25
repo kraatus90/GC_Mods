@@ -42,8 +42,20 @@
 .end field
 
 .field public final mResource:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Resource;"
+        }
+    .end annotation
+.end field
 
 .field public final mType:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

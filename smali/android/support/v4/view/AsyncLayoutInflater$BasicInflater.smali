@@ -26,23 +26,23 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const-string/jumbo v1, "android.widget."
 
-    const-string/jumbo v2, "android.widget."
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    const-string/jumbo v1, "android.webkit."
 
-    const-string/jumbo v2, "android.webkit."
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    const-string/jumbo v1, "android.app."
 
-    const-string/jumbo v2, "android.app."
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Landroid/support/v4/view/AsyncLayoutInflater$BasicInflater;->sClassPrefixList:[Ljava/lang/String;
 
@@ -70,50 +70,50 @@
 .end method
 
 .method protected onCreateView(Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
-    .locals 6
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/ClassNotFoundException;
         }
     .end annotation
 
-    sget-object v4, Landroid/support/v4/view/AsyncLayoutInflater$BasicInflater;->sClassPrefixList:[Ljava/lang/String;
+    sget-object v1, Landroid/support/v4/view/AsyncLayoutInflater$BasicInflater;->sClassPrefixList:[Ljava/lang/String;
 
-    array-length v5, v4
+    array-length v2, v1
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-lt v3, v5, :cond_0
+    if-lt v0, v2, :cond_0
 
     invoke-super {p0, p1, p2}, Landroid/view/LayoutInflater;->onCreateView(Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :cond_0
-    aget-object v1, v4, v3
+    aget-object v3, v1, v0
 
     :try_start_0
-    invoke-virtual {p0, p1, v1, p2}, Landroid/support/v4/view/AsyncLayoutInflater$BasicInflater;->createView(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
+    invoke-virtual {p0, p1, v3, p2}, Landroid/support/v4/view/AsyncLayoutInflater$BasicInflater;->createView(Ljava/lang/String;Ljava/lang/String;Landroid/util/AttributeSet;)Landroid/view/View;
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v2
+    move-result-object v3
 
-    if-nez v2, :cond_1
+    if-nez v3, :cond_1
 
     :goto_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    return-object v2
+    return-object v3
 
     :catch_0
-    move-exception v0
+    move-exception v3
 
     goto :goto_1
 .end method

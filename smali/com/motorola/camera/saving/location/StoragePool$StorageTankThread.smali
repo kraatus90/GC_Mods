@@ -82,9 +82,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/saving/location/-$Lambda$142;
+    new-instance v1, Lcom/motorola/camera/saving/location/-$Lambda$5Za49XZDBUcncGv5jEvliOwQOMM$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/saving/location/-$Lambda$142;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/saving/location/-$Lambda$5Za49XZDBUcncGv5jEvliOwQOMM$1;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -96,9 +96,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/saving/location/-$Lambda$143;
+    new-instance v1, Lcom/motorola/camera/saving/location/-$Lambda$5Za49XZDBUcncGv5jEvliOwQOMM$2;
 
-    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/saving/location/-$Lambda$143;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lcom/motorola/camera/saving/location/-$Lambda$5Za49XZDBUcncGv5jEvliOwQOMM$2;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -264,7 +264,7 @@
     :goto_0
     iget-object v1, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->this$0:Lcom/motorola/camera/saving/location/StoragePool;
 
-    invoke-static {v1}, Lcom/motorola/camera/saving/location/StoragePool;->-get2(Lcom/motorola/camera/saving/location/StoragePool;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/motorola/camera/saving/location/StoragePool;->-get3(Lcom/motorola/camera/saving/location/StoragePool;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -572,11 +572,34 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
+    :try_start_0
     const-string/jumbo v0, "vnd.android.document/directory"
 
     invoke-static {p1, p2, v0, p3}, Landroid/provider/DocumentsContract;->createDocument(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    :try_end_0
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_1
+
+    invoke-static {}, Lcom/motorola/camera/saving/location/StoragePool;->-get1()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "Could not create directory"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_1
+    const/4 v0, 0x0
 
     return-object v0
 .end method
@@ -586,9 +609,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/saving/location/-$Lambda$80;
+    new-instance v1, Lcom/motorola/camera/saving/location/-$Lambda$5Za49XZDBUcncGv5jEvliOwQOMM;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/saving/location/-$Lambda$80;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/saving/location/-$Lambda$5Za49XZDBUcncGv5jEvliOwQOMM;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -723,7 +746,104 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_saving_location_StoragePool$StorageTankThread_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_saving_location_StoragePool$StorageTankThread_14548(Lcom/motorola/camera/saving/location/StorageLocation;)V
+    .locals 8
+
+    sget-boolean v0, Lcom/motorola/camera/Util;->VERBOSE:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    :goto_0
+    invoke-virtual {p1}, Lcom/motorola/camera/saving/location/StorageLocation;->calculateRemainingSpace()J
+
+    move-result-wide v2
+
+    sget-boolean v4, Lcom/motorola/camera/Util;->VERBOSE:Z
+
+    if-eqz v4, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/saving/location/StoragePool;->-get1()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "calc space for "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {p1}, Lcom/motorola/camera/saving/location/StorageLocation;->getUri()Landroid/net/Uri;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string/jumbo v6, " took "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v6
+
+    sub-long v0, v6, v0
+
+    invoke-virtual {v5, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "ms"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    invoke-virtual {p1, v2, v3}, Lcom/motorola/camera/saving/location/StorageLocation;->setRemainingSpace(J)V
+
+    iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->this$0:Lcom/motorola/camera/saving/location/StoragePool;
+
+    invoke-static {v0}, Lcom/motorola/camera/saving/location/StoragePool;->-get3(Lcom/motorola/camera/saving/location/StoragePool;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->mHandler:Landroid/os/Handler;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+
+    :cond_1
+    const-wide/16 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method synthetic lambda$-com_motorola_camera_saving_location_StoragePool$StorageTankThread_7983()V
     .locals 4
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
@@ -806,7 +926,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_saving_location_StoragePool$StorageTankThread_lambda$2(Landroid/content/Intent;)V
+.method synthetic lambda$-com_motorola_camera_saving_location_StoragePool$StorageTankThread_8484(Landroid/content/Intent;)V
     .locals 1
 
     const-string/jumbo v0, "android.os.storage.extra.STORAGE_VOLUME"
@@ -820,101 +940,4 @@
     invoke-direct {p0, v0}, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->checkVolume(Landroid/os/storage/StorageVolume;)V
 
     return-void
-.end method
-
-.method synthetic lambda$-com_motorola_camera_saving_location_StoragePool$StorageTankThread_lambda$3(Lcom/motorola/camera/saving/location/StorageLocation;)V
-    .locals 8
-
-    sget-boolean v0, Lcom/motorola/camera/Util;->VERBOSE:Z
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    :goto_0
-    invoke-virtual {p1}, Lcom/motorola/camera/saving/location/StorageLocation;->calculateRemainingSpace()J
-
-    move-result-wide v2
-
-    sget-boolean v4, Lcom/motorola/camera/Util;->VERBOSE:Z
-
-    if-eqz v4, :cond_0
-
-    invoke-static {}, Lcom/motorola/camera/saving/location/StoragePool;->-get1()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "calc space for "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {p1}, Lcom/motorola/camera/saving/location/StorageLocation;->getUri()Landroid/net/Uri;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, " took "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v6
-
-    sub-long v0, v6, v0
-
-    invoke-virtual {v5, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "ms"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    invoke-virtual {p1, v2, v3}, Lcom/motorola/camera/saving/location/StorageLocation;->setRemainingSpace(J)V
-
-    iget-object v0, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->this$0:Lcom/motorola/camera/saving/location/StoragePool;
-
-    invoke-static {v0}, Lcom/motorola/camera/saving/location/StoragePool;->-get2(Lcom/motorola/camera/saving/location/StoragePool;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/motorola/camera/saving/location/StoragePool$StorageTankThread;->mHandler:Landroid/os/Handler;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    return-void
-
-    :cond_1
-    const-wide/16 v0, 0x0
-
-    goto :goto_0
 .end method

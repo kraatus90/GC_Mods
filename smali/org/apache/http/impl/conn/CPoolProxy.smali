@@ -28,58 +28,58 @@
 .method static constructor <clinit>()V
     .locals 3
 
+    const/4 v0, 0x0
+
     :try_start_0
-    const-class v0, Lorg/apache/http/HttpConnection;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const-string/jumbo v1, "close"
+    const-class v1, Lorg/apache/http/HttpConnection;
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, "close"
 
-    new-array v2, v2, [Ljava/lang/Class;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     sput-object v0, Lorg/apache/http/impl/conn/CPoolProxy;->CLOSE_METHOD:Ljava/lang/reflect/Method;
 
-    const-class v0, Lorg/apache/http/HttpConnection;
+    const/4 v0, 0x0
 
-    const-string/jumbo v1, "shutdown"
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-class v1, Lorg/apache/http/HttpConnection;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    const-string/jumbo v2, "shutdown"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     sput-object v0, Lorg/apache/http/impl/conn/CPoolProxy;->SHUTDOWN_METHOD:Ljava/lang/reflect/Method;
 
-    const-class v0, Lorg/apache/http/HttpConnection;
+    const/4 v0, 0x0
 
-    const-string/jumbo v1, "isOpen"
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-class v1, Lorg/apache/http/HttpConnection;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    const-string/jumbo v2, "isOpen"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     sput-object v0, Lorg/apache/http/impl/conn/CPoolProxy;->IS_OPEN_METHOD:Ljava/lang/reflect/Method;
 
-    const-class v0, Lorg/apache/http/HttpConnection;
+    const/4 v0, 0x0
 
-    const-string/jumbo v1, "isStale"
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-class v1, Lorg/apache/http/HttpConnection;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    const-string/jumbo v2, "isStale"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
@@ -210,17 +210,17 @@
 
     new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const-class v2, Lorg/apache/http/conn/ManagedHttpClientConnection;
 
-    const-class v3, Lorg/apache/http/conn/ManagedHttpClientConnection;
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x1
+    const-class v2, Lorg/apache/http/protocol/HttpContext;
 
-    const-class v3, Lorg/apache/http/protocol/HttpContext;
+    const/4 v3, 0x1
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     new-instance v2, Lorg/apache/http/impl/conn/CPoolProxy;
 
@@ -248,9 +248,9 @@
 .method b()Lorg/apache/http/impl/conn/CPoolEntry;
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Lorg/apache/http/impl/conn/CPoolProxy;->poolEntry:Lorg/apache/http/impl/conn/CPoolEntry;
+
+    const/4 v1, 0x0
 
     iput-object v1, p0, Lorg/apache/http/impl/conn/CPoolProxy;->poolEntry:Lorg/apache/http/impl/conn/CPoolEntry;
 

@@ -230,11 +230,7 @@
     :cond_0
     invoke-virtual {v0}, Landroid/os/Bundle;->clear()V
 
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/motorola/camera/JsonConfig;->parseRetryNum(Landroid/content/Context;)I
+    invoke-static {}, Lcom/motorola/camera/JsonConfig;->getRetryNum()I
 
     move-result v2
 
@@ -307,11 +303,11 @@
     :cond_4
     invoke-virtual {v0}, Landroid/os/Bundle;->clear()V
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/states/-$Lambda$41;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/-$Lambda$F5MZbi7bWTeph4sOngmMWAnyrSQ;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$41;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/-$Lambda$F5MZbi7bWTeph4sOngmMWAnyrSQ;-><init>(Ljava/lang/Object;)V
 
-    const v1, 0x7f0800bf
+    const v1, 0x7f0800c0
 
     invoke-virtual {p1, v1, v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
@@ -328,7 +324,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_ErrorState$ErrorAlwaysCodeRunnable_lambda$1(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_ErrorState$ErrorAlwaysCodeRunnable_7541(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
     .locals 3
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/ErrorState$ErrorAlwaysCodeRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;

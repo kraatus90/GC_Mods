@@ -42,31 +42,21 @@
 .method public onClosed(Ljava/lang/String;)V
     .locals 4
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;->-wrap0(Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/device/CameraStateManager;->setCameraOpen(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$Status;)V
 
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
-
-    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setCameraOpen(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;)V
-
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCamerasClosed()Z
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->allCamerasClosed()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->clear()V
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->clear()V
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;
 
@@ -78,9 +68,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$15;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$pO7cTqtcxqE0dzF9QELSGegwHaY;
 
-    invoke-direct {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$15;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$pO7cTqtcxqE0dzF9QELSGegwHaY;-><init>()V
 
     invoke-interface {v0, v1}, Ljava/util/Collection;->forEach(Ljava/util/function/Consumer;)V
 
@@ -107,48 +97,38 @@
 .method public onDisconnected(Ljava/lang/String;)V
     .locals 4
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;->-wrap0(Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getOpenCameraIds()Ljava/util/List;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v1
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1}, Lcom/motorola/camera/device/CameraStateManager;->getOpenCameraIds()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    sget-object v3, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v3, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
-    invoke-virtual {v0, v1, v3}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setCameraSession(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;)V
+    invoke-virtual {v1, v0, v3}, Lcom/motorola/camera/device/CameraStateManager;->setCameraSession(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$Status;)V
 
-    sget-object v3, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;->STOPPED:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;
+    sget-object v3, Lcom/motorola/camera/device/CameraStateManager$StreamStatus;->STOPPED:Lcom/motorola/camera/device/CameraStateManager$StreamStatus;
 
-    invoke-virtual {v0, v1, v3}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setPreviewStatus(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;)V
+    invoke-virtual {v1, v0, v3}, Lcom/motorola/camera/device/CameraStateManager;->setPreviewStatus(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$StreamStatus;)V
 
     goto :goto_0
 
@@ -159,35 +139,25 @@
 .method public onError(Ljava/lang/String;I)V
     .locals 4
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;->-wrap0(Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    invoke-virtual {v0, p1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getCameraOpen(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/device/CameraStateManager;->getCameraOpen(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$Status;
 
     move-result-object v1
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->OPEN:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v2, Lcom/motorola/camera/device/CameraStateManager$Status;->OPEN:Lcom/motorola/camera/device/CameraStateManager$Status;
 
     if-ne v1, v2, :cond_0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
-    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setCameraSession(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;)V
+    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/device/CameraStateManager;->setCameraSession(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$Status;)V
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;->STOPPED:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$StreamStatus;->STOPPED:Lcom/motorola/camera/device/CameraStateManager$StreamStatus;
 
-    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setPreviewStatus(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;)V
+    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/device/CameraStateManager;->setPreviewStatus(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$StreamStatus;)V
 
     :cond_0
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;
@@ -212,25 +182,15 @@
 .method public onOpened(Ljava/lang/String;)V
     .locals 4
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;
-
-    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;->-wrap0(Lcom/motorola/camera/fsm/camera/states/runnables/OpenCameraRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->OPEN:Lcom/motorola/camera/device/CameraStateManager$Status;
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/device/CameraStateManager;->setCameraOpen(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$Status;)V
 
-    move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->OPEN:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
-
-    invoke-virtual {v0, p1, v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->setCameraOpen(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;)V
-
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCamerasOpen()Z
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->allCamerasOpen()Z
 
     move-result v0
 

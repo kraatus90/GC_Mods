@@ -51,23 +51,25 @@
 
 # virtual methods
 .method public run()V
-    .locals 12
+    .locals 9
+
+    const/4 v3, 0x1
+
+    const/4 v2, 0x0
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$400()Lcom/motorola/camera/mcf/Mcf;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/motorola/camera/mcf/Mcf;->access$500(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/ref/WeakReference;
+    invoke-static {v0}, Lcom/motorola/camera/mcf/Mcf;->access$500(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/ref/WeakReference;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/motorola/camera/mcf/Mcf$OnFullFrameListener;
-
-    const/4 v7, 0x0
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$400()Lcom/motorola/camera/mcf/Mcf;
 
@@ -75,9 +77,9 @@
 
     invoke-static {v1}, Lcom/motorola/camera/mcf/Mcf;->access$1100(Lcom/motorola/camera/mcf/Mcf;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    monitor-enter v2
+    monitor-enter v4
 
     :try_start_0
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$400()Lcom/motorola/camera/mcf/Mcf;
@@ -94,17 +96,19 @@
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v5
 
     :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
+    move v1, v2
+
     :goto_0
-    monitor-exit v2
+    monitor-exit v4
 
     if-nez v0, :cond_3
 
@@ -113,21 +117,21 @@
     return-void
 
     :cond_2
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v1
 
-    check-cast v8, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$400()Lcom/motorola/camera/mcf/Mcf;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-static {v1}, Lcom/motorola/camera/mcf/Mcf;->access$1200(Lcom/motorola/camera/mcf/Mcf;)Ljava/util/Map;
+    invoke-static {v6}, Lcom/motorola/camera/mcf/Mcf;->access$1200(Lcom/motorola/camera/mcf/Mcf;)Ljava/util/Map;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-interface {v1, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v6, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -139,21 +143,21 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v7, 0x1
+    move v1, v3
 
     goto :goto_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 
     :cond_3
-    if-eqz v7, :cond_1
+    if-eqz v1, :cond_1
 
     iget v1, p0, Lcom/motorola/camera/mcf/Mcf$4;->val$arg2:I
 
@@ -170,8 +174,6 @@
     iget v3, p0, Lcom/motorola/camera/mcf/Mcf$4;->val$arg5:I
 
     invoke-static {v3}, Lcom/motorola/camera/mcf/Mcf$InstanceType;->toEnumVal(I)Lcom/motorola/camera/mcf/Mcf$InstanceType;
-
-    move-result-object v6
 
     :try_start_1
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$1000()Z
@@ -194,31 +196,31 @@
     goto :goto_1
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->access$300()Ljava/lang/String;
 
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "postFullFrameEventFromNative: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string/jumbo v4, "postFullFrameEventFromNative: "
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 
@@ -228,39 +230,39 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "postFullFrameEventFromNative: onProgressIndication(instance=%s ProgressType=%s SceneMode=%s timestamp=%d)"
-
     const/4 v3, 0x4
 
-    new-array v9, v3, [Ljava/lang/Object;
-
-    const/4 v10, 0x0
+    new-array v5, v3, [Ljava/lang/Object;
 
     iget-object v3, p0, Lcom/motorola/camera/mcf/Mcf$4;->val$obj1:Ljava/lang/Object;
 
     check-cast v3, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    aput-object v3, v9, v10
+    const/4 v6, 0x0
+
+    aput-object v3, v5, v6
 
     const/4 v3, 0x1
 
-    aput-object v1, v9, v3
+    aput-object v1, v5, v3
 
     const/4 v3, 0x2
 
-    aput-object v2, v9, v3
+    aput-object v2, v5, v3
+
+    iget-wide v6, p0, Lcom/motorola/camera/mcf/Mcf$4;->val$argl1:J
 
     const/4 v3, 0x3
 
-    iget-wide v10, p0, Lcom/motorola/camera/mcf/Mcf$4;->val$argl1:J
+    const-string/jumbo v8, "postFullFrameEventFromNative: onProgressIndication(instance=%s ProgressType=%s SceneMode=%s timestamp=%d)"
 
-    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v10
+    move-result-object v6
 
-    aput-object v10, v9, v3
+    aput-object v6, v5, v3
 
-    invoke-static {v5, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v8, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 

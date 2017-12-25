@@ -562,6 +562,50 @@
     return v0
 .end method
 
+.method public get360ViewPointBundle()Landroid/os/Bundle;
+    .locals 4
+
+    invoke-super {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/Base360Viewfinder;->get360ViewPointBundle()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/SphericalViewfinder;->mRotation:F
+
+    const/high16 v2, 0x42b40000    # 90.0f
+
+    sub-float/2addr v0, v2
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    :goto_0
+    if-gez v0, :cond_0
+
+    add-int/lit16 v0, v0, 0x168
+
+    goto :goto_0
+
+    :cond_0
+    rem-int/lit16 v0, v0, 0x168
+
+    new-instance v2, Lcom/motorola/camera/saving/ViewPoint;
+
+    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/SphericalViewfinder;->mTilt:F
+
+    invoke-static {v3}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    invoke-direct {v2, v0, v3}, Lcom/motorola/camera/saving/ViewPoint;-><init>(II)V
+
+    const-string/jumbo v0, "INITIAL_VIEWPOINT"
+
+    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+
+    return-object v1
+.end method
+
 .method public loadTexture()V
     .locals 6
 
@@ -919,9 +963,9 @@
     return-void
 
     :cond_0
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/-$Lambda$67;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/-$Lambda$Xv6ls_8iqdl0khWxEkJDW20m8sk;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/-$Lambda$67;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/-$Lambda$Xv6ls_8iqdl0khWxEkJDW20m8sk;-><init>(Ljava/lang/Object;)V
 
     invoke-direct {p0, v2, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/viewfinders/SphericalViewfinder;->animateZoom(FLcom/motorola/camera/ui/widgets/gl/textures/viewfinders/SphericalViewfinder$AnimationEndListener;)V
 

@@ -680,15 +680,15 @@
 
     new-instance v1, Ljava/text/DecimalFormat;
 
-    const-string/jumbo v2, "0000"
+    new-instance v2, Ljava/text/DecimalFormatSymbols;
 
-    new-instance v3, Ljava/text/DecimalFormatSymbols;
+    sget-object v3, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    sget-object v4, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+    invoke-direct {v2, v3}, Ljava/text/DecimalFormatSymbols;-><init>(Ljava/util/Locale;)V
 
-    invoke-direct {v3, v4}, Ljava/text/DecimalFormatSymbols;-><init>(Ljava/util/Locale;)V
+    const-string/jumbo v3, "0000"
 
-    invoke-direct {v1, v2, v3}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V
+    invoke-direct {v1, v3, v2}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;Ljava/text/DecimalFormatSymbols;)V
 
     invoke-interface {p0}, Lcom/adobe/xmp/XMPDateTime;->getYear()I
 

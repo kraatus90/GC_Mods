@@ -12,6 +12,8 @@
 
 .field private static final PRODUCT_ID_HW_REV_MASK:I = 0xff
 
+.field public static final PRODUCT_INSTA_PRINTER:I = 0xb00
+
 .field public static final PRODUCT_MOTO_360_CAMERA:I = 0x610
 
 .field public static final PRODUCT_NO_MOD_CONNECTED:I
@@ -313,6 +315,92 @@
     return v0
 
     :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isInstaPrintAttached()Z
+    .locals 4
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->getModPid()I
+
+    move-result v0
+
+    const/16 v1, 0xb00
+
+    if-ne v0, v1, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lcom/motorola/camera/mod/ModHelper;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "isInstaPrintAttached:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isModCameraAttached()Z
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->getModPid()I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method public static isModCameraAttached(I)Z
+    .locals 1
+
+    invoke-static {}, Lcom/motorola/camera/mod/ModHelper;->getModPid()I
+
+    move-result v0
+
+    if-ne v0, p0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
     const/4 v0, 0x0
 
     goto :goto_0

@@ -71,7 +71,7 @@
 
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$4;->a:Lcom/android/volley/toolbox/ImageLoader;
 
-    invoke-static {v0, v5}, Lcom/android/volley/toolbox/ImageLoader;->a(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    invoke-static {v0, v6}, Lcom/android/volley/toolbox/ImageLoader;->a(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     return-void
 
@@ -139,7 +139,7 @@
 
     move-result-object v4
 
-    invoke-interface {v4, v1, v6}, Lcom/android/volley/toolbox/ImageLoader$ImageListener;->onResponse(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Z)V
+    invoke-interface {v4, v1, v5}, Lcom/android/volley/toolbox/ImageLoader$ImageListener;->onResponse(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Z)V
 
     goto :goto_0
 .end method

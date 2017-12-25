@@ -3,12 +3,12 @@
 .source "SettingsList.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/motorola/camera/settings/SettingChangeListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/SettingsList;->firstUseAnimateShowPre()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,20 +34,18 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onChange(Lcom/motorola/camera/settings/Setting;)V
+    .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;->this$0:Lcom/motorola/camera/ui/widgets/gl/SettingsList;
 
-    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7$1;
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->FLING_RIGHT:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$7$1;-><init>(Lcom/motorola/camera/ui/widgets/gl/SettingsList$7;)V
 
-    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

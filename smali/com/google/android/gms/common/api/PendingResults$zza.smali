@@ -56,7 +56,7 @@
 
 # virtual methods
 .method protected createFailedResult(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Result;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,34 +65,32 @@
         }
     .end annotation
 
-    move-object v0, p0
-
     invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->getStatusCode()I
 
-    move-result v1
-
-    iget-object v2, p0, Lcom/google/android/gms/common/api/PendingResults$zza;->zzQS:Lcom/google/android/gms/common/api/Result;
-
-    invoke-interface {v2}, Lcom/google/android/gms/common/api/Result;->getStatus()Lcom/google/android/gms/common/api/Status;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/android/gms/common/api/Status;->getStatusCode()I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_0
+    move-result v0
 
     iget-object v1, p0, Lcom/google/android/gms/common/api/PendingResults$zza;->zzQS:Lcom/google/android/gms/common/api/Result;
 
-    return-object v1
+    invoke-interface {v1}, Lcom/google/android/gms/common/api/Result;->getStatus()Lcom/google/android/gms/common/api/Status;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/Status;->getStatusCode()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/PendingResults$zza;->zzQS:Lcom/google/android/gms/common/api/Result;
+
+    return-object v0
 
     :cond_0
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string/jumbo v2, "Creating failed results is not supported"
+    const-string/jumbo v1, "Creating failed results is not supported"
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method

@@ -148,7 +148,7 @@
     <string name="cancel">Άκυρο</string>
     <string name="capture_failure">Η λήψη απέτυχε. Προσπαθήστε ξανά.</string>
     <string name="checkbox_do_not_show">Να μην εμφανιστεί ξανά</string>
-    <string name="cloudsight_terms">Οι εικόνες σας θα σταλθούν στο CloudSight για την εμφάνιση αποτελεσμάτων αναζήτησης. &lt;br/>&lt;br/> Συνεχίζοντας, συμφωνείτε με την&lt;a href=%1$s>Πολιτική απορρήτου&lt;/a> του CloudSight.</string>
+    <string name="cloudsight_terms">Κάθε φορά που χρησιμοποιείτε την αναγνώριση αντικειμένου, η εικόνα και η τοποθεσία (αν είναι ενεργοποιημένη) θα αποστέλλεται σε τρίτο πάροχο για να δώσει αποτελέσματα αναζήτησης.&lt;br/>&lt;br/> Συνεχίζοντας, συμφωνείτε με την&lt;a href=%1$s>Πολιτική απορρήτου&lt;/a>.</string>
     <string name="dailog_panorama_failed">Αποτυχία πανοραμικής. Προσπαθήστε ξανά.</string>
     <string name="dailog_panorama_not_taken">Δεν έγινε λήψη της πανοραμικής φωτογραφίας.</string>
     <string name="dialog_access_sd_fail">Δεν είναι δυνατή η λήψη πολυμέσων. Δεν είναι δυνατή η πρόσβαση στην κάρτα SD.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Η συσκευή δεν υποστηρίζεται</string>
     <string name="dialog_disagree">Διαφωνώ</string>
     <string name="dialog_dismiss">Να μην εμφανιστεί ξανά</string>
+    <string name="dialog_download">Λήψη</string>
     <string name="dialog_external_sd_missing">Δεν είναι δυνατή η λήψη φωτογραφίας. Δεν είναι δυνατή η πρόσβαση στην κάρτα SD. Μετάβαση στον εσωτερικό χώρο αποθήκευσης του τηλεφώνου.</string>
     <string name="dialog_first_time_set_pure_raw_message">"Ο τύπος μη επεξεργασμένου αρχείου είναι για επαγγελματική επεξεργασία φωτογραφιών.
 
@@ -247,6 +248,7 @@
     <string name="help_next">Επόμενο</string>
     <string name="image_360_desc">Αυτή είναι μια φωτογραφία 360. Μπορείτε να επεξεργαστείτε αυτή τη φωτογραφία με το πρόγραμμα επεξεργασίας Moto 360.</string>
     <string name="image_360_name">Φωτογραφία 360</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ΕΝΕΡΓΟΠΟΙΗΣΗ ΒΑΘΟΥΣ</string>
     <string name="indicate_mode_mono">ΠΡΑΓΜΑΤΙΚΟ ΑΣΠΡΟΜΑΥΡΟ</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">ΥΠΕΡ-ΕΥΡΕΙΑ ΖΩΝΗ</string>
     <string name="indicate_mode_video">ΒΙΝΤΕΟ</string>
     <string name="indicate_mode_wide_angle">ΕΥΡΕΙΑ ΖΩΝΗ</string>
+    <string name="indicate_mode_wide_angle_selfie">ΕΥΡΥΓΩΝΙΑ SELFIE</string>
     <string name="internal_storage">εσωτερική μονάδα αποθήκευσης</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Η αναγνώριση ορόσημου παρέχει πληροφορίες σχετικά με δημοφιλή αξιοθέατα ανά τον κόσμο.&lt;br/>&lt;br/>Κάντε εγκατάσταση για να ενεργοποιήσετε αυτή τη λειτουργία.</string>
-    <string name="landmark_install_over_data">Το μέγεθος λήψης της αναγνώρισης ορόσημου είναι 92 MB. Η εγκατάσταση με χρήση δεδομένων κινητής τηλεφωνίας ενδέχεται να επιφέρει πρόσθετες χρεώσεις δεδομένων.</string>
-    <string name="landmark_notification_downloading">Λήψη αναγνώρισης ορόσημου</string>
-    <string name="landmark_notification_install">Εγκατάσταση αναγνώρισης ορόσημου</string>
-    <string name="landmark_notification_install_complete">Η εγκατάσταση της αναγνώρισης ορόσημου ολοκληρώθηκε</string>
-    <string name="landmark_notification_install_failed">Η εγκατάσταση της αναγνώρισης ορόσημου απέτυχε</string>
+    <string name="landmark_install_message">Η αναγνώριση ορόσημου παρέχει πληροφορίες σχετικά με δημοφιλή αξιοθέατα ανά τον κόσμο.&lt;br/>&lt;br/>Πραγματοποιήστε λήψη της βάσης δεδομένων ορόσημων για να ενεργοποιήσετε αυτή τη λειτουργία.</string>
+    <string name="landmark_install_over_data">Το μέγεθος λήψης της βάσης δεδομένων ορόσημων είναι 92 MB. Η λήψη με χρήση δεδομένων κινητής τηλεφωνίας ενδέχεται να επιφέρει πρόσθετες χρεώσεις δεδομένων.</string>
+    <string name="landmark_notification_downloading">Λήψη βάσης δεδομένων ορόσημων</string>
+    <string name="landmark_notification_install">Εγκατάσταση βάσης δεδομένων ορόσημων</string>
+    <string name="landmark_notification_install_complete">Η εγκατάσταση της βάσης δεδομένων ορόσημων ολοκληρώθηκε</string>
+    <string name="landmark_notification_install_failed">Η εγκατάσταση της βάσης δεδομένων ορόσημων απέτυχε</string>
     <string name="landmark_notification_install_invalid_url">Η βάση δεδομένων ορόσημων δεν είναι διαθέσιμη, κάντε ενημέρωση στην πιο πρόσφατη έκδοση Κάμερας</string>
-    <string name="landmark_notification_install_out_of_space">Δεν υπάρχει επαρκής διαθέσιμος χώρος αποθήκευσης για την εγκατάσταση της αναγνώρισης ορόσημου</string>
+    <string name="landmark_notification_install_out_of_space">Δεν υπάρχει επαρκής διαθέσιμος χώρος αποθήκευσης για την εγκατάσταση της βάσης δεδομένων ορόσημων</string>
+    <string name="landmark_notification_paused">Η λήψη της βάσης δεδομένων ορόσημων θα συνεχιστεί όταν θα είναι διαθέσιμο το internet</string>
+    <string name="landmark_notification_queued">Η λήψη της βάσης δεδομένων ορόσημων θα ξεκινήσει όταν θα είναι διαθέσιμο το internet</string>
     <string name="main_setting_amz_barcode">Σαρωτής γραμμικού κώδικα Amazon</string>
     <string name="main_setting_amz_privacy">Ειδοποίηση απορρήτου Amazon</string>
     <string name="main_setting_amz_terms">Συνθήκες χρήσης</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">Μέγ. φωτογρ. (πίσω)</string>
     <string name="main_setting_image_ratio_front">Μέγεθος φωτογραφίας (μπροστινή)</string>
     <string name="main_setting_landmark_detection">Αναγνώριση ορόσημου</string>
+    <string name="main_setting_landmark_version_current">Έκδοση βάσης δεδομένων: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Η βάση δεδομένων δεν έχει εγκατασταθεί</string>
     <string name="main_setting_licenses">Άδειες ανοικτού κώδικα</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">Απαιτούνται άδειες</string>
     <string name="photos_depth_desc">Χρησιμοποιήστε το πρόγραμμα επεξεργασίας βάθους για να επιλέξετε εστίαση, να αντικαταστήσετε το φόντο ή να επιλέξετε περιοχή για να αλλάξετε σε ασπρόμαυρο.</string>
     <string name="photos_depth_name">Ενεργοποίηση βάθους</string>
+    <string name="photos_notification_desc">Αποκτήστε απεριόριστο χώρο αποθήκευσης με το Google Photos</string>
+    <string name="photos_notification_title">Δημιουργία αντιγράφου ασφαλείας στο Google Photos</string>
+    <string name="qcfa_resolution_description">Προσαρμογή σε χαμηλό φωτισμό</string>
     <string name="retake">Νέα λήψη</string>
     <string name="second_10">10 δευτ.</string>
     <string name="second_3">3 δευτ.</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">Αργή κίνηση</string>
     <string name="setting_mode_ultra_wide">Υπέρ-ευρεία ζώνη</string>
     <string name="setting_mode_video">Βίντεο</string>
+    <string name="setting_mode_wide_angle_selfie">Ευρυγώνια selfie</string>
     <string name="setting_off">Απενεργοποίηση</string>
     <string name="setting_on">Ενεργοποίηση</string>
     <string name="setting_persist">Αναμονή</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">ΧΡΟΝΟΜΕΤΡΟ</string>
     <string name="setting_torch">Φακός</string>
     <string name="setting_true">αληθές</string>
+    <string name="shortcut_desc_depth">Φωτό με βάθος</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Βίντεο</string>
     <string name="smartcam_landmark_notification_title">Έξυπνη κάμερα</string>
+    <string name="smartcam_no_detections">Δεν υπάρχουν αποθηκευμένα αντικείμενα ή ορόσημα</string>
     <string name="storage_location_external">Κάρτα SD</string>
     <string name="storage_location_internal">Τηλέφωνο</string>
     <string name="storage_unavailable">Ο χώρος αποθήκευσης δεν είναι διαθέσιμος</string>
+    <string name="toast_battery_saver">Προς το παρόν βρίσκεστε σε λειτουργία εξοικονόμησης ενέργειας, ορισμένες λειτουργίες ενδέχεται να είναι περιορισμένες</string>
     <string name="toast_geotag_message_1">Για ενεργοποίηση της αποθήκευσης τοποθεσίας πρέπει να εκχωρήσετε την άδεια τοποθεσίας.</string>
     <string name="toast_geotag_message_2">Η ρύθμιση τοποθεσίας ισχύει μόνο μετά την ενεργοποίηση της τοποθεσίας συστήματος.</string>
     <string name="tooltip_camera_switch_360">Δοκιμάστε να μεταβείτε σε διαφορετικές επιλογές κάμερας.</string>
     <string name="tooltip_capture_360">Δοκιμάστε λήψη φωτογραφίας 360° ή βίντεο πατώντας σε αυτό το κουμπί κλείστρου.</string>
-    <string name="tooltip_capture_key_360">Επίσης, δοκιμάστε να κάνετε λήψη με το κουμπί κλείστρου στο πίσω μέρος του mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Κάντε λήψη φωτογραφιών με περισσότερες πληροφορίες για να ενεργοποιήσετε ειδικές λειτουργίες επεξεργασίας.</string>
+    <string name="tooltip_capture_key_360">Επίσης, δοκιμάστε να κάνετε λήψη με το κουμπί κλείστρου στο πίσω μέρος του Mod.</string>
     <string name="tooltip_first_use_zoom_button">Πατήστε εδώ για αλλαγή σε ευρεία γωνία.</string>
     <string name="tooltip_gallery_360">Δείτε το αποτέλεσμα της φωτογραφίας 360° ή του βίντεο σύροντας προς τα αριστερά.</string>
     <string name="tooltip_minimap_viewfinder">Μετατοπίστε την κάτω εικόνα προς τα αριστερά ή προς τα δεξιά.</string>
     <string name="tooltip_mode_switch_360">Δοκιμάστε λήψη 360° σε διαφορετικές λειτουργίες!</string>
+    <string name="tooltip_modes_list">Ανακαλύψτε νέους τρόπους λήψης φωτογραφιών.</string>
     <string name="tooltip_smart_camera">Πατήστε για να ανακαλύψετε περισσότερα για το προϊόν.</string>
     <string name="tooltip_smart_camera_disable">Μπορείτε να το απενεργοποιήσετε στις Ρυθμίσεις.</string>
     <string name="tooltip_spherical_viewfinder">Κάντε μετατόπιση ή μεγέθυνση και σμίκρυνση για να ελέγξετε την προβολή.</string>
@@ -419,4 +435,10 @@
     <string name="zoom_hint_full">ΠΛΗΡΕΣ</string>
     <string name="zoom_hint_wide">ΕΥΡΥ</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">ΛΗΨΗ ΧΑΜΗΛΗΣ ΤΑΧΥΤΗΤΑΣ</string>
+    <string name="setting_mode_timelapse">Λήψη χαμηλής ταχύτητας</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

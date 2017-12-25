@@ -24,7 +24,7 @@
         value = {
             "Ljava/util/Map",
             "<",
-            "Ljava/lang/Integer;",
+            "Lcom/motorola/camera/mcf/McfInstanceIdentifier;",
             "Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;",
             ">;"
         }

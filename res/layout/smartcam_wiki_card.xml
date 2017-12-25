@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_smartcam_card" android:paddingTop="@dimen/smartcam_card_vertical_padding" android:paddingBottom="@dimen/smartcam_card_vertical_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/smartcam_card_horizontal_padding" android:paddingEnd="@dimen/smartcam_card_horizontal_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/smartcam_card_vertical_padding">
+        <ImageView android:layout_gravity="center" android:id="@id/smartcam_card_thumbnail" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_marginEnd="@dimen/smartcam_card_horizontal_padding" />
+        <include layout="@layout/smartcam_card_content" />
+    </LinearLayout>
+    <View android:background="@color/smartcam_card_line" android:layout_width="fill_parent" android:layout_height="@dimen/smartcam_card_separator" />
+    <TextView android:textSize="@dimen/smartcam_card_title" android:textColor="@color/amazon_call_to_action" android:id="@id/smartcam_card_seemore" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/smartcam_card_small_padding" android:text="@string/aware_info_more_wikipedia" />
+</LinearLayout>

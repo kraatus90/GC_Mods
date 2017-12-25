@@ -53,11 +53,11 @@
 .method public static newAuthNotRequiredResult()Lcom/google/android/gms/common/api/GoogleApiClient$ServerAuthCodeCallbacks$CheckResult;
     .locals 3
 
-    const/4 v2, 0x0
-
     new-instance v0, Lcom/google/android/gms/common/api/GoogleApiClient$ServerAuthCodeCallbacks$CheckResult;
 
     const/4 v1, 0x0
+
+    const/4 v2, 0x0
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/GoogleApiClient$ServerAuthCodeCallbacks$CheckResult;-><init>(ZLjava/util/Set;)V
 

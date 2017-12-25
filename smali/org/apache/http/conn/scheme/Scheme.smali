@@ -310,11 +310,11 @@
 .method public hashCode()I
     .locals 2
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget v1, p0, Lorg/apache/http/conn/scheme/Scheme;->defaultPort:I
+    iget v0, p0, Lorg/apache/http/conn/scheme/Scheme;->defaultPort:I
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(II)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(II)I
 
     move-result v0
 

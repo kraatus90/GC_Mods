@@ -29,14 +29,14 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-static {p0, p1}, Landroid/support/v4/graphics/PaintCompatGingerbread;->hasGlyph(Landroid/graphics/Paint;Ljava/lang/String;)Z
+    invoke-static {p0, p1}, Landroid/support/v4/graphics/PaintCompatApi14;->hasGlyph(Landroid/graphics/Paint;Ljava/lang/String;)Z
 
     move-result v0
 
     return v0
 
     :cond_0
-    invoke-static {p0, p1}, Landroid/support/v4/graphics/PaintCompatApi23;->hasGlyph(Landroid/graphics/Paint;Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Landroid/graphics/Paint;->hasGlyph(Ljava/lang/String;)Z
 
     move-result v0
 

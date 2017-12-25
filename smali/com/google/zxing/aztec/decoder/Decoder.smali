@@ -65,167 +65,167 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "D"
 
-    const-string/jumbo v2, "D"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "E"
 
-    const-string/jumbo v2, "E"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "F"
 
-    const-string/jumbo v2, "F"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "G"
 
-    const-string/jumbo v2, "G"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "H"
 
-    const-string/jumbo v2, "H"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "I"
 
-    const-string/jumbo v2, "I"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "J"
 
-    const-string/jumbo v2, "J"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "K"
 
-    const-string/jumbo v2, "K"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "L"
 
-    const-string/jumbo v2, "L"
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, "M"
 
-    const-string/jumbo v2, "M"
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    const-string/jumbo v1, "N"
 
-    const-string/jumbo v2, "N"
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    const-string/jumbo v1, "O"
 
-    const-string/jumbo v2, "O"
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    const-string/jumbo v1, "P"
 
-    const-string/jumbo v2, "P"
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    const-string/jumbo v1, "Q"
 
-    const-string/jumbo v2, "Q"
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    const-string/jumbo v1, "R"
 
-    const-string/jumbo v2, "R"
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    const-string/jumbo v1, "S"
 
-    const-string/jumbo v2, "S"
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    const-string/jumbo v1, "T"
 
-    const-string/jumbo v2, "T"
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    const-string/jumbo v1, "U"
 
-    const-string/jumbo v2, "U"
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x17
+    const-string/jumbo v1, "V"
 
-    const-string/jumbo v2, "V"
+    const/16 v2, 0x17
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x18
+    const-string/jumbo v1, "W"
 
-    const-string/jumbo v2, "W"
+    const/16 v2, 0x18
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x19
+    const-string/jumbo v1, "X"
 
-    const-string/jumbo v2, "X"
+    const/16 v2, 0x19
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1a
+    const-string/jumbo v1, "Y"
 
-    const-string/jumbo v2, "Y"
+    const/16 v2, 0x1a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1b
+    const-string/jumbo v1, "Z"
 
-    const-string/jumbo v2, "Z"
+    const/16 v2, 0x1b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1c
+    const-string/jumbo v1, "CTRL_LL"
 
-    const-string/jumbo v2, "CTRL_LL"
+    const/16 v2, 0x1c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1d
+    const-string/jumbo v1, "CTRL_ML"
 
-    const-string/jumbo v2, "CTRL_ML"
+    const/16 v2, 0x1d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1e
+    const-string/jumbo v1, "CTRL_DL"
 
-    const-string/jumbo v2, "CTRL_DL"
+    const/16 v2, 0x1e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1f
+    const-string/jumbo v1, "CTRL_BS"
 
-    const-string/jumbo v2, "CTRL_BS"
+    const/16 v2, 0x1f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/aztec/decoder/Decoder;->UPPER_TABLE:[Ljava/lang/String;
 
@@ -253,167 +253,167 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "d"
 
-    const-string/jumbo v2, "d"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "e"
 
-    const-string/jumbo v2, "e"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "f"
 
-    const-string/jumbo v2, "f"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "g"
 
-    const-string/jumbo v2, "g"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "h"
 
-    const-string/jumbo v2, "h"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "i"
 
-    const-string/jumbo v2, "i"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "j"
 
-    const-string/jumbo v2, "j"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "k"
 
-    const-string/jumbo v2, "k"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "l"
 
-    const-string/jumbo v2, "l"
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, "m"
 
-    const-string/jumbo v2, "m"
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    const-string/jumbo v1, "n"
 
-    const-string/jumbo v2, "n"
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    const-string/jumbo v1, "o"
 
-    const-string/jumbo v2, "o"
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    const-string/jumbo v1, "p"
 
-    const-string/jumbo v2, "p"
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    const-string/jumbo v1, "q"
 
-    const-string/jumbo v2, "q"
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    const-string/jumbo v1, "r"
 
-    const-string/jumbo v2, "r"
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    const-string/jumbo v1, "s"
 
-    const-string/jumbo v2, "s"
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    const-string/jumbo v1, "t"
 
-    const-string/jumbo v2, "t"
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    const-string/jumbo v1, "u"
 
-    const-string/jumbo v2, "u"
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x17
+    const-string/jumbo v1, "v"
 
-    const-string/jumbo v2, "v"
+    const/16 v2, 0x17
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x18
+    const-string/jumbo v1, "w"
 
-    const-string/jumbo v2, "w"
+    const/16 v2, 0x18
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x19
+    const-string/jumbo v1, "x"
 
-    const-string/jumbo v2, "x"
+    const/16 v2, 0x19
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1a
+    const-string/jumbo v1, "y"
 
-    const-string/jumbo v2, "y"
+    const/16 v2, 0x1a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1b
+    const-string/jumbo v1, "z"
 
-    const-string/jumbo v2, "z"
+    const/16 v2, 0x1b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1c
+    const-string/jumbo v1, "CTRL_US"
 
-    const-string/jumbo v2, "CTRL_US"
+    const/16 v2, 0x1c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1d
+    const-string/jumbo v1, "CTRL_ML"
 
-    const-string/jumbo v2, "CTRL_ML"
+    const/16 v2, 0x1d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1e
+    const-string/jumbo v1, "CTRL_DL"
 
-    const-string/jumbo v2, "CTRL_DL"
+    const/16 v2, 0x1e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1f
+    const-string/jumbo v1, "CTRL_BS"
 
-    const-string/jumbo v2, "CTRL_BS"
+    const/16 v2, 0x1f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/aztec/decoder/Decoder;->LOWER_TABLE:[Ljava/lang/String;
 
@@ -441,167 +441,167 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "\u0004"
 
-    const-string/jumbo v2, "\u0004"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "\u0005"
 
-    const-string/jumbo v2, "\u0005"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "\u0006"
 
-    const-string/jumbo v2, "\u0006"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "\u0007"
 
-    const-string/jumbo v2, "\u0007"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "\u0008"
 
-    const-string/jumbo v2, "\u0008"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "\t"
 
-    const-string/jumbo v2, "\t"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "\n"
 
-    const-string/jumbo v2, "\n"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "\u000b"
 
-    const-string/jumbo v2, "\u000b"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "\u000c"
 
-    const-string/jumbo v2, "\u000c"
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, "\r"
 
-    const-string/jumbo v2, "\r"
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    const-string/jumbo v1, "\u001b"
 
-    const-string/jumbo v2, "\u001b"
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    const-string/jumbo v1, "\u001c"
 
-    const-string/jumbo v2, "\u001c"
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    const-string/jumbo v1, "\u001d"
 
-    const-string/jumbo v2, "\u001d"
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    const-string/jumbo v1, "\u001e"
 
-    const-string/jumbo v2, "\u001e"
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    const-string/jumbo v1, "\u001f"
 
-    const-string/jumbo v2, "\u001f"
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    const-string/jumbo v1, "@"
 
-    const-string/jumbo v2, "@"
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    const-string/jumbo v1, "\\"
 
-    const-string/jumbo v2, "\\"
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    const-string/jumbo v1, "^"
 
-    const-string/jumbo v2, "^"
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x17
+    const-string/jumbo v1, "_"
 
-    const-string/jumbo v2, "_"
+    const/16 v2, 0x17
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x18
+    const-string/jumbo v1, "`"
 
-    const-string/jumbo v2, "`"
+    const/16 v2, 0x18
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x19
+    const-string/jumbo v1, "|"
 
-    const-string/jumbo v2, "|"
+    const/16 v2, 0x19
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1a
+    const-string/jumbo v1, "~"
 
-    const-string/jumbo v2, "~"
+    const/16 v2, 0x1a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1b
+    const-string/jumbo v1, "\u007f"
 
-    const-string/jumbo v2, "\u007f"
+    const/16 v2, 0x1b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1c
+    const-string/jumbo v1, "CTRL_LL"
 
-    const-string/jumbo v2, "CTRL_LL"
+    const/16 v2, 0x1c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1d
+    const-string/jumbo v1, "CTRL_UL"
 
-    const-string/jumbo v2, "CTRL_UL"
+    const/16 v2, 0x1d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1e
+    const-string/jumbo v1, "CTRL_PL"
 
-    const-string/jumbo v2, "CTRL_PL"
+    const/16 v2, 0x1e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1f
+    const-string/jumbo v1, "CTRL_BS"
 
-    const-string/jumbo v2, "CTRL_BS"
+    const/16 v2, 0x1f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/aztec/decoder/Decoder;->MIXED_TABLE:[Ljava/lang/String;
 
@@ -629,167 +629,167 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, ": "
 
-    const-string/jumbo v2, ": "
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "!"
 
-    const-string/jumbo v2, "!"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "\""
 
-    const-string/jumbo v2, "\""
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "#"
 
-    const-string/jumbo v2, "#"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "$"
 
-    const-string/jumbo v2, "$"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "%"
 
-    const-string/jumbo v2, "%"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "&"
 
-    const-string/jumbo v2, "&"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, "\'"
 
-    const-string/jumbo v2, "\'"
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "("
 
-    const-string/jumbo v2, "("
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, ")"
 
-    const-string/jumbo v2, ")"
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    const-string/jumbo v1, "*"
 
-    const-string/jumbo v2, "*"
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    const-string/jumbo v1, "+"
 
-    const-string/jumbo v2, "+"
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x11
+    const-string/jumbo v1, ","
 
-    const-string/jumbo v2, ","
+    const/16 v2, 0x11
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x12
+    const-string/jumbo v1, "-"
 
-    const-string/jumbo v2, "-"
+    const/16 v2, 0x12
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x13
+    const-string/jumbo v1, "."
 
-    const-string/jumbo v2, "."
+    const/16 v2, 0x13
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x14
+    const-string/jumbo v1, "/"
 
-    const-string/jumbo v2, "/"
+    const/16 v2, 0x14
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x15
+    const-string/jumbo v1, ":"
 
-    const-string/jumbo v2, ":"
+    const/16 v2, 0x15
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x16
+    const-string/jumbo v1, ";"
 
-    const-string/jumbo v2, ";"
+    const/16 v2, 0x16
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x17
+    const-string/jumbo v1, "<"
 
-    const-string/jumbo v2, "<"
+    const/16 v2, 0x17
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x18
+    const-string/jumbo v1, "="
 
-    const-string/jumbo v2, "="
+    const/16 v2, 0x18
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x19
+    const-string/jumbo v1, ">"
 
-    const-string/jumbo v2, ">"
+    const/16 v2, 0x19
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1a
+    const-string/jumbo v1, "?"
 
-    const-string/jumbo v2, "?"
+    const/16 v2, 0x1a
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1b
+    const-string/jumbo v1, "["
 
-    const-string/jumbo v2, "["
+    const/16 v2, 0x1b
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1c
+    const-string/jumbo v1, "]"
 
-    const-string/jumbo v2, "]"
+    const/16 v2, 0x1c
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1d
+    const-string/jumbo v1, "{"
 
-    const-string/jumbo v2, "{"
+    const/16 v2, 0x1d
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1e
+    const-string/jumbo v1, "}"
 
-    const-string/jumbo v2, "}"
+    const/16 v2, 0x1e
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x1f
+    const-string/jumbo v1, "CTRL_UL"
 
-    const-string/jumbo v2, "CTRL_UL"
+    const/16 v2, 0x1f
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/aztec/decoder/Decoder;->PUNCT_TABLE:[Ljava/lang/String;
 
@@ -817,71 +817,71 @@
 
     aput-object v1, v0, v7
 
-    const/4 v1, 0x5
+    const-string/jumbo v1, "3"
 
-    const-string/jumbo v2, "3"
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    const-string/jumbo v1, "4"
 
-    const-string/jumbo v2, "4"
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    const-string/jumbo v1, "5"
 
-    const-string/jumbo v2, "5"
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    const-string/jumbo v1, "6"
 
-    const-string/jumbo v2, "6"
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    const-string/jumbo v1, "7"
 
-    const-string/jumbo v2, "7"
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    const-string/jumbo v1, "8"
 
-    const-string/jumbo v2, "8"
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    const-string/jumbo v1, "9"
 
-    const-string/jumbo v2, "9"
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    const-string/jumbo v1, ","
 
-    const-string/jumbo v2, ","
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    const-string/jumbo v1, "."
 
-    const-string/jumbo v2, "."
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    const-string/jumbo v1, "CTRL_UL"
 
-    const-string/jumbo v2, "CTRL_UL"
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    const-string/jumbo v1, "CTRL_US"
 
-    const-string/jumbo v2, "CTRL_US"
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     sput-object v0, Lcom/google/zxing/aztec/decoder/Decoder;->DIGIT_TABLE:[Ljava/lang/String;
 
@@ -897,329 +897,269 @@
 .end method
 
 .method private correctBits([Z)[Z
-    .locals 21
+    .locals 13
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
         }
     .end annotation
 
-    move-object/from16 v0, p0
+    const/16 v1, 0x8
 
-    iget-object v0, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
+    const/4 v3, 0x1
 
-    move-object/from16 v19, v0
+    const/4 v2, 0x0
 
-    invoke-virtual/range {v19 .. v19}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
+    iget-object v0, p0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    move-result v19
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
 
-    const/16 v20, 0x2
+    move-result v0
 
-    move/from16 v0, v19
+    const/4 v4, 0x2
 
-    move/from16 v1, v20
+    if-le v0, v4, :cond_0
 
-    if-le v0, v1, :cond_0
+    iget-object v0, p0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
 
-    iget-object v0, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
-
-    move-object/from16 v19, v0
-
-    invoke-virtual/range {v19 .. v19}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
-
-    move-result v19
-
-    const/16 v20, 0x8
-
-    move/from16 v0, v19
-
-    move/from16 v1, v20
+    move-result v0
 
     if-le v0, v1, :cond_1
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    iget-object v0, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
 
-    move-object/from16 v19, v0
+    move-result v0
 
-    invoke-virtual/range {v19 .. v19}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
-
-    move-result v19
-
-    const/16 v20, 0x16
-
-    move/from16 v0, v19
-
-    move/from16 v1, v20
+    const/16 v1, 0x16
 
     if-le v0, v1, :cond_2
 
-    const/16 v3, 0xc
+    const/16 v1, 0xc
 
-    sget-object v8, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_12:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     :goto_0
-    move-object/from16 v0, p0
+    iget-object v4, p0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    iget-object v0, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
+    invoke-virtual {v4}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbDatablocks()I
 
-    move-object/from16 v19, v0
+    move-result v8
 
-    invoke-virtual/range {v19 .. v19}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbDatablocks()I
+    array-length v4, p1
 
-    move-result v14
+    div-int v6, v4, v1
 
-    move-object/from16 v0, p1
+    if-lt v6, v8, :cond_3
 
-    array-length v0, v0
+    array-length v4, p1
 
-    move/from16 v19, v0
+    rem-int/2addr v4, v1
 
-    div-int v13, v19, v3
+    sub-int v7, v6, v8
 
-    if-lt v13, v14, :cond_3
+    new-array v9, v6, [I
 
-    move-object/from16 v0, p1
+    move v5, v4
 
-    array-length v0, v0
-
-    move/from16 v19, v0
-
-    rem-int v16, v19, v3
-
-    sub-int v15, v13, v14
-
-    new-array v6, v13, [I
-
-    const/4 v9, 0x0
+    move v4, v2
 
     :goto_1
-    if-lt v9, v13, :cond_4
+    if-lt v4, v6, :cond_4
 
     :try_start_0
-    new-instance v17, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
+    new-instance v4, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
 
-    move-object/from16 v0, v17
+    invoke-direct {v4, v0}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;)V
 
-    invoke-direct {v0, v8}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;)V
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v6, v15}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
+    invoke-virtual {v4, v9, v7}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
     :try_end_0
     .catch Lcom/google/zxing/common/reedsolomon/ReedSolomonException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/16 v19, 0x1
+    shl-int v0, v3, v1
 
-    shl-int v19, v19, v3
+    add-int/lit8 v10, v0, -0x1
 
-    add-int/lit8 v12, v19, -0x1
+    move v4, v2
 
-    const/16 v18, 0x0
-
-    const/4 v9, 0x0
+    move v0, v2
 
     :goto_2
-    if-lt v9, v14, :cond_5
+    if-lt v4, v8, :cond_5
 
-    mul-int v19, v14, v3
+    mul-int v4, v8, v1
 
-    sub-int v19, v19, v18
+    sub-int v0, v4, v0
 
-    move/from16 v0, v19
+    new-array v11, v0, [Z
 
-    new-array v4, v0, [Z
+    move v7, v2
 
-    const/4 v10, 0x0
-
-    const/4 v9, 0x0
+    move v4, v2
 
     :goto_3
-    if-lt v9, v14, :cond_a
+    if-lt v7, v8, :cond_a
 
-    return-object v4
+    return-object v11
 
     :cond_0
-    const/4 v3, 0x6
+    const/4 v1, 0x6
 
-    sget-object v8, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_6:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     goto :goto_0
 
     :cond_1
-    const/16 v3, 0x8
-
-    sget-object v8, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_8:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     goto :goto_0
 
     :cond_2
-    const/16 v3, 0xa
+    const/16 v1, 0xa
 
-    sget-object v8, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_10:Lcom/google/zxing/common/reedsolomon/GenericGF;
+    sget-object v0, Lcom/google/zxing/common/reedsolomon/GenericGF;->AZTEC_DATA_10:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     goto :goto_0
 
     :cond_3
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v19
+    move-result-object v0
 
-    throw v19
+    throw v0
 
     :cond_4
-    move-object/from16 v0, p1
+    invoke-static {p1, v5, v1}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move/from16 v1, v16
+    move-result v10
 
-    invoke-static {v0, v1, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    aput v10, v9, v4
 
-    move-result v19
+    add-int/lit8 v4, v4, 0x1
 
-    aput v19, v6, v9
-
-    add-int/lit8 v9, v9, 0x1
-
-    add-int v16, v16, v3
+    add-int/2addr v5, v1
 
     goto :goto_1
 
     :catch_0
-    move-exception v7
+    move-exception v0
 
-    invoke-static {v7}, Lcom/google/zxing/FormatException;->getFormatInstance(Ljava/lang/Throwable;)Lcom/google/zxing/FormatException;
+    invoke-static {v0}, Lcom/google/zxing/FormatException;->getFormatInstance(Ljava/lang/Throwable;)Lcom/google/zxing/FormatException;
 
-    move-result-object v19
+    move-result-object v0
 
-    throw v19
+    throw v0
 
     :cond_5
-    aget v5, v6, v9
+    aget v5, v9, v4
 
     if-nez v5, :cond_7
 
     :cond_6
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v19
+    move-result-object v0
 
-    throw v19
+    throw v0
 
     :cond_7
-    if-eq v5, v12, :cond_6
+    if-eq v5, v10, :cond_6
 
-    const/16 v19, 0x1
-
-    move/from16 v0, v19
-
-    if-ne v5, v0, :cond_9
+    if-ne v5, v3, :cond_9
 
     :cond_8
-    add-int/lit8 v18, v18, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     :goto_4
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
     :cond_9
-    add-int/lit8 v19, v12, -0x1
+    add-int/lit8 v6, v10, -0x1
 
-    move/from16 v0, v19
-
-    if-eq v5, v0, :cond_8
+    if-eq v5, v6, :cond_8
 
     goto :goto_4
 
     :cond_a
-    aget v5, v6, v9
+    aget v12, v9, v7
 
-    const/16 v19, 0x1
-
-    move/from16 v0, v19
-
-    if-ne v5, v0, :cond_c
+    if-ne v12, v3, :cond_c
 
     :cond_b
-    add-int v19, v10, v3
+    add-int v0, v4, v1
 
-    add-int/lit8 v20, v19, -0x1
+    add-int/lit8 v5, v0, -0x1
 
-    const/16 v19, 0x1
+    if-gt v12, v3, :cond_d
 
-    move/from16 v0, v19
-
-    if-gt v5, v0, :cond_d
-
-    const/16 v19, 0x0
+    move v0, v2
 
     :goto_5
-    move/from16 v0, v20
+    invoke-static {v11, v4, v5, v0}, Ljava/util/Arrays;->fill([ZIIZ)V
 
-    move/from16 v1, v19
+    add-int/lit8 v0, v1, -0x1
 
-    invoke-static {v4, v10, v0, v1}, Ljava/util/Arrays;->fill([ZIIZ)V
-
-    add-int/lit8 v19, v3, -0x1
-
-    add-int v10, v10, v19
+    add-int/2addr v0, v4
 
     :goto_6
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v4, v7, 0x1
+
+    move v7, v4
+
+    move v4, v0
 
     goto :goto_3
 
     :cond_c
-    add-int/lit8 v19, v12, -0x1
+    add-int/lit8 v0, v10, -0x1
 
-    move/from16 v0, v19
+    if-eq v12, v0, :cond_b
 
-    if-eq v5, v0, :cond_b
+    add-int/lit8 v0, v1, -0x1
 
-    add-int/lit8 v2, v3, -0x1
-
-    move v11, v10
+    move v5, v0
 
     :goto_7
-    if-gez v2, :cond_e
+    if-gez v5, :cond_e
 
-    move v10, v11
+    move v0, v4
 
     goto :goto_6
 
     :cond_d
-    const/16 v19, 0x1
+    move v0, v3
 
     goto :goto_5
 
     :cond_e
-    add-int/lit8 v10, v11, 0x1
+    add-int/lit8 v6, v4, 0x1
 
-    const/16 v19, 0x1
+    shl-int v0, v3, v5
 
-    shl-int v19, v19, v2
+    and-int/2addr v0, v12
 
-    and-int v19, v19, v5
+    if-nez v0, :cond_f
 
-    if-nez v19, :cond_f
-
-    const/16 v19, 0x0
+    move v0, v2
 
     :goto_8
-    aput-boolean v19, v4, v11
+    aput-boolean v0, v11, v4
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v0, v5, -0x1
 
-    move v11, v10
+    move v5, v0
+
+    move v4, v6
 
     goto :goto_7
 
     :cond_f
-    const/16 v19, 0x1
+    move v0, v3
 
     goto :goto_8
 .end method
@@ -1293,169 +1233,184 @@
 .end method
 
 .method private static getEncodedData([Z)Ljava/lang/String;
-    .locals 15
+    .locals 11
 
-    const/16 v14, 0xb
+    const/16 v10, 0xb
 
-    const/16 v13, 0x8
+    const/16 v9, 0x8
 
-    const/4 v10, 0x5
+    const/4 v3, 0x5
+
+    const/4 v6, 0x0
 
     array-length v2, p0
 
     sget-object v4, Lcom/google/zxing/aztec/decoder/Decoder$Table;->UPPER:Lcom/google/zxing/aztec/decoder/Decoder$Table;
 
-    sget-object v7, Lcom/google/zxing/aztec/decoder/Decoder$Table;->UPPER:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    sget-object v0, Lcom/google/zxing/aztec/decoder/Decoder$Table;->UPPER:Lcom/google/zxing/aztec/decoder/Decoder$Table;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    const/16 v11, 0x14
+    const/16 v1, 0x14
 
-    invoke-direct {v6, v11}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v8, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v3, 0x0
+    move v1, v6
+
+    move-object v5, v0
+
+    :goto_0
+    if-lt v1, v2, :cond_1
 
     :cond_0
-    :goto_0
-    if-lt v3, v2, :cond_2
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 
     :cond_1
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget-object v0, Lcom/google/zxing/aztec/decoder/Decoder$Table;->BINARY:Lcom/google/zxing/aztec/decoder/Decoder$Table;
 
-    move-result-object v10
+    if-eq v5, v0, :cond_3
 
-    return-object v10
+    sget-object v0, Lcom/google/zxing/aztec/decoder/Decoder$Table;->DIGIT:Lcom/google/zxing/aztec/decoder/Decoder$Table;
 
-    :cond_2
-    sget-object v11, Lcom/google/zxing/aztec/decoder/Decoder$Table;->BINARY:Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    if-eq v5, v0, :cond_7
 
-    if-eq v7, v11, :cond_3
-
-    sget-object v11, Lcom/google/zxing/aztec/decoder/Decoder$Table;->DIGIT:Lcom/google/zxing/aztec/decoder/Decoder$Table;
-
-    if-eq v7, v11, :cond_7
-
-    move v8, v10
+    move v0, v3
 
     :goto_1
-    sub-int v11, v2, v3
+    sub-int v7, v2, v1
 
-    if-lt v11, v8, :cond_1
+    if-lt v7, v0, :cond_0
 
-    invoke-static {p0, v3, v8}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {p0, v1, v0}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move-result v1
+    move-result v7
 
-    add-int/2addr v3, v8
+    add-int/2addr v1, v0
 
-    invoke-static {v7, v1}, Lcom/google/zxing/aztec/decoder/Decoder;->getCharacter(Lcom/google/zxing/aztec/decoder/Decoder$Table;I)Ljava/lang/String;
+    invoke-static {v5, v7}, Lcom/google/zxing/aztec/decoder/Decoder;->getCharacter(Lcom/google/zxing/aztec/decoder/Decoder$Table;I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
-    const-string/jumbo v11, "CTRL_"
+    const-string/jumbo v0, "CTRL_"
 
-    invoke-virtual {v9, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v5, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v11
+    move-result v0
 
-    if-nez v11, :cond_8
+    if-nez v0, :cond_8
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v7, v4
+    move-object v0, v4
+
+    :cond_2
+    :goto_2
+    move-object v5, v0
 
     goto :goto_0
 
     :cond_3
-    sub-int v11, v2, v3
+    sub-int v0, v2, v1
 
-    if-lt v11, v10, :cond_1
+    if-lt v0, v3, :cond_0
 
-    invoke-static {p0, v3, v10}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {p0, v1, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move-result v5
+    move-result v0
 
-    add-int/lit8 v3, v3, 0x5
+    add-int/lit8 v1, v1, 0x5
 
-    if-eqz v5, :cond_4
-
-    :goto_2
-    const/4 v0, 0x0
+    if-eqz v0, :cond_4
 
     :goto_3
-    if-lt v0, v5, :cond_5
+    move v5, v6
 
     :goto_4
-    move-object v7, v4
+    if-lt v5, v0, :cond_5
+
+    move v0, v1
+
+    :goto_5
+    move v1, v0
+
+    move-object v5, v4
 
     goto :goto_0
 
     :cond_4
-    sub-int v11, v2, v3
+    sub-int v0, v2, v1
 
-    if-lt v11, v14, :cond_1
+    if-lt v0, v10, :cond_0
 
-    invoke-static {p0, v3, v14}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+    invoke-static {p0, v1, v10}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
 
-    move-result v11
+    move-result v0
 
-    add-int/lit8 v5, v11, 0x1f
+    add-int/lit8 v0, v0, 0x1f
 
-    add-int/lit8 v3, v3, 0xb
-
-    goto :goto_2
-
-    :cond_5
-    sub-int v11, v2, v3
-
-    if-lt v11, v13, :cond_6
-
-    invoke-static {p0, v3, v13}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
-
-    move-result v1
-
-    int-to-char v11, v1
-
-    invoke-virtual {v6, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v3, v3, 0x8
-
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0xb
 
     goto :goto_3
 
-    :cond_6
-    move v3, v2
+    :cond_5
+    sub-int v7, v2, v1
+
+    if-lt v7, v9, :cond_6
+
+    invoke-static {p0, v1, v9}, Lcom/google/zxing/aztec/decoder/Decoder;->readCode([ZII)I
+
+    move-result v7
+
+    int-to-char v7, v7
+
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v7, v1, 0x8
+
+    add-int/lit8 v1, v5, 0x1
+
+    move v5, v1
+
+    move v1, v7
 
     goto :goto_4
 
+    :cond_6
+    move v0, v2
+
+    goto :goto_5
+
     :cond_7
-    const/4 v8, 0x4
+    const/4 v0, 0x4
 
     goto :goto_1
 
     :cond_8
-    invoke-virtual {v9, v10}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v5, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-result v11
+    move-result v0
 
-    invoke-static {v11}, Lcom/google/zxing/aztec/decoder/Decoder;->getTable(C)Lcom/google/zxing/aztec/decoder/Decoder$Table;
+    invoke-static {v0}, Lcom/google/zxing/aztec/decoder/Decoder;->getTable(C)Lcom/google/zxing/aztec/decoder/Decoder$Table;
 
-    move-result-object v7
+    move-result-object v0
 
-    const/4 v11, 0x6
+    const/4 v7, 0x6
 
-    invoke-virtual {v9, v11}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v5, v7}, Ljava/lang/String;->charAt(I)C
 
-    move-result v11
+    move-result v5
 
-    const/16 v12, 0x4c
+    const/16 v7, 0x4c
 
-    if-ne v11, v12, :cond_0
+    if-ne v5, v7, :cond_2
 
-    move-object v4, v7
+    move-object v4, v0
 
-    goto :goto_0
+    goto :goto_2
 .end method
 
 .method private static getTable(C)Lcom/google/zxing/aztec/decoder/Decoder$Table;
@@ -1533,31 +1488,31 @@
 .method private static readCode([ZII)I
     .locals 3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    move v0, p1
+    move v1, p1
 
     :goto_0
     add-int v2, p1, p2
 
-    if-lt v0, v2, :cond_0
+    if-lt v1, v2, :cond_0
 
-    return v1
+    return v0
 
     :cond_0
-    shl-int/lit8 v1, v1, 0x1
+    shl-int/lit8 v0, v0, 0x1
 
-    aget-boolean v2, p0, v0
+    aget-boolean v2, p0, v1
 
     if-nez v2, :cond_1
 
     :goto_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_1
-    or-int/lit8 v1, v1, 0x1
+    or-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 .end method
@@ -1587,335 +1542,331 @@
 
 # virtual methods
 .method public decode(Lcom/google/zxing/aztec/AztecDetectorResult;)Lcom/google/zxing/common/DecoderResult;
-    .locals 6
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
         }
     .end annotation
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
     iput-object p1, p0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
     invoke-virtual {p1}, Lcom/google/zxing/aztec/AztecDetectorResult;->getBits()Lcom/google/zxing/common/BitMatrix;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, v1}, Lcom/google/zxing/aztec/decoder/Decoder;->extractBits(Lcom/google/zxing/common/BitMatrix;)[Z
+    invoke-virtual {p0, v0}, Lcom/google/zxing/aztec/decoder/Decoder;->extractBits(Lcom/google/zxing/common/BitMatrix;)[Z
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {p0, v2}, Lcom/google/zxing/aztec/decoder/Decoder;->correctBits([Z)[Z
+    invoke-direct {p0, v0}, Lcom/google/zxing/aztec/decoder/Decoder;->correctBits([Z)[Z
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/google/zxing/aztec/decoder/Decoder;->getEncodedData([Z)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    new-instance v4, Lcom/google/zxing/common/DecoderResult;
+    new-instance v1, Lcom/google/zxing/common/DecoderResult;
 
-    invoke-direct {v4, v5, v3, v5, v5}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v0, v2, v2}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
 
-    return-object v4
+    return-object v1
 .end method
 
 .method extractBits(Lcom/google/zxing/common/BitMatrix;)[Z
-    .locals 23
+    .locals 19
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
+    iget-object v3, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    move-object/from16 v20, v0
+    invoke-virtual {v3}, Lcom/google/zxing/aztec/AztecDetectorResult;->isCompact()Z
 
-    invoke-virtual/range {v20 .. v20}, Lcom/google/zxing/aztec/AztecDetectorResult;->isCompact()Z
-
-    move-result v7
+    move-result v9
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
+    iget-object v3, v0, Lcom/google/zxing/aztec/decoder/Decoder;->ddata:Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    move-object/from16 v20, v0
+    invoke-virtual {v3}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
 
-    invoke-virtual/range {v20 .. v20}, Lcom/google/zxing/aztec/AztecDetectorResult;->getNbLayers()I
+    move-result v10
 
-    move-result v12
+    if-nez v9, :cond_1
 
-    if-nez v7, :cond_1
+    mul-int/lit8 v3, v10, 0x4
 
-    mul-int/lit8 v20, v12, 0x4
-
-    add-int/lit8 v4, v20, 0xe
+    add-int/lit8 v3, v3, 0xe
 
     :goto_0
-    new-array v3, v4, [I
+    new-array v11, v3, [I
 
-    invoke-static {v12, v7}, Lcom/google/zxing/aztec/decoder/Decoder;->totalBitsInLayer(IZ)I
+    invoke-static {v10, v9}, Lcom/google/zxing/aztec/decoder/Decoder;->totalBitsInLayer(IZ)I
 
-    move-result v20
+    move-result v4
 
-    move/from16 v0, v20
+    new-array v12, v4, [Z
 
-    new-array v0, v0, [Z
+    if-nez v9, :cond_2
 
-    move-object/from16 v17, v0
+    add-int/lit8 v4, v3, 0x1
 
-    if-nez v7, :cond_2
+    div-int/lit8 v5, v3, 0x2
 
-    add-int/lit8 v20, v4, 0x1
+    add-int/lit8 v5, v5, -0x1
 
-    div-int/lit8 v21, v4, 0x2
+    div-int/lit8 v5, v5, 0xf
 
-    add-int/lit8 v21, v21, -0x1
+    mul-int/lit8 v5, v5, 0x2
 
-    div-int/lit8 v21, v21, 0xf
+    add-int/2addr v4, v5
 
-    mul-int/lit8 v21, v21, 0x2
+    div-int/lit8 v5, v3, 0x2
 
-    add-int v14, v20, v21
+    div-int/lit8 v6, v4, 0x2
 
-    div-int/lit8 v16, v4, 0x2
-
-    div-int/lit8 v5, v14, 0x2
-
-    const/4 v9, 0x0
+    const/4 v4, 0x0
 
     :goto_1
-    move/from16 v0, v16
-
-    if-lt v9, v0, :cond_3
+    if-lt v4, v5, :cond_3
 
     :cond_0
-    const/4 v9, 0x0
+    const/4 v5, 0x0
 
-    const/16 v18, 0x0
+    const/4 v4, 0x0
+
+    move v7, v4
+
+    move v8, v5
 
     :goto_2
-    if-lt v9, v12, :cond_4
+    if-lt v8, v10, :cond_4
 
-    return-object v17
+    return-object v12
 
     :cond_1
-    mul-int/lit8 v20, v12, 0x4
+    mul-int/lit8 v3, v10, 0x4
 
-    add-int/lit8 v4, v20, 0xb
+    add-int/lit8 v3, v3, 0xb
 
     goto :goto_0
 
     :cond_2
-    const/4 v9, 0x0
+    const/4 v4, 0x0
 
     :goto_3
-    array-length v0, v3
+    array-length v5, v11
 
-    move/from16 v20, v0
+    if-ge v4, v5, :cond_0
 
-    move/from16 v0, v20
+    aput v4, v11, v4
 
-    if-ge v9, v0, :cond_0
-
-    aput v9, v3, v9
-
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
     :cond_3
-    div-int/lit8 v20, v9, 0xf
+    div-int/lit8 v7, v4, 0xf
 
-    add-int v15, v9, v20
+    add-int/2addr v7, v4
 
-    sub-int v20, v16, v9
+    sub-int v8, v5, v4
 
-    add-int/lit8 v20, v20, -0x1
+    add-int/lit8 v8, v8, -0x1
 
-    sub-int v21, v5, v15
+    sub-int v13, v6, v7
 
-    add-int/lit8 v21, v21, -0x1
+    add-int/lit8 v13, v13, -0x1
 
-    aput v21, v3, v20
+    aput v13, v11, v8
 
-    add-int v20, v16, v9
+    add-int v8, v5, v4
 
-    add-int v21, v5, v15
+    add-int/2addr v7, v6
 
-    add-int/lit8 v21, v21, 0x1
+    add-int/lit8 v7, v7, 0x1
 
-    aput v21, v3, v20
+    aput v7, v11, v8
 
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
     :cond_4
-    if-nez v7, :cond_5
+    if-nez v9, :cond_5
 
-    sub-int v20, v12, v9
+    sub-int v4, v10, v8
 
-    mul-int/lit8 v20, v20, 0x4
+    mul-int/lit8 v4, v4, 0x4
 
-    add-int/lit8 v19, v20, 0xc
+    add-int/lit8 v4, v4, 0xc
 
     :goto_4
-    mul-int/lit8 v13, v9, 0x2
+    mul-int/lit8 v13, v8, 0x2
 
-    add-int/lit8 v20, v4, -0x1
+    add-int/lit8 v5, v3, -0x1
 
-    sub-int v8, v20, v13
+    sub-int v14, v5, v13
 
-    const/4 v10, 0x0
+    const/4 v5, 0x0
+
+    move v6, v5
 
     :goto_5
-    move/from16 v0, v19
+    if-lt v6, v4, :cond_6
 
-    if-lt v10, v0, :cond_6
+    mul-int/lit8 v4, v4, 0x8
 
-    mul-int/lit8 v20, v19, 0x8
+    add-int/2addr v4, v7
 
-    add-int v18, v18, v20
+    add-int/lit8 v5, v8, 0x1
 
-    add-int/lit8 v9, v9, 0x1
+    move v7, v4
+
+    move v8, v5
 
     goto :goto_2
 
     :cond_5
-    sub-int v20, v12, v9
+    sub-int v4, v10, v8
 
-    mul-int/lit8 v20, v20, 0x4
+    mul-int/lit8 v4, v4, 0x4
 
-    add-int/lit8 v19, v20, 0x9
+    add-int/lit8 v4, v4, 0x9
 
     goto :goto_4
 
     :cond_6
-    mul-int/lit8 v6, v10, 0x2
+    mul-int/lit8 v15, v6, 0x2
 
-    const/4 v11, 0x0
+    const/4 v5, 0x0
 
     :goto_6
-    const/16 v20, 0x2
+    const/16 v16, 0x2
 
-    move/from16 v0, v20
+    move/from16 v0, v16
 
-    if-lt v11, v0, :cond_7
+    if-lt v5, v0, :cond_7
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v5, v6, 0x1
+
+    move v6, v5
 
     goto :goto_5
 
     :cond_7
-    add-int v20, v18, v6
+    add-int v16, v7, v15
 
-    add-int v20, v20, v11
+    add-int v16, v16, v5
 
-    add-int v21, v13, v11
+    add-int v17, v13, v5
 
-    aget v21, v3, v21
+    aget v17, v11, v17
 
-    add-int v22, v13, v10
+    add-int v18, v13, v6
 
-    aget v22, v3, v22
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v21
-
-    move/from16 v2, v22
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
-
-    move-result v21
-
-    aput-boolean v21, v17, v20
-
-    mul-int/lit8 v20, v19, 0x2
-
-    add-int v20, v20, v18
-
-    add-int v20, v20, v6
-
-    add-int v20, v20, v11
-
-    add-int v21, v13, v10
-
-    aget v21, v3, v21
-
-    sub-int v22, v8, v11
-
-    aget v22, v3, v22
+    aget v18, v11, v18
 
     move-object/from16 v0, p1
 
-    move/from16 v1, v21
+    move/from16 v1, v17
 
-    move/from16 v2, v22
+    move/from16 v2, v18
 
     invoke-virtual {v0, v1, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    move-result v21
+    move-result v17
 
-    aput-boolean v21, v17, v20
+    aput-boolean v17, v12, v16
 
-    mul-int/lit8 v20, v19, 0x4
+    mul-int/lit8 v16, v4, 0x2
 
-    add-int v20, v20, v18
+    add-int v16, v16, v7
 
-    add-int v20, v20, v6
+    add-int v16, v16, v15
 
-    add-int v20, v20, v11
+    add-int v16, v16, v5
 
-    sub-int v21, v8, v11
+    add-int v17, v13, v6
 
-    aget v21, v3, v21
+    aget v17, v11, v17
 
-    sub-int v22, v8, v10
+    sub-int v18, v14, v5
 
-    aget v22, v3, v22
+    aget v18, v11, v18
 
     move-object/from16 v0, p1
 
-    move/from16 v1, v21
+    move/from16 v1, v17
 
-    move/from16 v2, v22
+    move/from16 v2, v18
 
     invoke-virtual {v0, v1, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    move-result v21
+    move-result v17
 
-    aput-boolean v21, v17, v20
+    aput-boolean v17, v12, v16
 
-    mul-int/lit8 v20, v19, 0x6
+    mul-int/lit8 v16, v4, 0x4
 
-    add-int v20, v20, v18
+    add-int v16, v16, v7
 
-    add-int v20, v20, v6
+    add-int v16, v16, v15
 
-    add-int v20, v20, v11
+    add-int v16, v16, v5
 
-    sub-int v21, v8, v10
+    sub-int v17, v14, v5
 
-    aget v21, v3, v21
+    aget v17, v11, v17
 
-    add-int v22, v13, v11
+    sub-int v18, v14, v6
 
-    aget v22, v3, v22
+    aget v18, v11, v18
 
     move-object/from16 v0, p1
 
-    move/from16 v1, v21
+    move/from16 v1, v17
 
-    move/from16 v2, v22
+    move/from16 v2, v18
 
     invoke-virtual {v0, v1, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    move-result v21
+    move-result v17
 
-    aput-boolean v21, v17, v20
+    aput-boolean v17, v12, v16
 
-    add-int/lit8 v11, v11, 0x1
+    mul-int/lit8 v16, v4, 0x6
+
+    add-int v16, v16, v7
+
+    add-int v16, v16, v15
+
+    add-int v16, v16, v5
+
+    sub-int v17, v14, v6
+
+    aget v17, v11, v17
+
+    add-int v18, v13, v5
+
+    aget v18, v11, v18
+
+    move-object/from16 v0, p1
+
+    move/from16 v1, v17
+
+    move/from16 v2, v18
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+
+    move-result v17
+
+    aput-boolean v17, v12, v16
+
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_6
 .end method

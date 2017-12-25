@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="abc_action_bar_home_description">မူလနေရာကို သွားရန်</string>
-    <string name="abc_action_bar_home_description_format">%1$s၊ %2$s</string>
-    <string name="abc_action_bar_home_subtitle_description_format">%1$s ၊ %2$s ၊ %3$s</string>
-    <string name="abc_action_bar_up_description">အပေါ်သို့သွားရန်</string>
-    <string name="abc_action_menu_overflow_description">ပိုမိုရွေးချယ်စရာများ</string>
-    <string name="abc_action_mode_done">ပြီးဆုံးပါပြီ</string>
-    <string name="abc_activity_chooser_view_see_all">အားလုံးကို ကြည့်ရန်</string>
-    <string name="abc_activitychooserview_choose_application">အက်ပ်တစ်ခုခုကို ရွေးချယ်ပါ</string>
-    <string name="abc_capital_off">ပိတ်</string>
-    <string name="abc_capital_on">ဖွင့်</string>
-    <string name="abc_search_hint">ရှာဖွေပါ...</string>
-    <string name="abc_searchview_description_clear">ရှာစရာ အချက်အလက်များ ဖယ်ရှားရန်</string>
-    <string name="abc_searchview_description_query">ရှာစရာ အချက်အလက်နေရာ</string>
-    <string name="abc_searchview_description_search">ရှာဖွေရန်</string>
-    <string name="abc_searchview_description_submit">ရှာဖွေစရာ အချက်အလက်ကို ပေးပို့ရန်</string>
-    <string name="abc_searchview_description_voice">အသံဖြင့် ရှာဖွေခြင်း</string>
-    <string name="abc_shareactionprovider_share_with">မျှဝေဖို့ ရွေးပါ</string>
-    <string name="abc_shareactionprovider_share_with_application">%s ကို မျှဝေပါရန်</string>
-    <string name="abc_toolbar_collapse_description">ခေါက်ရန်</string>
     <string name="common_android_wear_notification_needs_update_text">အပလီကေးရှင်း တစ်ခုက အန်ဒရွိုက် ဆောင်စရာ appကို မွမ်းမံပေးရန်ကို တောင်းဆိုနေသည်။</string>
     <string name="common_android_wear_update_text">သင်က အန်ဒရွိုက် ဆောင်စရာ appကို မွမ်းမံ မပေးမချင်း ဒီapp အလုပ်လုပ်မည် မဟုတ်ပါ။</string>
     <string name="common_android_wear_update_title">အန်ဒရွိုက် ဆောင်စရာကို မွမ်းမံရန်</string>
@@ -50,8 +31,6 @@
     <string name="common_signin_button_text">လင်မှတ်ထိုး ဝင်</string>
     <string name="common_signin_button_text_long">Google ဖြင့် လက်မှတ်ထို ဝင်</string>
     <string name="commono_google_play_services_api_unavailable_text">ဒီappသည် လက်ရှိအချိန်မှာ မရှိသေးသည့် Google ပလေး ဝန်ဆောင်မှုများကို လိုအပ်သည်။ ကျေးဇူးပြုပြီး အကူအညီရယူရန် ပြုစုသူကို ဆက်သွယ်ပါ။</string>
-    <string name="search_menu_title">ရှာဖွေပါ</string>
-    <string name="status_bar_notification_info_overflow">၉၉၉+</string>
     <string name="act_name_camcorder">ဗီဒီယိုကင်မရာ</string>
     <string name="act_name_camera">ကင်မရာ</string>
     <string name="action_licenses">အခမဲ့သုံး အရင်းအမြစ်လိုင်စင်များ</string>
@@ -148,7 +127,7 @@
     <string name="cancel">မလုပ်တော့</string>
     <string name="capture_failure">ဖမ်းယူမှုမအောင်မြင်ပါ။ ထပ်မံကြိုးစားပါ</string>
     <string name="checkbox_do_not_show">ထပ်မပြပါနှင့်</string>
-    <string name="cloudsight_terms">ရှာဖွေမှုရလဒ်များကို ပံ့ပိုးရန် သင့်ပုံများကို CloudSight သို့ ပေးပို့ပါမည်။ &lt;br/>&lt;br/> ဆက်လုပ်ခြင်းဖြင့် သင်သည် CloudSight ၏&lt;a href=%1$s>ကိုယ်ရေးလုံခြုံမှု မူဝါဒ&lt;/a> ကို သဘောတူရာ ရောက်ပါသည်။</string>
+    <string name="cloudsight_terms">အရာဝတ္ထုများအားအသိအမှတ်ပြုစနစ်အားအသုံးပြုသည့်အချိန်တိုင်း တွေ့ရှိရလဒ်များပေးရန် ပုံနှင့်နေရာအား တတိယလူထံသို့ ပေးပို့ပါမည်။ (အသုံးပြုနိုင်စေရန်ပြုလုပ်ထားပါက)&lt;br/> &lt;br/>ဆက်လက်လုပ်ဆောင်ခြင်းဖြင့် &lt;a href=%1$s>ပုဂ္ဂိုလ်ရေးရာပေါ်လစီအား&lt;/a>သဘောတူရမည်ဖြစ်သည်။.</string>
     <string name="dailog_panorama_failed">မြင်ကွင်းကျယ် ရိုက်ကူးမှု မအောင်မြင်ပါ။ ပြန်ကြိုးစားပေးပါ။</string>
     <string name="dailog_panorama_not_taken">မြင်ကွင်းကျယ်ဓာတ်ပုံမရိုက်ရသေးပါ။</string>
     <string name="dialog_access_sd_fail">မီဒီယာကို မရိုက်ယူနိုင်ပါ။ SD ကတ်ကို ဝင်သုံး၍မရပါ။</string>
@@ -170,6 +149,7 @@
     <string name="dialog_device_not_supported">စက်က ပံ့ပိုးမပေးပါ</string>
     <string name="dialog_disagree">သဘောမတူ</string>
     <string name="dialog_dismiss">နောက်ထပ် မပြပါနှင့်</string>
+    <string name="dialog_download">ဒေါင်းလုဒ်</string>
     <string name="dialog_external_sd_missing">ဓါတ်ပုံ ရိုက်လို့ မရပါ။ SD ကတ်ကို သုံးလို့မရပါ။ ဖုန်းထဲရှိ သိမ်းဆည်းရာနေရာသို့ ကူးပြောင်းနေသည်။</string>
     <string name="dialog_first_time_set_pure_raw_message">"ဓာတ်ပုံများကို ပညာရှင်အဆင့် တည်းဖြတ်ရန် ဤပုံကြမ်းဖိုင် အမျိုးအစားကို အသုံးပြုထားသည်။
 
@@ -247,6 +227,7 @@
     <string name="help_next">ရှေ့သို့</string>
     <string name="image_360_desc">ဤပုံသည် 360 ဓာတ်ပုံဖြစ်သည်။ Moto 360 တည်းဖြတ်ကိရိယာကိုသုံးပြီး ဤဓာတ်ပုံကို တည်းဖြတ်နိုင်ပါသည်။</string>
     <string name="image_360_name">360 ဓာတ်ပုံ</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">အနက်ကို ဖွင့်ထားသည်</string>
     <string name="indicate_mode_mono">B&amp;W အစစ်</string>
@@ -258,16 +239,19 @@
     <string name="indicate_mode_ultra_wide">အစွန်းကျယ်သောထောင့်</string>
     <string name="indicate_mode_video">ဗီဒီယို</string>
     <string name="indicate_mode_wide_angle">ထောင့်ကျယ်</string>
+    <string name="indicate_mode_wide_angle_selfie">မြင်ကွင်းကျယ် ဆယ်လ်ဖီ</string>
     <string name="internal_storage">စက်အတွင်းသိမ်းဆည်းရန်နေရာ</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုမှုသည် ကမ္ဘာတစ်ဝှမ်း ရေပန်းစားသည့် အထင်ကရအဆောက်အဦများအကြောင်း သိကောင်းစရာကိုဖော်ပြပေးသည်။&lt;br/>&lt;br/>ဤဝန်ဆောင်မှုကိုသုံးရန် ထည့်သွင်းပါ။</string>
-    <string name="landmark_install_over_data">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုသည့် အက်ပ်ဒေါင်းလုဒ်သည် 92 MB ရှိသည်။ မိုဘိုင်းဒေတာဖြင့် ထည့်သွင်းပါက ဒေတာအသုံးပြုခကုန်ကျနိုင်သည်။</string>
-    <string name="landmark_notification_downloading">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုမှုအား ဒေါင်းလုဒ်လုပ်နေသည်။</string>
-    <string name="landmark_notification_install">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုမှုကိုထည့်သွင်းနေပါပြီ။</string>
-    <string name="landmark_notification_install_complete">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုမှုအား ထည့်သွင်းပြီးပါပြီ။</string>
-    <string name="landmark_notification_install_failed">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုမှုကိုထည့်သွင်းမှုမအောင်မြင်ပါ။</string>
+    <string name="landmark_install_message">အထင်ကနေရာများအသိအမှတ်ပြုစနစ်သည်ကမ္ဘာတဝှမ်းရှိထင်ရှားသောနေရာများနှင့်ပတ်သက်သည့် သတင်းအားပေးသည်။&lt;br/>&lt;br/>ဤအင်္ဂါရပ်အားအသုံးပြုနိုင်ရန်အထင်ကနေရာများသိမ်းဆည်းပေးထားသည့် ဒေတာဘေ့စ်အားဒေါင်းလုဒ်ရယူပါ။</string>
+    <string name="landmark_install_over_data">ဒေတာဘေ့စ်ဒေါင်လုဒ်အရွယ်အစား 92 MB ရှိပါသည်။ ၄င်းအား မိုဘိုင်းဒေတာဖြင့် ထည့်သွင်းပါက ဒေတာအသုံးပြုခကုန်ကျနိုင်သည်။</string>
+    <string name="landmark_notification_downloading">အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ်ဒေါင်းလုဒ်လုပ်ခြင်း</string>
+    <string name="landmark_notification_install">အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ်ထည့်သွင်းခြင်း</string>
+    <string name="landmark_notification_install_complete">အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ်ထည့်သွင်းခြင်းပြီးဆုံးပါပြီ။</string>
+    <string name="landmark_notification_install_failed">အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ် ထည့်သွင်းခြင်းမအောင်မြင်ပါ။</string>
     <string name="landmark_notification_install_invalid_url">အထင်ကရအဆောက်အဦဒေတာဘေ့စ်ကိုမရနိုင်သေးပါ။ နောက်ဆုံးကင်မရာဗားရှင်းကို အပ်ဒိတ်လုပ်ပါ။</string>
-    <string name="landmark_notification_install_out_of_space">အထင်ကရအဆောက်အဦကိုအသိအမှတ်ပြုမှုကိုထည့်သွင်းရန် သိုလှောင်ခန်းနေရာမလုံလောက်ပါ။</string>
+    <string name="landmark_notification_install_out_of_space">အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ်ထည့်သွင်းသိမ်းဆည်းရန်နေရာမလုံလောက်ပါ။</string>
+    <string name="landmark_notification_paused">အင်တာနက်ရရှိသည့်အချိန်တွင် အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ် ဒေါင်းလုဒ်လုပ်ခြင်း ဆက်လက်လုပ်ဆောင်မည်။</string>
+    <string name="landmark_notification_queued">အင်တာနက်ရရှိသည့်အချိန်တွင် အထင်ကနေရာများသိမ်းဆည်းထားသည့် ဒေတာဘေ့စ် အား ဒေါင်းလုဒ် လုပ်ခြင်းစတင်မည်။</string>
     <string name="main_setting_amz_barcode">Amazon ဘားကုဒ်စကန်ဖတ်စက်</string>
     <string name="main_setting_amz_privacy">Amazon ကိုယ်ရေးလုံခြုံမှု သတိပေးချက်</string>
     <string name="main_setting_amz_terms">အသုံးပြုမှု စည်းကမ်းချက်များ</string>
@@ -290,6 +274,8 @@
     <string name="main_setting_image_ratio">ပုံအရွယ်အစား (နောက်)</string>
     <string name="main_setting_image_ratio_front">ပုံအရွယ်အစား (ရှေ့)</string>
     <string name="main_setting_landmark_detection">အထင်ကရအဆောက်အဦအား အသိအမှတ်ပြုမှု</string>
+    <string name="main_setting_landmark_version_current">ဒေတာဘေ့စ်အမှတ်စဉ် %s</string>
+    <string name="main_setting_landmark_version_not_installed">ဒေတာဘေ့စ် ထည့်သွင်းထားခြင်းမရှိပါ။</string>
     <string name="main_setting_licenses">အခမဲ့သုံး အရင်းအမြစ်လိုင်စင်များ</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +311,9 @@
     <string name="perm_required_alert_title">ခွင့်ပြုချက် လိုအပ်ပါသည်</string>
     <string name="photos_depth_desc">ဖိုးကပ်စ်ကို ရွေးရန်၊ နောက်ခံကို အစားထိုးရန် (သို့) ဖြူ၊ မည်းသို့ပြောင်းမည့်နေရာကို ရွေးရန် အနက်တည်းဖြတ်ကိရိယာကို သုံးပါ။</string>
     <string name="photos_depth_name">အနက်ကို ဖွင့်ထားသည်</string>
+    <string name="photos_notification_desc">Google Photos တွင် အကန့်အသတ်မဲ့ သိုလှောင်ခန်းကိုရယူလိုက်ပါ</string>
+    <string name="photos_notification_title">Google Photos များသို့ အရန်သိမ်းပါ</string>
+    <string name="qcfa_resolution_description">အလိုက်သင့် အလင်းမှိန်</string>
     <string name="retake">ပြန်ရိုက်ရန်</string>
     <string name="second_10">10စက္ကန့်</string>
     <string name="second_3">3စက္ကန့်</string>
@@ -367,6 +356,7 @@
     <string name="setting_mode_slow_motion">အနှေး လှုပ်ရှားမှု</string>
     <string name="setting_mode_ultra_wide">အစွန်းကျယ်သောထောင့်</string>
     <string name="setting_mode_video">ဗီဒီယို</string>
+    <string name="setting_mode_wide_angle_selfie">မြင်ကွင်းကျယ် ဆယ်လ်ဖီ</string>
     <string name="setting_off">ပိတ်</string>
     <string name="setting_on">ဖွင့်</string>
     <string name="setting_persist">ကိုင်ထားသည်</string>
@@ -383,20 +373,25 @@
     <string name="setting_timer_dialog_title">အချိန်မှတ်စက်</string>
     <string name="setting_torch">ဓါတ်မီး</string>
     <string name="setting_true">မှန်</string>
+    <string name="shortcut_desc_depth">အတိမ်အနက်ညွှန်းပြ ဓာတ်ပုံ</string>
+    <string name="shortcut_desc_selfie">ဆယ်လ်ဖီ</string>
+    <string name="shortcut_desc_video">ဗီဒီယို</string>
     <string name="smartcam_landmark_notification_title">စမတ်ကင်မရာ</string>
+    <string name="smartcam_no_detections">မည်သည့်အရာဝတ္ထု (သို့) အထင်ကရနေရာကိုမှ သိမ်းမထားပါ</string>
     <string name="storage_location_external">SD ကဒ်</string>
     <string name="storage_location_internal">ဖုန်း</string>
     <string name="storage_unavailable">သိမ်းဆည်းရာနေရာကို မရနိုင်ပါ</string>
+    <string name="toast_battery_saver">ယခု ဘက်ထရီချွေတာရေးစနစ်အတွင်း ရောက်ရှိနေသဖြင့် အချို့သောဝန်ဆောင်မှုများအားအသုံးပြု၍မရပါ။</string>
     <string name="toast_geotag_message_1">တည်နေရာသိမ်းနိုင်ရန် တည်နေရာကို သင်က ခွင့်ပြုချက် ပေးရမည်။</string>
     <string name="toast_geotag_message_2">စနစ်တည်နေရာဆက်တင်ကို ဖွင့်ပြီးမှသာ တည်နေရာဆက်တင် သက်ရောက်မှုရှိပါသည်။</string>
     <string name="tooltip_camera_switch_360">မတူညီသော ကင်မရာရွေးချယ်စရာများကို ပြောင်းသုံးကြည့်ပါ။</string>
     <string name="tooltip_capture_360">ဤရှပ်တာခလုတ်ပေါ် တို့ထိခြင်းဖြင့် ၃၆၀° ဓာတ်ပုံ (သို့) ဗီဒီယို ရိုက်ကြည့်ပါ။</string>
-    <string name="tooltip_capture_key_360">mod ၏ ကျောဘက်ပေါ်ရှိ ရှပ်တာခလုတ်ဖြင့်လည်း ရိုက်ကူးကြည့်ပါ။</string>
-    <string name="tooltip_dual_camera_depth_photo">အထူး တည်းဖြတ်အင်္ဂါရပ်များ ရနိုင်စေရန် ဓာတ်ပုံများကို အပိုဒေတာဖြင့် ရိုက်ကူးပါ။</string>
+    <string name="tooltip_capture_key_360">Mod ၏ ကျောဘက်ပေါ်ရှိ ရှပ်တာခလုတ်ဖြင့်လည်း ရိုက်ကူးကြည့်ပါ။</string>
     <string name="tooltip_first_use_zoom_button">ရှုထောင့်အကျယ်သို့ ပြောင်းရန် ဤနေရာကို နှိပ်ပါ။</string>
     <string name="tooltip_gallery_360">ဘယ်ဘက်သို့ ပွတ်ဆွဲခြင်းဖြင့် ၃၆၀° ဓာတ်ပုံ (သို့) ဗီဒီယိုသို့ ရောက်သွားပုံကို ကြည့်ပါ။</string>
     <string name="tooltip_minimap_viewfinder">အောက်ခြေမှပုံကို ဘယ် (သို့) ညာသို့ ဖြေးဖြေးရွှေ့ပါ။</string>
     <string name="tooltip_mode_switch_360">၃၆၀° ကို မုဒ်မျိုးစုံတွင် ရိုက်ကြည့်ပါ။</string>
+    <string name="tooltip_modes_list">ဓာတ်ပုံများ အမိအရရိုက်ကူးရန်အတွက် နည်းလမ်းသစ်များဖွေရှာခြင်း</string>
     <string name="tooltip_smart_camera">အရာဝတ္ထုအကြောင်း ပိုမိုရှာဖွေရန် နှိပ်ပါ။</string>
     <string name="tooltip_smart_camera_disable">ဆက်တင်များထဲတွင် ၎င်းကိုပိတ်ထားနိုင်သည်။</string>
     <string name="tooltip_spherical_viewfinder">မြင်ကွင်းကို ထိန်းချုပ်ရန် ဖြေးဖြေးရွှေ့ (သို့) ချဲ့-ချုံ့ လုပ်ပါ။</string>
@@ -419,4 +414,10 @@
     <string name="zoom_hint_full">ပြည့်</string>
     <string name="zoom_hint_wide">ကျယ်</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
+    <string name="indicate_mode_timelapse">အချိန်ဖြတ်ကျော်</string>
+    <string name="setting_mode_timelapse">အချိန်ဖြတ်ကျော်</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

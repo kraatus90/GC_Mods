@@ -56,21 +56,21 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    iput v2, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->gravity:I
+    iput v1, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->gravity:I
 
-    sget-object v1, Landroid/support/v4/widget/DrawerLayout;->LAYOUT_ATTRS:[I
+    sget-object v0, Landroid/support/v4/widget/DrawerLayout;->LAYOUT_ATTRS:[I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    invoke-virtual {v0, v2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v1, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 

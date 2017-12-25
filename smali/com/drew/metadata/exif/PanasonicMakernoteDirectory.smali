@@ -1197,11 +1197,11 @@
 
     add-int/lit8 v4, v0, 0x4
 
-    const/16 v0, 0x14
+    const-string/jumbo v0, "ASCII"
 
-    const-string/jumbo v1, "ASCII"
+    const/16 v1, 0x14
 
-    invoke-virtual {v8, v4, v0, v1}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v4, v1, v0}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1211,11 +1211,11 @@
 
     add-int/lit8 v0, v4, 0x1c
 
-    const/16 v1, 0x14
+    const-string/jumbo v1, "ASCII"
 
-    const-string/jumbo v2, "ASCII"
+    const/16 v2, 0x14
 
-    invoke-virtual {v8, v0, v1, v2}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v0, v2, v1}, Lcom/drew/lang/BufferReader;->getString(IILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -6,20 +6,31 @@
 # static fields
 .field private static final AUTH_KEY:Ljava/lang/String;
 
-.field private static final CLOUDSIGHT_DISABLED_COUNTRIES:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public static final HEADER_VALUE_AUTHORIZATION:Ljava/lang/String;
 
 .field public static final PRIVACY_URL:Ljava/lang/String; = "https://cloudsight.ai/client_privacy_policy?client=motorola"
+
+.field public static final REASON_BLURRY:Ljava/lang/String; = "blurry"
+
+.field public static final REASON_BRIGHT:Ljava/lang/String; = "bright"
+
+.field public static final REASON_CLOSE:Ljava/lang/String; = "close"
+
+.field public static final REASON_DARK:Ljava/lang/String; = "dark"
+
+.field public static final REASON_OFFENSIVE:Ljava/lang/String; = "offensive"
+
+.field public static final REASON_UNSURE:Ljava/lang/String; = "unsure"
+
+.field public static final STATUS_COMPLETED:Ljava/lang/String; = "completed"
+
+.field public static final STATUS_NOT_COMPLETED:Ljava/lang/String; = "not completed"
+
+.field public static final STATUS_NOT_FOUND:Ljava/lang/String; = "not found"
+
+.field public static final STATUS_SKIPPED:Ljava/lang/String; = "skipped"
+
+.field public static final STATUS_TIMEOUT:Ljava/lang/String; = "timeout"
 
 .field public static TAG:Ljava/lang/String; = null
 
@@ -37,14 +48,6 @@
     move-result-object v0
 
     sput-object v0, Lcom/motorola/camera/detector/CloudSightDetector;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v0, "cn"
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/motorola/camera/detector/CloudSightDetector;->CLOUDSIGHT_DISABLED_COUNTRIES:Ljava/util/List;
 
     new-instance v0, Ljava/lang/String;
 
@@ -93,38 +96,10 @@
     return-void
 .end method
 
-.method private static countrySupportsCloudSight()Z
-    .locals 2
-
-    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/motorola/camera/CountryDetector;->getCountryIso(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/motorola/camera/detector/CloudSightDetector;->CLOUDSIGHT_DISABLED_COUNTRIES:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    return v0
-.end method
-
 .method public static isCloudSightDetectionSupportedOrOverride()Z
     .locals 1
 
-    invoke-static {}, Lcom/motorola/camera/Util;->isInternetConnected()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/motorola/camera/detector/CloudSightDetector;->countrySupportsCloudSight()Z
+    invoke-static {}, Lcom/motorola/camera/NetworkUtil;->isInternetConnected()Z
 
     move-result v0
 

@@ -14,6 +14,7 @@
         Lcom/motorola/camera/detector/ScanningEngine$3;,
         Lcom/motorola/camera/detector/ScanningEngine$4;,
         Lcom/motorola/camera/detector/ScanningEngine$5;,
+        Lcom/motorola/camera/detector/ScanningEngine$6;,
         Lcom/motorola/camera/detector/ScanningEngine$DetectorCallback;,
         Lcom/motorola/camera/detector/ScanningEngine$LandmarkLoadState;
     }
@@ -33,12 +34,6 @@
 .end field
 
 .field public static final DEBUG:Z = false
-
-.field private static final DEGREE_270:I = 0x10e
-
-.field private static final DEGREE_90:I = 0x5a
-
-.field private static final MEMORY_LOAD_THRESHOLD:J = 0xd09dc300L
 
 .field private static final MESSAGE_SCAN_COMPLETED:I = 0x0
 
@@ -62,6 +57,8 @@
 
 .field private mAutoFocusStateListener:Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine$AutoFocusStateListener;
 
+.field private mBarcodeIntialized:Z
+
 .field private mCallbacks:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,6 +73,8 @@
     .end annotation
 .end field
 
+.field private volatile mCloudSightProcessingTimeout:J
+
 .field private mCloudSightScanRequested:Z
 
 .field private mDetectCallback:Lcom/motorola/camera/detector/Detector$OnDetectionCallback;
@@ -86,9 +85,17 @@
 
 .field private mHasLandmarkModelFiles:Z
 
+.field private mLandmarkFrame:Lcom/motorola/camera/detector/FrameData;
+
 .field private mLandmarkLoadState:Lcom/motorola/camera/detector/ScanningEngine$LandmarkLoadState;
 
+.field private mLandmarkScanRequested:Z
+
+.field private mLandmarkScanStartTime:J
+
 .field private mLastResultKey:J
+
+.field mMcfAdapter:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
 
 .field private mOrientation:I
 
@@ -108,7 +115,31 @@
     return-object v0
 .end method
 
-.method static synthetic -get1(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
+.method static synthetic -get1(Lcom/motorola/camera/detector/ScanningEngine;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mBarcodeIntialized:Z
+
+    return v0
+.end method
+
+.method static synthetic -get2(Lcom/motorola/camera/detector/ScanningEngine;)Lcom/motorola/camera/detector/FrameData;
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkFrame:Lcom/motorola/camera/detector/FrameData;
+
+    return-object v0
+.end method
+
+.method static synthetic -get3(Lcom/motorola/camera/detector/ScanningEngine;)J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanStartTime:J
+
+    return-wide v0
+.end method
+
+.method static synthetic -get4(Lcom/motorola/camera/detector/ScanningEngine;)Landroid/os/Handler;
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mUiHandler:Landroid/os/Handler;
@@ -124,7 +155,15 @@
     return p1
 .end method
 
-.method static synthetic -set1(Lcom/motorola/camera/detector/ScanningEngine;J)J
+.method static synthetic -set1(Lcom/motorola/camera/detector/ScanningEngine;Lcom/motorola/camera/detector/FrameData;)Lcom/motorola/camera/detector/FrameData;
+    .locals 0
+
+    iput-object p1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkFrame:Lcom/motorola/camera/detector/FrameData;
+
+    return-object p1
+.end method
+
+.method static synthetic -set2(Lcom/motorola/camera/detector/ScanningEngine;J)J
     .locals 1
 
     iput-wide p1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLastResultKey:J
@@ -203,13 +242,21 @@
 .method private constructor <init>()V
     .locals 3
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/StateChangeListener;-><init>()V
 
-    iput v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mEngineStatus:I
+    iput v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mEngineStatus:I
 
-    iput-boolean v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightScanRequested:Z
+    iput-boolean v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightScanRequested:Z
+
+    iput-boolean v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mBarcodeIntialized:Z
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanStartTime:J
+
+    iput-boolean v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanRequested:Z
 
     sget-object v0, Lcom/motorola/camera/detector/ScanningEngine$LandmarkLoadState;->LANDMARK_UNLOADED:Lcom/motorola/camera/detector/ScanningEngine$LandmarkLoadState;
 
@@ -227,9 +274,9 @@
 
     move-result-object v1
 
-    new-instance v2, Lcom/motorola/camera/detector/-$Lambda$24;
+    new-instance v2, Lcom/motorola/camera/detector/-$Lambda$6ULwidyIK8kaWJYqICjYzUd_4qg$2;
 
-    invoke-direct {v2, p0}, Lcom/motorola/camera/detector/-$Lambda$24;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, p0}, Lcom/motorola/camera/detector/-$Lambda$6ULwidyIK8kaWJYqICjYzUd_4qg$2;-><init>(Ljava/lang/Object;)V
 
     invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
@@ -259,6 +306,12 @@
 
     iput-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mAutoFocusStateListener:Lcom/motorola/camera/fsm/camera/subfsms/AutoFocusStateMachine$AutoFocusStateListener;
 
+    new-instance v0, Lcom/motorola/camera/detector/ScanningEngine$6;
+
+    invoke-direct {v0, p0}, Lcom/motorola/camera/detector/ScanningEngine$6;-><init>(Lcom/motorola/camera/detector/ScanningEngine;)V
+
+    iput-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mMcfAdapter:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
+
     new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
@@ -277,9 +330,7 @@
 .end method
 
 .method private aaTypeSupported(I)Z
-    .locals 3
-
-    const/4 v1, 0x1
+    .locals 2
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->ALWAYS_AWARE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -289,9 +340,9 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getPersistBehavior()Lcom/motorola/camera/settings/PersistBehavior;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
 
     invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
 
@@ -303,12 +354,18 @@
 
     move-result v0
 
+    const/4 v1, 0x1
+
     if-eq v0, v1, :cond_0
 
     if-ne v0, p1, :cond_1
 
     :cond_0
-    move v0, v1
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
 
     :goto_0
     return v0
@@ -389,13 +446,13 @@
 .end method
 
 .method public static getBitmapFromFrame(Lcom/motorola/camera/detector/FrameData;I)Landroid/graphics/Bitmap;
-    .locals 5
+    .locals 3
 
     iget v0, p0, Lcom/motorola/camera/detector/FrameData;->mHeight:I
 
     iget v1, p0, Lcom/motorola/camera/detector/FrameData;->mWidth:I
 
-    if-le v0, v1, :cond_1
+    if-le v0, v1, :cond_0
 
     iget v0, p0, Lcom/motorola/camera/detector/FrameData;->mHeight:I
 
@@ -422,28 +479,17 @@
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
+    move-result v0
+
+    invoke-static {p0}, Lcom/motorola/camera/detector/SmartCamUtil;->getFrameRotateIndex(Lcom/motorola/camera/detector/FrameData;)I
+
     move-result v2
 
-    const/4 v0, 0x0
+    invoke-virtual {p0, v1, v0}, Lcom/motorola/camera/detector/FrameData;->scaleDown(II)Lcom/motorola/camera/detector/FrameData;
 
-    iget v3, p0, Lcom/motorola/camera/detector/FrameData;->mDeviceOrientation:I
+    move-result-object v0
 
-    const/16 v4, 0x10e
-
-    if-eq v3, v4, :cond_0
-
-    iget v0, p0, Lcom/motorola/camera/detector/FrameData;->mDeviceOrientation:I
-
-    add-int/lit8 v0, v0, 0x5a
-
-    div-int/lit8 v0, v0, 0x5a
-
-    :cond_0
-    invoke-virtual {p0, v1, v2}, Lcom/motorola/camera/detector/FrameData;->scaleDown(II)Lcom/motorola/camera/detector/FrameData;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/detector/FrameData;->rotate(I)Lcom/motorola/camera/detector/FrameData;
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/detector/FrameData;->rotate(I)Lcom/motorola/camera/detector/FrameData;
 
     move-result-object v0
 
@@ -453,7 +499,7 @@
 
     return-object v0
 
-    :cond_1
+    :cond_0
     int-to-float v0, p1
 
     iget v1, p0, Lcom/motorola/camera/detector/FrameData;->mWidth:I
@@ -500,12 +546,8 @@
     throw v0
 .end method
 
-.method private handleFailure(I)V
+.method private handleFailure(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
     .locals 2
-
-    const/4 v0, 0x4
-
-    if-ne p1, v0, :cond_0
 
     iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCallbacks:Ljava/util/Map;
 
@@ -536,7 +578,7 @@
 
     check-cast v0, Lcom/motorola/camera/detector/ScanningEngine$DetectorCallback;
 
-    invoke-interface {v0}, Lcom/motorola/camera/detector/ScanningEngine$DetectorCallback;->onScanFailed()V
+    invoke-interface {v0, p1}, Lcom/motorola/camera/detector/ScanningEngine$DetectorCallback;->onScanFailed(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
 
     goto :goto_0
 
@@ -703,6 +745,64 @@
     return-void
 .end method
 
+.method private hasResult(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Z
+    .locals 4
+
+    const/4 v3, 0x0
+
+    const/4 v2, 0x1
+
+    iget v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mSource:I
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_1
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    check-cast v0, Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;
+
+    iget-object v0, v0, Lcom/motorola/camera/detector/results/tidbit/RecognizedObject;->retryMessage:Ljava/lang/String;
+
+    const-string/jumbo v1, "completed"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return v2
+
+    :cond_0
+    return v3
+
+    :cond_1
+    iget v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mSource:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_3
+
+    iget-object v0, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    check-cast v0, Lcom/motorola/camera/detector/results/tidbit/Landmark;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/detector/results/tidbit/Landmark;->foundLandmark()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v3
+
+    :cond_3
+    return v2
+.end method
+
 .method private initDetectors()V
     .locals 4
 
@@ -749,6 +849,10 @@
 
     invoke-static {v2}, Lcom/motorola/camera/device/CameraService;->mcfSetEvents(Lcom/motorola/camera/mcf/McfParameters;)V
 
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mBarcodeIntialized:Z
+
     :goto_0
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
@@ -790,8 +894,6 @@
     or-int/lit8 v0, v0, 0x4
 
     :cond_1
-    if-eqz v0, :cond_2
-
     iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mDetectorsHolder:Lcom/motorola/camera/detector/DetectorHolder;
 
     iget-object v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->listener:Lcom/motorola/camera/device/callables/CallableListener;
@@ -812,6 +914,8 @@
 
     invoke-static {v2}, Lcom/motorola/camera/device/CameraService;->mcfSetEvents(Lcom/motorola/camera/mcf/McfParameters;)V
 
+    iput-boolean v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mBarcodeIntialized:Z
+
     goto :goto_0
 
     :cond_4
@@ -827,6 +931,12 @@
 
 .method private initLandmark()V
     .locals 2
+
+    invoke-static {}, Lcom/motorola/camera/landmarkdownload/LandmarkLocationHelper;->getInstance()Lcom/motorola/camera/landmarkdownload/LandmarkLocationHelper;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/landmarkdownload/LandmarkLocationHelper;->loadLandmarkLocations()V
 
     invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->shouldPreLoadLandmark()Z
 
@@ -880,7 +990,7 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/mcf/McfParameters;-><init>()V
 
-    invoke-static {}, Lcom/motorola/camera/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
+    invoke-static {}, Lcom/motorola/camera/landmarkdownload/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
 
     move-result-object v1
 
@@ -891,7 +1001,7 @@
     goto :goto_0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_detector_ScanningEngine_lambda$2(Lcom/motorola/camera/detector/Detector;)V
+.method static synthetic lambda$-com_motorola_camera_detector_ScanningEngine_25829(Lcom/motorola/camera/detector/Detector;)V
     .locals 0
 
     invoke-virtual {p0}, Lcom/motorola/camera/detector/Detector;->cancelProcessing()V
@@ -899,7 +1009,7 @@
     return-void
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_detector_ScanningEngine_lambda$3(Lcom/motorola/camera/detector/Detector;)V
+.method static synthetic lambda$-com_motorola_camera_detector_ScanningEngine_25936(Lcom/motorola/camera/detector/Detector;)V
     .locals 0
 
     invoke-virtual {p0}, Lcom/motorola/camera/detector/Detector;->cancelProcessing()V
@@ -1113,13 +1223,19 @@
 
     move-result v0
 
-    :goto_0
-    return v0
+    if-eqz v0, :cond_1
 
     :cond_0
-    const/4 v0, 0x1
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
 
-    goto :goto_0
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    :goto_0
+    return v0
 
     :cond_1
     const/4 v0, 0x0
@@ -1128,43 +1244,23 @@
 .end method
 
 .method private shouldPreLoadLandmark()Z
-    .locals 4
+    .locals 2
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
     move-result-object v0
 
-    const-string/jumbo v1, "activity"
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getAppFeatures()Lcom/motorola/camera/AppFeatures;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/ActivityManager;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->LANDMARK_PRELOAD:Lcom/motorola/camera/AppFeatures$Feature;
 
-    new-instance v1, Landroid/app/ActivityManager$MemoryInfo;
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/AppFeatures;->supports(Lcom/motorola/camera/AppFeatures$Feature;)Z
 
-    invoke-direct {v1}, Landroid/app/ActivityManager$MemoryInfo;-><init>()V
+    move-result v0
 
-    invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
-
-    iget-wide v0, v1, Landroid/app/ActivityManager$MemoryInfo;->totalMem:J
-
-    const-wide v2, 0xd09dc300L
-
-    cmp-long v0, v0, v2
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method private shouldScan()Z
@@ -1179,6 +1275,16 @@
     invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->isCurrentBackCamera()Z
 
     move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->ALWAYS_AWARE:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
 
     :goto_0
     return v0
@@ -1196,41 +1302,50 @@
 
     const/4 v2, 0x0
 
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isInstaPrintLaunch()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return v2
+
+    :cond_0
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->isInitialized()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCharacteristics()Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraSensorName()Ljava/lang/String;
 
     move-result-object v0
 
     sget-object v3, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_BARCODE_MODES:Lcom/motorola/camera/mcf/Mcf$CapKey;
 
-    invoke-static {v0, v3}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    invoke-static {v0, v3}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [I
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     aget v0, v0, v2
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v1, :cond_1
 
     move v0, v1
 
     :goto_0
     return v0
 
-    :cond_0
+    :cond_1
     move v0, v2
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     return v2
 .end method
 
@@ -1314,7 +1429,7 @@
     :try_start_0
     new-instance v1, Ljava/io/File;
 
-    invoke-static {}, Lcom/motorola/camera/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
+    invoke-static {}, Lcom/motorola/camera/landmarkdownload/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1324,7 +1439,7 @@
 
     new-instance v2, Ljava/io/File;
 
-    invoke-static {}, Lcom/motorola/camera/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
+    invoke-static {}, Lcom/motorola/camera/landmarkdownload/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1366,6 +1481,14 @@
     goto :goto_0
 .end method
 
+.method public getCloudSightProcessingTimeout()J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightProcessingTimeout:J
+
+    return-wide v0
+.end method
+
 .method public getStatesToListenFor()Ljava/util/Collection;
     .locals 5
     .annotation build Landroid/support/annotation/NonNull;
@@ -1402,6 +1525,16 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->add(Ljava/util/Collection;)Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
+
+    move-result-object v0
+
+    new-array v1, v4, [Lcom/motorola/camera/fsm/camera/StateKey;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CLOSE_CAMERA_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    aput-object v2, v1, v3
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;->add([Lcom/motorola/camera/fsm/camera/StateKey;)Lcom/motorola/camera/fsm/camera/StateKeyCollectionBuilder;
 
     move-result-object v0
 
@@ -1458,7 +1591,7 @@
     return v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_detector_ScanningEngine_lambda$1(Landroid/os/Message;)Z
+.method synthetic lambda$-com_motorola_camera_detector_ScanningEngine_6267(Landroid/os/Message;)Z
     .locals 3
 
     const/4 v1, 0x1
@@ -1494,17 +1627,22 @@
 
     check-cast v0, Lcom/motorola/camera/detector/results/tidbit/Tidbit;
 
+    invoke-direct {p0, v0}, Lcom/motorola/camera/detector/ScanningEngine;->hasResult(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
     invoke-direct {p0, v0}, Lcom/motorola/camera/detector/ScanningEngine;->handleTidbit(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
 
+    :cond_0
     :goto_1
     move v0, v1
 
     goto :goto_0
 
-    :cond_0
-    iget v0, p1, Landroid/os/Message;->arg1:I
-
-    invoke-direct {p0, v0}, Lcom/motorola/camera/detector/ScanningEngine;->handleFailure(I)V
+    :cond_1
+    invoke-direct {p0, v0}, Lcom/motorola/camera/detector/ScanningEngine;->handleFailure(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
 
     goto :goto_1
 
@@ -1522,7 +1660,7 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/mcf/McfParameters;-><init>()V
 
-    invoke-static {}, Lcom/motorola/camera/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
+    invoke-static {}, Lcom/motorola/camera/landmarkdownload/LandmarkModelHelper;->getLandmarkModelPath()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1598,33 +1736,37 @@
 
     const/4 v4, 0x0
 
-    iget-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mDetectorsHolder:Lcom/motorola/camera/detector/DetectorHolder;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/detector/DetectorHolder;->getDetectors()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
     iget v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mEngineStatus:I
 
-    if-ne v0, v3, :cond_1
-
-    iget-boolean v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightScanRequested:Z
-
-    if-nez v0, :cond_0
+    if-ne v0, v3, :cond_0
 
     invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->needNewJob()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-nez v0, :cond_1
+
+    iget-boolean v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightScanRequested:Z
+
+    if-nez v0, :cond_1
 
     :cond_0
+    iget-boolean v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanRequested:Z
+
+    if-eqz v0, :cond_3
+
+    :cond_1
+    sget-boolean v0, Lcom/motorola/camera/Util;->VERBOSE:Z
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lcom/motorola/camera/detector/ScanningEngine;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "Scanning Frame"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
     new-instance v0, Lcom/motorola/camera/detector/FrameData;
 
     invoke-virtual {p1}, Landroid/media/Image;->getWidth()I
@@ -1651,7 +1793,7 @@
 
     iget-boolean v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightScanRequested:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4
 
     iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mDetectorsHolder:Lcom/motorola/camera/detector/DetectorHolder;
 
@@ -1667,10 +1809,22 @@
 
     iput-boolean v4, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightScanRequested:Z
 
-    :cond_1
+    :cond_3
+    :goto_0
     return-void
 
-    :cond_2
+    :cond_4
+    iget-boolean v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanRequested:Z
+
+    if-eqz v1, :cond_5
+
+    iput-object v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkFrame:Lcom/motorola/camera/detector/FrameData;
+
+    iput-boolean v4, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanRequested:Z
+
+    goto :goto_0
+
+    :cond_5
     iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mDetectorsHolder:Lcom/motorola/camera/detector/DetectorHolder;
 
     invoke-virtual {v1}, Lcom/motorola/camera/detector/DetectorHolder;->getDetectors()Ljava/util/List;
@@ -1681,12 +1835,12 @@
 
     move-result-object v2
 
-    :goto_0
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1698,7 +1852,7 @@
 
     invoke-virtual {v1, v0, v3}, Lcom/motorola/camera/detector/Detector;->processFrame(Lcom/motorola/camera/detector/FrameData;Lcom/motorola/camera/detector/Detector$OnDetectionCallback;)V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public removeScanCallback(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
@@ -1711,8 +1865,16 @@
     return-void
 .end method
 
+.method public setCloudSightProcessingTimeout(J)V
+    .locals 1
+
+    iput-wide p1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mCloudSightProcessingTimeout:J
+
+    return-void
+.end method
+
 .method public stateChanged(Lcom/motorola/camera/fsm/ChangeEvent;)V
-    .locals 3
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1724,9 +1886,9 @@
         }
     .end annotation
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SETUP_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1759,30 +1921,59 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     :cond_2
-    invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->shouldScan()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mEngineStatus:I
-
-    if-eqz v0, :cond_3
-
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    invoke-direct {p0, v0, v2}, Lcom/motorola/camera/detector/ScanningEngine;->manageListeners(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MCF:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
 
-    invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->resumeScanning()V
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
+
+    const-wide/16 v2, -0x1
+
+    iput-wide v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLastResultKey:J
+
+    invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->shouldScan()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    iget v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mEngineStatus:I
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    invoke-direct {p0, v1, v4}, Lcom/motorola/camera/detector/ScanningEngine;->manageListeners(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+
+    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->isBgProcessing()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {p0}, Lcom/motorola/camera/detector/ScanningEngine;->stopAllScans()V
+
+    iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mMcfAdapter:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->addStateListener(Ljava/lang/Object;)V
 
     :cond_3
+    :goto_1
     invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->shouldLandmarkScan()Z
 
     move-result v0
@@ -1810,18 +2001,23 @@
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    invoke-direct {p0, v0, v2}, Lcom/motorola/camera/detector/ScanningEngine;->manageLandmarkListener(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+    invoke-direct {p0, v0, v4}, Lcom/motorola/camera/detector/ScanningEngine;->manageLandmarkListener(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
 
     goto :goto_0
 
     :cond_5
+    invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->resumeScanning()V
+
+    goto :goto_1
+
+    :cond_6
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/modes/PhotoStates;->PHOTO_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_7
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1829,16 +2025,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_8
 
-    :cond_6
+    :cond_7
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/detector/ScanningEngine;->manageListeners(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+    sget-object v1, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->MCF:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
+
+    iget-object v1, p0, Lcom/motorola/camera/detector/ScanningEngine;->mMcfAdapter:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->removeStateListener(Ljava/lang/Object;)V
 
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
@@ -1846,19 +2052,36 @@
 
     check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    invoke-direct {p0, v0, v1}, Lcom/motorola/camera/detector/ScanningEngine;->manageLandmarkListener(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+    invoke-direct {p0, v0, v2}, Lcom/motorola/camera/detector/ScanningEngine;->manageListeners(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
+
+    invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    invoke-direct {p0, v0, v2}, Lcom/motorola/camera/detector/ScanningEngine;->manageLandmarkListener(Lcom/motorola/camera/fsm/camera/FsmContext;Z)V
 
     invoke-direct {p0}, Lcom/motorola/camera/detector/ScanningEngine;->pauseScanning()V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_7
+    :cond_8
     invoke-static {p1}, Lcom/motorola/camera/fsm/camera/states/StateHelper;->isEnteringAppClosing(Lcom/motorola/camera/fsm/ChangeEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CLOSE_CAMERA_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    :cond_9
     invoke-virtual {p1}, Lcom/motorola/camera/fsm/ChangeEvent;->getContext()Ljava/lang/Object;
 
     move-result-object v0
@@ -1887,9 +2110,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/detector/-$Lambda$13;
+    new-instance v1, Lcom/motorola/camera/detector/-$Lambda$6ULwidyIK8kaWJYqICjYzUd_4qg;
 
-    invoke-direct {v1}, Lcom/motorola/camera/detector/-$Lambda$13;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/detector/-$Lambda$6ULwidyIK8kaWJYqICjYzUd_4qg;-><init>()V
 
     invoke-interface {v0, v1}, Ljava/util/List;->forEach(Ljava/util/function/Consumer;)V
 
@@ -1903,9 +2126,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/detector/-$Lambda$14;
+    new-instance v1, Lcom/motorola/camera/detector/-$Lambda$6ULwidyIK8kaWJYqICjYzUd_4qg$1;
 
-    invoke-direct {v1}, Lcom/motorola/camera/detector/-$Lambda$14;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/detector/-$Lambda$6ULwidyIK8kaWJYqICjYzUd_4qg$1;-><init>()V
 
     invoke-interface {v0, v1}, Ljava/util/Collection;->forEach(Ljava/util/function/Consumer;)V
 
@@ -1965,19 +2188,62 @@
 .end method
 
 .method public triggerLandmarkScan()V
-    .locals 3
+    .locals 6
 
-    new-instance v0, Lcom/motorola/camera/mcf/McfParameters;
+    new-instance v1, Lcom/motorola/camera/mcf/McfParameters;
 
-    invoke-direct {v0}, Lcom/motorola/camera/mcf/McfParameters;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/mcf/McfParameters;-><init>()V
 
-    sget-object v1, Lcom/motorola/camera/mcf/McfParameters$Modes;->ON:Lcom/motorola/camera/mcf/McfParameters$Modes;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isGeoAvailable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->GEO_LOCATION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/location/Location;
+
+    invoke-virtual {v0}, Landroid/location/Location;->getLatitude()D
+
+    move-result-wide v2
+
+    double-to-float v2, v2
+
+    invoke-virtual {v0}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v4
+
+    double-to-float v0, v4
+
+    invoke-virtual {v1, v2, v0}, Lcom/motorola/camera/mcf/McfParameters;->setLandmarkLocation(FF)V
+
+    :goto_0
+    sget-object v0, Lcom/motorola/camera/mcf/McfParameters$Modes;->ON:Lcom/motorola/camera/mcf/McfParameters$Modes;
 
     iget v2, p0, Lcom/motorola/camera/detector/ScanningEngine;->mOrientation:I
 
-    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/mcf/McfParameters;->setLandmarkMode(Lcom/motorola/camera/mcf/McfParameters$Modes;I)V
+    invoke-virtual {v1, v0, v2}, Lcom/motorola/camera/mcf/McfParameters;->setLandmarkMode(Lcom/motorola/camera/mcf/McfParameters$Modes;I)V
 
-    invoke-static {v0}, Lcom/motorola/camera/device/CameraService;->mcfSetEvents(Lcom/motorola/camera/mcf/McfParameters;)V
+    invoke-static {v1}, Lcom/motorola/camera/device/CameraService;->mcfSetEvents(Lcom/motorola/camera/mcf/McfParameters;)V
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanStartTime:J
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/detector/ScanningEngine;->mLandmarkScanRequested:Z
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -1991,6 +2257,11 @@
 
     :cond_0
     return-void
+
+    :cond_1
+    invoke-virtual {v1}, Lcom/motorola/camera/mcf/McfParameters;->unsetLandmarkLocation()V
+
+    goto :goto_0
 .end method
 
 .method public unloadLandmark()V

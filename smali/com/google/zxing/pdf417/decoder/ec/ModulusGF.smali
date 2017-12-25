@@ -37,68 +37,68 @@
 .end method
 
 .method private constructor <init>(II)V
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->modulus:I
 
-    new-array v2, p1, [I
+    new-array v0, p1, [I
 
-    iput-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
+    iput-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
 
-    new-array v2, p1, [I
+    new-array v0, p1, [I
 
-    iput-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->logTable:[I
+    iput-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->logTable:[I
 
-    const/4 v1, 0x1
+    move v0, v1
 
-    const/4 v0, 0x0
+    move v2, v3
 
     :goto_0
     if-lt v0, p1, :cond_0
 
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
     add-int/lit8 v2, p1, -0x1
 
     if-lt v0, v2, :cond_1
 
-    new-instance v2, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    new-instance v0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
-    new-array v3, v5, [I
+    new-array v2, v3, [I
 
-    aput v4, v3, v4
+    aput v1, v2, v1
 
-    invoke-direct {v2, p0, v3}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
+    invoke-direct {v0, p0, v2}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
-    iput-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    iput-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
-    new-instance v2, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    new-instance v0, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
-    new-array v3, v5, [I
+    new-array v2, v3, [I
 
-    aput v5, v3, v4
+    aput v3, v2, v1
 
-    invoke-direct {v2, p0, v3}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
+    invoke-direct {v0, p0, v2}, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;-><init>(Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;[I)V
 
-    iput-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->one:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    iput-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->one:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
     return-void
 
     :cond_0
-    iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
+    iget-object v4, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
 
-    aput v1, v2, v0
+    aput v2, v4, v0
 
-    mul-int v2, v1, p2
+    mul-int/2addr v2, p2
 
-    rem-int v1, v2, p1
+    rem-int/2addr v2, p1
 
     add-int/lit8 v0, v0, 0x1
 
@@ -107,11 +107,11 @@
     :cond_1
     iget-object v2, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->logTable:[I
 
-    iget-object v3, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
+    iget-object v4, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->expTable:[I
 
-    aget v3, v3, v0
+    aget v4, v4, v0
 
-    aput v0, v2, v3
+    aput v0, v2, v4
 
     add-int/lit8 v0, v0, 0x1
 
@@ -133,19 +133,19 @@
 .end method
 
 .method buildMonomial(II)Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
-    .locals 3
+    .locals 2
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-ltz p1, :cond_0
 
     if-eqz p2, :cond_1
 
-    add-int/lit8 v1, p1, 0x1
+    add-int/lit8 v0, p1, 0x1
 
-    new-array v0, v1, [I
+    new-array v0, v0, [I
 
-    aput p2, v0, v2
+    aput p2, v0, v1
 
     new-instance v1, Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
@@ -154,16 +154,16 @@
     return-object v1
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v1}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v1
+    throw v0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
+    iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/ec/ModulusGF;->zero:Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
 
-    return-object v1
+    return-object v0
 .end method
 
 .method exp(I)I

@@ -21,11 +21,11 @@
 .method public constructor <init>()V
     .locals 2
 
-    const/4 v1, 0x0
-
     const/4 v0, 0x0
 
-    invoke-direct {p0, v1, v0}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>([Ljava/lang/String;Z)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lorg/apache/http/impl/cookie/RFC2965SpecFactory;-><init>([Ljava/lang/String;Z)V
 
     return-void
 .end method

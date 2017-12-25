@@ -44,16 +44,18 @@
 
 
 # virtual methods
-.method onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;I)V
-    .locals 4
-
-    const/4 v3, 0x0
+.method onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
+    .locals 3
 
     const/4 v2, 0x0
 
-    and-int/lit8 v1, p2, 0x2
+    invoke-virtual {p0}, Landroid/support/v4/media/MediaBrowserServiceCompat$2;->getFlags()I
 
-    if-nez v1, :cond_0
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x2
+
+    if-nez v0, :cond_0
 
     new-instance v0, Landroid/os/Bundle;
 
@@ -70,21 +72,23 @@
     return-void
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$2;->val$receiver:Landroid/support/v4/os/ResultReceiver;
+    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$2;->val$receiver:Landroid/support/v4/os/ResultReceiver;
+
+    const/4 v1, 0x0
 
     const/4 v2, -0x1
 
-    invoke-virtual {v1, v2, v3}, Landroid/support/v4/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
+    invoke-virtual {v0, v2, v1}, Landroid/support/v4/os/ResultReceiver;->send(ILandroid/os/Bundle;)V
 
     return-void
 .end method
 
-.method bridge synthetic onResultSent(Ljava/lang/Object;I)V
+.method bridge synthetic onResultSent(Ljava/lang/Object;)V
     .locals 0
 
     check-cast p1, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
 
-    invoke-virtual {p0, p1, p2}, Landroid/support/v4/media/MediaBrowserServiceCompat$2;->onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;I)V
+    invoke-virtual {p0, p1}, Landroid/support/v4/media/MediaBrowserServiceCompat$2;->onResultSent(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
 
     return-void
 .end method

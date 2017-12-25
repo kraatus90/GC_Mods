@@ -72,8 +72,6 @@
 
     new-instance v3, Lcom/google/android/gms/common/internal/zze;
 
-    const/16 v7, 0x31
-
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -83,6 +81,8 @@
     const/4 v8, 0x0
 
     const/4 v11, 0x0
+
+    const/16 v7, 0x31
 
     move-object v9, v2
 

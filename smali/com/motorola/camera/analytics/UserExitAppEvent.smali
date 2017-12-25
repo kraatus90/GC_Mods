@@ -186,7 +186,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const/4 v4, 0x0
 
@@ -194,13 +194,7 @@
 
     const-string/jumbo v1, "EXITTYP"
 
-    sget-object v2, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->MISC:Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;
-
-    invoke-virtual {v2}, Lcom/motorola/camera/analytics/UserExitAppEvent$ExitType;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;)V
 
     sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->EXITTYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
@@ -224,7 +218,7 @@
 
     const-string/jumbo v1, "ERRTYP"
 
-    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->ERROR_TYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
@@ -232,7 +226,7 @@
 
     const-string/jumbo v1, "ERRPRCSS"
 
-    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->CAMERA_PROCESS_NAME:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
@@ -240,7 +234,7 @@
 
     const-string/jumbo v1, "ERRPRCSSVER"
 
-    invoke-direct {v0, v1, v3}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/analytics/Attributes/StringAttribute;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     sput-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->CAMERA_PROCESS_VERSION:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
@@ -331,7 +325,7 @@
 
 
 # virtual methods
-.method addData(Landroid/os/Bundle;Landroid/os/Bundle;Ljava/lang/Object;)V
+.method addData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Ljava/lang/Object;)V
     .locals 8
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->EXITTYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
@@ -340,7 +334,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
 
     move-result-object v0
 
@@ -352,7 +346,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Lcom/motorola/camera/analytics/SynchronizedBundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -375,7 +369,7 @@
 
     const-wide/16 v6, 0x0
 
-    invoke-virtual {p1, v4, v6, v7}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
+    invoke-virtual {p1, v4, v6, v7}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v4
 
@@ -389,27 +383,27 @@
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->CAMERA_PROCESS_NAME:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->CAMERA_PROCESS_VERSION:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->GALLERY_SWIPE_TO_CLOSE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->CAPTURED_PICS:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->CAPTURED_VIDS:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->ERROR_TYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v1, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v1, Lcom/motorola/camera/analytics/UserExitAppEvent;->EXITTYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
@@ -426,31 +420,31 @@
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->HELP_ACCESSED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->OUTSTANDING_QUEUE_SIZE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->PROBE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->SECURE_PHOTO_ROLL:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->SETTINGS_OPENED:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->ZOOM_PINCH:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/UserExitAppEvent;->ZOOM_SCROLL:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+    invoke-interface {v0, p2, p1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 
     return-void
 

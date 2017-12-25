@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field private mCameraStatusListener:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;
+.field private mCameraStatusListener:Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;
 
 .field private mCancelled:Z
 
@@ -131,11 +131,11 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mMcfQueueListener:Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfStateAdapter;
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$37;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$37;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCameraStatusListener:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCameraStatusListener:Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;
 
     return-void
 .end method
@@ -182,13 +182,13 @@
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->removeStateListener(Ljava/lang/Object;)V
 
-    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCameraStatusListener:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;
+    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCameraStatusListener:Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;
 
-    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->removeStateListener(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/device/CameraStateManager;->removeStateListener(Ljava/lang/Object;)V
 
     if-eqz p1, :cond_1
 
@@ -197,11 +197,11 @@
     invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->cancelAllJobs(Z)V
 
     :cond_1
-    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCameraSessionsClosed()Z
+    invoke-virtual {v1}, Lcom/motorola/camera/device/CameraStateManager;->allCameraSessionsClosed()Z
 
     move-result v1
 
@@ -224,11 +224,11 @@
 .method private closeCaptureSessions(Lcom/motorola/camera/fsm/camera/FsmContext;)V
     .locals 6
 
-    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getOpenSessionCameraIds()Ljava/util/List;
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->getOpenSessionCameraIds()Ljava/util/List;
 
     move-result-object v0
 
@@ -242,9 +242,9 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$34;
+    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$1;
 
-    invoke-direct {v2, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$34;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$1;-><init>(Ljava/lang/Object;)V
 
     invoke-static {p1, v2, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseCaptureSessionRunnable;->closeAllSessions(Lcom/motorola/camera/fsm/camera/FsmContext;Lcom/motorola/camera/device/callables/CloseSessionListener;Lcom/motorola/camera/device/callables/CameraListener;)V
 
@@ -325,16 +325,12 @@
     goto :goto_1
 .end method
 
-.method private getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+.method private getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
     .locals 1
 
-    sget-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->CAMERA_STATUS:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
-
-    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/camera/FsmContext;->getSubStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;)Lcom/motorola/camera/fsm/camera/subfsms/SubStateMachine;
+    invoke-static {}, Lcom/motorola/camera/device/CameraService;->getCameraStateManager()Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
-
-    check-cast v0, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
 
     return-object v0
 .end method
@@ -358,11 +354,11 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getOpenSessionCameraIds()Ljava/util/List;
+    invoke-virtual {v2}, Lcom/motorola/camera/device/CameraStateManager;->getOpenSessionCameraIds()Ljava/util/List;
 
     move-result-object v0
 
@@ -388,9 +384,9 @@
 
     check-cast v0, Ljava/lang/String;
 
-    sget-object v5, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;->STARTED:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;
+    sget-object v5, Lcom/motorola/camera/device/CameraStateManager$StreamStatus;->STARTED:Lcom/motorola/camera/device/CameraStateManager$StreamStatus;
 
-    invoke-virtual {v2, v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getPreviewStatus(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$StreamStatus;
+    invoke-virtual {v2, v0}, Lcom/motorola/camera/device/CameraStateManager;->getPreviewStatus(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$StreamStatus;
 
     move-result-object v6
 
@@ -431,9 +427,9 @@
 
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v5, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$35;
+    new-instance v5, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$2;
 
-    invoke-direct {v5, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$35;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v5, v4}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$2;-><init>(Ljava/lang/Object;)V
 
     iget-object v6, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mStopCameraListener:Lcom/motorola/camera/device/callables/CameraListener;
 
@@ -511,7 +507,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseAppRunnable_lambda$2(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseAppRunnable_2244(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;)V
     .locals 3
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
@@ -555,7 +551,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v0
 
@@ -563,9 +559,9 @@
 
     if-nez v1, :cond_1
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;->CLOSE:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    sget-object v1, Lcom/motorola/camera/device/CameraStateManager$Status;->CLOSE:Lcom/motorola/camera/device/CameraStateManager$Status;
 
-    invoke-virtual {v0, p1}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$Status;
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/device/CameraStateManager;->getCameraSession(Ljava/lang/String;)Lcom/motorola/camera/device/CameraStateManager$Status;
 
     move-result-object v0
 
@@ -573,9 +569,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$69;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$4;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$69;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$vIE4Y3ZOQSsZHgWl8-90npuj8Nc$4;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -587,7 +583,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseAppRunnable_lambda$3()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_CloseAppRunnable_2790()V
     .locals 1
 
     const/4 v0, 0x1
@@ -665,7 +661,7 @@
 
     invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/CameraRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
-    invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v2
 
@@ -675,7 +671,7 @@
 
     iput-boolean v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCancelled:Z
 
-    invoke-virtual {v2}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCameraSessionsClosed()Z
+    invoke-virtual {v2}, Lcom/motorola/camera/device/CameraStateManager;->allCameraSessionsClosed()Z
 
     move-result v2
 
@@ -687,13 +683,13 @@
 
     if-nez v2, :cond_2
 
-    invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStatusStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getCameraStateManager(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/device/CameraStateManager;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCameraStatusListener:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;
+    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->mCameraStatusListener:Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;
 
-    invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->addStateListener(Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;)V
+    invoke-virtual {v2, v3}, Lcom/motorola/camera/device/CameraStateManager;->addStateListener(Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;)V
 
     invoke-direct {p0, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/CloseAppRunnable;->getMcfStateMachine(Lcom/motorola/camera/fsm/camera/FsmContext;)Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
 

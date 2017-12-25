@@ -59,26 +59,26 @@
 
     if-ne v2, v3, :cond_0
 
-    iget v2, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->position:I
+    iget v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->position:I
 
-    iget v3, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->position:I
+    iget v1, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->position:I
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v0, v1
 
-    return v2
+    return v0
 
     :cond_0
-    iget-boolean v2, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
+    iget-boolean v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->isDecor:Z
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
     :goto_0
-    return v2
+    return v0
 
     :cond_1
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method

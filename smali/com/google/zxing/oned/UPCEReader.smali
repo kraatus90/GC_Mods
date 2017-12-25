@@ -73,35 +73,35 @@
 
     aput v2, v1, v8
 
-    const/4 v2, 0x5
+    const/16 v2, 0x26
 
-    const/16 v3, 0x26
+    const/4 v3, 0x5
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/4 v2, 0x6
+    const/16 v2, 0x23
 
-    const/16 v3, 0x23
+    const/4 v3, 0x6
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/4 v2, 0x7
+    const/16 v2, 0x2a
 
-    const/16 v3, 0x2a
+    const/4 v3, 0x7
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/16 v2, 0x8
+    const/16 v2, 0x29
 
-    const/16 v3, 0x29
+    const/16 v3, 0x8
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/16 v2, 0x9
+    const/16 v2, 0x25
 
-    const/16 v3, 0x25
+    const/16 v3, 0x9
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
     aput-object v1, v0, v5
 
@@ -129,35 +129,35 @@
 
     aput v2, v1, v8
 
-    const/4 v2, 0x5
+    const/16 v2, 0x19
 
-    const/16 v3, 0x19
+    const/4 v3, 0x5
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/4 v2, 0x6
+    const/16 v2, 0x1c
 
-    const/16 v3, 0x1c
+    const/4 v3, 0x6
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/4 v2, 0x7
+    const/16 v2, 0x15
 
-    const/16 v3, 0x15
+    const/4 v3, 0x7
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/16 v2, 0x8
+    const/16 v2, 0x16
 
-    const/16 v3, 0x16
+    const/16 v3, 0x8
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
-    const/16 v2, 0x9
+    const/16 v2, 0x1a
 
-    const/16 v3, 0x1a
+    const/16 v3, 0x9
 
-    aput v3, v1, v2
+    aput v2, v1, v3
 
     aput-object v1, v0, v4
 
@@ -181,101 +181,101 @@
 .end method
 
 .method public static convertUPCEtoUPCA(Ljava/lang/String;)Ljava/lang/String;
-    .locals 10
+    .locals 8
 
-    const/4 v9, 0x5
+    const/4 v7, 0x5
 
-    const/4 v8, 0x4
+    const/4 v6, 0x4
 
-    const/4 v7, 0x3
+    const/4 v5, 0x3
 
-    const/4 v6, 0x2
+    const/4 v4, 0x2
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    const/4 v3, 0x6
+    const/4 v0, 0x6
 
-    new-array v2, v3, [C
+    new-array v0, v0, [C
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    const/4 v4, 0x7
+    const/4 v2, 0x7
 
-    invoke-virtual {p0, v3, v4, v2, v5}, Ljava/lang/String;->getChars(II[CI)V
+    invoke-virtual {p0, v1, v2, v0, v3}, Ljava/lang/String;->getChars(II[CI)V
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const/16 v3, 0xc
+    const/16 v2, 0xc
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    aget-char v0, v2, v9
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {v1, v2, v5, v9}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v3, "0000"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :goto_0
-    const/4 v3, 0x7
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aget-char v2, v0, v7
 
-    move-result-object v3
+    packed-switch v2, :pswitch_data_0
 
-    return-object v3
+    invoke-virtual {v1, v0, v3, v7}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    :pswitch_0
-    invoke-virtual {v1, v2, v5, v6}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+    const-string/jumbo v0, "0000"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :goto_0
+    const/4 v0, 0x7
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "0000"
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1, v2, v6, v7}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+    return-object v0
+
+    :pswitch_0
+    invoke-virtual {v1, v0, v3, v4}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v2, "0000"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0, v4, v5}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :pswitch_1
-    invoke-virtual {v1, v2, v5, v7}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0, v3, v5}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "00000"
+    const-string/jumbo v2, "00000"
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2, v7, v6}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0, v5, v4}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :pswitch_2
-    invoke-virtual {v1, v2, v5, v8}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0, v3, v6}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "00000"
+    const-string/jumbo v2, "00000"
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aget-char v3, v2, v8
+    aget-char v0, v0, v6
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
@@ -301,56 +301,58 @@
 
     const/4 v1, 0x0
 
-    :goto_0
-    const/4 v2, 0x1
+    move v2, v1
 
-    if-le v1, v2, :cond_0
+    :goto_0
+    const/4 v0, 0x1
+
+    if-le v2, v0, :cond_0
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 
     :cond_0
-    const/4 v0, 0x0
+    move v0, v1
 
     :goto_1
-    const/16 v2, 0xa
+    const/16 v3, 0xa
 
-    if-lt v0, v2, :cond_1
+    if-lt v0, v3, :cond_1
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    sget-object v2, Lcom/google/zxing/oned/UPCEReader;->NUMSYS_AND_CHECK_DIGIT_PATTERNS:[[I
+    sget-object v3, Lcom/google/zxing/oned/UPCEReader;->NUMSYS_AND_CHECK_DIGIT_PATTERNS:[[I
 
-    aget-object v2, v2, v1
+    aget-object v3, v3, v2
 
-    aget v2, v2, v0
+    aget v3, v3, v0
 
-    if-eq p1, v2, :cond_2
+    if-eq p1, v3, :cond_2
 
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_2
-    const/4 v2, 0x0
-
-    add-int/lit8 v3, v1, 0x30
-
-    int-to-char v3, v3
-
-    invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v2, v0, 0x30
+    add-int/lit8 v2, v2, 0x30
 
     int-to-char v2, v2
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x30
+
+    int-to-char v0, v0
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     return-void
 .end method
@@ -405,90 +407,96 @@
 
     const/4 v10, 0x1
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lcom/google/zxing/oned/UPCEReader;->decodeMiddleCounters:[I
+    iget-object v5, p0, Lcom/google/zxing/oned/UPCEReader;->decodeMiddleCounters:[I
 
-    aput v8, v2, v8
+    aput v2, v5, v2
 
-    aput v8, v2, v10
+    aput v2, v5, v10
 
-    const/4 v7, 0x2
+    const/4 v0, 0x2
 
-    aput v8, v2, v7
+    aput v2, v5, v0
 
-    const/4 v7, 0x3
+    const/4 v0, 0x3
 
-    aput v8, v2, v7
+    aput v2, v5, v0
 
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    move-result v3
+    move-result v6
 
-    aget v5, p2, v10
+    aget v1, p2, v10
 
-    const/4 v4, 0x0
+    move v4, v2
 
-    const/4 v6, 0x0
+    move v0, v2
 
     :goto_0
-    const/4 v7, 0x6
+    const/4 v3, 0x6
 
-    if-lt v6, v7, :cond_1
+    if-lt v4, v3, :cond_1
 
     :cond_0
-    invoke-static {p3, v4}, Lcom/google/zxing/oned/UPCEReader;->determineNumSysAndCheckDigit(Ljava/lang/StringBuilder;I)V
+    invoke-static {p3, v0}, Lcom/google/zxing/oned/UPCEReader;->determineNumSysAndCheckDigit(Ljava/lang/StringBuilder;I)V
 
-    return v5
+    return v1
 
     :cond_1
-    if-ge v5, v3, :cond_0
+    if-ge v1, v6, :cond_0
 
-    sget-object v7, Lcom/google/zxing/oned/UPCEReader;->L_AND_G_PATTERNS:[[I
+    sget-object v3, Lcom/google/zxing/oned/UPCEReader;->L_AND_G_PATTERNS:[[I
 
-    invoke-static {p1, v2, v5, v7}, Lcom/google/zxing/oned/UPCEReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
+    invoke-static {p1, v5, v1, v3}, Lcom/google/zxing/oned/UPCEReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
 
-    move-result v0
+    move-result v7
 
-    rem-int/lit8 v7, v0, 0xa
+    rem-int/lit8 v3, v7, 0xa
 
-    add-int/lit8 v7, v7, 0x30
+    add-int/lit8 v3, v3, 0x30
 
-    int-to-char v7, v7
+    int-to-char v3, v3
 
-    invoke-virtual {p3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    array-length v9, v2
+    array-length v8, v5
 
-    move v7, v8
+    move v3, v1
+
+    move v1, v2
 
     :goto_1
-    if-lt v7, v9, :cond_2
+    if-lt v1, v8, :cond_2
 
-    const/16 v7, 0xa
+    const/16 v1, 0xa
 
-    if-ge v0, v7, :cond_3
+    if-ge v7, v1, :cond_3
 
     :goto_2
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v4, 0x1
+
+    move v4, v1
+
+    move v1, v3
 
     goto :goto_0
 
     :cond_2
-    aget v1, v2, v7
+    aget v9, v5, v1
 
-    add-int/2addr v5, v1
+    add-int/2addr v3, v9
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
     :cond_3
-    rsub-int/lit8 v7, v6, 0x5
+    rsub-int/lit8 v1, v4, 0x5
 
-    shl-int v7, v10, v7
+    shl-int v1, v10, v1
 
-    or-int/2addr v4, v7
+    or-int/2addr v0, v1
 
     goto :goto_2
 .end method

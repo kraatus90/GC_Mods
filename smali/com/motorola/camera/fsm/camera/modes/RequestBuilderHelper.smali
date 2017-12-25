@@ -1,4 +1,4 @@
-.class Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;
+.class public Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper;
 .super Ljava/lang/Object;
 .source "RequestBuilderHelper.java"
 
@@ -34,7 +34,7 @@
     return-void
 .end method
 
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -138,7 +138,7 @@
 
     const/4 v6, 0x1
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->AE_FPS_RANGE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -152,15 +152,15 @@
 
     check-cast v0, Landroid/util/Range;
 
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCharacteristics()Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraSensorName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCamera()Z
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_6
 
     const/4 v1, 0x2
 
@@ -168,7 +168,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_6
 
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->DUAL_RT_DEPTH:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -186,29 +186,60 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_b
 
     sget-object v1, Lcom/motorola/camera/mcf/Mcf;->REALTIME_BOKEH_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapKey;
 
-    invoke-static {v4, v1}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    invoke-static {v5, v1}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, [I
 
-    if-eqz v1, :cond_5
+    sget-object v2, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_DEPTH:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v2}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    new-array v1, v6, [I
+
+    sget-object v2, Lcom/motorola/camera/JsonConfig$PreviewLimiter;->PREVIEW_RATE_DEPTH_LIMIT:Lcom/motorola/camera/JsonConfig$PreviewLimiter;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-static {v2, v3}, Lcom/motorola/camera/JsonConfig;->getPreviewFps(Lcom/motorola/camera/JsonConfig$PreviewLimiter;I)I
+
+    move-result v2
+
+    aput v2, v1, v4
+
+    :cond_0
+    if-eqz v1, :cond_7
 
     array-length v2, v1
 
-    if-ne v2, v6, :cond_5
+    if-ne v2, v6, :cond_7
 
-    aget v1, v1, v5
+    aget v1, v1, v4
 
     invoke-static {v1}, Lcom/motorola/camera/settings/SettingsManager;->getLimitedFpsRangeForTarget(I)Landroid/util/Range;
 
     move-result-object v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
 
     invoke-virtual {v3}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
 
@@ -218,7 +249,7 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_6
+    if-ne v1, v2, :cond_8
 
     invoke-virtual {v3}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
@@ -230,7 +261,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_6
+    if-lez v1, :cond_8
 
     new-instance v2, Landroid/util/Range;
 
@@ -256,11 +287,11 @@
 
     invoke-direct {v2, v1, v3}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
     move-object v0, v2
 
-    :cond_0
+    :cond_1
     move-object v1, v0
 
     :goto_0
@@ -270,33 +301,33 @@
 
     const/16 v2, 0xc
 
-    if-ne v0, v2, :cond_1
+    if-ne v0, v2, :cond_2
 
     sget-object v0, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_SELECTIVE_COLOR_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapKey;
 
-    invoke-static {v4, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    invoke-static {v5, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [I
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     array-length v2, v0
 
-    if-ne v2, v6, :cond_1
+    if-ne v2, v6, :cond_2
 
-    aget v0, v0, v5
+    aget v0, v0, v4
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getLimitedFpsRangeForTarget(I)Landroid/util/Range;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     move-object v1, v0
 
-    :cond_1
+    :cond_2
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FACE_BEAUTY:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
@@ -313,90 +344,196 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->isInitialized()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     sget-object v0, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_BEAUTIFICATION_LIMIT_FPS_NEED:Lcom/motorola/camera/mcf/Mcf$CapKey;
 
-    invoke-static {v4, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    invoke-static {v5, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     array-length v2, v0
 
-    if-ne v2, v6, :cond_2
+    if-ne v2, v6, :cond_3
 
-    aget v0, v0, v5
+    aget v0, v0, v4
 
-    if-ne v0, v6, :cond_2
+    if-ne v0, v6, :cond_3
 
     sget-object v0, Lcom/motorola/camera/mcf/Mcf;->AVAILABLE_BEAUTIFICATION_MAX_FPS:Lcom/motorola/camera/mcf/Mcf$CapKey;
 
-    invoke-static {v4, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Landroid/hardware/camera2/CameraCharacteristics;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
+    invoke-static {v5, v0}, Lcom/motorola/camera/mcf/Mcf;->getCapabilities(Ljava/lang/String;Lcom/motorola/camera/mcf/Mcf$CapKey;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [I
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     array-length v2, v0
 
-    if-ne v2, v6, :cond_2
+    if-ne v2, v6, :cond_3
 
-    aget v0, v0, v5
+    aget v0, v0, v4
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getLimitedFpsRangeForTarget(I)Landroid/util/Range;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     move-object v1, v0
 
-    :cond_2
-    if-eqz v1, :cond_3
+    :cond_3
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isModCamera()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_LVL_1:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    sget-object v0, Lcom/motorola/camera/JsonConfig$PreviewLimiter;->PREVIEW_RATE_LIMIT_LVL_1:Lcom/motorola/camera/JsonConfig$PreviewLimiter;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-static {v0, v2}, Lcom/motorola/camera/JsonConfig;->getPreviewFps(Lcom/motorola/camera/JsonConfig$PreviewLimiter;I)I
+
+    move-result v2
+
+    invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-le v0, v2, :cond_a
+
+    move v0, v2
+
+    :goto_1
+    if-eqz v0, :cond_4
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->getLimitedFpsRangeForTarget(I)Landroid/util/Range;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4
+
+    move-object v1, v0
+
+    :cond_4
+    if-eqz v1, :cond_5
 
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_TARGET_FPS_RANGE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p2, v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_3
+    :cond_5
     return-void
 
-    :cond_4
-    move-object v1, v0
-
-    goto :goto_0
-
-    :cond_5
-    move-object v1, v0
-
-    goto :goto_0
-
     :cond_6
-    if-eqz v3, :cond_7
+    move-object v1, v0
 
-    move-object v1, v3
-
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_7
     move-object v1, v0
 
-    goto :goto_0
+    goto/16 :goto_0
+
+    :cond_8
+    if-eqz v3, :cond_b
+
+    move-object v1, v3
+
+    goto/16 :goto_0
+
+    :cond_9
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->PREVIEW_RATE_LVL_2:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    sget-object v0, Lcom/motorola/camera/JsonConfig$PreviewLimiter;->PREVIEW_RATE_LIMIT_LVL_2:Lcom/motorola/camera/JsonConfig$PreviewLimiter;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-static {v0, v2}, Lcom/motorola/camera/JsonConfig;->getPreviewFps(Lcom/motorola/camera/JsonConfig$PreviewLimiter;I)I
+
+    move-result v2
+
+    invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-le v0, v2, :cond_a
+
+    move v0, v2
+
+    goto :goto_1
+
+    :cond_a
+    move v0, v4
+
+    goto :goto_1
+
+    :cond_b
+    move-object v1, v0
+
+    goto/16 :goto_0
 .end method
 
-.method static setCdsMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+.method static setCdsMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
     .locals 2
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CDS_MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
@@ -415,18 +552,18 @@
 
     move-result v0
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->CDS_MODE_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->CDS_MODE_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    invoke-static {p2, v1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2, p3, v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method static setEdgeMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+.method public static setEdgeMode(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
     .locals 4
 
     const/4 v1, 0x1
@@ -745,6 +882,16 @@
 
     if-eqz v0, :cond_0
 
+    sget-object v0, Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;->FACE_DETECTION:Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;
+
+    invoke-static {v0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isFeatureLimited(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureType;)Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    if-eqz v0, :cond_0
+
     if-eqz v1, :cond_0
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;->FACE_DETECT:Lcom/motorola/camera/fsm/camera/FsmContext$SubStateMachineType;
@@ -814,18 +961,18 @@
     return-void
 .end method
 
-.method static setIsoExpAuto(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+.method static setIsoExpAuto(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
     .locals 2
 
     const/4 v1, 0x0
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_ISO_PRI_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_ISO_PRI_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
-    invoke-static {p2, v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2, p3, v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_EXP_PRI_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_EXP_PRI_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
-    invoke-static {p2, v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2, p3, v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -981,7 +1128,7 @@
     return-void
 .end method
 
-.method static setModParams(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+.method static setModParams(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
     .locals 2
 
     invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isModCamera()Z
@@ -994,15 +1141,15 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->MODS_CAMERA_REQUEST_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Lcom/motorola/camera/settings/CustomKeyHelper;->MODS_CAMERA_REQUEST_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
-    invoke-static {p2, v1, v0}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2, p3, v0}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     :cond_0
     return-void
 .end method
 
-.method static setNoiseReduction(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+.method public static setNoiseReduction(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
     .locals 4
 
     const/4 v1, 0x1
@@ -1102,7 +1249,7 @@
     return-void
 .end method
 
-.method static setStillFlip(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
+.method static setStillFlip(Lcom/motorola/camera/fsm/camera/modes/RequestBuilderHelper$ModeContext;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/ShotType;)V
     .locals 2
 
     const/4 v1, 0x0
@@ -1125,7 +1272,7 @@
 
     if-nez v0, :cond_1
 
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     if-eqz v0, :cond_1
 
@@ -1160,7 +1307,7 @@
     if-ne v1, v0, :cond_2
 
     :cond_0
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     const/4 v1, 0x2
 
@@ -1168,14 +1315,14 @@
 
     move-result-object v1
 
-    invoke-static {p2, v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2, p3, v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     :cond_1
     :goto_0
     return-void
 
     :cond_2
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     const/4 v1, 0x1
 
@@ -1183,18 +1330,18 @@
 
     move-result-object v1
 
-    invoke-static {p2, v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2, p3, v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_3
-    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v0, Lcom/motorola/camera/settings/CustomKeyHelper;->CONTROL_STILL_FLIP_KEY:Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    invoke-static {p2, v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->safeSet(Landroid/hardware/camera2/CaptureRequest$Builder;Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p2, p3, v1}, Lcom/motorola/camera/settings/CustomKeyHelper$CaptureRequestKey;->setValue(Ljava/lang/String;Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

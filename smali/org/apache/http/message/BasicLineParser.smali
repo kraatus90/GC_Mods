@@ -115,13 +115,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 
@@ -154,13 +154,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 
@@ -193,13 +193,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 

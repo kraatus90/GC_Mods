@@ -55,6 +55,17 @@
 
 .field private mCaptureTone:Landroid/media/MediaActionSound;
 
+.field private mImageIdArray:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method static synthetic -get0(Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;)I
@@ -85,6 +96,14 @@
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->mCaptureTone:Landroid/media/MediaActionSound;
+
+    return-object v0
+.end method
+
+.method static synthetic -get4(Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;)Ljava/util/ArrayList;
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->mImageIdArray:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -253,6 +272,12 @@
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->CAPTURE_STOP_SOUND:I
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/WideSelfieShotStates;->mImageIdArray:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -694,7 +719,7 @@
 
     move-result-object v2
 
-    sget-object v3, Lcom/motorola/camera/fsm/camera/states/Main;->EXIT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v3, Lcom/motorola/camera/fsm/camera/states/Main;->CLOSE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {v2, v3}, Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;->to(Lcom/motorola/camera/fsm/camera/StateKey;)Lcom/motorola/camera/fsm/camera/CameraTransition$Builder;
 

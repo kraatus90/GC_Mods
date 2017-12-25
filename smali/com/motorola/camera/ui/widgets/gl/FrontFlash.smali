@@ -533,7 +533,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/FrontFlash;->mTexture:Lcom/motorola/camera/ui/widgets/gl/textures/PaddedResourceTexture;
 
-    const/16 v1, 0xcb
+    const/16 v1, 0xcc
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/PaddedResourceTexture;->setResource(I)V
 

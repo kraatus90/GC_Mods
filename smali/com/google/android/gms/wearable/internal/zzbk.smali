@@ -232,21 +232,21 @@
     const/4 v0, 0x1
 
     :goto_1
-    const-string/jumbo v1, "startOffset is negative: %s"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v1, v3
+
+    const-string/jumbo v2, "startOffset is negative: %s"
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     const-wide/16 v0, -0x1
 
@@ -262,21 +262,21 @@
     const/4 v0, 0x1
 
     :goto_3
-    const-string/jumbo v1, "invalid length: %s"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const/4 v3, 0x0
+    new-array v1, v1, [Ljava/lang/Object;
 
     invoke-static/range {p6 .. p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v4
+    move-result-object v2
 
-    aput-object v4, v2, v3
+    const/4 v3, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v1, v3
+
+    const-string/jumbo v2, "invalid length: %s"
+
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/zzv;->zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     new-instance v0, Ljava/util/concurrent/FutureTask;
 
@@ -324,7 +324,7 @@
 .end method
 
 .method private zzb(Lcom/google/android/gms/common/api/zza$zzb;Ljava/lang/String;Landroid/net/Uri;Z)Ljava/util/concurrent/FutureTask;
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -341,8 +341,6 @@
             ">;"
         }
     .end annotation
-
-    const/4 v7, 0x0
 
     invoke-static {p1}, Lcom/google/android/gms/common/internal/zzv;->zzr(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -366,7 +364,9 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/wearable/internal/zzbk$2;-><init>(Lcom/google/android/gms/wearable/internal/zzbk;Landroid/net/Uri;Lcom/google/android/gms/common/api/zza$zzb;ZLjava/lang/String;)V
 
-    invoke-direct {v6, v0, v7}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v6, v0, v1}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
 
     return-object v6
 .end method
@@ -519,27 +519,27 @@
     return-void
 
     :cond_0
-    const-string/jumbo v0, "WearableClient"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "onPostInitHandler: statusCode "
 
-    const-string/jumbo v2, "onPostInitHandler: statusCode "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "WearableClient"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
@@ -1004,7 +1004,7 @@
 .end method
 
 .method public zza(Lcom/google/android/gms/common/api/zza$zzb;Lcom/google/android/gms/wearable/PutDataRequest;)V
-    .locals 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1023,9 +1023,9 @@
         }
     .end annotation
 
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     invoke-virtual {p2}, Lcom/google/android/gms/wearable/PutDataRequest;->getAssets()Ljava/util/Map;
 
@@ -1215,7 +1215,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    aget-object v6, v5, v9
+    aget-object v6, v5, v8
 
     invoke-static {v6}, Lcom/google/android/gms/wearable/Asset;->createFromFd(Landroid/os/ParcelFileDescriptor;)Lcom/google/android/gms/wearable/Asset;
 
@@ -1223,7 +1223,7 @@
 
     invoke-virtual {v2, v0, v6}, Lcom/google/android/gms/wearable/PutDataRequest;->putAsset(Ljava/lang/String;Lcom/google/android/gms/wearable/Asset;)Lcom/google/android/gms/wearable/PutDataRequest;
 
-    aget-object v0, v5, v10
+    aget-object v0, v5, v9
 
     invoke-virtual {v1}, Lcom/google/android/gms/wearable/Asset;->getData()[B
 
@@ -1286,51 +1286,51 @@
     throw v1
 
     :cond_4
-    const-string/jumbo v6, "WearableClient"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v7, "processAssets: replacing data with FD in asset: "
 
-    const-string/jumbo v8, "processAssets: replacing data with FD in asset: "
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    const-string/jumbo v7, " read:"
 
-    const-string/jumbo v8, " read:"
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    aget-object v7, v5, v8
 
-    aget-object v8, v5, v9
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    const-string/jumbo v7, " write:"
 
-    const-string/jumbo v8, " write:"
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    aget-object v7, v5, v9
 
-    aget-object v8, v5, v10
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    move-result-object v7
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v6
 
-    move-result-object v7
+    const-string/jumbo v7, "WearableClient"
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v7, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_1
 .end method

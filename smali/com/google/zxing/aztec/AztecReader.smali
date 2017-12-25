@@ -36,7 +36,7 @@
 .end method
 
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
-    .locals 17
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -56,178 +56,208 @@
         }
     .end annotation
 
-    const/4 v9, 0x0
+    const/4 v3, 0x0
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
-    new-instance v2, Lcom/google/zxing/aztec/detector/Detector;
+    new-instance v5, Lcom/google/zxing/aztec/detector/Detector;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
+    invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
 
-    move-result-object v14
+    move-result-object v0
 
-    invoke-direct {v2, v14}, Lcom/google/zxing/aztec/detector/Detector;-><init>(Lcom/google/zxing/common/BitMatrix;)V
+    invoke-direct {v5, v0}, Lcom/google/zxing/aztec/detector/Detector;-><init>(Lcom/google/zxing/common/BitMatrix;)V
 
-    const/4 v11, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v14, 0x0
+    const/4 v0, 0x0
 
     :try_start_0
-    invoke-virtual {v2, v14}, Lcom/google/zxing/aztec/detector/Detector;->detect(Z)Lcom/google/zxing/aztec/AztecDetectorResult;
+    invoke-virtual {v5, v0}, Lcom/google/zxing/aztec/detector/Detector;->detect(Z)Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Lcom/google/zxing/aztec/AztecDetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
-
-    move-result-object v11
-
-    new-instance v14, Lcom/google/zxing/aztec/decoder/Decoder;
-
-    invoke-direct {v14}, Lcom/google/zxing/aztec/decoder/Decoder;-><init>()V
-
-    invoke-virtual {v14, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->decode(Lcom/google/zxing/aztec/AztecDetectorResult;)Lcom/google/zxing/common/DecoderResult;
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/AztecDetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
     :try_end_0
     .catch Lcom/google/zxing/NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/google/zxing/FormatException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v1
 
+    :try_start_1
+    new-instance v4, Lcom/google/zxing/aztec/decoder/Decoder;
+
+    invoke-direct {v4}, Lcom/google/zxing/aztec/decoder/Decoder;-><init>()V
+
+    invoke-virtual {v4, v0}, Lcom/google/zxing/aztec/decoder/Decoder;->decode(Lcom/google/zxing/aztec/AztecDetectorResult;)Lcom/google/zxing/common/DecoderResult;
+    :try_end_1
+    .catch Lcom/google/zxing/NotFoundException; {:try_start_1 .. :try_end_1} :catch_4
+    .catch Lcom/google/zxing/FormatException; {:try_start_1 .. :try_end_1} :catch_3
+
+    move-result-object v0
+
+    move-object v4, v2
+
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
+
+    move-object v2, v0
+
+    move-object v4, v1
 
     :goto_1
     if-nez p2, :cond_4
 
     :cond_0
-    new-instance v12, Lcom/google/zxing/Result;
+    new-instance v0, Lcom/google/zxing/Result;
 
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getText()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getText()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getRawBytes()[B
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getRawBytes()[B
 
-    move-result-object v15
+    move-result-object v3
 
-    sget-object v16, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
+    sget-object v5, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
 
-    move-object/from16 v0, v16
+    invoke-direct {v0, v1, v3, v4, v5}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
-    invoke-direct {v12, v14, v15, v11, v0}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getByteSegments()Ljava/util/List;
 
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getByteSegments()Ljava/util/List;
+    move-result-object v1
 
-    move-result-object v14
-
-    if-nez v14, :cond_5
+    if-nez v1, :cond_5
 
     :goto_2
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    if-nez v7, :cond_6
+    if-nez v1, :cond_6
 
     :goto_3
-    return-object v12
+    return-object v0
 
     :catch_0
-    move-exception v5
+    move-exception v0
 
-    move-object v9, v5
+    move-object v1, v2
+
+    :goto_4
+    move-object v4, v0
+
+    move-object v0, v2
 
     goto :goto_0
 
     :catch_1
-    move-exception v4
+    move-exception v0
 
-    move-object v8, v4
+    move-object v1, v2
+
+    :goto_5
+    move-object v4, v2
+
+    move-object v6, v0
+
+    move-object v0, v2
+
+    move-object v2, v6
 
     goto :goto_0
 
     :cond_1
-    const/4 v14, 0x1
+    const/4 v0, 0x1
 
-    :try_start_1
-    invoke-virtual {v2, v14}, Lcom/google/zxing/aztec/detector/Detector;->detect(Z)Lcom/google/zxing/aztec/AztecDetectorResult;
+    :try_start_2
+    invoke-virtual {v5, v0}, Lcom/google/zxing/aztec/detector/Detector;->detect(Z)Lcom/google/zxing/aztec/AztecDetectorResult;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Lcom/google/zxing/aztec/AztecDetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
-
-    move-result-object v11
-
-    new-instance v14, Lcom/google/zxing/aztec/decoder/Decoder;
-
-    invoke-direct {v14}, Lcom/google/zxing/aztec/decoder/Decoder;-><init>()V
-
-    invoke-virtual {v14, v3}, Lcom/google/zxing/aztec/decoder/Decoder;->decode(Lcom/google/zxing/aztec/AztecDetectorResult;)Lcom/google/zxing/common/DecoderResult;
-    :try_end_1
-    .catch Lcom/google/zxing/NotFoundException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Lcom/google/zxing/FormatException; {:try_start_1 .. :try_end_1} :catch_2
+    invoke-virtual {v0}, Lcom/google/zxing/aztec/AztecDetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
 
     move-result-object v1
+
+    new-instance v5, Lcom/google/zxing/aztec/decoder/Decoder;
+
+    invoke-direct {v5}, Lcom/google/zxing/aztec/decoder/Decoder;-><init>()V
+
+    invoke-virtual {v5, v0}, Lcom/google/zxing/aztec/decoder/Decoder;->decode(Lcom/google/zxing/aztec/AztecDetectorResult;)Lcom/google/zxing/common/DecoderResult;
+    :try_end_2
+    .catch Lcom/google/zxing/NotFoundException; {:try_start_2 .. :try_end_2} :catch_2
+    .catch Lcom/google/zxing/FormatException; {:try_start_2 .. :try_end_2} :catch_2
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    move-object v4, v1
 
     goto :goto_1
 
     :catch_2
-    move-exception v6
+    move-exception v0
 
-    if-nez v9, :cond_2
+    if-nez v4, :cond_2
 
-    if-nez v8, :cond_3
+    if-nez v2, :cond_3
 
-    throw v6
+    throw v0
 
     :cond_2
-    throw v9
+    throw v4
 
     :cond_3
-    throw v8
+    throw v2
 
     :cond_4
-    sget-object v14, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
+    sget-object v0, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
 
-    move-object/from16 v0, p2
+    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, v14}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v13
+    check-cast v0, Lcom/google/zxing/ResultPointCallback;
 
-    check-cast v13, Lcom/google/zxing/ResultPointCallback;
+    if-eqz v0, :cond_0
 
-    if-eqz v13, :cond_0
+    array-length v5, v4
 
-    array-length v15, v11
+    move v1, v3
 
-    const/4 v14, 0x0
+    :goto_6
+    if-ge v1, v5, :cond_0
 
-    :goto_4
-    if-ge v14, v15, :cond_0
+    aget-object v3, v4, v1
 
-    aget-object v10, v11, v14
+    invoke-interface {v0, v3}, Lcom/google/zxing/ResultPointCallback;->foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
 
-    invoke-interface {v13, v10}, Lcom/google/zxing/ResultPointCallback;->foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
+    add-int/lit8 v1, v1, 0x1
 
-    add-int/lit8 v14, v14, 0x1
-
-    goto :goto_4
+    goto :goto_6
 
     :cond_5
-    sget-object v15, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
+    sget-object v3, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
 
-    invoke-virtual {v12, v15, v14}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, v1}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_6
-    sget-object v14, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
 
-    invoke-virtual {v12, v14, v7}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
 
     goto :goto_3
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_5
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_4
 .end method
 
 .method public reset()V

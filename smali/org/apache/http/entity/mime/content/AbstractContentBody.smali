@@ -116,9 +116,7 @@
 .end method
 
 .method public getSubType()Ljava/lang/String;
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     iget-object v0, p0, Lorg/apache/http/entity/mime/content/AbstractContentBody;->contentType:Lorg/apache/http/entity/ContentType;
 
@@ -136,7 +134,9 @@
 
     if-ne v1, v2, :cond_0
 
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     add-int/lit8 v1, v1, 0x1

@@ -20,19 +20,19 @@
 
     const/4 v1, 0x0
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    iput v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->nameStart:I
+    iput-object v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->path:Ljava/lang/String;
 
-    iput v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->nameEnd:I
+    iput v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->nameStart:I
 
-    iput v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepBegin:I
+    iput v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->nameEnd:I
 
-    iput v0, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
+    iput v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepBegin:I
+
+    iput v1, p0, Lcom/adobe/xmp/impl/xpath/PathPosition;->stepEnd:I
 
     return-void
 .end method

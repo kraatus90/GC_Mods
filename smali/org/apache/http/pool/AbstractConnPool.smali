@@ -445,17 +445,17 @@
 
     move-result v4
 
-    const/4 v1, 0x0
-
     invoke-virtual {v3}, Lorg/apache/http/pool/RouteSpecificPool;->getAllocatedCount()I
 
-    move-result v5
+    move-result v1
 
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    sub-int/2addr v5, v4
+    sub-int/2addr v1, v4
 
-    invoke-static {v1, v5}, Ljava/lang/Math;->max(II)I
+    const/4 v5, 0x0
+
+    invoke-static {v5, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v5
 

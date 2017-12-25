@@ -3,7 +3,7 @@
 .source "CameraModeSwitch.java"
 
 # interfaces
-.implements Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusSmListener;
+.implements Lcom/motorola/camera/device/CameraStateManager$CameraStatusSmListener;
 
 
 # annotations
@@ -20,18 +20,18 @@
 # instance fields
 .field final synthetic this$1:Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable;
 
-.field final synthetic val$cameraStatus:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
-
 .field final synthetic val$fsmContext:Lcom/motorola/camera/fsm/camera/FsmContext;
+
+.field final synthetic val$manager:Lcom/motorola/camera/device/CameraStateManager;
 
 
 # direct methods
-.method constructor <init>(Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;Lcom/motorola/camera/fsm/camera/FsmContext;)V
+.method constructor <init>(Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable;Lcom/motorola/camera/device/CameraStateManager;Lcom/motorola/camera/fsm/camera/FsmContext;)V
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->this$1:Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable;
 
-    iput-object p2, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$cameraStatus:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    iput-object p2, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$manager:Lcom/motorola/camera/device/CameraStateManager;
 
     iput-object p3, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$fsmContext:Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -42,20 +42,20 @@
 
 
 # virtual methods
-.method public onStatus(Ljava/lang/String;Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine$CameraStatusHolder;)V
+.method public onStatus(Ljava/lang/String;Lcom/motorola/camera/device/CameraStateManager$CameraStatusHolder;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$cameraStatus:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$manager:Lcom/motorola/camera/device/CameraStateManager;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->allCamerasClosed()Z
+    invoke-virtual {v0}, Lcom/motorola/camera/device/CameraStateManager;->allCamerasClosed()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$cameraStatus:Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$manager:Lcom/motorola/camera/device/CameraStateManager;
 
-    invoke-virtual {v0, p0}, Lcom/motorola/camera/fsm/camera/subfsms/CameraStatusStateMachine;->removeStateListener(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Lcom/motorola/camera/device/CameraStateManager;->removeStateListener(Ljava/lang/Object;)V
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch$ModeChangeRunnable$1;->val$fsmContext:Lcom/motorola/camera/fsm/camera/FsmContext;
 

@@ -8,6 +8,8 @@
 
 
 # instance fields
+.field private mEnabled:Z
+
 .field private mSubTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
 .field private mWidgetBitmap:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
@@ -64,6 +66,10 @@
     invoke-direct {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mWidgetBitmap:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
 
     return-void
 .end method
@@ -198,6 +204,14 @@
     return-void
 .end method
 
+.method public isEnabled()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    return v0
+.end method
+
 .method public loadTexture()V
     .locals 3
 
@@ -213,7 +227,7 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mWidgetBitmap:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
 
-    const/16 v1, 0x109
+    const/16 v1, 0x10a
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
@@ -286,6 +300,13 @@
 .method public onClick()V
     .locals 1
 
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mValue:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Boolean;
@@ -306,6 +327,13 @@
 .method public onDown()V
     .locals 1
 
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mTouchTex:Lcom/motorola/camera/ui/widgets/gl/textures/TouchFeedbackTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TouchFeedbackTexture;->onDown()V
@@ -336,6 +364,13 @@
 .method public onUp()V
     .locals 1
 
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mTouchTex:Lcom/motorola/camera/ui/widgets/gl/textures/TouchFeedbackTexture;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/TouchFeedbackTexture;->onUp()V
@@ -344,7 +379,11 @@
 .end method
 
 .method public refreshValue()V
-    .locals 2
+    .locals 5
+
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mSetting:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -358,11 +397,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mValue:Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mWidgetBitmap:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
-
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mValue:Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mValue:Ljava/lang/Object;
 
@@ -372,31 +409,122 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    const/16 v0, 0x10a
-
     :goto_0
+    iget-object v3, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mSetting:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v3}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mSetting:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    if-eqz v4, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getCurrentCameraId()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/motorola/camera/settings/Setting;->getAllowedSupportedValues(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-eq v3, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    iput-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mTitle:Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingListElementTitle;
+
+    iget-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    if-eqz v1, :cond_2
+
+    sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->TITLE_TEXT_COLOR:I
+
+    :goto_1
+    invoke-virtual {v2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingListElementTitle;->setTextColor(I)V
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mSubTitle:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
+
+    iget-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    if-eqz v1, :cond_3
+
+    sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->SUBTITLE_TEXT_COLOR:I
+
+    :goto_2
+    invoke-virtual {v2, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;->setTextColor(I)V
+
+    iget-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mEnabled:Z
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mWidgetBitmap:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
+
+    if-eqz v0, :cond_4
+
+    const/16 v0, 0x10c
+
+    :goto_3
     invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
 
+    :goto_4
     invoke-virtual {p0}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->updateTranslations()V
 
     return-void
 
-    :cond_0
-    const/16 v0, 0x109
+    :cond_1
+    move v0, v1
 
     goto :goto_0
+
+    :cond_2
+    sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->DISABLED_TEXT_COLOR:I
+
+    goto :goto_1
+
+    :cond_3
+    sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->DISABLED_TEXT_COLOR:I
+
+    goto :goto_2
+
+    :cond_4
+    const/16 v0, 0x10a
+
+    goto :goto_3
+
+    :cond_5
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;->mWidgetBitmap:Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;
+
+    if-eqz v0, :cond_6
+
+    const/16 v0, 0x10d
+
+    :goto_5
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ResourceTexture;->setResource(I)V
+
+    goto :goto_4
+
+    :cond_6
+    const/16 v0, 0x10b
+
+    goto :goto_5
 .end method
 
 .method public setChecked(Z)V
     .locals 9
 
-    const v8, 0x7f0800be
+    const v8, 0x7f0800bf
 
-    const v7, 0x7f0800b5
+    const v7, 0x7f0800b6
 
-    const v6, 0x7f0800af
+    const v6, 0x7f0800b0
 
     const/4 v1, 0x1
 
@@ -480,7 +608,7 @@
 
     iput v6, v5, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v0, 0x7f0800ac
+    const v0, 0x7f0800ad
 
     iput v0, v5, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
@@ -533,7 +661,7 @@
 
     iput v6, v5, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v0, 0x7f0800ad
+    const v0, 0x7f0800ae
 
     iput v0, v5, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
@@ -595,11 +723,11 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;-><init>()V
 
-    const v1, 0x7f0800b1
+    const v1, 0x7f0800b2
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v1, 0x7f0800ae
+    const v1, 0x7f0800af
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
@@ -607,7 +735,7 @@
 
     invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement$4;-><init>(Lcom/motorola/camera/ui/widgets/gl/textures/settings/SettingsListToggleElement;)V
 
-    const v2, 0x7f0800b8
+    const v2, 0x7f0800b9
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
@@ -792,7 +920,7 @@
 
     if-eqz v0, :cond_d
 
-    invoke-static {}, Lcom/motorola/camera/LandmarkModelHelper;->isDownloadInProgress()Z
+    invoke-static {}, Lcom/motorola/camera/landmarkdownload/LandmarkModelHelper;->isDownloadInProgress()Z
 
     move-result v0
 
@@ -804,7 +932,7 @@
 
     sget-object v1, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v2, 0x7f080101
+    const v2, 0x7f080105
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -847,6 +975,8 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    invoke-static {p1}, Lcom/motorola/camera/landmarkdownload/LandmarkUpdateService;->setUpdateSchedule(Z)V
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/Trigger;
 

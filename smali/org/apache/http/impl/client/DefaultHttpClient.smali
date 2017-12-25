@@ -72,15 +72,15 @@
 
     invoke-static {p0, v0}, Lorg/apache/http/params/HttpConnectionParams;->setSocketBufferSize(Lorg/apache/http/params/HttpParams;I)V
 
-    const-string/jumbo v0, "org.apache.http.client"
+    const-class v0, Lorg/apache/http/impl/client/DefaultHttpClient;
 
-    const-class v1, Lorg/apache/http/impl/client/DefaultHttpClient;
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "org.apache.http.client"
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/VersionInfo;->loadVersionInfo(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/apache/http/util/VersionInfo;
+    invoke-static {v1, v0}, Lorg/apache/http/util/VersionInfo;->loadVersionInfo(Ljava/lang/String;Ljava/lang/ClassLoader;)Lorg/apache/http/util/VersionInfo;
 
     move-result-object v0
 

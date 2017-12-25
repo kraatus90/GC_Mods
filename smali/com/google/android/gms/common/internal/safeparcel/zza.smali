@@ -14,8 +14,6 @@
 .method public static zzA(Landroid/os/Parcel;I)[Ljava/lang/String;
     .locals 3
 
-    const/4 v2, 0x0
-
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
     move-result v0
@@ -37,7 +35,9 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzB(Landroid/os/Parcel;I)Ljava/util/ArrayList;
@@ -53,8 +53,6 @@
             ">;"
         }
     .end annotation
-
-    const/4 v3, 0x0
 
     const/4 v0, 0x0
 
@@ -86,7 +84,9 @@
     return-object v3
 
     :cond_0
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
@@ -118,8 +118,6 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
-
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
     move-result v0
@@ -141,13 +139,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzD(Landroid/os/Parcel;I)Landroid/os/Parcel;
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -172,15 +170,17 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzE(Landroid/os/Parcel;I)[Landroid/os/Parcel;
     .locals 9
 
-    const/4 v0, 0x0
-
     const/4 v8, 0x0
+
+    const/4 v0, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -394,8 +394,6 @@
         }
     .end annotation
 
-    const/4 v0, 0x0
-
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
     move-result v1
@@ -419,6 +417,8 @@
     return-object v0
 
     :cond_0
+    const/4 v0, 0x0
+
     return-object v0
 .end method
 
@@ -619,8 +619,6 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
-
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
     move-result v0
@@ -642,7 +640,9 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzc(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
@@ -660,8 +660,6 @@
             "<TT;>;"
         }
     .end annotation
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -684,7 +682,9 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzc(Landroid/os/Parcel;I)Z
@@ -714,8 +714,6 @@
 .method public static zzd(Landroid/os/Parcel;I)Ljava/lang/Boolean;
     .locals 3
 
-    const/4 v2, 0x0
-
     const/4 v0, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
@@ -742,7 +740,9 @@
     return-object v0
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     const/4 v0, 0x1
@@ -799,8 +799,6 @@
 .method public static zzh(Landroid/os/Parcel;I)Ljava/lang/Integer;
     .locals 2
 
-    const/4 v1, 0x0
-
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
     move-result v0
@@ -822,7 +820,9 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzi(Landroid/os/Parcel;I)J
@@ -841,8 +841,6 @@
 
 .method public static zzj(Landroid/os/Parcel;I)Ljava/lang/Long;
     .locals 2
-
-    const/4 v1, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -865,13 +863,13 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzk(Landroid/os/Parcel;I)Ljava/math/BigInteger;
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -898,7 +896,9 @@
     return-object v0
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzl(Landroid/os/Parcel;I)F
@@ -931,8 +931,6 @@
 
 .method public static zzn(Landroid/os/Parcel;I)Ljava/math/BigDecimal;
     .locals 4
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -967,13 +965,13 @@
     return-object v0
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzo(Landroid/os/Parcel;I)Ljava/lang/String;
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -996,13 +994,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzp(Landroid/os/Parcel;I)Landroid/os/IBinder;
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1025,13 +1023,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzq(Landroid/os/Parcel;I)Landroid/os/Bundle;
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1054,13 +1052,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzr(Landroid/os/Parcel;I)[B
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1083,7 +1081,9 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzs(Landroid/os/Parcel;I)[[B
@@ -1091,36 +1091,34 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
-    move-result v2
+    move-result v1
 
     invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
 
-    move-result v3
+    move-result v2
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
-    move-result v4
+    move-result v3
 
-    new-array v5, v4, [[B
-
-    move v0, v1
+    new-array v4, v3, [[B
 
     :goto_0
-    if-lt v0, v4, :cond_1
+    if-lt v0, v3, :cond_1
 
-    add-int v0, v3, v2
+    add-int v0, v2, v1
 
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    return-object v5
+    return-object v4
 
     :cond_0
+    const/4 v0, 0x0
+
     check-cast v0, [[B
 
     return-object v0
@@ -1128,9 +1126,9 @@
     :cond_1
     invoke-virtual {p0}, Landroid/os/Parcel;->createByteArray()[B
 
-    move-result-object v1
+    move-result-object v5
 
-    aput-object v1, v5, v0
+    aput-object v5, v4, v0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -1139,8 +1137,6 @@
 
 .method public static zzt(Landroid/os/Parcel;I)[Z
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1163,13 +1159,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzu(Landroid/os/Parcel;I)[I
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1192,13 +1188,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzv(Landroid/os/Parcel;I)[J
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1221,13 +1217,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzw(Landroid/os/Parcel;I)[Ljava/math/BigInteger;
     .locals 7
-
-    const/4 v3, 0x0
 
     const/4 v0, 0x0
 
@@ -1257,7 +1253,9 @@
     return-object v4
 
     :cond_0
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     new-instance v5, Ljava/math/BigInteger;
@@ -1277,8 +1275,6 @@
 
 .method public static zzx(Landroid/os/Parcel;I)[F
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1301,13 +1297,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzy(Landroid/os/Parcel;I)[D
     .locals 3
-
-    const/4 v2, 0x0
 
     invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zza(Landroid/os/Parcel;I)I
 
@@ -1330,13 +1326,13 @@
     return-object v2
 
     :cond_0
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zzz(Landroid/os/Parcel;I)[Ljava/math/BigDecimal;
     .locals 9
-
-    const/4 v3, 0x0
 
     const/4 v0, 0x0
 
@@ -1366,7 +1362,9 @@
     return-object v4
 
     :cond_0
-    return-object v3
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_1
     invoke-virtual {p0}, Landroid/os/Parcel;->createByteArray()[B

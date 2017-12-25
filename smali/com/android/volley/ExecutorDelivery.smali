@@ -56,8 +56,6 @@
         }
     .end annotation
 
-    const/4 v3, 0x0
-
     const-string/jumbo v0, "post-error"
 
     invoke-virtual {p1, v0}, Lcom/android/volley/Request;->addMarker(Ljava/lang/String;)V
@@ -69,6 +67,8 @@
     iget-object v1, p0, Lcom/android/volley/ExecutorDelivery;->mResponsePoster:Ljava/util/concurrent/Executor;
 
     new-instance v2, Lcom/android/volley/ExecutorDelivery$ResponseDeliveryRunnable;
+
+    const/4 v3, 0x0
 
     invoke-direct {v2, p0, p1, v0, v3}, Lcom/android/volley/ExecutorDelivery$ResponseDeliveryRunnable;-><init>(Lcom/android/volley/ExecutorDelivery;Lcom/android/volley/Request;Lcom/android/volley/Response;Ljava/lang/Runnable;)V
 

@@ -396,6 +396,18 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->CAMERA_LAST_USE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    invoke-static {v0, v1, v2, v3}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
+
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->FIRST_TIME_USE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const/4 v2, 0x1
@@ -522,7 +534,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
 
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->FIRST_TIME_DUAL_CAMERA_TIP_SHOW:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->FIRST_TIME_MODES_LIST_TIP_SHOW:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const/4 v2, 0x1
 
@@ -646,13 +658,13 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->AUTO_ON_TORCH_OFF:Ljava/util/List;
 
-    const v5, 0x7f080144
+    const v5, 0x7f08014f
 
-    const v6, 0x7f08016b
+    const v6, 0x7f080178
 
-    const v7, 0x7f080178
+    const v7, 0x7f080185
 
-    const v8, 0x7f08016a
+    const v8, 0x7f080177
 
     filled-new-array {v5, v6, v7, v8}, [I
 
@@ -682,13 +694,13 @@
 
     move-result-object v7
 
-    const v8, 0x7f080147
+    const v8, 0x7f080152
 
-    const v9, 0x7f080157
+    const v9, 0x7f080162
 
-    const v10, 0x7f080158
+    const v10, 0x7f080163
 
-    const v11, 0x7f080146
+    const v11, 0x7f080151
 
     filled-new-array {v8, v9, v10, v11}, [I
 
@@ -696,7 +708,7 @@
 
     sget-object v10, Lcom/motorola/camera/settings/Setting$UpdateType;->PARAM:Lcom/motorola/camera/settings/Setting$UpdateType;
 
-    const v9, 0x7f080156
+    const v9, 0x7f080161
 
     invoke-static/range {v0 .. v10}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;[I[I[I[IILcom/motorola/camera/settings/Setting$UpdateType;)V
 
@@ -712,9 +724,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->ON_OFF:Ljava/util/List;
 
-    const v5, 0x7f08016b
+    const v5, 0x7f080178
 
-    const v6, 0x7f08016a
+    const v6, 0x7f080177
 
     filled-new-array {v5, v6}, [I
 
@@ -736,9 +748,9 @@
 
     move-result-object v7
 
-    const v8, 0x7f080157
+    const v8, 0x7f080162
 
-    const v9, 0x7f080146
+    const v9, 0x7f080151
 
     filled-new-array {v8, v9}, [I
 
@@ -746,7 +758,7 @@
 
     sget-object v10, Lcom/motorola/camera/settings/Setting$UpdateType;->PARAM:Lcom/motorola/camera/settings/Setting$UpdateType;
 
-    const v9, 0x7f080156
+    const v9, 0x7f080161
 
     invoke-static/range {v0 .. v10}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;[I[I[I[IILcom/motorola/camera/settings/Setting$UpdateType;)V
 
@@ -762,11 +774,11 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->AUTO_ON_OFF:Ljava/util/List;
 
-    const v5, 0x7f080144
+    const v5, 0x7f08014f
 
-    const v6, 0x7f08016b
+    const v6, 0x7f080178
 
-    const v7, 0x7f08016a
+    const v7, 0x7f080177
 
     filled-new-array {v5, v6, v7}, [I
 
@@ -792,11 +804,11 @@
 
     move-result-object v7
 
-    const v8, 0x7f08014a
+    const v8, 0x7f080155
 
-    const v9, 0x7f08015d
+    const v9, 0x7f080168
 
-    const v10, 0x7f080149
+    const v10, 0x7f080154
 
     filled-new-array {v8, v9, v10}, [I
 
@@ -804,7 +816,7 @@
 
     sget-object v10, Lcom/motorola/camera/settings/Setting$UpdateType;->PARAM:Lcom/motorola/camera/settings/Setting$UpdateType;
 
-    const v9, 0x7f08015c
+    const v9, 0x7f080167
 
     invoke-static/range {v0 .. v10}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;[I[I[I[IILcom/motorola/camera/settings/Setting$UpdateType;)V
 
@@ -820,17 +832,17 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const v5, 0x7f080179
+    const v5, 0x7f080186
 
-    const v6, 0x7f080155
+    const v6, 0x7f080160
 
     filled-new-array {v5, v6}, [I
 
     move-result-object v5
 
-    const/16 v6, 0xbe
+    const/16 v6, 0xbf
 
-    const/16 v7, 0xbe
+    const/16 v7, 0xbf
 
     filled-new-array {v6, v7}, [I
 
@@ -854,9 +866,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const v5, 0x7f080179
+    const v5, 0x7f080186
 
-    const v6, 0x7f080155
+    const v6, 0x7f080160
 
     filled-new-array {v5, v6}, [I
 
@@ -880,9 +892,9 @@
 
     sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
 
-    const v4, 0x7f080179
+    const v4, 0x7f080186
 
-    const v5, 0x7f080155
+    const v5, 0x7f080160
 
     filled-new-array {v4, v5}, [I
 
@@ -910,9 +922,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const v5, 0x7f080179
+    const v5, 0x7f080186
 
-    const v6, 0x7f080155
+    const v6, 0x7f080160
 
     filled-new-array {v5, v6}, [I
 
@@ -938,17 +950,17 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->STORAGE_VALUES:Ljava/util/List;
 
-    const v5, 0x7f08017c
+    const v5, 0x7f08018d
 
-    const v6, 0x7f08017b
+    const v6, 0x7f08018c
 
     filled-new-array {v5, v6}, [I
 
     move-result-object v5
 
-    const/16 v6, 0xca
+    const/16 v6, 0xcb
 
-    const/16 v7, 0xca
+    const/16 v7, 0xcb
 
     filled-new-array {v6, v7}, [I
 
@@ -958,7 +970,7 @@
 
     const/4 v7, 0x0
 
-    const v8, 0x7f080175
+    const v8, 0x7f080182
 
     invoke-static/range {v0 .. v9}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;[I[I[IILcom/motorola/camera/settings/Setting$UpdateType;)V
 
@@ -974,9 +986,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const v5, 0x7f08015a
+    const v5, 0x7f080165
 
-    const v6, 0x7f080159
+    const v6, 0x7f080164
 
     filled-new-array {v5, v6}, [I
 
@@ -1008,9 +1020,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const/16 v5, 0xb6
+    const/16 v5, 0xb7
 
-    const/16 v6, 0xb6
+    const/16 v6, 0xb7
 
     filled-new-array {v5, v6}, [I
 
@@ -1036,9 +1048,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const v5, 0x7f080179
+    const v5, 0x7f080186
 
-    const v6, 0x7f080155
+    const v6, 0x7f080160
 
     filled-new-array {v5, v6}, [I
 
@@ -1070,31 +1082,31 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TIMER_VALUES:Ljava/util/List;
 
-    const v5, 0x7f08016a
+    const v5, 0x7f080177
 
-    const v6, 0x7f080142
+    const v6, 0x7f08014d
 
-    const v7, 0x7f080141
+    const v7, 0x7f08014c
 
     filled-new-array {v5, v6, v7}, [I
 
     move-result-object v5
 
-    const/16 v6, 0xd1
+    const/16 v6, 0xd2
 
-    const/16 v7, 0xcd
+    const/16 v7, 0xce
 
-    const/16 v8, 0xcf
+    const/16 v8, 0xd0
 
     filled-new-array {v6, v7, v8}, [I
 
     move-result-object v6
 
-    const/16 v7, 0xd2
+    const/16 v7, 0xd3
 
-    const/16 v8, 0xce
+    const/16 v8, 0xcf
 
-    const/16 v9, 0xd0
+    const/16 v9, 0xd1
 
     filled-new-array {v7, v8, v9}, [I
 
@@ -1104,7 +1116,7 @@
 
     const/4 v8, 0x0
 
-    const v9, 0x7f080177
+    const v9, 0x7f080184
 
     invoke-static/range {v0 .. v10}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;[I[I[I[IILcom/motorola/camera/settings/Setting$UpdateType;)V
 
@@ -1150,11 +1162,11 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_ACTION_VALUES:Ljava/util/List;
 
-    const v5, 0x7f08012f
+    const v5, 0x7f080137
 
-    const v6, 0x7f08012e
+    const v6, 0x7f080136
 
-    const v7, 0x7f08012b
+    const v7, 0x7f080133
 
     filled-new-array {v5, v6, v7}, [I
 
@@ -1220,13 +1232,13 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->DUAL_MODE_VALUES_1:Ljava/util/List;
 
-    const v5, 0x7f08014b
+    const v5, 0x7f080156
 
-    const v6, 0x7f08014d
+    const v6, 0x7f080158
 
-    const v7, 0x7f08014e
+    const v7, 0x7f080159
 
-    const v8, 0x7f08014c
+    const v8, 0x7f080157
 
     filled-new-array {v5, v6, v7, v8}, [I
 
@@ -1326,9 +1338,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->ON_OFF:Ljava/util/List;
 
-    const v5, 0x7f08016b
+    const v5, 0x7f080178
 
-    const v6, 0x7f08016a
+    const v6, 0x7f080177
 
     filled-new-array {v5, v6}, [I
 
@@ -1680,7 +1692,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
 
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_ENABLE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const/4 v2, 0x0
 
@@ -1694,13 +1706,55 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
 
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->DEFAULT_CAPTURE_RESULT_KEYS:[Ljava/lang/String;
 
     sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
 
     const/4 v4, 0x0
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_0_3:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CPU_FREQ_4_7:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->PLOT_PREVIEW_RATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
 
@@ -2288,6 +2342,48 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
 
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->BATTERY_SAVER_LIMIT_OVR:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->BATTERY_LIMIT_OVR:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->BATTER_SAVER_SHOW_TOAST:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, 0x1
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST_NONE:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->FOCUS_MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const/4 v2, 0x0
@@ -2316,7 +2412,7 @@
 
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->FACE_BEAUTY:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    const/4 v2, 0x0
+    const/4 v2, -0x1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2326,11 +2422,11 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->FACE_BEAUTY_VALUES:Ljava/util/List;
 
-    const v5, 0x7f08016a
+    const v5, 0x7f080177
 
-    const v6, 0x7f080144
+    const v6, 0x7f08014f
 
-    const v7, 0x7f080154
+    const v7, 0x7f08015f
 
     filled-new-array {v5, v6, v7}, [I
 
@@ -2424,9 +2520,9 @@
 
     sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
 
-    const v5, 0x7f080179
+    const v5, 0x7f080186
 
-    const v6, 0x7f080155
+    const v6, 0x7f080160
 
     filled-new-array {v5, v6}, [I
 
@@ -2486,43 +2582,43 @@
 
     sget-object v5, Lcom/motorola/camera/settings/Setting$UpdateType;->PARAM:Lcom/motorola/camera/settings/Setting$UpdateType;
 
-    const v6, 0x7f020065
+    const v6, 0x7f020068
 
-    const v7, 0x7f020070
+    const v7, 0x7f020073
 
-    const v8, 0x7f02006f
+    const v8, 0x7f020072
 
-    const v9, 0x7f02006e
+    const v9, 0x7f020071
 
-    const v10, 0x7f02006d
+    const v10, 0x7f020070
 
     filled-new-array {v6, v7, v8, v9, v10}, [I
 
     move-result-object v6
 
-    const v7, 0x7f02006c
+    const v7, 0x7f02006f
 
-    const v8, 0x7f020074
+    const v8, 0x7f020077
 
-    const v9, 0x7f020073
+    const v9, 0x7f020076
 
-    const v10, 0x7f020072
+    const v10, 0x7f020075
 
-    const v11, 0x7f020071
+    const v11, 0x7f020074
 
     filled-new-array {v7, v8, v9, v10, v11}, [I
 
     move-result-object v7
 
-    const/16 v8, 0xd3
+    const/16 v8, 0xd4
 
-    const/16 v9, 0xd5
+    const/16 v9, 0xd6
 
-    const/16 v10, 0xd6
+    const/16 v10, 0xd7
 
-    const/16 v11, 0xd7
+    const/16 v11, 0xd8
 
-    const/16 v12, 0xd4
+    const/16 v12, 0xd5
 
     filled-new-array {v8, v9, v10, v11, v12}, [I
 
@@ -2984,7 +3080,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
 
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_MODEL_LAST_UPDATE:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_MODEL_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const-wide/16 v2, 0x0
 
@@ -2999,6 +3095,18 @@
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_ID:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     const-wide/16 v2, -0x1
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    invoke-static {v0, v1, v2, v3}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->LANDMARK_DOWNLOAD_VERSION:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const-wide/16 v2, 0x0
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -3036,25 +3144,59 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
 
-    return-object v0
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->MOD_PRINT_ATTACHED:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    nop
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST_NONE:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->TRUE_FALSE:Ljava/util/List;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;)V
+
+    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    const/4 v2, -0x1
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/settings/PersistBehavior$PersistType;->PERSIST:Lcom/motorola/camera/settings/PersistBehavior$PersistType;
+
+    sget-object v4, Lcom/motorola/camera/settings/SettingsManager;->POST_CAPTURE_REVIEW_VALUES:Ljava/util/List;
+
+    sget-object v8, Lcom/motorola/camera/settings/Setting$UpdateType;->PARAM_AND_RESTART:Lcom/motorola/camera/settings/Setting$UpdateType;
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v0 .. v8}, Lcom/motorola/camera/settings/SettingsFactory;->addSetting(Ljava/util/Map;Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;Lcom/motorola/camera/settings/PersistBehavior$PersistType;Ljava/util/List;[I[I[ILcom/motorola/camera/settings/Setting$UpdateType;)V
+
+    return-object v0
 
     :array_0
     .array-data 4
-        0x7f080163
-        0x7f080169
-        0x7f080164
-        0x7f080164
-        0x7f080168
-        0x7f080166
-        0x7f080167
-        0x7f080165
-        0x7f080160
-        0x7f080162
-        0x7f080162
-        0x7f080161
-        0x7f08015f
+        0x7f08016e
+        0x7f080175
+        0x7f08016f
+        0x7f08016f
+        0x7f080174
+        0x7f080171
+        0x7f080172
+        0x7f080170
+        0x7f08016b
+        0x7f08016d
+        0x7f08016d
+        0x7f08016c
+        0x7f08016a
     .end array-data
 
     :array_1
@@ -3076,61 +3218,61 @@
 
     :array_2
     .array-data 4
-        0xed
-        0xf2
-        0xf1
         0xee
-        0xf0
+        0xf3
+        0xf2
         0xef
+        0xf1
+        0xf0
     .end array-data
 
     :array_3
     .array-data 4
-        0x7f0801e3
-        0x7f0801eb
-        0x7f0801ed
-        0x7f0801ef
-        0x7f0801f1
-        0x7f0801ec
-        0x7f0801ee
+        0x7f0801fa
+        0x7f080202
+        0x7f080204
+        0x7f080206
+        0x7f080208
+        0x7f080203
+        0x7f080205
     .end array-data
 
     :array_4
     .array-data 4
-        0x7f0801e3
-        0x7f080212
-        0x7f08020c
-        0x7f080209
-        0x7f080205
-        0x7f080200
-        0x7f0801fd
-        0x7f080213
-        0x7f08020f
-        0x7f08020a
-        0x7f080206
-        0x7f080201
-        0x7f0801fe
-        0x7f080215
-        0x7f080211
-        0x7f08020d
-        0x7f080208
-        0x7f080204
-        0x7f0801ff
-        0x7f0801fc
-        0x7f080214
-        0x7f080210
-        0x7f08020b
-        0x7f080207
-        0x7f080203
-        0x7f080202
-        0x7f0801fb
-        0x7f08020e
-        0x7f080216
-        0x7f080217
-        0x7f080218
-        0x7f080219
-        0x7f08021a
-        0x7f0801f9
         0x7f0801fa
+        0x7f080229
+        0x7f080223
+        0x7f080220
+        0x7f08021c
+        0x7f080217
+        0x7f080214
+        0x7f08022a
+        0x7f080226
+        0x7f080221
+        0x7f08021d
+        0x7f080218
+        0x7f080215
+        0x7f08022c
+        0x7f080228
+        0x7f080224
+        0x7f08021f
+        0x7f08021b
+        0x7f080216
+        0x7f080213
+        0x7f08022b
+        0x7f080227
+        0x7f080222
+        0x7f08021e
+        0x7f08021a
+        0x7f080219
+        0x7f080212
+        0x7f080225
+        0x7f08022d
+        0x7f08022e
+        0x7f08022f
+        0x7f080230
+        0x7f080231
+        0x7f080210
+        0x7f080211
     .end array-data
 .end method

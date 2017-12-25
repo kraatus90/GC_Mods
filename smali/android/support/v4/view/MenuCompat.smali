@@ -17,7 +17,7 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    invoke-static {p0, p1}, Landroid/support/v4/view/MenuItemCompat;->setShowAsAction(Landroid/view/MenuItem;I)V
+    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setShowAsAction(I)V
 
     return-void
 .end method

@@ -25,7 +25,7 @@
     return-void
 
     :cond_0
-    invoke-static {p0}, Landroid/support/v4/os/TraceJellybeanMR2;->beginSection(Ljava/lang/String;)V
+    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -43,7 +43,7 @@
     return-void
 
     :cond_0
-    invoke-static {}, Landroid/support/v4/os/TraceJellybeanMR2;->endSection()V
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     goto :goto_0
 .end method

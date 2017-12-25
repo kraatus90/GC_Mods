@@ -61,11 +61,11 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v0, "Server"
+    iget-object v0, p0, Lorg/apache/http/protocol/ResponseServer;->originServer:Ljava/lang/String;
 
-    iget-object v1, p0, Lorg/apache/http/protocol/ResponseServer;->originServer:Ljava/lang/String;
+    const-string/jumbo v1, "Server"
 
-    invoke-interface {p1, v0, v1}, Lorg/apache/http/HttpResponse;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v1, v0}, Lorg/apache/http/HttpResponse;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

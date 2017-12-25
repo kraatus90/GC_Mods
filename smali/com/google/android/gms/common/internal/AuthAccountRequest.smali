@@ -66,11 +66,9 @@
         }
     .end annotation
 
-    const/4 v1, 0x1
-
     invoke-interface {p1}, Lcom/google/android/gms/common/internal/zzo;->asBinder()Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-interface {p2}, Ljava/util/Set;->size()I
 
@@ -84,7 +82,9 @@
 
     check-cast v0, [Lcom/google/android/gms/common/api/Scope;
 
-    invoke-direct {p0, v1, v2, v0}, Lcom/google/android/gms/common/internal/AuthAccountRequest;-><init>(ILandroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;)V
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v2, v1, v0}, Lcom/google/android/gms/common/internal/AuthAccountRequest;-><init>(ILandroid/os/IBinder;[Lcom/google/android/gms/common/api/Scope;)V
 
     return-void
 .end method

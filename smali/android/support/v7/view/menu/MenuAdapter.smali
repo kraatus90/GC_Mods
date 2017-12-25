@@ -61,53 +61,57 @@
 
 # virtual methods
 .method findExpandedIndex()V
-    .locals 6
+    .locals 5
 
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v5}, Landroid/support/v7/view/menu/MenuBuilder;->getExpandedItem()Landroid/support/v7/view/menu/MenuItemImpl;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getExpandedItem()Landroid/support/v7/view/menu/MenuItemImpl;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
     :cond_0
-    const/4 v5, -0x1
+    const/4 v0, -0x1
 
-    iput v5, p0, Landroid/support/v7/view/menu/MenuAdapter;->mExpandedIndex:I
+    iput v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mExpandedIndex:I
 
     return-void
 
     :cond_1
-    iget-object v5, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v5}, Landroid/support/v7/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
 
     move-result-object v3
 
-    check-cast v3, Landroid/support/v7/view/menu/MenuItemImpl;
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
-    if-eq v3, v1, :cond_2
+    move-result v4
 
-    add-int/lit8 v2, v2, 0x1
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v4, :cond_0
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
+
+    if-eq v0, v2, :cond_2
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_0
 
     :cond_2
-    iput v2, p0, Landroid/support/v7/view/menu/MenuAdapter;->mExpandedIndex:I
+    iput v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mExpandedIndex:I
 
     return-void
 .end method
@@ -123,13 +127,13 @@
 .method public getCount()I
     .locals 2
 
-    iget-boolean v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mOverflowOnly:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mOverflowOnly:Z
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -140,16 +144,16 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    return v1
+    return v0
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -158,9 +162,9 @@
     :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 .end method
 
 .method public getForceShowIcon()Z
@@ -174,13 +178,13 @@
 .method public getItem(I)Landroid/support/v7/view/menu/MenuItemImpl;
     .locals 2
 
-    iget-boolean v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mOverflowOnly:Z
+    iget-boolean v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mOverflowOnly:Z
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getVisibleItems()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -193,16 +197,16 @@
     :goto_1
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/v7/view/menu/MenuItemImpl;
+    check-cast v0, Landroid/support/v7/view/menu/MenuItemImpl;
 
-    return-object v1
+    return-object v0
 
     :cond_1
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mAdapterMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getNonActionItems()Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -237,49 +241,51 @@
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 4
+    .locals 5
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     if-eqz p2, :cond_0
 
+    move-object v1, p2
+
     :goto_0
-    move-object v0, p2
+    move-object v0, v1
 
     check-cast v0, Landroid/support/v7/view/menu/MenuView$ItemView;
 
-    iget-boolean v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mForceShowIcon:Z
+    iget-boolean v2, p0, Landroid/support/v7/view/menu/MenuAdapter;->mForceShowIcon:Z
 
-    if-nez v1, :cond_1
+    if-nez v2, :cond_1
 
     :goto_1
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/MenuAdapter;->getItem(I)Landroid/support/v7/view/menu/MenuItemImpl;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {v0, v1, v3}, Landroid/support/v7/view/menu/MenuView$ItemView;->initialize(Landroid/support/v7/view/menu/MenuItemImpl;I)V
+    invoke-interface {v0, v2, v4}, Landroid/support/v7/view/menu/MenuView$ItemView;->initialize(Landroid/support/v7/view/menu/MenuItemImpl;I)V
 
-    return-object p2
+    return-object v1
 
     :cond_0
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuAdapter;->mInflater:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Landroid/support/v7/view/menu/MenuAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    sget v2, Landroid/support/v7/view/menu/MenuAdapter;->ITEM_LAYOUT:I
+    sget v1, Landroid/support/v7/view/menu/MenuAdapter;->ITEM_LAYOUT:I
 
-    invoke-virtual {v1, v2, p3, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v0, v1, p3, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object p2
+    move-result-object v1
 
     goto :goto_0
 
     :cond_1
-    move-object v1, p2
+    move-object v2, v1
 
-    check-cast v1, Landroid/support/v7/view/menu/ListMenuItemView;
+    check-cast v2, Landroid/support/v7/view/menu/ListMenuItemView;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/view/menu/ListMenuItemView;->setForceShowIcon(Z)V
+    invoke-virtual {v2, v3}, Landroid/support/v7/view/menu/ListMenuItemView;->setForceShowIcon(Z)V
 
     goto :goto_1
 .end method

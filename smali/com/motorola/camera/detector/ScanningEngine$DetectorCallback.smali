@@ -18,7 +18,7 @@
 .method public abstract onNewTidbit(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
 .end method
 
-.method public abstract onScanFailed()V
+.method public abstract onScanFailed(Lcom/motorola/camera/detector/results/tidbit/Tidbit;)V
 .end method
 
 .method public abstract onScanStarted(Lcom/motorola/camera/detector/FrameData;)V

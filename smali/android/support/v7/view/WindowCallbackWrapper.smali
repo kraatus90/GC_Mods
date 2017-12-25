@@ -44,13 +44,6 @@
 # virtual methods
 .method public dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xc
-    .end annotation
-
-    .annotation build Landroid/support/annotation/RequiresApi;
-        value = 0xc
-    .end annotation
 
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;
 
@@ -75,13 +68,6 @@
 
 .method public dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
-
-    .annotation build Landroid/support/annotation/RequiresApi;
-        value = 0xb
-    .end annotation
 
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;
 
@@ -130,13 +116,6 @@
 
 .method public onActionModeFinished(Landroid/view/ActionMode;)V
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
-
-    .annotation build Landroid/support/annotation/RequiresApi;
-        value = 0xb
-    .end annotation
 
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;
 
@@ -147,13 +126,6 @@
 
 .method public onActionModeStarted(Landroid/view/ActionMode;)V
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
-
-    .annotation build Landroid/support/annotation/RequiresApi;
-        value = 0xb
-    .end annotation
 
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;
 
@@ -250,6 +222,19 @@
     return-void
 .end method
 
+.method public onPointerCaptureChanged(Z)V
+    .locals 1
+    .annotation build Landroid/support/annotation/RequiresApi;
+        value = 0x1a
+    .end annotation
+
+    iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;
+
+    invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onPointerCaptureChanged(Z)V
+
+    return-void
+.end method
+
 .method public onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
     .locals 1
 
@@ -264,10 +249,6 @@
 
 .method public onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x18
-    .end annotation
-
     .annotation build Landroid/support/annotation/RequiresApi;
         value = 0x18
     .end annotation
@@ -305,10 +286,6 @@
 
 .method public onSearchRequested(Landroid/view/SearchEvent;)Z
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x17
-    .end annotation
-
     .annotation build Landroid/support/annotation/RequiresApi;
         value = 0x17
     .end annotation
@@ -344,13 +321,6 @@
 
 .method public onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
-
-    .annotation build Landroid/support/annotation/RequiresApi;
-        value = 0xb
-    .end annotation
 
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->mWrapped:Landroid/view/Window$Callback;
 
@@ -363,10 +333,6 @@
 
 .method public onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
     .locals 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x17
-    .end annotation
-
     .annotation build Landroid/support/annotation/RequiresApi;
         value = 0x17
     .end annotation

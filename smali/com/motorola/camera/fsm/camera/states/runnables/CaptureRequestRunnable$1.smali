@@ -74,9 +74,7 @@
 .end method
 
 .method public onCaptureFailed(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
-    .locals 6
-
-    const/4 v5, 0x1
+    .locals 4
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -86,7 +84,7 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
     if-eqz v0, :cond_1
 
@@ -94,15 +92,21 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "onCaptureFailed seqId:0x%08x"
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-array v3, v5, [Ljava/lang/Object;
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v4, 0x0
+    const-string/jumbo v3, "onCaptureFailed "
 
-    aput-object v0, v3, v4
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -112,7 +116,9 @@
     :goto_0
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CaptureRequestRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/CaptureRequestRunnable;
 
-    iput-boolean v5, v0, Lcom/motorola/camera/fsm/camera/states/runnables/CaptureRequestRunnable;->mIsComplete:Z
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcom/motorola/camera/fsm/camera/states/runnables/CaptureRequestRunnable;->mIsComplete:Z
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/CaptureRequestRunnable$1;->this$0:Lcom/motorola/camera/fsm/camera/states/runnables/CaptureRequestRunnable;
 

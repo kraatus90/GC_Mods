@@ -108,12 +108,12 @@
     return-object v0
 .end method
 
-.method public record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+.method public record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/analytics/Attributes/DoubleAttribute;->mName:Ljava/lang/String;
 
-    invoke-virtual {p2, v0}, Landroid/os/Bundle;->getDouble(Ljava/lang/String;)D
+    invoke-virtual {p2, v0}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getDouble(Ljava/lang/String;)D
 
     move-result-wide v0
 

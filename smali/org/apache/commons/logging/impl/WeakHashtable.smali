@@ -161,9 +161,9 @@
 .method public containsKey(Ljava/lang/Object;)Z
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;-><init>(Ljava/lang/Object;Lorg/apache/commons/logging/impl/WeakHashtable$1;)V
 
@@ -250,9 +250,9 @@
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    const/4 v1, 0x0
-
     new-instance v0, Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;
+
+    const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lorg/apache/commons/logging/impl/WeakHashtable$Referenced;-><init>(Ljava/lang/Object;Lorg/apache/commons/logging/impl/WeakHashtable$1;)V
 

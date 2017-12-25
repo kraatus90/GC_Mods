@@ -76,8 +76,6 @@
 .method public constructor <init>(Lorg/apache/http/conn/scheme/SchemeRegistry;)V
     .locals 3
 
-    const/4 v1, 0x0
-
     const/4 v2, 0x0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +108,9 @@
 
     iput-object v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->d:Lorg/apache/http/impl/conn/SingleClientConnManager$PoolEntry;
 
-    iput-object v1, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->e:Lorg/apache/http/impl/conn/SingleClientConnManager$ConnAdapter;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/impl/conn/SingleClientConnManager;->e:Lorg/apache/http/impl/conn/SingleClientConnManager$ConnAdapter;
 
     const-wide/16 v0, -0x1
 
@@ -234,11 +234,11 @@
     :goto_0
     if-nez v0, :cond_0
 
-    const-wide/16 v0, 0x0
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {p0, v0, v1, v2}, Lorg/apache/http/impl/conn/SingleClientConnManager;->closeIdleConnections(JLjava/util/concurrent/TimeUnit;)V
+    invoke-virtual {p0, v2, v3, v0}, Lorg/apache/http/impl/conn/SingleClientConnManager;->closeIdleConnections(JLjava/util/concurrent/TimeUnit;)V
 
     :cond_0
     return-void

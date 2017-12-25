@@ -4,14 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0xd
-.end annotation
-
-.annotation build Landroid/support/annotation/RequiresApi;
-    value = 0xd
-.end annotation
-
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/support/v13/view/DragStartHelper$OnDragStartListener;
@@ -127,15 +119,15 @@
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v2
+    move-result v0
 
-    float-to-int v0, v2
+    float-to-int v0, v0
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v2
+    move-result v1
 
-    float-to-int v1, v2
+    float-to-int v1, v1
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -163,7 +155,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-static {p2}, Landroid/support/v4/view/MotionEventCompat;->getButtonState(Landroid/view/MotionEvent;)I
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getButtonState()I
 
     move-result v2
 
@@ -184,17 +176,17 @@
 
     iput v1, p0, Landroid/support/v13/view/DragStartHelper;->mLastTouchY:I
 
-    iget-object v2, p0, Landroid/support/v13/view/DragStartHelper;->mListener:Landroid/support/v13/view/DragStartHelper$OnDragStartListener;
+    iget-object v0, p0, Landroid/support/v13/view/DragStartHelper;->mListener:Landroid/support/v13/view/DragStartHelper$OnDragStartListener;
 
-    invoke-interface {v2, p1, p0}, Landroid/support/v13/view/DragStartHelper$OnDragStartListener;->onDragStart(Landroid/view/View;Landroid/support/v13/view/DragStartHelper;)Z
+    invoke-interface {v0, p1, p0}, Landroid/support/v13/view/DragStartHelper$OnDragStartListener;->onDragStart(Landroid/view/View;Landroid/support/v13/view/DragStartHelper;)Z
 
-    move-result v2
+    move-result v0
 
-    iput-boolean v2, p0, Landroid/support/v13/view/DragStartHelper;->mDragging:Z
+    iput-boolean v0, p0, Landroid/support/v13/view/DragStartHelper;->mDragging:Z
 
-    iget-boolean v2, p0, Landroid/support/v13/view/DragStartHelper;->mDragging:Z
+    iget-boolean v0, p0, Landroid/support/v13/view/DragStartHelper;->mDragging:Z
 
-    return v2
+    return v0
 
     :cond_1
     iget v2, p0, Landroid/support/v13/view/DragStartHelper;->mLastTouchY:I

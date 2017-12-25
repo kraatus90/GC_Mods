@@ -22,9 +22,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/http/conn/scheme/PlainSocketFactory;->nameResolver:Lorg/apache/http/conn/scheme/HostNameResolver;
 
@@ -60,9 +60,9 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
+
+    const/4 v0, 0x0
 
     if-eqz p4, :cond_2
 

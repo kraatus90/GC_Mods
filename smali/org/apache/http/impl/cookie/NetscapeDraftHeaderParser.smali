@@ -37,11 +37,11 @@
 
     const/16 v8, 0x3b
 
+    const/4 v7, 0x0
+
     const/4 v1, 0x1
 
     const/4 v2, 0x0
-
-    const/4 v7, 0x0
 
     invoke-virtual {p2}, Lorg/apache/http/message/ParserCursor;->getPos()I
 

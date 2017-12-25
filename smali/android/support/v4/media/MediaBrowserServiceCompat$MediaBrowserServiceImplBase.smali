@@ -71,7 +71,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v1, "This should be called inside of onLoadChildren or onLoadItem methods"
+    const-string/jumbo v1, "This should be called inside of onLoadChildren, onLoadItem or onSearch methods"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -99,23 +99,23 @@
 .end method
 
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
-    .locals 3
-
-    const/4 v2, 0x0
-
-    const-string/jumbo v0, "android.media.browse.MediaBrowserService"
+    .locals 2
 
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v1, "android.media.browse.MediaBrowserService"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_0
     iget-object v0, p0, Landroid/support/v4/media/MediaBrowserServiceCompat$MediaBrowserServiceImplBase;->mMessenger:Landroid/os/Messenger;

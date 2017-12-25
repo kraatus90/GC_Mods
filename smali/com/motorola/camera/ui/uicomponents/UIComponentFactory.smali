@@ -443,7 +443,7 @@
     :pswitch_0
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/CameraSwitch;
 
-    const v1, 0x7f0e0077
+    const v1, 0x7f0e0088
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -456,7 +456,7 @@
     :pswitch_1
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/ModeSwitch;
 
-    const v1, 0x7f0e0078
+    const v1, 0x7f0e0089
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -469,7 +469,7 @@
     :pswitch_2
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/ShutterButton2D;
 
-    const v1, 0x7f0e0079
+    const v1, 0x7f0e008a
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -482,7 +482,7 @@
     :pswitch_3
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/GlCameraPreviewComponent;
 
-    const v1, 0x7f0e0072
+    const v1, 0x7f0e0086
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +495,7 @@
     :pswitch_4
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/DialogPopup;
 
-    const v1, 0x7f0e0071
+    const v1, 0x7f0e0085
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -515,7 +515,7 @@
     :pswitch_6
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/ToastUIComponent;
 
-    const v1, 0x7f0e00ce
+    const v1, 0x7f0e00e5
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -534,7 +534,7 @@
 
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/DebugUi;
 
-    const v1, 0x7f0e007a
+    const v1, 0x7f0e008b
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -555,7 +555,7 @@
     :pswitch_9
     new-instance v0, Lcom/motorola/camera/ui/ProSettingWheelUI;
 
-    const v1, 0x7f0e007b
+    const v1, 0x7f0e008c
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -568,7 +568,7 @@
     :pswitch_a
     new-instance v0, Lcom/motorola/camera/ui/uicomponents/ModSplash;
 
-    const v1, 0x7f0e007c
+    const v1, 0x7f0e008d
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -25,76 +25,76 @@
 .end method
 
 .method private correctErrors([BI)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/ChecksumException;
         }
     .end annotation
 
-    array-length v3, p1
+    const/4 v0, 0x0
 
-    new-array v0, v3, [I
+    array-length v2, p1
 
-    const/4 v1, 0x0
+    new-array v3, v2, [I
+
+    move v1, v0
 
     :goto_0
-    if-lt v1, v3, :cond_0
+    if-lt v1, v2, :cond_0
 
-    array-length v5, p1
+    array-length v1, p1
 
-    sub-int v4, v5, p2
+    sub-int/2addr v1, p2
 
     :try_start_0
-    iget-object v5, p0, Lcom/google/zxing/qrcode/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
+    iget-object v2, p0, Lcom/google/zxing/qrcode/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
 
-    invoke-virtual {v5, v0, v4}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
+    invoke-virtual {v2, v3, v1}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
     :try_end_0
     .catch Lcom/google/zxing/common/reedsolomon/ReedSolomonException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v1, 0x0
-
     :goto_1
-    if-lt v1, p2, :cond_1
+    if-lt v0, p2, :cond_1
 
     return-void
 
     :cond_0
-    aget-byte v5, p1, v1
+    aget-byte v4, p1, v1
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    aput v5, v0, v1
+    aput v4, v3, v1
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :catch_0
-    move-exception v2
+    move-exception v0
 
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
-    move-result-object v5
+    move-result-object v0
 
-    throw v5
+    throw v0
 
     :cond_1
-    aget v5, v0, v1
+    aget v1, v3, v0
 
-    int-to-byte v5, v5
+    int-to-byte v1, v1
 
-    int-to-byte v5, v5
+    int-to-byte v1, v1
 
-    aput-byte v5, p1, v1
+    aput-byte v1, p1, v0
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 .end method
 
 .method private decode(Lcom/google/zxing/qrcode/decoder/BitMatrixParser;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
-    .locals 16
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,109 +114,107 @@
         }
     .end annotation
 
-    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readVersion()Lcom/google/zxing/qrcode/decoder/Version;
+    const/4 v1, 0x0
 
-    move-result-object v9
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readFormatInformation()Lcom/google/zxing/qrcode/decoder/FormatInformation;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Lcom/google/zxing/qrcode/decoder/FormatInformation;->getErrorCorrectionLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readVersion()Lcom/google/zxing/qrcode/decoder/Version;
 
     move-result-object v5
 
-    invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readCodewords()[B
+    invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readFormatInformation()Lcom/google/zxing/qrcode/decoder/FormatInformation;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2, v9, v5}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getDataBlocks([BLcom/google/zxing/qrcode/decoder/Version;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)[Lcom/google/zxing/qrcode/decoder/DataBlock;
+    invoke-virtual {v0}, Lcom/google/zxing/qrcode/decoder/FormatInformation;->getErrorCorrectionLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    move-result-object v4
+    move-result-object v6
 
-    const/4 v8, 0x0
+    invoke-virtual {p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readCodewords()[B
 
-    array-length v11, v4
+    move-result-object v0
 
-    const/4 v10, 0x0
+    invoke-static {v0, v5, v6}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getDataBlocks([BLcom/google/zxing/qrcode/decoder/Version;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)[Lcom/google/zxing/qrcode/decoder/DataBlock;
+
+    move-result-object v7
+
+    array-length v3, v7
+
+    move v0, v1
+
+    move v2, v1
 
     :goto_0
-    if-lt v10, v11, :cond_0
+    if-lt v0, v3, :cond_0
 
-    new-array v13, v8, [B
+    new-array v8, v2, [B
 
-    const/4 v11, 0x0
+    array-length v9, v7
 
-    array-length v14, v4
+    move v4, v1
 
-    const/4 v10, 0x0
-
-    move v12, v10
-
-    move v10, v11
+    move v0, v1
 
     :goto_1
-    if-lt v12, v14, :cond_1
+    if-lt v4, v9, :cond_1
 
-    move-object/from16 v0, p2
+    invoke-static {v8, v5, v6, p2}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decode([BLcom/google/zxing/qrcode/decoder/Version;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
 
-    invoke-static {v13, v9, v5, v0}, Lcom/google/zxing/qrcode/decoder/DecodedBitStreamParser;->decode([BLcom/google/zxing/qrcode/decoder/Version;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
+    move-result-object v0
 
-    move-result-object v10
-
-    return-object v10
+    return-object v0
 
     :cond_0
-    aget-object v3, v4, v10
+    aget-object v4, v7, v0
 
-    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getNumDataCodewords()I
+    invoke-virtual {v4}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getNumDataCodewords()I
 
-    move-result v12
+    move-result v4
 
-    add-int/2addr v8, v12
+    add-int/2addr v2, v4
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    aget-object v3, v4, v12
+    aget-object v2, v7, v4
 
-    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getCodewords()[B
+    invoke-virtual {v2}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getCodewords()[B
 
-    move-result-object v1
+    move-result-object v10
 
-    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getNumDataCodewords()I
+    invoke-virtual {v2}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getNumDataCodewords()I
 
-    move-result v7
+    move-result v11
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, v10, v11}, Lcom/google/zxing/qrcode/decoder/Decoder;->correctErrors([BI)V
 
-    invoke-direct {v0, v1, v7}, Lcom/google/zxing/qrcode/decoder/Decoder;->correctErrors([BI)V
+    move v2, v0
 
-    const/4 v6, 0x0
+    move v0, v1
 
     :goto_2
-    if-lt v6, v7, :cond_2
+    if-lt v0, v11, :cond_2
 
-    add-int/lit8 v11, v12, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    move v12, v11
+    move v4, v0
+
+    move v0, v2
 
     goto :goto_1
 
     :cond_2
-    add-int/lit8 v11, v10, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    aget-byte v15, v1, v6
+    aget-byte v12, v10, v0
 
-    int-to-byte v15, v15
+    int-to-byte v12, v12
 
-    aput-byte v15, v13, v10
+    aput-byte v12, v8, v2
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    move v10, v11
+    move v2, v3
 
     goto :goto_2
 .end method
@@ -242,7 +240,7 @@
 .end method
 
 .method public decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
-    .locals 9
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -262,81 +260,81 @@
         }
     .end annotation
 
-    new-instance v5, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;
-
-    invoke-direct {v5, p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
-
-    const/4 v4, 0x0
-
     const/4 v0, 0x0
 
+    new-instance v3, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;
+
+    invoke-direct {v3, p1}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
+
     :try_start_0
-    invoke-direct {p0, v5, p2}, Lcom/google/zxing/qrcode/decoder/Decoder;->decode(Lcom/google/zxing/qrcode/decoder/BitMatrixParser;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
+    invoke-direct {p0, v3, p2}, Lcom/google/zxing/qrcode/decoder/Decoder;->decode(Lcom/google/zxing/qrcode/decoder/BitMatrixParser;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
     :try_end_0
     .catch Lcom/google/zxing/FormatException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/google/zxing/ChecksumException; {:try_start_0 .. :try_end_0} :catch_1
 
-    move-result-object v7
+    move-result-object v0
 
-    return-object v7
+    return-object v0
 
     :catch_0
-    move-exception v2
+    move-exception v1
 
-    move-object v4, v2
+    move-object v2, v1
+
+    move-object v1, v0
 
     :goto_0
     :try_start_1
-    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->remask()V
+    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->remask()V
 
-    const/4 v7, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {v5, v7}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->setMirror(Z)V
+    invoke-virtual {v3, v0}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->setMirror(Z)V
 
-    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readVersion()Lcom/google/zxing/qrcode/decoder/Version;
+    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readVersion()Lcom/google/zxing/qrcode/decoder/Version;
 
-    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readFormatInformation()Lcom/google/zxing/qrcode/decoder/FormatInformation;
+    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readFormatInformation()Lcom/google/zxing/qrcode/decoder/FormatInformation;
 
-    invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->mirror()V
+    invoke-virtual {v3}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->mirror()V
 
-    invoke-direct {p0, v5, p2}, Lcom/google/zxing/qrcode/decoder/Decoder;->decode(Lcom/google/zxing/qrcode/decoder/BitMatrixParser;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
+    invoke-direct {p0, v3, p2}, Lcom/google/zxing/qrcode/decoder/Decoder;->decode(Lcom/google/zxing/qrcode/decoder/BitMatrixParser;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
 
-    move-result-object v6
+    move-result-object v0
 
-    new-instance v7, Lcom/google/zxing/qrcode/decoder/QRCodeDecoderMetaData;
+    new-instance v3, Lcom/google/zxing/qrcode/decoder/QRCodeDecoderMetaData;
 
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
-    invoke-direct {v7, v8}, Lcom/google/zxing/qrcode/decoder/QRCodeDecoderMetaData;-><init>(Z)V
+    invoke-direct {v3, v4}, Lcom/google/zxing/qrcode/decoder/QRCodeDecoderMetaData;-><init>(Z)V
 
-    invoke-virtual {v6, v7}, Lcom/google/zxing/common/DecoderResult;->setOther(Ljava/lang/Object;)V
+    invoke-virtual {v0, v3}, Lcom/google/zxing/common/DecoderResult;->setOther(Ljava/lang/Object;)V
     :try_end_1
     .catch Lcom/google/zxing/FormatException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Lcom/google/zxing/ChecksumException; {:try_start_1 .. :try_end_1} :catch_2
 
-    return-object v6
+    return-object v0
 
     :catch_1
     move-exception v1
 
-    move-object v0, v1
+    move-object v2, v0
 
     goto :goto_0
 
     :catch_2
-    move-exception v3
+    move-exception v0
 
-    if-nez v4, :cond_0
+    if-nez v2, :cond_0
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    throw v3
+    throw v0
 
     :cond_0
-    throw v4
+    throw v2
 
     :cond_1
-    throw v0
+    throw v1
 .end method
 
 .method public decode([[Z)Lcom/google/zxing/common/DecoderResult;
@@ -358,7 +356,7 @@
 .end method
 
 .method public decode([[ZLjava/util/Map;)Lcom/google/zxing/common/DecoderResult;
-    .locals 5
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([[Z",
@@ -377,47 +375,51 @@
         }
     .end annotation
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    new-instance v0, Lcom/google/zxing/common/BitMatrix;
+    array-length v3, p1
 
-    invoke-direct {v0, v1}, Lcom/google/zxing/common/BitMatrix;-><init>(I)V
+    new-instance v4, Lcom/google/zxing/common/BitMatrix;
 
-    const/4 v2, 0x0
+    invoke-direct {v4, v3}, Lcom/google/zxing/common/BitMatrix;-><init>(I)V
+
+    move v2, v1
 
     :goto_0
-    if-lt v2, v1, :cond_0
+    if-lt v2, v3, :cond_0
 
-    invoke-virtual {p0, v0, p2}, Lcom/google/zxing/qrcode/decoder/Decoder;->decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
+    invoke-virtual {p0, v4, p2}, Lcom/google/zxing/qrcode/decoder/Decoder;->decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
 
-    move-result-object v4
+    move-result-object v0
 
-    return-object v4
+    return-object v0
 
     :cond_0
-    const/4 v3, 0x0
+    move v0, v1
 
     :goto_1
-    if-lt v3, v1, :cond_1
+    if-lt v0, v3, :cond_1
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_1
-    aget-object v4, p1, v2
+    aget-object v5, p1, v2
 
-    aget-boolean v4, v4, v3
+    aget-boolean v5, v5, v0
 
-    if-nez v4, :cond_2
+    if-nez v5, :cond_2
 
     :goto_2
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v0, v3, v2}, Lcom/google/zxing/common/BitMatrix;->set(II)V
+    invoke-virtual {v4, v0, v2}, Lcom/google/zxing/common/BitMatrix;->set(II)V
 
     goto :goto_2
 .end method

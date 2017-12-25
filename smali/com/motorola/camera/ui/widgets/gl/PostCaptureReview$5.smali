@@ -1,11 +1,11 @@
 .class Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;
-.super Lcom/motorola/camera/ui/widgets/gl/animations/GeneralAnimation$GeneralAnimationCallback;
+.super Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;
 .source "PostCaptureReview.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->animateAcceptReview()V
+    value = Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;-><init>(Lcom/motorola/camera/ui/widgets/gl/iTextureManager;Lcom/motorola/camera/ui/widgets/gl/iRenderer;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,119 +17,80 @@
 # instance fields
 .field final synthetic this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 
-.field final synthetic val$portrait:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Z)V
+.method constructor <init>(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 
-    iput-boolean p2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->val$portrait:Z
-
-    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/animations/GeneralAnimation$GeneralAnimationCallback;-><init>()V
+    invoke-direct {p0, p2, p3, p4}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;-><init>(Lcom/motorola/camera/ui/widgets/gl/iRenderer;Lcom/motorola/camera/ui/widgets/gl/iGlComponent;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public declared-synchronized applyValue(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;F)V
-    .locals 2
+.method protected getButtonEvent(JJ)Lcom/motorola/camera/fsm/camera/Trigger;
+    .locals 1
 
-    monitor-enter p0
+    const/4 v0, 0x0
 
-    :try_start_0
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
+    return-object v0
+.end method
 
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get2(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+.method protected getTag()Ljava/lang/String;
+    .locals 1
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->getPostTranslation()Lcom/motorola/camera/ui/widgets/gl/Vector3F;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method protected onSingleTap(Landroid/graphics/PointF;JJ)V
+    .locals 5
 
-    iget-boolean v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->val$portrait:Z
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->mTouchBehavior:Lcom/motorola/camera/ui/widgets/gl/ButtonTouchBehavior;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/ButtonTouchBehavior;->cancel()V
 
-    iput p2, v0, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->x:F
+    new-instance v0, Landroid/content/Intent;
 
-    :goto_0
+    const-string/jumbo v1, "android.intent.action.VIEW"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get2(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
+    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get4(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Landroid/net/Uri;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
 
-    monitor-exit p0
+    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get2(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Ljava/lang/String;
 
-    return-void
+    move-result-object v2
 
-    :cond_0
-    :try_start_1
-    iput p2, v0, Lcom/motorola/camera/ui/widgets/gl/Vector3F;->y:F
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    goto :goto_0
+    const/4 v1, 0x1
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    monitor-exit p0
+    new-instance v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;
 
-    throw v0
-.end method
+    sget-object v2, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->VIDEO_PLAYER:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
 
-.method public onAnimationEnd(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
-    .locals 2
+    const/4 v3, 0x0
 
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
+    invoke-direct {v1, v0, v3, v2, v4}, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;-><init>(Landroid/content/Intent;Ljava/lang/String;Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;I)V
 
-    invoke-static {v0, v1, v1}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-wrap1(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;ZZ)V
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
-
-    invoke-static {v0}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get2(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/Vector3F;
-
-    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/Vector3F;-><init>()V
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/OffScreenTexture;->setPostTranslation(Lcom/motorola/camera/ui/widgets/gl/Vector3F;)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
-
-    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderWhenDirty(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
-
-    return-void
-.end method
-
-.method public onAnimationStart(Lcom/motorola/camera/ui/widgets/gl/animations/Animation;)V
-    .locals 2
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
-
-    iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$5;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->requestRenderContinuesly(Lcom/motorola/camera/ui/widgets/gl/iGlComponent;)V
+    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->startActivity(Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;)V
 
     return-void
 .end method

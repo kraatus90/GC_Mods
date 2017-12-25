@@ -148,7 +148,7 @@
     <string name="cancel">Avbryt</string>
     <string name="capture_failure">Opptak mislyktes. Prøv på nytt.</string>
     <string name="checkbox_do_not_show">Ikke vis dette igjen</string>
-    <string name="cloudsight_terms">Bildene dine sendes til CloudSight for å finne søkeresultater. &lt;br/>&lt;br/> Hvis du går videre, godtar du &lt;a href=%1$s>retningslinjene for personvern&lt;/a> for CloudSight.</string>
+    <string name="cloudsight_terms">Hver gang du bruker objektgjenkjenning, sendes bildet og posisjonen (hvis aktivert) til en tredjepart for å finne søkeresultater.&lt;br/>&lt;br/> Ved å fortsette godtar du &lt;a href=%1$s>retningslinjene for personvern&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama mislyktes. Prøv på nytt.</string>
     <string name="dailog_panorama_not_taken">Fikk ikke tatt panoramabilde.</string>
     <string name="dialog_access_sd_fail">Kan ikke registrere medier. Ingen tilgang til SD-kortet.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Enheten støttes ikke</string>
     <string name="dialog_disagree">Ikke godta</string>
     <string name="dialog_dismiss">Ikke vis igjen</string>
+    <string name="dialog_download">Last ned</string>
     <string name="dialog_external_sd_missing">Kan ikke ta et bilde. SD-kortet er ikke tilgjengelig. Bytter til internt telefonminne</string>
     <string name="dialog_first_time_set_pure_raw_message">"Denne ubehandlede filtypen brukes til å redigere bilder profesjonelt.
 
@@ -247,6 +248,7 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="help_next">Neste</string>
     <string name="image_360_desc">Dette er et 360-bilde. Du kan redigere dette bildet med Moto 360-redigeringsverktøyet.</string>
     <string name="image_360_name">360-bilde</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">DYBDE AKTIVERT</string>
     <string name="indicate_mode_mono">EKTE SVART-HVITT</string>
@@ -258,16 +260,19 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="indicate_mode_ultra_wide">EKSTREM VIDVINKEL</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">VIDVINKEL</string>
+    <string name="indicate_mode_wide_angle_selfie">VIDVINKEL-SELFIE</string>
     <string name="internal_storage">Internt lagringsminne</string>
     <string name="kilo_bytes">" kB"</string>
-    <string name="landmark_install_message">Gjenkjenning av landemerker gir informasjon om populære landemerker rundt om i verden.&lt;br/>&lt;br/>Installer for å aktivere denne funksjonen.</string>
-    <string name="landmark_install_over_data">Gjenkjenning av landemerker har en nedlastingsstørrelse på 92 MB. Det kan påløpe datakostnader hvis funksjonen installeres via mobildata.</string>
-    <string name="landmark_notification_downloading">Laster ned Gjenkjenning av landemerker</string>
-    <string name="landmark_notification_install">Installerer Gjenkjenning av landemerker</string>
-    <string name="landmark_notification_install_complete">Installeringen av Gjenkjenning av landemerker er fullført</string>
-    <string name="landmark_notification_install_failed">Installeringen av Gjenkjenning av landemerker mislyktes</string>
+    <string name="landmark_install_message">Gjenkjenning av landemerker gir informasjon om populære landemerker rundt om i verden.&lt;br/>&lt;br/>Last ned databasen med landemerker for å aktivere denne funksjonen.</string>
+    <string name="landmark_install_over_data">Databasen med landemerker har en nedlastingsstørrelse på 92 MB. Det kan påløpe datakostnader hvis funksjonen lastes ned via mobildata.</string>
+    <string name="landmark_notification_downloading">Laster ned databasen med landemerker</string>
+    <string name="landmark_notification_install">Installerer databasen med landemerker</string>
+    <string name="landmark_notification_install_complete">Databasen med landemerker er installert</string>
+    <string name="landmark_notification_install_failed">Installeringen av databasen med landemerker mislyktes</string>
     <string name="landmark_notification_install_invalid_url">Databasen med landemerker er ikke tilgjengelig. Oppdater til den nyeste kameraversjonen</string>
-    <string name="landmark_notification_install_out_of_space">Ikke nok ledig lagringsplass til å installere Gjenkjenning av landemerker</string>
+    <string name="landmark_notification_install_out_of_space">Ikke nok ledig lagringsplass til å installere databasen med landemerker</string>
+    <string name="landmark_notification_paused">Nedlastingen av databasen med landemerker fortsetter når du er koblet til Internett</string>
+    <string name="landmark_notification_queued">Nedlastingen av databasen med landemerker begynner når du er koblet til Internett</string>
     <string name="main_setting_amz_barcode">Strekkodeleser fra Amazon</string>
     <string name="main_setting_amz_privacy">Personvernerklæring fra Amazon</string>
     <string name="main_setting_amz_terms">Bruksvilkår</string>
@@ -290,6 +295,8 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="main_setting_image_ratio">Fotostørrelse (bakre)</string>
     <string name="main_setting_image_ratio_front">Fotostørrelse (fremre)</string>
     <string name="main_setting_landmark_detection">Gjenkjenning av landemerker</string>
+    <string name="main_setting_landmark_version_current">Databaseversjon: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Databasen er ikke installert</string>
     <string name="main_setting_licenses">Lisenser for åpen kildekode</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="perm_required_alert_title">Tillatelser kreves</string>
     <string name="photos_depth_desc">Bruk dybderedigeringen for å velge fokus, erstatte bakgrunnen eller velge et område du vil endre til svart-hvitt.</string>
     <string name="photos_depth_name">Dybde aktivert</string>
+    <string name="photos_notification_desc">Få ubegrenset lagringsplass med Google Photos</string>
+    <string name="photos_notification_title">Sikkerhetskopiér til Google Photos</string>
+    <string name="qcfa_resolution_description">Tilpasset svakt lys</string>
     <string name="retake">Ta på nytt</string>
     <string name="second_10">10 s</string>
     <string name="second_3">3 s</string>
@@ -367,6 +377,7 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="setting_mode_slow_motion">Sakte film</string>
     <string name="setting_mode_ultra_wide">Ekstrem vidvinkel</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Vidvinkel-selfie</string>
     <string name="setting_off">Av</string>
     <string name="setting_on">På</string>
     <string name="setting_persist">Hold</string>
@@ -383,20 +394,25 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="setting_timer_dialog_title">TIDSUR</string>
     <string name="setting_torch">Lykt</string>
     <string name="setting_true">sann</string>
+    <string name="shortcut_desc_depth">Dybdebilde</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Smartkamera</string>
+    <string name="smartcam_no_detections">Ingen lagrede objekter eller landemerker</string>
     <string name="storage_location_external">SD-kort</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Lagring utilgjengelig</string>
+    <string name="toast_battery_saver">Enheten er i strømsparingsmodus. Enkelte funksjoner kan være begrenset.</string>
     <string name="toast_geotag_message_1">Du må gi plasseringstillatelse for å aktivere lagring av plassering.</string>
     <string name="toast_geotag_message_2">Plasseringsinnstillingen trer i kraft når innstillingen for systemplassering er slått på.</string>
     <string name="tooltip_camera_switch_360">Prøv å bytte til ulike kameraalternativer.</string>
     <string name="tooltip_capture_360">Prøv å fange opp bilder eller video i 360° ved å trykke på denne lukkerknappen.</string>
-    <string name="tooltip_capture_key_360">Prøv også å fange opp bilder eller video med lukkerknappen bak på Mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Ta bilder med ekstra informasjon for å aktivere avanserte redigeringsfunksjoner.</string>
+    <string name="tooltip_capture_key_360">Prøv også å ta bilder med lukkerknappen bak på Mod.</string>
     <string name="tooltip_first_use_zoom_button">Trykk her for å bytte til vidvinkel.</string>
     <string name="tooltip_gallery_360">Se hvordan bildene eller videoen i 360° ble, ved å dra mot venstre.</string>
     <string name="tooltip_minimap_viewfinder">Panorer bildet nederst mot venstre eller høyre.</string>
     <string name="tooltip_mode_switch_360">Prøv å fange opp 360° i ulike moduser.</string>
+    <string name="tooltip_modes_list">Oppdag nye måter å ta bilder på.</string>
     <string name="tooltip_smart_camera">Trykk for å finne ut mer om gjenstanden.</string>
     <string name="tooltip_smart_camera_disable">Du kan slå av funksjonen i Innstillinger.</string>
     <string name="tooltip_spherical_viewfinder">Panorer eller zoom inn og ut for å kontrollere visningen.</string>
@@ -419,6 +435,10 @@ Godta dette nedenfor, og slå deretter på Posisjon i Innstillinger."</string>
     <string name="zoom_hint_full">FULL</string>
     <string name="zoom_hint_wide">BRED</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Tilpasset svakt lys</string>
+    <string name="indicate_mode_timelapse">FORTFILM</string>
+    <string name="setting_mode_timelapse">Fortfilm</string>
+    <string name="timelapse_config_16x">16x</string>
+    <string name="timelapse_config_32x">32x</string>
+    <string name="timelapse_config_4x">4x</string>
+    <string name="timelapse_config_8x">8x</string>
 </resources>

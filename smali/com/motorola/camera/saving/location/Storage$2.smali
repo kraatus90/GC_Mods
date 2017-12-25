@@ -140,25 +140,37 @@
     iget-object v1, p0, Lcom/motorola/camera/saving/location/Storage$2;->val$uri:Landroid/net/Uri;
 
     invoke-static {v0, v1}, Landroid/provider/DocumentsContract;->isDocumentUri(Landroid/content/Context;Landroid/net/Uri;)Z
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2
 
     move-result v0
 
     if-eqz v0, :cond_1
 
+    const/4 v1, 0x0
+
+    :try_start_1
     iget-object v0, p0, Lcom/motorola/camera/saving/location/Storage$2;->context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/motorola/camera/saving/location/Storage$2;->val$uri:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/motorola/camera/saving/location/Storage$2;->val$uri:Landroid/net/Uri;
 
-    invoke-static {v0, v1}, Landroid/provider/DocumentsContract;->deleteDocument(Landroid/content/ContentResolver;Landroid/net/Uri;)Z
+    invoke-static {v0, v2}, Landroid/provider/DocumentsContract;->deleteDocument(Landroid/content/ContentResolver;Landroid/net/Uri;)Z
+    :try_end_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_2
 
     move-result v0
 
+    :goto_1
     if-nez v0, :cond_1
 
+    :try_start_2
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
     if-eqz v0, :cond_1
@@ -188,9 +200,9 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    :try_end_2
+    .catch Ljava/lang/NullPointerException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_2
 
     goto :goto_0
 
@@ -212,6 +224,29 @@
     goto :goto_0
 
     :catch_1
+    move-exception v0
+
+    :try_start_3
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v2, :cond_3
+
+    invoke-static {}, Lcom/motorola/camera/saving/location/Storage;->-get0()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "Could not remove file"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_3
+    .catch Ljava/lang/NullPointerException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_3 .. :try_end_3} :catch_2
+
+    move v0, v1
+
+    goto :goto_1
+
+    :catch_2
     move-exception v0
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
@@ -245,4 +280,9 @@
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_1
 .end method

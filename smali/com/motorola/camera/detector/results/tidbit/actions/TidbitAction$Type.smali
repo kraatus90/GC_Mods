@@ -27,14 +27,44 @@
 .field private static final synthetic $VALUES:[Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
 
 .field public static final enum CANCEL:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum CLIPBOARD:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum INTENT:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum MULTI_INTENT:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;"
+        }
+    .end annotation
+.end field
 
 .field public static final enum WIFI_AP:Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/detector/results/tidbit/actions/TidbitAction$Type;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods

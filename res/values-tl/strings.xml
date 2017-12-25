@@ -124,7 +124,7 @@
     <string name="aware_info_landmark_loading">Nakikilala ng camera ang Landmark</string>
     <string name="aware_info_message">Mensahe</string>
     <string name="aware_info_more_wikipedia">Tingnan ang higit pa sa Wikipedia</string>
-    <string name="aware_info_no_results">Walang nahanap na mga resulta</string>
+    <string name="aware_info_no_results">Walang nahanap na resulta</string>
     <string name="aware_info_object">Bagay</string>
     <string name="aware_info_object_loading">Nakikilala ng camera ang bagay</string>
     <string name="aware_info_processing">Pinoproseso</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Kanselahin</string>
     <string name="capture_failure">Nabigo ang pag-kuha. Subukang muli.</string>
     <string name="checkbox_do_not_show">Huwag ipakitang muli</string>
-    <string name="cloudsight_terms">Ipapadala ang mga larawan sa CloudSight para makapagbigay ng mga resulta sa paghahanap. &lt;br/>&lt;br/> Sa pagpapatuloy sumasang-ayon ka sa Patakaran sa Pagkapribado&lt;a href=%1$s>ng CloudSight&lt;/a>.</string>
+    <string name="cloudsight_terms">Sa tuwing ginagamit mo ang pagkilala ng bagay, ang larawan at lokasyon ay (kapag naka-enable) ipapadala sa ikatlong partido para magbigay ng mga resulta sa paghahanap.&lt;br/>&lt;br/> Sa pagpapatuloy, sumasang-ayon ka sa&lt;a href=%1$s>Patakaran sa Pagkapribado&lt;/a>.</string>
     <string name="dailog_panorama_failed">Nabigo ang panorama. Pakisubukang muli.</string>
     <string name="dailog_panorama_not_taken">Walang nakunang panorama na larawan.</string>
     <string name="dialog_access_sd_fail">Hindi nagawang kuhaan ang media. Hindi ma-access ang SD card.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Hindi suportado ang device</string>
     <string name="dialog_disagree">Hindi Sang-ayon</string>
     <string name="dialog_dismiss">Huwag itong ipakitang muli</string>
+    <string name="dialog_download">I-download</string>
     <string name="dialog_external_sd_missing">Hindi makakakuha ng larawan. Hindi naa-access ang SD card. Lumilipat sa internal na storage ng telepono</string>
     <string name="dialog_first_time_set_pure_raw_message">"Ang hindi naprosesong uri ng file ay ginagamit upang propesyunal na i-edit ang larawan sa computer.
 
@@ -222,7 +223,7 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="help_desc_dual_result">Siguraduhing nasa layong 1.5 metro (5 piye) ka lamang sa iyong kinukunan. Mas maganda kung walang nakaharang at nangingibabaw ang iyong kukunan.</string>
     <string name="help_desc_quick">Pihitin nang dalawang beses upang buksan o magpalipat-lipat sa harap at likod na camera.</string>
     <string name="help_desc_quick_double_tap_pwr">I-double tap ang power button upang buksan ang camera.</string>
-    <string name="help_desc_smart_camera">Nakikilala ng camera mo ang mga bagay at landmark. Maaari nitong i-scan ang QR codes, business cards, at mga barcode.</string>
+    <string name="help_desc_smart_camera">Nakikilala ng camera mo ang mga bagay at landmark. Maaari nitong i-scan ang mga QR code, business card, at barcode.</string>
     <string name="help_desc_smart_camera_landmark_only">Nakikilala ng camera mo ang mga landmark. Maaari nitong i-scan ang QR codes, business cards, at mga barcode.</string>
     <string name="help_desc_zoom">I-drag pataas at pababa para i-zoom.</string>
     <string name="help_done">Tapos na</string>
@@ -247,6 +248,7 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="help_next">Susunod</string>
     <string name="image_360_desc">Ito ay isang 360 na larawan. Maaari mong i-edit ang larawang ito gamit ang Moto 360 Editor.</string>
     <string name="image_360_name">360 na Larawan</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">NA-ENABLE ANG DEPTH</string>
     <string name="indicate_mode_mono">TOTOONG B&amp;W</string>
@@ -258,16 +260,19 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="indicate_mode_ultra_wide">ULTRA-WIDE NA ANGGULO</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">MALAWAK NA ANGGULO</string>
+    <string name="indicate_mode_wide_angle_selfie">WIDE ANGLE NA SELFIE</string>
     <string name="internal_storage">internal storage</string>
     <string name="kilo_bytes">" KB"</string>
-    <string name="landmark_install_message">Ang pakilala sa Landmark ay nag-a-alok ng impormasyon tungkol sa sikat na mga landmark sa buong mundo.&lt;br/>&lt;br/>I-install para i-enable ang tampok na ito.</string>
-    <string name="landmark_install_over_data">Ang laki ng pag-download ng pagkilala sa Landmark ay 92 MB. Ang pag-install nito sa mobile data ay magiging sanhi ng karagdangang mga pagsingil sa data.</string>
-    <string name="landmark_notification_downloading">Dina-download ang pagkilala sa Landmark</string>
-    <string name="landmark_notification_install">I-ininstall ang pagkilala sa Landmark</string>
-    <string name="landmark_notification_install_complete">Kumpleto na ang pag-install sa pagkilala sa Landmark</string>
-    <string name="landmark_notification_install_failed">Nabigo ang pag-install sa pagkilala sa Landmark</string>
+    <string name="landmark_install_message">Ang pagkilala sa Landmark ay nag-a-alok ng impormasyon tungkol sa sikat na mga landmark sa buong mundo.&lt;br/>&lt;br/>I-download ang database ng Landmark para i-enable ang tampok na ito.</string>
+    <string name="landmark_install_over_data">Ang laki ng pag-download ng pagkilala sa database ng Landmark ay 92 MB. Ang pag-download nito sa mobile data ay magiging sanhi ng karagdangang mga pagsingil sa data.</string>
+    <string name="landmark_notification_downloading">Dina-download ang database ng Landmark</string>
+    <string name="landmark_notification_install">Ini-install ang database ng Landmark</string>
+    <string name="landmark_notification_install_complete">Kumpleto na ang pag-install sa database ng Landmark</string>
+    <string name="landmark_notification_install_failed">Nabigo ang pag-install sa database ng Landmark</string>
     <string name="landmark_notification_install_invalid_url">Hindi available ang landmark database, paki-update sa pinakabagong bersyon ng Camera</string>
-    <string name="landmark_notification_install_out_of_space">Walang sapat na imbakan para ma-install ang pagkilala sa Landmark</string>
+    <string name="landmark_notification_install_out_of_space">Walang sapat na imbakan para ma-install ang database ng Landmark</string>
+    <string name="landmark_notification_paused">Magpapatuloy sa pag-download ng database ng Landmark kapag available ang internet</string>
+    <string name="landmark_notification_queued">Magsisimula ang pag-download ng database ng Landmark kapag available ang internet</string>
     <string name="main_setting_amz_barcode">Barcode scanner ng Amazon</string>
     <string name="main_setting_amz_privacy">Pagkapribado ng Paunawa ng Amazon</string>
     <string name="main_setting_amz_terms">Mga Kondisyon sa Paggamit</string>
@@ -290,6 +295,8 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="main_setting_image_ratio">Laki ng larawan (likod)</string>
     <string name="main_setting_image_ratio_front">Laki ng larawan (harap)</string>
     <string name="main_setting_landmark_detection">Pagkilala sa Landmark</string>
+    <string name="main_setting_landmark_version_current">Bersyon ng database: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Hindi naka-install ang database</string>
     <string name="main_setting_licenses">Mga lisensiyang open source</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="perm_required_alert_title">Kinakailangan ng pahintulot</string>
     <string name="photos_depth_desc">Gamitin ang depth editor para piliin ang focus, palitan ang background o piliin ang bahagi na papalitan ng itim o puti.</string>
     <string name="photos_depth_name">Na-enable ang depth</string>
+    <string name="photos_notification_desc">Magkaroon ng walang hanggang imbakan sa Google Photo</string>
+    <string name="photos_notification_title">Back up sa mga Google Photo</string>
+    <string name="qcfa_resolution_description">Adaptive Low Light</string>
     <string name="retake">Kuning muli</string>
     <string name="second_10">10s</string>
     <string name="second_3">3s</string>
@@ -367,6 +377,7 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="setting_mode_slow_motion">Slow motion</string>
     <string name="setting_mode_ultra_wide">Ultra-wide na anggulo</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Wide angle na selfie</string>
     <string name="setting_off">Naka-off</string>
     <string name="setting_on">Naka-on</string>
     <string name="setting_persist">I-hold</string>
@@ -383,22 +394,27 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="setting_timer_dialog_title">Timer</string>
     <string name="setting_torch">Torch</string>
     <string name="setting_true">totoo</string>
+    <string name="shortcut_desc_depth">Depth na larawan</string>
+    <string name="shortcut_desc_selfie">I-selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Smart na Camera</string>
+    <string name="smartcam_no_detections">Walang naka-save na object o landmark</string>
     <string name="storage_location_external">SD card</string>
     <string name="storage_location_internal">Telepono</string>
     <string name="storage_unavailable">Hindi available ang storage</string>
+    <string name="toast_battery_saver">Kasalukuyan kang naka-power save mode, maaaring limitado ang ilang mga tampok</string>
     <string name="toast_geotag_message_1">Dapat mong bigyan ng pahintulot ang lokasyon para ma-enable na ma-save ang lokasyon.</string>
     <string name="toast_geotag_message_2">Magiging epektibo lamang ang setting ng lokasyon matapos mai-on ang setting ng lokasyon ng sistema.</string>
     <string name="tooltip_camera_switch_360">Subukang lumipat sa ibang mga opsyon ng camera.</string>
     <string name="tooltip_capture_360">Subukang kumuha ng 360° na larawan o video sa pamamagitan ng pag-tap sa shutter buton na ito.</string>
     <string name="tooltip_capture_key_360">Subukan ding kumuha gamit ang shutter buton sa likod ng mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Kumuha ng may ekstrang impo nang ma-enable ang mga feature sa pag-edit.</string>
     <string name="tooltip_first_use_zoom_button">I-tap dito para lumipat sa malapad na anggulo.</string>
     <string name="tooltip_gallery_360">Makita ang paglabas ng iyong 360° na larawan o video sa pag-swipe pakaliwa.</string>
     <string name="tooltip_minimap_viewfinder">I-pan ang ilalim ng larawan pakaliwa o pakanan.</string>
     <string name="tooltip_mode_switch_360">Subukang kumuha ng 360° sa ibang modes!</string>
+    <string name="tooltip_modes_list">Tuklasin ang bagong paraan para kumuha ng mga larawan.</string>
     <string name="tooltip_smart_camera">I-tap para mahanap ang higit pa tungkol sa bagay.</string>
-    <string name="tooltip_smart_camera_disable">Maaaring i-off ito sa Setting.</string>
+    <string name="tooltip_smart_camera_disable">Maaari mo itong i-off sa Mga Setting.</string>
     <string name="tooltip_spherical_viewfinder">I-pan o i-zoom in at out para makontrol ang pagtingin.</string>
     <string name="tooltip_viewfinder_switch">Subukang i-tap ito para makita nang kakaiba ang screen.</string>
     <string name="video_360_desc">Ito ay isang 360 na video. Maaari mong i-edit ang videong ito gamit ang Moto 360 Editor.</string>
@@ -419,6 +435,10 @@ Sumang-ayon sa ibaba at i-on ang Lokasyon sa Mga Setting."</string>
     <string name="zoom_hint_full">BUO</string>
     <string name="zoom_hint_wide">MALAWAK</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
-    <string name="qcfa_resolution_description">Adaptive Low Light</string>
+    <string name="indicate_mode_timelapse">TIMELAPSE</string>
+    <string name="setting_mode_timelapse">Timelapse</string>
+    <string name="timelapse_config_16x">16X</string>
+    <string name="timelapse_config_32x">32X</string>
+    <string name="timelapse_config_4x">4X</string>
+    <string name="timelapse_config_8x">8X</string>
 </resources>

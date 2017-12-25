@@ -105,15 +105,15 @@
 
     sput-object v0, Lcom/motorola/camera/ui/widgets/gl/ShutterComponent;->TAG:Ljava/lang/String;
 
-    const/16 v0, 0x100
+    const/16 v0, 0x101
 
-    const/16 v1, 0x101
+    const/16 v1, 0x102
 
-    const/16 v2, 0x102
+    const/16 v2, 0x103
 
-    const/16 v3, 0x103
+    const/16 v3, 0x104
 
-    const/16 v4, 0x104
+    const/16 v4, 0x105
 
     filled-new-array {v0, v1, v2, v3, v4}, [I
 

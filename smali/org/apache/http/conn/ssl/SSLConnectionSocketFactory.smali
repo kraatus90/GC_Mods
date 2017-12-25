@@ -228,9 +228,7 @@
 .end method
 
 .method private static split(Ljava/lang/String;)[Ljava/lang/String;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-static {p0}, Lorg/apache/http/util/TextUtils;->isBlank(Ljava/lang/CharSequence;)Z
 
@@ -247,7 +245,9 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method private verifyHostname(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;)V

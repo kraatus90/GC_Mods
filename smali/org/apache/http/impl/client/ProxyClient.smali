@@ -100,21 +100,21 @@
 
     new-array v1, v1, [Lorg/apache/http/HttpRequestInterceptor;
 
-    const/4 v2, 0x0
+    new-instance v2, Lorg/apache/http/client/protocol/RequestClientConnControl;
 
-    new-instance v3, Lorg/apache/http/client/protocol/RequestClientConnControl;
+    invoke-direct {v2}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/client/protocol/RequestClientConnControl;-><init>()V
+    const/4 v3, 0x0
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
-    const/4 v2, 0x1
+    new-instance v2, Lorg/apache/http/protocol/RequestUserAgent;
 
-    new-instance v3, Lorg/apache/http/protocol/RequestUserAgent;
+    invoke-direct {v2}, Lorg/apache/http/protocol/RequestUserAgent;-><init>()V
 
-    invoke-direct {v3}, Lorg/apache/http/protocol/RequestUserAgent;-><init>()V
+    const/4 v3, 0x1
 
-    aput-object v3, v1, v2
+    aput-object v2, v1, v3
 
     invoke-direct {v0, v1}, Lorg/apache/http/protocol/ImmutableHttpProcessor;-><init>([Lorg/apache/http/HttpRequestInterceptor;)V
 
@@ -152,53 +152,53 @@
 
     iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
 
-    const-string/jumbo v1, "Basic"
+    new-instance v1, Lorg/apache/http/impl/auth/BasicSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/BasicSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/BasicSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/BasicSchemeFactory;-><init>()V
+    const-string/jumbo v2, "Basic"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
-
-    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
-
-    const-string/jumbo v1, "Digest"
-
-    new-instance v2, Lorg/apache/http/impl/auth/DigestSchemeFactory;
-
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/DigestSchemeFactory;-><init>()V
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
 
-    const-string/jumbo v1, "NTLM"
+    new-instance v1, Lorg/apache/http/impl/auth/DigestSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/NTLMSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/DigestSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/NTLMSchemeFactory;-><init>()V
+    const-string/jumbo v2, "Digest"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
-
-    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
-
-    const-string/jumbo v1, "negotiate"
-
-    new-instance v2, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;
-
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;-><init>()V
-
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
 
-    const-string/jumbo v1, "Kerberos"
+    new-instance v1, Lorg/apache/http/impl/auth/NTLMSchemeFactory;
 
-    new-instance v2, Lorg/apache/http/impl/auth/KerberosSchemeFactory;
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/NTLMSchemeFactory;-><init>()V
 
-    invoke-direct {v2}, Lorg/apache/http/impl/auth/KerberosSchemeFactory;-><init>()V
+    const-string/jumbo v2, "NTLM"
 
-    invoke-virtual {v0, v1, v2}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+
+    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
+
+    new-instance v1, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;
+
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/SPNegoSchemeFactory;-><init>()V
+
+    const-string/jumbo v2, "negotiate"
+
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
+
+    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
+
+    new-instance v1, Lorg/apache/http/impl/auth/KerberosSchemeFactory;
+
+    invoke-direct {v1}, Lorg/apache/http/impl/auth/KerberosSchemeFactory;-><init>()V
+
+    const-string/jumbo v2, "Kerberos"
+
+    invoke-virtual {v0, v2, v1}, Lorg/apache/http/auth/AuthSchemeRegistry;->register(Ljava/lang/String;Lorg/apache/http/auth/AuthSchemeFactory;)V
 
     new-instance v0, Lorg/apache/http/impl/DefaultConnectionReuseStrategy;
 
@@ -214,8 +214,6 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
-    const/4 v2, 0x0
-
     invoke-static {p1}, Lorg/apache/http/params/HttpParamConfig;->getConnectionConfig(Lorg/apache/http/params/HttpParams;)Lorg/apache/http/config/ConnectionConfig;
 
     move-result-object v0
@@ -223,6 +221,8 @@
     invoke-static {p1}, Lorg/apache/http/client/params/HttpClientParamConfig;->getRequestConfig(Lorg/apache/http/params/HttpParams;)Lorg/apache/http/client/config/RequestConfig;
 
     move-result-object v1
+
+    const/4 v2, 0x0
 
     invoke-direct {p0, v2, v0, v1}, Lorg/apache/http/impl/client/ProxyClient;-><init>(Lorg/apache/http/conn/HttpConnectionFactory;Lorg/apache/http/config/ConnectionConfig;Lorg/apache/http/client/config/RequestConfig;)V
 
@@ -313,15 +313,15 @@
 
     new-instance v7, Lorg/apache/http/message/BasicHttpRequest;
 
-    const-string/jumbo v2, "CONNECT"
-
     invoke-virtual {v1}, Lorg/apache/http/HttpHost;->toHostString()Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v3, Lorg/apache/http/HttpVersion;->HTTP_1_1:Lorg/apache/http/HttpVersion;
+    sget-object v2, Lorg/apache/http/HttpVersion;->HTTP_1_1:Lorg/apache/http/HttpVersion;
 
-    invoke-direct {v7, v2, v1, v3}, Lorg/apache/http/message/BasicHttpRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/apache/http/ProtocolVersion;)V
+    const-string/jumbo v3, "CONNECT"
+
+    invoke-direct {v7, v3, v1, v2}, Lorg/apache/http/message/BasicHttpRequest;-><init>(Ljava/lang/String;Ljava/lang/String;Lorg/apache/http/ProtocolVersion;)V
 
     new-instance v1, Lorg/apache/http/impl/client/BasicCredentialsProvider;
 
@@ -349,27 +349,27 @@
 
     invoke-interface {v5, v2, v0}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string/jumbo v0, "http.auth.proxy-scope"
+    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->proxyAuthState:Lorg/apache/http/auth/AuthState;
 
-    iget-object v2, p0, Lorg/apache/http/impl/client/ProxyClient;->proxyAuthState:Lorg/apache/http/auth/AuthState;
+    const-string/jumbo v2, "http.auth.proxy-scope"
 
-    invoke-interface {v5, v0, v2}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v5, v2, v0}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     const-string/jumbo v0, "http.auth.credentials-provider"
 
     invoke-interface {v5, v0, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string/jumbo v0, "http.authscheme-registry"
+    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/ProxyClient;->authSchemeRegistry:Lorg/apache/http/auth/AuthSchemeRegistry;
+    const-string/jumbo v1, "http.authscheme-registry"
 
-    invoke-interface {v5, v0, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v5, v1, v0}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
-    const-string/jumbo v0, "http.request-config"
+    iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->requestConfig:Lorg/apache/http/client/config/RequestConfig;
 
-    iget-object v1, p0, Lorg/apache/http/impl/client/ProxyClient;->requestConfig:Lorg/apache/http/client/config/RequestConfig;
+    const-string/jumbo v1, "http.request-config"
 
-    invoke-interface {v5, v0, v1}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v5, v1, v0}, Lorg/apache/http/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
 
     iget-object v0, p0, Lorg/apache/http/impl/client/ProxyClient;->requestExec:Lorg/apache/http/protocol/HttpRequestExecutor;
 
@@ -449,13 +449,13 @@
 
     move-result-object v0
 
-    const/16 v2, 0x50
-
     invoke-virtual {p2}, Lorg/apache/http/HttpHost;->getSchemeName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v1, v0, v2, v3}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const/16 v3, 0x50
+
+    invoke-direct {v1, v0, v3, v2}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     goto/16 :goto_0
 

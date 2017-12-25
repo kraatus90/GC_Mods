@@ -264,9 +264,9 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AlertDialog$Builder;->P:Landroid/support/v7/app/AlertController$AlertParams;
 
-    iget v2, v0, Landroid/util/TypedValue;->resourceId:I
+    iget v0, v0, Landroid/util/TypedValue;->resourceId:I
 
-    iput v2, v1, Landroid/support/v7/app/AlertController$AlertParams;->mIconId:I
+    iput v0, v1, Landroid/support/v7/app/AlertController$AlertParams;->mIconId:I
 
     return-object p0
 .end method
@@ -785,9 +785,9 @@
 .method public setView(I)Landroid/support/v7/app/AlertDialog$Builder;
     .locals 2
 
-    const/4 v1, 0x0
-
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog$Builder;->P:Landroid/support/v7/app/AlertController$AlertParams;
+
+    const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v7/app/AlertController$AlertParams;->mView:Landroid/view/View;
 

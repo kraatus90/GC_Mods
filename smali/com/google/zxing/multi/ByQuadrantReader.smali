@@ -22,7 +22,7 @@
 .end method
 
 .method private static makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
-    .locals 6
+    .locals 5
 
     if-nez p0, :cond_1
 
@@ -33,9 +33,9 @@
     const/4 v0, 0x0
 
     :goto_0
-    array-length v2, p0
+    array-length v1, p0
 
-    if-ge v0, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
     aget-object v1, p0, v0
 
@@ -51,13 +51,13 @@
 
     invoke-virtual {v1}, Lcom/google/zxing/ResultPoint;->getY()F
 
-    move-result v4
+    move-result v1
 
-    int-to-float v5, p2
+    int-to-float v4, p2
 
-    add-float/2addr v4, v5
+    add-float/2addr v1, v4
 
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
+    invoke-direct {v2, v3, v1}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     aput-object v2, p0, v0
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
-    .locals 12
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,139 +111,139 @@
 
     invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getWidth()I
 
-    move-result v8
+    move-result v0
 
     invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getHeight()I
 
-    move-result v3
+    move-result v1
 
-    div-int/lit8 v2, v8, 0x2
+    div-int/lit8 v0, v0, 0x2
 
-    div-int/lit8 v1, v3, 0x2
+    div-int/lit8 v1, v1, 0x2
 
     :try_start_0
-    iget-object v9, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
+    iget-object v2, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
 
-    const/4 v10, 0x0
+    const/4 v3, 0x0
 
-    const/4 v11, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {p1, v10, v11, v2, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
+    invoke-virtual {p1, v3, v4, v0, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
 
-    move-result-object v10
+    move-result-object v3
 
-    invoke-interface {v9, v10, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    invoke-interface {v2, v3, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     :try_end_0
     .catch Lcom/google/zxing/NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v9
+    move-result-object v0
 
-    return-object v9
+    return-object v0
 
     :catch_0
-    move-exception v6
+    move-exception v2
 
     :try_start_1
-    iget-object v9, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
+    iget-object v2, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
 
-    const/4 v10, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, v2, v10, v2, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
+    invoke-virtual {p1, v0, v3, v0, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
 
-    move-result-object v10
+    move-result-object v3
 
-    invoke-interface {v9, v10, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    invoke-interface {v2, v3, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v2}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
-    move-result-object v9
+    move-result-object v3
 
-    const/4 v10, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v9, v2, v10}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
+    invoke-static {v3, v0, v4}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
     :try_end_1
     .catch Lcom/google/zxing/NotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object v7
+    return-object v2
 
     :catch_1
-    move-exception v6
+    move-exception v2
 
     :try_start_2
-    iget-object v9, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
+    iget-object v2, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
 
-    const/4 v10, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, v10, v1, v2, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
+    invoke-virtual {p1, v3, v1, v0, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
 
-    move-result-object v10
+    move-result-object v3
 
-    invoke-interface {v9, v10, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    invoke-interface {v2, v3, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v2}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
-    move-result-object v9
+    move-result-object v3
 
-    const/4 v10, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v9, v10, v1}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
+    invoke-static {v3, v4, v1}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
     :try_end_2
     .catch Lcom/google/zxing/NotFoundException; {:try_start_2 .. :try_end_2} :catch_2
 
-    return-object v7
+    return-object v2
 
     :catch_2
-    move-exception v6
+    move-exception v2
 
     :try_start_3
-    iget-object v9, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
+    iget-object v2, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
 
-    invoke-virtual {p1, v2, v1, v2, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
+    invoke-virtual {p1, v0, v1, v0, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
 
-    move-result-object v10
+    move-result-object v3
 
-    invoke-interface {v9, v10, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    invoke-interface {v2, v3, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v2}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-static {v9, v2, v1}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
+    invoke-static {v3, v0, v1}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
     :try_end_3
     .catch Lcom/google/zxing/NotFoundException; {:try_start_3 .. :try_end_3} :catch_3
 
-    return-object v7
+    return-object v2
 
     :catch_3
-    move-exception v6
+    move-exception v2
 
-    div-int/lit8 v5, v2, 0x2
+    div-int/lit8 v2, v0, 0x2
 
-    div-int/lit8 v4, v1, 0x2
+    div-int/lit8 v3, v1, 0x2
 
-    invoke-virtual {p1, v5, v4, v2, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
+    invoke-virtual {p1, v2, v3, v0, v1}, Lcom/google/zxing/BinaryBitmap;->crop(IIII)Lcom/google/zxing/BinaryBitmap;
 
     move-result-object v0
 
-    iget-object v9, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
+    iget-object v1, p0, Lcom/google/zxing/multi/ByQuadrantReader;->delegate:Lcom/google/zxing/Reader;
 
-    invoke-interface {v9, v0, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    invoke-interface {v1, v0, p2}, Lcom/google/zxing/Reader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
+    invoke-virtual {v0}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-static {v9, v5, v4}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
+    invoke-static {v1, v2, v3}, Lcom/google/zxing/multi/ByQuadrantReader;->makeAbsolute([Lcom/google/zxing/ResultPoint;II)V
 
-    return-object v7
+    return-object v0
 .end method
 
 .method public reset()V

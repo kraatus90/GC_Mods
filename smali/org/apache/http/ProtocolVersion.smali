@@ -71,9 +71,9 @@
 .end method
 
 .method public compareToVersion(Lorg/apache/http/ProtocolVersion;)I
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const-string/jumbo v0, "Protocol version"
 
@@ -87,19 +87,19 @@
 
     move-result v0
 
-    const-string/jumbo v1, "Versions for different protocols cannot be compared: %s %s"
+    const/4 v1, 0x2
 
-    const/4 v2, 0x2
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    aput-object p0, v1, v2
 
-    aput-object p0, v2, v3
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    aput-object p1, v1, v2
 
-    aput-object p1, v2, v3
+    const-string/jumbo v2, "Versions for different protocols cannot be compared: %s %s"
 
-    invoke-static {v0, v1, v2}, Lorg/apache/http/util/Args;->check(ZLjava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v2, v1}, Lorg/apache/http/util/Args;->check(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lorg/apache/http/ProtocolVersion;->getMajor()I
 

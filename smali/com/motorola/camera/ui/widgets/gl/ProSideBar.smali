@@ -247,7 +247,7 @@
 
     sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->FOLD_IDX:I
 
-    const/16 v2, 0xb2
+    const/16 v2, 0xb3
 
     aput v2, v0, v1
 
@@ -255,7 +255,7 @@
 
     sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->EXP_IDX:I
 
-    const/16 v2, 0xbf
+    const/16 v2, 0xc0
 
     aput v2, v0, v1
 
@@ -263,7 +263,7 @@
 
     sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->ISO_IDX:I
 
-    const/16 v2, 0xc0
+    const/16 v2, 0xc1
 
     aput v2, v0, v1
 
@@ -271,7 +271,7 @@
 
     sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->SHUTTER_IDX:I
 
-    const/16 v2, 0xc2
+    const/16 v2, 0xc3
 
     aput v2, v0, v1
 
@@ -279,7 +279,7 @@
 
     sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->WB_IDX:I
 
-    const/16 v2, 0xc3
+    const/16 v2, 0xc4
 
     aput v2, v0, v1
 
@@ -287,7 +287,7 @@
 
     sget v1, Lcom/motorola/camera/ui/widgets/gl/textures/ProSideBarTexture;->MF_IDX:I
 
-    const/16 v2, 0xc1
+    const/16 v2, 0xc2
 
     aput v2, v0, v1
 

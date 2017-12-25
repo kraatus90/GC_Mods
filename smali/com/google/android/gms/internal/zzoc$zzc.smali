@@ -155,9 +155,7 @@
 .end method
 
 .method public zzAf()Lcom/google/android/gms/internal/zzoc$zzc;
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     sget-object v0, Lcom/google/android/gms/internal/zzob;->zzaOc:[B
 
@@ -171,7 +169,9 @@
 
     iput-boolean v0, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOk:Z
 
-    iput-object v1, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaNI:Lcom/google/android/gms/internal/zznu;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaNI:Lcom/google/android/gms/internal/zznu;
 
     const/4 v0, -0x1
 
@@ -336,11 +336,11 @@
     return-void
 
     :cond_1
-    const/4 v1, 0x1
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOi:[B
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOi:[B
+    const/4 v2, 0x1
 
-    invoke-virtual {p1, v1, v2}, Lcom/google/android/gms/internal/zznr;->zza(I[B)V
+    invoke-virtual {p1, v2, v1}, Lcom/google/android/gms/internal/zznr;->zza(I[B)V
 
     goto :goto_0
 
@@ -377,11 +377,11 @@
     goto :goto_3
 
     :cond_4
-    const/4 v0, 0x3
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOk:Z
 
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOk:Z
+    const/4 v1, 0x3
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zznr;->zzb(IZ)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/zznr;->zzb(IZ)V
 
     goto :goto_1
 .end method
@@ -497,11 +497,11 @@
     goto :goto_4
 
     :cond_5
-    const/4 v1, 0x3
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOk:Z
 
-    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzoc$zzc;->zzaOk:Z
+    const/4 v2, 0x3
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/zznr;->zzc(IZ)I
+    invoke-static {v2, v1}, Lcom/google/android/gms/internal/zznr;->zzc(IZ)I
 
     move-result v1
 

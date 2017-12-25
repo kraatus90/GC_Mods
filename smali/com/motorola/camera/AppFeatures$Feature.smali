@@ -40,9 +40,19 @@
 
 .field public static final enum CDS_EARLY_CAPTURE:Lcom/motorola/camera/AppFeatures$Feature;
 
+.field public static final enum DEPTH_ENABLED:Lcom/motorola/camera/AppFeatures$Feature;
+
+.field public static final enum DISABLE_JUMPCUT_ROTATION:Lcom/motorola/camera/AppFeatures$Feature;
+
+.field public static final enum HIGHLIGHT_DEPTH_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
+.field public static final enum HIGHLIGHT_MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
 .field public static final enum HOLD_CAMERA_STEADY:Lcom/motorola/camera/AppFeatures$Feature;
 
 .field public static final enum LANDMARK_DETECTION:Lcom/motorola/camera/AppFeatures$Feature;
+
+.field public static final enum LANDMARK_PRELOAD:Lcom/motorola/camera/AppFeatures$Feature;
 
 .field public static final enum MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
 
@@ -135,9 +145,29 @@
 
     new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
 
-    const-string/jumbo v1, "HOLD_CAMERA_STEADY"
+    const-string/jumbo v1, "DEPTH_ENABLED"
 
     const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/AppFeatures$Feature;->DEPTH_ENABLED:Lcom/motorola/camera/AppFeatures$Feature;
+
+    new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
+
+    const-string/jumbo v1, "DISABLE_JUMPCUT_ROTATION"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/AppFeatures$Feature;->DISABLE_JUMPCUT_ROTATION:Lcom/motorola/camera/AppFeatures$Feature;
+
+    new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
+
+    const-string/jumbo v1, "HOLD_CAMERA_STEADY"
+
+    const/16 v2, 0x9
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -145,9 +175,29 @@
 
     new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
 
+    const-string/jumbo v1, "HIGHLIGHT_DEPTH_MODE"
+
+    const/16 v2, 0xa
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/AppFeatures$Feature;->HIGHLIGHT_DEPTH_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
+    new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
+
+    const-string/jumbo v1, "HIGHLIGHT_MONO_MODE"
+
+    const/16 v2, 0xb
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/AppFeatures$Feature;->HIGHLIGHT_MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
+    new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
+
     const-string/jumbo v1, "LANDMARK_DETECTION"
 
-    const/16 v2, 0x8
+    const/16 v2, 0xc
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -155,9 +205,19 @@
 
     new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
 
+    const-string/jumbo v1, "LANDMARK_PRELOAD"
+
+    const/16 v2, 0xd
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/AppFeatures$Feature;->LANDMARK_PRELOAD:Lcom/motorola/camera/AppFeatures$Feature;
+
+    new-instance v0, Lcom/motorola/camera/AppFeatures$Feature;
+
     const-string/jumbo v1, "MONO_MODE"
 
-    const/16 v2, 0x9
+    const/16 v2, 0xe
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -167,7 +227,7 @@
 
     const-string/jumbo v1, "OBJECT_DETECTION"
 
-    const/16 v2, 0xa
+    const/16 v2, 0xf
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -177,7 +237,7 @@
 
     const-string/jumbo v1, "PRO_MODE"
 
-    const/16 v2, 0xb
+    const/16 v2, 0x10
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -187,7 +247,7 @@
 
     const-string/jumbo v1, "QCFA"
 
-    const/16 v2, 0xc
+    const/16 v2, 0x11
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -197,7 +257,7 @@
 
     const-string/jumbo v1, "ZOOM_SWITCH"
 
-    const/16 v2, 0xd
+    const/16 v2, 0x12
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -207,7 +267,7 @@
 
     const-string/jumbo v1, "WIDE_SELFIE"
 
-    const/16 v2, 0xe
+    const/16 v2, 0x13
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
@@ -217,13 +277,13 @@
 
     const-string/jumbo v1, "SELECTIVE_COLOR"
 
-    const/16 v2, 0xf
+    const/16 v2, 0x14
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/AppFeatures$Feature;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/AppFeatures$Feature;->SELECTIVE_COLOR:Lcom/motorola/camera/AppFeatures$Feature;
 
-    const/16 v0, 0x10
+    const/16 v0, 0x15
 
     new-array v0, v0, [Lcom/motorola/camera/AppFeatures$Feature;
 
@@ -259,57 +319,87 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->HOLD_CAMERA_STEADY:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->DEPTH_ENABLED:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/4 v2, 0x7
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->LANDMARK_DETECTION:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->DISABLE_JUMPCUT_ROTATION:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->HOLD_CAMERA_STEADY:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0x9
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->OBJECT_DETECTION:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->HIGHLIGHT_DEPTH_MODE:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->PRO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->HIGHLIGHT_MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0xb
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->QCFA:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->LANDMARK_DETECTION:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0xc
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->ZOOM_SWITCH:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->LANDMARK_PRELOAD:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->WIDE_SELFIE:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->MONO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0xe
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->SELECTIVE_COLOR:Lcom/motorola/camera/AppFeatures$Feature;
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->OBJECT_DETECTION:Lcom/motorola/camera/AppFeatures$Feature;
 
     const/16 v2, 0xf
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->PRO_MODE:Lcom/motorola/camera/AppFeatures$Feature;
+
+    const/16 v2, 0x10
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->QCFA:Lcom/motorola/camera/AppFeatures$Feature;
+
+    const/16 v2, 0x11
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->ZOOM_SWITCH:Lcom/motorola/camera/AppFeatures$Feature;
+
+    const/16 v2, 0x12
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->WIDE_SELFIE:Lcom/motorola/camera/AppFeatures$Feature;
+
+    const/16 v2, 0x13
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/AppFeatures$Feature;->SELECTIVE_COLOR:Lcom/motorola/camera/AppFeatures$Feature;
+
+    const/16 v2, 0x14
 
     aput-object v1, v0, v2
 

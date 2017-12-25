@@ -4,10 +4,6 @@
 
 
 # annotations
-.annotation build Landroid/annotation/TargetApi;
-    value = 0x15
-.end annotation
-
 .annotation build Landroid/support/annotation/RequiresApi;
     value = 0x15
 .end annotation
@@ -158,7 +154,7 @@
 .end method
 
 .method public static getQueue(Ljava/lang/Object;)Ljava/util/List;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -171,7 +167,7 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     check-cast p0, Landroid/media/session/MediaController;
 
@@ -188,7 +184,7 @@
     return-object v1
 
     :cond_0
-    return-object v2
+    return-object v1
 .end method
 
 .method public static getQueueTitle(Ljava/lang/Object;)Ljava/lang/CharSequence;

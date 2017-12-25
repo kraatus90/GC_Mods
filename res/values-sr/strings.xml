@@ -120,7 +120,7 @@
     <string name="aware_info_event">Догађај</string>
     <string name="aware_info_failed">Није успело</string>
     <string name="aware_info_geo">Локација</string>
-    <string name="aware_info_landmark">Ознака</string>
+    <string name="aware_info_landmark">Оријентир</string>
     <string name="aware_info_landmark_loading">Камера препознаје оријентир</string>
     <string name="aware_info_message">Порука</string>
     <string name="aware_info_more_wikipedia">Видите још на порталу Wikipedia</string>
@@ -148,7 +148,7 @@
     <string name="cancel">Откажи</string>
     <string name="capture_failure">Снимање није успело. Покушајте поново.</string>
     <string name="checkbox_do_not_show">Немој поново да приказујеш</string>
-    <string name="cloudsight_terms">Слике ће бити послате на CloudSight да бисте добили резултате претраге. &lt;br/>&lt;br/> Тиме што настављате, потврђујете да прихватате &lt;a href=%1$s>Политику приватности&lt;/a> за CloudSight.</string>
+    <string name="cloudsight_terms">Сваки пут када употребите препознавање објекта, слика и локација (ако је омогућена) се шаљу трећој страни ради пружања резултата претраге.&lt;br/>&lt;br/> Ако наставите, прихватате &lt;a href=%1$s>политику приватности&lt;/a>.</string>
     <string name="dailog_panorama_failed">Панорама није успела. Покушајте поново.</string>
     <string name="dailog_panorama_not_taken">Није снимљена панорамска слика.</string>
     <string name="dialog_access_sd_fail">Није могуће снимати медије. Није могуће приступити SD картици.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Уређај није подржан</string>
     <string name="dialog_disagree">Не прихватам</string>
     <string name="dialog_dismiss">Не приказуј поново</string>
+    <string name="dialog_download">Преузми</string>
     <string name="dialog_external_sd_missing">Није могуће снимити слику. SD картица није доступна. Пребацивање на интерну меморију телефона</string>
     <string name="dialog_first_time_set_pure_raw_message">"Овај тип датотеке без обраде користи се за професионално мењање фотографија.
 
@@ -247,6 +248,7 @@
     <string name="help_next">Даље</string>
     <string name="image_360_desc">Ово је 360 фотографија. Ову фотографију можете да измените помоћу Moto 360 уређивача.</string>
     <string name="image_360_name">360 фотографија</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">ДУБИНА ЈЕ ОМОГУЋЕНА</string>
     <string name="indicate_mode_mono">ПРАВО ЦРНО-БЕЛО</string>
@@ -258,16 +260,19 @@
     <string name="indicate_mode_ultra_wide">УЛТРАШИРОКИ УГАО</string>
     <string name="indicate_mode_video">ВИДЕО</string>
     <string name="indicate_mode_wide_angle">ШИРОКИ УГАО</string>
+    <string name="indicate_mode_wide_angle_selfie">ШИРОКОУГАОНИ СЕЛФИ</string>
     <string name="internal_storage">интерна меморија</string>
     <string name="kilo_bytes">KB</string>
-    <string name="landmark_install_message">Функција препознавања оријентира доноси информације о популарним оријентирима у свим деловима света.&lt;br/>&lt;br/>Инсталирајте ту функцију да бисте могли да је активирате.</string>
-    <string name="landmark_install_over_data">Препознавање оријентира заузима 92 MB када се преузме. Инсталирање те функције преко мреже за пренос мобилних података може да створи додатне трошкове преноса података.</string>
-    <string name="landmark_notification_downloading">Функција Препознавање оријентира се преузима</string>
-    <string name="landmark_notification_install">Инсталирање функције Препознавање оријентира</string>
-    <string name="landmark_notification_install_complete">Инсталирање функције Препознавање оријентира је готово</string>
-    <string name="landmark_notification_install_failed">Инсталирање функције Препознавање оријентира није успело</string>
+    <string name="landmark_install_message">Функција препознавања оријентира доноси информације о популарним оријентирима у свим деловима света.&lt;br/>&lt;br/>Преузмите базу оријентира да бисте омогућили ову функцију.</string>
+    <string name="landmark_install_over_data">База оријентира заузима 92 MB када се преузме. Преузимање преко мреже за пренос мобилних података може да створи додатне трошкове преноса података.</string>
+    <string name="landmark_notification_downloading">Преузимање базе оријентира</string>
+    <string name="landmark_notification_install">Инсталирање базе оријентира</string>
+    <string name="landmark_notification_install_complete">Инсталирање базе оријентира је готово</string>
+    <string name="landmark_notification_install_failed">Инсталирање базе оријентира није успело</string>
     <string name="landmark_notification_install_invalid_url">База података о оријентирима није доступна, инсталирајте најновију верзију Камере</string>
-    <string name="landmark_notification_install_out_of_space">У меморији нема довољно простора за инсталирање функције Препознавање оријентира</string>
+    <string name="landmark_notification_install_out_of_space">У меморији нема довољно простора за инсталирање базе оријентира</string>
+    <string name="landmark_notification_paused">Преузимање базе оријентира ће се наставити када буде доступна веза са интернетом</string>
+    <string name="landmark_notification_queued">Преузимање базе оријентира ће започети када буде доступна веза са интернетом</string>
     <string name="main_setting_amz_barcode">Amazon скенер баркодова</string>
     <string name="main_setting_amz_privacy">Amazon обавештење о приватности</string>
     <string name="main_setting_amz_terms">Услови коришћења</string>
@@ -276,7 +281,7 @@
     <string name="main_setting_category_general">Опште</string>
     <string name="main_setting_category_help">Помоћ</string>
     <string name="main_setting_category_photo">Слика</string>
-    <string name="main_setting_category_smart_camera">Smart Camera</string>
+    <string name="main_setting_category_smart_camera">Паметна камера</string>
     <string name="main_setting_category_video">Видео</string>
     <string name="main_setting_debug_ui">Отклањање грешака</string>
     <string name="main_setting_digital_zoom">Користи дигитални зум</string>
@@ -290,6 +295,8 @@
     <string name="main_setting_image_ratio">Величина фотографије (задња)</string>
     <string name="main_setting_image_ratio_front">Величина фотографије (предња)</string>
     <string name="main_setting_landmark_detection">Препознавање оријентира</string>
+    <string name="main_setting_landmark_version_current">Верзија базе података: %s</string>
+    <string name="main_setting_landmark_version_not_installed">База података није инсталирана</string>
     <string name="main_setting_licenses">Лиценце отвореног кода</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@
     <string name="perm_required_alert_title">Потребне су дозволе</string>
     <string name="photos_depth_desc">Користите уређивач дубине да бисте изабрали фокус, заменили позадину или изабрали област коју желите да промените на црно-бело.</string>
     <string name="photos_depth_name">Дубина је омогућена</string>
+    <string name="photos_notification_desc">Уз Google слике добијате неограничену меморију</string>
+    <string name="photos_notification_title">Направите резервну копију у апликацији Google слике</string>
+    <string name="qcfa_resolution_description">Прилагођено осветљењу</string>
     <string name="retake">Поново снимите</string>
     <string name="second_10">10 с</string>
     <string name="second_3">3 с</string>
@@ -367,6 +377,7 @@
     <string name="setting_mode_slow_motion">Успорено</string>
     <string name="setting_mode_ultra_wide">Ултрашироки угао</string>
     <string name="setting_mode_video">Видео</string>
+    <string name="setting_mode_wide_angle_selfie">Широкоугаони селфи</string>
     <string name="setting_off">Искључено</string>
     <string name="setting_on">Укључено</string>
     <string name="setting_persist">Чекање</string>
@@ -383,20 +394,25 @@
     <string name="setting_timer_dialog_title">ТАЈМЕР</string>
     <string name="setting_torch">Лампа</string>
     <string name="setting_true">тачно</string>
-    <string name="smartcam_landmark_notification_title">Smart Camera</string>
+    <string name="shortcut_desc_depth">Фотографија са дубином</string>
+    <string name="shortcut_desc_selfie">Селфи</string>
+    <string name="shortcut_desc_video">Видео</string>
+    <string name="smartcam_landmark_notification_title">Паметна камера</string>
+    <string name="smartcam_no_detections">Нема сачуваних објеката нити оријентира</string>
     <string name="storage_location_external">SD картица</string>
     <string name="storage_location_internal">Телефон</string>
     <string name="storage_unavailable">Меморија није доступна</string>
+    <string name="toast_battery_saver">Тренутно сте у режиму уштеде енергије, неке функције могу да буду ограничене</string>
     <string name="toast_geotag_message_1">Морате да дате дозволу за локацију да бисте омогућили чување локације.</string>
     <string name="toast_geotag_message_2">Подешавање локације ступа на снагу тек након што укључите подешавање локације система.</string>
     <string name="tooltip_camera_switch_360">Испробајте различите опције камере.</string>
     <string name="tooltip_capture_360">Пробајте да снимите фотографију или видео од 360° тако што ћете додирнути ово дугме затварача.</string>
     <string name="tooltip_capture_key_360">Такође можете да снимате помоћу дугмета затварача са задње стране Mod додатка.</string>
-    <string name="tooltip_dual_camera_depth_photo">Снимајте фотографије са додатним информацијама да бисте омогућили специјалне функције за мењање.</string>
     <string name="tooltip_first_use_zoom_button">Додирните овде да бисте прешли на широки угао.</string>
     <string name="tooltip_gallery_360">Погледајте како је испала фотографија или видео од 360° тако што ћете превући лево.</string>
     <string name="tooltip_minimap_viewfinder">Померајте доњу слику лево или десно.</string>
     <string name="tooltip_mode_switch_360">Пробајте да снимате у 360° у различитим режимима.</string>
+    <string name="tooltip_modes_list">Откријте нове начине за снимање фотографија.</string>
     <string name="tooltip_smart_camera">Додирните да бисте сазнали више о предмету.</string>
     <string name="tooltip_smart_camera_disable">Ову функцију можете да искључите у Подешавањима.</string>
     <string name="tooltip_spherical_viewfinder">Померајте и користите зум да бисте управљали погледом.</string>
@@ -419,5 +435,10 @@
     <string name="zoom_hint_full">ПУНО</string>
     <string name="zoom_hint_wide">ШИРОКО</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">Прилагођено осветљењу</string>
+    <string name="indicate_mode_timelapse">УБРЗАНО</string>
+    <string name="setting_mode_timelapse">Убрзано</string>
+    <string name="timelapse_config_16x">16x</string>
+    <string name="timelapse_config_32x">32x</string>
+    <string name="timelapse_config_4x">4x</string>
+    <string name="timelapse_config_8x">8x</string>
 </resources>

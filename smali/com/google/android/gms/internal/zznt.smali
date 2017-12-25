@@ -68,8 +68,6 @@
         }
     .end annotation
 
-    const/4 v1, 0x0
-
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -107,7 +105,9 @@
     return-object v0
 
     :cond_0
-    return-object v1
+    const/4 v0, 0x0
+
+    return-object v0
 .end method
 
 .method public static zza(ILjava/lang/Class;I)Lcom/google/android/gms/internal/zznt;
@@ -139,7 +139,7 @@
 .end method
 
 .method private zzz(Ljava/util/List;)Ljava/lang/Object;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -149,8 +149,6 @@
             ">;)TT;"
         }
     .end annotation
-
-    const/4 v5, 0x0
 
     const/4 v2, 0x0
 
@@ -220,7 +218,9 @@
     goto :goto_2
 
     :cond_2
-    return-object v5
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_3
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;

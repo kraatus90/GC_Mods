@@ -27,201 +27,201 @@
 .end method
 
 .method public static createDecoder(Lcom/google/zxing/common/BitArray;)Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;
-    .locals 6
+    .locals 3
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {p0, v4}, Lcom/google/zxing/common/BitArray;->get(I)Z
+    invoke-virtual {p0, v1}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v3, 0x2
+    const/4 v0, 0x2
 
-    invoke-virtual {p0, v3}, Lcom/google/zxing/common/BitArray;->get(I)Z
+    invoke-virtual {p0, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
-    const/4 v3, 0x4
+    const/4 v0, 0x4
 
-    invoke-static {p0, v4, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
+    invoke-static {p0, v1, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
 
-    move-result v1
+    move-result v0
 
-    packed-switch v1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v3, 0x5
+    const/4 v0, 0x5
 
-    invoke-static {p0, v4, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
+    invoke-static {p0, v1, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_1
 
-    const/4 v3, 0x7
+    const/4 v0, 0x7
 
-    invoke-static {p0, v4, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
+    invoke-static {p0, v1, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
 
-    move-result v2
+    move-result v0
 
-    packed-switch v2, :pswitch_data_2
+    packed-switch v0, :pswitch_data_2
 
-    new-instance v3, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "unknown decoder: "
+    const-string/jumbo v2, "unknown decoder: "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     :cond_0
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;
 
-    invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;-><init>(Lcom/google/zxing/common/BitArray;)V
+    invoke-direct {v0, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    return-object v3
+    return-object v0
 
     :cond_1
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;
 
-    invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
+    invoke-direct {v0, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_0
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013103decoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013103decoder;
 
-    invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013103decoder;-><init>(Lcom/google/zxing/common/BitArray;)V
+    invoke-direct {v0, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013103decoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_1
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01320xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI01320xDecoder;
 
-    invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01320xDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
+    invoke-direct {v0, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01320xDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_2
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;
 
-    invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
+    invoke-direct {v0, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_3
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;
 
-    invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
+    invoke-direct {v0, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_4
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "310"
+    const-string/jumbo v1, "310"
 
-    const-string/jumbo v5, "11"
+    const-string/jumbo v2, "11"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_5
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "320"
+    const-string/jumbo v1, "320"
 
-    const-string/jumbo v5, "11"
+    const-string/jumbo v2, "11"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_6
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "310"
+    const-string/jumbo v1, "310"
 
-    const-string/jumbo v5, "13"
+    const-string/jumbo v2, "13"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_7
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "320"
+    const-string/jumbo v1, "320"
 
-    const-string/jumbo v5, "13"
+    const-string/jumbo v2, "13"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_8
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "310"
+    const-string/jumbo v1, "310"
 
-    const-string/jumbo v5, "15"
+    const-string/jumbo v2, "15"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_9
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "320"
+    const-string/jumbo v1, "320"
 
-    const-string/jumbo v5, "15"
+    const-string/jumbo v2, "15"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_a
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "310"
+    const-string/jumbo v1, "310"
 
-    const-string/jumbo v5, "17"
+    const-string/jumbo v2, "17"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_b
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
+    new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
-    const-string/jumbo v4, "320"
+    const-string/jumbo v1, "320"
 
-    const-string/jumbo v5, "17"
+    const-string/jumbo v2, "17"
 
-    invoke-direct {v3, p0, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;-><init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object v3
+    return-object v0
 
     :pswitch_data_0
     .packed-switch 0x4

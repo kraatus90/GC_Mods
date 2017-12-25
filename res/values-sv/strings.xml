@@ -148,7 +148,7 @@
     <string name="cancel">Avbryt</string>
     <string name="capture_failure">Bildtagningen misslyckades. Försök igen.</string>
     <string name="checkbox_do_not_show">Visa inte igen</string>
-    <string name="cloudsight_terms">Bilderna skickas till CloudSight så att de kan anges som sökresultat. &lt;br/>&lt;br/> Genom att fortsätta samtycker du till CloudSights &lt;a href=%1$s>sekretesspolicy&lt;/a>.</string>
+    <string name="cloudsight_terms">Varje gång du använder funktionen för objektidentifiering skickas bilden och platsinformationen (om aktiverat) till tredje part så att sökresultat kan tillhandahållas.&lt;br/>&lt;br/> Om du väljer att fortsätta innebär det att du godkänner &lt;a href=%1$s>sekretesspolicyn&lt;/a>.</string>
     <string name="dailog_panorama_failed">Panorama misslyckades. Försök igen.</string>
     <string name="dailog_panorama_not_taken">Panoramabild togs inte.</string>
     <string name="dialog_access_sd_fail">Det går inte att använda media. SD-kortet är inte tillgängligt.</string>
@@ -170,6 +170,7 @@
     <string name="dialog_device_not_supported">Enheten kan inte användas</string>
     <string name="dialog_disagree">Godkänn inte</string>
     <string name="dialog_dismiss">Visa inte igen</string>
+    <string name="dialog_download">Hämta</string>
     <string name="dialog_external_sd_missing">Det går inte att ta en bild. SD-kortet är inte tillgängligt. Växlar till det interna telefonminnet.</string>
     <string name="dialog_first_time_set_pure_raw_message">"Den här obehandlade filtypen används för att redigera foton.
 
@@ -247,6 +248,7 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="help_next">Nästa</string>
     <string name="image_360_desc">Det här är ett 360-foto. Du kan redigera fotot med Moto 360-redigeraren.</string>
     <string name="image_360_name">360-foto</string>
+    <string name="image_ratio_qcfa_res_summary">%1$d:%2$d (%3$s%4$s) %5$s</string>
     <string name="image_ratio_res_summary">%1$d:%2$d (%3$s%4$s)</string>
     <string name="indicate_mode_depth">DJUPAKTIVERAT</string>
     <string name="indicate_mode_mono">ÄKTA SVARTVITT</string>
@@ -258,16 +260,19 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="indicate_mode_ultra_wide">ULTRAVIDVINKEL</string>
     <string name="indicate_mode_video">VIDEO</string>
     <string name="indicate_mode_wide_angle">VIDVINKEL</string>
+    <string name="indicate_mode_wide_angle_selfie">VIDVINKELSSELFIE</string>
     <string name="internal_storage">internt lagringsutrymme</string>
     <string name="kilo_bytes">" kB"</string>
-    <string name="landmark_install_message">Landmärkesidentifiering ger information om populära sevärdheter runt om i världen.&lt;br/>&lt;br/>Installera för att aktivera denna funktion.</string>
-    <string name="landmark_install_over_data">Hämtningsstorleken för Landmärkesidentifiering är 92 MB. Om du installerar via mobildata kan det medföra ytterligare dataavgifter.</string>
-    <string name="landmark_notification_downloading">Hämta Landmärkesidentifiering</string>
-    <string name="landmark_notification_install">Installera Landmärkesidentifiering</string>
-    <string name="landmark_notification_install_complete">Installationen av Landmärkesidentifiering har slutförts</string>
-    <string name="landmark_notification_install_failed">Installationen av Landmärkesidentifiering misslyckades</string>
+    <string name="landmark_install_message">Landmärkesidentifiering ger information om populära sevärdheter runt om i världen.&lt;br/>&lt;br/>Hämta landmärkesdatabasen för att aktivera funktionen.</string>
+    <string name="landmark_install_over_data">Hämtningsstorleken för landmärkesdatabasen är 92 MB. Om du hämtar via mobildata kan det medföra ytterligare dataavgifter.</string>
+    <string name="landmark_notification_downloading">Hämtar landmärkesdatabasen</string>
+    <string name="landmark_notification_install">Installerar landmärkesdatabasen</string>
+    <string name="landmark_notification_install_complete">Installationen av landmärkesdatabasen har slutförts</string>
+    <string name="landmark_notification_install_failed">Installationen av landmärkesdatabasen misslyckades</string>
     <string name="landmark_notification_install_invalid_url">Landmärkesdatabasen inte är tillgänglig. Uppdatera till den senaste kameraversionen.</string>
-    <string name="landmark_notification_install_out_of_space">Otillräckligt med lagringsutrymme för installation av Landmärkesidentifiering</string>
+    <string name="landmark_notification_install_out_of_space">Otillräckligt med lagringsutrymme för installation av landmärkesdatabasen</string>
+    <string name="landmark_notification_paused">Landmärkesdatabasen fortsätter att hämtas när det finns internetåtkomst</string>
+    <string name="landmark_notification_queued">Landmärkesdatabasen börjar hämtas när det finns internetåtkomst</string>
     <string name="main_setting_amz_barcode">Amazon streckkodsskanner</string>
     <string name="main_setting_amz_privacy">Amazon sekretessinformation</string>
     <string name="main_setting_amz_terms">Villkor för användning</string>
@@ -290,6 +295,8 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="main_setting_image_ratio">Fotostorlek (baksidan)</string>
     <string name="main_setting_image_ratio_front">Fotostorlek (framsidan)</string>
     <string name="main_setting_landmark_detection">Landmärkesidentifiering</string>
+    <string name="main_setting_landmark_version_current">Databasversion: %s</string>
+    <string name="main_setting_landmark_version_not_installed">Databasen har inte installerats</string>
     <string name="main_setting_licenses">Licenser för öppen källkod</string>
     <string name="main_setting_mod_360_suffix">" (Moto 360 Camera)"</string>
     <string name="main_setting_mod_suffix">" (Mod)"</string>
@@ -325,6 +332,9 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="perm_required_alert_title">Behörighet krävs</string>
     <string name="photos_depth_desc">Använd djupredigeraren för att välja fokus, byta bakgrund eller markera ett område som ska ändras till svartvitt.</string>
     <string name="photos_depth_name">Djupaktiverat</string>
+    <string name="photos_notification_desc">Få obegränsad lagring med Google Foto</string>
+    <string name="photos_notification_title">Säkerhetskopiera till Google Foto</string>
+    <string name="qcfa_resolution_description">Anpassas till svagt ljus</string>
     <string name="retake">Ta om</string>
     <string name="second_10">10 sek</string>
     <string name="second_3">3 sek</string>
@@ -362,11 +372,12 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="setting_mode_mono">Äkta svartvitt</string>
     <string name="setting_mode_normal">Foto</string>
     <string name="setting_mode_panorama">Panorama</string>
-    <string name="setting_mode_pro">Arbetsläge</string>
+    <string name="setting_mode_pro">Proffs-läge</string>
     <string name="setting_mode_select_color">Dekorfärg</string>
     <string name="setting_mode_slow_motion">Slow motion</string>
     <string name="setting_mode_ultra_wide">Ultravidvinkel</string>
     <string name="setting_mode_video">Video</string>
+    <string name="setting_mode_wide_angle_selfie">Vidvinkelsselfie</string>
     <string name="setting_off">Av</string>
     <string name="setting_on">På</string>
     <string name="setting_persist">Parkera</string>
@@ -383,20 +394,25 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="setting_timer_dialog_title">TIMER</string>
     <string name="setting_torch">Kontinuerlig blixt</string>
     <string name="setting_true">sant</string>
+    <string name="shortcut_desc_depth">Djupfoto</string>
+    <string name="shortcut_desc_selfie">Selfie</string>
+    <string name="shortcut_desc_video">Video</string>
     <string name="smartcam_landmark_notification_title">Smart kamera</string>
+    <string name="smartcam_no_detections">Inga sparade objekt eller landmärken</string>
     <string name="storage_location_external">SD-kort</string>
     <string name="storage_location_internal">Telefon</string>
     <string name="storage_unavailable">Lagringsenhet ej tillgänglig</string>
+    <string name="toast_battery_saver">Du använder för närvarande strömsparläge. Vissa funktioner kan vara begränsade.</string>
     <string name="toast_geotag_message_1">Du måste ge platsbehörighet för att aktivera lagringsplats.</string>
     <string name="toast_geotag_message_2">Platsinställningen börjar gälla när systemplatsinställningen har aktiverats.</string>
     <string name="tooltip_camera_switch_360">Prova att växla mellan olika kameraalternativ.</string>
     <string name="tooltip_capture_360">Prova att ta ett 360° foto eller video genom att trycka på den här slutarknappen.</string>
-    <string name="tooltip_capture_key_360">Prova även att ta en bild eller video med slutarknappen på baksidan av mod.</string>
-    <string name="tooltip_dual_camera_depth_photo">Ta bilder med extra information för att aktivera funktioner för specialredigering.</string>
+    <string name="tooltip_capture_key_360">Prova även att ta en bild eller video med slutarknappen på baksidan av Mod.</string>
     <string name="tooltip_first_use_zoom_button">Tryck här för att växla till vidvinkel.</string>
     <string name="tooltip_gallery_360">Kontrollera hur 360° fotot eller videon ser ut genom att dra åt vänster.</string>
     <string name="tooltip_minimap_viewfinder">Panorera åt vänster eller höger i bilden längst ned.</string>
     <string name="tooltip_mode_switch_360">Prova att ta 360° bilder i olika lägen!</string>
+    <string name="tooltip_modes_list">Upptäck nya sätt att ta foton.</string>
     <string name="tooltip_smart_camera">Tryck här om du vill veta mer om objektet.</string>
     <string name="tooltip_smart_camera_disable">Du kan inaktivera det här i Inställningar.</string>
     <string name="tooltip_spherical_viewfinder">Kontrollera vyn genom att panorera eller zooma in eller ut.</string>
@@ -419,5 +435,10 @@ Ange att du samtycker nedan och aktivera sedan Plats i Inställningar."</string>
     <string name="zoom_hint_full">HELSKÄRM</string>
     <string name="zoom_hint_wide">BREDBILD</string>
     <string name="zoom_pattern">%1$s.%2$sX</string>
-    <string name="qcfa_resolution_description">Anpassas till svagt ljus</string>
+    <string name="indicate_mode_timelapse">TIDSFÖRDRÖJNING</string>
+    <string name="setting_mode_timelapse">Tidsfördröjning</string>
+    <string name="timelapse_config_16x">16 x</string>
+    <string name="timelapse_config_32x">32 x</string>
+    <string name="timelapse_config_4x">4 x</string>
+    <string name="timelapse_config_8x">8 x</string>
 </resources>

@@ -299,7 +299,7 @@
 
     if-lez v0, :cond_1
 
-    const v0, 0x7f0801f3
+    const v0, 0x7f08020a
 
     :goto_0
     invoke-virtual {p0, v0}, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->getString(I)Ljava/lang/String;
@@ -371,7 +371,7 @@
     goto :goto_1
 
     :cond_1
-    const v0, 0x7f0801f5
+    const v0, 0x7f08020c
 
     goto :goto_0
 
@@ -406,7 +406,7 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->mSupportedValues:Ljava/util/List;
 
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     iget-object v1, p0, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->mKey:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -420,9 +420,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/fragments/-$Lambda$126;
+    new-instance v1, Lcom/motorola/camera/fragments/-$Lambda$3-vGGX5z3ONtAgIXRBmeR5k6Ts8$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fragments/-$Lambda$126;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fragments/-$Lambda$3-vGGX5z3ONtAgIXRBmeR5k6Ts8$1;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v0, v1}, Ljava/util/List;->forEach(Ljava/util/function/Consumer;)V
 
@@ -494,7 +494,7 @@
     goto :goto_0
 
     :cond_2
-    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_RESULT_PLOT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->PLOT_CAPTURE_RESULT_KEYS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     iget-object v1, p0, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->mKey:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -521,7 +521,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040041
+    const v2, 0x7f040044
 
     invoke-direct {v0, v1, v2}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I)V
 
@@ -541,9 +541,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->mValueList:Landroid/widget/ListView;
 
-    new-instance v1, Lcom/motorola/camera/fragments/-$Lambda$31;
+    new-instance v1, Lcom/motorola/camera/fragments/-$Lambda$3-vGGX5z3ONtAgIXRBmeR5k6Ts8;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fragments/-$Lambda$31;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fragments/-$Lambda$3-vGGX5z3ONtAgIXRBmeR5k6Ts8;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
@@ -552,7 +552,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fragments_ArraySettingDialogFragment_lambda$1(Landroid/hardware/camera2/CaptureResult$Key;)V
+.method synthetic lambda$-com_motorola_camera_fragments_ArraySettingDialogFragment_1214(Landroid/hardware/camera2/CaptureResult$Key;)V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->mSupportedValues:Ljava/util/List;
@@ -566,7 +566,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fragments_ArraySettingDialogFragment_lambda$2(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method synthetic lambda$-com_motorola_camera_fragments_ArraySettingDialogFragment_3111(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 0
 
     invoke-direct {p0}, Lcom/motorola/camera/fragments/ArraySettingDialogFragment;->updateEditTextFromValueList()V

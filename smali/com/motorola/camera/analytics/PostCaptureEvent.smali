@@ -14,19 +14,6 @@
 
 .field static final AWBOTP:Ljava/lang/String; = "AWBOTP"
 
-.field static final BEAUTY:Lcom/motorola/camera/analytics/Attributes/iAttribute;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field protected static final BEAUTY_AUTO:I = -0x1
-
 .field static final CAFFAILURE:Ljava/lang/String; = "CAFFAIL"
 
 .field static final CAFSUPPORT:Ljava/lang/String; = "CAFSPRT"
@@ -54,6 +41,17 @@
 
 .field static final DIMENSION:Ljava/lang/String; = "TAPDIMENSION"
 
+.field static final DUALCAM:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field static final EFFECT:Lcom/motorola/camera/analytics/Attributes/iAttribute;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -65,7 +63,7 @@
     .end annotation
 .end field
 
-.field private static final EVENT_VERSION:Ljava/lang/String; = "3.6"
+.field private static final EVENT_VERSION:Ljava/lang/String; = "4.0"
 
 .field static final EXPOSURE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
     .annotation system Ldalvik/annotation/Signature;
@@ -90,6 +88,17 @@
 .end field
 
 .field static final FACEDETECTENABLED:Ljava/lang/String; = "FACEDET"
+
+.field static final FACING:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field static final FILE_FORMAT:Lcom/motorola/camera/analytics/Attributes/iAttribute;
     .annotation system Ldalvik/annotation/Signature;
@@ -123,6 +132,9 @@
 .field static final FRONTCAMERASUPPORT:Ljava/lang/String; = "FRNTSPRT"
 
 .field static final FRONTCAMERAUSED:Ljava/lang/String; = "FRNTCAM"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 .field static final GEOTAGON:Ljava/lang/String; = "GTAG"
 
@@ -166,6 +178,17 @@
 .field static final JUSTSHOOTTRIGGER:Ljava/lang/String; = "JSTRIG"
 
 .field protected static final LANDSCAPE:Ljava/lang/String; = "LAND"
+
+.field static final LEVEL:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field static final LIGHTSOURCE:Ljava/lang/String; = "LGHTSRC"
 
@@ -228,6 +251,29 @@
 .end field
 
 .field protected static final PORTRAIT:Ljava/lang/String; = "PORT"
+
+.field static final POSTREVIEW:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field protected static final POSTREVW_VALUES:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field static final PROMODE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
     .annotation system Ldalvik/annotation/Signature;
@@ -311,6 +357,17 @@
             "Lcom/motorola/camera/analytics/Attributes/iAttribute",
             "<",
             "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static final VIEWFINDER_TYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/analytics/Attributes/iAttribute",
+            "<",
+            "Ljava/lang/Integer;",
             ">;"
         }
     .end annotation
@@ -653,7 +710,9 @@
 .end method
 
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
+
+    const/4 v6, 0x3
 
     const/4 v5, -0x1
 
@@ -686,14 +745,6 @@
     invoke-direct {v0, v1, v2, v3}, Lcom/motorola/camera/analytics/Attributes/LongAttribute;-><init>(Ljava/lang/String;J)V
 
     sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->PHTOSLD:Lcom/motorola/camera/analytics/Attributes/iAttribute;
-
-    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
-
-    const-string/jumbo v1, "BEAUTY"
-
-    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->BEAUTY:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     new-instance v0, Lcom/motorola/camera/analytics/Attributes/StringAttribute;
 
@@ -797,6 +848,46 @@
 
     sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->MANUALFOCUS:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "POSTREVW"
+
+    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->POSTREVIEW:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "DUALCAM"
+
+    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->DUALCAM:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "LEVEL"
+
+    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->LEVEL:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "VIEWFNDR"
+
+    invoke-direct {v0, v1, v4}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->VIEWFINDER_TYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    new-instance v0, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;
+
+    const-string/jumbo v1, "FACING"
+
+    invoke-direct {v0, v1}, Lcom/motorola/camera/analytics/Attributes/IntegerAttribute;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->FACING:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -841,9 +932,7 @@
 
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->WB_VALUES:Ljava/util/HashMap;
 
-    const/4 v1, 0x3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -860,6 +949,48 @@
     move-result-object v1
 
     const-string/jumbo v2, "INCD"
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->POSTREVW_VALUES:Ljava/util/HashMap;
+
+    sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->POSTREVW_VALUES:Ljava/util/HashMap;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->POSTREVW_VALUES:Ljava/util/HashMap;
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->POSTREVW_VALUES:Ljava/util/HashMap;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1600,7 +1731,7 @@
     return v0
 .end method
 
-.method private static isModCamera(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Z
+.method protected static isModCamera(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Z
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mSettingValues:Ljava/util/Map;
@@ -1626,7 +1757,7 @@
     return v0
 .end method
 
-.method private static processLostCaptures(Landroid/os/Bundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+.method private static processLostCaptures(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
     .locals 6
 
     const-wide/16 v4, -0x1
@@ -1763,7 +1894,7 @@
 
 
 # virtual methods
-.method addData(Landroid/os/Bundle;Landroid/os/Bundle;Ljava/lang/Object;)V
+.method addData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Ljava/lang/Object;)V
     .locals 10
 
     const-wide/16 v8, 0x0
@@ -1784,7 +1915,7 @@
 
     const-string/jumbo v5, "USECASE"
 
-    invoke-virtual {p1, v5}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v5}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -1828,7 +1959,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     const-string/jumbo v0, "NS"
 
@@ -1907,7 +2038,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     move v0, v1
 
@@ -1971,14 +2102,6 @@
     move-result v5
 
     invoke-virtual {p2, v0, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    const-string/jumbo v0, "FRNTCAM"
-
-    invoke-static {v3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->whichCamera(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p2, v0, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string/jumbo v5, "FACEDET"
 
@@ -2090,7 +2213,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p1, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    invoke-virtual {p1, v5}, Lcom/motorola/camera/analytics/SynchronizedBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v5
 
@@ -2128,7 +2251,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     invoke-virtual {p3}, Lcom/motorola/camera/capturedmediadata/CapturedMediaData;->getStoredUri()Landroid/net/Uri;
 
@@ -2148,7 +2271,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     move v0, v1
 
@@ -2179,18 +2302,55 @@
 
     invoke-virtual {p2, v0, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    const-string/jumbo v0, "MODE"
+    invoke-virtual {p3}, Lcom/motorola/camera/capturedmediadata/CapturedMediaData;->getCaptureMode()I
+
+    move-result v0
 
     invoke-virtual {p3}, Lcom/motorola/camera/capturedmediadata/CapturedMediaData;->getShotType()Lcom/motorola/camera/ShotType;
 
     move-result-object v5
 
-    invoke-static {v5}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getCaptureMode(Lcom/motorola/camera/ShotType;)Ljava/lang/String;
+    invoke-static {v0, v5}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getCaptureMode(ILcom/motorola/camera/ShotType;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {p2, v0, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v5, "MODE"
 
+    invoke-virtual {p2, v5, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p3}, Lcom/motorola/camera/capturedmediadata/CapturedMediaData;->getCaptureRecord()Lcom/motorola/camera/fsm/camera/record/CaptureRecord;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mShotBundle:Landroid/os/Bundle;
+
+    sget-object v5, Lcom/motorola/camera/settings/SettingsManager;->VIEWFINDER:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v5, v5, Lcom/motorola/camera/settings/SettingsManager$Key;->mName:Ljava/lang/String;
+
+    invoke-virtual {v0, v5}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    sget-object v5, Lcom/motorola/camera/analytics/PostCaptureEvent;->VIEWFINDER_TYPE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    sget-object v6, Lcom/motorola/camera/settings/SettingsManager;->VIEWFINDER:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    iget-object v6, v6, Lcom/motorola/camera/settings/SettingsManager$Key;->mName:Ljava/lang/String;
+
+    invoke-virtual {v0, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-interface {v5, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    :cond_1
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->CAPTURETRIGGER:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     invoke-direct {p0, v3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getCaptureTrigger(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Ljava/lang/String;
@@ -2229,10 +2389,12 @@
 
     const/4 v6, 0x4
 
-    if-ne v0, v6, :cond_5
+    if-ne v0, v6, :cond_6
+
+    move v0, v1
 
     :goto_4
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -2240,21 +2402,21 @@
 
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->PHTOSLD:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    iget-object v1, v3, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mMetaData:Landroid/os/Bundle;
+    iget-object v5, v3, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mMetaData:Landroid/os/Bundle;
 
-    const-string/jumbo v2, "PHOTO_SOLID_TIME"
+    const-string/jumbo v6, "PHOTO_SOLID_TIME"
 
-    invoke-virtual {v1, v2, v8, v9}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
+    invoke-virtual {v5, v6, v8, v9}, Landroid/os/Bundle;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v6
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-interface {v0, p2, v5}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
-    sget-object v1, Lcom/motorola/camera/analytics/PostCaptureEvent;->EFFECT:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    sget-object v5, Lcom/motorola/camera/analytics/PostCaptureEvent;->EFFECT:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->COLOR_MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -2266,29 +2428,29 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-interface {v1, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-interface {v5, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->FILE_FORMAT:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     invoke-direct {p0, v4}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getMappedFileFormat(Ljava/util/Map;)I
 
-    move-result v1
+    move-result v5
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-interface {v0, p2, v5}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->RESOLUTION:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     invoke-virtual {p0, v3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getCapturedResolution(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-interface {v0, p2, v5}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
-    sget-object v1, Lcom/motorola/camera/analytics/PostCaptureEvent;->SCENE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+    sget-object v5, Lcom/motorola/camera/analytics/PostCaptureEvent;->SCENE:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->SCENE_MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -2300,23 +2462,52 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-interface {v1, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+    invoke-interface {v5, p2, v0}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
     sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->SENSOR:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
     invoke-static {p3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getSensorValues(Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)Ljava/lang/String;
 
+    move-result-object v4
+
+    invoke-interface {v0, p2, v4}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->DUALCAM:Lcom/motorola/camera/analytics/Attributes/iAttribute;
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCamera()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7
+
+    :goto_5
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
     move-result-object v1
 
     invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
 
-    invoke-virtual {p0, p1, p2, p3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->postProcessData(Landroid/os/Bundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+    sget-object v0, Lcom/motorola/camera/analytics/PostCaptureEvent;->FACING:Lcom/motorola/camera/analytics/Attributes/iAttribute;
 
-    invoke-static {p1, p2, p3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->processLostCaptures(Landroid/os/Bundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+    iget v1, v3, Lcom/motorola/camera/fsm/camera/record/CaptureRecord;->mCameraFacingId:I
+
+    invoke-static {v1}, Lcom/motorola/camera/analytics/PostCaptureEvent;->getCameraIdForAnalytics(I)I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, p2, v1}, Lcom/motorola/camera/analytics/Attributes/iAttribute;->record(Landroid/os/Bundle;Ljava/lang/Object;)V
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->postProcessData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+
+    invoke-static {p1, p2, p3}, Lcom/motorola/camera/analytics/PostCaptureEvent;->processLostCaptures(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
 
     return-void
 
-    :cond_1
+    :cond_2
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->FLASH:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     iget-object v0, v0, Lcom/motorola/camera/settings/SettingsManager$Key;->mName:Ljava/lang/String;
@@ -2329,25 +2520,30 @@
 
     goto/16 :goto_0
 
-    :cond_2
+    :cond_3
     move v0, v2
 
     goto/16 :goto_1
 
-    :cond_3
+    :cond_4
     const-string/jumbo v0, "INITIALIZED"
 
     goto/16 :goto_2
 
-    :cond_4
+    :cond_5
     move v0, v2
 
     goto/16 :goto_3
 
-    :cond_5
+    :cond_6
+    move v0, v2
+
+    goto/16 :goto_4
+
+    :cond_7
     move v1, v2
 
-    goto :goto_4
+    goto :goto_5
 .end method
 
 .method protected getCapturedResolution(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)Ljava/lang/String;
@@ -2379,10 +2575,10 @@
 .method getEventVersion()Ljava/lang/String;
     .locals 1
 
-    const-string/jumbo v0, "3.6"
+    const-string/jumbo v0, "4.0"
 
     return-object v0
 .end method
 
-.method protected abstract postProcessData(Landroid/os/Bundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
+.method protected abstract postProcessData(Lcom/motorola/camera/analytics/SynchronizedBundle;Landroid/os/Bundle;Lcom/motorola/camera/capturedmediadata/CapturedMediaData;)V
 .end method

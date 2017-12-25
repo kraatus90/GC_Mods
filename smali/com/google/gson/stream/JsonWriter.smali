@@ -35,151 +35,151 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 5
 
-    const/16 v1, 0x80
+    const/4 v1, 0x0
 
-    new-array v1, v1, [Ljava/lang/String;
+    const/16 v0, 0x80
 
-    sput-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v0, 0x0
+    sput-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+
+    move v0, v1
 
     :goto_0
-    const/16 v1, 0x1f
+    const/16 v2, 0x1f
 
-    if-le v0, v1, :cond_0
+    if-le v0, v2, :cond_0
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+
+    const-string/jumbo v1, "\\\""
 
     const/16 v2, 0x22
 
-    const-string/jumbo v3, "\\\""
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\\\"
 
     const/16 v2, 0x5c
 
-    const-string/jumbo v3, "\\\\"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\t"
 
     const/16 v2, 0x9
 
-    const-string/jumbo v3, "\\t"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\b"
 
     const/16 v2, 0x8
 
-    const-string/jumbo v3, "\\b"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\n"
 
     const/16 v2, 0xa
 
-    const-string/jumbo v3, "\\n"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\r"
 
     const/16 v2, 0xd
 
-    const-string/jumbo v3, "\\r"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\f"
 
     const/16 v2, 0xc
 
-    const-string/jumbo v3, "\\f"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, [Ljava/lang/String;
 
-    check-cast v1, [Ljava/lang/String;
+    sput-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sput-object v1, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\u003c"
 
     const/16 v2, 0x3c
 
-    const-string/jumbo v3, "\\u003c"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\u003e"
 
     const/16 v2, 0x3e
 
-    const-string/jumbo v3, "\\u003e"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\u0026"
 
     const/16 v2, 0x26
 
-    const-string/jumbo v3, "\\u0026"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\u003d"
 
     const/16 v2, 0x3d
 
-    const-string/jumbo v3, "\\u003d"
+    aput-object v1, v0, v2
 
-    aput-object v3, v1, v2
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    const-string/jumbo v1, "\\u0027"
 
     const/16 v2, 0x27
 
-    const-string/jumbo v3, "\\u0027"
-
-    aput-object v3, v1, v2
+    aput-object v1, v0, v2
 
     return-void
 
     :cond_0
-    sget-object v1, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
-
-    const-string/jumbo v2, "\\u%04x"
+    sget-object v2, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
     const/4 v3, 0x1
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v4, 0x0
-
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    aput-object v5, v3, v4
+    aput-object v4, v3, v1
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v4, "\\u%04x"
 
-    move-result-object v2
+    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    aput-object v2, v1, v0
+    move-result-object v3
+
+    aput-object v3, v2, v0
 
     add-int/lit8 v0, v0, 0x1
 
@@ -230,7 +230,7 @@
 .end method
 
 .method private beforeName()V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -252,29 +252,29 @@
     :goto_0
     invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->newline()V
 
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
-    invoke-direct {p0, v1}, Lcom/google/gson/stream/JsonWriter;->replaceTop(I)V
+    invoke-direct {p0, v0}, Lcom/google/gson/stream/JsonWriter;->replaceTop(I)V
 
     return-void
 
     :cond_0
-    iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    const/16 v2, 0x2c
+    const/16 v1, 0x2c
 
-    invoke-virtual {v1, v2}, Ljava/io/Writer;->write(I)V
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(I)V
 
     goto :goto_0
 
     :cond_1
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v2, "Nesting problem."
+    const-string/jumbo v1, "Nesting problem."
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method
 
 .method private beforeValue()V
@@ -370,7 +370,7 @@
 .end method
 
 .method private close(IILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -397,49 +397,49 @@
     if-eq v0, p2, :cond_3
 
     :goto_0
-    iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    invoke-virtual {v1, p3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v0, p3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     return-object p0
 
     :cond_1
     if-eq v0, p1, :cond_0
 
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v2, "Nesting problem."
+    const-string/jumbo v1, "Nesting problem."
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_2
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Dangling name: "
+    const-string/jumbo v2, "Dangling name: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/google/gson/stream/JsonWriter;->deferredName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/gson/stream/JsonWriter;->deferredName:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_3
     invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->newline()V
@@ -455,15 +455,15 @@
         }
     .end annotation
 
-    iget-object v2, p0, Lcom/google/gson/stream/JsonWriter;->indent:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->indent:Ljava/lang/String;
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    const-string/jumbo v3, "\n"
+    const-string/jumbo v1, "\n"
 
-    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -540,33 +540,33 @@
 
     const/4 v3, 0x0
 
-    iget v1, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+    iget v0, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
 
-    iget-object v2, p0, Lcom/google/gson/stream/JsonWriter;->stack:[I
-
-    array-length v2, v2
-
-    if-eq v1, v2, :cond_0
-
-    :goto_0
     iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->stack:[I
 
-    iget v2, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+    array-length v1, v1
 
-    add-int/lit8 v3, v2, 0x1
+    if-eq v0, v1, :cond_0
 
-    iput v3, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+    :goto_0
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->stack:[I
 
-    aput p1, v1, v2
+    iget v1, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+
+    aput p1, v0, v1
 
     return-void
 
     :cond_0
-    iget v1, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+    iget v0, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
 
-    mul-int/lit8 v1, v1, 0x2
+    mul-int/lit8 v0, v0, 0x2
 
-    new-array v0, v1, [I
+    new-array v0, v0, [I
 
     iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->stack:[I
 
@@ -594,118 +594,120 @@
 .end method
 
 .method private string(Ljava/lang/String;)V
-    .locals 8
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    iget-boolean v6, p0, Lcom/google/gson/stream/JsonWriter;->htmlSafe:Z
+    const/4 v1, 0x0
 
-    if-nez v6, :cond_0
+    iget-boolean v0, p0, Lcom/google/gson/stream/JsonWriter;->htmlSafe:Z
 
-    sget-object v5, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->REPLACEMENT_CHARS:[Ljava/lang/String;
 
     :goto_0
-    iget-object v6, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v2, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    const-string/jumbo v7, "\""
+    const-string/jumbo v3, "\""
 
-    invoke-virtual {v6, v7}, Ljava/io/Writer;->write(Ljava/lang/String;)V
-
-    const/4 v2, 0x0
+    invoke-virtual {v2, v3}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v4
 
-    const/4 v1, 0x0
+    move v3, v1
 
     :goto_1
-    if-lt v1, v3, :cond_1
+    if-lt v3, v4, :cond_1
 
-    if-lt v2, v3, :cond_7
+    if-lt v1, v4, :cond_7
 
     :goto_2
-    iget-object v6, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    const-string/jumbo v7, "\""
+    const-string/jumbo v1, "\""
 
-    invoke-virtual {v6, v7}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
     return-void
 
     :cond_0
-    sget-object v5, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
+    sget-object v0, Lcom/google/gson/stream/JsonWriter;->HTML_SAFE_REPLACEMENT_CHARS:[Ljava/lang/String;
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-result v0
+    move-result v2
 
-    const/16 v6, 0x80
+    const/16 v5, 0x80
 
-    if-lt v0, v6, :cond_3
+    if-lt v2, v5, :cond_3
 
-    const/16 v6, 0x2028
+    const/16 v5, 0x2028
 
-    if-eq v0, v6, :cond_4
+    if-eq v2, v5, :cond_4
 
-    const/16 v6, 0x2029
+    const/16 v5, 0x2029
 
-    if-eq v0, v6, :cond_5
+    if-eq v2, v5, :cond_5
 
     :cond_2
     :goto_3
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
 
     goto :goto_1
 
     :cond_3
-    aget-object v4, v5, v0
+    aget-object v2, v0, v2
 
-    if-eqz v4, :cond_2
+    if-eqz v2, :cond_2
 
     :goto_4
-    if-lt v2, v1, :cond_6
+    if-lt v1, v3, :cond_6
 
     :goto_5
-    iget-object v6, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    invoke-virtual {v6, v4}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;)V
 
-    add-int/lit8 v2, v1, 0x1
+    add-int/lit8 v1, v3, 0x1
 
     goto :goto_3
 
     :cond_4
-    const-string/jumbo v4, "\\u2028"
+    const-string/jumbo v2, "\\u2028"
 
     goto :goto_4
 
     :cond_5
-    const-string/jumbo v4, "\\u2029"
+    const-string/jumbo v2, "\\u2029"
 
     goto :goto_4
 
     :cond_6
-    iget-object v6, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v5, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    sub-int v7, v1, v2
+    sub-int v6, v3, v1
 
-    invoke-virtual {v6, p1, v2, v7}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
+    invoke-virtual {v5, p1, v1, v6}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
 
     goto :goto_5
 
     :cond_7
-    iget-object v6, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    sub-int v7, v3, v2
+    sub-int v2, v4, v1
 
-    invoke-virtual {v6, p1, v2, v7}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
+    invoke-virtual {v0, p1, v1, v2}, Ljava/io/Writer;->write(Ljava/lang/String;II)V
 
     goto :goto_2
 .end method
@@ -751,11 +753,11 @@
 
     invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->writeDeferredName()V
 
-    const/4 v0, 0x1
+    const-string/jumbo v0, "["
 
-    const-string/jumbo v1, "["
+    const/4 v1, 0x1
 
-    invoke-direct {p0, v0, v1}, Lcom/google/gson/stream/JsonWriter;->open(ILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    invoke-direct {p0, v1, v0}, Lcom/google/gson/stream/JsonWriter;->open(ILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
     move-result-object v0
 
@@ -772,11 +774,11 @@
 
     invoke-direct {p0}, Lcom/google/gson/stream/JsonWriter;->writeDeferredName()V
 
-    const/4 v0, 0x3
+    const-string/jumbo v0, "{"
 
-    const-string/jumbo v1, "{"
+    const/4 v1, 0x3
 
-    invoke-direct {p0, v0, v1}, Lcom/google/gson/stream/JsonWriter;->open(ILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    invoke-direct {p0, v1, v0}, Lcom/google/gson/stream/JsonWriter;->open(ILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
     move-result-object v0
 
@@ -784,52 +786,52 @@
 .end method
 
 .method public close()V
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
+    iget-object v0, p0, Lcom/google/gson/stream/JsonWriter;->out:Ljava/io/Writer;
 
-    invoke-virtual {v1}, Ljava/io/Writer;->close()V
+    invoke-virtual {v0}, Ljava/io/Writer;->close()V
 
     iget v0, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
 
-    if-le v0, v2, :cond_1
+    if-le v0, v1, :cond_1
 
     :cond_0
-    new-instance v1, Ljava/io/IOException;
+    new-instance v0, Ljava/io/IOException;
 
-    const-string/jumbo v2, "Incomplete document"
+    const-string/jumbo v1, "Incomplete document"
 
-    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_1
-    if-eq v0, v2, :cond_2
+    if-eq v0, v1, :cond_2
 
     :goto_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput v1, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
+    iput v0, p0, Lcom/google/gson/stream/JsonWriter;->stackSize:I
 
     return-void
 
     :cond_2
     iget-object v1, p0, Lcom/google/gson/stream/JsonWriter;->stack:[I
 
-    add-int/lit8 v2, v0, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    aget v1, v1, v2
+    aget v0, v1, v0
 
-    const/4 v2, 0x7
+    const/4 v1, 0x7
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 .end method
@@ -842,13 +844,13 @@
         }
     .end annotation
 
-    const/4 v0, 0x1
+    const-string/jumbo v0, "]"
 
-    const/4 v1, 0x2
+    const/4 v1, 0x1
 
-    const-string/jumbo v2, "]"
+    const/4 v2, 0x2
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/gson/stream/JsonWriter;->close(IILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    invoke-direct {p0, v1, v2, v0}, Lcom/google/gson/stream/JsonWriter;->close(IILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
     move-result-object v0
 
@@ -863,13 +865,13 @@
         }
     .end annotation
 
-    const/4 v0, 0x3
+    const-string/jumbo v0, "}"
 
-    const/4 v1, 0x5
+    const/4 v1, 0x3
 
-    const-string/jumbo v2, "}"
+    const/4 v2, 0x5
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/gson/stream/JsonWriter;->close(IILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
+    invoke-direct {p0, v1, v2, v0}, Lcom/google/gson/stream/JsonWriter;->close(IILjava/lang/String;)Lcom/google/gson/stream/JsonWriter;
 
     move-result-object v0
 
@@ -1053,9 +1055,7 @@
 .end method
 
 .method public final setIndent(Ljava/lang/String;)V
-    .locals 2
-
-    const/4 v1, 0x0
+    .locals 1
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -1073,7 +1073,9 @@
     return-void
 
     :cond_0
-    iput-object v1, p0, Lcom/google/gson/stream/JsonWriter;->indent:Ljava/lang/String;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/gson/stream/JsonWriter;->indent:Ljava/lang/String;
 
     const-string/jumbo v0, ":"
 
@@ -1225,7 +1227,7 @@
 .end method
 
 .method public value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1256,9 +1258,9 @@
     :cond_0
     invoke-virtual {p0}, Lcom/google/gson/stream/JsonWriter;->nullValue()Lcom/google/gson/stream/JsonWriter;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_1
     const-string/jumbo v1, "-Infinity"
@@ -1270,29 +1272,29 @@
     if-eqz v1, :cond_3
 
     :cond_2
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Numeric values must be finite, but was "
+    const-string/jumbo v2, "Numeric values must be finite, but was "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     :cond_3
     const-string/jumbo v1, "Infinity"

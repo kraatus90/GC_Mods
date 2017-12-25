@@ -100,13 +100,13 @@
 
     invoke-virtual {p0, v1}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    const-string/jumbo v1, "Content-Type"
-
     invoke-virtual {p1}, Lcom/android/volley/Request;->getPostBodyContentType()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v1, v2}, Ljava/net/HttpURLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v2, "Content-Type"
+
+    invoke-virtual {p0, v2, v1}, Ljava/net/HttpURLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Ljava/io/DataOutputStream;
 
@@ -223,13 +223,13 @@
 
     invoke-virtual {p0, v1}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
-    const-string/jumbo v1, "Content-Type"
-
     invoke-virtual {p1}, Lcom/android/volley/Request;->getBodyContentType()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v1, v2}, Ljava/net/HttpURLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+    const-string/jumbo v2, "Content-Type"
+
+    invoke-virtual {p0, v2, v1}, Ljava/net/HttpURLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Ljava/io/DataOutputStream;
 
@@ -367,13 +367,13 @@
 
     invoke-virtual {v1, v0}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
 
-    const-string/jumbo v0, "https"
-
     invoke-virtual {p1}, Ljava/net/URL;->getProtocol()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v2, "https"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 

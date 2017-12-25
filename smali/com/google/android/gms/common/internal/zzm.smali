@@ -50,9 +50,9 @@
 .method public static zzbO(Ljava/lang/String;)Landroid/content/Intent;
     .locals 3
 
-    const/4 v1, 0x0
-
     const-string/jumbo v0, "package"
+
+    const/4 v1, 0x0
 
     invoke-static {v0, p0, v1}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 

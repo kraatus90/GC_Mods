@@ -64,36 +64,34 @@
 .end method
 
 .method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/Calendar;
-    .locals 11
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    const/4 v10, 0x0
+    const/4 v6, 0x0
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v0
 
-    sget-object v9, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    sget-object v1, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    if-eq v0, v9, :cond_1
+    if-eq v0, v1, :cond_1
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginObject()V
 
-    const/4 v1, 0x0
+    move v5, v6
 
-    const/4 v2, 0x0
+    move v4, v6
 
-    const/4 v3, 0x0
+    move v3, v6
 
-    const/4 v4, 0x0
+    move v2, v6
 
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
+    move v1, v6
 
     :cond_0
     :goto_0
@@ -101,9 +99,9 @@
 
     move-result-object v0
 
-    sget-object v9, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
+    sget-object v7, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
 
-    if-ne v0, v9, :cond_2
+    if-ne v0, v7, :cond_2
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endObject()V
 
@@ -116,7 +114,9 @@
     :cond_1
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
 
-    return-object v10
+    const/4 v0, 0x0
+
+    return-object v0
 
     :cond_2
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextName()Ljava/lang/String;
@@ -125,82 +125,82 @@
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextInt()I
 
+    move-result v0
+
+    const-string/jumbo v8, "year"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
     move-result v8
 
-    const-string/jumbo v0, "year"
+    if-nez v8, :cond_3
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "month"
 
-    move-result v0
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_3
+    move-result v8
 
-    const-string/jumbo v0, "month"
+    if-nez v8, :cond_4
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "dayOfMonth"
 
-    move-result v0
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_4
+    move-result v8
 
-    const-string/jumbo v0, "dayOfMonth"
+    if-nez v8, :cond_5
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "hourOfDay"
 
-    move-result v0
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_5
+    move-result v8
 
-    const-string/jumbo v0, "hourOfDay"
+    if-nez v8, :cond_6
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "minute"
 
-    move-result v0
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_6
+    move-result v8
 
-    const-string/jumbo v0, "minute"
+    if-nez v8, :cond_7
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v8, "second"
 
-    move-result v0
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v0, :cond_7
+    move-result v7
 
-    const-string/jumbo v0, "second"
+    if-eqz v7, :cond_0
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    move v6, v8
+    move v6, v0
 
     goto :goto_0
 
     :cond_3
-    move v1, v8
+    move v1, v0
 
     goto :goto_0
 
     :cond_4
-    move v2, v8
+    move v2, v0
 
     goto :goto_0
 
     :cond_5
-    move v3, v8
+    move v3, v0
 
     goto :goto_0
 
     :cond_6
-    move v4, v8
+    move v4, v0
 
     goto :goto_0
 
     :cond_7
-    move v5, v8
+    move v5, v0
 
     goto :goto_0
 .end method

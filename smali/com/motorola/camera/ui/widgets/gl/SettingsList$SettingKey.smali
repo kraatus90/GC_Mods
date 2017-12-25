@@ -36,6 +36,8 @@
 
 .field public static final enum CAPTURE_REVIEW:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
+.field public static final enum CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
 .field public static final enum CAPTURE_TAP_ANYWHERE:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
 .field public static final enum CLOUDSIGHT_OBJECT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
@@ -55,6 +57,8 @@
 .field public static final enum HELP_CAT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
 .field public static final enum LANDMARK:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+.field public static final enum LANDMARK_VERSION:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
 .field public static final enum LICENSES:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
@@ -343,7 +347,27 @@
 
     sput-object v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
-    const/16 v0, 0x1a
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    const-string/jumbo v1, "LANDMARK_VERSION"
+
+    const/16 v2, 0x1a
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK_VERSION:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    const-string/jumbo v1, "CAPTURE_REVIEW_PRINT"
+
+    const/16 v2, 0x1b
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    const/16 v0, 0x1c
 
     new-array v0, v0, [Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
@@ -490,6 +514,18 @@
     sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
 
     const/16 v2, 0x19
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->LANDMARK_VERSION:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    const/16 v2, 0x1a
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;->CAPTURE_REVIEW_PRINT:Lcom/motorola/camera/ui/widgets/gl/SettingsList$SettingKey;
+
+    const/16 v2, 0x1b
 
     aput-object v1, v0, v2
 

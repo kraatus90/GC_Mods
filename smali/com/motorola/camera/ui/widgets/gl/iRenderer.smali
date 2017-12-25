@@ -34,9 +34,6 @@
 .method public abstract getNavBarSize()Landroid/graphics/PointF;
 .end method
 
-.method public abstract getRenderScript()Landroid/renderscript/RenderScript;
-.end method
-
 .method public abstract getScreenBrightness()F
 .end method
 

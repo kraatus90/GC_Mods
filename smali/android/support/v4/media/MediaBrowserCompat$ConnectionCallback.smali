@@ -29,9 +29,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
-
-    const/4 v2, 0x0
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,7 +39,9 @@
 
     if-ge v0, v1, :cond_0
 
-    iput-object v2, p0, Landroid/support/v4/media/MediaBrowserCompat$ConnectionCallback;->mConnectionCallbackObj:Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$ConnectionCallback;->mConnectionCallbackObj:Ljava/lang/Object;
 
     :goto_0
     return-void

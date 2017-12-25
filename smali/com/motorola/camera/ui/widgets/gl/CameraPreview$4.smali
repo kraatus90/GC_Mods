@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview$4_lambda$4()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_CameraPreview$4_37872()V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview$4;->this$0:Lcom/motorola/camera/ui/widgets/gl/CameraPreview;
@@ -208,9 +208,9 @@
 
     iget-object v0, v0, Lcom/motorola/camera/ui/widgets/gl/CameraPreview;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$93;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U$2;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$93;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$cAlgiVimCNvALDIbF-g3eRM0E4U$2;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

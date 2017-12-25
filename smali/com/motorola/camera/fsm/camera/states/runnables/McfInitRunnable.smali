@@ -76,7 +76,7 @@
     move-result-object v1
 
     :try_start_1
-    const-string/jumbo v2, "7NB9Fpwr"
+    const-string/jumbo v2, "48IY8JzT"
 
     invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
@@ -147,7 +147,7 @@
 
     :cond_2
     :try_start_3
-    const-string/jumbo v2, "7NB9Fpwr"
+    const-string/jumbo v2, "48IY8JzT"
 
     goto :goto_0
 
@@ -303,7 +303,7 @@
     move-object v0, v2
 
     :goto_0
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_6
 
     :try_start_1
     invoke-virtual {v3}, Ljava/io/InputStream;->available()I
@@ -356,15 +356,115 @@
 
     move-result-object v0
 
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v3, 0x18
+
+    if-lt v1, v3, :cond_2
+
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v3, 0x1a
+
+    if-ge v1, v3, :cond_2
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/motorola/camera/CameraApp;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v1
+
+    const-string/jumbo v3, ""
+
+    invoke-virtual {v1, v3}, Landroid/content/res/AssetManager;->list(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "_N"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v1, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "_N"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_2
+    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+
+    if-eqz v1, :cond_3
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Decrypting json file: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_3
     invoke-static {v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->decryptJSonConfig(Ljava/lang/String;)[B
 
     move-result-object v0
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_4
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->TAG:Ljava/lang/String;
 
@@ -375,10 +475,10 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :cond_2
+    :cond_4
     move-object v3, v2
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :catch_0
     move-exception v0
@@ -389,7 +489,7 @@
     :try_start_4
     sget-boolean v3, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_5
 
     sget-object v3, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->TAG:Ljava/lang/String;
 
@@ -413,7 +513,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_5
     throw v0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
@@ -467,15 +567,15 @@
 
     goto :goto_2
 
-    :cond_4
+    :cond_6
     move-object v1, v2
 
-    goto :goto_1
+    goto/16 :goto_1
 .end method
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_lambda$1()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_2033()V
     .locals 1
 
     const/4 v0, 0x0
@@ -485,7 +585,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_lambda$2()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_2108()V
     .locals 4
 
     :try_start_0
@@ -535,9 +635,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$75;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$1;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$75;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$1;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -548,9 +648,9 @@
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$74;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$74;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -561,16 +661,16 @@
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$139;
+    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$4;
 
-    invoke-direct {v2, p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$139;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_lambda$3(Ljava/lang/UnsatisfiedLinkError;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_2439(Ljava/lang/UnsatisfiedLinkError;)V
     .locals 2
 
     new-instance v0, Lcom/motorola/camera/device/exception/McfException;
@@ -586,7 +686,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_lambda$4()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_2590()V
     .locals 1
 
     new-instance v0, Lcom/motorola/camera/device/exception/McfException;
@@ -598,7 +698,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_lambda$5()V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfInitRunnable_2690()V
     .locals 1
 
     const/4 v0, 0x0
@@ -717,28 +817,53 @@
 
     invoke-super {p0, p1, p2, p3}, Lcom/motorola/camera/fsm/camera/CameraRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
 
-    invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->isInitialized()Z
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->MCF_ALLOW:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getPersistBehavior()Lcom/motorola/camera/settings/PersistBehavior;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/settings/PersistBehavior;->performRead(Lcom/motorola/camera/settings/Setting;)V
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
+    invoke-static {}, Lcom/motorola/camera/mcf/Mcf;->isInitialized()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfInitRunnable;->mHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$76;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$2;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$76;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$2;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance v0, Ljava/lang/Thread;
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$77;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$3;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$77;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$GWjcer_dp9v4LakhSAwF7VNnu4c$3;-><init>(Ljava/lang/Object;)V
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 

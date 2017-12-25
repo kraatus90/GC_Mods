@@ -82,7 +82,7 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 6
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -188,8 +188,6 @@
 
     new-instance v1, Lcom/google/android/gms/common/stats/zze;
 
-    const/16 v2, 0x400
-
     sget-object v0, Lcom/google/android/gms/common/stats/zzc$zza;->zzVp:Lcom/google/android/gms/internal/zzhc;
 
     invoke-virtual {v0}, Lcom/google/android/gms/internal/zzhc;->get()Ljava/lang/Object;
@@ -200,9 +198,11 @@
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-direct {v1, v2, v4, v5}, Lcom/google/android/gms/common/stats/zze;-><init>(IJ)V
+    const/16 v0, 0x400
+
+    invoke-direct {v1, v0, v2, v3}, Lcom/google/android/gms/common/stats/zze;-><init>(IJ)V
 
     iput-object v1, p0, Lcom/google/android/gms/common/stats/zzb;->zzVi:Lcom/google/android/gms/common/stats/zze;
 
@@ -568,27 +568,27 @@
     return v6
 
     :cond_6
-    const-string/jumbo v0, "ConnectionTracker"
+    const/4 v0, 0x2
 
-    const-string/jumbo v1, "Client %s made an invalid request %s"
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p2, v2, v5
+    aput-object p2, v0, v5
 
     invoke-virtual {p3, v5}, Landroid/content/Intent;->toUri(I)Ljava/lang/String;
 
-    move-result-object v3
-
-    aput-object v3, v2, v6
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    aput-object v1, v0, v6
+
+    const-string/jumbo v1, "Client %s made an invalid request %s"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "ConnectionTracker"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     return v5
 
@@ -669,17 +669,17 @@
 .end method
 
 .method private static zzb(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/pm/ServiceInfo;
-    .locals 9
+    .locals 7
 
-    const/4 v8, 0x3
+    const/4 v6, 0x3
 
-    const/4 v3, 0x2
-
-    const/4 v7, 0x1
-
-    const/4 v6, 0x0
+    const/4 v2, 0x2
 
     const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -694,33 +694,33 @@
     if-nez v0, :cond_1
 
     :cond_0
-    const-string/jumbo v0, "ConnectionTracker"
+    new-array v0, v2, [Ljava/lang/Object;
 
-    const-string/jumbo v1, "There are no handler of this intent: %s\n Stack trace: %s"
-
-    new-array v2, v3, [Ljava/lang/Object;
-
-    invoke-virtual {p1, v5}, Landroid/content/Intent;->toUri(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v2, v5
-
-    const/16 v3, 0x14
-
-    invoke-static {v8, v3}, Lcom/google/android/gms/internal/zzid;->zzj(II)Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v2, v7
-
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, v3}, Landroid/content/Intent;->toUri(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    aput-object v1, v0, v3
 
-    return-object v6
+    const/16 v1, 0x14
+
+    invoke-static {v6, v1}, Lcom/google/android/gms/internal/zzid;->zzj(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    aput-object v1, v0, v4
+
+    const-string/jumbo v1, "There are no handler of this intent: %s\n Stack trace: %s"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "ConnectionTracker"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v5
 
     :cond_1
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -733,10 +733,10 @@
 
     move-result v1
 
-    if-gt v1, v7, :cond_3
+    if-gt v1, v4, :cond_3
 
     :cond_2
-    invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -747,31 +747,31 @@
     return-object v0
 
     :cond_3
-    const-string/jumbo v1, "ConnectionTracker"
+    new-array v1, v2, [Ljava/lang/Object;
 
-    const-string/jumbo v2, "Multiple handlers found for this intent: %s\n Stack trace: %s"
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    invoke-virtual {p1, v5}, Landroid/content/Intent;->toUri(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v3, v5
-
-    const/16 v4, 0x14
-
-    invoke-static {v8, v4}, Lcom/google/android/gms/internal/zzid;->zzj(II)Ljava/lang/String;
-
-    move-result-object v4
-
-    aput-object v4, v3, v7
-
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, v3}, Landroid/content/Intent;->toUri(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    aput-object v2, v1, v3
+
+    const/16 v2, 0x14
+
+    invoke-static {v6, v2}, Lcom/google/android/gms/internal/zzid;->zzj(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v1, v4
+
+    const-string/jumbo v2, "Multiple handlers found for this intent: %s\n Stack trace: %s"
+
+    invoke-static {v2, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "ConnectionTracker"
+
+    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -789,15 +789,15 @@
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    const-string/jumbo v1, "ConnectionTracker"
-
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
     iget-object v0, v0, Landroid/content/pm/ServiceInfo;->name:Ljava/lang/String;
 
+    const-string/jumbo v1, "ConnectionTracker"
+
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v6
+    return-object v5
 .end method
 
 .method public static zznb()Lcom/google/android/gms/common/stats/zzb;

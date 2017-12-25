@@ -38,6 +38,8 @@
 
 .field public static final enum MESSAGE:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
 
+.field public static final enum OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
+
 .field public static final enum PHONE_NUMBER:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
 
 .field public static final enum PRODUCT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
@@ -207,7 +209,19 @@
 
     sput-object v0, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;->LANDMARK:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
 
-    const/16 v0, 0xd
+    new-instance v0, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
+
+    const-string/jumbo v1, "OBJECT"
+
+    const/16 v2, 0xd
+
+    const/16 v3, 0xd
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;->OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
+
+    const/16 v0, 0xe
 
     new-array v0, v0, [Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
 
@@ -276,6 +290,12 @@
     sget-object v1, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;->LANDMARK:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
 
     const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;->OBJECT:Lcom/motorola/camera/analytics/AlwaysAwareData$OBJECT_CONTENT;
+
+    const/16 v2, 0xd
 
     aput-object v1, v0, v2
 

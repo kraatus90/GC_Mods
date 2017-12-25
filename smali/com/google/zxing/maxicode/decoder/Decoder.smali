@@ -40,40 +40,40 @@
         }
     .end annotation
 
-    add-int v0, p3, p4
+    const/4 v1, 0x0
+
+    add-int v3, p3, p4
 
     if-eqz p5, :cond_0
 
-    const/4 v2, 0x2
+    const/4 v0, 0x2
 
     :goto_0
-    div-int v5, v0, v2
+    div-int v2, v3, v0
 
-    new-array v1, v5, [I
+    new-array v4, v2, [I
 
-    const/4 v3, 0x0
+    move v2, v1
 
     :goto_1
-    if-lt v3, v0, :cond_1
+    if-lt v2, v3, :cond_1
 
     :try_start_0
-    iget-object v5, p0, Lcom/google/zxing/maxicode/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
+    iget-object v2, p0, Lcom/google/zxing/maxicode/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
 
-    div-int v6, p4, v2
+    div-int v3, p4, v0
 
-    invoke-virtual {v5, v1, v6}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
+    invoke-virtual {v2, v4, v3}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->decode([II)V
     :try_end_0
     .catch Lcom/google/zxing/common/reedsolomon/ReedSolomonException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v3, 0x0
-
     :goto_2
-    if-lt v3, p3, :cond_4
+    if-lt v1, p3, :cond_4
 
     return-void
 
     :cond_0
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
@@ -81,23 +81,23 @@
     if-nez p5, :cond_3
 
     :cond_2
-    div-int v5, v3, v2
+    div-int v5, v2, v0
 
-    add-int v6, v3, p2
+    add-int v6, v2, p2
 
     aget-byte v6, p1, v6
 
     and-int/lit16 v6, v6, 0xff
 
-    aput v6, v1, v5
+    aput v6, v4, v5
 
     :goto_3
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :cond_3
-    rem-int/lit8 v5, v3, 0x2
+    rem-int/lit8 v5, v2, 0x2
 
     add-int/lit8 v6, p5, -0x1
 
@@ -106,41 +106,41 @@
     goto :goto_3
 
     :catch_0
-    move-exception v4
+    move-exception v0
 
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
-    move-result-object v5
+    move-result-object v0
 
-    throw v5
+    throw v0
 
     :cond_4
     if-nez p5, :cond_6
 
     :cond_5
-    add-int v5, v3, p2
+    add-int v2, v1, p2
 
-    div-int v6, v3, v2
+    div-int v3, v1, v0
 
-    aget v6, v1, v6
+    aget v3, v4, v3
 
-    int-to-byte v6, v6
+    int-to-byte v3, v3
 
-    int-to-byte v6, v6
+    int-to-byte v3, v3
 
-    aput-byte v6, p1, v5
+    aput-byte v3, p1, v2
 
     :goto_4
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
     :cond_6
-    rem-int/lit8 v5, v3, 0x2
+    rem-int/lit8 v2, v1, 0x2
 
-    add-int/lit8 v6, p5, -0x1
+    add-int/lit8 v3, p5, -0x1
 
-    if-eq v5, v6, :cond_5
+    if-eq v2, v3, :cond_5
 
     goto :goto_4
 .end method
@@ -166,7 +166,7 @@
 .end method
 
 .method public decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
-    .locals 9
+    .locals 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -186,33 +186,37 @@
         }
     .end annotation
 
-    new-instance v8, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;
+    const/4 v11, 0x2
 
-    invoke-direct {v8, p1}, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
-
-    invoke-virtual {v8}, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;->readCodewords()[B
-
-    move-result-object v1
-
-    const/4 v2, 0x0
+    const/4 v9, 0x1
 
     const/16 v3, 0xa
 
-    const/16 v4, 0xa
+    const/16 v6, 0x14
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
+
+    new-instance v0, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;
+
+    invoke-direct {v0, p1}, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
+
+    invoke-virtual {v0}, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;->readCodewords()[B
+
+    move-result-object v1
 
     move-object v0, p0
 
+    move v4, v3
+
+    move v5, v2
+
     invoke-direct/range {v0 .. v5}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
-    const/4 v0, 0x0
+    aget-byte v0, v1, v2
 
-    aget-byte v0, v1, v0
+    and-int/lit8 v10, v0, 0xf
 
-    and-int/lit8 v7, v0, 0xf
-
-    packed-switch v7, :pswitch_data_0
+    packed-switch v10, :pswitch_data_0
 
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
@@ -221,87 +225,73 @@
     throw v0
 
     :pswitch_0
-    const/16 v2, 0x14
+    const/16 v7, 0x54
 
-    const/16 v3, 0x54
+    const/16 v8, 0x28
 
-    const/16 v4, 0x28
+    move-object v4, p0
 
-    const/4 v5, 0x1
+    move-object v5, v1
 
-    move-object v0, p0
+    invoke-direct/range {v4 .. v9}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    const/16 v7, 0x54
 
-    const/16 v2, 0x14
+    const/16 v8, 0x28
 
-    const/16 v3, 0x54
+    move-object v4, p0
 
-    const/16 v4, 0x28
+    move-object v5, v1
 
-    const/4 v5, 0x2
+    move v9, v11
 
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    invoke-direct/range {v4 .. v9}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
     const/16 v0, 0x5e
 
-    new-array v6, v0, [B
+    new-array v0, v0, [B
 
     :goto_0
-    const/4 v0, 0x0
+    invoke-static {v1, v2, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/4 v2, 0x0
+    array-length v2, v0
 
-    const/16 v3, 0xa
+    add-int/lit8 v2, v2, -0xa
 
-    invoke-static {v1, v0, v6, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v1, v6, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    const/16 v0, 0x14
-
-    const/16 v2, 0xa
-
-    array-length v3, v6
-
-    add-int/lit8 v3, v3, -0xa
-
-    invoke-static {v1, v0, v6, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    invoke-static {v6, v7}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->decode([BI)Lcom/google/zxing/common/DecoderResult;
+    invoke-static {v0, v10}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->decode([BI)Lcom/google/zxing/common/DecoderResult;
 
     move-result-object v0
 
     return-object v0
 
     :pswitch_1
-    const/16 v2, 0x14
+    const/16 v7, 0x44
 
-    const/16 v3, 0x44
+    const/16 v8, 0x38
 
-    const/16 v4, 0x38
+    move-object v4, p0
 
-    const/4 v5, 0x1
+    move-object v5, v1
 
-    move-object v0, p0
+    invoke-direct/range {v4 .. v9}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    const/16 v7, 0x44
 
-    const/16 v2, 0x14
+    const/16 v8, 0x38
 
-    const/16 v3, 0x44
+    move-object v4, p0
 
-    const/16 v4, 0x38
+    move-object v5, v1
 
-    const/4 v5, 0x2
+    move v9, v11
 
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
+    invoke-direct/range {v4 .. v9}, Lcom/google/zxing/maxicode/decoder/Decoder;->correctErrors([BIIII)V
 
     const/16 v0, 0x4e
 
-    new-array v6, v0, [B
+    new-array v0, v0, [B
 
     goto :goto_0
 

@@ -14,9 +14,9 @@
 .method public constructor <init>(I)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/adobe/xmp/impl/ByteBuffer;->encoding:Ljava/lang/String;
 
@@ -41,15 +41,15 @@
 
     const/4 v1, 0x0
 
-    const/4 v0, 0x0
-
     const/16 v2, 0x4000
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Lcom/adobe/xmp/impl/ByteBuffer;->encoding:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    iput v0, p0, Lcom/adobe/xmp/impl/ByteBuffer;->length:I
+    iput-object v0, p0, Lcom/adobe/xmp/impl/ByteBuffer;->encoding:Ljava/lang/String;
+
+    iput v1, p0, Lcom/adobe/xmp/impl/ByteBuffer;->length:I
 
     new-array v0, v2, [B
 
@@ -90,9 +90,9 @@
 .method public constructor <init>([B)V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/adobe/xmp/impl/ByteBuffer;->encoding:Ljava/lang/String;
 
@@ -108,9 +108,9 @@
 .method public constructor <init>([BI)V
     .locals 2
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/adobe/xmp/impl/ByteBuffer;->encoding:Ljava/lang/String;
 
@@ -137,9 +137,9 @@
 .method public constructor <init>([BII)V
     .locals 2
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/adobe/xmp/impl/ByteBuffer;->encoding:Ljava/lang/String;
 
@@ -238,11 +238,11 @@
 
     iget-object v0, p1, Lcom/adobe/xmp/impl/ByteBuffer;->buffer:[B
 
-    const/4 v1, 0x0
+    iget v1, p1, Lcom/adobe/xmp/impl/ByteBuffer;->length:I
 
-    iget v2, p1, Lcom/adobe/xmp/impl/ByteBuffer;->length:I
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/adobe/xmp/impl/ByteBuffer;->append([BII)V
+    invoke-virtual {p0, v0, v2, v1}, Lcom/adobe/xmp/impl/ByteBuffer;->append([BII)V
 
     return-void
 .end method
@@ -250,11 +250,11 @@
 .method public append([B)V
     .locals 2
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1, v0, v1}, Lcom/adobe/xmp/impl/ByteBuffer;->append([BII)V
+    invoke-virtual {p0, p1, v1, v0}, Lcom/adobe/xmp/impl/ByteBuffer;->append([BII)V
 
     return-void
 .end method
@@ -338,11 +338,11 @@
 
     iget-object v1, p0, Lcom/adobe/xmp/impl/ByteBuffer;->buffer:[B
 
-    const/4 v2, 0x0
+    iget v2, p0, Lcom/adobe/xmp/impl/ByteBuffer;->length:I
 
-    iget v3, p0, Lcom/adobe/xmp/impl/ByteBuffer;->length:I
+    const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
+    invoke-direct {v0, v1, v3, v2}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
 
     return-object v0
 .end method

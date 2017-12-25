@@ -15,15 +15,15 @@
 
 
 # static fields
-.field public static final adjust_height:I = 0x7f0e002a
+.field public static final adjust_height:I = 0x7f0e0034
 
-.field public static final adjust_width:I = 0x7f0e002b
+.field public static final adjust_width:I = 0x7f0e0035
 
-.field public static final none:I = 0x7f0e000e
+.field public static final none:I = 0x7f0e0013
 
-.field public static final normal:I = 0x7f0e000a
+.field public static final normal:I = 0x7f0e000f
 
-.field public static final wrap_content:I = 0x7f0e0019
+.field public static final wrap_content:I = 0x7f0e001f
 
 
 # direct methods

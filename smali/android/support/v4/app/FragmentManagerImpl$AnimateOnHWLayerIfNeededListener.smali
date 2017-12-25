@@ -1,9 +1,6 @@
 .class Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;
-.super Ljava/lang/Object;
+.super Landroid/support/v4/app/FragmentManagerImpl$AnimationListenerWrapper;
 .source "FragmentManager.java"
-
-# interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
@@ -12,58 +9,24 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0xa
     name = "AnimateOnHWLayerIfNeededListener"
 .end annotation
 
 
 # instance fields
-.field private mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-.field private mShouldRunOnHWLayer:Z
-
 .field mView:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Landroid/view/animation/Animation;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    if-nez p1, :cond_1
-
-    :cond_0
-    return-void
-
-    :cond_1
-    if-eqz p2, :cond_0
-
-    iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/View;Landroid/view/animation/Animation;Landroid/view/animation/Animation$AnimationListener;)V
+.method constructor <init>(Landroid/view/View;Landroid/view/animation/Animation$AnimationListener;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    if-nez p1, :cond_1
-
-    :cond_0
-    return-void
-
-    :cond_1
-    if-eqz p2, :cond_0
-
-    iput-object p3, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
+    invoke-direct {p0, p2, v0}, Landroid/support/v4/app/FragmentManagerImpl$AnimationListenerWrapper;-><init>(Landroid/view/animation/Animation$AnimationListener;Landroid/support/v4/app/FragmentManagerImpl$1;)V
 
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mShouldRunOnHWLayer:Z
 
     return-void
 .end method
@@ -77,35 +40,15 @@
 
     const/4 v2, 0x0
 
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-    if-nez v0, :cond_4
-
-    :goto_1
-    return-void
-
-    :cond_1
-    iget-boolean v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mShouldRunOnHWLayer:Z
-
-    if-eqz v0, :cond_0
-
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->isAttachedToWindow(Landroid/view/View;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
-    :cond_2
+    :cond_0
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
     new-instance v1, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener$1;
@@ -114,63 +57,23 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    goto :goto_0
+    :goto_0
+    invoke-super {p0, p1}, Landroid/support/v4/app/FragmentManagerImpl$AnimationListenerWrapper;->onAnimationEnd(Landroid/view/animation/Animation;)V
 
-    :cond_3
-    invoke-static {}, Landroid/support/v4/os/BuildCompat;->isAtLeastN()Z
+    return-void
 
-    move-result v0
+    :cond_1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-nez v0, :cond_2
+    const/16 v1, 0x18
+
+    if-ge v0, v1, :cond_0
 
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mView:Landroid/view/View;
 
-    invoke-static {v0, v1, v2}, Landroid/support/v4/view/ViewCompat;->setLayerType(Landroid/view/View;ILandroid/graphics/Paint;)V
+    const/4 v1, 0x0
 
-    goto :goto_0
-
-    :cond_4
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-    invoke-interface {v0, p1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationEnd(Landroid/view/animation/Animation;)V
-
-    goto :goto_1
-.end method
-
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .locals 1
-
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-    invoke-interface {v0, p1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationRepeat(Landroid/view/animation/Animation;)V
-
-    goto :goto_0
-.end method
-
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .locals 1
-    .annotation build Landroid/support/annotation/CallSuper;
-    .end annotation
-
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-    if-nez v0, :cond_0
-
-    :goto_0
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->mOriginalListener:Landroid/view/animation/Animation$AnimationListener;
-
-    invoke-interface {v0, p1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationStart(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v2, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
     goto :goto_0
 .end method

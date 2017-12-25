@@ -84,7 +84,7 @@
 
     if-nez v6, :cond_1
 
-    if-ne v0, v2, :cond_3
+    if-ne v0, v2, :cond_4
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -94,108 +94,121 @@
 
     move-result v6
 
-    if-eqz v6, :cond_3
+    if-eqz v6, :cond_4
 
     move v0, v1
 
     :cond_0
     :goto_0
-    sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
+    sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v1, v2}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+    invoke-static {v2, v3}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
     invoke-static {p1}, Lcom/motorola/camera/settings/SettingsManager;->setCurrentCamera(Ljava/lang/String;)V
 
     :cond_1
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsHelper;->isMonoDepthMode(I)Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_2
+    if-nez v2, :cond_2
 
     invoke-static {v7}, Lcom/motorola/camera/settings/SettingsHelper;->isDualCameraMode(I)Z
 
-    move-result v0
+    move-result v2
 
-    xor-int/lit8 v0, v0, 0x1
+    xor-int/lit8 v2, v2, 0x1
 
-    if-eqz v0, :cond_2
+    if-eqz v2, :cond_2
+
+    sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->DUAL_CAMERA_MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
+
+    :cond_2
+    const/4 v2, 0x6
+
+    if-ne v2, v0, :cond_3
 
     sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->DUAL_CAMERA_MODE:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/motorola/camera/settings/SettingsManager;->set(Lcom/motorola/camera/settings/SettingsManager$Key;Ljava/lang/Object;)V
 
-    :cond_2
+    :cond_3
     return-void
 
-    :cond_3
-    if-ne v0, v1, :cond_4
+    :cond_4
+    if-ne v0, v1, :cond_5
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-interface {v5, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v5, v6}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v6
 
-    if-eqz v1, :cond_4
+    if-eqz v6, :cond_5
 
     move v0, v2
 
     goto :goto_0
 
-    :cond_4
-    if-eq v0, v7, :cond_5
-
-    const/16 v1, 0x8
-
-    if-ne v0, v1, :cond_6
-
     :cond_5
+    if-eq v0, v7, :cond_6
+
+    const/16 v2, 0x8
+
+    if-ne v0, v2, :cond_7
+
+    :cond_6
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {v5, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v5, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_6
+    if-eqz v2, :cond_7
 
     move v0, v3
 
     goto :goto_0
 
-    :cond_6
+    :cond_7
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {v5, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v5, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_7
+    if-eqz v2, :cond_8
 
     move v0, v4
 
     goto :goto_0
 
-    :cond_7
+    :cond_8
     invoke-interface {v5}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v2
 
-    if-lez v1, :cond_8
+    if-lez v2, :cond_9
 
     invoke-interface {v5, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -209,36 +222,36 @@
 
     goto :goto_0
 
-    :cond_8
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    :cond_9
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-static {}, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->-get0()Ljava/lang/String;
 
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "Launching with an unsupported mode: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string/jumbo v5, "Launching with an unsupported mode: "
 
-    move-result-object v2
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v3
 
-    goto :goto_0
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
 .end method
 
 .method public run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V

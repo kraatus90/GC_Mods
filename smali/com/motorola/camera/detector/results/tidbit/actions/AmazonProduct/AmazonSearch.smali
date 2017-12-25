@@ -190,7 +190,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-static {}, Lcom/motorola/camera/Util;->isInternetConnected()Z
+    invoke-static {}, Lcom/motorola/camera/NetworkUtil;->isInternetConnected()Z
 
     move-result v0
 

@@ -285,7 +285,7 @@
     return-object v2
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_EffectsComponent_lambda$1(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_EffectsComponent_12888(Lcom/motorola/camera/ui/widgets/AlertPopup;)V
     .locals 0
 
     return-void
@@ -332,21 +332,21 @@
 
     invoke-direct {v0}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;-><init>()V
 
-    const v1, 0x7f0800ab
+    const v1, 0x7f0800ac
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->title:I
 
-    const v1, 0x7f0800aa
+    const v1, 0x7f0800ab
 
     iput v1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->message:I
 
     iput-object p1, v0, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->dismissFutureDialogSetting:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$5;
+    new-instance v1, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$kNzQkiHMZeO4qWPiLyau--zq8yI;
 
-    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$5;-><init>()V
+    invoke-direct {v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$kNzQkiHMZeO4qWPiLyau--zq8yI;-><init>()V
 
-    const v2, 0x7f0800b2
+    const v2, 0x7f0800b3
 
     invoke-virtual {v0, v2, v1}, Lcom/motorola/camera/ui/widgets/AlertPopup$AlertPopupData;->setPositiveButton(ILcom/motorola/camera/ui/widgets/AlertPopup$OnClickListener;)V
 
@@ -1074,13 +1074,13 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/EffectsComponent;->mEffectsTexture:Lcom/motorola/camera/ui/widgets/gl/textures/EffectsTexture;
 
-    const v2, 0x7f080152
+    const v2, 0x7f08015d
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const v3, 0x7f080173
+    const v3, 0x7f080180
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

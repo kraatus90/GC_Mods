@@ -62,18 +62,18 @@
     return-void
 
     :cond_1
-    array-length v2, p0
+    array-length v1, p0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    if-ge v1, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
-    aget-object v0, p0, v1
+    aget-object v2, p0, v0
 
-    invoke-static {v0, p1}, Lcom/google/zxing/client/result/ParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
+    invoke-static {v2, p1}, Lcom/google/zxing/client/result/ParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 .end method

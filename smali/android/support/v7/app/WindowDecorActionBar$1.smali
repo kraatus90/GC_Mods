@@ -90,13 +90,13 @@
 
     iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->mContentView:Landroid/view/View;
 
-    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setTranslationY(Landroid/view/View;F)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->this$0:Landroid/support/v7/app/WindowDecorActionBar;
 
     iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->mContainerView:Landroid/support/v7/widget/ActionBarContainer;
 
-    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setTranslationY(Landroid/view/View;F)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContainer;->setTranslationY(F)V
 
     goto :goto_0
 

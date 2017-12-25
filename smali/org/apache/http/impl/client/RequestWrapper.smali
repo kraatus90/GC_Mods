@@ -29,8 +29,6 @@
 .method public constructor <init>(Lorg/apache/http/HttpRequest;)V
     .locals 5
 
-    const/4 v1, 0x0
-
     const/4 v3, 0x0
 
     invoke-direct {p0}, Lorg/apache/http/message/AbstractHttpMessage;-><init>()V
@@ -110,7 +108,9 @@
 
     iput-object v0, p0, Lorg/apache/http/impl/client/RequestWrapper;->method:Ljava/lang/String;
 
-    iput-object v1, p0, Lorg/apache/http/impl/client/RequestWrapper;->version:Lorg/apache/http/ProtocolVersion;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lorg/apache/http/impl/client/RequestWrapper;->version:Lorg/apache/http/ProtocolVersion;
 
     goto :goto_0
 

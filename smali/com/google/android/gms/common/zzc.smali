@@ -28,11 +28,11 @@
 .end method
 
 .method private zza(Landroid/content/pm/PackageInfo;Z)Z
-    .locals 5
+    .locals 4
 
     const/4 v2, 0x1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     iget-object v0, p1, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
@@ -44,7 +44,7 @@
 
     iget-object v0, p1, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
 
-    aget-object v0, v0, v4
+    aget-object v0, v0, v3
 
     invoke-virtual {v0}, Landroid/content/pm/Signature;->toByteArray()[B
 
@@ -76,7 +76,7 @@
     if-nez v0, :cond_3
 
     :goto_1
-    return v4
+    return v3
 
     :cond_0
     const-string/jumbo v0, "GoogleSignatureVerifier"
@@ -85,7 +85,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    return v4
+    return v3
 
     :cond_1
     invoke-static {}, Lcom/google/android/gms/common/zzb;->zzkw()Ljava/util/Set;
@@ -98,35 +98,35 @@
     return v2
 
     :cond_3
-    const-string/jumbo v0, "GoogleSignatureVerifier"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "Signature not valid.  Found: \n"
 
-    const-string/jumbo v3, "Signature not valid.  Found: \n"
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
+    move-result-object v0
 
     invoke-virtual {v1}, Lcom/google/android/gms/common/zzb$zza;->getBytes()[B
 
     move-result-object v1
 
-    invoke-static {v1, v4}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    invoke-static {v1, v3}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    const-string/jumbo v1, "GoogleSignatureVerifier"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 .end method
@@ -142,9 +142,9 @@
 
 # virtual methods
 .method varargs zza(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/zzb$zza;)Lcom/google/android/gms/common/zzb$zza;
-    .locals 6
+    .locals 5
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
     const/4 v1, 0x0
 
@@ -186,7 +186,7 @@
     if-nez v0, :cond_3
 
     :goto_1
-    return-object v5
+    return-object v4
 
     :cond_0
     const-string/jumbo v0, "GoogleSignatureVerifier"
@@ -195,7 +195,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-object v5
+    return-object v4
 
     :cond_1
     aget-object v3, p2, v0
@@ -216,17 +216,15 @@
     return-object v0
 
     :cond_3
-    const-string/jumbo v0, "GoogleSignatureVerifier"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v3, "Signature not valid.  Found: \n"
 
-    const-string/jumbo v4, "Signature not valid.  Found: \n"
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
+    move-result-object v0
 
     invoke-virtual {v2}, Lcom/google/android/gms/common/zzb$zza;->getBytes()[B
 
@@ -236,15 +234,17 @@
 
     move-result-object v1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    const-string/jumbo v1, "GoogleSignatureVerifier"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1
 .end method
@@ -301,9 +301,9 @@
 .end method
 
 .method public zzb(Landroid/content/pm/PackageManager;Ljava/lang/String;)Z
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     const/16 v0, 0x40
 
@@ -334,36 +334,36 @@
     if-nez v0, :cond_0
 
     :goto_0
-    return v3
+    return v2
 
     :cond_0
-    const-string/jumbo v0, "GoogleSignatureVerifier"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v1, "Package manager can\'t find package "
 
-    const-string/jumbo v2, "Package manager can\'t find package "
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, ", defaulting to false"
 
-    const-string/jumbo v2, ", defaulting to false"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, "GoogleSignatureVerifier"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

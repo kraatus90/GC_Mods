@@ -69,9 +69,9 @@
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->val$dateTypeAdapter:Lcom/google/gson/TypeAdapter;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$26$1;->val$dateTypeAdapter:Lcom/google/gson/TypeAdapter;
 
-    invoke-virtual {v2, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -79,8 +79,10 @@
 
     if-nez v0, :cond_0
 
+    move-object v0, v1
+
     :goto_0
-    return-object v1
+    return-object v0
 
     :cond_0
     new-instance v1, Ljava/sql/Timestamp;
@@ -90,6 +92,8 @@
     move-result-wide v2
 
     invoke-direct {v1, v2, v3}, Ljava/sql/Timestamp;-><init>(J)V
+
+    move-object v0, v1
 
     goto :goto_0
 .end method

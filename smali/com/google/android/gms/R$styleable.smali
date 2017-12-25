@@ -28,11 +28,11 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    const v0, 0x7f0100d7
+    const v0, 0x7f0100ec
 
-    const v1, 0x7f0100d8
+    const v1, 0x7f0100ed
 
-    const v2, 0x7f0100d9
+    const v2, 0x7f0100ee
 
     filled-new-array {v0, v1, v2}, [I
 

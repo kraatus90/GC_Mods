@@ -41,13 +41,13 @@
 .end method
 
 .method public constructor <init>(Lorg/apache/http/conn/scheme/SchemeRegistry;)V
-    .locals 3
+    .locals 4
 
-    const-wide/16 v0, -0x1
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    const-wide/16 v2, -0x1
 
-    invoke-direct {p0, p1, v0, v1, v2}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/conn/scheme/SchemeRegistry;JLjava/util/concurrent/TimeUnit;)V
+    invoke-direct {p0, p1, v2, v3, v0}, Lorg/apache/http/impl/conn/tsccm/ThreadSafeClientConnManager;-><init>(Lorg/apache/http/conn/scheme/SchemeRegistry;JLjava/util/concurrent/TimeUnit;)V
 
     return-void
 .end method

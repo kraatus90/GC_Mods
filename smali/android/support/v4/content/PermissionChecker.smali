@@ -41,13 +41,13 @@
 
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
-    move-result v1
+    move-result v0
 
     invoke-static {}, Landroid/os/Process;->myPid()I
 
-    move-result v2
+    move-result v1
 
-    if-eq v1, v2, :cond_0
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x0
 
@@ -62,9 +62,9 @@
 
     invoke-static {p0, p1, v1, v2, v0}, Landroid/support/v4/content/PermissionChecker;->checkPermission(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -132,9 +132,9 @@
 
     invoke-virtual {p0, p1, p2, p3}, Landroid/content/Context;->checkPermission(Ljava/lang/String;II)I
 
-    move-result v2
+    move-result v0
 
-    if-eq v2, v4, :cond_0
+    if-eq v0, v4, :cond_0
 
     invoke-static {p1}, Landroid/support/v4/app/AppOpsManagerCompat;->permissionToOp(Ljava/lang/String;)Ljava/lang/String;
 
@@ -147,9 +147,9 @@
     :goto_0
     invoke-static {p0, v0, p4}, Landroid/support/v4/app/AppOpsManagerCompat;->noteProxyOp(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_5
+    if-nez v0, :cond_5
 
     return v3
 
@@ -162,9 +162,9 @@
     :cond_2
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p3}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+    invoke-virtual {v1, p3}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
 
     move-result-object v1
 
@@ -183,9 +183,9 @@
     goto :goto_0
 
     :cond_5
-    const/4 v2, -0x2
+    const/4 v0, -0x2
 
-    return v2
+    return v0
 .end method
 
 .method public static checkSelfPermission(Landroid/content/Context;Ljava/lang/String;)I

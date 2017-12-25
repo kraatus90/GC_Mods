@@ -35,11 +35,11 @@
 
     sput-object v1, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
-    const-string/jumbo v1, "SJIS"
+    sget-object v1, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
-    sget-object v2, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
+    const-string/jumbo v2, "SJIS"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -54,11 +54,11 @@
     return-void
 
     :cond_1
-    const-string/jumbo v1, "EUC_JP"
+    sget-object v1, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
-    sget-object v2, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
+    const-string/jumbo v2, "EUC_JP"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
@@ -93,544 +93,673 @@
     :cond_0
     move-object/from16 v0, p0
 
-    array-length v8, v0
+    array-length v0, v0
 
-    const/4 v2, 0x1
+    move/from16 v19, v0
 
-    const/4 v3, 0x1
+    const/4 v12, 0x1
 
-    const/4 v4, 0x1
+    const/4 v10, 0x1
 
-    const/16 v18, 0x0
-
-    const/4 v15, 0x0
+    const/16 v17, 0x1
 
     const/16 v16, 0x0
 
-    const/16 v17, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v10, 0x0
+    const/4 v15, 0x0
 
     const/4 v14, 0x0
 
     const/4 v13, 0x0
 
+    const/4 v9, 0x0
+
+    const/4 v8, 0x0
+
     const/4 v7, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v11, 0x0
 
     move-object/from16 v0, p0
 
-    array-length v0, v0
+    array-length v2, v0
 
-    move/from16 v21, v0
+    const/4 v3, 0x3
 
-    const/16 v22, 0x3
-
-    move/from16 v0, v21
-
-    move/from16 v1, v22
-
-    if-gt v0, v1, :cond_6
+    if-gt v2, v3, :cond_6
 
     :cond_1
-    const/16 v19, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    const/4 v6, 0x0
+    const/4 v3, 0x0
+
+    move/from16 v18, v3
+
+    move v3, v4
+
+    move v4, v6
+
+    move/from16 v6, v17
 
     :goto_1
-    if-lt v6, v8, :cond_7
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    if-lt v0, v1, :cond_7
 
     :goto_2
-    if-nez v4, :cond_22
+    if-nez v6, :cond_23
 
     :cond_2
+    move v4, v6
+
     :goto_3
-    if-nez v3, :cond_23
+    if-nez v10, :cond_24
 
     :cond_3
     :goto_4
-    if-nez v4, :cond_24
+    if-nez v4, :cond_25
 
     :goto_5
-    if-nez v3, :cond_27
+    if-nez v10, :cond_28
 
     :goto_6
-    if-nez v2, :cond_2a
+    if-nez v12, :cond_2b
 
     :cond_4
-    if-nez v2, :cond_2e
+    if-nez v12, :cond_2f
 
-    if-nez v3, :cond_2f
+    if-nez v10, :cond_30
 
-    if-nez v4, :cond_30
+    if-nez v4, :cond_31
 
-    sget-object v21, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
+    sget-object v2, Lcom/google/zxing/common/StringUtils;->PLATFORM_DEFAULT_ENCODING:Ljava/lang/String;
 
-    return-object v21
+    return-object v2
 
     :cond_5
-    sget-object v21, Lcom/google/zxing/DecodeHintType;->CHARACTER_SET:Lcom/google/zxing/DecodeHintType;
+    sget-object v2, Lcom/google/zxing/DecodeHintType;->CHARACTER_SET:Lcom/google/zxing/DecodeHintType;
 
     move-object/from16 v0, p1
 
-    move-object/from16 v1, v21
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v5
+    check-cast v2, Ljava/lang/String;
 
-    check-cast v5, Ljava/lang/String;
+    if-eqz v2, :cond_0
 
-    if-eqz v5, :cond_0
-
-    return-object v5
+    return-object v2
 
     :cond_6
-    const/16 v21, 0x0
+    const/4 v2, 0x0
 
-    aget-byte v21, p0, v21
+    aget-byte v2, p0, v2
 
-    const/16 v22, -0x11
+    const/16 v3, -0x11
 
-    move/from16 v0, v21
+    if-ne v2, v3, :cond_1
 
-    move/from16 v1, v22
+    const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_1
+    aget-byte v2, p0, v2
 
-    const/16 v21, 0x1
+    const/16 v3, -0x45
 
-    aget-byte v21, p0, v21
+    if-ne v2, v3, :cond_1
 
-    const/16 v22, -0x45
+    const/4 v2, 0x2
 
-    move/from16 v0, v21
+    aget-byte v2, p0, v2
 
-    move/from16 v1, v22
+    const/16 v3, -0x41
 
-    if-ne v0, v1, :cond_1
+    if-ne v2, v3, :cond_1
 
-    const/16 v21, 0x2
-
-    aget-byte v21, p0, v21
-
-    const/16 v22, -0x41
-
-    move/from16 v0, v21
-
-    move/from16 v1, v22
-
-    if-ne v0, v1, :cond_1
-
-    const/16 v19, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_7
-    if-eqz v2, :cond_c
+    if-eqz v12, :cond_a
 
     :cond_8
-    aget-byte v21, p0, v6
+    aget-byte v17, p0, v18
 
-    move/from16 v0, v21
+    move/from16 v0, v17
 
     and-int/lit16 v0, v0, 0xff
 
     move/from16 v20, v0
 
-    if-nez v4, :cond_d
+    if-nez v6, :cond_b
+
+    move/from16 v17, v6
+
+    :goto_7
+    if-nez v12, :cond_13
 
     :cond_9
-    :goto_7
-    if-nez v2, :cond_14
-
-    :cond_a
     :goto_8
-    if-nez v3, :cond_19
+    if-nez v10, :cond_18
 
-    :cond_b
+    move v6, v7
+
+    move v7, v8
+
+    move v8, v9
+
+    move v9, v10
+
+    move/from16 v21, v5
+
+    move v5, v4
+
+    move/from16 v4, v21
+
     :goto_9
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v10, v18, 0x1
+
+    move/from16 v18, v10
+
+    move v10, v9
+
+    move v9, v8
+
+    move v8, v7
+
+    move v7, v6
+
+    move/from16 v6, v17
+
+    move/from16 v21, v5
+
+    move v5, v4
+
+    move/from16 v4, v21
 
     goto :goto_1
 
-    :cond_c
-    if-nez v3, :cond_8
+    :cond_a
+    if-nez v10, :cond_8
 
-    if-nez v4, :cond_8
+    if-nez v6, :cond_8
 
     goto :goto_2
 
-    :cond_d
-    if-gtz v18, :cond_e
+    :cond_b
+    if-gtz v16, :cond_c
 
     move/from16 v0, v20
 
     and-int/lit16 v0, v0, 0x80
 
-    move/from16 v21, v0
+    move/from16 v17, v0
 
-    if-eqz v21, :cond_9
+    if-nez v17, :cond_e
 
-    and-int/lit8 v21, v20, 0x40
+    move/from16 v17, v6
 
-    if-eqz v21, :cond_10
+    goto :goto_7
 
-    add-int/lit8 v18, v18, 0x1
+    :cond_c
+    move/from16 v0, v20
 
-    and-int/lit8 v21, v20, 0x20
+    and-int/lit16 v0, v0, 0x80
 
-    if-eqz v21, :cond_11
+    move/from16 v17, v0
 
-    add-int/lit8 v18, v18, 0x1
+    if-eqz v17, :cond_d
 
-    and-int/lit8 v21, v20, 0x10
+    add-int/lit8 v16, v16, -0x1
 
-    if-eqz v21, :cond_12
+    move/from16 v17, v6
 
-    add-int/lit8 v18, v18, 0x1
+    goto :goto_7
 
-    and-int/lit8 v21, v20, 0x8
+    :cond_d
+    const/4 v6, 0x0
 
-    if-eqz v21, :cond_13
-
-    const/4 v4, 0x0
+    move/from16 v17, v6
 
     goto :goto_7
 
     :cond_e
-    move/from16 v0, v20
+    and-int/lit8 v17, v20, 0x40
 
-    and-int/lit16 v0, v0, 0x80
+    if-eqz v17, :cond_f
 
-    move/from16 v21, v0
+    add-int/lit8 v16, v16, 0x1
 
-    if-eqz v21, :cond_f
+    and-int/lit8 v17, v20, 0x20
 
-    add-int/lit8 v18, v18, -0x1
+    if-eqz v17, :cond_10
+
+    add-int/lit8 v16, v16, 0x1
+
+    and-int/lit8 v17, v20, 0x10
+
+    if-eqz v17, :cond_11
+
+    add-int/lit8 v16, v16, 0x1
+
+    and-int/lit8 v17, v20, 0x8
+
+    if-eqz v17, :cond_12
+
+    const/4 v6, 0x0
+
+    move/from16 v17, v6
 
     goto :goto_7
 
     :cond_f
-    const/4 v4, 0x0
+    const/4 v6, 0x0
+
+    move/from16 v17, v6
 
     goto :goto_7
 
     :cond_10
-    const/4 v4, 0x0
+    add-int/lit8 v15, v15, 0x1
+
+    move/from16 v17, v6
 
     goto :goto_7
 
     :cond_11
-    add-int/lit8 v15, v15, 0x1
+    add-int/lit8 v14, v14, 0x1
+
+    move/from16 v17, v6
 
     goto :goto_7
 
     :cond_12
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v13, v13, 0x1
+
+    move/from16 v17, v6
 
     goto :goto_7
 
     :cond_13
-    add-int/lit8 v17, v17, 0x1
+    const/16 v6, 0x7f
 
-    goto :goto_7
+    move/from16 v0, v20
+
+    if-gt v0, v6, :cond_16
 
     :cond_14
-    const/16 v21, 0x7f
+    const/16 v6, 0x9f
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
+    if-le v0, v6, :cond_9
 
-    if-gt v0, v1, :cond_17
+    const/16 v6, 0xc0
+
+    move/from16 v0, v20
+
+    if-ge v0, v6, :cond_17
 
     :cond_15
-    const/16 v21, 0x9f
+    add-int/lit8 v6, v11, 0x1
 
-    move/from16 v0, v20
+    move v11, v6
 
-    move/from16 v1, v21
-
-    if-le v0, v1, :cond_a
-
-    const/16 v21, 0xc0
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-ge v0, v1, :cond_18
+    goto :goto_8
 
     :cond_16
-    add-int/lit8 v7, v7, 0x1
+    const/16 v6, 0xa0
 
-    goto :goto_8
+    move/from16 v0, v20
+
+    if-ge v0, v6, :cond_14
+
+    const/4 v6, 0x0
+
+    move v12, v6
+
+    goto/16 :goto_8
 
     :cond_17
-    const/16 v21, 0xa0
+    const/16 v6, 0xd7
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
+    if-eq v0, v6, :cond_15
 
-    if-ge v0, v1, :cond_15
+    const/16 v6, 0xf7
 
-    const/4 v2, 0x0
+    move/from16 v0, v20
 
-    goto :goto_8
+    if-eq v0, v6, :cond_15
+
+    goto/16 :goto_8
 
     :cond_18
-    const/16 v21, 0xd7
+    if-gtz v9, :cond_1a
+
+    const/16 v6, 0x80
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
-
-    if-eq v0, v1, :cond_16
-
-    const/16 v21, 0xf7
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-eq v0, v1, :cond_16
-
-    goto :goto_8
+    if-ne v0, v6, :cond_1d
 
     :cond_19
-    if-gtz v9, :cond_1b
+    const/4 v6, 0x0
 
-    const/16 v21, 0x80
+    move/from16 v21, v5
 
-    move/from16 v0, v20
+    move v5, v4
 
-    move/from16 v1, v21
+    move/from16 v4, v21
 
-    if-ne v0, v1, :cond_1e
+    move/from16 v22, v7
 
-    :cond_1a
-    const/4 v3, 0x0
+    move v7, v8
+
+    move v8, v9
+
+    move v9, v6
+
+    move/from16 v6, v22
 
     goto/16 :goto_9
 
-    :cond_1b
-    const/16 v21, 0x40
+    :cond_1a
+    const/16 v6, 0x40
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
+    if-ge v0, v6, :cond_1c
 
-    if-ge v0, v1, :cond_1d
+    :cond_1b
+    const/4 v6, 0x0
+
+    move/from16 v21, v5
+
+    move v5, v4
+
+    move/from16 v4, v21
+
+    move/from16 v22, v7
+
+    move v7, v8
+
+    move v8, v9
+
+    move v9, v6
+
+    move/from16 v6, v22
+
+    goto/16 :goto_9
 
     :cond_1c
-    const/4 v3, 0x0
+    const/16 v6, 0x7f
+
+    move/from16 v0, v20
+
+    if-eq v0, v6, :cond_1b
+
+    const/16 v6, 0xfc
+
+    move/from16 v0, v20
+
+    if-gt v0, v6, :cond_1b
+
+    add-int/lit8 v6, v9, -0x1
+
+    move v9, v10
+
+    move/from16 v21, v4
+
+    move v4, v5
+
+    move/from16 v5, v21
+
+    move/from16 v22, v8
+
+    move v8, v6
+
+    move v6, v7
+
+    move/from16 v7, v22
 
     goto/16 :goto_9
 
     :cond_1d
-    const/16 v21, 0x7f
+    const/16 v6, 0xa0
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
+    if-eq v0, v6, :cond_19
 
-    if-eq v0, v1, :cond_1c
-
-    const/16 v21, 0xfc
+    const/16 v6, 0xef
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
+    if-gt v0, v6, :cond_19
 
-    if-gt v0, v1, :cond_1c
+    const/16 v6, 0xa0
 
-    add-int/lit8 v9, v9, -0x1
+    move/from16 v0, v20
+
+    if-gt v0, v6, :cond_1f
+
+    :cond_1e
+    const/16 v6, 0x7f
+
+    move/from16 v0, v20
+
+    if-gt v0, v6, :cond_21
+
+    const/4 v6, 0x0
+
+    const/4 v4, 0x0
+
+    move v7, v8
+
+    move v8, v9
+
+    move v9, v10
+
+    move/from16 v21, v4
+
+    move v4, v5
+
+    move/from16 v5, v21
 
     goto/16 :goto_9
 
-    :cond_1e
-    const/16 v21, 0xa0
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-eq v0, v1, :cond_1a
-
-    const/16 v21, 0xef
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-gt v0, v1, :cond_1a
-
-    const/16 v21, 0xa0
-
-    move/from16 v0, v20
-
-    move/from16 v1, v21
-
-    if-gt v0, v1, :cond_20
-
     :cond_1f
-    const/16 v21, 0x7f
+    const/16 v6, 0xe0
 
     move/from16 v0, v20
 
-    move/from16 v1, v21
+    if-ge v0, v6, :cond_1e
 
-    if-gt v0, v1, :cond_21
+    add-int/lit8 v8, v8, 0x1
 
-    const/4 v11, 0x0
+    const/4 v6, 0x0
 
-    const/4 v10, 0x0
+    add-int/lit8 v4, v7, 0x1
+
+    if-gt v4, v5, :cond_20
+
+    move v7, v8
+
+    move v8, v9
+
+    move v9, v10
+
+    move/from16 v21, v5
+
+    move v5, v6
+
+    move v6, v4
+
+    move/from16 v4, v21
 
     goto/16 :goto_9
 
     :cond_20
-    const/16 v21, 0xe0
+    move v5, v6
 
-    move/from16 v0, v20
+    move v7, v8
 
-    move/from16 v1, v21
+    move v6, v4
 
-    if-ge v0, v1, :cond_1f
+    move v8, v9
 
-    add-int/lit8 v12, v12, 0x1
-
-    const/4 v10, 0x0
-
-    add-int/lit8 v11, v11, 0x1
-
-    if-le v11, v14, :cond_b
-
-    move v14, v11
+    move v9, v10
 
     goto/16 :goto_9
 
     :cond_21
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v7, v9, 0x1
 
-    const/4 v11, 0x0
+    const/4 v6, 0x0
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    if-le v10, v13, :cond_b
+    if-gt v4, v3, :cond_22
 
-    move v13, v10
+    move v9, v10
+
+    move/from16 v21, v4
+
+    move v4, v5
+
+    move/from16 v5, v21
+
+    move/from16 v22, v7
+
+    move v7, v8
+
+    move/from16 v8, v22
 
     goto/16 :goto_9
 
     :cond_22
-    if-lez v18, :cond_2
+    move v3, v4
+
+    move v9, v10
+
+    move/from16 v21, v4
+
+    move v4, v5
+
+    move/from16 v5, v21
+
+    move/from16 v22, v7
+
+    move v7, v8
+
+    move/from16 v8, v22
+
+    goto/16 :goto_9
+
+    :cond_23
+    if-lez v16, :cond_2
 
     const/4 v4, 0x0
 
     goto/16 :goto_3
 
-    :cond_23
+    :cond_24
     if-lez v9, :cond_3
 
-    const/4 v3, 0x0
+    const/4 v10, 0x0
 
     goto/16 :goto_4
 
-    :cond_24
-    if-eqz v19, :cond_26
-
     :cond_25
-    const-string/jumbo v21, "UTF8"
-
-    return-object v21
+    if-eqz v2, :cond_27
 
     :cond_26
-    add-int v21, v15, v16
+    const-string/jumbo v2, "UTF8"
 
-    add-int v21, v21, v17
+    return-object v2
 
-    if-gtz v21, :cond_25
+    :cond_27
+    add-int v2, v15, v14
+
+    add-int/2addr v2, v13
+
+    if-gtz v2, :cond_26
 
     goto/16 :goto_5
 
-    :cond_27
-    sget-boolean v21, Lcom/google/zxing/common/StringUtils;->ASSUME_SHIFT_JIS:Z
-
-    if-eqz v21, :cond_29
-
     :cond_28
-    const-string/jumbo v21, "SJIS"
+    sget-boolean v2, Lcom/google/zxing/common/StringUtils;->ASSUME_SHIFT_JIS:Z
 
-    return-object v21
+    if-eqz v2, :cond_2a
 
     :cond_29
-    const/16 v21, 0x3
+    const-string/jumbo v2, "SJIS"
 
-    move/from16 v0, v21
+    return-object v2
 
-    if-ge v14, v0, :cond_28
+    :cond_2a
+    const/4 v2, 0x3
 
-    const/16 v21, 0x3
+    if-ge v5, v2, :cond_29
 
-    move/from16 v0, v21
+    const/4 v2, 0x3
 
-    if-ge v13, v0, :cond_28
+    if-ge v3, v2, :cond_29
 
     goto/16 :goto_6
 
-    :cond_2a
-    if-eqz v3, :cond_4
-
-    const/16 v21, 0x2
-
-    move/from16 v0, v21
-
-    if-eq v14, v0, :cond_2c
-
     :cond_2b
-    mul-int/lit8 v21, v7, 0xa
+    if-eqz v10, :cond_4
 
-    move/from16 v0, v21
+    const/4 v2, 0x2
 
-    if-ge v0, v8, :cond_2d
-
-    const-string/jumbo v21, "ISO8859_1"
-
-    :goto_a
-    return-object v21
+    if-eq v5, v2, :cond_2d
 
     :cond_2c
-    const/16 v21, 0x2
+    mul-int/lit8 v2, v11, 0xa
 
-    move/from16 v0, v21
+    move/from16 v0, v19
 
-    if-ne v12, v0, :cond_2b
+    if-ge v2, v0, :cond_2e
+
+    const-string/jumbo v2, "ISO8859_1"
+
+    :goto_a
+    return-object v2
 
     :cond_2d
-    const-string/jumbo v21, "SJIS"
+    const/4 v2, 0x2
+
+    if-ne v8, v2, :cond_2c
+
+    :cond_2e
+    const-string/jumbo v2, "SJIS"
 
     goto :goto_a
 
-    :cond_2e
-    const-string/jumbo v21, "ISO8859_1"
-
-    return-object v21
-
     :cond_2f
-    const-string/jumbo v21, "SJIS"
+    const-string/jumbo v2, "ISO8859_1"
 
-    return-object v21
+    return-object v2
 
     :cond_30
-    const-string/jumbo v21, "UTF8"
+    const-string/jumbo v2, "SJIS"
 
-    return-object v21
+    return-object v2
+
+    :cond_31
+    const-string/jumbo v2, "UTF8"
+
+    return-object v2
 .end method

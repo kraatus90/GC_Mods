@@ -329,119 +329,148 @@
 .end method
 
 .method protected onCreateCaptureRecord(Lcom/motorola/camera/fsm/camera/FsmContext;)V
-    .locals 6
+    .locals 8
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    sget-object v1, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
-
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
-
-    if-eq v1, v2, :cond_0
-
-    sget-object v1, Lcom/motorola/camera/ShotType;->MULTI:Lcom/motorola/camera/ShotType;
+    sget-object v0, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
 
-    if-ne v1, v2, :cond_4
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mBundleType:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
-
-    invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "REVIEW_REQUIRED"
-
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPostCaptureReview()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    sget-object v3, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
-
-    iget-object v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
-
-    if-ne v3, v4, :cond_1
-
-    const/4 v0, 0x1
-
-    :cond_1
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    if-eq v0, v2, :cond_0
 
     sget-object v0, Lcom/motorola/camera/ShotType;->MULTI:Lcom/motorola/camera/ShotType;
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
 
-    if-ne v0, v2, :cond_2
+    if-ne v0, v2, :cond_4
+
+    :cond_0
+    :goto_0
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mBundleType:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "REVIEW_REQUIRED"
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPostCaptureReview()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    sget-object v0, Lcom/motorola/camera/ShotType;->SINGLE:Lcom/motorola/camera/ShotType;
+
+    iget-object v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
+
+    if-ne v0, v4, :cond_5
+
+    const/4 v0, 0x1
+
+    :goto_1
+    invoke-virtual {v2, v3, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    sget-object v0, Lcom/motorola/camera/ShotType;->MULTI:Lcom/motorola/camera/ShotType;
+
+    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
+
+    if-ne v0, v3, :cond_1
 
     const-string/jumbo v0, "UUID"
 
     invoke-static {}, Lcom/motorola/camera/BurstShotFileUtils;->getInstance()Lcom/motorola/camera/BurstShotFileUtils;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lcom/motorola/camera/BurstShotFileUtils;->generateBurstGroupID()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/motorola/camera/BurstShotFileUtils;->generateBurstGroupID()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v0, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v0, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_1
     invoke-static {}, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->getNewCaptureSequenceId()I
 
     move-result v0
 
     invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Lcom/motorola/camera/CameraApp;->getAnalytics()Lcom/motorola/camera/analytics/AnalyticsHelper;
+    invoke-virtual {v3}, Lcom/motorola/camera/CameraApp;->getAnalytics()Lcom/motorola/camera/analytics/AnalyticsHelper;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
+    iget-object v4, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
 
-    int-to-long v4, v0
+    int-to-long v6, v0
 
-    invoke-virtual {v2, v3, v4, v5}, Lcom/motorola/camera/analytics/AnalyticsHelper;->startShotToShotLogging(Lcom/motorola/camera/ShotType;J)V
+    invoke-virtual {v3, v4, v6, v7, v1}, Lcom/motorola/camera/analytics/AnalyticsHelper;->startShotToShotLogging(Lcom/motorola/camera/ShotType;JI)V
 
     invoke-virtual {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->getNewCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->populateCaptureRecord()V
+
+    const-string/jumbo v0, "INITIAL_VIEWPOINT"
+
+    invoke-virtual {v2, v0}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const-string/jumbo v0, "INITIAL_VIEWPOINT"
+
+    invoke-virtual {v2, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->populateCaptureRecord()V
+    check-cast v0, Lcom/motorola/camera/saving/ViewPoint;
 
-    invoke-virtual {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->setFocusInfo(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)V
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->setViewPoint(Lcom/motorola/camera/saving/ViewPoint;)V
 
-    invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->populateExtendedInfo()V
+    :cond_2
+    invoke-virtual {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->setFocusInfo(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)V
 
-    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->addCaptureRecord(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)V
+    invoke-virtual {v1}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->populateExtendedInfo()V
 
-    const-string/jumbo v2, "SEQ_ID"
+    invoke-static {v1}, Lcom/motorola/camera/saving/ImageCaptureManager;->addCaptureRecord(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)V
 
-    iget v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    const-string/jumbo v0, "SEQ_ID"
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    iget-object v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     :cond_3
     return-void
 
     :cond_4
-    sget-object v1, Lcom/motorola/camera/ShotType;->PANORAMA:Lcom/motorola/camera/ShotType;
+    sget-object v0, Lcom/motorola/camera/ShotType;->PANORAMA:Lcom/motorola/camera/ShotType;
 
     iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/ConfigureImageCaptureRequestRunnable;->mShotType:Lcom/motorola/camera/ShotType;
 
-    if-ne v1, v2, :cond_3
+    if-ne v0, v2, :cond_3
 
     goto :goto_0
+
+    :cond_5
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_6
+    move v0, v1
+
+    goto :goto_1
 .end method
 
 .method protected onPostConfigureCaptureRequest(Lcom/motorola/camera/fsm/camera/FsmContext;)V
@@ -488,11 +517,7 @@
 
     const-string/jumbo v3, "SEQ_ID"
 
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v2
 

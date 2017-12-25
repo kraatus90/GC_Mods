@@ -66,37 +66,37 @@
 
 # virtual methods
 .method public hasNext()Z
-    .locals 5
+    .locals 3
 
-    iget-object v3, p0, Lcom/google/gson/JsonStreamParser;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/gson/JsonStreamParser;->lock:Ljava/lang/Object;
 
-    monitor-enter v3
+    monitor-enter v1
 
     :try_start_0
-    iget-object v2, p0, Lcom/google/gson/JsonStreamParser;->parser:Lcom/google/gson/stream/JsonReader;
+    iget-object v0, p0, Lcom/google/gson/JsonStreamParser;->parser:Lcom/google/gson/stream/JsonReader;
 
-    invoke-virtual {v2}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+    invoke-virtual {v0}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v4, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
+    sget-object v2, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
     :try_end_0
     .catch Lcom/google/gson/stream/MalformedJsonException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-ne v2, v4, :cond_0
+    if-ne v0, v2, :cond_0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_0
     :try_start_1
-    monitor-exit v3
+    monitor-exit v1
 
-    return v2
+    return v0
 
     :cond_0
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
@@ -110,21 +110,21 @@
     throw v2
 
     :catchall_0
-    move-exception v2
+    move-exception v0
 
-    monitor-exit v3
+    monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v2
+    throw v0
 
     :catch_1
-    move-exception v1
+    move-exception v0
 
     :try_start_2
     new-instance v2, Lcom/google/gson/JsonIOException;
 
-    invoke-direct {v2, v1}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v2, v0}, Lcom/google/gson/JsonIOException;-><init>(Ljava/lang/Throwable;)V
 
     throw v2
     :try_end_2
@@ -132,7 +132,7 @@
 .end method
 
 .method public next()Lcom/google/gson/JsonElement;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/gson/JsonParseException;
@@ -141,62 +141,62 @@
 
     invoke-virtual {p0}, Lcom/google/gson/JsonStreamParser;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_0
+    if-eqz v0, :cond_0
 
     :try_start_0
-    iget-object v3, p0, Lcom/google/gson/JsonStreamParser;->parser:Lcom/google/gson/stream/JsonReader;
+    iget-object v0, p0, Lcom/google/gson/JsonStreamParser;->parser:Lcom/google/gson/stream/JsonReader;
 
-    invoke-static {v3}, Lcom/google/gson/internal/Streams;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
+    invoke-static {v0}, Lcom/google/gson/internal/Streams;->parse(Lcom/google/gson/stream/JsonReader;)Lcom/google/gson/JsonElement;
     :try_end_0
     .catch Ljava/lang/StackOverflowError; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_1
     .catch Lcom/google/gson/JsonParseException; {:try_start_0 .. :try_end_0} :catch_2
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :cond_0
-    new-instance v3, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    invoke-direct {v3}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    throw v3
+    throw v0
 
     :catch_0
-    move-exception v2
+    move-exception v0
 
-    new-instance v3, Lcom/google/gson/JsonParseException;
+    new-instance v1, Lcom/google/gson/JsonParseException;
 
-    const-string/jumbo v4, "Failed parsing JSON source to Json"
+    const-string/jumbo v2, "Failed parsing JSON source to Json"
 
-    invoke-direct {v3, v4, v2}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 
     :catch_1
-    move-exception v1
+    move-exception v0
 
-    new-instance v3, Lcom/google/gson/JsonParseException;
+    new-instance v1, Lcom/google/gson/JsonParseException;
 
-    const-string/jumbo v4, "Failed parsing JSON source to Json"
+    const-string/jumbo v2, "Failed parsing JSON source to Json"
 
-    invoke-direct {v3, v4, v1}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Lcom/google/gson/JsonParseException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 
     :catch_2
     move-exception v0
 
     invoke-virtual {v0}, Lcom/google/gson/JsonParseException;->getCause()Ljava/lang/Throwable;
 
-    move-result-object v3
+    move-result-object v1
 
-    instance-of v3, v3, Ljava/io/EOFException;
+    instance-of v1, v1, Ljava/io/EOFException;
 
-    if-nez v3, :cond_1
+    if-nez v1, :cond_1
 
     :goto_0
     throw v0

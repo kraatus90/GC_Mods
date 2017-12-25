@@ -30,7 +30,7 @@
 
     invoke-direct {p0, p1, p2}, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolder;-><init>(Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter;Landroid/view/View;)V
 
-    const v0, 0x7f0e00c8
+    const v0, 0x7f0e00d6
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -40,15 +40,15 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean;->mValueSwitch:Landroid/widget/Switch;
 
-    new-instance v0, Lcom/motorola/camera/fragments/-$Lambda$33;
+    new-instance v0, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY$4;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fragments/-$Lambda$33;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY$4;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean;->mSwitchListener:Landroid/widget/CompoundButton$OnCheckedChangeListener;
 
-    new-instance v0, Lcom/motorola/camera/fragments/-$Lambda$28;
+    new-instance v0, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fragments/-$Lambda$28;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fragments/-$Lambda$e_EC0Ez7Cqj7ZnkRPi8mEsOPbiY$1;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -57,7 +57,7 @@
 
 
 # virtual methods
-.method synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean_lambda$1(Landroid/widget/CompoundButton;Z)V
+.method synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean_13168(Landroid/widget/CompoundButton;Z)V
     .locals 1
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -69,7 +69,7 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean_lambda$2(Landroid/view/View;)V
+.method synthetic lambda$-com_motorola_camera_fragments_SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean_13260(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lcom/motorola/camera/fragments/SettingsManagerFragment$SettingsManagerAdapter$ViewHolderBoolean;->mValueSwitch:Landroid/widget/Switch;

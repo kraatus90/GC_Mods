@@ -26,7 +26,7 @@
 .method public abstract name()Ljava/lang/String;
 .end method
 
-.method public abstract record(Landroid/os/Bundle;Landroid/os/Bundle;)V
+.method public abstract record(Landroid/os/Bundle;Lcom/motorola/camera/analytics/SynchronizedBundle;)V
 .end method
 
 .method public abstract record(Landroid/os/Bundle;Ljava/lang/Object;)V

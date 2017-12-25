@@ -46,9 +46,9 @@
 .method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
-
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mTint:Landroid/content/res/ColorStateList;
 
@@ -277,13 +277,13 @@
 .method public drawCachedBitmapWithRootAlpha(Landroid/graphics/Canvas;Landroid/graphics/ColorFilter;Landroid/graphics/Rect;)V
     .locals 3
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0, p2}, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->getPaint(Landroid/graphics/ColorFilter;)Landroid/graphics/Paint;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mCachedBitmap:Landroid/graphics/Bitmap;
+
+    const/4 v2, 0x0
 
     invoke-virtual {p1, v1, v2, p3, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
@@ -429,15 +429,13 @@
 .end method
 
 .method public updateCachedBitmap(II)V
-    .locals 4
+    .locals 3
 
-    const/4 v3, 0x0
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mCachedBitmap:Landroid/graphics/Bitmap;
 
-    iget-object v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mCachedBitmap:Landroid/graphics/Bitmap;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/graphics/Bitmap;->eraseColor(I)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
     new-instance v0, Landroid/graphics/Canvas;
 
@@ -447,7 +445,9 @@
 
     iget-object v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VectorDrawableCompatState;->mVPathRenderer:Landroid/support/graphics/drawable/VectorDrawableCompat$VPathRenderer;
 
-    invoke-virtual {v1, v0, p1, p2, v3}, Landroid/support/graphics/drawable/VectorDrawableCompat$VPathRenderer;->draw(Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, p1, p2, v2}, Landroid/support/graphics/drawable/VectorDrawableCompat$VPathRenderer;->draw(Landroid/graphics/Canvas;IILandroid/graphics/ColorFilter;)V
 
     return-void
 .end method

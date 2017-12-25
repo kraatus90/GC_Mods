@@ -151,11 +151,11 @@
 
     invoke-direct {v0, v2, v3}, Ljava/util/Date;-><init>(J)V
 
-    const-string/jumbo v1, "If-Modified-Since"
-
     invoke-static {v0}, Lorg/apache/http/impl/cookie/DateUtils;->formatDate(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
+
+    const-string/jumbo v1, "If-Modified-Since"
 
     invoke-interface {p1, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -166,11 +166,11 @@
     return-void
 
     :cond_2
-    const-string/jumbo v0, "If-None-Match"
+    iget-object v0, p2, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
 
-    iget-object v1, p2, Lcom/android/volley/Cache$Entry;->etag:Ljava/lang/String;
+    const-string/jumbo v1, "If-None-Match"
 
-    invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
@@ -181,7 +181,7 @@
 .end method
 
 .method private static attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -193,11 +193,11 @@
         }
     .end annotation
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     invoke-virtual {p1}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
 
@@ -212,19 +212,19 @@
     :try_end_0
     .catch Lcom/android/volley/VolleyError; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string/jumbo v0, "%s-retry [timeout=%s]"
+    new-array v0, v2, [Ljava/lang/Object;
 
-    new-array v2, v3, [Ljava/lang/Object;
-
-    aput-object p0, v2, v4
+    aput-object p0, v0, v3
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v2, v5
+    aput-object v1, v0, v4
 
-    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v1, "%s-retry [timeout=%s]"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -235,19 +235,19 @@
     :catch_0
     move-exception v0
 
-    const-string/jumbo v2, "%s-timeout-giveup [timeout=%s]"
+    new-array v2, v2, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object p0, v3, v4
+    aput-object p0, v2, v3
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    aput-object v1, v3, v5
+    aput-object v1, v2, v4
 
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v1, "%s-timeout-giveup [timeout=%s]"
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -359,22 +359,22 @@
     :catch_0
     move-exception v3
 
-    const-string/jumbo v3, "Error occured when calling consumingContent"
+    new-array v3, v6, [Ljava/lang/Object;
 
-    new-array v4, v6, [Ljava/lang/Object;
+    const-string/jumbo v4, "Error occured when calling consumingContent"
 
-    invoke-static {v3, v4}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v4, v3}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_1
 
     :catch_1
     move-exception v3
 
-    const-string/jumbo v3, "Error occured when calling consumingContent"
+    new-array v3, v6, [Ljava/lang/Object;
 
-    new-array v4, v6, [Ljava/lang/Object;
+    const-string/jumbo v4, "Error occured when calling consumingContent"
 
-    invoke-static {v3, v4}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v4, v3}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_2
 .end method
@@ -408,58 +408,58 @@
     :goto_0
     if-nez v0, :cond_0
 
-    const-string/jumbo v3, "HTTP response for request=<%s> [lifetime=%d], [size=%s], [rc=%d], [retryCount=%s]"
-
     const/4 v0, 0x5
 
-    new-array v4, v0, [Ljava/lang/Object;
+    new-array v3, v0, [Ljava/lang/Object;
 
-    aput-object p3, v4, v2
+    aput-object p3, v3, v2
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    aput-object v0, v4, v1
+    aput-object v0, v3, v1
 
     const/4 v1, 0x2
+
+    const-string/jumbo v2, "HTTP response for request=<%s> [lifetime=%d], [size=%s], [rc=%d], [retryCount=%s]"
 
     if-nez p4, :cond_2
 
     const-string/jumbo v0, "null"
 
     :goto_1
-    aput-object v0, v4, v1
-
-    const/4 v0, 0x3
+    aput-object v0, v3, v1
 
     invoke-interface {p5}, Lorg/apache/http/StatusLine;->getStatusCode()I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v4, v0
+    const/4 v1, 0x3
 
-    const/4 v0, 0x4
+    aput-object v0, v3, v1
 
     invoke-virtual {p3}, Lcom/android/volley/Request;->getRetryPolicy()Lcom/android/volley/RetryPolicy;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Lcom/android/volley/RetryPolicy;->getCurrentRetryCount()I
+    invoke-interface {v0}, Lcom/android/volley/RetryPolicy;->getCurrentRetryCount()I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    aput-object v1, v4, v0
+    const/4 v1, 0x4
 
-    invoke-static {v3, v4}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v0, v3, v1
+
+    invoke-static {v2, v3}, Lcom/android/volley/VolleyLog;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_0
     return-void
@@ -488,17 +488,13 @@
 
     move-result-wide v0
 
-    const-string/jumbo v2, "HTTP ERROR(%s) %d ms to fetch %s"
+    const/4 v2, 0x3
 
-    const/4 v3, 0x3
+    new-array v2, v2, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
-    aput-object p1, v3, v4
-
-    const/4 v4, 0x1
+    aput-object p1, v2, v3
 
     sub-long/2addr v0, p3
 
@@ -506,13 +502,17 @@
 
     move-result-object v0
 
-    aput-object v0, v3, v4
+    const/4 v1, 0x1
+
+    aput-object v0, v2, v1
 
     const/4 v0, 0x2
 
-    aput-object p2, v3, v0
+    aput-object p2, v2, v0
 
-    invoke-static {v2, v3}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string/jumbo v0, "HTTP ERROR(%s) %d ms to fetch %s"
+
+    invoke-static {v0, v2}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -626,15 +626,15 @@
     :catch_0
     move-exception v2
 
-    const-string/jumbo v2, "socket"
+    new-instance v2, Lcom/android/volley/TimeoutError;
 
-    new-instance v3, Lcom/android/volley/TimeoutError;
+    invoke-direct {v2}, Lcom/android/volley/TimeoutError;-><init>()V
 
-    invoke-direct {v3}, Lcom/android/volley/TimeoutError;-><init>()V
+    const-string/jumbo v3, "socket"
 
     move-object/from16 v0, p1
 
-    invoke-static {v2, v0, v3}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+    invoke-static {v3, v0, v2}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
 
     goto :goto_0
 
@@ -652,8 +652,6 @@
 
     new-instance v7, Lcom/android/volley/NetworkResponse;
 
-    const/16 v8, 0x130
-
     iget-object v9, v2, Lcom/android/volley/Cache$Entry;->data:[B
 
     iget-object v10, v2, Lcom/android/volley/Cache$Entry;->responseHeaders:Ljava/util/Map;
@@ -666,6 +664,8 @@
 
     const/4 v11, 0x1
 
+    const/16 v8, 0x130
+
     invoke-direct/range {v7 .. v13}, Lcom/android/volley/NetworkResponse;-><init>(I[BLjava/util/Map;ZJ)V
 
     return-object v7
@@ -673,17 +673,17 @@
     :cond_2
     new-instance v3, Lcom/android/volley/NetworkResponse;
 
-    const/16 v4, 0x130
-
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v8
+    move-result-wide v4
 
-    sub-long v8, v8, v16
+    sub-long v8, v4, v16
 
     const/4 v5, 0x0
 
     const/4 v7, 0x1
+
+    const/16 v4, 0x130
 
     invoke-direct/range {v3 .. v9}, Lcom/android/volley/NetworkResponse;-><init>(I[BLjava/util/Map;ZJ)V
 
@@ -735,15 +735,15 @@
     :catch_1
     move-exception v2
 
-    const-string/jumbo v2, "connection"
+    new-instance v2, Lcom/android/volley/TimeoutError;
 
-    new-instance v3, Lcom/android/volley/TimeoutError;
+    invoke-direct {v2}, Lcom/android/volley/TimeoutError;-><init>()V
 
-    invoke-direct {v3}, Lcom/android/volley/TimeoutError;-><init>()V
+    const-string/jumbo v3, "connection"
 
     move-object/from16 v0, p1
 
-    invoke-static {v2, v0, v3}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+    invoke-static {v3, v0, v2}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
 
     goto/16 :goto_0
 
@@ -801,41 +801,41 @@
 
     move-result v4
 
-    const-string/jumbo v2, "Unexpected response code %d for %s"
+    const/4 v2, 0x2
 
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v7, 0x0
+    new-array v2, v2, [Ljava/lang/Object;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v8
+    move-result-object v3
 
-    aput-object v8, v3, v7
+    const/4 v7, 0x0
 
-    const/4 v7, 0x1
+    aput-object v3, v2, v7
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/volley/Request;->getUrl()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    aput-object v8, v3, v7
+    const/4 v7, 0x1
 
-    invoke-static {v2, v3}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v3, v2, v7
+
+    const-string/jumbo v3, "Unexpected response code %d for %s"
+
+    invoke-static {v3, v2}, Lcom/android/volley/VolleyLog;->e(Ljava/lang/String;[Ljava/lang/Object;)V
 
     if-nez v5, :cond_6
 
-    const-string/jumbo v2, "network"
+    new-instance v2, Lcom/android/volley/NetworkError;
 
-    new-instance v3, Lcom/android/volley/NetworkError;
+    invoke-direct {v2}, Lcom/android/volley/NetworkError;-><init>()V
 
-    invoke-direct {v3}, Lcom/android/volley/NetworkError;-><init>()V
+    const-string/jumbo v3, "network"
 
     move-object/from16 v0, p1
 
-    invoke-static {v2, v0, v3}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+    invoke-static {v3, v0, v2}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
 
     goto/16 :goto_0
 
@@ -857,15 +857,15 @@
     if-ne v4, v2, :cond_8
 
     :cond_7
-    const-string/jumbo v2, "auth"
+    new-instance v2, Lcom/android/volley/AuthFailureError;
 
-    new-instance v4, Lcom/android/volley/AuthFailureError;
+    invoke-direct {v2, v3}, Lcom/android/volley/AuthFailureError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
-    invoke-direct {v4, v3}, Lcom/android/volley/AuthFailureError;-><init>(Lcom/android/volley/NetworkResponse;)V
+    const-string/jumbo v3, "auth"
 
     move-object/from16 v0, p1
 
-    invoke-static {v2, v0, v4}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+    invoke-static {v3, v0, v2}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
 
     goto/16 :goto_0
 
@@ -919,15 +919,15 @@
     throw v2
 
     :cond_d
-    const-string/jumbo v2, "server"
+    new-instance v2, Lcom/android/volley/ServerError;
 
-    new-instance v4, Lcom/android/volley/ServerError;
+    invoke-direct {v2, v3}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
-    invoke-direct {v4, v3}, Lcom/android/volley/ServerError;-><init>(Lcom/android/volley/NetworkResponse;)V
+    const-string/jumbo v3, "server"
 
     move-object/from16 v0, p1
 
-    invoke-static {v2, v0, v4}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
+    invoke-static {v3, v0, v2}, Lcom/android/volley/toolbox/BasicNetwork;->attemptRetryOnException(Ljava/lang/String;Lcom/android/volley/Request;Lcom/android/volley/VolleyError;)V
 
     goto/16 :goto_0
 

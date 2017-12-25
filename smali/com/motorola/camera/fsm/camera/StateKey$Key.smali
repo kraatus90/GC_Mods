@@ -162,6 +162,8 @@
 
 .field public static final enum REVIEW_RESULT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
+.field public static final enum REVIEW_RESULT_PRINT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
 .field public static final enum ROI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
 .field public static final enum ROI_LOCK:Lcom/motorola/camera/fsm/camera/StateKey$Key;
@@ -191,6 +193,8 @@
 .field public static final enum SMART_CAMERA_ACTIONS_UI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
 .field public static final enum SMART_CAMERA_LANDMARK_DOWNLOAD:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+.field public static final enum SMART_CAMERA_NO_RESULTS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
 .field public static final enum SMART_CAMERA_PROCESSING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
@@ -231,6 +235,8 @@
 .field public static final enum WAIT_FOR_MEMORY:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
 .field public static final enum WAIT_FOR_PROCESS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+.field public static final enum WAIT_FOR_STATE_CHANGE_LISTENER_REGISTER:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
 .field public static final enum WAIT_FOR_SURFACES:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
@@ -1039,9 +1045,19 @@
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
-    const-string/jumbo v1, "ROI_LOCK"
+    const-string/jumbo v1, "REVIEW_RESULT_PRINT"
 
     const/16 v2, 0x4f
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;->REVIEW_RESULT_PRINT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    new-instance v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    const-string/jumbo v1, "ROI_LOCK"
+
+    const/16 v2, 0x50
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1051,7 +1067,7 @@
 
     const-string/jumbo v1, "SAVING"
 
-    const/16 v2, 0x50
+    const/16 v2, 0x51
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1061,7 +1077,7 @@
 
     const-string/jumbo v1, "SCROLL"
 
-    const/16 v2, 0x51
+    const/16 v2, 0x52
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1071,7 +1087,7 @@
 
     const-string/jumbo v1, "SECURE"
 
-    const/16 v2, 0x52
+    const/16 v2, 0x53
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1081,7 +1097,7 @@
 
     const-string/jumbo v1, "SET"
 
-    const/16 v2, 0x53
+    const/16 v2, 0x54
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1091,7 +1107,7 @@
 
     const-string/jumbo v1, "SET_REPEATING_REQUEST"
 
-    const/16 v2, 0x54
+    const/16 v2, 0x55
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1101,7 +1117,7 @@
 
     const-string/jumbo v1, "SETUP"
 
-    const/16 v2, 0x55
+    const/16 v2, 0x56
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1111,7 +1127,7 @@
 
     const-string/jumbo v1, "SHOW_MODE_UI"
 
-    const/16 v2, 0x56
+    const/16 v2, 0x57
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1121,7 +1137,7 @@
 
     const-string/jumbo v1, "SMART_CAMERA_ACTIONS_UI"
 
-    const/16 v2, 0x57
+    const/16 v2, 0x58
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1131,7 +1147,7 @@
 
     const-string/jumbo v1, "SMART_CAMERA_LANDMARK_DOWNLOAD"
 
-    const/16 v2, 0x58
+    const/16 v2, 0x59
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1141,7 +1157,7 @@
 
     const-string/jumbo v1, "SMART_CAMERA_PROCESSING"
 
-    const/16 v2, 0x59
+    const/16 v2, 0x5a
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1151,7 +1167,7 @@
 
     const-string/jumbo v1, "SMART_CAMERA_TERMS"
 
-    const/16 v2, 0x5a
+    const/16 v2, 0x5b
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1159,9 +1175,19 @@
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
+    const-string/jumbo v1, "SMART_CAMERA_NO_RESULTS"
+
+    const/16 v2, 0x5c
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_NO_RESULTS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    new-instance v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
     const-string/jumbo v1, "SNAPSHOT"
 
-    const/16 v2, 0x5b
+    const/16 v2, 0x5d
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1171,7 +1197,7 @@
 
     const-string/jumbo v1, "STOPPING"
 
-    const/16 v2, 0x5c
+    const/16 v2, 0x5e
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1181,7 +1207,7 @@
 
     const-string/jumbo v1, "TAPANYWHERE"
 
-    const/16 v2, 0x5d
+    const/16 v2, 0x5f
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1191,7 +1217,7 @@
 
     const-string/jumbo v1, "TEARDOWN"
 
-    const/16 v2, 0x5e
+    const/16 v2, 0x60
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1201,7 +1227,7 @@
 
     const-string/jumbo v1, "TEARDOWN_WAIT"
 
-    const/16 v2, 0x5f
+    const/16 v2, 0x61
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1211,7 +1237,7 @@
 
     const-string/jumbo v1, "TUTORIAL_FEEDBACK"
 
-    const/16 v2, 0x60
+    const/16 v2, 0x62
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1221,7 +1247,7 @@
 
     const-string/jumbo v1, "UNLOCK_FOCUS"
 
-    const/16 v2, 0x61
+    const/16 v2, 0x63
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1231,7 +1257,7 @@
 
     const-string/jumbo v1, "UPDATE"
 
-    const/16 v2, 0x62
+    const/16 v2, 0x64
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1241,7 +1267,7 @@
 
     const-string/jumbo v1, "SWITCH"
 
-    const/16 v2, 0x63
+    const/16 v2, 0x65
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1251,7 +1277,7 @@
 
     const-string/jumbo v1, "WAIT"
 
-    const/16 v2, 0x64
+    const/16 v2, 0x66
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1261,7 +1287,7 @@
 
     const-string/jumbo v1, "WAIT_FOR_AE"
 
-    const/16 v2, 0x65
+    const/16 v2, 0x67
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1271,7 +1297,7 @@
 
     const-string/jumbo v1, "WAIT_FOR_MEMORY"
 
-    const/16 v2, 0x66
+    const/16 v2, 0x68
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1281,7 +1307,7 @@
 
     const-string/jumbo v1, "WAIT_FOR_PROCESS"
 
-    const/16 v2, 0x67
+    const/16 v2, 0x69
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1291,7 +1317,7 @@
 
     const-string/jumbo v1, "WAIT_FOR_MCF_PROCESS"
 
-    const/16 v2, 0x68
+    const/16 v2, 0x6a
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1299,9 +1325,19 @@
 
     new-instance v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
+    const-string/jumbo v1, "WAIT_FOR_STATE_CHANGE_LISTENER_REGISTER"
+
+    const/16 v2, 0x6b
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_STATE_CHANGE_LISTENER_REGISTER:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    new-instance v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
     const-string/jumbo v1, "WAIT_FOR_SURFACES"
 
-    const/16 v2, 0x69
+    const/16 v2, 0x6c
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1311,7 +1347,7 @@
 
     const-string/jumbo v1, "WAIT_FOR_TONE"
 
-    const/16 v2, 0x6a
+    const/16 v2, 0x6d
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
@@ -1321,13 +1357,13 @@
 
     const-string/jumbo v1, "CONNECT_WIFI"
 
-    const/16 v2, 0x6b
+    const/16 v2, 0x6e
 
     invoke-direct {v0, v1, v2}, Lcom/motorola/camera/fsm/camera/StateKey$Key;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/motorola/camera/fsm/camera/StateKey$Key;->CONNECT_WIFI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
-    const/16 v0, 0x6c
+    const/16 v0, 0x6f
 
     new-array v0, v0, [Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
@@ -1795,177 +1831,195 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->ROI_LOCK:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->REVIEW_RESULT_PRINT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x4f
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SAVING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->ROI_LOCK:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x50
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SCROLL:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SAVING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x51
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SECURE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SCROLL:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x52
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SET:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SECURE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x53
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SET_REPEATING_REQUEST:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SET:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x54
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SETUP:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SET_REPEATING_REQUEST:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x55
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SHOW_MODE_UI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SETUP:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x56
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_ACTIONS_UI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SHOW_MODE_UI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x57
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_LANDMARK_DOWNLOAD:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_ACTIONS_UI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x58
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_PROCESSING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_LANDMARK_DOWNLOAD:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x59
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_TERMS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_PROCESSING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x5a
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SNAPSHOT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_TERMS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x5b
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->STOPPING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SMART_CAMERA_NO_RESULTS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x5c
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TAPANYWHERE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SNAPSHOT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x5d
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TEARDOWN:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->STOPPING:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x5e
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TEARDOWN_WAIT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TAPANYWHERE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x5f
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TUTORIAL_FEEDBACK:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TEARDOWN:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x60
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->UNLOCK_FOCUS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TEARDOWN_WAIT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x61
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->UPDATE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->TUTORIAL_FEEDBACK:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x62
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SWITCH:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->UNLOCK_FOCUS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x63
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->UPDATE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x64
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_AE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->SWITCH:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x65
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_MEMORY:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x66
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_PROCESS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_AE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x67
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_MCF_PROCESS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_MEMORY:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x68
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_SURFACES:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_PROCESS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x69
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_TONE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_MCF_PROCESS:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x6a
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->CONNECT_WIFI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_STATE_CHANGE_LISTENER_REGISTER:Lcom/motorola/camera/fsm/camera/StateKey$Key;
 
     const/16 v2, 0x6b
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_SURFACES:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    const/16 v2, 0x6c
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->WAIT_FOR_TONE:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    const/16 v2, 0x6d
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/StateKey$Key;->CONNECT_WIFI:Lcom/motorola/camera/fsm/camera/StateKey$Key;
+
+    const/16 v2, 0x6e
 
     aput-object v1, v0, v2
 

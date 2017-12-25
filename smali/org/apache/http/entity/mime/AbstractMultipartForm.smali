@@ -213,13 +213,13 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
     invoke-virtual {p0}, Lorg/apache/http/util/ByteArrayBuffer;->length()I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p1, v0, v1, v2}, Ljava/io/OutputStream;->write([BII)V
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
 
     return-void
 .end method

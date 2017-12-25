@@ -15,7 +15,7 @@
 
 # virtual methods
 .method public sampleGrid(Lcom/google/zxing/common/BitMatrix;IIFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -28,117 +28,121 @@
 
     invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/zxing/common/DefaultGridSampler;->sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
-    .locals 10
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
         }
     .end annotation
 
-    const/high16 v9, 0x3f000000    # 0.5f
+    const/high16 v8, 0x3f000000    # 0.5f
+
+    const/4 v1, 0x0
 
     if-gtz p2, :cond_1
 
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v7
+    move-result-object v0
 
-    throw v7
+    throw v0
 
     :cond_1
     if-lez p3, :cond_0
 
-    new-instance v1, Lcom/google/zxing/common/BitMatrix;
+    new-instance v3, Lcom/google/zxing/common/BitMatrix;
 
-    invoke-direct {v1, p2, p3}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
+    invoke-direct {v3, p2, p3}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
-    mul-int/lit8 v7, p2, 0x2
+    mul-int/lit8 v0, p2, 0x2
 
-    new-array v4, v7, [F
+    new-array v4, v0, [F
 
-    const/4 v6, 0x0
+    move v2, v1
 
     :goto_0
-    if-lt v6, p3, :cond_2
+    if-lt v2, p3, :cond_2
 
-    return-object v1
+    return-object v3
 
     :cond_2
-    array-length v3, v4
+    array-length v5, v4
 
-    int-to-float v7, v6
+    int-to-float v0, v2
 
-    add-float v2, v7, v9
+    add-float v6, v0, v8
 
-    const/4 v5, 0x0
+    move v0, v1
 
     :goto_1
-    if-lt v5, v3, :cond_3
+    if-lt v0, v5, :cond_3
 
     invoke-virtual {p4, v4}, Lcom/google/zxing/common/PerspectiveTransform;->transformPoints([F)V
 
     invoke-static {p1, v4}, Lcom/google/zxing/common/DefaultGridSampler;->checkAndNudgePoints(Lcom/google/zxing/common/BitMatrix;[F)V
 
-    const/4 v5, 0x0
+    move v0, v1
 
     :goto_2
-    if-lt v5, v3, :cond_4
+    if-lt v0, v5, :cond_4
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_0
 
     :cond_3
-    div-int/lit8 v7, v5, 0x2
+    div-int/lit8 v7, v0, 0x2
 
     int-to-float v7, v7
 
-    add-float/2addr v7, v9
+    add-float/2addr v7, v8
 
-    aput v7, v4, v5
+    aput v7, v4, v0
 
-    add-int/lit8 v7, v5, 0x1
+    add-int/lit8 v7, v0, 0x1
 
-    aput v2, v4, v7
+    aput v6, v4, v7
 
-    add-int/lit8 v5, v5, 0x2
+    add-int/lit8 v0, v0, 0x2
 
     goto :goto_1
 
     :cond_4
     :try_start_0
-    aget v7, v4, v5
+    aget v6, v4, v0
+
+    float-to-int v6, v6
+
+    add-int/lit8 v7, v0, 0x1
+
+    aget v7, v4, v7
 
     float-to-int v7, v7
 
-    add-int/lit8 v8, v5, 0x1
+    invoke-virtual {p1, v6, v7}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    aget v8, v4, v8
+    move-result v6
 
-    float-to-int v8, v8
-
-    invoke-virtual {p1, v7, v8}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
-
-    move-result v7
-
-    if-nez v7, :cond_5
+    if-nez v6, :cond_5
 
     :goto_3
-    add-int/lit8 v5, v5, 0x2
+    add-int/lit8 v0, v0, 0x2
 
     goto :goto_2
 
     :cond_5
-    div-int/lit8 v7, v5, 0x2
+    div-int/lit8 v6, v0, 0x2
 
-    invoke-virtual {v1, v7, v6}, Lcom/google/zxing/common/BitMatrix;->set(II)V
+    invoke-virtual {v3, v6, v2}, Lcom/google/zxing/common/BitMatrix;->set(II)V
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -149,7 +153,7 @@
 
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v7
+    move-result-object v0
 
-    throw v7
+    throw v0
 .end method

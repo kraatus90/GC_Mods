@@ -193,45 +193,45 @@
 .end method
 
 .method deepCopy()Lcom/google/gson/JsonArray;
-    .locals 4
+    .locals 3
 
-    iget-object v2, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
-    new-instance v2, Lcom/google/gson/JsonArray;
+    new-instance v0, Lcom/google/gson/JsonArray;
 
-    invoke-direct {v2}, Lcom/google/gson/JsonArray;-><init>()V
+    invoke-direct {v0}, Lcom/google/gson/JsonArray;-><init>()V
 
-    return-object v2
+    return-object v0
 
     :cond_0
     new-instance v1, Lcom/google/gson/JsonArray;
 
-    iget-object v2, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v0
 
-    invoke-direct {v1, v2}, Lcom/google/gson/JsonArray;-><init>(I)V
+    invoke-direct {v1, v0}, Lcom/google/gson/JsonArray;-><init>(I)V
 
-    iget-object v2, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/gson/JsonArray;->elements:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
     return-object v1
 
@@ -244,9 +244,9 @@
 
     invoke-virtual {v0}, Lcom/google/gson/JsonElement;->deepCopy()Lcom/google/gson/JsonElement;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v1, v3}, Lcom/google/gson/JsonArray;->add(Lcom/google/gson/JsonElement;)V
+    invoke-virtual {v1, v0}, Lcom/google/gson/JsonArray;->add(Lcom/google/gson/JsonElement;)V
 
     goto :goto_0
 .end method

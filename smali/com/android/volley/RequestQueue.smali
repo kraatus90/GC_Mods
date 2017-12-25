@@ -175,7 +175,7 @@
 
 # virtual methods
 .method a(Lcom/android/volley/Request;)V
-    .locals 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -309,29 +309,29 @@
     goto :goto_2
 
     :cond_3
-    const-string/jumbo v3, "Releasing %d waiting requests for cacheKey=%s."
+    const/4 v3, 0x2
 
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    const/4 v5, 0x0
+    new-array v3, v3, [Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Queue;->size()I
 
-    move-result v6
+    move-result v4
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v4
 
-    aput-object v6, v4, v5
+    const/4 v5, 0x0
 
-    const/4 v5, 0x1
+    aput-object v4, v3, v5
 
-    aput-object v2, v4, v5
+    const/4 v4, 0x1
 
-    invoke-static {v3, v4}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    aput-object v2, v3, v4
+
+    const-string/jumbo v2, "Releasing %d waiting requests for cacheKey=%s."
+
+    invoke-static {v2, v3}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
@@ -339,7 +339,7 @@
 .end method
 
 .method public add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
-    .locals 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -458,17 +458,17 @@
 
     if-eqz v0, :cond_0
 
-    const-string/jumbo v0, "Request for cacheKey=%s is in flight, putting on hold."
+    const/4 v0, 0x1
 
-    const/4 v3, 0x1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    new-array v3, v3, [Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    aput-object v2, v0, v3
 
-    aput-object v2, v3, v4
+    const-string/jumbo v2, "Request for cacheKey=%s is in flight, putting on hold."
 
-    invoke-static {v0, v3}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v0}, Lcom/android/volley/VolleyLog;->v(Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 

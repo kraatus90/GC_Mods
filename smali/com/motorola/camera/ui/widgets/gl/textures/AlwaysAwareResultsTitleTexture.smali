@@ -31,7 +31,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c005d
+    const v1, 0x7f0c006c
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -43,7 +43,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c004f
+    const v1, 0x7f0c006b
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -120,7 +120,24 @@
     move v0, v1
 
     :goto_0
-    if-nez v0, :cond_1
+    iget-object v3, p1, Lcom/motorola/camera/detector/results/tidbit/Tidbit;->mData:Lcom/motorola/camera/detector/results/tidbit/ITidbitData;
+
+    invoke-interface {v3}, Lcom/motorola/camera/detector/results/tidbit/ITidbitData;->getKind()Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;->Landmark:Lcom/motorola/camera/detector/results/tidbit/ITidbitData$Kind;
+
+    if-ne v3, v4, :cond_1
+
+    move v3, v1
+
+    :goto_1
+    if-nez v0, :cond_2
+
+    xor-int/lit8 v0, v3, 0x1
+
+    if-eqz v0, :cond_2
 
     return v2
 
@@ -130,6 +147,11 @@
     goto :goto_0
 
     :cond_1
+    move v3, v2
+
+    goto :goto_1
+
+    :cond_2
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;->mTitleText:Lcom/motorola/camera/ui/widgets/gl/textures/TextTexture;
 
     iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;->mViewSize:Lcom/motorola/camera/PreviewSize;
@@ -192,12 +214,12 @@
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textures/AlwaysAwareResultsTitleTexture;->mObserver:Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;
 
     invoke-interface {v0}, Lcom/motorola/camera/ui/widgets/gl/ListAdapter$DataSetObserver;->onChanged()V
 
-    :cond_2
+    :cond_3
     return v1
 .end method

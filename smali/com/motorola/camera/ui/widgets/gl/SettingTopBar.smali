@@ -5,6 +5,7 @@
 # interfaces
 .implements Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture$ListSizeChanged;
 .implements Lcom/motorola/camera/fsm/camera/subfsms/ExposureStateMachine$ExposureListener;
+.implements Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;
 
 
 # annotations
@@ -64,6 +65,8 @@
 
 .field private static final TAG:Ljava/lang/String;
 
+.field private static final TOUCH_THRESHOLD:F = 5.0f
+
 
 # instance fields
 .field private mAnimationRunning:Z
@@ -75,6 +78,8 @@
 .field private mCacheAlpha:F
 
 .field private mDensity:F
+
+.field private mDownPosition:Landroid/graphics/PointF;
 
 .field private mDropDownList:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -96,6 +101,8 @@
 .field private mFadeCollisionPolicy:Lcom/motorola/camera/ui/widgets/gl/collision/FadeCollisionPolicy;
 
 .field private mFlashRequired:Z
+
+.field private mHandled:Z
 
 .field private mHdrRequired:Z
 
@@ -385,7 +392,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c006e
+    const v1, 0x7f0c0077
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/CameraApp;->getColor(I)I
 
@@ -803,9 +810,9 @@
     :cond_2
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$156;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$4;
 
-    invoke-direct {v2, p0, v4, v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$156;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, v4, v1}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$4;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v0, v2}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
@@ -878,7 +885,7 @@
     goto :goto_0
 .end method
 
-.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_lambda$2(Ljava/util/Set;)V
+.method static synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_19972(Ljava/util/Set;)V
     .locals 1
 
     const/4 v0, 0x0
@@ -936,6 +943,63 @@
     .locals 0
 
     iput p1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mMaxAlpha:F
+
+    return-void
+.end method
+
+.method private setBackgroundColor()V
+    .locals 4
+
+    sget v0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->BACKGROUND_COLOR:I
+
+    sget-object v1, Lcom/motorola/camera/limitfunctionality/BatterySaverHandler;->TAG:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->isHandlerLimited(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/CameraApp;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f0c0015
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v0
+
+    :cond_0
+    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mBackgroundTex:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
+
+    const/4 v2, 0x4
+
+    new-array v2, v2, [I
+
+    const/4 v3, 0x0
+
+    aput v0, v2, v3
+
+    const/4 v3, 0x1
+
+    aput v0, v2, v3
+
+    const/4 v3, 0x2
+
+    aput v0, v2, v3
+
+    const/4 v3, 0x3
+
+    aput v0, v2, v3
+
+    invoke-virtual {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setColors([I)V
 
     return-void
 .end method
@@ -1243,9 +1307,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$111;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$1;
 
-    invoke-direct {v2, v0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$111;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$1;-><init>(Ljava/lang/Object;)V
 
     invoke-interface {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
 
@@ -1543,9 +1607,9 @@
 
     iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
-    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$145;
+    new-instance v2, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$3;
 
-    invoke-direct {v2, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$145;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, v0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$3;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-interface {v1, v2}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->runOnGlThread(Ljava/lang/Runnable;)V
     :try_end_3
@@ -1651,7 +1715,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x12
+    const/16 v1, 0x13
 
     new-array v1, v1, [Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -1697,69 +1761,75 @@
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_SETTINGS_LIST_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_INTRO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/4 v3, 0x7
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_SETTINGS_LIST_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x8
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_DRAG_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/MultiShotStates;->MULTI_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x9
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/ProWheelStates;->PRO_WHEEL_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/PhotoRollStates;->PHOTO_ROLL_DRAG_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xa
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPEN_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/ProWheelStates;->PRO_WHEEL_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xb
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_DRAG_OPEN_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_OPEN_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xc
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SettingsStates;->SETTINGS_DRAG_OPEN_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xd
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_TIMER_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SINGLE_SHOT_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xe
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_ACTIONS_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_TIMER_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0xf
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_ACTIONS_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x10
 
     aput-object v2, v1, v3
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/SmartCameraStates;->SMART_CAMERA_PROCESSING_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     const/16 v3, 0x11
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/TopBarStates;->TOP_BAR_IDLE_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    const/16 v3, 0x12
 
     aput-object v2, v1, v3
 
@@ -1802,19 +1872,19 @@
     return v0
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_lambda$3(Ljava/util/Set;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_22280(Ljava/util/Set;)V
     .locals 1
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$62;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$62;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw;-><init>(Ljava/lang/Object;)V
 
     invoke-static {p1, v0}, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->loadTextures(Ljava/util/Collection;Lcom/motorola/camera/ui/widgets/gl/SettingTopBar$LoadingCallback;)V
 
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_lambda$4()V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_22313()V
     .locals 2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mTopBarSettingsAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
@@ -1830,19 +1900,19 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_lambda$5(Ljava/util/Set;Ljava/util/List;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_24982(Ljava/util/Set;Ljava/util/List;)V
     .locals 1
 
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$131;
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$2;
 
-    invoke-direct {v0, p0, p2}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$131;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p0, p2}, Lcom/motorola/camera/ui/widgets/gl/-$Lambda$KT8WP3zaQJt9prq-uy-J59UlXjw$2;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-static {p1, v0}, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->loadTextures(Ljava/util/Collection;Lcom/motorola/camera/ui/widgets/gl/SettingTopBar$LoadingCallback;)V
 
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_lambda$6(Ljava/util/List;)V
+.method synthetic lambda$-com_motorola_camera_ui_widgets_gl_SettingTopBar_25015(Ljava/util/List;)V
     .locals 3
 
     const/4 v0, 0x0
@@ -1947,6 +2017,8 @@
 
     invoke-virtual {v0, v5, v1, v5}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setPostTranslation(FFF)V
 
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->setBackgroundColor()V
+
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mBackgroundTex:Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;
 
     invoke-virtual {v0, v6}, Lcom/motorola/camera/ui/widgets/gl/textures/FrameTexture;->setVisibility(Z)V
@@ -2009,7 +2081,17 @@
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;->setDisplayOrientation(I)V
 
+    invoke-static {p0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->registerListener(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;)V
+
     return v6
+.end method
+
+.method public onChange()V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->setBackgroundColor()V
+
+    return-void
 .end method
 
 .method public onDraw([F[F[F)V
@@ -2669,9 +2751,11 @@
 .end method
 
 .method public onUiEvent(Landroid/view/MotionEvent;)Z
-    .locals 4
+    .locals 5
 
     const/4 v1, 0x1
+
+    const/4 v4, 0x0
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mTopBarTexture:Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;
 
@@ -2679,7 +2763,34 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_7
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_4
+
+    :cond_0
+    new-instance v0, Landroid/graphics/PointF;
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    invoke-direct {v0, v2, v3}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mDownPosition:Landroid/graphics/PointF;
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mDropDownListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
 
@@ -2687,7 +2798,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mTopBarTexture:Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;
 
@@ -2696,35 +2807,39 @@
     move-result v0
 
     :goto_0
-    if-nez v0, :cond_2
+    iput-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mHandled:Z
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mDropDownListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mHandled:Z
 
-    invoke-virtual {v2}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->isVisible()Z
+    if-nez v0, :cond_3
 
-    move-result v2
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mDropDownListTexture:Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;
 
-    if-nez v2, :cond_0
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/ListTexture;->isVisible()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mSelectedSettingIdx:I
+
+    const/4 v2, -0x1
+
+    if-eq v0, v2, :cond_3
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mSupportedSettings:Ljava/util/List;
 
     iget v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mSelectedSettingIdx:I
 
-    const/4 v3, -0x1
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eq v2, v3, :cond_2
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mSupportedSettings:Ljava/util/List;
+    sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->HASSELBLAD_MENU:Lcom/motorola/camera/settings/SettingsManager$Key;
 
-    iget v3, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mSelectedSettingIdx:I
+    if-ne v0, v2, :cond_3
 
-    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/motorola/camera/settings/SettingsManager;->HASSELBLAD_MENU:Lcom/motorola/camera/settings/SettingsManager$Key;
-
-    if-ne v2, v3, :cond_2
-
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
 
     new-instance v2, Lcom/motorola/camera/fsm/camera/Trigger;
@@ -2737,18 +2852,100 @@
 
     return v1
 
-    :cond_1
+    :cond_2
     move v0, v1
 
     goto :goto_0
 
-    :cond_2
-    return v0
-
     :cond_3
-    const/4 v0, 0x0
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mHandled:Z
 
     return v0
+
+    :cond_4
+    iget-boolean v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mHandled:Z
+
+    if-eqz v0, :cond_7
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    const/4 v2, 0x2
+
+    if-ne v0, v2, :cond_7
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mDownPosition:Landroid/graphics/PointF;
+
+    iget v2, v2, Landroid/graphics/PointF;->y:F
+
+    sub-float/2addr v0, v2
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
+
+    invoke-interface {v2}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->getSurfaceDensity()F
+
+    move-result v2
+
+    const/high16 v3, 0x40a00000    # 5.0f
+
+    mul-float/2addr v2, v3
+
+    cmpl-float v0, v0, v2
+
+    if-lez v0, :cond_6
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mTopBarSettingsList:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/ui/widgets/gl/textures/SettingTopBarButtonTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/SettingTopBarButtonTexture;->resetFeedback()V
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/SettingTopBarButtonTexture;->cancelTouch()V
+
+    goto :goto_1
+
+    :cond_5
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mTopBarTexture:Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/textures/GridLayoutTexture;->cancelTouch()V
+
+    iput-boolean v4, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mHandled:Z
+
+    return v4
+
+    :cond_6
+    return v1
+
+    :cond_7
+    return v4
 .end method
 
 .method public stateChanged(Lcom/motorola/camera/fsm/ChangeEvent;)V
@@ -3146,20 +3343,29 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-nez v0, :cond_11
 
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/FirstUseStates;->FIRST_USE_INTRO_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    :cond_11
     invoke-direct {p0}, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->animateHide()V
 
     goto/16 :goto_0
 
-    :cond_11
+    :cond_12
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SHOW_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isEntering(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_13
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CAMERA_SELECT_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -3167,21 +3373,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
-    :cond_12
+    :cond_13
     invoke-direct {p0, v2}, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->setClickable(Z)V
 
     goto/16 :goto_0
 
-    :cond_13
+    :cond_14
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_SHOW_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
     invoke-virtual {p1, v0}, Lcom/motorola/camera/fsm/ChangeEvent;->isExiting(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_15
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/CameraModeSwitch;->MODE_CAMERA_SELECT_UI_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
 
@@ -3191,7 +3397,7 @@
 
     if-eqz v0, :cond_0
 
-    :cond_14
+    :cond_15
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mCollisionPolicy:Lcom/motorola/camera/ui/widgets/gl/collision/CollisionPolicy;
 
     invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/collision/CollisionPolicy;->isClickEnabled()Z
@@ -3205,6 +3411,8 @@
 
 .method protected unloadTextures()V
     .locals 2
+
+    invoke-static {p0}, Lcom/motorola/camera/limitfunctionality/FeatureLimiter;->unregisterListener(Lcom/motorola/camera/limitfunctionality/FeatureLimiter$FeatureLimiterListener;)V
 
     iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/SettingTopBar;->mTopBarSettingsAdapter:Lcom/motorola/camera/ui/widgets/gl/ListAdapter;
 

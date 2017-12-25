@@ -23,14 +23,12 @@
 .end method
 
 .method private static maybeReturnResult(Lcom/google/zxing/Result;)Lcom/google/zxing/Result;
-    .locals 6
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
         }
     .end annotation
-
-    const/4 v5, 0x0
 
     invoke-virtual {p0}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
@@ -48,9 +46,9 @@
 
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v1
+    move-result-object v0
 
-    throw v1
+    throw v0
 
     :cond_0
     new-instance v1, Lcom/google/zxing/Result;
@@ -59,15 +57,17 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-virtual {p0}, Lcom/google/zxing/Result;->getResultPoints()[Lcom/google/zxing/ResultPoint;
 
-    move-result-object v3
+    move-result-object v2
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
 
-    invoke-direct {v1, v2, v5, v3, v4}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
+    const/4 v4, 0x0
+
+    invoke-direct {v1, v0, v4, v2, v3}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     return-object v1
 .end method

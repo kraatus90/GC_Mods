@@ -35,6 +35,17 @@
     .end annotation
 .end field
 
+.field public static final POSTCAPFRAME:Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/motorola/camera/mcf/McfAuxiliaryData$Key",
+            "<",
+            "Lcom/motorola/camera/mcf/McfDepthMap;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private static final TAG:Ljava/lang/String;
 
 
@@ -102,6 +113,16 @@
 
     sput-object v0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->DEPTHRENDER:Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
 
+    new-instance v0, Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
+
+    const-string/jumbo v1, "motorola.camera.mcf.auxiliaryData.postCapFrame"
+
+    const-class v2, Lcom/motorola/camera/mcf/McfDepthMap;
+
+    invoke-direct {v0, v1, v2}, Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    sput-object v0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->POSTCAPFRAME:Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
+
     return-void
 .end method
 
@@ -122,7 +143,7 @@
 
 # virtual methods
 .method public final get(Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -133,13 +154,13 @@
         }
     .end annotation
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
-    iget-object v1, p0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->mDataMap:Ljava/util/Map;
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->mDataMap:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -147,17 +168,17 @@
 
     if-nez v0, :cond_1
 
-    return-object v2
+    return-object v1
 
     :cond_0
-    return-object v2
+    return-object v1
 
     :cond_1
     invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfAuxiliaryData$Value;->getValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public final getKeys()Ljava/util/Collection;
@@ -197,9 +218,9 @@
         }
     .end annotation
 
-    iget-object v1, p0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->mDataMap:Ljava/util/Map;
+    iget-object v0, p0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->mDataMap:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -267,13 +288,48 @@
 .end method
 
 .method public final setDepthMap(Lcom/motorola/camera/mcf/McfDepthMap;)V
-    .locals 1
+    .locals 2
 
+    invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfDepthMap;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "DepthMap"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfDepthMap;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "PostViewFrame"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    :goto_0
+    return-void
+
+    :cond_0
     sget-object v0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->DEPTHMAP:Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
 
     invoke-virtual {p0, v0, p1}, Lcom/motorola/camera/mcf/McfAuxiliaryData;->set(Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;Ljava/lang/Object;)V
 
-    return-void
+    goto :goto_0
+
+    :cond_1
+    sget-object v0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->POSTCAPFRAME:Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
+
+    invoke-virtual {p0, v0, p1}, Lcom/motorola/camera/mcf/McfAuxiliaryData;->set(Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;Ljava/lang/Object;)V
+
+    goto :goto_0
 .end method
 
 .method public final setDepthRender(Lcom/motorola/camera/mcf/McfDepthRender;)V
@@ -350,111 +406,115 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 5
+    .locals 4
 
     const-string/jumbo v0, "["
 
-    iget-object v2, p0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->mDataMap:Ljava/util/Map;
+    iget-object v1, p0, Lcom/motorola/camera/mcf/McfAuxiliaryData;->mDataMap:Ljava/util/Map;
 
-    invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
+    move-object v1, v0
 
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_0
+    if-nez v0, :cond_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, "]"
+    const-string/jumbo v1, "]"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
     :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    check-cast v1, Ljava/util/Map$Entry;
+    const-string/jumbo v3, "("
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v3
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string/jumbo v4, "("
+    check-cast v1, Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
+    const-string/jumbo v3, " = "
 
-    invoke-virtual {v2}, Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v4, " = "
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/motorola/camera/mcf/McfAuxiliaryData$Value;
-
-    invoke-virtual {v2}, Lcom/motorola/camera/mcf/McfAuxiliaryData$Value;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v4, ")"
-
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/mcf/McfAuxiliaryData$Value;
+
+    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfAuxiliaryData$Value;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v1, v0
 
     goto :goto_0
 .end method

@@ -11,7 +11,6 @@
     value = {
         Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$1;,
         Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$2;,
-        Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$3;,
         Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;,
         Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateFullFrameRequestsRunnable;,
         Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateReprocRequestRunnable;,
@@ -117,7 +116,17 @@
     return v0
 .end method
 
-.method static synthetic -wrap2(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
+.method static synthetic -wrap2(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Z
+    .locals 1
+
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->isDepthRenderInstance(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic -wrap3(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)Lcom/motorola/camera/fsm/camera/FsmContext;
     .locals 1
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
@@ -127,7 +136,7 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap3(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)Lcom/motorola/camera/fsm/camera/StateKey;
+.method static synthetic -wrap4(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)Lcom/motorola/camera/fsm/camera/StateKey;
     .locals 1
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getState()Lcom/motorola/camera/fsm/camera/StateKey;
@@ -137,17 +146,17 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap4(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;IZLcom/motorola/camera/mcf/Mcf$InstanceType;Lcom/motorola/camera/mcf/Mcf$ReprocessType;I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+.method static synthetic -wrap5(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ZLcom/motorola/camera/mcf/Mcf$ReprocessType;I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
     .locals 1
 
-    invoke-static/range {p0 .. p5}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->copyRecord(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;IZLcom/motorola/camera/mcf/Mcf$InstanceType;Lcom/motorola/camera/mcf/Mcf$ReprocessType;I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->copyRecord(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ZLcom/motorola/camera/mcf/Mcf$ReprocessType;I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic -wrap5(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
+.method static synthetic -wrap6(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
     .locals 1
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getMcfStateMachine()Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
@@ -157,23 +166,23 @@
     return-object v0
 .end method
 
-.method static synthetic -wrap6(Lcom/motorola/camera/mcf/McfMetadata;Landroid/hardware/camera2/CaptureRequest$Builder;)V
+.method static synthetic -wrap7(Ljava/lang/String;Lcom/motorola/camera/mcf/McfMetadata;Landroid/hardware/camera2/CaptureRequest$Builder;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->copyMcfMetaData(Lcom/motorola/camera/mcf/McfMetadata;Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    invoke-static {p0, p1, p2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->copyMcfMetaData(Ljava/lang/String;Lcom/motorola/camera/mcf/McfMetadata;Landroid/hardware/camera2/CaptureRequest$Builder;)V
 
     return-void
 .end method
 
-.method static synthetic -wrap7(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;I)V
+.method static synthetic -wrap8(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->postCheckCaptureRunnables(I)V
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->postCheckCaptureRunnables(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
 
     return-void
 .end method
 
-.method static synthetic -wrap8(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)V
+.method static synthetic -wrap9(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->postRunReprocRequests()V
@@ -220,9 +229,9 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfReprocList:Ljava/util/List;
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$26;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$26;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mHandlerCallback:Landroid/os/Handler$Callback;
 
@@ -232,15 +241,15 @@
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mOnFullFrameListener:Lcom/motorola/camera/mcf/Mcf$OnFullFrameListener;
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$2;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$1;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$2;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$1;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mCaptureQueueListener:Lcom/motorola/camera/saving/ImageCaptureManager$CaptureQueueListener;
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$3;
+    new-instance v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$2;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$3;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)V
+    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$2;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;)V
 
     iput-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mSaveListener:Lcom/motorola/camera/saving/SaveListener;
 
@@ -248,7 +257,7 @@
 .end method
 
 .method private cancelCleanup(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
-    .locals 6
+    .locals 3
 
     sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
@@ -256,27 +265,25 @@
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v2, "cancelCleanup 0x%08x"
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x1
+    const-string/jumbo v2, "cancelCleanup %s"
 
-    new-array v3, v3, [Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v4, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    move-result-object v1
 
-    iget v4, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v4
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x0
+    move-result-object v1
 
-    aput-object v4, v3, v5
-
-    invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -313,22 +320,16 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    iget-object v3, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
-
-    iget v3, v3, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(Lcom/motorola/camera/mcf/McfInstanceIdentifier;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v0
-
-    or-int/2addr v0, v3
+    move-result-object v0
 
     :try_start_1
-    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->removeCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->removeCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
     :try_end_1
     .catch Ljava/util/NoSuchElementException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -347,7 +348,9 @@
 
     iget-object v1, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -365,7 +368,9 @@
 
     iget-object v1, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
     invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->onJobCompleted(I)V
 
@@ -390,7 +395,9 @@
 
     iget-object v1, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
@@ -431,8 +438,10 @@
     return-void
 .end method
 
-.method private checkCaptureRunnables(I)V
-    .locals 15
+.method private checkCaptureRunnables(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
+    .locals 13
+
+    const/4 v5, 0x1
 
     const/4 v4, 0x1
 
@@ -440,15 +449,17 @@
 
     const/4 v2, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
 
-    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v6, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
-    move-result-object v5
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-interface {v0, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v6
+
+    invoke-interface {v0, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -462,23 +473,27 @@
 
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v2, "checkCaptureRunnables seqId:0x%08x -> has been processed already! skipping..."
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x1
+    const-string/jumbo v2, "checkCaptureRunnables "
 
-    new-array v3, v3, [Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v4
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x0
+    move-result-object v1
 
-    aput-object v4, v3, v5
+    const-string/jumbo v2, " -> has been processed already! skipping..."
 
-    invoke-static {v1, v2, v3}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -490,236 +505,275 @@
     :cond_1
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->isCancelled()Z
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_2
+    if-eqz v6, :cond_2
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->cancelCleanup(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
 
     return-void
 
     :cond_2
-    iget-object v7, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
+    iget-object v10, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
 
-    monitor-enter v7
+    monitor-enter v10
 
     :try_start_0
-    iget-object v5, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
+    iget-object v6, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
 
-    invoke-interface {v5}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-interface {v6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v11
 
-    move v5, v2
+    move v6, v2
 
-    move v6, v4
+    move v7, v3
 
-    move v4, v1
+    move v8, v5
+
+    move v5, v1
 
     :goto_0
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_9
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;
+    check-cast v1, Ljava/util/Map$Entry;
 
-    iget-object v2, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;
+
+    iget-object v3, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
     sget-object v9, Lcom/motorola/camera/mcf/Mcf$ProgressType;->FRAME_COLLECTION_STOPPED:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_5
+    if-nez v3, :cond_5
 
-    iget-object v2, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
+    iget-object v3, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
     sget-object v9, Lcom/motorola/camera/mcf/Mcf$ProgressType;->FRAME_COLLECTION_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v9}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
     :goto_1
-    and-int/2addr v6, v2
+    and-int v9, v8, v3
 
-    invoke-direct {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceFailed(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
+    invoke-direct {p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceFailed(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
 
-    move-result v2
+    move-result v3
 
-    and-int/2addr v5, v2
+    and-int/2addr v7, v3
 
-    invoke-direct {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceCompleted(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
+    invoke-direct {p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceCompleted(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
 
-    move-result v2
+    move-result v3
 
-    and-int/2addr v3, v2
+    and-int v8, v4, v3
 
-    iget-boolean v2, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mJpegReceived:Z
+    iget-boolean v3, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mJpegReceived:Z
 
-    if-nez v2, :cond_6
+    if-nez v3, :cond_6
 
-    invoke-direct {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceFailed(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
+    invoke-direct {p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceFailed(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
 
-    move-result v2
+    move-result v3
 
     :goto_2
-    and-int/2addr v2, v4
+    and-int v4, v6, v3
 
-    invoke-direct {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceFailed(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
+    sget-object v3, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    move-result v4
+    iget-object v6, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    if-eqz v4, :cond_4
+    if-ne v3, v6, :cond_8
 
-    iget-object v4, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mCreateRequestList:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v3, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+    sget-object v6, Lcom/motorola/camera/mcf/Mcf$ProgressType;->FRAME_COLLECTION_STOPPED:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    move-result v4
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    xor-int/lit8 v4, v4, 0x1
+    move-result v3
 
-    if-eqz v4, :cond_4
+    if-nez v3, :cond_7
 
-    iget-object v1, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mCreateRequestList:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v3, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
-    const/4 v4, 0x0
+    sget-object v6, Lcom/motorola/camera/mcf/Mcf$ProgressType;->FRAME_COLLECTION_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v1, v4}, Ljava/util/concurrent/CopyOnWriteArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v6}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    :goto_3
+    or-int/2addr v3, v5
+
+    invoke-direct {p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->hasInstanceFailed(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mCreateRequestList:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->isEmpty()Z
+
+    move-result v2
+
+    xor-int/lit8 v2, v2, 0x1
+
+    if-eqz v2, :cond_4
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;
+    check-cast v1, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;->-get2(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;)I
+    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(Lcom/motorola/camera/mcf/McfInstanceIdentifier;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result v4
+    move-result-object v1
 
-    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;->-get0(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;)I
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    move-result v1
+    if-eqz v2, :cond_3
 
-    or-int/2addr v1, v4
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-boolean v4, Lcom/motorola/camera/Util;->DEBUG:Z
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    if-eqz v4, :cond_3
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+    const-string/jumbo v6, "Capture failed removing capture record for "
 
-    sget-object v9, Ljava/util/Locale;->US:Ljava/util/Locale;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v10, "Capture failed removing capture record for seqId:0x%08x"
+    move-result-object v5
 
-    const/4 v11, 0x1
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    new-array v11, v11, [Ljava/lang/Object;
+    move-result-object v5
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v5
 
-    const/4 v13, 0x0
-
-    aput-object v12, v11, v13
-
-    invoke-static {v9, v10, v11}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v4, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :cond_3
     :try_start_1
-    invoke-static {v1}, Lcom/motorola/camera/saving/ImageCaptureManager;->removeCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    invoke-static {v1}, Lcom/motorola/camera/saving/ImageCaptureManager;->removeCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
     :try_end_1
     .catch Ljava/util/NoSuchElementException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     :cond_4
-    :goto_3
-    move v4, v2
+    :goto_4
+    move v5, v3
 
-    goto :goto_0
+    move v6, v4
+
+    move v4, v8
+
+    move v8, v9
+
+    goto/16 :goto_0
 
     :cond_5
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     goto :goto_1
 
     :cond_6
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     goto :goto_2
+
+    :cond_7
+    const/4 v3, 0x1
+
+    goto :goto_3
+
+    :cond_8
+    const/4 v3, 0x0
+
+    goto :goto_3
 
     :catch_0
     move-exception v1
 
-    goto :goto_3
+    goto :goto_4
 
-    :cond_7
-    monitor-exit v7
+    :cond_9
+    monitor-exit v10
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_a
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v7, "checkCaptureRunnables seqId:0x%08x -> framesCollected=%s"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v8, 0x2
+    const-string/jumbo v3, "checkCaptureRunnables "
 
-    new-array v8, v8, [Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v9, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    move-result-object v2
 
-    iget v9, v9, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v3, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v3, v3, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v9
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v10, 0x0
+    move-result-object v2
 
-    aput-object v9, v8, v10
+    const-string/jumbo v3, " -> framesCollected="
 
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v2
 
-    const/4 v10, 0x1
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    aput-object v9, v8, v10
+    move-result-object v2
 
-    invoke-static {v2, v7, v8}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
-    if-nez v6, :cond_d
+    :cond_a
+    if-nez v8, :cond_10
 
-    iget-object v6, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
+    iget-object v3, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
 
-    monitor-enter v6
+    monitor-enter v3
 
     :try_start_2
     iget-object v1, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
@@ -730,16 +784,16 @@
 
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v8
 
-    :cond_9
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    :cond_b
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_e
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -755,17 +809,17 @@
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v9
 
-    :cond_a
-    :goto_4
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    :cond_c
+    :goto_5
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_b
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -773,94 +827,95 @@
 
     invoke-virtual {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->isRunning()Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_a
+    if-nez v10, :cond_c
 
-    sget-boolean v9, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v10, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v9, :cond_b
+    if-eqz v10, :cond_d
 
-    sget-object v9, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+    sget-object v10, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v10, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v11, "checkCaptureRunnables seqId:0x%08x -> Run full frame requests for isntanceId=%d"
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v12, 0x2
+    const-string/jumbo v12, "checkCaptureRunnables MCF "
 
-    new-array v12, v12, [Ljava/lang/Object;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v13, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
-
-    iget v13, v13, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
-
-    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v13
-
-    const/4 v14, 0x0
-
-    aput-object v13, v12, v14
+    move-result-object v11
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v12
 
-    const/4 v14, 0x1
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    aput-object v13, v12, v14
+    move-result-object v11
 
-    invoke-static {v10, v11, v12}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-static {v9, v10}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_b
+    :cond_d
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getState()Lcom/motorola/camera/fsm/camera/StateKey;
 
-    move-result-object v9
+    move-result-object v10
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
-    move-result-object v10
+    move-result-object v11
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
-    invoke-virtual {v2, v9, v10, v11}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
+    invoke-virtual {v2, v10, v11, v12}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$BrktCaptureRequestRunnable;->run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto :goto_4
+    goto :goto_5
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v6
+    monitor-exit v3
 
     throw v0
 
     :catchall_1
     move-exception v0
 
-    monitor-exit v7
+    monitor-exit v10
 
     throw v0
 
-    :cond_c
-    monitor-exit v6
+    :cond_e
+    monitor-exit v3
 
-    if-nez v5, :cond_d
+    sget-object v1, Lcom/motorola/camera/mcf/Mcf$SceneMode;->NORMAL:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iget-object v2, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    if-ne v1, v2, :cond_f
+
+    if-eqz v5, :cond_f
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->checkCaptureComplete(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
+
+    :cond_f
+    if-nez v7, :cond_10
 
     return-void
 
-    :cond_d
+    :cond_10
     invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->checkCaptureComplete(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
 
-    iget-object v6, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
+    iget-object v5, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
 
-    monitor-enter v6
+    monitor-enter v5
 
     :try_start_3
     iget-object v1, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
@@ -871,18 +926,18 @@
 
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v8
 
-    move v2, v3
+    move v2, v4
 
-    :cond_e
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    :cond_11
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1c
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -896,44 +951,44 @@
 
     iget-object v3, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
-    sget-object v8, Lcom/motorola/camera/mcf/Mcf$ProgressType;->ALGORITHM_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$ProgressType;->ALGORITHM_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_12
 
     iget-object v3, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
-    sget-object v8, Lcom/motorola/camera/mcf/Mcf$ProgressType;->FRAME_COLLECTION_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$ProgressType;->FRAME_COLLECTION_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_12
 
     iget-object v3, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
-    sget-object v8, Lcom/motorola/camera/mcf/Mcf$ProgressType;->STATE_MACHINE_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$ProgressType;->STATE_MACHINE_FAILURE:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_12
 
     iget-object v3, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
-    sget-object v8, Lcom/motorola/camera/mcf/Mcf$ProgressType;->CANCELLED:Lcom/motorola/camera/mcf/Mcf$ProgressType;
+    sget-object v4, Lcom/motorola/camera/mcf/Mcf$ProgressType;->CANCELLED:Lcom/motorola/camera/mcf/Mcf$ProgressType;
 
-    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    :goto_5
-    if-nez v3, :cond_18
+    :goto_6
+    if-nez v3, :cond_1b
 
     iget-object v3, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mReprocRequest:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -941,24 +996,24 @@
 
     move-result v3
 
-    if-nez v3, :cond_10
+    if-nez v3, :cond_13
 
     iget-object v3, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mReprocRequest:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v4
 
     move v3, v2
 
-    :goto_6
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    :goto_7
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1a
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -972,77 +1027,81 @@
 
     and-int/2addr v3, v2
 
-    goto :goto_6
+    goto :goto_7
 
-    :cond_f
+    :cond_12
     const/4 v3, 0x1
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_10
+    :cond_13
     const/4 v1, 0x0
 
-    :goto_7
-    monitor-exit v6
+    :goto_8
+    monitor-exit v5
 
     sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_14
 
     sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v6, "checkCaptureRunnables seqId:0x%08x -> allComplete=%s allFailed=%s allJpegsReceived=%s"
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v7, 0x4
+    const-string/jumbo v4, "checkCaptureRunnables "
 
-    new-array v7, v7, [Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v8, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    move-result-object v3
 
-    iget v8, v8, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v4, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v4, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v8
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v9, 0x0
+    move-result-object v3
 
-    aput-object v8, v7, v9
+    const-string/jumbo v4, " -> allComplete="
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v3
 
-    const/4 v9, 0x1
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    aput-object v8, v7, v9
+    move-result-object v3
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const-string/jumbo v4, " allFailed="
 
-    move-result-object v8
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v9, 0x2
+    move-result-object v3
 
-    aput-object v8, v7, v9
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v3
 
-    move-result-object v8
+    const-string/jumbo v4, " allJpegsReceived="
 
-    const/4 v9, 0x3
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v8, v7, v9
+    move-result-object v3
 
-    invoke-static {v3, v6, v7}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_11
-    if-eqz v5, :cond_12
+    :cond_14
+    if-eqz v7, :cond_15
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -1056,9 +1115,7 @@
 
     const-string/jumbo v3, "SEQ_ID"
 
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v3, v5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v2, v3}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -1066,13 +1123,13 @@
 
     sget-object v3, Lcom/motorola/camera/Notifier$TYPE;->SHOW_TOAST:Lcom/motorola/camera/Notifier$TYPE;
 
-    const v5, 0x7f080091
+    const v4, 0x7f080091
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v2, v3, v5}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendNotify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
+    invoke-virtual {v2, v3, v4}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendNotify(Lcom/motorola/camera/Notifier$TYPE;Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -1086,18 +1143,18 @@
 
     const-string/jumbo v3, "MCF_PROCESSING"
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v2, v3, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    :cond_12
-    if-eqz v1, :cond_16
+    :cond_15
+    if-eqz v1, :cond_19
 
     iget-boolean v1, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mSequenceStopped:Z
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_19
 
-    if-eqz v4, :cond_16
+    if-eqz v6, :cond_19
 
     sget-object v1, Lcom/motorola/camera/settings/SettingsManager;->MCF_STORE_ALL_JPEGS:Lcom/motorola/camera/settings/SettingsManager$Key;
 
@@ -1115,16 +1172,18 @@
 
     move-result v1
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_16
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->processReceivedImages(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
 
-    :cond_13
+    :cond_16
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
 
     iget-object v2, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1138,57 +1197,59 @@
 
     iget-object v2, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
     invoke-virtual {v1, v2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->onJobCompleted(I)V
 
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_17
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "checkCaptureRunnables seqId:0x%08x -> All complete outstanding jobs:%d"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v4, 0x2
+    const-string/jumbo v3, "checkCaptureRunnables "
 
-    new-array v4, v4, [Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v5, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    move-result-object v2
 
-    iget v5, v5, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v3, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v3, v3, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v5
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v6, 0x0
+    move-result-object v2
 
-    aput-object v5, v4, v6
+    const-string/jumbo v3, " -> All complete outstanding jobs:"
 
-    iget-object v5, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v5}, Ljava/util/Map;->size()I
+    move-result-object v2
 
-    move-result v5
+    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v3}, Ljava/util/Map;->size()I
 
-    move-result-object v5
+    move-result v3
 
-    const/4 v6, 0x1
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    aput-object v5, v4, v6
+    move-result-object v2
 
-    invoke-static {v2, v3, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_14
+    :cond_17
     invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->checkCaptureComplete(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
 
     iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
@@ -1197,7 +1258,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_18
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -1219,7 +1280,11 @@
 
     iget-object v2, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    invoke-direct {p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getHandlerMessageId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)I
+
+    move-result v2
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
@@ -1229,7 +1294,7 @@
 
     invoke-virtual {v1, p0}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->unregisterCancel(Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine$McfCancelInterface;)V
 
-    :cond_15
+    :cond_18
     sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1272,13 +1337,13 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_16
+    :cond_19
     return-void
 
-    :cond_17
+    :cond_1a
     move v2, v3
 
-    :cond_18
+    :cond_1b
     :try_start_4
     iget-object v1, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mCreateRequestList:Ljava/util/concurrent/CopyOnWriteArrayList;
 
@@ -1286,12 +1351,12 @@
 
     move-result-object v3
 
-    :goto_8
+    :goto_9
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_11
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1299,7 +1364,7 @@
 
     check-cast v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;
 
-    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;->-get1(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;)Z
+    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;->-get0(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$CreateRequestsRunnable;)Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
@@ -1309,199 +1374,152 @@
 
     move v2, v1
 
-    goto :goto_8
+    goto :goto_9
 
     :catchall_2
     move-exception v0
 
-    monitor-exit v6
+    monitor-exit v5
 
     throw v0
 
-    :cond_19
+    :cond_1c
     move v1, v2
 
-    goto/16 :goto_7
+    goto/16 :goto_8
 .end method
 
-.method private static copyMcfMetaData(Lcom/motorola/camera/mcf/McfMetadata;Landroid/hardware/camera2/CaptureRequest$Builder;)V
-    .locals 10
+.method private static copyMcfMetaData(Ljava/lang/String;Lcom/motorola/camera/mcf/McfMetadata;Landroid/hardware/camera2/CaptureRequest$Builder;)V
+    .locals 5
 
-    const/4 v9, 0x2
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0}, Lcom/motorola/camera/mcf/McfMetadata;->getKeys()Ljava/util/Collection;
+    invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfMetadata;->getKeys()Ljava/util/Collection;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v1
 
-    :cond_0
     :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/motorola/camera/mcf/McfMetadata$Key;
 
-    sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_0
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v5, "Processing Key %s:%s"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    new-array v6, v9, [Ljava/lang/Object;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Processing Key "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
 
     invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v4
 
-    aput-object v7, v6, v3
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v0}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v7
+    const-string/jumbo v4, ":"
 
-    aput-object v7, v6, v2
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v5, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v5
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
 
-    invoke-static {v1, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p0, v2}, Lcom/motorola/camera/settings/SettingsManager;->getCaptureRequestKeyFromName(Ljava/lang/String;Ljava/lang/String;)Landroid/hardware/camera2/CaptureRequest$Key;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {p1, v0}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v2, v0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    goto :goto_0
 
     :cond_1
-    invoke-static {}, Lcom/motorola/camera/settings/SettingsManager;->getAvailableCaptureRequestKeys()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    :cond_2
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/camera2/CaptureRequest$Key;
-
     invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v1}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
+    invoke-static {v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->isPrivate(Ljava/lang/String;)Z
 
-    move-result-object v7
+    move-result v2
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    sget-boolean v5, Lcom/motorola/camera/Util;->DEBUG:Z
-
-    if-eqz v5, :cond_3
-
-    sget-object v5, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v6, "copying %s:%s"
-
-    new-array v7, v9, [Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
-
-    move-result-object v8
-
-    aput-object v8, v7, v3
-
-    invoke-virtual {p0, v0}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    aput-object v8, v7, v2
-
-    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_3
-    invoke-virtual {p0, v0}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-virtual {p1, v1, v5}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    move v1, v2
-
-    :goto_1
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->isPrivate(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_2
 
     :try_start_0
-    invoke-static {p1, v0, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->setCustomKeyInBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/mcf/McfMetadata$Key;Lcom/motorola/camera/mcf/McfMetadata;)V
+    invoke-static {p2, v0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->setCustomKeyInBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/mcf/McfMetadata$Key;Lcom/motorola/camera/mcf/McfMetadata;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Custom vendor tag "
+    const-string/jumbo v4, "Custom vendor tag "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v3
 
     invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string/jumbo v5, " is not supported!"
+    const-string/jumbo v3, " is not supported!"
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -1509,59 +1527,115 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_2
+    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "MCF setting unsupported key for cameraId="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, ": "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    :cond_3
     return-void
-
-    :cond_5
-    move v1, v3
-
-    goto :goto_1
 .end method
 
-.method private static copyRecord(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;IZLcom/motorola/camera/mcf/Mcf$InstanceType;Lcom/motorola/camera/mcf/Mcf$ReprocessType;I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
-    .locals 2
+.method private static copyRecord(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;ZLcom/motorola/camera/mcf/Mcf$ReprocessType;I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    .locals 3
 
-    new-instance v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    invoke-direct {v0, p0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;-><init>(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;-><init>(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)V
 
-    iput p1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iput-object p1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    iput-boolean p2, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMcfCapture:Z
+    iput-boolean p2, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMcfCapture:Z
 
-    iput-object p3, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    iput-object p4, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
+    if-eqz v0, :cond_2
 
-    iput p5, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mPriority:I
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->getInstanceTypeClass()Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    if-eq v1, p3, :cond_0
+    move-result-object v0
 
-    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FLASH:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+    :goto_0
+    iput-object v0, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
-    if-ne v1, p3, :cond_2
+    iput-object p3, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
+
+    iput p4, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mPriority:I
+
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    iget-object v2, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    if-eq v0, v2, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$InstanceType;->FLASH:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    iget-object v2, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    if-ne v0, v2, :cond_3
 
     :cond_0
-    :goto_0
-    const/4 v1, 0x1
+    :goto_1
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->setPlayShutter(Z)V
+    invoke-virtual {v1, v0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->setPlayShutter(Z)V
 
     :cond_1
-    return-object v0
+    return-object v1
 
     :cond_2
-    sget-object v1, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL_ONDEMAND:Lcom/motorola/camera/mcf/Mcf$InstanceType;
-
-    if-ne v1, p3, :cond_1
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$InstanceType;->UNUSED:Lcom/motorola/camera/mcf/Mcf$InstanceType;
 
     goto :goto_0
+
+    :cond_3
+    sget-object v0, Lcom/motorola/camera/mcf/Mcf$InstanceType;->NORMAL_ONDEMAND:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    iget-object v2, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mInstanceType:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    if-ne v0, v2, :cond_1
+
+    goto :goto_1
 .end method
 
 .method private createCaptureRecord()V
@@ -1583,7 +1657,17 @@
 
     int-to-long v4, v0
 
-    invoke-virtual {v1, v2, v4, v5}, Lcom/motorola/camera/analytics/AnalyticsHelper;->startShotToShotLogging(Lcom/motorola/camera/ShotType;J)V
+    iget-object v3, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
+
+    invoke-interface {v3}, Ljava/util/Map;->size()I
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v4, v5, v3}, Lcom/motorola/camera/analytics/AnalyticsHelper;->startShotToShotLogging(Lcom/motorola/camera/ShotType;JI)V
+
+    invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getMcfSceneMode()Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    move-result-object v1
 
     invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getNewCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
@@ -1595,39 +1679,49 @@
 
     invoke-virtual {v0}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->populateExtendedInfo()V
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->setPlayShutter(Z)V
-
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;
-
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->setPlayShutter(Z)V
 
-    iput-object v0, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    iput-object v1, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iget-object v2, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
+
+    const-string/jumbo v3, "REVIEW_REQUIRED"
+
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPostCaptureReview()Z
+
+    move-result v4
+
+    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    new-instance v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, v3}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;-><init>(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
+
+    iput-object v0, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    iput-wide v2, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mStartTime:J
+    iput-wide v4, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mStartTime:J
 
-    invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getMcfSceneMode()Lcom/motorola/camera/mcf/Mcf$SceneMode;
+    iput-object v1, v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
 
-    move-result-object v2
+    iget-object v1, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
 
-    iput-object v2, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+    iget-object v3, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    iget-object v2, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
-
-    iget v3, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget v3, v3, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    invoke-interface {v2, v3, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -1641,9 +1735,9 @@
 
     const-string/jumbo v2, "SEQ_ID"
 
-    iget v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    iget-object v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
@@ -1698,6 +1792,32 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method private getHandlerMessageId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)I
+    .locals 2
+
+    iget v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    shl-int/lit8 v1, v0, 0x10
+
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    iget v0, v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->mInstanceId:I
+
+    :goto_0
+    or-int/2addr v0, v1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private getMcfSceneMode()Lcom/motorola/camera/mcf/Mcf$SceneMode;
@@ -1914,6 +2034,88 @@
     goto :goto_0
 .end method
 
+.method private isDepthRenderInstance(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Z
+    .locals 4
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    invoke-static {p1}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    :try_end_0
+    .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMcfAuxData:Lcom/motorola/camera/mcf/McfAuxiliaryData;
+
+    if-nez v2, :cond_1
+
+    :cond_0
+    return v1
+
+    :catch_0
+    move-exception v0
+
+    return v1
+
+    :cond_1
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    invoke-virtual {v2}, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->getInstanceTypeClass()Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/motorola/camera/mcf/Mcf$InstanceType;->DEPTH_RENDER:Lcom/motorola/camera/mcf/Mcf$InstanceType;
+
+    if-ne v3, v2, :cond_4
+
+    iget-object v0, v0, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mMcfAuxData:Lcom/motorola/camera/mcf/McfAuxiliaryData;
+
+    sget-object v2, Lcom/motorola/camera/mcf/McfAuxiliaryData;->DEPTHRENDER:Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/mcf/McfAuxiliaryData;->get(Lcom/motorola/camera/mcf/McfAuxiliaryData$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/mcf/McfDepthRender;
+
+    if-eqz v0, :cond_3
+
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    iget v2, v2, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->mInstanceTag:I
+
+    invoke-virtual {v0}, Lcom/motorola/camera/mcf/McfDepthRender;->getInstance()Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    move-result-object v0
+
+    iget v0, v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;->mInstanceTag:I
+
+    if-ne v2, v0, :cond_2
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_2
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_3
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_4
+    return v1
+.end method
+
 .method private static isPrivate(Ljava/lang/String;)Z
     .locals 1
 
@@ -1940,7 +2142,7 @@
     goto :goto_0
 .end method
 
-.method private postCheckCaptureRunnables(I)V
+.method private postCheckCaptureRunnables(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
     .locals 2
 
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
@@ -1951,9 +2153,13 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getHandlerMessageId(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)I
 
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
@@ -1973,9 +2179,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$73;
+    new-instance v1, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$4;
 
-    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$73;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$4;-><init>(Ljava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -2002,10 +2208,6 @@
     monitor-enter v9
 
     :try_start_0
-    iget-object v0, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->size()I
-
     iget-object v0, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -2045,7 +2247,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_a
 
     move v5, v6
 
@@ -2076,7 +2278,7 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
     invoke-direct {v2, v1, v0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -2108,7 +2310,7 @@
 
     iget-object v2, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    check-cast v2, Ljava/lang/Integer;
+    check-cast v2, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
     invoke-interface {v8, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -2124,7 +2326,7 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
     invoke-direct {v2, v1, v0}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -2147,7 +2349,7 @@
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
     invoke-interface {v8, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_1
@@ -2160,7 +2362,7 @@
 
     const-string/jumbo v0, ""
 
-    if-eqz v3, :cond_8
+    if-eqz v3, :cond_9
 
     invoke-static {}, Lcom/motorola/camera/BurstShotFileUtils;->getInstance()Lcom/motorola/camera/BurstShotFileUtils;
 
@@ -2188,7 +2390,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2196,60 +2398,75 @@
 
     check-cast v0, Landroid/util/Pair;
 
-    iget-object v4, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
-
-    iget v4, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
-
     iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(Lcom/motorola/camera/mcf/McfInstanceIdentifier;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result v0
+    move-result-object v0
 
-    or-int/2addr v0, v4
+    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
-    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    move-result-object v6
 
-    move-result-object v4
-
-    iget-object v0, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
+    iget-object v0, v6, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mReprocessType:Lcom/motorola/camera/mcf/Mcf$ReprocessType;
 
     invoke-static {v0}, Lcom/motorola/camera/settings/SettingsHelper;->isBestShot(Lcom/motorola/camera/mcf/Mcf$ReprocessType;)Z
 
     move-result v0
 
-    iget-object v6, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
+    iget-object v7, v6, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
 
-    const-string/jumbo v7, "BEST_SHOT"
+    const-string/jumbo v9, "BEST_SHOT"
 
-    invoke-virtual {v6, v7, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-virtual {v7, v9, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    iget-object v6, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
+    iget-object v7, v6, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
 
-    const-string/jumbo v7, "UUID"
+    const-string/jumbo v9, "UUID"
 
-    invoke-virtual {v6, v7, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v7, v9, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_8
 
     add-int/lit8 v0, v2, 0x1
 
     :goto_5
-    iget-object v2, v4, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
+    iget-object v2, v6, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mShotBundle:Landroid/os/Bundle;
 
-    const-string/jumbo v6, "alternate_shot_max_index"
+    const-string/jumbo v7, "alternate_shot_max_index"
 
-    invoke-virtual {v2, v6, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {v2, v7, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    invoke-static {v4}, Lcom/motorola/camera/saving/ImageCaptureManager;->processCapture(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)V
+    invoke-static {v6}, Lcom/motorola/camera/saving/ImageCaptureManager;->processCapture(Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;)V
 
+    invoke-static {}, Lcom/motorola/camera/settings/SettingsHelper;->isPostCaptureReview()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v2
+
+    sget-object v6, Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;->SESSION:Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;
+
+    invoke-virtual {v2, v6}, Lcom/motorola/camera/fsm/camera/FsmContext;->getBundle(Lcom/motorola/camera/fsm/camera/FsmContext$BundleType;)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    const-string/jumbo v6, "MCF_PROCESSING"
+
+    invoke-virtual {v2, v6, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    :cond_5
     move v2, v0
 
     goto :goto_4
 
-    :cond_5
+    :cond_6
     invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -2259,42 +2476,36 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    check-cast v0, Lcom/motorola/camera/mcf/McfInstanceIdentifier;
 
-    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mRootRecord:Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    invoke-static {v0}, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->getNewInstance(Lcom/motorola/camera/mcf/McfInstanceIdentifier;)Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    iget v2, v2, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mSeqId:I
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    or-int/2addr v0, v2
-
-    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->removeCaptureRecord(I)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+    invoke-static {v0}, Lcom/motorola/camera/saving/ImageCaptureManager;->removeCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
 
     goto :goto_6
 
-    :cond_6
+    :cond_7
     return-void
 
-    :cond_7
+    :cond_8
     move v0, v2
 
     goto :goto_5
 
-    :cond_8
+    :cond_9
     move-object v1, v0
 
     goto :goto_3
 
-    :cond_9
+    :cond_a
     move v5, v3
 
     goto/16 :goto_1
@@ -2363,6 +2574,12 @@
     move-result-object v1
 
     check-cast v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;
+
+    sget-object v8, Lcom/motorola/camera/mcf/Mcf$SceneMode;->NORMAL:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    iget-object v9, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mSceneMode:Lcom/motorola/camera/mcf/Mcf$SceneMode;
+
+    if-eq v8, v9, :cond_0
 
     iget-object v8, v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mProgressTypeArray:Ljava/util/ArrayList;
 
@@ -2528,35 +2745,23 @@
 
     sget-object v3, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v5, "runReprocRequests seqId:0x%08x -> Run reproc requests for instanceId:%d"
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v6, 0x2
+    const-string/jumbo v5, "runReprocRequests "
 
-    new-array v6, v6, [Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v7, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfReprocHolder;->mSeqId:I
+    move-result-object v4
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v5, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfReprocHolder;->mSeqId:Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
-    move-result-object v7
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const/4 v8, 0x0
+    move-result-object v4
 
-    aput-object v7, v6, v8
-
-    iget v7, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfReprocHolder;->mInstanceId:I
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    const/4 v8, 0x1
-
-    aput-object v7, v6, v8
-
-    invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -2633,8 +2838,6 @@
 .method private sendMcfSnapshot()V
     .locals 8
 
-    const/4 v7, 0x0
-
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
     move-result-object v0
@@ -2647,19 +2850,44 @@
 
     const-string/jumbo v0, "SEQ_ID"
 
-    invoke-virtual {v3, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+    invoke-virtual {v3, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result v1
+    move-result-object v0
 
-    const-string/jumbo v0, "MANUAL_FOCUS"
+    move-object v1, v0
 
-    invoke-virtual {v3, v0, v7}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    check-cast v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
 
+    if-nez v1, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "No valid seqId"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->ERROR:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
+
+    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/FsmContext;->sendTrigger(Lcom/motorola/camera/fsm/camera/Trigger;)V
+
+    return-void
+
+    :cond_0
     invoke-direct {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getMcfStateMachine()Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->onJobStarted(I)V
+    iget v2, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    invoke-virtual {v0, v2}, Lcom/motorola/camera/fsm/camera/subfsms/McfStateMachine;->onJobStarted(I)V
 
     new-instance v0, Lcom/motorola/camera/mcf/McfParameters;
 
@@ -2671,7 +2899,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     invoke-static {}, Lcom/motorola/camera/ui/widgets/gl/RTBokehSliderBar;->getRatio()F
 
@@ -2683,16 +2911,16 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     const/4 v2, -0x1
 
-    :cond_0
+    :cond_1
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4, v2}, Lcom/motorola/camera/mcf/McfParameters;->setDDMParameters(II)V
 
-    :cond_1
+    :cond_2
     sget-object v2, Lcom/motorola/camera/settings/SettingsManager;->ZOOM:Lcom/motorola/camera/settings/SettingsManager$Key;
 
     invoke-static {v2}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
@@ -2723,7 +2951,7 @@
 
     iget-object v2, v6, Lcom/motorola/camera/mcf/McfParameters$Mcf3aParams;->mAeState:Ljava/lang/Integer;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     iget-object v2, v6, Lcom/motorola/camera/mcf/McfParameters$Mcf3aParams;->mAeState:Ljava/lang/Integer;
 
@@ -2733,7 +2961,7 @@
 
     const/4 v4, 0x2
 
-    if-eq v2, v4, :cond_2
+    if-eq v2, v4, :cond_3
 
     iget-object v2, v6, Lcom/motorola/camera/mcf/McfParameters$Mcf3aParams;->mAeState:Ljava/lang/Integer;
 
@@ -2743,9 +2971,13 @@
 
     const/4 v4, 0x3
 
-    if-ne v2, v4, :cond_4
+    if-ne v2, v4, :cond_5
 
-    :cond_2
+    :cond_3
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    shl-int/lit8 v1, v1, 0x10
+
     const-string/jumbo v2, "ON_UP"
 
     invoke-virtual {v3, v2}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -2760,12 +2992,14 @@
 
     move-result-object v4
 
+    const/4 v7, 0x0
+
     invoke-virtual/range {v0 .. v7}, Lcom/motorola/camera/mcf/McfParameters;->doSnapshot(IJLcom/motorola/camera/mcf/Mcf$SceneMode;FLcom/motorola/camera/mcf/McfParameters$Mcf3aParams;Z)V
 
     :goto_0
     sget-boolean v1, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
@@ -2789,7 +3023,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_4
     invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
 
     move-result-object v1
@@ -2830,7 +3064,11 @@
 
     return-void
 
-    :cond_4
+    :cond_5
+    iget v1, v1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
+
+    shl-int/lit8 v1, v1, 0x10
+
     const-string/jumbo v2, "ON_UP"
 
     invoke-virtual {v3, v2}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
@@ -2851,7 +3089,7 @@
 .end method
 
 .method private static setCustomKeyInBuilder(Landroid/hardware/camera2/CaptureRequest$Builder;Lcom/motorola/camera/mcf/McfMetadata$Key;Lcom/motorola/camera/mcf/McfMetadata;)V
-    .locals 7
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -2878,51 +3116,113 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->getCaptureRequestKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-static {v0, v1}, Lcom/motorola/camera/settings/CustomKeyHelper;->getCustomRequestKey(Ljava/lang/String;Ljava/lang/Object;)Landroid/hardware/camera2/CaptureRequest$Key;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
     invoke-virtual {p2, p1}, Lcom/motorola/camera/mcf/McfMetadata;->get(Lcom/motorola/camera/mcf/McfMetadata$Key;)Ljava/lang/Object;
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/motorola/camera/Util;->DEBUG:Z
+    sget-boolean v0, Lcom/motorola/camera/Util;->DEBUG:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_0
 
-    sget-object v2, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+    instance-of v0, v1, [I
 
-    const-string/jumbo v3, "copying %s:%s"
+    if-eqz v0, :cond_2
 
-    const/4 v4, 0x2
+    sget-object v3, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "copying "
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    const/4 v6, 0x0
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v5, v4, v6
+    move-result-object v0
 
-    const/4 v5, 0x1
+    const-string/jumbo v4, ":"
 
-    aput-object v1, v4, v5
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v3
+    move-object v0, v1
 
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    check-cast v0, [I
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v3, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    invoke-virtual {p0, v0, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    :goto_0
+    invoke-virtual {p0, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     :cond_1
     return-void
+
+    :cond_2
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "copying "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {p1}, Lcom/motorola/camera/mcf/McfMetadata$Key;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, ":"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
 .end method
 
 .method private setFocusInfo(Lcom/motorola/camera/fsm/camera/record/CaptureRecord;)V
@@ -2990,7 +3290,7 @@
 .end method
 
 .method public declared-synchronized cancelAllJobs(Z)V
-    .locals 8
+    .locals 6
 
     monitor-enter p0
 
@@ -3032,21 +3332,25 @@
 
     sget-object v1, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
 
-    const-string/jumbo v4, "sendMcfCancel 0x%08x"
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const/4 v5, 0x1
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-array v5, v5, [Ljava/lang/Object;
+    const-string/jumbo v5, "sendMcfCancel "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
 
-    const/4 v7, 0x0
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    aput-object v6, v5, v7
+    move-result-object v4
 
-    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -3096,9 +3400,19 @@
 
     move-result-object v1
 
-    new-instance v4, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$138;
+    if-eqz v1, :cond_0
 
-    invoke-direct {v4, p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$138;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getFsmContext()Lcom/motorola/camera/fsm/camera/FsmContext;
+
+    move-result-object v1
+
+    invoke-direct {p0, v1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->getBgHandler(Lcom/motorola/camera/fsm/camera/FsmContext;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    new-instance v4, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$6;
+
+    invoke-direct {v4, p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/-$Lambda$ReS838Xw1t8-aP0UIAm4iJGh5YY$6;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-virtual {v1, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_1
@@ -3134,19 +3448,151 @@
     return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable_lambda$3(Landroid/os/Message;)Z
-    .locals 1
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable_13698(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;J)V
+    .locals 4
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    iget v1, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mSeqId:I
 
-    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->checkCaptureRunnables(I)V
+    iget-object v0, p0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->mMcfJobHolderMap:Ljava/util/Map;
 
-    const/4 v0, 0x1
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return v0
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "No job matching "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_0
+    iget-object v1, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    if-nez v1, :cond_1
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "No McfInstanceId for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_1
+    iget-object v0, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;->mMcfRequestHolderMap:Ljava/util/Map;
+
+    iget-object v1, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->TAG:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "No request matching "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p1, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;->mMcfInstanceId:Lcom/motorola/camera/mcf/McfInstanceIdentifier;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_2
+    :try_start_0
+    invoke-static {p1}, Lcom/motorola/camera/saving/ImageCaptureManager;->getCaptureRecord(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;
+
+    move-result-object v1
+
+    iget v2, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mNumRequests:I
+
+    iget-object v1, v1, Lcom/motorola/camera/fsm/camera/record/ImageCaptureRecord;->mCaptureHolders:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ne v2, v1, :cond_3
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfRequestHolder;->mJpegReceived:Z
+    :try_end_0
+    .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_3
+    invoke-direct {p0, p1}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->postCheckCaptureRunnables(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    return-void
 .end method
 
-.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable_lambda$6(Ljava/util/Map$Entry;)V
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable_39528(Ljava/util/Map$Entry;)V
     .locals 1
 
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -3158,6 +3604,20 @@
     invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->cancelCleanup(Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable$McfJobHolder;)V
 
     return-void
+.end method
+
+.method synthetic lambda$-com_motorola_camera_fsm_camera_states_runnables_McfCaptureRequestRunnable_5407(Landroid/os/Message;)Z
+    .locals 1
+
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;
+
+    invoke-direct {p0, v0}, Lcom/motorola/camera/fsm/camera/states/runnables/McfCaptureRequestRunnable;->checkCaptureRunnables(Lcom/motorola/camera/fsm/camera/record/SequenceIdentifier;)V
+
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
 .method public run(Lcom/motorola/camera/fsm/camera/StateKey;Lcom/motorola/camera/fsm/camera/FsmContext;Ljava/lang/Object;)V

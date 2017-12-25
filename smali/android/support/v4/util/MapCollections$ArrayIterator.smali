@@ -42,25 +42,23 @@
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/util/MapCollections;I)V
-    .locals 2
-
-    move-object v0, p0
+    .locals 1
 
     iput-object p1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
+    iput-boolean v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
 
     iput p2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mOffset:I
 
     invoke-virtual {p1}, Landroid/support/v4/util/MapCollections;->colGetSize()I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
+    iput v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
 
     return-void
 .end method
@@ -68,97 +66,104 @@
 
 # virtual methods
 .method public hasNext()Z
-    .locals 3
+    .locals 2
 
-    move-object v0, p0
+    iget v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
 
-    iget v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+    iget v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
 
-    iget v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
+    if-lt v0, v1, :cond_0
 
-    if-lt v1, v2, :cond_0
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    return v1
+    return v0
 
     :cond_0
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
         }
     .end annotation
 
-    move-object v1, p0
+    invoke-virtual {p0}, Landroid/support/v4/util/MapCollections$ArrayIterator;->hasNext()Z
 
-    iget-object v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->this$0:Landroid/support/v4/util/MapCollections;
+    move-result v0
 
-    iget v3, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+    if-eqz v0, :cond_0
 
-    iget v4, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mOffset:I
-
-    invoke-virtual {v2, v3, v4}, Landroid/support/v4/util/MapCollections;->colGetEntry(II)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
-
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
-
-    return-object v0
-.end method
-
-.method public remove()V
-    .locals 3
-
-    const/4 v2, 0x0
-
-    move-object v0, p0
-
-    iget-boolean v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
-
-    if-eqz v1, :cond_0
+    iget-object v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->this$0:Landroid/support/v4/util/MapCollections;
 
     iget v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
 
-    add-int/lit8 v1, v1, -0x1
+    iget v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mOffset:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/util/MapCollections;->colGetEntry(II)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+
+    add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
 
-    iget v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
+    const/4 v1, 0x1
 
-    add-int/lit8 v1, v1, -0x1
+    iput-boolean v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
 
-    iput v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
+    return-object v0
 
-    iput-boolean v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    iget-object v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->this$0:Landroid/support/v4/util/MapCollections;
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    iget v2, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+    throw v0
+.end method
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/util/MapCollections;->colRemoveAt(I)V
+.method public remove()V
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iget-boolean v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+
+    iget v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mSize:I
+
+    iput-boolean v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mCanRemove:Z
+
+    iget-object v0, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->this$0:Landroid/support/v4/util/MapCollections;
+
+    iget v1, p0, Landroid/support/v4/util/MapCollections$ArrayIterator;->mIndex:I
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/util/MapCollections;->colRemoveAt(I)V
 
     return-void
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v1
+    throw v0
 .end method

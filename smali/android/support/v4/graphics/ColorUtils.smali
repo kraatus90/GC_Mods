@@ -50,7 +50,7 @@
 .end method
 
 .method public static HSLToColor([F)I
-    .locals 12
+    .locals 10
     .param p0    # [F
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -58,292 +58,242 @@
     .annotation build Landroid/support/annotation/ColorInt;
     .end annotation
 
-    const/4 v10, 0x0
+    const/high16 v9, 0x40000000    # 2.0f
 
-    aget v3, p0, v10
+    const/16 v8, 0xff
 
-    const/4 v10, 0x1
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    aget v8, p0, v10
+    const/4 v1, 0x0
 
-    const/4 v10, 0x2
+    const/high16 v7, 0x437f0000    # 255.0f
 
-    aget v5, p0, v10
+    aget v0, p0, v1
 
-    const/high16 v10, 0x40000000    # 2.0f
+    const/4 v2, 0x1
 
-    mul-float/2addr v10, v5
+    aget v2, p0, v2
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    const/4 v3, 0x2
 
-    sub-float/2addr v10, v11
+    aget v3, p0, v3
 
-    invoke-static {v10}, Ljava/lang/Math;->abs(F)F
+    mul-float v4, v9, v3
 
-    move-result v10
+    sub-float/2addr v4, v6
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
 
-    sub-float v10, v11, v10
+    move-result v4
 
-    mul-float v1, v10, v8
+    sub-float v4, v6, v4
 
-    const/high16 v10, 0x3f000000    # 0.5f
+    mul-float/2addr v4, v2
 
-    mul-float/2addr v10, v1
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    sub-float v6, v5, v10
+    mul-float/2addr v2, v4
 
-    const/high16 v10, 0x42700000    # 60.0f
+    sub-float v5, v3, v2
 
-    div-float v10, v3, v10
+    const/high16 v2, 0x42700000    # 60.0f
 
-    const/high16 v11, 0x40000000    # 2.0f
+    div-float v2, v0, v2
 
-    rem-float/2addr v10, v11
+    rem-float/2addr v2, v9
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    sub-float/2addr v2, v6
 
-    sub-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->abs(F)F
-
-    move-result v10
-
-    const/high16 v11, 0x3f800000    # 1.0f
-
-    sub-float v10, v11, v10
-
-    mul-float v9, v1, v10
-
-    float-to-int v10, v3
-
-    div-int/lit8 v4, v10, 0x3c
-
-    const/4 v7, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v0, 0x0
-
-    packed-switch v4, :pswitch_data_0
-
-    :goto_0
-    const/4 v10, 0x0
-
-    const/16 v11, 0xff
-
-    invoke-static {v7, v10, v11}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
-
-    move-result v7
-
-    const/4 v10, 0x0
-
-    const/16 v11, 0xff
-
-    invoke-static {v2, v10, v11}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
 
-    const/4 v10, 0x0
+    sub-float v2, v6, v2
 
-    const/16 v11, 0xff
+    mul-float v6, v4, v2
 
-    invoke-static {v0, v10, v11}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+    float-to-int v0, v0
+
+    div-int/lit8 v0, v0, 0x3c
+
+    packed-switch v0, :pswitch_data_0
+
+    move v0, v1
+
+    move v2, v1
+
+    move v3, v1
+
+    :goto_0
+    invoke-static {v3, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+
+    move-result v3
+
+    invoke-static {v2, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+
+    move-result v2
+
+    invoke-static {v0, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
     move-result v0
 
-    invoke-static {v7, v2, v0}, Landroid/graphics/Color;->rgb(III)I
+    invoke-static {v3, v2, v0}, Landroid/graphics/Color;->rgb(III)I
 
-    move-result v10
+    move-result v0
 
-    return v10
+    return v0
 
     :pswitch_0
-    add-float v10, v1, v6
+    add-float v0, v4, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    move-result v3
 
-    move-result v7
+    add-float v0, v6, v5
 
-    add-float v10, v9, v6
+    mul-float/2addr v0, v7
 
-    const/high16 v11, 0x437f0000    # 255.0f
-
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    const/high16 v10, 0x437f0000    # 255.0f
+    mul-float v0, v7, v5
 
-    mul-float/2addr v10, v6
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     goto :goto_0
 
     :pswitch_1
-    add-float v10, v9, v6
+    add-float v0, v6, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    move-result v3
 
-    move-result v7
+    add-float v0, v4, v5
 
-    add-float v10, v1, v6
+    mul-float/2addr v0, v7
 
-    const/high16 v11, 0x437f0000    # 255.0f
-
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    const/high16 v10, 0x437f0000    # 255.0f
+    mul-float v0, v7, v5
 
-    mul-float/2addr v10, v6
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     goto :goto_0
 
     :pswitch_2
-    const/high16 v10, 0x437f0000    # 255.0f
+    mul-float v0, v7, v5
 
-    mul-float/2addr v10, v6
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    move-result v3
 
-    move-result v7
+    add-float v0, v4, v5
 
-    add-float v10, v1, v6
+    mul-float/2addr v0, v7
 
-    const/high16 v11, 0x437f0000    # 255.0f
-
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    add-float v10, v9, v6
+    add-float v0, v6, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     goto :goto_0
 
     :pswitch_3
-    const/high16 v10, 0x437f0000    # 255.0f
+    mul-float v0, v7, v5
 
-    mul-float/2addr v10, v6
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    move-result v3
 
-    move-result v7
+    add-float v0, v6, v5
 
-    add-float v10, v9, v6
+    mul-float/2addr v0, v7
 
-    const/high16 v11, 0x437f0000    # 255.0f
-
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    add-float v10, v1, v6
+    add-float v0, v4, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :pswitch_4
-    add-float v10, v9, v6
+    add-float v0, v6, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    move-result v3
 
-    move-result v7
+    mul-float v0, v7, v5
 
-    const/high16 v10, 0x437f0000    # 255.0f
-
-    mul-float/2addr v10, v6
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    add-float v10, v1, v6
+    add-float v0, v4, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
-    goto/16 :goto_0
+    goto :goto_0
 
     :pswitch_5
-    add-float v10, v1, v6
+    add-float v0, v4, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    move-result v3
 
-    move-result v7
+    mul-float v0, v7, v5
 
-    const/high16 v10, 0x437f0000    # 255.0f
-
-    mul-float/2addr v10, v6
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v2
 
-    add-float v10, v9, v6
+    add-float v0, v6, v5
 
-    const/high16 v11, 0x437f0000    # 255.0f
+    mul-float/2addr v0, v7
 
-    mul-float/2addr v10, v11
-
-    invoke-static {v10}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     goto/16 :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -412,7 +362,7 @@
 .end method
 
 .method public static LABToXYZ(DDD[D)V
-    .locals 18
+    .locals 10
     .param p0    # D
         .annotation build Landroid/support/annotation/FloatRange;
             from = 0.0
@@ -436,135 +386,131 @@
         .end annotation
     .end param
 
-    const-wide/high16 v14, 0x4030000000000000L    # 16.0
+    const-wide/high16 v0, 0x4030000000000000L    # 16.0
 
-    add-double v14, v14, p0
+    add-double/2addr v0, p0
 
-    const-wide/high16 v16, 0x405d000000000000L    # 116.0
+    const-wide/high16 v2, 0x405d000000000000L    # 116.0
 
-    div-double v2, v14, v16
+    div-double v2, v0, v2
 
-    const-wide v14, 0x407f400000000000L    # 500.0
+    const-wide v0, 0x407f400000000000L    # 500.0
 
-    div-double v14, p2, v14
+    div-double v0, p2, v0
 
-    add-double v0, v14, v2
+    add-double v4, v0, v2
 
-    const-wide/high16 v14, 0x4069000000000000L    # 200.0
+    const-wide/high16 v0, 0x4069000000000000L    # 200.0
 
-    div-double v14, p4, v14
+    div-double v0, p4, v0
 
-    sub-double v4, v2, v14
+    sub-double v6, v2, v0
 
-    const-wide/high16 v14, 0x4008000000000000L    # 3.0
+    const-wide/high16 v0, 0x4008000000000000L    # 3.0
 
-    invoke-static {v0, v1, v14, v15}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v6
+    move-result-wide v0
 
-    const-wide v14, 0x3f82231832fcac8eL    # 0.008856
+    const-wide v8, 0x3f82231832fcac8eL    # 0.008856
 
-    cmpl-double v14, v6, v14
+    cmpl-double v8, v0, v8
 
-    if-lez v14, :cond_0
-
-    move-wide v8, v6
+    if-lez v8, :cond_0
 
     :goto_0
-    const-wide v14, 0x401fff9da4c11507L    # 7.9996247999999985
+    const-wide v4, 0x401fff9da4c11507L    # 7.9996247999999985
 
-    cmpl-double v14, p0, v14
+    cmpl-double v4, p0, v4
 
-    if-lez v14, :cond_1
+    if-lez v4, :cond_1
 
-    const-wide/high16 v14, 0x4008000000000000L    # 3.0
+    const-wide/high16 v4, 0x4008000000000000L    # 3.0
 
-    invoke-static {v2, v3, v14, v15}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v10
+    move-result-wide v2
 
     :goto_1
-    const-wide/high16 v14, 0x4008000000000000L    # 3.0
+    const-wide/high16 v4, 0x4008000000000000L    # 3.0
 
-    invoke-static {v4, v5, v14, v15}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v6
+    move-result-wide v4
 
-    const-wide v14, 0x3f82231832fcac8eL    # 0.008856
+    const-wide v8, 0x3f82231832fcac8eL    # 0.008856
 
-    cmpl-double v14, v6, v14
+    cmpl-double v8, v4, v8
 
-    if-lez v14, :cond_2
-
-    move-wide v12, v6
+    if-lez v8, :cond_2
 
     :goto_2
-    const/4 v14, 0x0
+    const-wide v6, 0x4057c3020c49ba5eL    # 95.047
 
-    const-wide v16, 0x4057c3020c49ba5eL    # 95.047
+    mul-double/2addr v0, v6
 
-    mul-double v16, v16, v8
+    const/4 v6, 0x0
 
-    aput-wide v16, p6, v14
+    aput-wide v0, p6, v6
 
-    const/4 v14, 0x1
+    const-wide/high16 v0, 0x4059000000000000L    # 100.0
 
-    const-wide/high16 v16, 0x4059000000000000L    # 100.0
+    mul-double/2addr v0, v2
 
-    mul-double v16, v16, v10
+    const/4 v2, 0x1
 
-    aput-wide v16, p6, v14
+    aput-wide v0, p6, v2
 
-    const/4 v14, 0x2
+    const-wide v0, 0x405b3883126e978dL    # 108.883
 
-    const-wide v16, 0x405b3883126e978dL    # 108.883
+    mul-double/2addr v0, v4
 
-    mul-double v16, v16, v12
+    const/4 v2, 0x2
 
-    aput-wide v16, p6, v14
+    aput-wide v0, p6, v2
 
     return-void
 
     :cond_0
-    const-wide/high16 v14, 0x405d000000000000L    # 116.0
+    const-wide/high16 v0, 0x405d000000000000L    # 116.0
 
-    mul-double/2addr v14, v0
+    mul-double/2addr v0, v4
 
-    const-wide/high16 v16, 0x4030000000000000L    # 16.0
+    const-wide/high16 v4, 0x4030000000000000L    # 16.0
 
-    sub-double v14, v14, v16
+    sub-double/2addr v0, v4
 
-    const-wide v16, 0x408c3a6666666666L    # 903.3
+    const-wide v4, 0x408c3a6666666666L    # 903.3
 
-    div-double v8, v14, v16
+    div-double/2addr v0, v4
 
     goto :goto_0
 
     :cond_1
-    const-wide v14, 0x408c3a6666666666L    # 903.3
+    const-wide v2, 0x408c3a6666666666L    # 903.3
 
-    div-double v10, p0, v14
+    div-double v2, p0, v2
 
     goto :goto_1
 
     :cond_2
-    const-wide/high16 v14, 0x405d000000000000L    # 116.0
+    const-wide/high16 v4, 0x405d000000000000L    # 116.0
 
-    mul-double/2addr v14, v4
+    mul-double/2addr v4, v6
 
-    const-wide/high16 v16, 0x4030000000000000L    # 16.0
+    const-wide/high16 v6, 0x4030000000000000L    # 16.0
 
-    sub-double v14, v14, v16
+    sub-double/2addr v4, v6
 
-    const-wide v16, 0x408c3a6666666666L    # 903.3
+    const-wide v6, 0x408c3a6666666666L    # 903.3
 
-    div-double v12, v14, v16
+    div-double/2addr v4, v6
 
     goto :goto_2
 .end method
 
 .method public static RGBToHSL(III[F)V
-    .locals 12
+    .locals 11
     .param p0    # I
         .annotation build Landroid/support/annotation/IntRange;
             from = 0x0L
@@ -588,171 +534,147 @@
         .end annotation
     .end param
 
-    int-to-float v9, p0
+    const/high16 v10, 0x43b40000    # 360.0f
 
-    const/high16 v10, 0x437f0000    # 255.0f
+    const/high16 v4, 0x437f0000    # 255.0f
 
-    div-float v7, v9, v10
+    const/high16 v9, 0x40000000    # 2.0f
 
-    int-to-float v9, p1
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    const/high16 v10, 0x437f0000    # 255.0f
+    const/4 v1, 0x0
 
-    div-float v2, v9, v10
+    int-to-float v0, p0
 
-    int-to-float v9, p2
+    div-float/2addr v0, v4
 
-    const/high16 v10, 0x437f0000    # 255.0f
+    int-to-float v2, p1
 
-    div-float v0, v9, v10
+    div-float/2addr v2, v4
 
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
+    int-to-float v3, p2
 
-    move-result v9
+    div-float/2addr v3, v4
 
-    invoke-static {v7, v9}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
+
+    move-result v4
+
+    invoke-static {v0, v4}, Ljava/lang/Math;->max(FF)F
+
+    move-result v4
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
-    invoke-static {v2, v0}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, v5}, Ljava/lang/Math;->min(FF)F
 
-    move-result v9
+    move-result v5
 
-    invoke-static {v7, v9}, Ljava/lang/Math;->min(FF)F
+    sub-float v6, v4, v5
 
-    move-result v6
+    add-float v7, v4, v5
 
-    sub-float v1, v5, v6
+    div-float/2addr v7, v9
 
-    add-float v9, v5, v6
+    cmpl-float v5, v4, v5
 
-    const/high16 v10, 0x40000000    # 2.0f
+    if-nez v5, :cond_1
 
-    div-float v4, v9, v10
+    move v0, v1
 
-    cmpl-float v9, v5, v6
+    move v2, v1
 
-    if-nez v9, :cond_1
+    :goto_0
+    const/high16 v3, 0x42700000    # 60.0f
 
-    const/4 v8, 0x0
+    mul-float/2addr v0, v3
+
+    rem-float/2addr v0, v10
+
+    cmpg-float v3, v0, v1
+
+    if-gez v3, :cond_0
+
+    add-float/2addr v0, v10
+
+    :cond_0
+    invoke-static {v0, v1, v10}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
+
+    move-result v0
 
     const/4 v3, 0x0
 
-    :goto_0
-    const/high16 v9, 0x42700000    # 60.0f
+    aput v0, p3, v3
 
-    mul-float/2addr v9, v3
+    invoke-static {v2, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
 
-    const/high16 v10, 0x43b40000    # 360.0f
+    move-result v0
 
-    rem-float v3, v9, v10
+    const/4 v2, 0x1
 
-    const/4 v9, 0x0
+    aput v0, p3, v2
 
-    cmpg-float v9, v3, v9
+    invoke-static {v7, v1, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
 
-    if-gez v9, :cond_0
+    move-result v0
 
-    const/high16 v9, 0x43b40000    # 360.0f
+    const/4 v1, 0x2
 
-    add-float/2addr v3, v9
-
-    :cond_0
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/high16 v11, 0x43b40000    # 360.0f
-
-    invoke-static {v3, v10, v11}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
-
-    move-result v10
-
-    aput v10, p3, v9
-
-    const/4 v9, 0x1
-
-    const/4 v10, 0x0
-
-    const/high16 v11, 0x3f800000    # 1.0f
-
-    invoke-static {v8, v10, v11}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
-
-    move-result v10
-
-    aput v10, p3, v9
-
-    const/4 v9, 0x2
-
-    const/4 v10, 0x0
-
-    const/high16 v11, 0x3f800000    # 1.0f
-
-    invoke-static {v4, v10, v11}, Landroid/support/v4/graphics/ColorUtils;->constrain(FFF)F
-
-    move-result v10
-
-    aput v10, p3, v9
+    aput v0, p3, v1
 
     return-void
 
     :cond_1
-    cmpl-float v9, v5, v7
+    cmpl-float v5, v4, v0
 
-    if-nez v9, :cond_2
+    if-nez v5, :cond_2
 
-    sub-float v9, v2, v0
+    sub-float v0, v2, v3
 
-    div-float/2addr v9, v1
+    div-float/2addr v0, v6
 
-    const/high16 v10, 0x40c00000    # 6.0f
+    const/high16 v2, 0x40c00000    # 6.0f
 
-    rem-float v3, v9, v10
+    rem-float/2addr v0, v2
 
     :goto_1
-    const/high16 v9, 0x40000000    # 2.0f
+    mul-float v2, v9, v7
 
-    mul-float/2addr v9, v4
+    sub-float/2addr v2, v8
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
-    sub-float/2addr v9, v10
+    move-result v2
 
-    invoke-static {v9}, Ljava/lang/Math;->abs(F)F
+    sub-float v2, v8, v2
 
-    move-result v9
-
-    const/high16 v10, 0x3f800000    # 1.0f
-
-    sub-float v9, v10, v9
-
-    div-float v8, v1, v9
+    div-float v2, v6, v2
 
     goto :goto_0
 
     :cond_2
-    cmpl-float v9, v5, v2
+    cmpl-float v4, v4, v2
 
-    if-nez v9, :cond_3
+    if-nez v4, :cond_3
 
-    sub-float v9, v0, v7
+    sub-float v0, v3, v0
 
-    div-float/2addr v9, v1
+    div-float/2addr v0, v6
 
-    const/high16 v10, 0x40000000    # 2.0f
-
-    add-float v3, v9, v10
+    add-float/2addr v0, v9
 
     goto :goto_1
 
     :cond_3
-    sub-float v9, v7, v2
+    sub-float/2addr v0, v2
 
-    div-float/2addr v9, v1
+    div-float/2addr v0, v6
 
-    const/high16 v10, 0x40800000    # 4.0f
+    const/high16 v2, 0x40800000    # 4.0f
 
-    add-float v3, v9, v10
+    add-float/2addr v0, v2
 
     goto :goto_1
 .end method
@@ -804,7 +726,7 @@
 .end method
 
 .method public static RGBToXYZ(III[D)V
-    .locals 12
+    .locals 10
     .param p0    # I
         .annotation build Landroid/support/annotation/IntRange;
             from = 0x0L
@@ -828,175 +750,175 @@
         .end annotation
     .end param
 
-    array-length v6, p3
+    array-length v0, p3
 
-    const/4 v7, 0x3
+    const/4 v1, 0x3
 
-    if-ne v6, v7, :cond_0
+    if-ne v0, v1, :cond_0
 
-    int-to-double v6, p0
+    int-to-double v0, p0
 
-    const-wide v8, 0x406fe00000000000L    # 255.0
+    const-wide v2, 0x406fe00000000000L    # 255.0
 
-    div-double v4, v6, v8
+    div-double/2addr v0, v2
+
+    const-wide v2, 0x3fa4b5dcc63f1412L    # 0.04045
+
+    cmpg-double v2, v0, v2
+
+    if-gez v2, :cond_1
+
+    const-wide v2, 0x4029d70a3d70a3d7L    # 12.92
+
+    div-double/2addr v0, v2
+
+    :goto_0
+    int-to-double v2, p1
+
+    const-wide v4, 0x406fe00000000000L    # 255.0
+
+    div-double/2addr v2, v4
+
+    const-wide v4, 0x3fa4b5dcc63f1412L    # 0.04045
+
+    cmpg-double v4, v2, v4
+
+    if-gez v4, :cond_2
+
+    const-wide v4, 0x4029d70a3d70a3d7L    # 12.92
+
+    div-double/2addr v2, v4
+
+    :goto_1
+    int-to-double v4, p2
+
+    const-wide v6, 0x406fe00000000000L    # 255.0
+
+    div-double/2addr v4, v6
 
     const-wide v6, 0x3fa4b5dcc63f1412L    # 0.04045
 
     cmpg-double v6, v4, v6
 
-    if-gez v6, :cond_1
+    if-gez v6, :cond_3
 
     const-wide v6, 0x4029d70a3d70a3d7L    # 12.92
 
     div-double/2addr v4, v6
 
-    :goto_0
-    int-to-double v6, p1
-
-    const-wide v8, 0x406fe00000000000L    # 255.0
-
-    div-double v2, v6, v8
-
-    const-wide v6, 0x3fa4b5dcc63f1412L    # 0.04045
-
-    cmpg-double v6, v2, v6
-
-    if-gez v6, :cond_2
-
-    const-wide v6, 0x4029d70a3d70a3d7L    # 12.92
-
-    div-double/2addr v2, v6
-
-    :goto_1
-    int-to-double v6, p2
-
-    const-wide v8, 0x406fe00000000000L    # 255.0
-
-    div-double v0, v6, v8
-
-    const-wide v6, 0x3fa4b5dcc63f1412L    # 0.04045
-
-    cmpg-double v6, v0, v6
-
-    if-gez v6, :cond_3
-
-    const-wide v6, 0x4029d70a3d70a3d7L    # 12.92
-
-    div-double/2addr v0, v6
-
     :goto_2
-    const/4 v6, 0x0
+    const-wide v6, 0x3fda64c2f837b4a2L    # 0.4124
 
-    const-wide v8, 0x3fda64c2f837b4a2L    # 0.4124
+    mul-double/2addr v6, v0
 
-    mul-double/2addr v8, v4
+    const-wide v8, 0x3fd6e2eb1c432ca5L    # 0.3576
 
-    const-wide v10, 0x3fd6e2eb1c432ca5L    # 0.3576
+    mul-double/2addr v8, v2
 
-    mul-double/2addr v10, v2
+    add-double/2addr v6, v8
 
-    add-double/2addr v8, v10
-
-    const-wide v10, 0x3fc71a9fbe76c8b4L    # 0.1805
-
-    mul-double/2addr v10, v0
-
-    add-double/2addr v8, v10
-
-    const-wide/high16 v10, 0x4059000000000000L    # 100.0
-
-    mul-double/2addr v8, v10
-
-    aput-wide v8, p3, v6
-
-    const/4 v6, 0x1
-
-    const-wide v8, 0x3fcb367a0f9096bcL    # 0.2126
+    const-wide v8, 0x3fc71a9fbe76c8b4L    # 0.1805
 
     mul-double/2addr v8, v4
 
-    const-wide v10, 0x3fe6e2eb1c432ca5L    # 0.7152
+    add-double/2addr v6, v8
 
-    mul-double/2addr v10, v2
+    const-wide/high16 v8, 0x4059000000000000L    # 100.0
 
-    add-double/2addr v8, v10
+    mul-double/2addr v6, v8
 
-    const-wide v10, 0x3fb27bb2fec56d5dL    # 0.0722
+    const/4 v8, 0x0
 
-    mul-double/2addr v10, v0
+    aput-wide v6, p3, v8
 
-    add-double/2addr v8, v10
+    const-wide v6, 0x3fcb367a0f9096bcL    # 0.2126
 
-    const-wide/high16 v10, 0x4059000000000000L    # 100.0
+    mul-double/2addr v6, v0
 
-    mul-double/2addr v8, v10
+    const-wide v8, 0x3fe6e2eb1c432ca5L    # 0.7152
 
-    aput-wide v8, p3, v6
+    mul-double/2addr v8, v2
 
-    const/4 v6, 0x2
+    add-double/2addr v6, v8
 
-    const-wide v8, 0x3f93c36113404ea5L    # 0.0193
+    const-wide v8, 0x3fb27bb2fec56d5dL    # 0.0722
 
     mul-double/2addr v8, v4
 
-    const-wide v10, 0x3fbe83e425aee632L    # 0.1192
+    add-double/2addr v6, v8
 
-    mul-double/2addr v10, v2
+    const-wide/high16 v8, 0x4059000000000000L    # 100.0
 
-    add-double/2addr v8, v10
+    mul-double/2addr v6, v8
 
-    const-wide v10, 0x3fee6a7ef9db22d1L    # 0.9505
+    const/4 v8, 0x1
 
-    mul-double/2addr v10, v0
+    aput-wide v6, p3, v8
 
-    add-double/2addr v8, v10
+    const-wide v6, 0x3f93c36113404ea5L    # 0.0193
 
-    const-wide/high16 v10, 0x4059000000000000L    # 100.0
+    mul-double/2addr v0, v6
 
-    mul-double/2addr v8, v10
+    const-wide v6, 0x3fbe83e425aee632L    # 0.1192
 
-    aput-wide v8, p3, v6
+    mul-double/2addr v2, v6
+
+    add-double/2addr v0, v2
+
+    const-wide v2, 0x3fee6a7ef9db22d1L    # 0.9505
+
+    mul-double/2addr v2, v4
+
+    add-double/2addr v0, v2
+
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
+
+    mul-double/2addr v0, v2
+
+    const/4 v2, 0x2
+
+    aput-wide v0, p3, v2
 
     return-void
 
     :cond_0
-    new-instance v6, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v7, "outXyz must have a length of 3."
+    const-string/jumbo v1, "outXyz must have a length of 3."
 
-    invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     :cond_1
-    const-wide v6, 0x3fac28f5c28f5c29L    # 0.055
+    const-wide v2, 0x3fac28f5c28f5c29L    # 0.055
 
-    add-double/2addr v6, v4
+    add-double/2addr v0, v2
 
-    const-wide v8, 0x3ff0e147ae147ae1L    # 1.055
+    const-wide v2, 0x3ff0e147ae147ae1L    # 1.055
 
-    div-double/2addr v6, v8
+    div-double/2addr v0, v2
 
-    const-wide v8, 0x4003333333333333L    # 2.4
+    const-wide v2, 0x4003333333333333L    # 2.4
 
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v4
+    move-result-wide v0
 
     goto/16 :goto_0
 
     :cond_2
-    const-wide v6, 0x3fac28f5c28f5c29L    # 0.055
+    const-wide v4, 0x3fac28f5c28f5c29L    # 0.055
 
-    add-double/2addr v6, v2
+    add-double/2addr v2, v4
 
-    const-wide v8, 0x3ff0e147ae147ae1L    # 1.055
+    const-wide v4, 0x3ff0e147ae147ae1L    # 1.055
 
-    div-double/2addr v6, v8
+    div-double/2addr v2, v4
 
-    const-wide v8, 0x4003333333333333L    # 2.4
+    const-wide v4, 0x4003333333333333L    # 2.4
 
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v2
 
@@ -1005,23 +927,23 @@
     :cond_3
     const-wide v6, 0x3fac28f5c28f5c29L    # 0.055
 
-    add-double/2addr v6, v0
+    add-double/2addr v4, v6
 
-    const-wide v8, 0x3ff0e147ae147ae1L    # 1.055
+    const-wide v6, 0x3ff0e147ae147ae1L    # 1.055
 
-    div-double/2addr v6, v8
+    div-double/2addr v4, v6
 
-    const-wide v8, 0x4003333333333333L    # 2.4
+    const-wide v6, 0x4003333333333333L    # 2.4
 
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v0
+    move-result-wide v4
 
     goto/16 :goto_2
 .end method
 
 .method public static XYZToColor(DDD)I
-    .locals 12
+    .locals 8
     .param p0    # D
         .annotation build Landroid/support/annotation/FloatRange;
             from = 0.0
@@ -1043,85 +965,85 @@
     .annotation build Landroid/support/annotation/ColorInt;
     .end annotation
 
-    const-wide v6, 0x4009ecbfb15b573fL    # 3.2406
+    const-wide v0, 0x4009ecbfb15b573fL    # 3.2406
 
-    mul-double/2addr v6, p0
+    mul-double/2addr v0, p0
 
-    const-wide v8, -0x400767a0f9096bbaL    # -1.5372
+    const-wide v2, -0x400767a0f9096bbaL    # -1.5372
 
-    mul-double/2addr v8, p2
+    mul-double/2addr v2, p2
 
-    add-double/2addr v6, v8
+    add-double/2addr v0, v2
 
-    const-wide v8, -0x402016f0068db8bbL    # -0.4986
+    const-wide v2, -0x402016f0068db8bbL    # -0.4986
 
-    mul-double v8, v8, p4
+    mul-double/2addr v2, p4
 
-    add-double/2addr v6, v8
+    add-double/2addr v0, v2
 
-    const-wide/high16 v8, 0x4059000000000000L    # 100.0
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
 
-    div-double v4, v6, v8
+    div-double/2addr v0, v2
 
-    const-wide v6, -0x4010fec56d5cfaadL    # -0.9689
+    const-wide v2, -0x4010fec56d5cfaadL    # -0.9689
 
-    mul-double/2addr v6, p0
+    mul-double/2addr v2, p0
 
-    const-wide v8, 0x3ffe0346dc5d6388L    # 1.8758
+    const-wide v4, 0x3ffe0346dc5d6388L    # 1.8758
 
-    mul-double/2addr v8, p2
+    mul-double/2addr v4, p2
 
-    add-double/2addr v6, v8
+    add-double/2addr v2, v4
 
-    const-wide v8, 0x3fa53f7ced916873L    # 0.0415
+    const-wide v4, 0x3fa53f7ced916873L    # 0.0415
 
-    mul-double v8, v8, p4
+    mul-double/2addr v4, p4
 
-    add-double/2addr v6, v8
+    add-double/2addr v2, v4
 
-    const-wide/high16 v8, 0x4059000000000000L    # 100.0
+    const-wide/high16 v4, 0x4059000000000000L    # 100.0
 
-    div-double v2, v6, v8
+    div-double/2addr v2, v4
 
-    const-wide v6, 0x3fac84b5dcc63f14L    # 0.0557
+    const-wide v4, 0x3fac84b5dcc63f14L    # 0.0557
 
-    mul-double/2addr v6, p0
+    mul-double/2addr v4, p0
 
-    const-wide v8, -0x4035e353f7ced917L    # -0.204
+    const-wide v6, -0x4035e353f7ced917L    # -0.204
 
-    mul-double/2addr v8, p2
+    mul-double/2addr v6, p2
 
-    add-double/2addr v6, v8
+    add-double/2addr v4, v6
 
-    const-wide v8, 0x3ff0e978d4fdf3b6L    # 1.057
+    const-wide v6, 0x3ff0e978d4fdf3b6L    # 1.057
 
-    mul-double v8, v8, p4
+    mul-double/2addr v6, p4
 
-    add-double/2addr v6, v8
+    add-double/2addr v4, v6
 
-    const-wide/high16 v8, 0x4059000000000000L    # 100.0
+    const-wide/high16 v6, 0x4059000000000000L    # 100.0
 
-    div-double v0, v6, v8
+    div-double/2addr v4, v6
 
     const-wide v6, 0x3f69a5c37387b719L    # 0.0031308
 
-    cmpl-double v6, v4, v6
+    cmpl-double v6, v0, v6
 
     if-lez v6, :cond_0
 
     const-wide v6, 0x3fdaaaaaaaaaaaabL    # 0.4166666666666667
 
-    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v6
+    move-result-wide v0
 
-    const-wide v8, 0x3ff0e147ae147ae1L    # 1.055
+    const-wide v6, 0x3ff0e147ae147ae1L    # 1.055
 
-    mul-double/2addr v6, v8
+    mul-double/2addr v0, v6
 
-    const-wide v8, 0x3fac28f5c28f5c29L    # 0.055
+    const-wide v6, 0x3fac28f5c28f5c29L    # 0.055
 
-    sub-double v4, v6, v8
+    sub-double/2addr v0, v6
 
     :goto_0
     const-wide v6, 0x3f69a5c37387b719L    # 0.0031308
@@ -1134,102 +1056,102 @@
 
     invoke-static {v2, v3, v6, v7}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v6
+    move-result-wide v2
 
-    const-wide v8, 0x3ff0e147ae147ae1L    # 1.055
+    const-wide v6, 0x3ff0e147ae147ae1L    # 1.055
 
-    mul-double/2addr v6, v8
+    mul-double/2addr v2, v6
 
-    const-wide v8, 0x3fac28f5c28f5c29L    # 0.055
+    const-wide v6, 0x3fac28f5c28f5c29L    # 0.055
 
-    sub-double v2, v6, v8
+    sub-double/2addr v2, v6
 
     :goto_1
     const-wide v6, 0x3f69a5c37387b719L    # 0.0031308
 
-    cmpl-double v6, v0, v6
+    cmpl-double v6, v4, v6
 
     if-lez v6, :cond_2
 
     const-wide v6, 0x3fdaaaaaaaaaaaabL    # 0.4166666666666667
 
-    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->pow(DD)D
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->pow(DD)D
 
-    move-result-wide v6
+    move-result-wide v4
 
-    const-wide v8, 0x3ff0e147ae147ae1L    # 1.055
+    const-wide v6, 0x3ff0e147ae147ae1L    # 1.055
 
-    mul-double/2addr v6, v8
+    mul-double/2addr v4, v6
 
-    const-wide v8, 0x3fac28f5c28f5c29L    # 0.055
+    const-wide v6, 0x3fac28f5c28f5c29L    # 0.055
 
-    sub-double v0, v6, v8
+    sub-double/2addr v4, v6
 
     :goto_2
     const-wide v6, 0x406fe00000000000L    # 255.0
 
-    mul-double/2addr v6, v4
+    mul-double/2addr v0, v6
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->round(D)J
+    invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
 
-    move-result-wide v6
+    move-result-wide v0
 
-    long-to-int v6, v6
+    long-to-int v0, v0
 
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
-    const/16 v8, 0xff
+    const/16 v6, 0xff
 
-    invoke-static {v6, v7, v8}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+    invoke-static {v0, v1, v6}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
-    move-result v6
+    move-result v0
 
-    const-wide v8, 0x406fe00000000000L    # 255.0
+    const-wide v6, 0x406fe00000000000L    # 255.0
 
-    mul-double/2addr v8, v2
+    mul-double/2addr v2, v6
 
-    invoke-static {v8, v9}, Ljava/lang/Math;->round(D)J
+    invoke-static {v2, v3}, Ljava/lang/Math;->round(D)J
 
-    move-result-wide v8
+    move-result-wide v2
 
-    long-to-int v7, v8
+    long-to-int v1, v2
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
-    const/16 v9, 0xff
+    const/16 v3, 0xff
 
-    invoke-static {v7, v8, v9}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+    invoke-static {v1, v2, v3}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
-    move-result v7
+    move-result v1
 
-    const-wide v8, 0x406fe00000000000L    # 255.0
+    const-wide v2, 0x406fe00000000000L    # 255.0
 
-    mul-double/2addr v8, v0
+    mul-double/2addr v2, v4
 
-    invoke-static {v8, v9}, Ljava/lang/Math;->round(D)J
+    invoke-static {v2, v3}, Ljava/lang/Math;->round(D)J
 
-    move-result-wide v8
+    move-result-wide v2
 
-    long-to-int v8, v8
+    long-to-int v2, v2
 
-    const/4 v9, 0x0
+    const/4 v3, 0x0
 
-    const/16 v10, 0xff
+    const/16 v4, 0xff
 
-    invoke-static {v8, v9, v10}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
+    invoke-static {v2, v3, v4}, Landroid/support/v4/graphics/ColorUtils;->constrain(III)I
 
-    move-result v8
+    move-result v2
 
-    invoke-static {v6, v7, v8}, Landroid/graphics/Color;->rgb(III)I
+    invoke-static {v0, v1, v2}, Landroid/graphics/Color;->rgb(III)I
 
-    move-result v6
+    move-result v0
 
-    return v6
+    return v0
 
     :cond_0
     const-wide v6, 0x4029d70a3d70a3d7L    # 12.92
 
-    mul-double/2addr v4, v6
+    mul-double/2addr v0, v6
 
     goto :goto_0
 
@@ -1243,13 +1165,13 @@
     :cond_2
     const-wide v6, 0x4029d70a3d70a3d7L    # 12.92
 
-    mul-double/2addr v0, v6
+    mul-double/2addr v4, v6
 
     goto :goto_2
 .end method
 
 .method public static XYZToLAB(DDD[D)V
-    .locals 8
+    .locals 12
     .param p0    # D
         .annotation build Landroid/support/annotation/FloatRange;
             from = 0.0
@@ -1273,88 +1195,90 @@
         .end annotation
     .end param
 
-    array-length v0, p6
+    move-object/from16 v0, p6
 
-    const/4 v1, 0x3
+    array-length v2, v0
 
-    if-ne v0, v1, :cond_0
+    const/4 v3, 0x3
 
-    const-wide v0, 0x4057c3020c49ba5eL    # 95.047
+    if-ne v2, v3, :cond_0
 
-    div-double v0, p0, v0
+    const-wide v2, 0x4057c3020c49ba5eL    # 95.047
 
-    invoke-static {v0, v1}, Landroid/support/v4/graphics/ColorUtils;->pivotXyzComponent(D)D
+    div-double v2, p0, v2
 
-    move-result-wide p0
-
-    const-wide/high16 v0, 0x4059000000000000L    # 100.0
-
-    div-double v0, p2, v0
-
-    invoke-static {v0, v1}, Landroid/support/v4/graphics/ColorUtils;->pivotXyzComponent(D)D
-
-    move-result-wide p2
-
-    const-wide v0, 0x405b3883126e978dL    # 108.883
-
-    div-double v0, p4, v0
-
-    invoke-static {v0, v1}, Landroid/support/v4/graphics/ColorUtils;->pivotXyzComponent(D)D
-
-    move-result-wide p4
-
-    const/4 v0, 0x0
-
-    const-wide/16 v2, 0x0
-
-    const-wide/high16 v4, 0x405d000000000000L    # 116.0
-
-    mul-double/2addr v4, p2
-
-    const-wide/high16 v6, 0x4030000000000000L    # 16.0
-
-    sub-double/2addr v4, v6
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(DD)D
+    invoke-static {v2, v3}, Landroid/support/v4/graphics/ColorUtils;->pivotXyzComponent(D)D
 
     move-result-wide v2
 
-    aput-wide v2, p6, v0
+    const-wide/high16 v4, 0x4059000000000000L    # 100.0
 
-    const/4 v0, 0x1
+    div-double v4, p2, v4
 
-    sub-double v2, p0, p2
+    invoke-static {v4, v5}, Landroid/support/v4/graphics/ColorUtils;->pivotXyzComponent(D)D
 
-    const-wide v4, 0x407f400000000000L    # 500.0
+    move-result-wide v4
 
-    mul-double/2addr v2, v4
+    const-wide v6, 0x405b3883126e978dL    # 108.883
 
-    aput-wide v2, p6, v0
+    div-double v6, p4, v6
 
-    const/4 v0, 0x2
+    invoke-static {v6, v7}, Landroid/support/v4/graphics/ColorUtils;->pivotXyzComponent(D)D
 
-    sub-double v2, p2, p4
+    move-result-wide v6
+
+    const-wide/high16 v8, 0x405d000000000000L    # 116.0
+
+    mul-double/2addr v8, v4
+
+    const-wide/high16 v10, 0x4030000000000000L    # 16.0
+
+    sub-double/2addr v8, v10
+
+    const-wide/16 v10, 0x0
+
+    invoke-static {v10, v11, v8, v9}, Ljava/lang/Math;->max(DD)D
+
+    move-result-wide v8
+
+    const/4 v10, 0x0
+
+    aput-wide v8, p6, v10
+
+    sub-double/2addr v2, v4
+
+    const-wide v8, 0x407f400000000000L    # 500.0
+
+    mul-double/2addr v2, v8
+
+    const/4 v8, 0x1
+
+    aput-wide v2, p6, v8
+
+    sub-double v2, v4, v6
 
     const-wide/high16 v4, 0x4069000000000000L    # 200.0
 
     mul-double/2addr v2, v4
 
-    aput-wide v2, p6, v0
+    const/4 v4, 0x2
+
+    aput-wide v2, p6, v4
 
     return-void
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "outLab must have a length of 3."
+    const-string/jumbo v3, "outLab must have a length of 3."
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw v2
 .end method
 
 .method public static blendARGB(IIF)I
-    .locals 9
+    .locals 5
     .param p0    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
@@ -1372,95 +1296,95 @@
     .annotation build Landroid/support/annotation/ColorInt;
     .end annotation
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    sub-float v3, v5, p2
+    sub-float/2addr v0, p2
 
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v5
+    move-result v1
 
-    int-to-float v5, v5
+    int-to-float v1, v1
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v1, v0
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v6
+    move-result v2
 
-    int-to-float v6, v6
+    int-to-float v2, v2
 
-    mul-float/2addr v6, p2
+    mul-float/2addr v2, p2
 
-    add-float v0, v5, v6
+    add-float/2addr v1, v2
 
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
-    move-result v5
+    move-result v2
 
-    int-to-float v5, v5
+    int-to-float v2, v2
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v2, v0
 
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
-    move-result v6
+    move-result v3
 
-    int-to-float v6, v6
+    int-to-float v3, v3
 
-    mul-float/2addr v6, p2
+    mul-float/2addr v3, p2
 
-    add-float v4, v5, v6
+    add-float/2addr v2, v3
 
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
-    move-result v5
+    move-result v3
 
-    int-to-float v5, v5
+    int-to-float v3, v3
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v3, v0
 
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
-    move-result v6
+    move-result v4
 
-    int-to-float v6, v6
+    int-to-float v4, v4
 
-    mul-float/2addr v6, p2
+    mul-float/2addr v4, p2
 
-    add-float v2, v5, v6
+    add-float/2addr v3, v4
 
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
-    move-result v5
+    move-result v4
 
-    int-to-float v5, v5
+    int-to-float v4, v4
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v0, v4
 
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
-    move-result v6
+    move-result v4
 
-    int-to-float v6, v6
+    int-to-float v4, v4
 
-    mul-float/2addr v6, p2
+    mul-float/2addr v4, p2
 
-    add-float v1, v5, v6
+    add-float/2addr v0, v4
 
-    float-to-int v5, v0
+    float-to-int v1, v1
 
-    float-to-int v6, v4
+    float-to-int v2, v2
 
-    float-to-int v7, v2
+    float-to-int v3, v3
 
-    float-to-int v8, v1
+    float-to-int v0, v0
 
-    invoke-static {v5, v6, v7, v8}, Landroid/graphics/Color;->argb(IIII)I
+    invoke-static {v1, v2, v3, v0}, Landroid/graphics/Color;->argb(IIII)I
 
-    move-result v5
+    move-result v0
 
-    return v5
+    return v0
 .end method
 
 .method public static blendHSL([F[FF[F)V
@@ -1490,15 +1414,15 @@
 
     const/4 v3, 0x0
 
-    array-length v1, p3
+    array-length v0, p3
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v1, :cond_0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    sub-float v0, v1, p2
+    sub-float/2addr v0, p2
 
     aget v1, p0, v3
 
@@ -1524,26 +1448,26 @@
 
     aget v1, p0, v5
 
-    mul-float/2addr v1, v0
+    mul-float/2addr v0, v1
 
-    aget v2, p1, v5
+    aget v1, p1, v5
 
-    mul-float/2addr v2, p2
+    mul-float/2addr v1, p2
 
-    add-float/2addr v1, v2
+    add-float/2addr v0, v1
 
-    aput v1, p3, v5
+    aput v0, p3, v5
 
     return-void
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "result must have a length of 3."
+    const-string/jumbo v1, "result must have a length of 3."
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method
 
 .method public static blendLAB([D[DD[D)V
@@ -1573,15 +1497,15 @@
 
     const/4 v6, 0x0
 
-    array-length v2, p4
+    array-length v0, p4
 
-    const/4 v3, 0x3
+    const/4 v1, 0x3
 
-    if-ne v2, v3, :cond_0
+    if-ne v0, v1, :cond_0
 
-    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    sub-double v0, v2, p2
+    sub-double/2addr v0, p2
 
     aget-wide v2, p0, v6
 
@@ -1609,30 +1533,30 @@
 
     aget-wide v2, p0, v8
 
-    mul-double/2addr v2, v0
+    mul-double/2addr v0, v2
 
-    aget-wide v4, p1, v8
+    aget-wide v2, p1, v8
 
-    mul-double/2addr v4, p2
+    mul-double/2addr v2, p2
 
-    add-double/2addr v2, v4
+    add-double/2addr v0, v2
 
-    aput-wide v2, p4, v8
+    aput-wide v0, p4, v8
 
     return-void
 
     :cond_0
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "outResult must have a length of 3."
+    const-string/jumbo v1, "outResult must have a length of 3."
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 .end method
 
 .method public static calculateContrast(II)D
-    .locals 8
+    .locals 6
     .param p0    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
@@ -1642,34 +1566,34 @@
         .end annotation
     .end param
 
-    const/16 v5, 0xff
+    const/16 v1, 0xff
 
-    const-wide v6, 0x3fa999999999999aL    # 0.05
+    const-wide v4, 0x3fa999999999999aL    # 0.05
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v4
+    move-result v0
 
-    if-ne v4, v5, :cond_0
+    if-ne v0, v1, :cond_0
 
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v4
+    move-result v0
 
-    if-lt v4, v5, :cond_1
+    if-lt v0, v1, :cond_1
 
     :goto_0
     invoke-static {p0}, Landroid/support/v4/graphics/ColorUtils;->calculateLuminance(I)D
 
-    move-result-wide v4
+    move-result-wide v0
 
-    add-double v0, v4, v6
+    add-double/2addr v0, v4
 
     invoke-static {p1}, Landroid/support/v4/graphics/ColorUtils;->calculateLuminance(I)D
 
-    move-result-wide v4
+    move-result-wide v2
 
-    add-double v2, v4, v6
+    add-double/2addr v2, v4
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(DD)D
 
@@ -1677,40 +1601,40 @@
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(DD)D
 
-    move-result-wide v6
+    move-result-wide v0
 
-    div-double/2addr v4, v6
+    div-double v0, v4, v0
 
-    return-wide v4
+    return-wide v0
 
     :cond_0
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "background can not be translucent: #"
+    const-string/jumbo v2, "background can not be translucent: #"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     :cond_1
     invoke-static {p0, p1}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
@@ -1721,7 +1645,7 @@
 .end method
 
 .method public static calculateLuminance(I)D
-    .locals 6
+    .locals 4
     .param p0    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
@@ -1739,17 +1663,17 @@
 
     const/4 v1, 0x1
 
-    aget-wide v2, v0, v1
+    aget-wide v0, v0, v1
 
-    const-wide/high16 v4, 0x4059000000000000L    # 100.0
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
 
-    div-double/2addr v2, v4
+    div-double/2addr v0, v2
 
-    return-wide v2
+    return-wide v0
 .end method
 
 .method public static calculateMinimumAlpha(IIF)I
-    .locals 10
+    .locals 8
     .param p0    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
@@ -1759,110 +1683,112 @@
         .end annotation
     .end param
 
-    const/16 v8, 0xff
-
-    invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
-
-    move-result v5
-
-    if-ne v5, v8, :cond_0
-
-    invoke-static {p0, v8}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
-
-    move-result v4
-
-    invoke-static {v4, p1}, Landroid/support/v4/graphics/ColorUtils;->calculateContrast(II)D
-
-    move-result-wide v6
-
-    float-to-double v8, p2
-
-    cmpg-double v5, v6, v8
-
-    if-gez v5, :cond_1
-
-    const/4 v5, -0x1
-
-    return v5
-
-    :cond_0
-    new-instance v5, Ljava/lang/IllegalArgumentException;
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "background can not be translucent: #"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-direct {v5, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v5
-
-    :cond_1
     const/4 v2, 0x0
-
-    const/4 v1, 0x0
 
     const/16 v0, 0xff
 
-    :goto_0
-    const/16 v5, 0xa
+    invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
-    if-le v2, v5, :cond_3
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    invoke-static {p0, v0}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
+
+    move-result v1
+
+    invoke-static {v1, p1}, Landroid/support/v4/graphics/ColorUtils;->calculateContrast(II)D
+
+    move-result-wide v4
+
+    float-to-double v6, p2
+
+    cmpg-double v1, v4, v6
+
+    if-gez v1, :cond_1
+
+    const/4 v0, -0x1
+
+    return v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "background can not be translucent: #"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    move v3, v2
+
+    :goto_0
+    const/16 v1, 0xa
+
+    if-le v3, v1, :cond_3
 
     :cond_2
     return v0
 
     :cond_3
-    sub-int v5, v0, v1
+    sub-int v1, v0, v2
 
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
-    if-le v5, v8, :cond_2
+    if-le v1, v4, :cond_2
 
-    add-int v5, v1, v0
+    add-int v1, v2, v0
 
-    div-int/lit8 v3, v5, 0x2
+    div-int/lit8 v1, v1, 0x2
 
-    invoke-static {p0, v3}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {p0, v1}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v4
 
     invoke-static {v4, p1}, Landroid/support/v4/graphics/ColorUtils;->calculateContrast(II)D
 
-    move-result-wide v6
+    move-result-wide v4
 
-    float-to-double v8, p2
+    float-to-double v6, p2
 
-    cmpg-double v5, v6, v8
+    cmpg-double v4, v4, v6
 
-    if-gez v5, :cond_4
-
-    move v1, v3
+    if-gez v4, :cond_4
 
     :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
+
+    move v2, v1
 
     goto :goto_0
 
     :cond_4
-    move v0, v3
+    move v0, v1
+
+    move v1, v2
 
     goto :goto_1
 .end method
@@ -2011,7 +1937,7 @@
 .end method
 
 .method public static compositeColors(II)I
-    .locals 8
+    .locals 7
     .param p0    # I
         .annotation build Landroid/support/annotation/ColorInt;
         .end annotation
@@ -2023,57 +1949,57 @@
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v2
+    move-result v0
 
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v3
+    move-result v1
 
-    invoke-static {v3, v2}, Landroid/support/v4/graphics/ColorUtils;->compositeAlpha(II)I
+    invoke-static {v1, v0}, Landroid/support/v4/graphics/ColorUtils;->compositeAlpha(II)I
 
-    move-result v0
+    move-result v2
 
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
 
-    move-result v6
+    move-result v3
 
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
-    move-result v7
+    move-result v4
 
-    invoke-static {v6, v3, v7, v2, v0}, Landroid/support/v4/graphics/ColorUtils;->compositeComponent(IIIII)I
+    invoke-static {v3, v1, v4, v0, v2}, Landroid/support/v4/graphics/ColorUtils;->compositeComponent(IIIII)I
 
-    move-result v5
+    move-result v3
 
     invoke-static {p0}, Landroid/graphics/Color;->green(I)I
 
-    move-result v6
+    move-result v4
 
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
-    move-result v7
+    move-result v5
 
-    invoke-static {v6, v3, v7, v2, v0}, Landroid/support/v4/graphics/ColorUtils;->compositeComponent(IIIII)I
+    invoke-static {v4, v1, v5, v0, v2}, Landroid/support/v4/graphics/ColorUtils;->compositeComponent(IIIII)I
 
     move-result v4
 
     invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
 
-    move-result v6
+    move-result v5
 
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
-    move-result v7
-
-    invoke-static {v6, v3, v7, v2, v0}, Landroid/support/v4/graphics/ColorUtils;->compositeComponent(IIIII)I
-
-    move-result v1
-
-    invoke-static {v0, v5, v4, v1}, Landroid/graphics/Color;->argb(IIII)I
-
     move-result v6
 
-    return v6
+    invoke-static {v5, v1, v6, v0, v2}, Landroid/support/v4/graphics/ColorUtils;->compositeComponent(IIIII)I
+
+    move-result v0
+
+    invoke-static {v2, v3, v4, v0}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method private static compositeComponent(IIIII)I
@@ -2214,9 +2140,9 @@
 .method private static getTempDouble3Array()[D
     .locals 2
 
-    sget-object v1, Landroid/support/v4/graphics/ColorUtils;->TEMP_ARRAY:Ljava/lang/ThreadLocal;
+    sget-object v0, Landroid/support/v4/graphics/ColorUtils;->TEMP_ARRAY:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2228,9 +2154,9 @@
     return-object v0
 
     :cond_0
-    const/4 v1, 0x3
+    const/4 v0, 0x3
 
-    new-array v0, v1, [D
+    new-array v0, v0, [D
 
     sget-object v1, Landroid/support/v4/graphics/ColorUtils;->TEMP_ARRAY:Ljava/lang/ThreadLocal;
 

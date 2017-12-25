@@ -32,7 +32,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0e0065
+    const v1, 0x7f0e0079
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -43,7 +43,7 @@
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     :cond_0
-    const v1, 0x7f04001b
+    const v1, 0x7f04001d
 
     const/4 v2, 0x0
 
@@ -53,7 +53,7 @@
 
     invoke-virtual {p2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    const v0, 0x7f0e0066
+    const v0, 0x7f0e007a
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0e006d
+    const v0, 0x7f0e0081
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

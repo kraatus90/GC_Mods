@@ -428,61 +428,61 @@
 .end method
 
 .method public build()Landroid/app/Notification;
-    .locals 4
+    .locals 3
 
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mActionExtrasList:Ljava/util/List;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mActionExtrasList:Ljava/util/List;
 
-    invoke-static {v2}, Landroid/support/v4/app/NotificationCompatJellybean;->buildActionExtrasMap(Ljava/util/List;)Landroid/util/SparseArray;
+    invoke-static {v0}, Landroid/support/v4/app/NotificationCompatJellybean;->buildActionExtrasMap(Ljava/util/List;)Landroid/util/SparseArray;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
     :goto_0
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->b:Landroid/app/Notification$Builder;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->b:Landroid/app/Notification$Builder;
 
-    iget-object v3, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mExtras:Landroid/os/Bundle;
+    iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mExtras:Landroid/os/Bundle;
 
-    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setExtras(Landroid/os/Bundle;)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setExtras(Landroid/os/Bundle;)Landroid/app/Notification$Builder;
 
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->b:Landroid/app/Notification$Builder;
+    iget-object v0, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->b:Landroid/app/Notification$Builder;
 
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
+    invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mContentView:Landroid/widget/RemoteViews;
+    iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mContentView:Landroid/widget/RemoteViews;
 
-    if-nez v2, :cond_1
+    if-nez v1, :cond_1
 
     :goto_1
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mBigContentView:Landroid/widget/RemoteViews;
+    iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mBigContentView:Landroid/widget/RemoteViews;
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
     :goto_2
-    return-object v1
+    return-object v0
 
     :cond_0
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mExtras:Landroid/os/Bundle;
+    iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mExtras:Landroid/os/Bundle;
 
-    const-string/jumbo v3, "android.support.actionExtras"
+    const-string/jumbo v2, "android.support.actionExtras"
 
-    invoke-virtual {v2, v3, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mContentView:Landroid/widget/RemoteViews;
+    iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mContentView:Landroid/widget/RemoteViews;
 
-    iput-object v2, v1, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    iput-object v1, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
     goto :goto_1
 
     :cond_2
-    iget-object v2, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mBigContentView:Landroid/widget/RemoteViews;
+    iget-object v1, p0, Landroid/support/v4/app/NotificationCompatKitKat$Builder;->mBigContentView:Landroid/widget/RemoteViews;
 
-    iput-object v2, v1, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    iput-object v1, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
     goto :goto_2
 .end method

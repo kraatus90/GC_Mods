@@ -55,13 +55,13 @@
 
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
-    move-result v2
+    move-result v1
 
-    sub-float v0, v1, v2
+    sub-float/2addr v0, v1
 
     float-to-double v2, v0
 
@@ -69,24 +69,24 @@
 
     if-gez v1, :cond_0
 
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
     :goto_0
-    return v1
+    return v0
 
     :cond_0
-    float-to-double v2, v0
+    float-to-double v0, v0
 
-    cmpl-double v1, v2, v4
+    cmpl-double v0, v0, v4
 
-    if-lez v1, :cond_1
+    if-lez v0, :cond_1
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method

@@ -844,6 +844,32 @@
     .end sparse-switch
 .end method
 
+.method private processCTSKeyEvent()V
+    .locals 3
+
+    new-instance v0, Landroid/os/Bundle;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Landroid/os/Bundle;-><init>(I)V
+
+    const-string/jumbo v1, "KEY_CODE"
+
+    const/16 v2, 0x1b
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    new-instance v1, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v2, Lcom/motorola/camera/fsm/camera/Trigger$Event;->KEY:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v1, v2, v0}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;Ljava/lang/Object;)V
+
+    invoke-virtual {p0, v1}, Lcom/motorola/camera/ui/UIManager;->dispatchEvent(Lcom/motorola/camera/fsm/camera/Trigger;)Z
+
+    return-void
+.end method
+
 .method private processKeyEvent(Landroid/view/KeyEvent;)V
     .locals 9
 
@@ -2837,6 +2863,16 @@
     return-void
 .end method
 
+.method public registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/UIManager;->mController:Lcom/motorola/camera/Controller;
+
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/Controller;->registerStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    return-void
+.end method
+
 .method public resume()V
     .locals 2
 
@@ -3062,6 +3098,28 @@
 
     invoke-virtual {v0, v5}, Lcom/motorola/camera/mcfmanagers/McfTouchManager;->setEnable(Z)V
 
+    sget-object v0, Lcom/motorola/camera/settings/SettingsManager;->CAPTURE_INTENT:Lcom/motorola/camera/settings/SettingsManager$Key;
+
+    invoke-static {v0}, Lcom/motorola/camera/settings/SettingsManager;->get(Lcom/motorola/camera/settings/SettingsManager$Key;)Lcom/motorola/camera/settings/Setting;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/Setting;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/motorola/camera/settings/CaptureIntent;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lcom/motorola/camera/settings/CaptureIntent;->isCTSMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-direct {p0}, Lcom/motorola/camera/ui/UIManager;->processCTSKeyEvent()V
+
     goto :goto_0
 
     :cond_7
@@ -3088,7 +3146,7 @@
 
     invoke-virtual {v0, v4}, Lcom/motorola/camera/mcfmanagers/McfTouchManager;->setEnable(Z)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_9
     sget-object v0, Lcom/motorola/camera/fsm/camera/states/SingleShotStates;->SS_CAPTURE_TIMER_KEY:Lcom/motorola/camera/fsm/camera/StateKey;
@@ -3168,6 +3226,16 @@
     iget-object v0, p0, Lcom/motorola/camera/ui/UIManager;->mController:Lcom/motorola/camera/Controller;
 
     invoke-virtual {v0, p1}, Lcom/motorola/camera/Controller;->unregisterStateChangeListener(Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+
+    return-void
+.end method
+
+.method public unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
+    .locals 1
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/UIManager;->mController:Lcom/motorola/camera/Controller;
+
+    invoke-virtual {v0, p1}, Lcom/motorola/camera/Controller;->unregisterStateChangeListener([Lcom/motorola/camera/fsm/camera/StateChangeListener;)V
 
     return-void
 .end method

@@ -361,11 +361,11 @@
 .method public final hashCode()I
     .locals 5
 
-    const/16 v0, 0x11
+    const/16 v1, 0x11
 
-    iget-object v1, p0, Lorg/apache/http/conn/routing/RouteTracker;->targetHost:Lorg/apache/http/HttpHost;
+    iget-object v0, p0, Lorg/apache/http/conn/routing/RouteTracker;->targetHost:Lorg/apache/http/HttpHost;
 
-    invoke-static {v0, v1}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
+    invoke-static {v1, v0}, Lorg/apache/http/util/LangUtils;->hashCode(ILjava/lang/Object;)I
 
     move-result v0
 
@@ -508,11 +508,11 @@
 .method public reset()V
     .locals 2
 
-    const/4 v0, 0x0
-
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lorg/apache/http/conn/routing/RouteTracker;->connected:Z
+
+    const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/apache/http/conn/routing/RouteTracker;->proxyChain:[Lorg/apache/http/HttpHost;
 

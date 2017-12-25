@@ -45,17 +45,17 @@
 
     new-array v0, v0, [C
 
-    const/4 v1, 0x0
+    const/16 v1, 0x3b
 
-    const/16 v2, 0x3b
+    const/4 v2, 0x0
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
-    const/4 v1, 0x1
+    const/16 v1, 0x2c
 
-    const/16 v2, 0x2c
+    const/4 v2, 0x1
 
-    aput-char v2, v0, v1
+    aput-char v1, v0, v2
 
     sput-object v0, Lorg/apache/http/message/BasicHeaderValueParser;->ALL_DELIMITERS:[C
 
@@ -121,13 +121,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 
@@ -160,13 +160,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 
@@ -199,13 +199,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 
@@ -238,13 +238,13 @@
 
     new-instance v1, Lorg/apache/http/message/ParserCursor;
 
-    const/4 v2, 0x0
-
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-direct {v1, v2, v3}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v3, v2}, Lorg/apache/http/message/ParserCursor;-><init>(II)V
 
     if-nez p1, :cond_0
 
@@ -349,19 +349,19 @@
 .method public parseHeaderElement(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/message/ParserCursor;)Lorg/apache/http/HeaderElement;
     .locals 4
 
-    const/4 v0, 0x0
+    const-string/jumbo v0, "Char array buffer"
 
-    const-string/jumbo v1, "Char array buffer"
+    invoke-static {p1, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {p1, v1}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const-string/jumbo v0, "Parser cursor"
 
-    const-string/jumbo v1, "Parser cursor"
-
-    invoke-static {p2, v1}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lorg/apache/http/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     invoke-virtual {p0, p1, p2}, Lorg/apache/http/message/BasicHeaderValueParser;->parseNameValuePair(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/message/ParserCursor;)Lorg/apache/http/NameValuePair;
 
     move-result-object v1
+
+    const/4 v0, 0x0
 
     invoke-virtual {p2}, Lorg/apache/http/message/ParserCursor;->atEnd()Z
 
@@ -421,8 +421,6 @@
 
 .method public parseNameValuePair(Lorg/apache/http/util/CharArrayBuffer;Lorg/apache/http/message/ParserCursor;[C)Lorg/apache/http/NameValuePair;
     .locals 12
-
-    const/4 v6, 0x0
 
     const/16 v11, 0x22
 
@@ -557,7 +555,9 @@
     :cond_8
     invoke-virtual {p2, v5}, Lorg/apache/http/message/ParserCursor;->updatePos(I)V
 
-    invoke-virtual {p0, v8, v6}, Lorg/apache/http/message/BasicHeaderValueParser;->a(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/NameValuePair;
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v8, v0}, Lorg/apache/http/message/BasicHeaderValueParser;->a(Ljava/lang/String;Ljava/lang/String;)Lorg/apache/http/NameValuePair;
 
     move-result-object v0
 

@@ -21,9 +21,9 @@
 
     new-instance v0, Landroid/graphics/Point;
 
-    const/16 v1, 0xfff
+    const/16 v1, 0xffc
 
-    const/16 v2, 0x1452
+    const/16 v2, 0x1461
 
     invoke-direct {v0, v1, v2}, Landroid/graphics/Point;-><init>(II)V
 
@@ -77,13 +77,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc4
+    const/16 v1, 0xefd
 
-    const/16 v2, 0x41e
+    const/16 v2, 0x11dc
 
-    const/16 v8, 0xff7
+    const/16 v8, 0xf30
 
-    const/16 v9, 0x44d
+    const/16 v9, 0x120b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -119,13 +119,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xecb
 
-    const/16 v2, 0x969
+    const/16 v2, 0x1269
 
-    const/16 v8, 0xff3
+    const/16 v8, 0xefe
 
-    const/16 v9, 0x998
+    const/16 v9, 0x1298
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -159,13 +159,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xda7
 
-    const/16 v2, 0x99d
+    const/16 v2, 0x13ea
 
-    const/16 v8, 0xff3
+    const/16 v8, 0xdda
 
-    const/16 v9, 0x9cc
+    const/16 v9, 0x1419
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -201,13 +201,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xe00
+    const/16 v4, 0xc10
 
-    const/16 v5, 0xc70
+    const/16 v5, 0x990
 
-    const/16 v6, 0xea0
+    const/16 v6, 0xcb0
 
-    const/16 v9, 0xd0f
+    const/16 v9, 0xa2f
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -325,13 +325,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xdc1
+    const/16 v4, 0xdd8
 
-    const/16 v5, 0x106b
+    const/16 v5, 0xe47
 
-    const/16 v6, 0xe61
+    const/16 v6, 0xe78
 
-    const/16 v9, 0x110b
+    const/16 v9, 0xee7
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -369,11 +369,11 @@
 
     const/16 v4, 0xdc1
 
-    const/16 v5, 0x1110
+    const/16 v5, 0x1156
 
     const/16 v6, 0xe61
 
-    const/16 v9, 0x11b0
+    const/16 v9, 0x11f6
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -411,11 +411,11 @@
 
     const/16 v4, 0xdc1
 
-    const/16 v5, 0x11b5
+    const/16 v5, 0x11fb
 
     const/16 v6, 0xe61
 
-    const/16 v9, 0x1255
+    const/16 v9, 0x129b
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -451,13 +451,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xe24
+    const/16 v4, 0xc67
 
-    const/16 v5, 0x12c9
+    const/16 v5, 0x139b
 
-    const/16 v6, 0xec4
+    const/16 v6, 0xd07
 
-    const/16 v9, 0x1369
+    const/16 v9, 0x143b
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -493,13 +493,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf08
+    const/16 v1, 0xeac
 
-    const/16 v2, 0xbae
+    const/16 v2, 0x12fe
 
-    const/16 v8, 0xf62
+    const/16 v8, 0xf06
 
-    const/16 v9, 0xc00
+    const/16 v9, 0x1350
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -533,13 +533,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfbc
+    const/16 v1, 0xfae
 
-    const/16 v2, 0x107a
+    const/16 v2, 0x10cb
 
-    const/16 v8, 0xffc
+    const/16 v8, 0xfee
 
-    const/16 v9, 0x10ba    # 6.0E-42f
+    const/16 v9, 0x110b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -617,13 +617,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xa19
+    const/16 v4, 0x7c8
 
-    const/16 v5, 0x873
+    const/16 v5, 0x13f9
 
-    const/16 v6, 0xa36
+    const/16 v6, 0x7e5
 
-    const/16 v9, 0x8b6
+    const/16 v9, 0x143c
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -659,13 +659,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0x8bb
+    const/4 v4, 0x2
 
-    const/16 v5, 0x12b0
+    const/16 v5, 0x12d5
 
-    const/16 v6, 0xa3b
+    const/16 v6, 0x182
 
-    const/16 v9, 0x1430
+    const/16 v9, 0x1455
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -701,13 +701,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xc9f
+    const/16 v4, 0x8e8
 
-    const/16 v5, 0x12c9
+    const/16 v5, 0x12b0
 
-    const/16 v6, 0xe1f
+    const/16 v6, 0xa68
 
-    const/16 v9, 0x1449
+    const/16 v9, 0x1430
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -745,11 +745,11 @@
 
     const/16 v1, 0xe66
 
-    const/16 v2, 0x11f7
+    const/16 v2, 0x11e0
 
     const/16 v8, 0xec6
 
-    const/16 v9, 0x1255
+    const/16 v9, 0x123e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -779,13 +779,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf47
+    const/16 v1, 0xf16
 
-    const/16 v2, 0x12d3
+    const/16 v2, 0xf5f
 
-    const/16 v8, 0xf92
+    const/16 v8, 0xf61
 
-    const/16 v9, 0x132f
+    const/16 v9, 0xfbb
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -819,13 +819,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf47
+    const/16 v1, 0xef4
 
-    const/16 v2, 0x1334
+    const/16 v2, 0xfc2
 
-    const/16 v8, 0xf92
+    const/16 v8, 0xf3f
 
-    const/16 v9, 0x1390
+    const/16 v9, 0x101e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -859,13 +859,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xbfd
+    const/16 v1, 0xef4
 
-    const/16 v2, 0xee7
+    const/16 v2, 0x1023
 
-    const/16 v8, 0xc4f
+    const/16 v8, 0xf46
 
-    const/16 v9, 0xf3b
+    const/16 v9, 0x1077
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -897,13 +897,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf4a
+    const/16 v1, 0xf35
 
-    const/16 v2, 0xe2f
+    const/16 v2, 0x116b
 
-    const/16 v8, 0xf9c
+    const/16 v8, 0xf87
 
-    const/16 v9, 0xe83
+    const/16 v9, 0x11bf
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -935,13 +935,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfae
+    const/16 v1, 0xf63
 
-    const/16 v2, 0x115b
+    const/16 v2, 0x126c
 
-    const/16 v8, 0xff9
+    const/16 v8, 0xfae
 
-    const/16 v9, 0x11a7
+    const/16 v9, 0x12b8
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -977,13 +977,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf27
+    const/16 v1, 0xf35
 
-    const/16 v2, 0x1036
+    const/16 v2, 0x11c4
 
-    const/16 v8, 0xf79
+    const/16 v8, 0xf87
 
-    const/16 v9, 0x1082
+    const/16 v9, 0x1210
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1015,13 +1015,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfac
+    const/16 v1, 0x232
 
-    const/16 v2, 0xe88
+    const/16 v2, 0x12d5
 
-    const/16 v8, 0xffa
+    const/16 v8, 0x280
 
-    const/16 v9, 0xedb
+    const/16 v9, 0x1328
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1055,13 +1055,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xee5
+    const/16 v1, 0xfa6
 
-    const/16 v2, 0xdb7
+    const/16 v2, 0xa24
 
-    const/16 v8, 0xf39
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xe13
+    const/16 v9, 0xa80
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1095,13 +1095,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xec7
+    const/16 v1, 0xf66
 
-    const/16 v2, 0xe1c
+    const/16 v2, 0xe40
 
-    const/16 v8, 0xedf
+    const/16 v8, 0xf7e
 
-    const/16 v9, 0xe66
+    const/16 v9, 0xe8a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1137,13 +1137,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xee4
+    const/16 v1, 0x187
 
-    const/16 v2, 0xd79
+    const/16 v2, 0x1426
 
-    const/16 v8, 0xf3a
+    const/16 v8, 0x1dd
 
-    const/16 v9, 0xdb2
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1181,11 +1181,11 @@
 
     const/16 v1, 0xfc4
 
-    const/16 v2, 0x35d
+    const/16 v2, 0x37b
 
     const/16 v8, 0xff6
 
-    const/16 v9, 0x3ba
+    const/16 v9, 0x3d8
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1217,13 +1217,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xea5
+    const/16 v1, 0xde1
 
-    const/16 v2, 0xcc1
+    const/16 v2, 0x13a6
 
-    const/16 v8, 0xef8
+    const/16 v8, 0xe34
 
-    const/16 v9, 0xd0d
+    const/16 v9, 0x13f2
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1257,13 +1257,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf1c
+    const/16 v1, 0xf66
 
-    const/16 v2, 0x1087
+    const/16 v2, 0xf6e
 
-    const/16 v8, 0xf67
+    const/16 v8, 0xfb1
 
-    const/16 v9, 0x10d4
+    const/16 v9, 0xfbb
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1299,13 +1299,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf6c
+    const/16 v1, 0xd57
 
-    const/16 v2, 0x1087
+    const/16 v2, 0x1410
 
-    const/16 v8, 0xfb7
+    const/16 v8, 0xda2
 
-    const/16 v9, 0x10d4
+    const/16 v9, 0x145d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1341,13 +1341,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfa1
+    const/16 v1, 0xecb
 
-    const/16 v2, 0xe2f
+    const/16 v2, 0x1210
 
-    const/16 v8, 0xff3
+    const/16 v8, 0xf1d
 
-    const/16 v9, 0xe83
+    const/16 v9, 0x1264
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1379,13 +1379,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf1c
+    const/16 v1, 0xf66
 
-    const/16 v2, 0x1087
+    const/16 v2, 0xf6e
 
-    const/16 v8, 0xf67
+    const/16 v8, 0xfb1
 
-    const/16 v9, 0x10d4
+    const/16 v9, 0xfbb
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1421,13 +1421,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf6c
+    const/16 v1, 0xd57
 
-    const/16 v2, 0x1087
+    const/16 v2, 0x1410
 
-    const/16 v8, 0xfb7
+    const/16 v8, 0xda2
 
-    const/16 v9, 0x10d4
+    const/16 v9, 0x145d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1463,13 +1463,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf76
+    const/16 v1, 0x63a
 
-    const/16 v2, 0x121d
+    const/16 v2, 0x1429
 
-    const/16 v8, 0xfc1
+    const/16 v8, 0x685
 
-    const/16 v9, 0x1251
+    const/16 v9, 0x145d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1505,13 +1505,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xb66
 
-    const/16 v2, 0x4f4
+    const/16 v2, 0xae8
 
-    const/16 v8, 0xff2
+    const/16 v8, 0xb98
 
-    const/16 v9, 0x52e
+    const/16 v9, 0xb22
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1547,13 +1547,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf54
+    const/16 v1, 0xfa7
 
-    const/16 v2, 0xe88
+    const/16 v2, 0xe0c
 
-    const/16 v8, 0xfa7
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xeda
+    const/16 v9, 0xe5e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1587,13 +1587,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf78
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0xf81
+    const/16 v2, 0x8eb
 
-    const/16 v8, 0xfa6
+    const/16 v8, 0xfee
 
-    const/16 v9, 0xfbb
+    const/16 v9, 0x925
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1629,13 +1629,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf98
+    const/16 v1, 0xf02
 
-    const/16 v2, 0xd1f
+    const/16 v2, 0x1355
 
-    const/16 v8, 0xfe9
+    const/16 v8, 0xf53
 
-    const/16 v9, 0xd70
+    const/16 v9, 0x13a6
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1675,13 +1675,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfab
+    const/16 v1, 0xf7a
 
-    const/16 v2, 0xf76
+    const/16 v2, 0x1215
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xfcc
 
-    const/16 v9, 0xfc7
+    const/16 v9, 0x1266
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1721,13 +1721,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xa45
+    const/16 v4, 0x517
 
-    const/16 v5, 0xa10
+    const/16 v5, 0x1334
 
-    const/16 v6, 0xb35
+    const/16 v6, 0x607
 
-    const/16 v9, 0xb00
+    const/16 v9, 0x1424
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1763,13 +1763,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xb3a
+    const/16 v4, 0x60c
 
-    const/16 v5, 0xa10
+    const/16 v5, 0x1334
 
-    const/16 v6, 0xc2a
+    const/16 v6, 0x6fc
 
-    const/16 v9, 0xb00
+    const/16 v9, 0x1424
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1807,11 +1807,11 @@
 
     const/16 v4, 0xdc1
 
-    const/16 v5, 0xfc6
+    const/16 v5, 0x10b1
 
     const/16 v6, 0xe62
 
-    const/16 v9, 0x1066
+    const/16 v9, 0x1151
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1847,13 +1847,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xea5
+    const/16 v1, 0x29a
 
-    const/16 v2, 0xc62
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xeff
+    const/16 v8, 0x2f4
 
-    const/16 v9, 0xcbc
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1885,13 +1885,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfab
+    const/16 v1, 0x1e2
 
-    const/16 v2, 0x111d
+    const/16 v2, 0x1426
 
-    const/16 v8, 0xffd
+    const/16 v8, 0x234
 
-    const/16 v9, 0x1156
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1925,13 +1925,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0x638
+    const/16 v4, 0x701
 
-    const/16 v5, 0x1334
+    const/16 v5, 0x1304
 
-    const/16 v6, 0x728
+    const/16 v6, 0x7f1
 
-    const/16 v9, 0x1424
+    const/16 v9, 0x13f4
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -1969,11 +1969,11 @@
 
     const/16 v4, 0xd22
 
-    const/16 v5, 0xdbe
+    const/16 v5, 0xd9b
 
     const/16 v6, 0xdd2
 
-    const/16 v9, 0xe6e
+    const/16 v9, 0xe4b
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -2055,13 +2055,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe7b
+    const/16 v1, 0xf90
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x13ec
 
-    const/16 v8, 0xec6
+    const/16 v8, 0xfdb
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x1437
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -2097,13 +2097,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf27
+    const/16 v1, 0xf0b
 
-    const/16 v2, 0xfdf
+    const/16 v2, 0x12fa
 
-    const/16 v8, 0xf79
+    const/16 v8, 0xf5d
 
-    const/16 v9, 0x1031
+    const/16 v9, 0x134c
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -2135,13 +2135,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfac
+    const/16 v1, 0x232
 
-    const/16 v2, 0xee0
+    const/16 v2, 0x132d
 
-    const/16 v8, 0xffa
+    const/16 v8, 0x280
 
-    const/16 v9, 0xf32
+    const/16 v9, 0x137f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -2175,13 +2175,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf54
+    const/16 v1, 0xfa7
 
-    const/16 v2, 0xedf
+    const/16 v2, 0x12bd
 
-    const/16 v8, 0xfa7
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xf21
+    const/16 v9, 0x12ff
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -2217,13 +2217,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xee5
+    const/16 v1, 0xfa6
 
-    const/16 v2, 0xe18
+    const/16 v2, 0xa85
 
-    const/16 v8, 0xf39
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xe48
+    const/16 v9, 0xab5
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -2945,13 +2945,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xc2f
+    const/16 v4, 0xe66
 
-    const/16 v5, 0xa9c
+    const/16 v5, 0x1179
 
-    const/16 v6, 0xc9e
+    const/16 v6, 0xed5
 
-    const/16 v9, 0xafe
+    const/16 v9, 0x11db
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -3679,11 +3679,11 @@
 
     const/16 v1, 0xb9f
 
-    const/16 v2, 0xb05
+    const/16 v2, 0xae8
 
     const/16 v8, 0xcbf
 
-    const/16 v9, 0xcf1
+    const/16 v9, 0xcd4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -3725,11 +3725,11 @@
 
     const/16 v1, 0xbfd
 
-    const/16 v2, 0xcf6
+    const/16 v2, 0xcd9
 
     const/16 v8, 0xd1d
 
-    const/16 v9, 0xee2
+    const/16 v9, 0xec5
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -3771,11 +3771,11 @@
 
     const/16 v1, 0xc9c
 
-    const/16 v2, 0xee7
+    const/16 v2, 0xeca
 
     const/16 v8, 0xdbc
 
-    const/16 v9, 0x10d3
+    const/16 v9, 0x10b6
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -3817,11 +3817,11 @@
 
     const/16 v1, 0xc9c
 
-    const/16 v2, 0x10d8
+    const/16 v2, 0x10bb
 
     const/16 v8, 0xdbc
 
-    const/16 v9, 0x12c4
+    const/16 v9, 0x12a7
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -3999,11 +3999,11 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x72d
+    const/16 v1, 0x7f6
 
     const/16 v2, 0x1304
 
-    const/16 v8, 0x81a
+    const/16 v8, 0x8e3
 
     const/16 v9, 0x13ee
 
@@ -4045,13 +4045,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf9a
+    const/16 v1, 0xf95
 
-    const/16 v2, 0xdd4
+    const/16 v2, 0xfc0
 
-    const/16 v8, 0xfec
+    const/16 v8, 0xfe7
 
-    const/16 v9, 0xe2a
+    const/16 v9, 0x1016
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4085,13 +4085,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xa40
+    const/16 v1, 0xfae
 
-    const/16 v2, 0x1400
+    const/16 v2, 0x1076
 
-    const/16 v8, 0xa8c
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x10c6
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4127,13 +4127,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x21a
+    const/16 v1, 0xe9d
 
-    const/16 v2, 0x13fe
+    const/16 v2, 0x1355
 
-    const/16 v8, 0x27a
+    const/16 v8, 0xefd
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x13a7
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4163,13 +4163,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xa45
+    const/16 v1, 0xf02
 
-    const/16 v2, 0xb05
+    const/16 v2, 0xe40
 
-    const/16 v8, 0xaa4
+    const/16 v8, 0xf61
 
-    const/16 v9, 0xb4f
+    const/16 v9, 0xe8a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4203,13 +4203,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x82e
+    const/16 v1, 0xe7d
 
-    const/16 v2, 0x13b9
+    const/16 v2, 0xe17
 
-    const/16 v8, 0x8ae
+    const/16 v8, 0xefd
 
-    const/16 v9, 0x142c
+    const/16 v9, 0xe8a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4249,13 +4249,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xdc6
+    const/16 v1, 0xe0c
 
-    const/16 v2, 0xd14
+    const/16 v2, 0xbf6
 
-    const/16 v8, 0xe7a
+    const/16 v8, 0xec0
 
-    const/16 v9, 0xdb7
+    const/16 v9, 0xc99
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4295,13 +4295,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe66
+    const/16 v1, 0xd80
 
-    const/16 v2, 0x10dc
+    const/16 v2, 0x12ac
 
-    const/16 v8, 0xef8
+    const/16 v8, 0xe12
 
-    const/16 v9, 0x116d
+    const/16 v9, 0x133d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4341,13 +4341,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xcc4
+    const/16 v1, 0xed2
 
-    const/16 v2, 0xc15
+    const/16 v2, 0xa24
 
-    const/16 v8, 0xd93
+    const/16 v8, 0xfa1
 
-    const/16 v9, 0xce1
+    const/16 v9, 0xaf0
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4387,13 +4387,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfac
+    const/16 v1, 0x232
 
-    const/16 v2, 0xf37
+    const/16 v2, 0x1384    # 7.001E-42f
 
-    const/16 v8, 0xffa
+    const/16 v8, 0x280
 
-    const/16 v9, 0xf71
+    const/16 v9, 0x13be
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4429,13 +4429,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x7c9
+    const/16 v1, 0xd0c
 
-    const/16 v2, 0x13f3
+    const/16 v2, 0x13ae
 
-    const/16 v8, 0x829
+    const/16 v8, 0xd6c
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x140b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4463,13 +4463,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf5f
+    const/16 v1, 0xe3d
 
-    const/16 v2, 0xc65
+    const/16 v2, 0x1396
 
-    const/16 v8, 0xfba
+    const/16 v8, 0xe98
 
-    const/16 v9, 0xcbd
+    const/16 v9, 0x13ee
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4503,13 +4503,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe88
+    const/16 v1, 0xfa2
 
-    const/16 v2, 0xdb8
+    const/16 v2, 0xd52
 
-    const/16 v8, 0xee0
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xe17
+    const/16 v9, 0xdb1
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4541,13 +4541,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xefd
+    const/16 v1, 0xde6
 
-    const/16 v2, 0x10dc
+    const/16 v2, 0x1342
 
-    const/16 v8, 0xf4f
+    const/16 v8, 0xe38
 
-    const/16 v9, 0x113b
+    const/16 v9, 0x13a1
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4577,13 +4577,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x21a
+    const/16 v1, 0xd81
 
-    const/16 v2, 0x139c
+    const/16 v2, 0x1342
 
-    const/16 v8, 0x27a
+    const/16 v8, 0xde1
 
-    const/16 v9, 0x13f9
+    const/16 v9, 0x139f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4611,13 +4611,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xefd
+    const/16 v1, 0xf9f
 
-    const/16 v2, 0xcc1
+    const/16 v2, 0xf11
 
-    const/16 v8, 0xf58
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xd19
+    const/16 v9, 0xf69
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4651,13 +4651,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x343
+    const/16 v1, 0xf03
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x126c
 
-    const/16 v8, 0x39e
+    const/16 v8, 0xf5e
 
-    const/16 v9, 0x1447
+    const/16 v9, 0x12ae
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4693,13 +4693,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf3f
+    const/16 v1, 0xf4b
 
-    const/16 v2, 0xd75
+    const/16 v2, 0x101e
 
-    const/16 v8, 0xf95
+    const/16 v8, 0xfa1
 
-    const/16 v9, 0xdcb
+    const/16 v9, 0x1074
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4735,13 +4735,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf26
+    const/16 v1, 0xf5e
 
-    const/16 v2, 0x11d3
+    const/16 v2, 0x10b9
 
-    const/16 v8, 0xf71
+    const/16 v8, 0xfa9
 
-    const/16 v9, 0x1225
+    const/16 v9, 0x110b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4775,13 +4775,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xb49
+    const/16 v1, 0xf58
 
-    const/16 v2, 0xb05
+    const/16 v2, 0x1351
 
-    const/16 v8, 0xb93
+    const/16 v8, 0xfa2
 
-    const/16 v9, 0xb4f
+    const/16 v9, 0x139b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4817,13 +4817,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf3b
+    const/16 v1, 0xfa2
 
-    const/16 v2, 0xd1f
+    const/16 v2, 0xdb6
 
-    const/16 v8, 0xf93
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xd70
+    const/16 v9, 0xe07
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4859,13 +4859,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf54
+    const/16 v1, 0xf60
 
-    const/16 v2, 0x10d9
+    const/16 v2, 0x1110
 
-    const/16 v8, 0xfa6
+    const/16 v8, 0xfb2
 
-    const/16 v9, 0x112b
+    const/16 v9, 0x1162
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4897,13 +4897,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x3a3
+    const/16 v1, 0xefd
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x12b3
 
-    const/16 v8, 0x3fd
+    const/16 v8, 0xf57
 
-    const/16 v9, 0x1447
+    const/16 v9, 0x12f5
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4937,13 +4937,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf9a
+    const/16 v1, 0xfab
 
-    const/16 v2, 0xd75
+    const/16 v2, 0xbb6
 
-    const/16 v8, 0xfe9
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xdcf
+    const/16 v9, 0xc10
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -4977,13 +4977,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xf59
 
-    const/16 v2, 0x930
+    const/16 v2, 0x13a0
 
-    const/16 v8, 0xff2
+    const/16 v8, 0xf8b
 
-    const/16 v9, 0x964
+    const/16 v9, 0x13d4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5019,13 +5019,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe66
+    const/16 v1, 0xe6e
 
-    const/16 v2, 0x1172
+    const/16 v2, 0xd92
 
-    const/16 v8, 0xefb
+    const/16 v8, 0xf03
 
-    const/16 v9, 0x11f2
+    const/16 v9, 0xe12
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5065,13 +5065,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xeba
+    const/16 v1, 0xcc4
 
-    const/16 v2, 0xa24
+    const/16 v2, 0xc15
 
-    const/16 v8, 0xf8e
+    const/16 v8, 0xd98
 
-    const/16 v9, 0xad9
+    const/16 v9, 0xcca
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5111,13 +5111,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe88
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0xe1c
+    const/16 v2, 0x4f8
 
-    const/16 v8, 0xec2
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xe66
+    const/16 v9, 0x542
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5153,13 +5153,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf97
+    const/16 v1, 0xef0
 
-    const/16 v2, 0x12e1
+    const/16 v2, 0x107c
 
-    const/16 v8, 0xfe0
+    const/16 v8, 0xf39
 
-    const/16 v9, 0x1319
+    const/16 v9, 0x10b4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5195,13 +5195,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf04
+    const/16 v1, 0x2f9
 
-    const/16 v2, 0xc62
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xf5a
+    const/16 v8, 0x34f
 
-    const/16 v9, 0xcbc
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5233,13 +5233,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf47
+    const/16 v1, 0x354
 
-    const/16 v2, 0x1395
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xf9d
+    const/16 v8, 0x3aa
 
-    const/16 v9, 0x13ef
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5271,13 +5271,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf27
+    const/16 v1, 0xfa6
 
-    const/16 v2, 0xf26
+    const/16 v2, 0x101b
 
-    const/16 v8, 0xf76
+    const/16 v8, 0xff5
 
-    const/16 v9, 0xf7c
+    const/16 v9, 0x1071
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5311,13 +5311,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf03
+    const/16 v1, 0xf44
 
-    const/16 v2, 0xeac
+    const/16 v2, 0xfc0
 
-    const/16 v8, 0xf4f
+    const/16 v8, 0xf90
 
-    const/16 v9, 0xf05
+    const/16 v9, 0x1019
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5353,13 +5353,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf76
+    const/16 v1, 0xf8c
 
-    const/16 v2, 0x11c6
+    const/16 v2, 0x1167
 
-    const/16 v8, 0xfbc
+    const/16 v8, 0xfd2
 
-    const/16 v9, 0x1218
+    const/16 v9, 0x11b9
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5391,13 +5391,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf81
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0xade
+    const/16 v2, 0x7eb
 
-    const/16 v8, 0xfb3
+    const/16 v8, 0xff2
 
-    const/16 v9, 0xb37
+    const/16 v9, 0x844
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5433,13 +5433,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfcc
+    const/16 v1, 0xfc4
 
-    const/16 v2, 0xba9
+    const/16 v2, 0x3dd
 
-    const/16 v8, 0xff6
+    const/16 v8, 0xfee
 
-    const/16 v9, 0xbfb
+    const/16 v9, 0x42f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5473,13 +5473,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf00
+    const/16 v1, 0xfa3
 
-    const/16 v2, 0x1171
+    const/16 v2, 0xaf5
 
-    const/16 v8, 0xf57
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x11ce
+    const/16 v9, 0xb52
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5511,13 +5511,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf47
+    const/16 v1, 0x3af
 
-    const/16 v2, 0x13f4
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xf98
+    const/16 v8, 0x400
 
-    const/16 v9, 0x144e
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5551,13 +5551,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc4
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0x259
+    const/16 v2, 0x789
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xff9
 
-    const/16 v9, 0x2b6
+    const/16 v9, 0x7e6
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5589,13 +5589,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc4
+    const/16 v1, 0x44a
 
-    const/16 v2, 0x3bf
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xff6
+    const/16 v8, 0x47c
 
-    const/16 v9, 0x419
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5701,13 +5701,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xeb1
+    const/16 v1, 0x405
 
-    const/16 v2, 0xe6b
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xef1
+    const/16 v8, 0x445
 
-    const/16 v9, 0xec5
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5741,13 +5741,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfab
+    const/16 v1, 0xe97
 
-    const/16 v2, 0x10d9
+    const/16 v2, 0x13fa
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xee9
 
-    const/16 v9, 0x1118
+    const/16 v9, 0x1439
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5781,13 +5781,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x27f
+    const/16 v1, 0xe9d
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x13ac
 
-    const/16 v8, 0x2dc
+    const/16 v8, 0xefa
 
-    const/16 v9, 0x144e
+    const/16 v9, 0x13f5
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5817,13 +5817,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x2e1
+    const/16 v1, 0xf3d
 
-    const/16 v2, 0x1405
+    const/16 v2, 0xf11
 
-    const/16 v8, 0x33e
+    const/16 v8, 0xf9a
 
-    const/16 v9, 0x144e
+    const/16 v9, 0xf5a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5853,13 +5853,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x462
+    const/16 v1, 0xe39
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x13f3
 
-    const/16 v8, 0x4bb
+    const/16 v8, 0xe92
 
-    const/16 v9, 0x1447
+    const/16 v9, 0x1435
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5889,13 +5889,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xb9f
+    const/16 v1, 0xf02
 
-    const/16 v2, 0xcf6
+    const/16 v2, 0x1114
 
-    const/16 v8, 0xbf8
+    const/16 v8, 0xf5b
 
-    const/16 v9, 0xd48
+    const/16 v9, 0x1166
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5931,13 +5931,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe24
+    const/16 v1, 0xfa7
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x1304
 
-    const/16 v8, 0xe76
+    const/16 v8, 0xff9
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x134f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -5971,13 +5971,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xefd
+    const/16 v1, 0x57c
 
-    const/16 v2, 0x1140
+    const/16 v2, 0x1429
 
-    const/16 v8, 0xf57
+    const/16 v8, 0x5d6
 
-    const/16 v9, 0x116c
+    const/16 v9, 0x1455
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6011,13 +6011,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xaf0
+    const/16 v1, 0x979
 
-    const/16 v2, 0x1425
+    const/16 v2, 0x1435
 
-    const/16 v8, 0xb42
+    const/16 v8, 0x9cb
 
-    const/16 v9, 0x144b
+    const/16 v9, 0x145b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6051,13 +6051,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfd6
+    const/16 v1, 0xfd7
 
-    const/16 v2, 0xfcc
+    const/16 v2, 0x1166
 
-    const/16 v8, 0xff9
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x1000
+    const/16 v9, 0x119a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6097,13 +6097,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xa91
+    const/16 v1, 0x5db
 
-    const/16 v2, 0x1425
+    const/16 v2, 0x1429
 
-    const/16 v8, 0xaeb
+    const/16 v8, 0x635
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x1454
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6137,13 +6137,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xc5b
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0x13fd
+    const/16 v2, 0x44a
 
-    const/16 v8, 0xc95
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x144f
+    const/16 v9, 0x49c
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6177,13 +6177,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x16f
+    const/16 v1, 0x8bd
 
-    const/16 v2, 0x1426
+    const/16 v2, 0x1435
 
-    const/16 v8, 0x1c2
+    const/16 v8, 0x910
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6219,13 +6219,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc1
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0x11ac
+    const/16 v2, 0x4a1
 
-    const/16 v8, 0xffb
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x11fe
+    const/16 v9, 0x4f3
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6259,13 +6259,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe7f
+    const/16 v1, 0xe3d
 
-    const/16 v2, 0xd14
+    const/16 v2, 0x1331
 
-    const/16 v8, 0xeda
+    const/16 v8, 0xe98
 
-    const/16 v9, 0xd74
+    const/16 v9, 0x1391
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6295,13 +6295,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf3e
+    const/16 v1, 0xfa3
 
-    const/16 v2, 0xdd0
+    const/16 v2, 0xb57
 
-    const/16 v8, 0xf95
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xe2a
+    const/16 v9, 0xbb1
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6335,13 +6335,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf27
+    const/16 v1, 0xeac
 
-    const/16 v2, 0xf81
+    const/16 v2, 0x12a0
 
-    const/16 v8, 0xf73
+    const/16 v8, 0xef8
 
-    const/16 v9, 0xfda
+    const/16 v9, 0x12f9
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6377,13 +6377,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x4c0
+    const/16 v1, 0xf02
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x13ab
 
-    const/16 v8, 0x512
+    const/16 v8, 0xf54
 
-    const/16 v9, 0x1447
+    const/16 v9, 0x13ed
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6417,13 +6417,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf7e
+    const/16 v1, 0xfa7
 
-    const/16 v2, 0xfcc
+    const/16 v2, 0xe63
 
-    const/16 v8, 0xfd1
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x101e
+    const/16 v9, 0xeb5
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6457,13 +6457,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xc10
+    const/16 v1, 0xf08
 
-    const/16 v2, 0x990
+    const/16 v2, 0xd72
 
-    const/16 v8, 0xca5
+    const/16 v8, 0xf9d
 
-    const/16 v9, 0xa06
+    const/16 v9, 0xde8
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6503,13 +6503,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xdd8
+    const/16 v1, 0xed2
 
-    const/16 v2, 0xe6b
+    const/16 v2, 0xbc0
 
-    const/16 v8, 0xeac
+    const/16 v8, 0xfa6
 
-    const/16 v9, 0xf12
+    const/16 v9, 0xc67
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6549,13 +6549,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xc2f
+    const/16 v1, 0xe17
 
-    const/16 v2, 0xa0b
+    const/16 v2, 0x12a0
 
-    const/16 v8, 0xcbf
+    const/16 v8, 0xea7
 
-    const/16 v9, 0xa97
+    const/16 v9, 0x132c
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6595,13 +6595,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xde9
+    const/16 v1, 0xed2
 
-    const/16 v2, 0xa24
+    const/16 v2, 0xaf5
 
-    const/16 v8, 0xeb5
+    const/16 v8, 0xf9e
 
-    const/16 v9, 0xaea
+    const/16 v9, 0xbbb
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6641,13 +6641,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfb7
+    const/16 v1, 0xd0c
 
-    const/16 v2, 0x1256
+    const/16 v2, 0x1410
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xd52
 
-    const/16 v9, 0x12a5
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6681,13 +6681,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xaa9
+    const/16 v1, 0xeee
 
-    const/16 v2, 0xb05
+    const/16 v2, 0x13fa
 
-    const/16 v8, 0xaf4
+    const/16 v8, 0xf39
 
-    const/16 v9, 0xb4f
+    const/16 v9, 0x1444
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6723,13 +6723,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xaf9
+    const/16 v1, 0xf3e
 
-    const/16 v2, 0xb05
+    const/16 v2, 0x140b
 
-    const/16 v8, 0xb44
+    const/16 v8, 0xf89
 
-    const/16 v9, 0xb4f
+    const/16 v9, 0x1455
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6761,7 +6761,7 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
 
-    const-string/jumbo v1, "ic_oobe_map_port"
+    const-string/jumbo v1, "ic_oobe_map"
 
     new-instance v2, Landroid/graphics/Rect;
 
@@ -6807,13 +6807,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf7e
+    const/16 v1, 0xfa7
 
-    const/16 v2, 0x1023
+    const/16 v2, 0xeba
 
-    const/16 v8, 0xfd1
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x1075
+    const/16 v9, 0xf0c
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6847,13 +6847,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf5f
+    const/16 v1, 0xf22
 
-    const/16 v2, 0x1256
+    const/16 v2, 0x1215
 
-    const/16 v8, 0xfb2
+    const/16 v8, 0xf75
 
-    const/16 v9, 0x12a8
+    const/16 v9, 0x1267
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6887,13 +6887,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xfa6
 
-    const/16 v2, 0x6a7
+    const/16 v2, 0xaba
 
-    const/16 v8, 0xffa
+    const/16 v8, 0xfe0
 
-    const/16 v9, 0x6dd
+    const/16 v9, 0xaf0
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6935,11 +6935,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x6e2
+    const/16 v2, 0x547
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x718
+    const/16 v9, 0x57d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -6981,11 +6981,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x71d
+    const/16 v2, 0x582
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x753
+    const/16 v9, 0x5b8
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7027,11 +7027,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x758
+    const/16 v2, 0x5bd
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x78e
+    const/16 v9, 0x5f3
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7073,11 +7073,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x793
+    const/16 v2, 0x5f8
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x7c9
+    const/16 v9, 0x62e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7119,11 +7119,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x7ce
+    const/16 v2, 0x633
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x804
+    const/16 v9, 0x669
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7163,13 +7163,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xfc4
 
-    const/16 v2, 0x533
+    const/16 v2, 0x2be
 
-    const/16 v8, 0xff6
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x56d
+    const/16 v9, 0x2f8
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7209,13 +7209,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xfc4
 
-    const/16 v2, 0x572
+    const/16 v2, 0x2fd
 
-    const/16 v8, 0xff6
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x5ac
+    const/16 v9, 0x337
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7255,13 +7255,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xfc4
 
-    const/16 v2, 0x5b1
+    const/16 v2, 0x33c
 
-    const/16 v8, 0xff6
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x5eb
+    const/16 v9, 0x376
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7303,11 +7303,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x809
+    const/16 v2, 0x66e
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x83f
+    const/16 v9, 0x6a4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7349,11 +7349,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x844
+    const/16 v2, 0x6a9
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x87a
+    const/16 v9, 0x6df
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7395,11 +7395,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x87f
+    const/16 v2, 0x6e4
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x8b5
+    const/16 v9, 0x71a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7439,13 +7439,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf0d
+    const/16 v1, 0xbda
 
-    const/16 v2, 0x1413
+    const/16 v2, 0x1424
 
-    const/16 v8, 0xf42
+    const/16 v8, 0xc0f
 
-    const/16 v9, 0x144e
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7487,11 +7487,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x8f1
+    const/16 v2, 0x92a
 
     const/16 v8, 0xfee
 
-    const/16 v9, 0x92b
+    const/16 v9, 0x964
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7516,6 +7516,46 @@
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
     const/16 v1, 0xb1
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
+    const-string/jumbo v5, "ic_print"
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    const/16 v1, 0xfa7
+
+    const/16 v2, 0x1354
+
+    const/16 v8, 0xff9
+
+    const/16 v9, 0x139e
+
+    invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v8, Landroid/graphics/Rect;
+
+    const/16 v1, 0xb
+
+    const/16 v2, 0x59
+
+    const/16 v9, 0x55
+
+    invoke-direct {v8, v13, v1, v2, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v9, Landroid/graphics/Point;
+
+    invoke-direct {v9, v11, v11}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0xb2
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7561,7 +7601,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb2
+    const/16 v1, 0xb3
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7573,13 +7613,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xa19
+    const/16 v1, 0xe0c
 
-    const/16 v2, 0x846
+    const/16 v2, 0xc9e
 
-    const/16 v8, 0xa40
+    const/16 v8, 0xe33
 
-    const/16 v9, 0x86e
+    const/16 v9, 0xcc6
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7603,7 +7643,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb3
+    const/16 v1, 0xb4
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7615,13 +7655,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfb7
+    const/16 v1, 0xfb6
 
-    const/16 v2, 0x12aa
+    const/16 v2, 0xf6e
 
-    const/16 v8, 0xffb
+    const/16 v8, 0xffa
 
-    const/16 v9, 0x12dc
+    const/16 v9, 0xfa0
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7649,7 +7689,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb4
+    const/16 v1, 0xb5
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7661,13 +7701,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xedf
+    const/16 v1, 0xf02
 
-    const/16 v2, 0xd1e
+    const/16 v2, 0x10b9
 
-    const/16 v8, 0xf36
+    const/16 v8, 0xf59
 
-    const/16 v9, 0xd74
+    const/16 v9, 0x110f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7691,7 +7731,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb5
+    const/16 v1, 0xb6
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7703,13 +7743,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe97
+    const/16 v1, 0xf44
 
-    const/16 v2, 0xc01
+    const/16 v2, 0xe8f
 
-    const/16 v8, 0xef5
+    const/16 v8, 0xfa2
 
-    const/16 v9, 0xc5d
+    const/16 v9, 0xeeb
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7729,7 +7769,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb6
+    const/16 v1, 0xb7
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7741,13 +7781,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x638
+    const/16 v1, 0x915
 
-    const/16 v2, 0x1429
+    const/16 v2, 0x1435
 
-    const/16 v8, 0x697
+    const/16 v8, 0x974
 
-    const/16 v9, 0x144e
+    const/16 v9, 0x145a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7769,7 +7809,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb7
+    const/16 v1, 0xb8
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7781,13 +7821,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xeb1
+    const/16 v1, 0xf90
 
-    const/16 v2, 0xeca
+    const/16 v2, 0x13a3
 
-    const/16 v8, 0xefe
+    const/16 v8, 0xfdd
 
-    const/16 v9, 0xf0e
+    const/16 v9, 0x13e7
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7813,7 +7853,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb8
+    const/16 v1, 0xb9
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7825,13 +7865,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfbf
+    const/16 v1, 0xf3e
 
-    const/16 v2, 0xc65
+    const/16 v2, 0x107c
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xf7c
 
-    const/16 v9, 0xc9d
+    const/16 v9, 0x10b4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7855,7 +7895,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xb9
+    const/16 v1, 0xba
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7897,7 +7937,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xba
+    const/16 v1, 0xbb
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7909,13 +7949,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf5c
+    const/16 v1, 0xf8c
 
-    const/16 v2, 0x1130
+    const/16 v2, 0x11be
 
-    const/16 v8, 0xfa6
+    const/16 v8, 0xfd6
 
-    const/16 v9, 0x1182
+    const/16 v9, 0x1210
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -7937,7 +7977,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xbb
+    const/16 v1, 0xbc
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -7949,59 +7989,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xdd7
+    const/16 v1, 0xc0a
 
-    const/16 v2, 0xdbc
+    const/16 v2, 0xa34
 
-    const/16 v8, 0xe83
+    const/16 v8, 0xcb6
 
-    const/16 v9, 0xe66
-
-    invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    const/16 v1, 0x22
-
-    const/16 v2, 0x23
-
-    const/16 v9, 0xce
-
-    const/16 v10, 0xcd
-
-    invoke-direct {v8, v1, v2, v9, v10}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v9, Landroid/graphics/Point;
-
-    const/16 v1, 0xf0
-
-    const/16 v2, 0xf0
-
-    invoke-direct {v9, v1, v2}, Landroid/graphics/Point;-><init>(II)V
-
-    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
-
-    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
-
-    const/16 v1, 0xbc
-
-    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
-
-    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
-
-    const-string/jumbo v5, "ic_shutter_press"
-
-    new-instance v6, Landroid/graphics/Rect;
-
-    const/16 v1, 0xdc1
-
-    const/16 v2, 0xf17
-
-    const/16 v8, 0xe6d
-
-    const/16 v9, 0xfc1
+    const/16 v9, 0xade
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8037,17 +8031,63 @@
 
     new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
 
+    const-string/jumbo v5, "ic_shutter_press"
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    const/16 v1, 0xccf
+
+    const/16 v2, 0x12ac
+
+    const/16 v8, 0xd7b
+
+    const/16 v9, 0x1356
+
+    invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v8, Landroid/graphics/Rect;
+
+    const/16 v1, 0x22
+
+    const/16 v2, 0x23
+
+    const/16 v9, 0xce
+
+    const/16 v10, 0xcd
+
+    invoke-direct {v8, v1, v2, v9, v10}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v9, Landroid/graphics/Point;
+
+    const/16 v1, 0xf0
+
+    const/16 v2, 0xf0
+
+    invoke-direct {v9, v1, v2}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0xbe
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
     const-string/jumbo v5, "ic_shutter_sound"
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf5f
+    const/16 v1, 0x239
 
-    const/16 v2, 0xc06
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xfbb
+    const/16 v8, 0x295
 
-    const/16 v9, 0xc60
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8069,7 +8109,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xbe
+    const/16 v1, 0xbf
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8081,13 +8121,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xee5
+    const/16 v1, 0xe76
 
-    const/16 v2, 0x125a
+    const/16 v2, 0x1040
 
-    const/16 v8, 0xf5a
+    const/16 v8, 0xeeb
 
-    const/16 v9, 0x12ce
+    const/16 v9, 0x10b4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8115,7 +8155,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xbf
+    const/16 v1, 0xc0
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8127,13 +8167,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xed9
+    const/16 v1, 0xd13
 
-    const/16 v2, 0x13c0
+    const/16 v2, 0x135b
 
-    const/16 v8, 0xf42
+    const/16 v8, 0xd7c
 
-    const/16 v9, 0x140e
+    const/16 v9, 0x13a9
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8161,7 +8201,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc0
+    const/16 v1, 0xc1
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8173,13 +8213,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe77
+    const/16 v1, 0xf88
 
-    const/16 v2, 0x125a
+    const/16 v2, 0xc74
 
-    const/16 v8, 0xee0
+    const/16 v8, 0xff1
 
-    const/16 v9, 0x12c4
+    const/16 v9, 0xcde
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8207,7 +8247,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc1
+    const/16 v1, 0xc2
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8219,13 +8259,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xed9
+    const/16 v1, 0xf89
 
-    const/16 v2, 0x1351
+    const/16 v2, 0xce3
 
-    const/16 v8, 0xf42
+    const/16 v8, 0xff2
 
-    const/16 v9, 0x13bb
+    const/16 v9, 0xd4d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8253,7 +8293,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc2
+    const/16 v1, 0xc3
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8265,13 +8305,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe9b
+    const/16 v1, 0xf08
 
-    const/16 v2, 0xbae
+    const/16 v2, 0xded
 
-    const/16 v8, 0xf03
+    const/16 v8, 0xf70
 
-    const/16 v9, 0xbfc
+    const/16 v9, 0xe3b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8299,7 +8339,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc3
+    const/16 v1, 0xc4
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8345,7 +8385,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc4
+    const/16 v1, 0xc5
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8357,13 +8397,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xd22
+    const/16 v1, 0xb66
 
-    const/16 v2, 0xce6
+    const/16 v2, 0xa10
 
-    const/16 v8, 0xdc1
+    const/16 v8, 0xc05
 
-    const/16 v9, 0xdb9
+    const/16 v9, 0xae3
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8391,7 +8431,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc5
+    const/16 v1, 0xc6
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8403,13 +8443,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc4
+    const/16 v1, 0xfc0
 
-    const/16 v2, 0x2bb
+    const/16 v2, 0x9a7
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xff9
 
-    const/16 v9, 0x2f3
+    const/16 v9, 0x9df
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8433,7 +8473,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc6
+    const/16 v1, 0xc7
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8445,13 +8485,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xc5b
+    const/16 v1, 0xccf
 
-    const/16 v2, 0x13bd
+    const/16 v2, 0x135b
 
-    const/16 v8, 0xc9a
+    const/16 v8, 0xd0e
 
-    const/16 v9, 0x13f8
+    const/16 v9, 0x1396
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8477,7 +8517,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc7
+    const/16 v1, 0xc8
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8489,13 +8529,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf67
+    const/16 v1, 0xe66
 
-    const/16 v2, 0xba9
+    const/16 v2, 0x1243
 
-    const/16 v8, 0xfc7
+    const/16 v8, 0xec6
 
-    const/16 v9, 0xc01
+    const/16 v9, 0x129b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8513,7 +8553,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc8
+    const/16 v1, 0xc9
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8527,11 +8567,11 @@
 
     const/16 v4, 0xfc4
 
-    const/16 v5, 0x2f8
+    const/16 v5, 0x259
 
     const/16 v6, 0xffa
 
-    const/16 v9, 0x358
+    const/16 v9, 0x2b9
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8551,7 +8591,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xc9
+    const/16 v1, 0xca
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8593,7 +8633,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xca
+    const/16 v1, 0xcb
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8605,11 +8645,11 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0x16f
+    const/16 v4, 0x187
 
     const/16 v5, 0x12d5
 
-    const/16 v6, 0x215
+    const/16 v6, 0x22d
 
     const/16 v9, 0x1421
 
@@ -8635,7 +8675,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xcb
+    const/16 v1, 0xcc
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8649,11 +8689,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x5f0
+    const/16 v2, 0x969
 
     const/16 v8, 0xff8
 
-    const/16 v9, 0x629
+    const/16 v9, 0x9a2
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8681,7 +8721,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xcc
+    const/16 v1, 0xcd
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8693,13 +8733,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf5c
+    const/16 v1, 0xc14
 
-    const/16 v2, 0x1187
+    const/16 v2, 0x1424
 
-    const/16 v8, 0xfa9
+    const/16 v8, 0xc61
 
-    const/16 v9, 0x11c1
+    const/16 v9, 0x145e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8723,7 +8763,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xcd
+    const/16 v1, 0xce
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8735,13 +8775,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfa2
+    const/16 v1, 0x68a
 
-    const/16 v2, 0x1363
+    const/16 v2, 0x1429
 
-    const/16 v8, 0xfe9
+    const/16 v8, 0x6d1
 
-    const/16 v9, 0x1397
+    const/16 v9, 0x145d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8765,7 +8805,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xce
+    const/16 v1, 0xcf
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8777,13 +8817,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe7f
+    const/16 v1, 0xe3c
 
-    const/16 v2, 0xd79
+    const/16 v2, 0xd53
 
-    const/16 v8, 0xedf
+    const/16 v8, 0xe9c
 
-    const/16 v9, 0xdb3
+    const/16 v9, 0xd8d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8803,7 +8843,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xcf
+    const/16 v1, 0xd0
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8815,13 +8855,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf9d
+    const/16 v1, 0x517
 
-    const/16 v2, 0x13f4
+    const/16 v2, 0x1429
 
-    const/16 v8, 0xffd
+    const/16 v8, 0x577
 
-    const/16 v9, 0x1428
+    const/16 v9, 0x145d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8841,7 +8881,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd0
+    const/16 v1, 0xd1
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8853,13 +8893,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xecb
+    const/16 v1, 0xeda
 
-    const/16 v2, 0x11f7
+    const/16 v2, 0x1179
 
-    const/16 v8, 0xf21
+    const/16 v8, 0xf30
 
-    const/16 v9, 0x1255
+    const/16 v9, 0x11d7
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8879,7 +8919,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd1
+    const/16 v1, 0xd2
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8891,13 +8931,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xef6
+    const/16 v1, 0xfab
 
-    const/16 v2, 0xe4d
+    const/16 v2, 0xc15
 
-    const/16 v8, 0xf45
+    const/16 v8, 0xffa
 
-    const/16 v9, 0xea7
+    const/16 v9, 0xc6f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8919,7 +8959,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd2
+    const/16 v1, 0xd3
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8931,13 +8971,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x8fa
+    const/16 v1, 0xa6d
 
-    const/16 v2, 0x4e4
+    const/16 v2, 0x12b0
 
-    const/16 v8, 0x944
+    const/16 v8, 0xab7
 
-    const/16 v9, 0x501
+    const/16 v9, 0x12cd
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -8963,7 +9003,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd3
+    const/16 v1, 0xd4
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -8975,13 +9015,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x4ea
+    const/16 v1, 0xa45
 
-    const/16 v2, 0x11b9
+    const/16 v2, 0xb31
 
-    const/16 v8, 0x512
+    const/16 v8, 0xa6d
 
-    const/16 v9, 0x11d7
+    const/16 v9, 0xb4f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9007,7 +9047,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd4
+    const/16 v1, 0xd5
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9049,7 +9089,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd5
+    const/16 v1, 0xd6
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9061,13 +9101,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x6ec
+    const/16 v1, 0xb66
 
-    const/16 v2, 0x1304
+    const/16 v2, 0xb27    # 4.001E-42f
 
-    const/16 v8, 0x70c
+    const/16 v8, 0xb86
 
-    const/16 v9, 0x132c
+    const/16 v9, 0xb4f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9093,7 +9133,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd6
+    const/16 v1, 0xd7
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9135,7 +9175,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd7
+    const/16 v1, 0xd8
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9147,13 +9187,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xefa
+    const/16 v1, 0x481
 
-    const/16 v2, 0xc05
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xf5a
+    const/16 v8, 0x4e1
 
-    const/16 v9, 0xc5d
+    const/16 v9, 0x145d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9171,7 +9211,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd8
+    const/16 v1, 0xd9
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9183,13 +9223,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x402
+    const/16 v1, 0xd81
 
-    const/16 v2, 0x1405
+    const/16 v2, 0x13a4
 
-    const/16 v8, 0x45d
+    const/16 v8, 0xddc
 
-    const/16 v9, 0x1446
+    const/16 v9, 0x13e5
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9211,7 +9251,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xd9
+    const/16 v1, 0xda
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9223,13 +9263,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf93
+    const/16 v1, 0xd9d
 
-    const/16 v2, 0xa24
+    const/16 v2, 0xc15
 
-    const/16 v8, 0xffd
+    const/16 v8, 0xe07
 
-    const/16 v9, 0xad5
+    const/16 v9, 0xcc6
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9257,7 +9297,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xda
+    const/16 v1, 0xdb
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9269,59 +9309,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xdc1
+    const/16 v1, 0xed3
 
-    const/16 v2, 0x125a
+    const/16 v2, 0xd03
 
-    const/16 v8, 0xe72
+    const/16 v8, 0xf84
 
-    const/16 v9, 0x12c4
-
-    invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v8, Landroid/graphics/Rect;
-
-    const/16 v1, 0x1e
-
-    const/16 v2, 0x30
-
-    const/16 v9, 0xcf
-
-    const/16 v10, 0x9a
-
-    invoke-direct {v8, v1, v2, v9, v10}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v9, Landroid/graphics/Point;
-
-    const/16 v1, 0xf3
-
-    const/16 v2, 0xd0
-
-    invoke-direct {v9, v1, v2}, Landroid/graphics/Point;-><init>(II)V
-
-    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
-
-    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
-
-    const/16 v1, 0xdb
-
-    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
-
-    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
-
-    const-string/jumbo v5, "ic_ws_center_270"
-
-    new-instance v6, Landroid/graphics/Rect;
-
-    const/16 v1, 0xd22
-
-    const/16 v2, 0xe73
-
-    const/16 v8, 0xdd3
-
-    const/16 v9, 0xedd
+    const/16 v9, 0xd6d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9357,17 +9351,63 @@
 
     new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
 
+    const-string/jumbo v5, "ic_ws_center_270"
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    const/16 v1, 0xd22
+
+    const/16 v2, 0xe50
+
+    const/16 v8, 0xdd3
+
+    const/16 v9, 0xeba
+
+    invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v8, Landroid/graphics/Rect;
+
+    const/16 v1, 0x1e
+
+    const/16 v2, 0x30
+
+    const/16 v9, 0xcf
+
+    const/16 v10, 0x9a
+
+    invoke-direct {v8, v1, v2, v9, v10}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v9, Landroid/graphics/Point;
+
+    const/16 v1, 0xf3
+
+    const/16 v2, 0xd0
+
+    invoke-direct {v9, v1, v2}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0xdd
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
     const-string/jumbo v5, "ic_ws_down"
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x21a
+    const/16 v1, 0xc67
 
-    const/16 v2, 0x12d5
+    const/16 v2, 0x12d4
 
-    const/16 v8, 0x27d
+    const/16 v8, 0xcca
 
-    const/16 v9, 0x1397
+    const/16 v9, 0x1396
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9395,7 +9435,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xdd
+    const/16 v1, 0xde
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9407,13 +9447,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe72
+    const/16 v1, 0xdc1
 
-    const/16 v2, 0xf17
+    const/16 v2, 0xeec
 
-    const/16 v8, 0xf22
+    const/16 v8, 0xe71
 
-    const/16 v9, 0xfa9
+    const/16 v9, 0xf7e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9441,7 +9481,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xde
+    const/16 v1, 0xdf
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9453,13 +9493,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe24
+    const/16 v1, 0xed3
 
-    const/16 v2, 0x136e
+    const/16 v2, 0xc6c
 
-    const/16 v8, 0xed4
+    const/16 v8, 0xf83
 
-    const/16 v9, 0x1400
+    const/16 v9, 0xcfe
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9487,7 +9527,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xdf
+    const/16 v1, 0xe0
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9499,13 +9539,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x81f
+    const/16 v1, 0xdd7
 
-    const/16 v2, 0x1304
+    const/16 v2, 0xd92
 
-    const/16 v8, 0x8b1
+    const/16 v8, 0xe69
 
-    const/16 v9, 0x13b4
+    const/16 v9, 0xe42
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9533,7 +9573,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe0
+    const/16 v1, 0xe1
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9545,13 +9585,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xb94
+    const/16 v1, 0x7f6
 
-    const/16 v2, 0x13bd
+    const/16 v2, 0x13f3
 
-    const/16 v8, 0xc56
+    const/16 v8, 0x8b8
 
-    const/16 v9, 0x1420
+    const/16 v9, 0x1456
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9579,7 +9619,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe1
+    const/16 v1, 0xe2
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9591,13 +9631,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xacd
+    const/16 v1, 0x701
 
-    const/16 v2, 0x13bd
+    const/16 v2, 0x13f9
 
-    const/16 v8, 0xb8f
+    const/16 v8, 0x7c3
 
-    const/16 v9, 0x1420
+    const/16 v9, 0x145c
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9625,7 +9665,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe2
+    const/16 v1, 0xe3
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9637,13 +9677,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe00
+    const/16 v1, 0xe3c
 
-    const/16 v2, 0xbbb
+    const/16 v2, 0xc9e
 
-    const/16 v8, 0xe92
+    const/16 v8, 0xece
 
-    const/16 v9, 0xc6b
+    const/16 v9, 0xd4e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9671,7 +9711,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe3
+    const/16 v1, 0xe4
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9683,13 +9723,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe9b
+    const/16 v1, 0xe76
 
-    const/16 v2, 0xb46
+    const/16 v2, 0xef7
 
-    const/16 v8, 0xf5d
+    const/16 v8, 0xf38
 
-    const/16 v9, 0xba9
+    const/16 v9, 0xf5a
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9717,7 +9757,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe4
+    const/16 v1, 0xe5
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9729,13 +9769,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xeba
+    const/16 v1, 0xe7d
 
-    const/16 v2, 0xade
+    const/16 v2, 0xe8f
 
-    const/16 v8, 0xf7c
+    const/16 v8, 0xf3f
 
-    const/16 v9, 0xb41
+    const/16 v9, 0xef2
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9763,7 +9803,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe5
+    const/16 v1, 0xe6
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9775,13 +9815,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xd98
+    const/16 v1, 0xdd4
 
-    const/16 v2, 0xc15
+    const/16 v2, 0xccb
 
-    const/16 v8, 0xdfb
+    const/16 v8, 0xe37
 
-    const/16 v9, 0xcd7
+    const/16 v9, 0xd8d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9809,7 +9849,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe6
+    const/16 v1, 0xe7
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9821,13 +9861,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe67
+    const/16 v1, 0xdc1
 
-    const/16 v2, 0x1045
+    const/16 v2, 0x101a
 
-    const/16 v8, 0xf17
+    const/16 v8, 0xe71
 
-    const/16 v9, 0x10d7
+    const/16 v9, 0x10ac
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9855,7 +9895,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe7
+    const/16 v1, 0xe8
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9867,13 +9907,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xe72
+    const/16 v1, 0xdc1
 
-    const/16 v2, 0xfae
+    const/16 v2, 0xf83
 
-    const/16 v8, 0xf22
+    const/16 v8, 0xe71
 
-    const/16 v9, 0x1040
+    const/16 v9, 0x1015
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9901,7 +9941,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe8
+    const/16 v1, 0xe9
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9913,13 +9953,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xec9
+    const/16 v1, 0xd71
 
-    const/16 v2, 0x1351
+    const/16 v2, 0x13ae
 
-    const/16 v8, 0xed4
+    const/16 v8, 0xd7c
 
-    const/16 v9, 0x1362
+    const/16 v9, 0x13bf
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9947,7 +9987,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xe9
+    const/16 v1, 0xea
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -9959,13 +9999,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xec2
 
-    const/16 v2, 0xa04
+    const/16 v2, 0xd72
 
-    const/16 v8, 0xfd9
+    const/16 v8, 0xedb
 
-    const/16 v9, 0xa1f
+    const/16 v9, 0xd8d
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -9993,7 +10033,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xea
+    const/16 v1, 0xeb
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10005,13 +10045,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xca3
+    const/16 v1, 0x9d0
 
-    const/16 v2, 0xad5
+    const/16 v2, 0x1435
 
-    const/16 v8, 0xcbf
+    const/16 v8, 0x9ec
 
-    const/16 v9, 0xaff
+    const/16 v9, 0x145f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10039,7 +10079,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xeb
+    const/16 v1, 0xec
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10051,13 +10091,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xca3
+    const/16 v1, 0xea1
 
-    const/16 v2, 0xa9c
+    const/16 v2, 0xd53
 
-    const/16 v8, 0xcbf
+    const/16 v8, 0xebd
 
-    const/16 v9, 0xad0
+    const/16 v9, 0xd87
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10085,7 +10125,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xec
+    const/16 v1, 0xed
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10097,13 +10137,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xdc6
+    const/16 v1, 0xf59
 
-    const/16 v2, 0xcdc
+    const/16 v2, 0x13d9
 
-    const/16 v8, 0xdf8
+    const/16 v8, 0xf8b
 
-    const/16 v9, 0xd09
+    const/16 v9, 0x1406
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10131,7 +10171,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xed
+    const/16 v1, 0xee
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10145,11 +10185,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x62e
+    const/16 v2, 0x9e4
 
     const/16 v8, 0xff8
 
-    const/16 v9, 0x666
+    const/16 v9, 0xa1c
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10177,7 +10217,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xee
+    const/16 v1, 0xef
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10191,11 +10231,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x8ba
+    const/16 v2, 0x71f
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x8ec
+    const/16 v9, 0x751
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10221,7 +10261,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xef
+    const/16 v1, 0xf0
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10235,11 +10275,11 @@
 
     const/16 v1, 0xfc0
 
-    const/16 v2, 0x9d1
+    const/16 v2, 0x756
 
     const/16 v8, 0xffa
 
-    const/16 v9, 0x9ff
+    const/16 v9, 0x784
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10265,7 +10305,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf0
+    const/16 v1, 0xf1
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10277,13 +10317,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfc0
+    const/16 v1, 0xf5c
 
-    const/16 v2, 0x66b
+    const/16 v2, 0x12bd
 
-    const/16 v8, 0xff8
+    const/16 v8, 0xf94
 
-    const/16 v9, 0x6a2
+    const/16 v9, 0x12f4
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10309,7 +10349,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf1
+    const/16 v1, 0xf2
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10321,13 +10361,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf7b
+    const/16 v1, 0x4e6
 
-    const/16 v2, 0xf26
+    const/16 v2, 0x1405
 
-    const/16 v8, 0xfa7
+    const/16 v8, 0x512
 
-    const/16 v9, 0xf5f
+    const/16 v9, 0x143e
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10355,7 +10395,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf2
+    const/16 v1, 0xf3
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10397,7 +10437,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf3
+    const/16 v1, 0xf4
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10439,7 +10479,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf4
+    const/16 v1, 0xf5
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10451,55 +10491,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xacd
+    const/16 v4, 0xde9
 
-    const/16 v5, 0x12d4
+    const/16 v5, 0xa24
 
-    const/16 v6, 0xbb1
+    const/16 v6, 0xecd
 
-    const/16 v9, 0x13b8
-
-    invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v4, Landroid/graphics/Rect;
-
-    const/16 v5, 0xe4
-
-    const/16 v6, 0xe4
-
-    invoke-direct {v4, v3, v3, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v5, Landroid/graphics/Point;
-
-    const/16 v6, 0xe4
-
-    const/16 v9, 0xe4
-
-    invoke-direct {v5, v6, v9}, Landroid/graphics/Point;-><init>(II)V
-
-    iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
-
-    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
-
-    const/16 v1, 0xf5
-
-    invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    iget-object v8, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
-
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
-
-    const-string/jumbo v1, "pic_color_jpeg_57dp"
-
-    new-instance v2, Landroid/graphics/Rect;
-
-    const/16 v4, 0xbb6
-
-    const/16 v5, 0x12d4
-
-    const/16 v6, 0xc9a
-
-    const/16 v9, 0x13b8
+    const/16 v9, 0xb08
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10531,17 +10529,59 @@
 
     new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
 
+    const-string/jumbo v1, "pic_color_jpeg_57dp"
+
+    new-instance v2, Landroid/graphics/Rect;
+
+    const/16 v4, 0xde9
+
+    const/16 v5, 0xb0d
+
+    const/16 v6, 0xecd
+
+    const/16 v9, 0xbf1
+
+    invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v4, Landroid/graphics/Rect;
+
+    const/16 v5, 0xe4
+
+    const/16 v6, 0xe4
+
+    invoke-direct {v4, v3, v3, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v5, Landroid/graphics/Point;
+
+    const/16 v6, 0xe4
+
+    const/16 v9, 0xe4
+
+    invoke-direct {v5, v6, v9}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0xf7
+
+    invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v8, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
     const-string/jumbo v1, "pic_color_raw_jpeg_90dp"
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/4 v4, 0x2
+    const/16 v4, 0xa6d
 
-    const/16 v5, 0x12d5
+    const/16 v5, 0x12d4
 
-    const/16 v6, 0x16a
+    const/16 v6, 0xbd5
 
-    const/16 v9, 0x143d
+    const/16 v9, 0x143c
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10565,7 +10605,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf7
+    const/16 v1, 0xf8
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10577,13 +10617,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0x517
+    const/16 v4, 0xa45
 
-    const/16 v5, 0x1334
+    const/16 v5, 0xa10
 
-    const/16 v6, 0x633
+    const/16 v6, 0xb61
 
-    const/16 v9, 0x1450
+    const/16 v9, 0xb2c
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10607,7 +10647,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf8
+    const/16 v1, 0xf9
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10619,13 +10659,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xde9
+    const/16 v4, 0xd22
 
-    const/16 v5, 0xaef
+    const/16 v5, 0xccf
 
-    const/16 v6, 0xe96
+    const/16 v6, 0xdcf
 
-    const/16 v9, 0xbb6
+    const/16 v9, 0xd96
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10649,7 +10689,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xf9
+    const/16 v1, 0xfa
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10695,7 +10735,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xfa
+    const/16 v1, 0xfb
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10707,13 +10747,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xecb
+    const/16 v1, 0x232
 
-    const/16 v2, 0x1413
+    const/16 v2, 0x13c3
 
-    const/16 v8, 0xf08
+    const/16 v8, 0x26f
 
-    const/16 v9, 0x1450
+    const/16 v9, 0x1400
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10741,7 +10781,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xfb
+    const/16 v1, 0xfc
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10787,7 +10827,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xfc
+    const/16 v1, 0xfd
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10799,13 +10839,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xa40
+    const/16 v1, 0xbda
 
-    const/16 v2, 0x12b0
+    const/16 v2, 0x12d4
 
-    const/16 v8, 0xac8
+    const/16 v8, 0xc62
 
-    const/16 v9, 0x13fb
+    const/16 v9, 0x141f
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10833,7 +10873,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0xfd
+    const/16 v1, 0xfe
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10847,53 +10887,11 @@
 
     const/16 v4, 0xfc0
 
-    const/16 v5, 0x452
+    const/16 v5, 0x849
 
     const/16 v6, 0xfef
 
-    const/16 v9, 0x49e
-
-    invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v4, Landroid/graphics/Rect;
-
-    const/16 v5, 0x2f
-
-    const/16 v6, 0x4c
-
-    invoke-direct {v4, v3, v3, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    new-instance v5, Landroid/graphics/Point;
-
-    const/16 v6, 0x2f
-
-    const/16 v9, 0x4c
-
-    invoke-direct {v5, v6, v9}, Landroid/graphics/Point;-><init>(II)V
-
-    iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
-
-    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
-
-    const/16 v1, 0xfe
-
-    invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    iget-object v8, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
-
-    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
-
-    const-string/jumbo v1, "rt_arrow_blue"
-
-    new-instance v2, Landroid/graphics/Rect;
-
-    const/16 v4, 0xfc0
-
-    const/16 v5, 0x4a3
-
-    const/16 v6, 0xfef
-
-    const/16 v9, 0x4ef
+    const/16 v9, 0x895
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -10918,6 +10916,48 @@
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
     const/16 v1, 0xff
+
+    invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v8, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
+    const-string/jumbo v1, "rt_arrow_blue"
+
+    new-instance v2, Landroid/graphics/Rect;
+
+    const/16 v4, 0xfc0
+
+    const/16 v5, 0x89a
+
+    const/16 v6, 0xfef
+
+    const/16 v9, 0x8e6
+
+    invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v4, Landroid/graphics/Rect;
+
+    const/16 v5, 0x2f
+
+    const/16 v6, 0x4c
+
+    invoke-direct {v4, v3, v3, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v5, Landroid/graphics/Point;
+
+    const/16 v6, 0x2f
+
+    const/16 v9, 0x4c
+
+    invoke-direct {v5, v6, v9}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v6, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0x100
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -10959,7 +10999,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x100
+    const/16 v1, 0x101
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11001,7 +11041,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x101
+    const/16 v1, 0x102
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11043,7 +11083,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x102
+    const/16 v1, 0x103
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11087,7 +11127,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x103
+    const/16 v1, 0x104
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11129,7 +11169,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x104
+    const/16 v1, 0x105
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11171,7 +11211,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x105
+    const/16 v1, 0x106
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11213,7 +11253,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x106
+    const/16 v1, 0x107
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11225,13 +11265,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xec9
+    const/16 v1, 0xe76
 
-    const/16 v2, 0x12d3
+    const/16 v2, 0xfc2
 
-    const/16 v8, 0xf42
+    const/16 v8, 0xeef
 
-    const/16 v9, 0x134c
+    const/16 v9, 0x103b
 
     invoke-direct {v6, v1, v2, v8, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11255,7 +11295,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x107
+    const/16 v1, 0x108
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11267,13 +11307,13 @@
 
     new-instance v2, Landroid/graphics/Rect;
 
-    const/16 v4, 0xf97
+    const/16 v4, 0xfb3
 
-    const/16 v5, 0x131e
+    const/16 v5, 0x126b
 
-    const/16 v6, 0xfd7
+    const/16 v6, 0xff3
 
-    const/16 v9, 0x135e
+    const/16 v9, 0x12ab
 
     invoke-direct {v2, v4, v5, v6, v9}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11297,7 +11337,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x108
+    const/16 v1, 0x109
 
     invoke-virtual {v8, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11309,13 +11349,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0x72d
+    const/16 v1, 0xbfd
 
-    const/16 v2, 0x13f3
+    const/16 v2, 0xeca
 
-    const/16 v3, 0x7c4
+    const/16 v3, 0xc94
 
-    const/16 v8, 0x1450
+    const/16 v8, 0xf27
 
     invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11343,7 +11383,53 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x109
+    const/16 v1, 0x10a
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
+    const-string/jumbo v5, "switch_off_disabled"
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    const/16 v1, 0xe67
+
+    const/16 v2, 0x10b9
+
+    const/16 v3, 0xefd
+
+    const/16 v8, 0x1114
+
+    invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v8, Landroid/graphics/Rect;
+
+    const/16 v1, 0x21
+
+    const/16 v2, 0x34
+
+    const/16 v3, 0xb7
+
+    const/16 v9, 0x8f
+
+    invoke-direct {v8, v1, v2, v3, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v9, Landroid/graphics/Point;
+
+    const/16 v1, 0xe0
+
+    const/16 v2, 0xc0
+
+    invoke-direct {v9, v1, v2}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0x10b
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11355,13 +11441,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf62
+    const/16 v1, 0xe76
 
-    const/16 v2, 0xb46
+    const/16 v2, 0xf5f
 
-    const/16 v3, 0xffd
+    const/16 v3, 0xf11
 
-    const/16 v8, 0xba4
+    const/16 v8, 0xfbd
 
     invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11389,7 +11475,53 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x10a
+    const/16 v1, 0x10c
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mAtlasMap:Landroid/util/SparseArray;
+
+    new-instance v4, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;
+
+    const-string/jumbo v5, "switch_on_disabled"
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    const/16 v1, 0xe67
+
+    const/16 v2, 0x1119
+
+    const/16 v3, 0xefd
+
+    const/16 v8, 0x1174
+
+    invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v8, Landroid/graphics/Rect;
+
+    const/16 v1, 0x29
+
+    const/16 v2, 0x34
+
+    const/16 v3, 0xbf
+
+    const/16 v9, 0x8f
+
+    invoke-direct {v8, v1, v2, v3, v9}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    new-instance v9, Landroid/graphics/Point;
+
+    const/16 v1, 0xe0
+
+    const/16 v2, 0xc0
+
+    invoke-direct {v9, v1, v2}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object v10, p0, Lcom/motorola/camera/ui/widgets/gl/textureatlas/Atlasxxxhdpi;->mSize:Landroid/graphics/Point;
+
+    invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
+
+    const/16 v1, 0x10d
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11401,13 +11533,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xfb8
+    const/16 v1, 0xf62
 
-    const/16 v2, 0xada
+    const/16 v2, 0x12f9
 
-    const/16 v3, 0xff8
+    const/16 v3, 0xfa2
 
-    const/16 v8, 0xb2a
+    const/16 v8, 0x1349
 
     invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11431,7 +11563,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x10b
+    const/16 v1, 0x10e
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11443,13 +11575,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xf5d
+    const/16 v1, 0xb9f
 
-    const/16 v2, 0xcc2
+    const/16 v2, 0xcd9
 
-    const/16 v3, 0xfb6
+    const/16 v3, 0xbf8
 
-    const/16 v8, 0xd1a
+    const/16 v8, 0xd31
 
     invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11469,7 +11601,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x10c
+    const/16 v1, 0x10f
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -11481,13 +11613,13 @@
 
     new-instance v6, Landroid/graphics/Rect;
 
-    const/16 v1, 0xc54
+    const/16 v1, 0xfb7
 
-    const/16 v2, 0xee7
+    const/16 v2, 0x1110
 
-    const/16 v3, 0xc94
+    const/16 v3, 0xff7
 
-    const/16 v8, 0xf38
+    const/16 v8, 0x1161
 
     invoke-direct {v6, v1, v2, v3, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
@@ -11511,7 +11643,7 @@
 
     invoke-direct/range {v4 .. v10}, Lcom/motorola/camera/ui/widgets/gl/textureatlas/AtlasData;-><init>(Ljava/lang/String;Landroid/graphics/Rect;ZLandroid/graphics/Rect;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    const/16 v1, 0x10d
+    const/16 v1, 0x110
 
     invoke-virtual {v0, v1, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 

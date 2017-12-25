@@ -92,14 +92,14 @@
         .end annotation
     .end param
 
-    sget-object v2, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCacheLock:Ljava/lang/Object;
+    sget-object v1, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCacheLock:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v1
 
     :try_start_0
-    sget-object v1, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCaches:Ljava/util/WeakHashMap;
+    sget-object v0, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCaches:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -108,7 +108,7 @@
     if-eqz v0, :cond_0
 
     :goto_0
-    new-instance v1, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;
+    new-instance v2, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -118,11 +118,11 @@
 
     move-result-object v3
 
-    invoke-direct {v1, p2, v3}, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;-><init>(Landroid/content/res/ColorStateList;Landroid/content/res/Configuration;)V
+    invoke-direct {v2, p2, v3}, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;-><init>(Landroid/content/res/ColorStateList;Landroid/content/res/Configuration;)V
 
-    invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
+    invoke-virtual {v0, p1, v2}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    monitor-exit v2
+    monitor-exit v1
 
     return-void
 
@@ -131,20 +131,20 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    sget-object v1, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCaches:Ljava/util/WeakHashMap;
+    sget-object v2, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCaches:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v2
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method private static getCachedColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
@@ -162,14 +162,14 @@
 
     const/4 v5, 0x0
 
-    sget-object v3, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCacheLock:Ljava/lang/Object;
+    sget-object v2, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCacheLock:Ljava/lang/Object;
 
-    monitor-enter v3
+    monitor-enter v2
 
     :try_start_0
-    sget-object v2, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCaches:Ljava/util/WeakHashMap;
+    sget-object v0, Landroid/support/v7/content/res/AppCompatResources;->sColorStateCaches:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v2, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -179,16 +179,16 @@
 
     :cond_0
     :goto_0
-    monitor-exit v3
+    monitor-exit v2
 
     return-object v5
 
     :cond_1
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
 
-    move-result v2
+    move-result v1
 
-    if-lez v2, :cond_0
+    if-lez v1, :cond_0
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -198,7 +198,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v2, v1, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;->configuration:Landroid/content/res/Configuration;
+    iget-object v3, v1, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;->configuration:Landroid/content/res/Configuration;
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -208,38 +208,38 @@
 
     move-result-object v4
 
-    invoke-virtual {v2, v4}, Landroid/content/res/Configuration;->equals(Landroid/content/res/Configuration;)Z
+    invoke-virtual {v3, v4}, Landroid/content/res/Configuration;->equals(Landroid/content/res/Configuration;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->remove(I)V
 
     goto :goto_0
 
     :catchall_0
-    move-exception v2
+    move-exception v0
 
-    monitor-exit v3
+    monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v2
+    throw v0
 
     :cond_2
     :try_start_1
-    iget-object v2, v1, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;->value:Landroid/content/res/ColorStateList;
+    iget-object v0, v1, Landroid/support/v7/content/res/AppCompatResources$ColorStateListCacheEntry;->value:Landroid/content/res/ColorStateList;
 
-    monitor-exit v3
+    monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public static getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .locals 3
+    .locals 2
     .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -249,11 +249,11 @@
         .end annotation
     .end param
 
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x17
+    const/16 v1, 0x17
 
-    if-ge v1, v2, :cond_0
+    if-ge v0, v1, :cond_0
 
     invoke-static {p0, p1}, Landroid/support/v7/content/res/AppCompatResources;->getCachedColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
@@ -269,16 +269,16 @@
 
     invoke-static {p0, p1}, Landroid/support/v4/content/ContextCompat;->getColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
     invoke-virtual {p0, p1}, Landroid/content/Context;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_1
     return-object v0
@@ -318,9 +318,9 @@
     .annotation build Landroid/support/annotation/NonNull;
     .end annotation
 
-    sget-object v1, Landroid/support/v7/content/res/AppCompatResources;->TL_TYPED_VALUE:Ljava/lang/ThreadLocal;
+    sget-object v0, Landroid/support/v7/content/res/AppCompatResources;->TL_TYPED_VALUE:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -344,56 +344,56 @@
 .end method
 
 .method private static inflateColorStateList(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-    .locals 6
+    .locals 4
     .annotation build Landroid/support/annotation/Nullable;
     .end annotation
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     invoke-static {p0, p1}, Landroid/support/v7/content/res/AppCompatResources;->isColorInt(Landroid/content/Context;I)Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+
     move-result-object v1
-
-    invoke-virtual {v1, p1}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
-
-    move-result-object v2
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v1, v2, v3}, Landroid/support/v7/content/res/AppCompatColorStateListInflater;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
+    invoke-static {v0, v1, v2}, Landroid/support/v7/content/res/AppCompatColorStateListInflater;->createFromXml(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     :cond_0
-    return-object v5
+    return-object v3
 
     :catch_0
     move-exception v0
 
-    const-string/jumbo v3, "AppCompatResources"
+    const-string/jumbo v1, "AppCompatResources"
 
-    const-string/jumbo v4, "Failed to inflate ColorStateList, leaving it to the framework"
+    const-string/jumbo v2, "Failed to inflate ColorStateList, leaving it to the framework"
 
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v5
+    return-object v3
 .end method
 
 .method private static isColorInt(Landroid/content/Context;I)Z
-    .locals 5
+    .locals 4
     .param p0    # Landroid/content/Context;
         .annotation build Landroid/support/annotation/NonNull;
         .end annotation
@@ -403,36 +403,36 @@
         .end annotation
     .end param
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v1
 
     invoke-static {}, Landroid/support/v7/content/res/AppCompatResources;->getTypedValue()Landroid/util/TypedValue;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, p1, v1, v2}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
+    invoke-virtual {v1, p1, v2, v0}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    iget v3, v1, Landroid/util/TypedValue;->type:I
+    iget v1, v2, Landroid/util/TypedValue;->type:I
 
-    const/16 v4, 0x1c
+    const/16 v3, 0x1c
 
-    if-ge v3, v4, :cond_1
+    if-ge v1, v3, :cond_1
 
     :goto_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :cond_0
-    return v2
+    return v0
 
     :cond_1
-    iget v3, v1, Landroid/util/TypedValue;->type:I
+    iget v1, v2, Landroid/util/TypedValue;->type:I
 
-    const/16 v4, 0x1f
+    const/16 v2, 0x1f
 
-    if-le v3, v4, :cond_0
+    if-le v1, v2, :cond_0
 
     goto :goto_0
 .end method

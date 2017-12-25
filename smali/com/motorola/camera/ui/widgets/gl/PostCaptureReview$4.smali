@@ -32,9 +32,13 @@
 
 # virtual methods
 .method protected getButtonEvent(JJ)Lcom/motorola/camera/fsm/camera/Trigger;
-    .locals 1
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lcom/motorola/camera/fsm/camera/Trigger;
+
+    sget-object v1, Lcom/motorola/camera/fsm/camera/Trigger$Event;->REVIEW_CANCEL:Lcom/motorola/camera/fsm/camera/Trigger$Event;
+
+    invoke-direct {v0, v1}, Lcom/motorola/camera/fsm/camera/Trigger;-><init>(Lcom/motorola/camera/fsm/camera/Trigger$Event;)V
 
     return-object v0
 .end method
@@ -48,49 +52,23 @@
 .end method
 
 .method protected onSingleTap(Landroid/graphics/PointF;JJ)V
-    .locals 5
+    .locals 4
 
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$4;->mTouchBehavior:Lcom/motorola/camera/ui/widgets/gl/ButtonTouchBehavior;
+    invoke-static {}, Lcom/motorola/camera/CameraApp;->getInstance()Lcom/motorola/camera/CameraApp;
 
-    invoke-virtual {v0}, Lcom/motorola/camera/ui/widgets/gl/ButtonTouchBehavior;->cancel()V
+    move-result-object v0
 
-    new-instance v0, Landroid/content/Intent;
+    invoke-static {v0}, Lcom/motorola/camera/wear/GoogleServicesClient;->getInstance(Landroid/content/Context;)Lcom/motorola/camera/wear/GoogleServicesClient;
 
-    const-string/jumbo v1, "android.intent.action.VIEW"
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    const-string/jumbo v1, "/camera/timer/cancel"
 
-    iget-object v1, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$4;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
+    const/4 v2, 0x0
 
-    invoke-static {v1}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get3(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Landroid/net/Uri;
+    invoke-virtual {v0, v1, v2}, Lcom/motorola/camera/wear/GoogleServicesClient;->sendMsg(Ljava/lang/String;[B)V
 
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$4;->this$0:Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;
-
-    invoke-static {v2}, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;->-get1(Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    new-instance v1, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;
-
-    sget-object v2, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;->VIDEO_PLAYER:Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-direct {v1, v0, v3, v2, v4}, Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;-><init>(Landroid/content/Intent;Ljava/lang/String;Lcom/motorola/camera/Util$ActivityLaunchRequestInfo$LAUNCH_REQUEST_CODE;I)V
-
-    iget-object v0, p0, Lcom/motorola/camera/ui/widgets/gl/PostCaptureReview$4;->mRenderer:Lcom/motorola/camera/ui/widgets/gl/iRenderer;
-
-    invoke-interface {v0, v1}, Lcom/motorola/camera/ui/widgets/gl/iRenderer;->startActivity(Lcom/motorola/camera/Util$ActivityLaunchRequestInfo;)V
+    invoke-super/range {p0 .. p5}, Lcom/motorola/camera/ui/widgets/gl/textures/AnimatedButtonTexture;->onSingleTap(Landroid/graphics/PointF;JJ)V
 
     return-void
 .end method

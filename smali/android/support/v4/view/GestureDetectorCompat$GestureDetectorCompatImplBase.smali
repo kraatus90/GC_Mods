@@ -149,9 +149,7 @@
 .end method
 
 .method private cancel()V
-    .locals 4
-
-    const/4 v3, 0x0
+    .locals 3
 
     const/4 v2, 0x0
 
@@ -177,7 +175,9 @@
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
-    iput-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     iput-boolean v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
 
@@ -247,17 +247,17 @@
 .end method
 
 .method private init(Landroid/content/Context;)V
-    .locals 5
+    .locals 4
 
     if-eqz p1, :cond_0
 
-    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_1
 
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsLongpressEnabled:Z
+    iput-boolean v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsLongpressEnabled:Z
 
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
@@ -265,11 +265,11 @@
 
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
-    move-result v2
+    move-result v1
 
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledDoubleTapSlop()I
 
-    move-result v1
+    move-result v2
 
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
@@ -279,127 +279,127 @@
 
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
 
-    move-result v3
+    move-result v0
 
-    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
+    iput v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
 
-    mul-int v3, v2, v2
+    mul-int v0, v1, v1
 
-    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
+    iput v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
 
-    mul-int v3, v1, v1
+    mul-int v0, v2, v2
 
-    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapSlopSquare:I
+    iput v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapSlopSquare:I
 
     return-void
 
     :cond_0
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v4, "Context must not be null"
+    const-string/jumbo v1, "Context must not be null"
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     :cond_1
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v4, "OnGestureListener must not be null"
+    const-string/jumbo v1, "OnGestureListener must not be null"
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 .end method
 
 .method private isConsideredDoubleTap(Landroid/view/MotionEvent;Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Z
-    .locals 8
+    .locals 6
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iget-boolean v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion:Z
+    iget-boolean v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion:Z
 
-    if-eqz v4, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getEventTime()J
 
-    move-result-wide v4
+    move-result-wide v2
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getEventTime()J
 
-    move-result-wide v6
+    move-result-wide v4
 
-    sub-long/2addr v4, v6
+    sub-long/2addr v2, v4
 
-    sget v6, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->DOUBLE_TAP_TIMEOUT:I
+    sget v4, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->DOUBLE_TAP_TIMEOUT:I
 
-    int-to-long v6, v6
+    int-to-long v4, v4
 
-    cmp-long v4, v4, v6
+    cmp-long v2, v2, v4
 
-    if-gtz v4, :cond_1
+    if-gtz v2, :cond_1
 
-    move v4, v3
+    move v2, v1
 
     :goto_0
-    if-nez v4, :cond_2
+    if-nez v2, :cond_2
 
-    return v2
+    return v0
 
     :cond_0
-    return v2
+    return v0
 
     :cond_1
-    move v4, v2
+    move v2, v0
 
     goto :goto_0
 
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v4
+    move-result v2
 
-    float-to-int v4, v4
+    float-to-int v2, v2
 
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v5
+    move-result v3
 
-    float-to-int v5, v5
+    float-to-int v3, v3
 
-    sub-int v0, v4, v5
+    sub-int/2addr v2, v3
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    float-to-int v3, v3
+
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
     float-to-int v4, v4
 
-    invoke-virtual {p3}, Landroid/view/MotionEvent;->getY()F
+    sub-int/2addr v3, v4
 
-    move-result v5
+    mul-int/2addr v2, v2
 
-    float-to-int v5, v5
+    mul-int/2addr v3, v3
 
-    sub-int v1, v4, v5
+    add-int/2addr v2, v3
 
-    mul-int v4, v0, v0
+    iget v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapSlopSquare:I
 
-    mul-int v5, v1, v1
-
-    add-int/2addr v4, v5
-
-    iget v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapSlopSquare:I
-
-    if-lt v4, v5, :cond_3
+    if-lt v2, v3, :cond_3
 
     :goto_1
-    return v2
+    return v0
 
     :cond_3
-    move v2, v3
+    move v0, v1
 
     goto :goto_1
 .end method
@@ -441,1292 +441,725 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 42
+    .locals 13
 
-    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
+    const/4 v12, 0x2
+
+    const/4 v11, 0x3
+
+    const/4 v10, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v8
+
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    if-eqz v0, :cond_1
+
+    :goto_0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    and-int/lit16 v0, v8, 0xff
+
+    const/4 v3, 0x6
+
+    if-eq v0, v3, :cond_2
+
+    move v0, v1
+
+    :goto_1
+    if-nez v0, :cond_3
+
+    const/4 v3, -0x1
+
+    :goto_2
+    const/4 v5, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v6
 
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    if-eqz v36, :cond_1
-
-    :goto_0
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
-
-    and-int/lit16 v0, v6, 0xff
-
-    move/from16 v36, v0
-
-    const/16 v37, 0x6
-
-    move/from16 v0, v36
-
-    move/from16 v1, v37
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v22, 0x0
-
-    :goto_1
-    if-nez v22, :cond_3
-
-    const/16 v25, -0x1
-
-    :goto_2
-    const/16 v26, 0x0
-
-    const/16 v27, 0x0
-
-    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getPointerCount()I
-
-    move-result v7
-
-    const/16 v18, 0x0
+    move v7, v1
 
     :goto_3
-    move/from16 v0, v18
+    if-lt v7, v6, :cond_4
 
-    if-lt v0, v7, :cond_4
+    if-nez v0, :cond_6
 
-    if-nez v22, :cond_6
-
-    move v12, v7
+    move v0, v6
 
     :goto_4
-    int-to-float v0, v12
+    int-to-float v3, v0
 
-    move/from16 v36, v0
+    div-float v3, v5, v3
 
-    div-float v14, v26, v36
+    int-to-float v0, v0
 
-    int-to-float v0, v12
+    div-float/2addr v4, v0
 
-    move/from16 v36, v0
+    and-int/lit16 v0, v8, 0xff
 
-    div-float v15, v27, v36
-
-    const/16 v17, 0x0
-
-    and-int/lit16 v0, v6, 0xff
-
-    move/from16 v36, v0
-
-    packed-switch v36, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
     :cond_0
     :goto_5
     :pswitch_0
-    return v17
+    return v1
 
     :cond_1
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
-    move-result-object v36
+    move-result-object v0
 
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iput-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     goto :goto_0
 
     :cond_2
-    const/16 v22, 0x1
+    move v0, v2
 
     goto :goto_1
 
     :cond_3
-    invoke-static/range {p1 .. p1}, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
-    move-result v25
+    move-result v3
 
     goto :goto_2
 
     :cond_4
-    move/from16 v0, v25
+    if-eq v3, v7, :cond_5
 
-    move/from16 v1, v18
+    invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getX(I)F
 
-    if-eq v0, v1, :cond_5
+    move-result v9
 
-    move-object/from16 v0, p1
+    add-float/2addr v5, v9
 
-    move/from16 v1, v18
+    invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getY(I)F
 
-    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->getX(I)F
+    move-result v9
 
-    move-result v36
-
-    add-float v26, v26, v36
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->getY(I)F
-
-    move-result v36
-
-    add-float v27, v27, v36
+    add-float/2addr v4, v9
 
     :cond_5
-    add-int/lit8 v18, v18, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
     :cond_6
-    add-int/lit8 v12, v7, -0x1
+    add-int/lit8 v0, v6, -0x1
 
     goto :goto_4
 
     :pswitch_1
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
 
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
 
-    move-object/from16 v0, p0
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
 
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
 
-    move-object/from16 v0, p0
-
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
-
-    move-object/from16 v0, p0
-
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
-
-    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->cancelTaps()V
+    invoke-direct {p0}, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->cancelTaps()V
 
     goto :goto_5
 
     :pswitch_2
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
 
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
 
-    move-object/from16 v0, p0
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
 
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
+    iget v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
 
-    move-object/from16 v0, p0
+    int-to-float v2, v2
 
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
+    const/16 v3, 0x3e8
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0, v3, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
-    move-object/from16 v36, v0
+    move-result v2
 
-    const/16 v37, 0x3e8
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    move-object/from16 v0, p0
+    move-result v0
 
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move/from16 v38, v0
+    invoke-virtual {v3, v0}, Landroid/view/VelocityTracker;->getXVelocity(I)F
 
-    move/from16 v0, v38
+    move-result v3
 
-    int-to-float v0, v0
+    iget-object v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move/from16 v38, v0
+    invoke-virtual {v4, v0}, Landroid/view/VelocityTracker;->getYVelocity(I)F
 
-    invoke-virtual/range {v36 .. v38}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
+    move-result v4
 
-    invoke-static/range {p1 .. p1}, Landroid/support/v4/view/MotionEventCompat;->getActionIndex(Landroid/view/MotionEvent;)I
-
-    move-result v28
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v28
-
-    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
-
-    move-result v19
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move/from16 v1, v19
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker;I)F
-
-    move-result v33
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move/from16 v1, v19
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/VelocityTrackerCompat;->getYVelocity(Landroid/view/VelocityTracker;I)F
-
-    move-result v35
-
-    const/16 v18, 0x0
+    move v0, v1
 
     :goto_6
-    move/from16 v0, v18
+    if-ge v0, v6, :cond_0
 
-    if-ge v0, v7, :cond_0
+    if-eq v0, v2, :cond_7
 
-    move/from16 v0, v18
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    move/from16 v1, v28
+    move-result v5
 
-    if-eq v0, v1, :cond_7
+    iget-object v7, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v0, p1
+    invoke-virtual {v7, v5}, Landroid/view/VelocityTracker;->getXVelocity(I)F
 
-    move/from16 v1, v18
+    move-result v7
 
-    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+    mul-float/2addr v7, v3
 
-    move-result v20
+    iget-object v8, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v8, v5}, Landroid/view/VelocityTracker;->getYVelocity(I)F
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+    move-result v5
 
-    move-object/from16 v36, v0
+    mul-float/2addr v5, v4
 
-    move-object/from16 v0, v36
+    add-float/2addr v5, v7
 
-    move/from16 v1, v20
+    const/4 v7, 0x0
 
-    invoke-static {v0, v1}, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker;I)F
+    cmpg-float v5, v5, v7
 
-    move-result v36
+    if-gez v5, :cond_7
 
-    mul-float v32, v33, v36
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v0}, Landroid/view/VelocityTracker;->clear()V
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move/from16 v1, v20
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/VelocityTrackerCompat;->getYVelocity(Landroid/view/VelocityTracker;I)F
-
-    move-result v36
-
-    mul-float v34, v35, v36
-
-    add-float v13, v32, v34
-
-    const/16 v36, 0x0
-
-    cmpg-float v36, v13, v36
-
-    if-gez v36, :cond_7
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    invoke-virtual/range {v36 .. v36}, Landroid/view/VelocityTracker;->clear()V
-
-    goto/16 :goto_5
+    goto :goto_5
 
     :cond_7
-    add-int/lit8 v18, v18, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 
     :pswitch_3
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
+    if-nez v0, :cond_8
 
-    move-object/from16 v36, v0
-
-    if-nez v36, :cond_8
+    move v0, v1
 
     :goto_7
-    move-object/from16 v0, p0
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
 
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
 
-    move-object/from16 v0, p0
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
 
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
 
-    move-object/from16 v0, p0
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
-
-    move-object/from16 v0, p0
-
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
-
-    move-object/from16 v36, v0
-
-    if-nez v36, :cond_c
+    if-nez v3, :cond_c
 
     :goto_8
-    invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object v36
+    move-result-object v3
 
-    move-object/from16 v0, v36
+    iput-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v1, p0
+    iput-boolean v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
 
-    iput-object v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    iput-boolean v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion:Z
 
-    const/16 v36, 0x1
+    iput-boolean v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mStillDown:Z
 
-    move/from16 v0, v36
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
 
-    move-object/from16 v1, p0
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap:Z
 
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
+    iget-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsLongpressEnabled:Z
 
-    const/16 v36, 0x1
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion:Z
-
-    const/16 v36, 0x1
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mStillDown:Z
-
-    const/16 v36, 0x0
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
-
-    const/16 v36, 0x0
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap:Z
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsLongpressEnabled:Z
-
-    move/from16 v36, v0
-
-    if-nez v36, :cond_d
+    if-nez v1, :cond_d
 
     :goto_9
-    move-object/from16 v0, p0
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v36, v0
+    invoke-virtual {v3}, Landroid/view/MotionEvent;->getDownTime()J
 
-    const/16 v37, 0x1
+    move-result-wide v4
 
-    move-object/from16 v0, p0
+    sget v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->TAP_TIMEOUT:I
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    int-to-long v6, v3
 
-    move-object/from16 v38, v0
+    add-long/2addr v4, v6
 
-    invoke-virtual/range {v38 .. v38}, Landroid/view/MotionEvent;->getDownTime()J
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
 
-    move-result-wide v38
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
 
-    sget v40, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->TAP_TIMEOUT:I
+    invoke-interface {v1, p1}, Landroid/view/GestureDetector$OnGestureListener;->onDown(Landroid/view/MotionEvent;)Z
 
-    move/from16 v0, v40
+    move-result v1
 
-    int-to-long v0, v0
-
-    move-wide/from16 v40, v0
-
-    add-long v38, v38, v40
-
-    invoke-virtual/range {v36 .. v39}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p1
-
-    invoke-interface {v0, v1}, Landroid/view/GestureDetector$OnGestureListener;->onDown(Landroid/view/MotionEvent;)Z
-
-    move-result v36
-
-    or-int v17, v17, v36
+    or-int/2addr v1, v0
 
     goto/16 :goto_5
 
     :cond_8
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->hasMessages(I)Z
 
-    move-object/from16 v36, v0
+    move-result v0
 
-    const/16 v37, 0x3
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v16
-
-    if-nez v16, :cond_a
+    if-nez v0, :cond_a
 
     :goto_a
-    move-object/from16 v0, p0
+    iget-object v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
-
-    move-object/from16 v36, v0
-
-    if-nez v36, :cond_b
+    if-nez v5, :cond_b
 
     :cond_9
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
+    sget v5, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->DOUBLE_TAP_TIMEOUT:I
 
-    move-object/from16 v36, v0
+    int-to-long v6, v5
 
-    const/16 v37, 0x3
+    invoke-virtual {v0, v11, v6, v7}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    sget v38, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->DOUBLE_TAP_TIMEOUT:I
+    move v0, v1
 
-    move/from16 v0, v38
-
-    int-to-long v0, v0
-
-    move-wide/from16 v38, v0
-
-    invoke-virtual/range {v36 .. v39}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    goto/16 :goto_7
+    goto :goto_7
 
     :cond_a
-    move-object/from16 v0, p0
+    iget-object v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
-
-    move-object/from16 v36, v0
-
-    const/16 v37, 0x3
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v5, v11}, Landroid/os/Handler;->removeMessages(I)V
 
     goto :goto_a
 
     :cond_b
-    move-object/from16 v0, p0
+    iget-object v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
+    if-eqz v5, :cond_9
 
-    move-object/from16 v36, v0
+    if-eqz v0, :cond_9
 
-    if-eqz v36, :cond_9
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    if-eqz v16, :cond_9
+    iget-object v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, v0, v5, p1}, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->isConsideredDoubleTap(Landroid/view/MotionEvent;Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Z
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    move-result v0
 
-    move-object/from16 v36, v0
+    if-eqz v0, :cond_9
 
-    move-object/from16 v0, p0
+    iput-boolean v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
 
-    move-object/from16 v37, v0
+    iget-object v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v0, p0
+    invoke-interface {v0, v5}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTap(Landroid/view/MotionEvent;)Z
 
-    move-object/from16 v1, v36
+    move-result v0
 
-    move-object/from16 v2, v37
+    or-int/lit8 v0, v0, 0x0
 
-    move-object/from16 v3, p1
+    iget-object v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
 
-    invoke-direct {v0, v1, v2, v3}, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->isConsideredDoubleTap(Landroid/view/MotionEvent;Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Z
+    invoke-interface {v5, p1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v36
+    move-result v5
 
-    if-eqz v36, :cond_9
+    or-int/2addr v0, v5
 
-    const/16 v36, 0x1
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
-
-    move-object/from16 v37, v0
-
-    invoke-interface/range {v36 .. v37}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTap(Landroid/view/MotionEvent;)Z
-
-    move-result v36
-
-    or-int/lit8 v17, v36, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p1
-
-    invoke-interface {v0, v1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v36
-
-    or-int v17, v17, v36
-
-    goto/16 :goto_7
+    goto :goto_7
 
     :cond_c
-    move-object/from16 v0, p0
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
 
-    move-object/from16 v36, v0
-
-    invoke-virtual/range {v36 .. v36}, Landroid/view/MotionEvent;->recycle()V
-
-    goto/16 :goto_8
+    goto :goto_8
 
     :cond_d
-    move-object/from16 v0, p0
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
+    invoke-virtual {v1, v12}, Landroid/os/Handler;->removeMessages(I)V
 
-    move-object/from16 v36, v0
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    const/16 v37, 0x2
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v3}, Landroid/view/MotionEvent;->getDownTime()J
 
-    move-object/from16 v0, p0
+    move-result-wide v4
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
+    sget v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->TAP_TIMEOUT:I
 
-    move-object/from16 v36, v0
+    int-to-long v6, v3
 
-    const/16 v37, 0x2
+    add-long/2addr v4, v6
 
-    move-object/from16 v0, p0
+    sget v3, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->LONGPRESS_TIMEOUT:I
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    int-to-long v6, v3
 
-    move-object/from16 v38, v0
+    add-long/2addr v4, v6
 
-    invoke-virtual/range {v38 .. v38}, Landroid/view/MotionEvent;->getDownTime()J
+    invoke-virtual {v1, v12, v4, v5}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
 
-    move-result-wide v38
-
-    sget v40, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->TAP_TIMEOUT:I
-
-    move/from16 v0, v40
-
-    int-to-long v0, v0
-
-    move-wide/from16 v40, v0
-
-    add-long v38, v38, v40
-
-    sget v40, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->LONGPRESS_TIMEOUT:I
-
-    move/from16 v0, v40
-
-    int-to-long v0, v0
-
-    move-wide/from16 v40, v0
-
-    add-long v38, v38, v40
-
-    invoke-virtual/range {v36 .. v39}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
-
-    goto/16 :goto_9
+    goto :goto_9
 
     :pswitch_4
-    move-object/from16 v0, p0
+    iget-boolean v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
 
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
+    if-nez v0, :cond_0
 
-    move/from16 v36, v0
+    iget v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
 
-    if-nez v36, :cond_0
+    sub-float/2addr v0, v3
 
-    move-object/from16 v0, p0
+    iget v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
 
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
+    sub-float/2addr v5, v4
 
-    move/from16 v36, v0
+    iget-boolean v6, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
 
-    sub-float v23, v36, v14
+    if-nez v6, :cond_f
 
-    move-object/from16 v0, p0
+    iget-boolean v6, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
 
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
+    if-nez v6, :cond_10
 
-    move/from16 v36, v0
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    sub-float v24, v36, v15
+    move-result v6
 
-    move-object/from16 v0, p0
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
+    cmpl-float v6, v6, v7
 
-    move/from16 v36, v0
-
-    if-nez v36, :cond_f
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
-
-    move/from16 v36, v0
-
-    if-nez v36, :cond_10
-
-    invoke-static/range {v23 .. v23}, Ljava/lang/Math;->abs(F)F
-
-    move-result v36
-
-    const/high16 v37, 0x3f800000    # 1.0f
-
-    cmpl-float v36, v36, v37
-
-    if-ltz v36, :cond_12
-
-    const/16 v36, 0x1
+    if-ltz v6, :cond_13
 
     :goto_b
-    if-nez v36, :cond_e
+    if-nez v2, :cond_e
 
-    invoke-static/range {v24 .. v24}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
-    move-result v36
+    move-result v2
 
-    const/high16 v37, 0x3f800000    # 1.0f
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    cmpl-float v36, v36, v37
+    cmpl-float v2, v2, v6
 
-    if-ltz v36, :cond_0
+    if-ltz v2, :cond_0
 
     :cond_e
-    move-object/from16 v0, p0
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
+    iget-object v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v36, v0
+    invoke-interface {v1, v2, p1, v0, v5}, Landroid/view/GestureDetector$OnGestureListener;->onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
-    move-object/from16 v0, p0
+    move-result v1
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
 
-    move-object/from16 v37, v0
-
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, v37
-
-    move-object/from16 v2, p1
-
-    move/from16 v3, v23
-
-    move/from16 v4, v24
-
-    invoke-interface {v0, v1, v2, v3, v4}, Landroid/view/GestureDetector$OnGestureListener;->onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-
-    move-result v17
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
-
-    move-object/from16 v0, p0
-
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
 
     goto/16 :goto_5
 
     :cond_f
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
+    invoke-interface {v0, p1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
 
-    move-object/from16 v36, v0
+    move-result v0
 
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p1
-
-    invoke-interface {v0, v1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v36
-
-    or-int/lit8 v17, v36, 0x0
+    or-int/lit8 v1, v0, 0x0
 
     goto/16 :goto_5
 
     :cond_10
-    move-object/from16 v0, p0
+    iget v6, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
 
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusX:F
+    sub-float v6, v3, v6
 
-    move/from16 v36, v0
+    float-to-int v6, v6
 
-    sub-float v36, v14, v36
+    iget v7, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
 
-    move/from16 v0, v36
+    sub-float v7, v4, v7
 
-    float-to-int v9, v0
+    float-to-int v7, v7
 
-    move-object/from16 v0, p0
+    mul-int/2addr v6, v6
 
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDownFocusY:F
+    mul-int/2addr v7, v7
 
-    move/from16 v36, v0
+    add-int/2addr v6, v7
 
-    sub-float v36, v15, v36
+    iget v7, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
 
-    move/from16 v0, v36
+    if-gt v6, v7, :cond_11
 
-    float-to-int v10, v0
-
-    mul-int v36, v9, v9
-
-    mul-int v37, v10, v10
-
-    add-int v11, v36, v37
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
-
-    move/from16 v36, v0
-
-    move/from16 v0, v36
-
-    if-gt v11, v0, :cond_11
+    move v0, v1
 
     :goto_c
-    move-object/from16 v0, p0
+    iget v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
 
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mTouchSlopSquare:I
+    if-gt v6, v2, :cond_12
 
-    move/from16 v36, v0
-
-    move/from16 v0, v36
-
-    if-le v11, v0, :cond_0
-
-    const/16 v36, 0x0
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion:Z
+    :goto_d
+    move v1, v0
 
     goto/16 :goto_5
 
     :cond_11
-    move-object/from16 v0, p0
+    iget-object v7, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
+    iget-object v8, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v36, v0
+    invoke-interface {v7, v8, p1, v0, v5}, Landroid/view/GestureDetector$OnGestureListener;->onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
-    move-object/from16 v0, p0
+    move-result v0
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    iput v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
 
-    move-object/from16 v37, v0
+    iput v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
 
-    move-object/from16 v0, v36
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
 
-    move-object/from16 v1, v37
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v2, p1
+    invoke-virtual {v3, v11}, Landroid/os/Handler;->removeMessages(I)V
 
-    move/from16 v3, v23
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    move/from16 v4, v24
+    invoke-virtual {v3, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    invoke-interface {v0, v1, v2, v3, v4}, Landroid/view/GestureDetector$OnGestureListener;->onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    iget-object v2, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    move-result v17
-
-    move-object/from16 v0, p0
-
-    iput v14, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusX:F
-
-    move-object/from16 v0, p0
-
-    iput v15, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mLastFocusY:F
-
-    const/16 v36, 0x0
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
-
-    move-object/from16 v36, v0
-
-    const/16 v37, 0x3
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
-
-    move-object/from16 v36, v0
-
-    const/16 v37, 0x1
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
-
-    move-object/from16 v36, v0
-
-    const/16 v37, 0x2
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v2, v12}, Landroid/os/Handler;->removeMessages(I)V
 
     goto :goto_c
 
     :cond_12
-    const/16 v36, 0x0
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInBiggerTapRegion:Z
 
-    goto/16 :goto_b
-
-    :pswitch_5
-    const/16 v36, 0x0
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mStillDown:Z
-
-    invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
-
-    move-result-object v8
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
-
-    move/from16 v36, v0
-
-    if-nez v36, :cond_15
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
-
-    move/from16 v36, v0
-
-    if-nez v36, :cond_16
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
-
-    move/from16 v36, v0
-
-    if-nez v36, :cond_17
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v29, v0
-
-    const/16 v36, 0x0
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v36
-
-    invoke-virtual {v0, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
-
-    move-result v21
-
-    const/16 v36, 0x3e8
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
-
-    move/from16 v37, v0
-
-    move/from16 v0, v37
-
-    int-to-float v0, v0
-
-    move/from16 v37, v0
-
-    move-object/from16 v0, v29
-
-    move/from16 v1, v36
-
-    move/from16 v2, v37
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
-
-    move-object/from16 v0, v29
-
-    move/from16 v1, v21
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/VelocityTrackerCompat;->getYVelocity(Landroid/view/VelocityTracker;I)F
-
-    move-result v31
-
-    move-object/from16 v0, v29
-
-    move/from16 v1, v21
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/VelocityTrackerCompat;->getXVelocity(Landroid/view/VelocityTracker;I)F
-
-    move-result v30
-
-    invoke-static/range {v31 .. v31}, Ljava/lang/Math;->abs(F)F
-
-    move-result v36
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMinimumFlingVelocity:I
-
-    move/from16 v37, v0
-
-    move/from16 v0, v37
-
-    int-to-float v0, v0
-
-    move/from16 v37, v0
-
-    cmpl-float v36, v36, v37
-
-    if-lez v36, :cond_18
-
-    const/16 v36, 0x1
-
-    :goto_d
-    if-nez v36, :cond_13
-
-    invoke-static/range {v30 .. v30}, Ljava/lang/Math;->abs(F)F
-
-    move-result v36
-
-    move-object/from16 v0, p0
-
-    iget v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMinimumFlingVelocity:I
-
-    move/from16 v37, v0
-
-    move/from16 v0, v37
-
-    int-to-float v0, v0
-
-    move/from16 v37, v0
-
-    cmpl-float v36, v36, v37
-
-    if-lez v36, :cond_14
+    goto :goto_d
 
     :cond_13
-    move-object/from16 v0, p0
+    move v2, v1
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
+    goto :goto_b
 
-    move-object/from16 v36, v0
+    :pswitch_5
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mStillDown:Z
 
-    move-object/from16 v0, p0
+    invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
+    move-result-object v3
 
-    move-object/from16 v37, v0
+    iget-boolean v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
 
-    move-object/from16 v0, v36
+    if-nez v0, :cond_16
 
-    move-object/from16 v1, v37
+    iget-boolean v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
 
-    move-object/from16 v2, p1
+    if-nez v0, :cond_17
 
-    move/from16 v3, v30
+    iget-boolean v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mAlwaysInTapRegion:Z
 
-    move/from16 v4, v31
+    if-nez v0, :cond_18
 
-    invoke-interface {v0, v1, v2, v3, v4}, Landroid/view/GestureDetector$OnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-result v17
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v4
+
+    iget v5, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMaximumFlingVelocity:I
+
+    int-to-float v5, v5
+
+    const/16 v6, 0x3e8
+
+    invoke-virtual {v0, v6, v5}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
+
+    invoke-virtual {v0, v4}, Landroid/view/VelocityTracker;->getYVelocity(I)F
+
+    move-result v5
+
+    invoke-virtual {v0, v4}, Landroid/view/VelocityTracker;->getXVelocity(I)F
+
+    move-result v4
+
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    iget v6, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMinimumFlingVelocity:I
+
+    int-to-float v6, v6
+
+    cmpl-float v0, v0, v6
+
+    if-lez v0, :cond_19
+
+    move v0, v2
+
+    :goto_e
+    if-nez v0, :cond_14
+
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    iget v6, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mMinimumFlingVelocity:I
+
+    int-to-float v6, v6
+
+    cmpl-float v0, v0, v6
+
+    if-lez v0, :cond_1a
 
     :cond_14
-    :goto_e
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
+    iget-object v6, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mCurrentDownEvent:Landroid/view/MotionEvent;
 
-    move-object/from16 v36, v0
+    invoke-interface {v0, v6, p1, v4, v5}, Landroid/view/GestureDetector$OnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
-    if-nez v36, :cond_19
+    move-result v0
 
+    :cond_15
     :goto_f
-    move-object/from16 v0, p0
+    iget-object v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
 
-    iput-object v8, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
-
-    move-object/from16 v36, v0
-
-    if-nez v36, :cond_1a
+    if-nez v4, :cond_1b
 
     :goto_10
-    const/16 v36, 0x0
+    iput-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
 
-    move/from16 v0, v36
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v1, p0
+    if-nez v3, :cond_1c
 
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
+    :goto_11
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mIsDoubleTapping:Z
 
-    const/16 v36, 0x0
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap:Z
 
-    move/from16 v0, v36
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v1, p0
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap:Z
+    iget-object v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v1, v12}, Landroid/os/Handler;->removeMessages(I)V
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
-
-    move-object/from16 v36, v0
-
-    const/16 v37, 0x1
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
-
-    move-object/from16 v36, v0
-
-    const/16 v37, 0x2
-
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
+    move v1, v0
 
     goto/16 :goto_5
 
-    :cond_15
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p1
-
-    invoke-interface {v0, v1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v36
-
-    or-int/lit8 v17, v36, 0x0
-
-    goto :goto_e
-
     :cond_16
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
+    invoke-interface {v0, p1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onDoubleTapEvent(Landroid/view/MotionEvent;)Z
 
-    move-object/from16 v36, v0
+    move-result v0
 
-    const/16 v37, 0x3
+    or-int/lit8 v0, v0, 0x0
 
-    invoke-virtual/range {v36 .. v37}, Landroid/os/Handler;->removeMessages(I)V
-
-    const/16 v36, 0x0
-
-    move/from16 v0, v36
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
-
-    goto :goto_e
+    goto :goto_f
 
     :cond_17
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mHandler:Landroid/os/Handler;
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
+    invoke-virtual {v0, v11}, Landroid/os/Handler;->removeMessages(I)V
 
-    move-object/from16 v36, v0
+    iput-boolean v1, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mInLongPress:Z
 
-    move-object/from16 v0, v36
+    move v0, v1
 
-    move-object/from16 v1, p1
-
-    invoke-interface {v0, v1}, Landroid/view/GestureDetector$OnGestureListener;->onSingleTapUp(Landroid/view/MotionEvent;)Z
-
-    move-result v17
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap:Z
-
-    move/from16 v36, v0
-
-    if-eqz v36, :cond_14
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
-
-    move-object/from16 v36, v0
-
-    if-eqz v36, :cond_14
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
-
-    move-object/from16 v36, v0
-
-    move-object/from16 v0, v36
-
-    move-object/from16 v1, p1
-
-    invoke-interface {v0, v1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
-
-    goto/16 :goto_e
+    goto :goto_f
 
     :cond_18
-    const/16 v36, 0x0
+    iget-object v0, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mListener:Landroid/view/GestureDetector$OnGestureListener;
 
-    goto/16 :goto_d
+    invoke-interface {v0, p1}, Landroid/view/GestureDetector$OnGestureListener;->onSingleTapUp(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    iget-boolean v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDeferConfirmSingleTap:Z
+
+    if-eqz v4, :cond_15
+
+    iget-object v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
+
+    if-eqz v4, :cond_15
+
+    iget-object v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mDoubleTapListener:Landroid/view/GestureDetector$OnDoubleTapListener;
+
+    invoke-interface {v4, p1}, Landroid/view/GestureDetector$OnDoubleTapListener;->onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
+
+    goto :goto_f
 
     :cond_19
-    move-object/from16 v0, p0
+    move v0, v1
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
-
-    move-object/from16 v36, v0
-
-    invoke-virtual/range {v36 .. v36}, Landroid/view/MotionEvent;->recycle()V
-
-    goto/16 :goto_f
+    goto :goto_e
 
     :cond_1a
-    move-object/from16 v0, p0
+    move v0, v1
 
-    iget-object v0, v0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+    goto :goto_f
 
-    move-object/from16 v36, v0
+    :cond_1b
+    iget-object v4, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mPreviousUpEvent:Landroid/view/MotionEvent;
 
-    invoke-virtual/range {v36 .. v36}, Landroid/view/VelocityTracker;->recycle()V
+    invoke-virtual {v4}, Landroid/view/MotionEvent;->recycle()V
 
-    const/16 v36, 0x0
+    goto :goto_10
 
-    move-object/from16 v0, v36
+    :cond_1c
+    iget-object v3, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    move-object/from16 v1, p0
+    invoke-virtual {v3}, Landroid/view/VelocityTracker;->recycle()V
 
-    iput-object v0, v1, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
+    iput-object v10, p0, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    goto/16 :goto_10
+    goto :goto_11
 
     :pswitch_6
-    invoke-direct/range {p0 .. p0}, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->cancel()V
+    invoke-direct {p0}, Landroid/support/v4/view/GestureDetectorCompat$GestureDetectorCompatImplBase;->cancel()V
 
     goto/16 :goto_5
 
