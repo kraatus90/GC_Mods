@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.motorola.camera2" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.motorola.camera1" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
     <uses-feature android:name="android.hardware.wifi" android:required="false"/>
-    <uses-feature android:name="com.motorola.camera2"/>
+    <uses-feature android:name="com.motorola.camera1"/>
     <uses-feature android:name="android.hardware.location" android:required="false"/>
     <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
-,
-<uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
     <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -25,7 +24,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="com.motorola.camera.permission.CONTROL_CAMERA"/>
+    <uses-permission android:name="com.motorola.camera.permission.CONTROL_CAMERA_MOD"/>
     <uses-permission android:name="com.motorola.permission.ACCESS_CHECKIN"/>
     <uses-permission android:name="com.motorola.permission.CAMERA_DUMP"/>
     <uses-permission android:name="com.motorola.permission.GET_ZEN_MODE_CONFIG"/>
@@ -34,7 +33,7 @@
     <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
-    <permission android:description="@string/perm_control_camera_desc" android:label="@string/perm_control_camera_label" android:name="com.motorola.camera.permission.CONTROL_CAMERA" android:protectionLevel="signatureOrSystem"/>
+    <permission android:description="@string/perm_control_camera_desc" android:label="@string/perm_control_camera_label" android:name="com.motorola.camera.permission.CONTROL_CAMERA_MOD" android:protectionLevel="signatureOrSystem"/>
     <meta-data android:name="android.support.VERSION" android:value="25.3.0"/>
     <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher_camera" android:label="@string/act_name_camera" android:logo="@mipmap/ic_launcher_camera" android:name="com.motorola.camera.CameraApp" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/CameraAppTheme">
         <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|screenSize" android:exported="true" android:icon="@mipmap/ic_launcher_camera" android:label="@string/act_name_camera" android:launchMode="singleTask" android:name="com.motorola.camera.Camera" android:screenOrientation="nosensor" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
@@ -85,7 +84,7 @@
                 <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE"/>
             </intent-filter>
         </receiver>
-        <receiver android:exported="true" android:name="com.motorola.camera.MediaControlReceiver" android:permission="com.motorola.camera.permission.CONTROL_CAMERA">
+        <receiver android:exported="true" android:name="com.motorola.camera.MediaControlReceiver" android:permission="com.motorola.camera.permission.CONTROL_CAMERA_MOD">
             <intent-filter>
                 <action android:name="motorola.camera.intent.action.TAKE_PICTURE"/>
                 <action android:name="motorola.camera.intent.action.TAKE_SELFIE"/>
@@ -115,8 +114,8 @@
             </intent-filter>
         </receiver>
         <service android:exported="false" android:name="com.motorola.camera.LandmarkUpdateService"/>
-        <provider android:authorities="com.motorola.camera2.provider.photos.specialtype" android:enabled="true" android:exported="true" android:name="com.motorola.camera.provider.photos.PhotosProvider"/>
-        <provider android:authorities="com.motorola.camera2.FileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+        <provider android:authorities="com.motorola.camera2mod.provider.photos.specialtype" android:enabled="true" android:exported="true" android:name="com.motorola.camera.provider.photos.PhotosProvider"/>
+        <provider android:authorities="com.motorola.camera2mod.FileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_paths"/>
         </provider>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>

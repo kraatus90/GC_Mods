@@ -273,7 +273,6 @@
     .catch Lorg/apache/http/HttpException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Lorg/apache/http/HttpException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result v0
 
@@ -320,7 +319,6 @@
     .catch Lorg/apache/http/HttpException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_3
-    .catch Lorg/apache/http/HttpException; {:try_start_3 .. :try_end_3} :catch_0
 
     goto :goto_1
 
