@@ -1089,7 +1089,7 @@
 
     sget-object v0, Lddu;->a:Ljava/lang/String;
 
-    const-string v3, "Selected pixelExperimentalFeatures OneCamera configuration."
+    const-string v3, "Selected Nexus6P OneCamera configuration."
 
     invoke-static {v0, v3}, Lbgj;->c(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1103,9 +1103,9 @@
 
     move-result-object v6
 
-    new-instance v0, Ldjb;
+    new-instance v0, Ldjc;
 
-    invoke-direct/range {v0 .. v6}, Ldjb;-><init>(Ldjp;Ldlj;Ldlp;Ldlv;Ldld;Lebv;)V
+    invoke-direct/range {v0 .. v6}, Ldjc;-><init>(Ldjp;Ldlj;Ldlp;Ldlv;Ldld;Lebv;)V
 
     goto/16 :goto_0
 

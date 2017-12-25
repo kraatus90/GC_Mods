@@ -2076,7 +2076,7 @@
 
     sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v4, "Pixel XL2"
+    const-string v4, "Nexus 6P"
 
     invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2093,7 +2093,7 @@
     :goto_1
     sget-object v3, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v3, "Pixel XL2"
+    const-string v3, "Nexus 6P"
 
     const-string v4, "Nexus 7"
 
@@ -2982,11 +2982,11 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v0, "Pixel XL2"
+    const-string v0, "Nexus 6P"
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v1, "Google"
+    const-string v1, "Huawei"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

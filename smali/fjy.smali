@@ -161,7 +161,7 @@
 
     sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
 
-    const-string v0, "Google"
+    const-string v0, "Huawei"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v1, "Google"
+    const-string v1, "Huawei"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -259,7 +259,7 @@
 
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v1, "muskie"
+    const-string v1, "angler"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -315,7 +315,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v1, "Pixel XL2"
+    const-string v1, "Nexus 6P"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -425,7 +425,7 @@
 
     sget-object v1, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    const-string v1, "muskie"
+    const-string v1, "angler"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -481,7 +481,7 @@
 
     sget-object v1, Landroid/os/Build;->BOARD:Ljava/lang/String;
 
-    const-string v1, "muskie"
+    const-string v1, "angler"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -750,7 +750,7 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v0, "Google"
+    const-string v0, "Huawei"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -758,7 +758,7 @@
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v0, "muskie"
+    const-string v0, "angler"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

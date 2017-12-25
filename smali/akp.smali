@@ -49,7 +49,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v1, "Pixel XL2"
+    const-string v1, "Nexus 6P"
 
     invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 

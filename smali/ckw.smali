@@ -1346,7 +1346,7 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v0, "Google"
+    const-string v0, "Huawei"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setMake(Ljava/lang/String;)V
 
@@ -1356,7 +1356,7 @@
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v0, "muskie"
+    const-string v0, "angler"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
 

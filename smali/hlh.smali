@@ -191,7 +191,7 @@
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v1, "Google"
+    const-string v1, "Huawei"
 
     invoke-direct {p0, v0, v1}, Lhlh;->a(ILjava/lang/Object;)V
 
@@ -199,7 +199,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v1, "Pixel XL2"
+    const-string v1, "Nexus 6P"
 
     invoke-direct {p0, v0, v1}, Lhlh;->a(ILjava/lang/Object;)V
 

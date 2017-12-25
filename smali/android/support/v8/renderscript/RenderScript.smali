@@ -1493,7 +1493,7 @@
 
     sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v2, "Google"
+    const-string v2, "Huawei"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1505,7 +1505,7 @@
 
     sget-object v2, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    const-string v2, "muskie"
+    const-string v2, "angler"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1517,7 +1517,7 @@
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v2, "Pixel XL2"
+    const-string v2, "Nexus 6P"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
