@@ -52,6 +52,8 @@
 
     iget-boolean v1, v1, Lhnx;->c:Z
 
+    const/4 v1, 0x0
+
     if-eqz v1, :cond_0
 
     const-string v0, "2592x1458"
@@ -120,6 +122,8 @@
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_1
 
@@ -237,6 +241,8 @@
 
     iget-boolean v3, v3, Lhnx;->c:Z
 
+    const/4 v3, 0x0
+
     if-eqz v3, :cond_0
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/config/GservicesHelper;->h()Z
@@ -279,6 +285,8 @@
     invoke-virtual {v0}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v0
+
+    const/4 v0, 0x1
 
     if-eqz v0, :cond_2
 
@@ -392,6 +400,8 @@
 
     move-result v2
 
+    const/4 v2, 0x1
+
     if-nez v2, :cond_0
 
     move v0, v1
@@ -469,6 +479,8 @@
     invoke-virtual {v1}, Lcom/google/android/apps/camera/util/ApiHelper;->b()Z
 
     move-result v1
+
+    const/4 v1, 0x1
 
     if-eqz v1, :cond_0
 

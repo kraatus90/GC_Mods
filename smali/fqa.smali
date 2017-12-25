@@ -140,6 +140,8 @@
 
     iget-boolean v2, v2, Lhnx;->c:Z
 
+    const/4 v2, 0x0
+
     if-eqz v2, :cond_3
 
     const/16 v0, 0x244

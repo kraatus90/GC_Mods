@@ -752,4 +752,9 @@ Move device slowly"</string>
     <string name="zoom_announcement">Zoom value is %.1f</string>
     <string name="zoom_minus_desc">Zoom out</string>
     <string name="zoom_plus_desc">Zoom in</string>
+    <string name="pref_config_camera__title">Config camera</string>
+    <string name="pref_config_camera_default">Nexus6P</string>
+    <string name="pref_config_camera_N6P">Nexus6P</string>
+    <string name="pref_config_camera_N5X">Nexus5X</string>
+    <string name="pref_config_camera_Exp2017">NexusExp2017</string>
 </resources>

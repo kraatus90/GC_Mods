@@ -647,4 +647,8 @@
     <string name="zoom_announcement">Масштаб: %.1f</string>
     <string name="zoom_minus_desc">Уменьшить</string>
     <string name="zoom_plus_desc">Увеличить</string>
+    <string name="pref_config_camera__title">Конфиг модуля камеры</string>
+    <string name="pref_config_camera_N6P">Nexus6P</string>
+    <string name="pref_config_camera_N5X">Nexus5X</string>
+    <string name="pref_config_camera_Exp2017">NexusExp2017</string>
 </resources>

@@ -162,9 +162,9 @@
         <item>auto</item>
     </string-array>
     <string-array name="pref_camera_jpeg_quality_entryvalues">
-        <item>@string/pref_camera_jpeg_quality_normal</item>
-        <item>@string/pref_camera_jpeg_quality_fine</item>
         <item>@string/pref_camera_jpeg_quality_superfine</item>
+        <item>@string/pref_camera_jpeg_quality_fine</item>
+        <item>@string/pref_camera_jpeg_quality_normal</item>
     </string-array>
     <string-array name="pref_camera_pano_orientation_entryvalues">
         <item>@string/pano_orientation_horizontal</item>
@@ -310,5 +310,15 @@
     <string-array name="video_flash_descriptions">
         <item>@string/torch_on_desc</item>
         <item>@string/torch_off_desc</item>
+    </string-array>
+    <string-array name="pref_config_camera_entries">
+        <item>@string/pref_config_camera_N6P</item>
+        <item>@string/pref_config_camera_N5X</item>
+        <item>@string/pref_config_camera_Exp2017</item>
+    </string-array>
+    <string-array name="pref_config_camera_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 </resources>

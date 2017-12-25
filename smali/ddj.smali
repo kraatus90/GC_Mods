@@ -144,6 +144,8 @@
 
     move-result v0
 
+    const/4 v0, 0x1
+
     if-eqz v0, :cond_6
 
     sget-object v0, Ldds;->e:Ldds;
@@ -206,6 +208,8 @@
     iget-object v1, v1, Lcom/google/android/apps/camera/util/ApiHelper;->b:Lhnx;
 
     iget-boolean v1, v1, Lhnx;->c:Z
+
+    const/4 v1, 0x0
 
     if-nez v1, :cond_a
 

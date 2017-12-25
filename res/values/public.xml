@@ -1083,6 +1083,8 @@
     <public type="array" name="toybox_hfr_mode_rates" id="0x7f0a0039" />
     <public type="array" name="trusted_certificates" id="0x7f0a003a" />
     <public type="array" name="video_flash_descriptions" id="0x7f0a003b" />
+    <public type="array" name="pref_config_camera_entries" id="0x7f0a003c" />
+    <public type="array" name="pref_config_camera_entryvalues" id="0x7f0a003d" />
     <public type="bool" name="abc_action_bar_embed_tabs" id="0x7f0b0000" />
     <public type="bool" name="abc_allow_stacked_button_bar" id="0x7f0b0001" />
     <public type="bool" name="abc_config_actionMenuItemAllCaps" id="0x7f0b0002" />
@@ -3437,6 +3439,11 @@
     <public type="string" name="zoom_announcement" id="0x7f1102e0" />
     <public type="string" name="zoom_minus_desc" id="0x7f1102e1" />
     <public type="string" name="zoom_plus_desc" id="0x7f1102e2" />
+    <public type="string" name="pref_config_camera__title" id="0x7f1102e3" />
+    <public type="string" name="pref_config_camera_default" id="0x7f1102e4" />
+    <public type="string" name="pref_config_camera_N6P" id="0x7f1102e5" />
+    <public type="string" name="pref_config_camera_N5X" id="0x7f1102e6" />
+    <public type="string" name="pref_config_camera_Exp2017" id="0x7f1102e7" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f120000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f120001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f120002" />

@@ -128,11 +128,7 @@
 .end method
 
 .method public final h()V
-    .locals 1
-
-    iget-object v0, p0, Lhox;->a:Lhpb;
-
-    invoke-interface {v0}, Lhpb;->h()V
+    .locals 0
 
     return-void
 .end method
