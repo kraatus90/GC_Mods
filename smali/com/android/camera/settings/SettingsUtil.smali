@@ -304,7 +304,7 @@
 
     const-string v1, "Only one supported resolution."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, v4, Lcom/android/camera/settings/SettingsUtil$SelectedPictureSizes;->large:Lcom/android/camera/util/Size;
 
@@ -339,7 +339,7 @@
 
     const-string v2, "Only two supported resolutions."
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -370,7 +370,7 @@
 
     const-string v2, "Exactly three supported resolutions."
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

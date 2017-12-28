@@ -158,7 +158,7 @@
 
     const-string v1, "Removed FLAG_KEEP_SCREEN_ON"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     iget v0, p0, Lcom/android/camera/util/activity/ScreenOnControllerImpl;->desiredScreenOnMode$9HHMUR9FC5N68SJFD5I2UOR1DLIN4O9FELQ6IR1FC5HN8QBMD5Q7IBQJCDP6APBE9TN46RREEHP6UR3CCLP4IRBGDGI56ORICLIMSJRE9LNM8P9R:I
@@ -181,7 +181,7 @@
 
     const-string v1, "Added FLAG_KEEP_SCREEN_ON"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     iget-object v0, p0, Lcom/android/camera/util/activity/ScreenOnControllerImpl;->clearWindowFlagDelayedExecutor:Lcom/google/android/apps/camera/async/ResettingDelayedExecutor;

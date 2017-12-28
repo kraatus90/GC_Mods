@@ -39,7 +39,7 @@
 
     const-string v1, "WARNING: Using CameraDeviceManagerV2 implementation."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/android/camera/device/CameraDeviceManager;
 

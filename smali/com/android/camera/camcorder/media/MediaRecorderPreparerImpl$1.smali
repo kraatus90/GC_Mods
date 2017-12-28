@@ -163,7 +163,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -303,7 +303,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v4, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -364,7 +364,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -442,7 +442,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -496,7 +496,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -550,7 +550,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -604,7 +604,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -658,7 +658,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -712,7 +712,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -778,7 +778,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -904,7 +904,7 @@
 
     move-result-object v4
 
-    invoke-static {v0, v4}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -992,7 +992,7 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v4, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -1087,7 +1087,7 @@
 
     move-result-object v6
 
-    invoke-static {v0, v6}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -1137,7 +1137,7 @@
 
     const-string v5, "MediaRecorder.setLocation"
 
-    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v4, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -1171,7 +1171,7 @@
 
     const-string v4, "MediaRecorder.prepare() BEGIN"
 
-    invoke-static {v0, v4}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl$1;->this$0:Lcom/android/camera/camcorder/media/MediaRecorderPreparerImpl;
 
@@ -1187,7 +1187,7 @@
 
     const-string v4, "MediaRecorder.prepare() END"
 
-    invoke-static {v0, v4}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Lcom/google/android/apps/camera/proxy/media/MediaRecorderException; {:try_start_0 .. :try_end_0} :catch_0
 

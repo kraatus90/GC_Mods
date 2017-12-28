@@ -82,7 +82,7 @@
 
     const-string v1, "createHfrCameraCaptureSession"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Ljava/util/LinkedList;
 

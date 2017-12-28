@@ -539,7 +539,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -574,7 +574,7 @@
     move-result-object v0
 
     :goto_1
-    invoke-static {v5, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {v3, v4}, Lcom/google/android/gms/common/GooglePlayServicesUtil;->isPackageGoogleSigned(Landroid/content/pm/PackageManager;Ljava/lang/String;)Z
 
@@ -586,7 +586,7 @@
 
     const-string v2, "APK is not signed properly for logging"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -1846,7 +1846,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0, v1}, Lcom/android/camera/stats/UsageStatistics;->playLogCameraEvent(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
 
@@ -1936,7 +1936,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0, v1}, Lcom/android/camera/stats/UsageStatistics;->playLogCameraEvent(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
 

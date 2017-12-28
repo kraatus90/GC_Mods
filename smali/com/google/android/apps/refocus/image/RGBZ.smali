@@ -357,7 +357,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 .end method
@@ -658,7 +658,7 @@
 
     const-string v5, "Encoding image data"
 
-    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v4, p0, Lcom/google/android/apps/refocus/image/RGBZ;->bitmap:Landroid/graphics/Bitmap;
 
@@ -692,7 +692,7 @@
 
     const-string v5, "Encoding depth data"
 
-    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {p0}, Lcom/google/android/apps/refocus/metadata/GDepth;->fromRGBZ(Lcom/google/android/apps/refocus/image/RGBZ;)Lcom/google/android/apps/refocus/metadata/GDepth;
 

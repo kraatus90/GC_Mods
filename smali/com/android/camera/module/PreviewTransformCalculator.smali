@@ -272,7 +272,7 @@
 
     move-result-object v7
 
-    invoke-static {v5, v7}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v5, Landroid/graphics/RectF;
 

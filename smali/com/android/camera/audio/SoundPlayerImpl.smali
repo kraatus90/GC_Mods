@@ -400,7 +400,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/android/camera/audio/SoundPlayerImpl$SoundInfo;
 

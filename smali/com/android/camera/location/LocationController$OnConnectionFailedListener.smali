@@ -40,7 +40,7 @@
 
     const-string v1, "Connection to fused location provider failed."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/location/LocationController$OnConnectionFailedListener;->this$0:Lcom/android/camera/location/LocationProviderImpl;
 

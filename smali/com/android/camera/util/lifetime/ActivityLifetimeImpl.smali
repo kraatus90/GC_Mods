@@ -298,7 +298,7 @@
 
     const-string v2, "onCreate()"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/ActivityLifetimeImpl;->isInstanceLifetimeClosed:Lcom/google/android/apps/camera/async/IsClosed;
 
@@ -405,7 +405,7 @@
 
     const-string v2, "onDestroy()"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/ActivityLifetimeImpl;->instanceLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 
@@ -437,7 +437,7 @@
 
     const-string v2, "onPause()"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/ActivityLifetimeImpl;->foregroundLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 
@@ -469,7 +469,7 @@
 
     const-string v2, "onResume()"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/android/camera/util/lifetime/ActivityLifetimeImpl;->isForegroundLifetimeClosed()Z
 
@@ -528,7 +528,7 @@
 
     const-string v2, "onStart()"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/android/camera/util/lifetime/ActivityLifetimeImpl;->isVisibleLifetimeClosed()Z
 
@@ -611,7 +611,7 @@
 
     const-string v2, "onStop()"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/ActivityLifetimeImpl;->visibleLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 

@@ -249,7 +249,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/android/camera/device/CameraDeviceOpener$ResultListener;
 
@@ -733,7 +733,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/device/CameraDeviceOpener;->usageStatistics:Lcom/android/camera/stats/UsageStatistics;
 
@@ -908,7 +908,7 @@
 
     move-result-object v7
 
-    invoke-static {v0, v7}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/device/CameraDeviceOpener;->timeout:Ljava/lang/Object;
 

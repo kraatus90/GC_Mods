@@ -523,7 +523,7 @@
 
     const-string v3, "openCamcorderDevice"
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
@@ -1258,7 +1258,7 @@
 
     const-string v7, "issue an openCamcorder request."
 
-    invoke-static {v2, v7}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v4}, Lcom/android/camera/camcorder/CamcorderCaptureRate;->isNormal()Z
 

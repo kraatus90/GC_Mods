@@ -206,7 +206,7 @@
     move-result-object v0
 
     :goto_1
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -923,6 +923,8 @@
     const-string v0, "Model"
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "Nexus 6"
 
     invoke-virtual {v6, v0, v1}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 

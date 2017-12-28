@@ -70,7 +70,7 @@
     <string name="grid_3x3_announce">3 bij 3</string>
     <string name="grid_4x4_announce">4 bij 4</string>
     <string name="grid_golden_ratio_announce">Beste ratio</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">GC_6P_Landscape</string>
     <string name="video_camera_label">Camcorder</string>
     <string name="details_ms">%1$02d:%2$02d</string>
     <string name="details_hms">%1$d:%2$02d:%3$02d</string>
@@ -365,7 +365,7 @@ Maak je lens schoon voor een betere fotokwaliteit."</string>
     <string name="switch_photo_filmstrip">Filmstrookweergave</string>
     <string name="setting_wallpaper">Achtergrond instellen</string>
     <string name="mode_settings">Instellingen</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">GC_6P_Landscape</string>
     <string name="mode_video">Video</string>
     <string name="mode_photosphere">360°-foto</string>
     <string name="mode_timelapse">Time-lapse</string>

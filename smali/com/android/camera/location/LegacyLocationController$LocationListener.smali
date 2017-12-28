@@ -85,7 +85,7 @@
 
     const-string v1, "Got first location."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     iget-object v0, p0, Lcom/android/camera/location/LegacyLocationController$LocationListener;->lastLocation:Landroid/location/Location;

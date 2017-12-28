@@ -42,7 +42,7 @@
 
     const-string v1, "enter Lens Blur state"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/ui/controller/CaptureStatechart$LensBlurState;->this$0:Lcom/android/camera/ui/controller/CaptureStatechart;
 

@@ -63,7 +63,7 @@
 
     const-string v1, "Past trial succeeded so nothing to do, shouldn\'t have gotten to this."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     iget-object v0, p0, Lcom/google/android/apps/lightcycle/panorama/LightCycleController$2$1;->this$1:Lcom/google/android/apps/lightcycle/panorama/LightCycleController$2;

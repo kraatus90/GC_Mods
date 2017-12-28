@@ -354,7 +354,7 @@
 
     const-string v1, "Activity paused/finishing. Aborting filmstrip show animation."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;->pendingFilmstripShow:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -368,7 +368,7 @@
 
     const-string v1, "Running filmstrip show animation."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;->filmstripTransitionLayout:Lcom/android/camera/filmstrip/transition/FilmstripTransitionLayout;
 
@@ -520,7 +520,7 @@
 
     const-string v1, "Begin filmstrip hide animation."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;->listener$9HHMUR9FC5N68SJFD5I2UOR1DLIN4O9FCPKMORBJEHP6IS1F8PKMORBJEHP6IS23DTN78PBEEH862RJ5DGI4OQBJEHIMSPBI7C______:Lcom/android/camera/filmstrip/FilmstripViewController$FilmstripListener;
 
@@ -722,7 +722,7 @@
 
     const-string v1, "Attempting to show filmstrip."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;->filmstripView:Lcom/android/camera/filmstrip/widget/FilmstripView;
 
@@ -742,7 +742,7 @@
 
     const-string v1, "Already have pending animation."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 

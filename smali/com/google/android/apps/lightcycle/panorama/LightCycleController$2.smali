@@ -193,7 +193,7 @@
 
     const-string v3, "Auto-focusing."
 
-    invoke-static {v1, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/apps/lightcycle/panorama/LightCycleController$2;->this$0:Lcom/google/android/apps/lightcycle/panorama/LightCycleController;
 

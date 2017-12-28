@@ -828,7 +828,7 @@
 
     const-string v1, "openCamcorderDevice"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/camera/module/video2/Video2Module;->lock:Ljava/lang/Object;
 
@@ -1042,7 +1042,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/module/video2/Video2Module;->state:Lcom/android/camera/module/video2/Video2Module$State;
 
@@ -1504,7 +1504,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/module/video2/Video2Module;->state:Lcom/android/camera/module/video2/Video2Module$State;
 
@@ -1641,7 +1641,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/module/video2/Video2Module;->state:Lcom/android/camera/module/video2/Video2Module$State;
 
@@ -1802,7 +1802,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-exit v1
 
@@ -1862,7 +1862,7 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     monitor-exit v1
 

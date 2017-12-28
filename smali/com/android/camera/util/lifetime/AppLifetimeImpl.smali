@@ -232,7 +232,7 @@
 
     const-string v3, "Creating new ForegroundLifetime"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/AppLifetimeImpl;->foregroundLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 
@@ -335,7 +335,7 @@
 
     const-string v3, "Creating new VisibleLifetime"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/AppLifetimeImpl;->visibleLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 
@@ -383,7 +383,7 @@
 
     const-string v3, "Creating new ForegroundLifetime"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/util/lifetime/AppLifetimeImpl;->foregroundLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 

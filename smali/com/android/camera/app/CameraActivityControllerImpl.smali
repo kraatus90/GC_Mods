@@ -2748,7 +2748,7 @@
 
     move-result-object v3
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Lcom/android/camera/app/CameraActivityControllerImpl;->initialize()Z
 
@@ -2815,7 +2815,7 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v3, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->cameraController:Lcom/android/camera/app/LegacyCameraController;
 
@@ -3121,7 +3121,7 @@
 
     const-string v1, "stopPreviewForOverlay"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -3571,7 +3571,7 @@
 
     const-string v1, "Current data ID not found."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->filmstripBottomPanelController:Lcom/android/camera/filmstrip/FilmstripBottomPanelController;
 
@@ -5133,7 +5133,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -5203,7 +5203,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->fatalErrorHandler:Lcom/android/camera/error/FatalErrorHandler;
 
@@ -5544,7 +5544,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->fatalErrorHandler:Lcom/android/camera/error/FatalErrorHandler;
 
@@ -5605,7 +5605,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->fatalErrorHandler:Lcom/android/camera/error/FatalErrorHandler;
 
@@ -5870,7 +5870,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->cameraDeviceManager:Lcom/android/camera/device/CameraDeviceManager;
 
@@ -6221,7 +6221,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->fatalErrorHandler:Lcom/android/camera/error/FatalErrorHandler;
 
@@ -6280,7 +6280,7 @@
 
     const-string v1, "Explicitly hiding mode cover in onResume()"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/app/CameraActivityControllerImpl;->cameraAppUI:Lcom/android/camera/ui/CameraAppUI;
 

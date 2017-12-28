@@ -43,7 +43,7 @@
 
     const-string v1, "Filmstrip show animation cancelled."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout$6;->this$0:Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;
 
@@ -81,7 +81,7 @@
 
     const-string v1, "Activity finishing. Aborting filmstrip show animation."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout$6;->this$0:Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;
 
@@ -101,7 +101,7 @@
 
     const-string v1, "Filmstrip show animation ended."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout$6;->this$0:Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;
 
@@ -183,7 +183,7 @@
 
     const-string v1, "Filmstrip show animation complete."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

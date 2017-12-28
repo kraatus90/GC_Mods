@@ -75,7 +75,7 @@
 
     const-string v1, "No focus settings supplied, using default"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/google/android/apps/refocus/processing/DepthOfFieldOptions;
 

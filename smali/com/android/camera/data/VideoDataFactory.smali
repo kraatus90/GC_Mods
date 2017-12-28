@@ -180,7 +180,7 @@
 
     move-result-object v2
 
-    invoke-static {v11, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v11, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v2, 0x1
 
@@ -270,7 +270,7 @@
 
     const-string v3, "Video profile was null, defaulting to unknown width and height."
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v13, Lcom/android/camera/data/VideoDataFactory;->UNKNOWN_SIZE:Lcom/android/camera/util/Size;
 

@@ -232,7 +232,7 @@
     move-result-object v0
 
     :goto_2
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2
     .catch Lcom/adobe/xmp/XMPException; {:try_start_2 .. :try_end_2} :catch_1
 

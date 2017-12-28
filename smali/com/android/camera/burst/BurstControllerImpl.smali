@@ -1760,7 +1760,7 @@
 
     const-string v1, "Stopping analysis."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/burst/BurstControllerImpl;->trace:Lcom/android/camera/debug/trace/Trace;
 
@@ -1826,7 +1826,7 @@
 
     const-string v1, "close"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/burst/BurstControllerImpl;->trace:Lcom/android/camera/debug/trace/Trace;
 
@@ -2046,7 +2046,7 @@
 
     const-string v1, "stopAndCancel"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/burst/BurstControllerImpl;->trace:Lcom/android/camera/debug/trace/Trace;
 

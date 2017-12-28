@@ -64,7 +64,7 @@
 
     move-result-object v3
 
-    invoke-static {v1, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/camera/hdrplus/HdrPlusState$7;->this$0:Lcom/android/camera/hdrplus/HdrPlusState;
 

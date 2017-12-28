@@ -55,6 +55,8 @@
     const/4 v0, 0x1
 
     :goto_0
+    const/4 v0, 0x1
+
     sput-boolean v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
     invoke-static {}, Lcom/google/googlex/gcam/GcamModule;->getKColorTempUnknown()I
@@ -507,7 +509,7 @@
 .end method
 
 .method public static convertToGcamFrameMetadata(Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;Lcom/android/camera/one/OneCameraCharacteristics;Lcom/android/camera/hdrplus/HdrPlusFrameMarker;Ljava/lang/String;ZF)Lcom/google/googlex/gcam/FrameMetadata;
-    .locals 6
+    .locals 9
 
     new-instance v3, Lcom/google/googlex/gcam/FrameMetadata;
 
@@ -527,7 +529,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_8
 
     const/4 v0, 0x0
 
@@ -609,6 +611,16 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    const-string v7, "Kenpachi max analog gain"
+
+    const-string v8, "sen pix array size"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -619,13 +631,46 @@
 
     move-result-object v0
 
+    sget-object v7, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p1, v7}, Lcom/android/camera/one/OneCameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/Integer;
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    const/4 v8, 0x1
+
+    if-eq v7, v8, :cond_1
+
+    const/16 v0, 0x64
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    :cond_1
     check-cast v0, Ljava/lang/Integer;
+
+    const-string v7, "Kenpachi act gain"
+
+    const-string v8, "sen pix array size"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-le v0, v2, :cond_8
+    if-le v0, v2, :cond_9
 
     int-to-float v4, v2
 
@@ -648,7 +693,7 @@
     :goto_1
     sget-boolean v2, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
     sget-object v2, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
@@ -684,7 +729,7 @@
 
     invoke-static {v2, v4}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1
+    :cond_2
     const/4 v2, 0x2
 
     new-array v2, v2, [F
@@ -717,7 +762,17 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_2
+    const-string v7, "Kenpachi postRaw sen"
+
+    const-string v8, "sen pix array size"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -731,7 +786,7 @@
 
     invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setPost_raw_digital_gain(F)V
 
-    :cond_2
+    :cond_3
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->FLASH_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -746,13 +801,13 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_4
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_9
+    if-ne v0, v1, :cond_a
 
-    :cond_3
+    :cond_4
     const/4 v0, 0x1
 
     invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setFlash(I)V
@@ -818,17 +873,31 @@
 
     aput v0, v1, v2
 
+    const-string v7, "Kenpachi neutral point"
+
+    const-string v8, "sen pix array size"
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-virtual {v3, v1}, Lcom/google/googlex/gcam/FrameMetadata;->setNeutral_point([F)V
 
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->BLACK_LEVEL_LOCK:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     move-result-object v0
 
     check-cast v0, Ljava/lang/Boolean;
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
     const/4 v0, 0x0
 
@@ -836,7 +905,7 @@
 
     move-result-object v0
 
-    :cond_4
+    :cond_5
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -859,7 +928,7 @@
 
     sget-boolean v2, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
     sget-object v2, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
@@ -891,7 +960,7 @@
 
     invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_5
+    :cond_6
     invoke-virtual {v3}, Lcom/google/googlex/gcam/FrameMetadata;->getFaces()Lcom/google/googlex/gcam/FaceInfoVector;
 
     move-result-object v0
@@ -912,7 +981,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -926,7 +995,7 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_6
+    :cond_7
     :goto_3
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_NOISE_PROFILE:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -947,7 +1016,7 @@
     :goto_4
     const/4 v1, 0x4
 
-    if-ge v2, v1, :cond_a
+    if-ge v2, v1, :cond_b
 
     new-instance v1, Lcom/google/googlex/gcam/DngNoiseModel;
 
@@ -989,12 +1058,12 @@
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     const/4 v0, 0x1
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_9
     int-to-float v0, v0
 
     int-to-float v1, v1
@@ -1005,7 +1074,7 @@
 
     goto/16 :goto_1
 
-    :cond_9
+    :cond_a
     const/4 v0, 0x0
 
     invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setFlash(I)V
@@ -1033,7 +1102,7 @@
 
     goto :goto_3
 
-    :cond_a
+    :cond_b
     invoke-virtual {v3, v4}, Lcom/google/googlex/gcam/FrameMetadata;->setDng_noise_model_bayer([Lcom/google/googlex/gcam/DngNoiseModel;)V
 
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_DYNAMIC_BLACK_LEVEL:Landroid/hardware/camera2/CaptureResult$Key;
@@ -1044,7 +1113,7 @@
 
     check-cast v0, [F
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
     invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setBlack_levels_bayer([F)V
 
@@ -1065,9 +1134,9 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -1075,7 +1144,7 @@
 
     const/4 v4, 0x2
 
-    if-eq v2, v4, :cond_b
+    if-eq v2, v4, :cond_c
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -1083,16 +1152,16 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_c
+    if-ne v1, v2, :cond_d
 
-    :cond_b
+    :cond_c
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setFocus_distance_diopters(F)V
 
-    :cond_c
+    :cond_d
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -1161,7 +1230,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -1169,7 +1238,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/googlex/gcam/AeMetadata;->setPrecapture_trigger(I)V
 
-    :cond_d
+    :cond_e
     invoke-virtual {v3, v1}, Lcom/google/googlex/gcam/FrameMetadata;->setAe(Lcom/google/googlex/gcam/AeMetadata;)V
 
     new-instance v1, Lcom/google/googlex/gcam/AwbMetadata;
@@ -1232,6 +1301,16 @@
 
     check-cast v0, Ljava/lang/Integer;
 
+    const-string v6, "Kenpachi MetadaC AF Mode"
+
+    const-string v7, "Optical black"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -1242,9 +1321,23 @@
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
+    const/4 v0, 0x5
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
+
+    const-string v6, "Kenpachi MetadaC AF staate"
+
+    const-string v7, "Optical black"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -1259,6 +1352,16 @@
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
+
+    const-string v6, "Kenpachi MetadaC AF trigger"
+
+    const-string v7, "Optical black"
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -1276,7 +1379,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -1284,15 +1387,15 @@
 
     invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setLens_state(I)V
 
-    :cond_e
-    if-eqz p4, :cond_f
+    :cond_f
+    if-eqz p4, :cond_10
 
     invoke-static {p3, p2, p0}, Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;->dumpMetadata(Ljava/lang/String;Lcom/android/camera/hdrplus/HdrPlusFrameMarker;Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;)V
 
-    :cond_f
+    :cond_10
     return-object v3
 
-    :cond_10
+    :cond_11
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_BLACK_LEVEL_PATTERN:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-interface {p1, v0}, Lcom/android/camera/one/OneCameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -1310,7 +1413,7 @@
     :goto_6
     const/4 v4, 0x4
 
-    if-ge v1, v4, :cond_11
+    if-ge v1, v4, :cond_13
 
     rem-int/lit8 v4, v1, 0x2
 
@@ -1318,20 +1421,41 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/hardware/camera2/params/BlackLevelPattern;->getOffsetForIndex(II)I
 
-    move-result v4
-
-    int-to-float v4, v4
+    const/high16 v4, 0x42800000    # 64.0f
 
     aput v4, v2, v1
 
+    sget-object v7, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p1, v7}, Lcom/android/camera/one/OneCameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/Integer;
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    const/4 v8, 0x1
+
+    if-eq v7, v8, :cond_12
+
+    const/high16 v4, 0x41800000    # 16.0f
+
+    aput v4, v2, v1
+
+    :cond_12
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_6
 
-    :cond_11
+    :cond_13
     invoke-virtual {v3, v2}, Lcom/google/googlex/gcam/FrameMetadata;->setBlack_levels_bayer([F)V
 
     goto/16 :goto_5
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1342,7 +1466,7 @@
 .end method
 
 .method public static convertToGcamStaticMetadata(Lcom/android/camera/one/OneCameraCharacteristics;)Lcom/google/googlex/gcam/StaticMetadata;
-    .locals 12
+    .locals 15
 
     const/4 v4, 0x2
 
@@ -1358,13 +1482,19 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v0, "huawei"
+
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setMake(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
+    const-string v0, "Nexus 6P"
+
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setModel(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v0, "angler"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
 
@@ -1725,6 +1855,14 @@
 
     invoke-direct {v2}, Lcom/google/googlex/gcam/ColorCalibrationVector;-><init>()V
 
+    const/16 v12, 0x9
+
+    new-array v13, v12, [F
+
+    move-object/from16 v14, v13
+
+    fill-array-data v14, :array_0
+
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_REFERENCE_ILLUMINANT1:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-interface {p0, v0}, Lcom/android/camera/one/OneCameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -1771,7 +1909,7 @@
 
     invoke-virtual {v4, v3}, Lcom/google/googlex/gcam/ColorCalibration;->setXyz_to_model_rgb([F)V
 
-    invoke-virtual {v4, v1}, Lcom/google/googlex/gcam/ColorCalibration;->setModel_rgb_to_device_rgb([F)V
+    invoke-virtual {v4, v14}, Lcom/google/googlex/gcam/ColorCalibration;->setModel_rgb_to_device_rgb([F)V
 
     invoke-virtual {v2, v4}, Lcom/google/googlex/gcam/ColorCalibrationVector;->add(Lcom/google/googlex/gcam/ColorCalibration;)V
 
@@ -1822,7 +1960,7 @@
 
     invoke-virtual {v4, v3}, Lcom/google/googlex/gcam/ColorCalibration;->setXyz_to_model_rgb([F)V
 
-    invoke-virtual {v4, v1}, Lcom/google/googlex/gcam/ColorCalibration;->setModel_rgb_to_device_rgb([F)V
+    invoke-virtual {v4, v14}, Lcom/google/googlex/gcam/ColorCalibration;->setModel_rgb_to_device_rgb([F)V
 
     invoke-virtual {v2, v4}, Lcom/google/googlex/gcam/ColorCalibrationVector;->add(Lcom/google/googlex/gcam/ColorCalibration;)V
 
@@ -1952,8 +2090,6 @@
 
     goto/16 :goto_6
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1961,6 +2097,19 @@
         :pswitch_2
         :pswitch_3
     .end packed-switch
+
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
 .method public static convertToSpatialGainMap(Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;Lcom/android/camera/one/OneCameraCharacteristics;)Lcom/google/googlex/gcam/SpatialGainMap;
@@ -1982,7 +2131,7 @@
 
     const-string v1, "android.statistics.lensShadingMap was null"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -2154,7 +2303,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     invoke-static {}, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->getAwbGainsDummy()[F
@@ -2178,7 +2327,7 @@
 
     const-string v1, "getAwbRgb2Rgb: CaptureResult.COLOR_CORRECTION_TRANSFORM is null."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v0, 0x9
 
@@ -2271,7 +2420,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->getAwbGainsDummy()[F
 
@@ -2528,7 +2677,7 @@
 
     const-string v1, "updateAeShotParams - ignoring all AE regions"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -3029,7 +3178,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_2
     add-int/lit8 v1, v1, 0x1
@@ -3062,7 +3211,7 @@
 .end method
 
 .method public static updateFromFrameRequest(Lcom/android/camera/one/v2/core/RequestBuilder;Lcom/google/googlex/gcam/FrameRequest;Lcom/android/camera/one/OneCameraCharacteristics;Lcom/android/camera/hdrplus/HdrPlusFrameMarker;)V
-    .locals 9
+    .locals 10
 
     iget v0, p3, Lcom/android/camera/hdrplus/HdrPlusFrameMarker;->frameType:I
 
@@ -3129,6 +3278,26 @@
     move-result-object v5
 
     invoke-virtual {p0, v4, v5}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
+
+    sget-object v4, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v5, 0x0
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    const/16 v9, 0xa
+
+    new-array v9, v9, [F
+
+    fill-array-data v9, :array_0
+
+    sget-object v4, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_CURVE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    new-instance v5, Landroid/hardware/camera2/params/TonemapCurve;
+
+    invoke-direct {v5, v9, v9, v9}, Landroid/hardware/camera2/params/TonemapCurve;-><init>([F[F[F)V
 
     const v4, 0x49742400    # 1000000.0f
 
@@ -3209,8 +3378,6 @@
 
     sget-boolean v5, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v5, :cond_1
-
     sget-object v5, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
     const-string v6, "updateFromFrameRequest - Gain (iso) = %d (analog = %f, digital = %f, minIsoGain = %d)"
@@ -3257,7 +3424,6 @@
 
     invoke-static {v5, v0}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getTry_to_lock_black_level()Z
 
     move-result v0
@@ -3268,11 +3434,9 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v2, v0}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
-
     sget-boolean v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
@@ -3280,7 +3444,7 @@
 
     invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getAwb()Lcom/google/googlex/gcam/AwbInfo;
 
     move-result-object v2
@@ -3289,15 +3453,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
     const-string v3, "updateFromFrameRequest - expected FrameRequest to have valid AwbInfo"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_3
+    :cond_2
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v3, 0x0
@@ -3383,7 +3547,7 @@
     :goto_0
     const/16 v4, 0x9
 
-    if-ge v0, v4, :cond_4
+    if-ge v0, v4, :cond_3
 
     aget v4, v2, v0
 
@@ -3405,7 +3569,7 @@
 
     goto :goto_0
 
-    :cond_4
+    :cond_3
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_TRANSFORM:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/params/ColorSpaceTransform;
@@ -3416,13 +3580,13 @@
 
     sget-boolean v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_5
+    :cond_4
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_LENS_SHADING_MAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v1, 0x1
@@ -3435,7 +3599,7 @@
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->sFaceDetectMode:Ljava/lang/Integer;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_5
 
     invoke-interface {p2}, Lcom/android/camera/one/OneCameraCharacteristics;->getHighestFaceDetectMode()Lcom/android/camera/one/OneCameraCharacteristics$FaceDetectMode;
 
@@ -3451,20 +3615,20 @@
 
     sput-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->sFaceDetectMode:Ljava/lang/Integer;
 
-    :cond_6
+    :cond_5
     iget v0, p3, Lcom/android/camera/hdrplus/HdrPlusFrameMarker;->frameType:I
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_7
+    if-eq v0, v1, :cond_6
 
     iget v0, p3, Lcom/android/camera/hdrplus/HdrPlusFrameMarker;->frameType:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_7
 
-    :cond_7
+    :cond_6
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     sget-object v1, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->sFaceDetectMode:Ljava/lang/Integer;
@@ -3504,7 +3668,7 @@
 
     return-void
 
-    :cond_8
+    :cond_7
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v1, 0x0
@@ -3516,4 +3680,20 @@
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     goto :goto_1
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x3d3da12f
+        0x3e19999a    # 0.15f
+        0x3e5bf86a
+        0x3ed097b4
+        0x3ee573ad
+        0x3f1097b4
+        0x3f3da12f
+        0x3f43cae7
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+    .end array-data
 .end method

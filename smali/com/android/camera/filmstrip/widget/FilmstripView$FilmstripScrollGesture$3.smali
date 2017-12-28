@@ -57,7 +57,7 @@
 
     const-string v1, "[fling] onScrollEnd from mXScrollAnimatorListener.onAnimationEnd"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/FilmstripView$FilmstripScrollGesture$3;->this$0:Lcom/android/camera/filmstrip/widget/FilmstripView$FilmstripScrollGesture;
 
@@ -79,7 +79,7 @@
 
     const-string v1, "[fling] mXScrollAnimatorListener.onAnimationRepeat"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -93,7 +93,7 @@
 
     const-string v1, "[fling] mXScrollAnimatorListener.onAnimationStart"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

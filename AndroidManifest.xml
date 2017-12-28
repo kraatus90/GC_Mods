@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.android.camera2" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.GoogleCamera6pl" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
     <original-package android:name="com.android.camera2"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -65,7 +65,7 @@
         <service android:exported="false" android:name="com.android.camera.processing.ProcessingService"/>
         <service android:exported="true" android:name="com.android.camera.prewarm.NoOpPrewarmService"/>
         <service android:exported="false" android:name="com.android.camera.silentfeedback.SilentFeedbackService" android:process=":crash_report"/>
-        <provider android:authorities="com.google.android.apps.camera.specialtypes.SpecialTypesProvider" android:exported="true" android:name="com.google.android.apps.camera.specialtypes.CameraSpecialTypesProvider" android:syncable="false"/>
+        <provider android:authorities="com.google.android.apps.camera.specialtypes.SpecialTypesProviderst" android:exported="true" android:name="com.google.android.apps.camera.specialtypes.CameraSpecialTypesProvider" android:syncable="false"/>
         <activity android:label="VideoPlayer" android:launchMode="standard" android:name="com.google.android.apps.camera.videoplayer.VideoPlayerActivity" android:theme="@style/Theme.SecureVideoPlayer"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <activity-alias android:name="com.android.camera.CameraLauncher" android:targetActivity="com.android.camera.activity.main.CameraActivity">

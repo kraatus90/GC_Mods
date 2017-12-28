@@ -572,7 +572,7 @@
 
     const-string v1, "Trying to release the camera before requesting"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     iput v4, p0, Lcom/android/camera/app/LegacyCameraController;->requestingCameraId:I
@@ -625,7 +625,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
     iget-object v0, p0, Lcom/android/camera/app/LegacyCameraController;->activeCameraDeviceTracker:Lcom/android/camera/device/ActiveCameraDeviceTracker;

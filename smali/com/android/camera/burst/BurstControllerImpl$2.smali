@@ -56,7 +56,7 @@
 
     const-string v1, "processBurstResults : stopping previewer with error"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/burst/BurstControllerImpl$2;->this$0:Lcom/android/camera/burst/BurstControllerImpl;
 
@@ -105,7 +105,7 @@
 
     const-string v1, "processBurstResults : handling exception"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/burst/BurstControllerImpl$2;->this$0:Lcom/android/camera/burst/BurstControllerImpl;
 

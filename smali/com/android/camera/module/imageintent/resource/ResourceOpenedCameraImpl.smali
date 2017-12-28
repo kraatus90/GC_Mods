@@ -153,7 +153,7 @@
 
     const-string v1, "close"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/module/imageintent/resource/ResourceOpenedCameraImpl;->cameraLifetime:Lcom/google/android/apps/camera/async/Lifetime;
 

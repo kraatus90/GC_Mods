@@ -171,7 +171,7 @@
 
     const-string v1, "Configuring camera..."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/camera/CameraPreview;->camera:Lcom/android/ex/camera2/portability/CameraAgent$CameraProxy;
 
@@ -216,7 +216,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v4, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v4, Lcom/google/android/apps/refocus/camera/CameraPreview;->TAG:Ljava/lang/String;
 
@@ -241,7 +241,7 @@
     move-result-object v0
 
     :goto_1
-    invoke-static {v4, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/google/android/apps/refocus/camera/CameraPreview;->sLargeToSmallSizeComparator:Ljava/util/Comparator;
 
@@ -771,7 +771,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 
@@ -1041,7 +1041,7 @@
 
     const-string v1, "Shutting down camera..."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/camera/CameraPreview;->camera:Lcom/android/ex/camera2/portability/CameraAgent$CameraProxy;
 
@@ -1106,7 +1106,7 @@
 
     const-string v1, "Starting camera preview..."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/apps/refocus/camera/CameraPreview;->camera:Lcom/android/ex/camera2/portability/CameraAgent$CameraProxy;
 
@@ -1307,7 +1307,7 @@
 
     const-string v2, "Stopping camera preview..."
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
