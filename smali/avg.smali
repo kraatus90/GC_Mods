@@ -11,6 +11,8 @@
 .method static constructor <clinit>()V
     .locals 1
 
+    return-void
+
     const-string v0, "SilentFeedback"
 
     invoke-static {v0}, Lbhz;->a(Ljava/lang/String;)Ljava/lang/String;
@@ -18,12 +20,12 @@
     move-result-object v0
 
     sput-object v0, Lavg;->a:Ljava/lang/String;
-
-    return-void
 .end method
 
 .method public static a(Landroid/content/Context;Ljava/lang/Throwable;Ljava/lang/String;)V
     .locals 2
+
+    return-void
 
     sget-object v0, Lavg;->a:Ljava/lang/String;
 
@@ -38,9 +40,7 @@
     if-eqz v0, :cond_0
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
     :cond_0
-    return-void
 .end method
 
 .method private static a(Ljava/lang/Throwable;Ljava/lang/StringBuilder;Ljava/util/Set;Ljava/lang/String;)V

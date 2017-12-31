@@ -29,9 +29,4 @@
         <ListPreference android:layout="@layout/preference_with_margin" android:title="@string/setting_front_camera_video" android:key="pref_video_quality_front_key" android:summary="%s" android:defaultValue="@string/pref_video_quality_large" android:entryValues="@array/pref_video_quality_entryvalues" />
         <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_video_stabilization" android:key="pref_video_stabilization_key" android:defaultValue="true" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/setting_google_help_and_feedback" android:key="pref_category_help_and_feedback">
-        <Preference android:layout="@layout/preference_with_margin" android:title="@string/setting_google_feedback" android:key="pref_launch_feedback" />
-        <Preference android:layout="@layout/preference_with_margin" android:title="@string/setting_google_help" android:key="pref_launch_help" />
-        <PreferenceScreen android:layout="@layout/preference_with_margin" android:title="@string/pref_developer_settings" android:key="pref_category_developer" />
-    </PreferenceCategory>
 </PreferenceScreen>

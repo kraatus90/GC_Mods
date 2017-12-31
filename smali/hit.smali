@@ -63,9 +63,7 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_5
-
-    sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_SENSOR_EEPROM_INFORMATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    move-object v0, v1
 
     :goto_0
     sput-object v0, Lhit;->a:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -79,13 +77,13 @@
     :cond_0
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     invoke-static {}, Lhit;->d()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_SENSOR_PD_ENABLE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -94,7 +92,9 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_7
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_6
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_TRACKING_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -121,7 +121,9 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_8
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_7
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_AF_REGIONS_CONFIDENCE:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -130,7 +132,9 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_9
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_8
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_FRAME_TIMESTAMP_BOOTTIME:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -139,7 +143,9 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_a
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_9
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_TIMESTAMPS_BOOTTIME:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -148,7 +154,9 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_b
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_a
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_X:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -157,7 +165,9 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_c
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_b
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_Y:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -166,13 +176,15 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_d
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_c
 
     invoke-static {}, Lhit;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_PIXEL_X:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -181,13 +193,15 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_e
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_d
 
     invoke-static {}, Lhit;->b()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_STATS_OIS_SHIFT_PIXEL_Y:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -196,13 +210,15 @@
 
     sget-boolean v0, Lhit;->p:Z
 
-    if-eqz v0, :cond_f
+    const/4 v0, 0x0
+
+    if-eqz v0, :cond_e
 
     invoke-static {}, Lhit;->c()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
     sget-object v0, Lcom/google/android/camera/experimental2017/ExperimentalKeys;->EXPERIMENTAL_CONTROL_EXP_TIME_BOOST:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -259,57 +275,56 @@
     :cond_4
     return-void
 
-    :cond_5
     move-object v0, v1
 
     goto/16 :goto_0
 
-    :cond_6
+    :cond_5
     move-object v0, v1
 
     goto/16 :goto_1
 
-    :cond_7
+    :cond_6
     move-object v0, v1
 
     goto/16 :goto_2
 
-    :cond_8
+    :cond_7
     move-object v0, v1
 
     goto/16 :goto_3
 
-    :cond_9
+    :cond_8
     move-object v0, v1
 
     goto/16 :goto_4
 
-    :cond_a
+    :cond_9
     move-object v0, v1
 
     goto/16 :goto_5
 
-    :cond_b
+    :cond_a
     move-object v0, v1
 
-    goto :goto_6
+    goto/16 :goto_6
 
-    :cond_c
+    :cond_b
     move-object v0, v1
 
     goto :goto_7
 
-    :cond_d
+    :cond_c
     move-object v0, v1
 
     goto :goto_8
 
-    :cond_e
+    :cond_d
     move-object v0, v1
 
     goto :goto_9
 
-    :cond_f
+    :cond_e
     move-object v0, v1
 
     goto :goto_a

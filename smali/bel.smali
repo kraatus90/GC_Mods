@@ -45,6 +45,8 @@
 
     move-result v1
 
+    const/4 v1, 0x1
+
     if-nez v1, :cond_1
 
     iget-object v1, p0, Lbel;->a:Lgzz;

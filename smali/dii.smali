@@ -45,7 +45,7 @@
 .method public final a()I
     .locals 3
 
-    const/4 v0, 0x1
+    const/4 v0, 0x3
 
     const/4 v1, 0x3
 

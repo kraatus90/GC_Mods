@@ -926,9 +926,9 @@
 
     move-result-object v6
 
-    new-instance v0, Ldnq;
+    new-instance v0, Ldod;
 
-    invoke-direct/range {v0 .. v6}, Ldnq;-><init>(Ldoc;Ldpz;Ldql;Ldqr;Ldpu;Legu;)V
+    invoke-direct/range {v0 .. v6}, Ldod;-><init>(Ldoc;Ldpz;Ldql;Ldqr;Ldpu;Legu;)V
 
     goto/16 :goto_0
 
@@ -984,15 +984,15 @@
 
     move-result-object v3
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Ldil;->a(Z)Legu;
 
     move-result-object v6
 
-    new-instance v0, Ldnp;
+    new-instance v0, Ldod;
 
-    invoke-direct/range {v0 .. v6}, Ldnp;-><init>(Ldoc;Ldpz;Ldql;Ldqr;Ldpu;Legu;)V
+    invoke-direct/range {v0 .. v6}, Ldod;-><init>(Ldoc;Ldpz;Ldql;Ldqr;Ldpu;Legu;)V
 
     goto/16 :goto_0
 

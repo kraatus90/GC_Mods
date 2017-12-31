@@ -103,7 +103,7 @@
 
     :cond_1
     :goto_1
-    if-lez v0, :cond_5
+    if-lez v0, :cond_4
 
     sget-object v1, Lful;->b:Ljava/lang/String;
 
@@ -161,13 +161,8 @@
 
     iget-boolean v2, v2, Lihk;->b:Z
 
-    if-eqz v2, :cond_4
+    if-nez v2, :cond_1
 
-    const/16 v0, 0x172
-
-    goto :goto_1
-
-    :cond_4
     iget-object v2, p0, Lful;->c:Lgzz;
 
     iget-object v2, v2, Lgzz;->b:Lihk;
@@ -196,7 +191,7 @@
 
     goto :goto_1
 
-    :cond_5
+    :cond_4
     iget-object v0, p0, Lful;->d:Lbqn;
 
     invoke-virtual {v0}, Lbqn;->a()Landroid/app/ActivityManager;

@@ -1222,6 +1222,8 @@
 
     sget-object v1, Lhit;->a:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
+    const/4 v1, 0x0
+
     if-eqz v1, :cond_0
 
     sget-object v0, Lhit;->a:Landroid/hardware/camera2/CameraCharacteristics$Key;

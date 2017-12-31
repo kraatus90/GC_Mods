@@ -106,6 +106,14 @@
 
     iget-object v0, v0, Lgzz;->b:Lihk;
 
+    iget-boolean v0, v0, Lihk;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lbhn;->b:Lgzz;
+
+    iget-object v0, v0, Lgzz;->b:Lihk;
+
     iget-boolean v0, v0, Lihk;->f:Z
 
     if-nez v0, :cond_0
@@ -148,6 +156,22 @@
 
 .method public final c()Z
     .locals 3
+
+    iget-object v0, p0, Lbhn;->b:Lgzz;
+
+    iget-object v0, v0, Lgzz;->b:Lihk;
+
+    iget-boolean v0, v0, Lihk;->d:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lbhn;->b:Lgzz;
+
+    iget-object v0, v0, Lgzz;->b:Lihk;
+
+    iget-boolean v0, v0, Lihk;->b:Z
+
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Lbhn;->b:Lgzz;
 
@@ -293,7 +317,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     move v0, v1
 
@@ -305,7 +329,7 @@
 
     iget-boolean v3, v3, Lihk;->d:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_4
 
     :goto_1
     iget-object v0, p0, Lbhn;->b:Lgzz;
@@ -342,17 +366,8 @@
 
     iget-boolean v0, v0, Lihk;->b:Z
 
-    if-eqz v0, :cond_5
+    const/16 v2, 0x9
 
-    invoke-virtual {p0}, Lbhn;->h()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const/4 v2, 0x3
-
-    :cond_3
     :goto_2
     add-int/lit8 v0, v2, 0x6
 
@@ -366,17 +381,16 @@
 
     return v0
 
-    :cond_4
+    :cond_3
     move v0, v2
 
     goto :goto_0
 
-    :cond_5
     move v2, v1
 
     goto :goto_2
 
-    :cond_6
+    :cond_4
     move v1, v0
 
     goto :goto_1
@@ -534,7 +548,7 @@
 
     const-string v1, "camera:zsl_enabled"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-virtual {p0, v0, v1, v2}, Lbhn;->a(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
