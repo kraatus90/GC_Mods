@@ -57,7 +57,7 @@
     <string name="all_photos">LAHAT NG LARAWAN</string>
     <string name="animation">Animation</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">CameraX</string>
     <string name="authentication_error">Error sa Pagpapatotoo</string>
     <string name="auto">Auto</string>
     <string name="auto_flash_indicator_chip">Gagana ang flash</string>
@@ -286,7 +286,7 @@ Linisin ang iyong lente para sa mas magandang kalidad ng larawan."</string>
     <string name="media_date_content_description">Nakunan ang media noong %s</string>
     <string name="media_processing_content_description">Pinoproseso ang media</string>
     <string name="mimetype">Uri ng MIME</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">CameraX</string>
     <string name="mode_camera_desc">Lumipat sa Camera Mode</string>
     <string name="mode_panorama">Panorama</string>
     <string name="mode_panorama_desc">Lumipat sa Panorama Mode</string>

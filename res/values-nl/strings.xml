@@ -57,7 +57,7 @@
     <string name="all_photos">"ALLE FOTO'S"</string>
     <string name="animation">Animatie</string>
     <string name="aperture">Diafragma</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">CameraX</string>
     <string name="authentication_error">Verificatiefout</string>
     <string name="auto">Autom.</string>
     <string name="auto_flash_indicator_chip">De flitser gaat af</string>
@@ -286,7 +286,7 @@ Maak je lens schoon voor een betere fotokwaliteit."</string>
     <string name="media_date_content_description">Media-item gemaakt op %s</string>
     <string name="media_processing_content_description">Mediaverwerking</string>
     <string name="mimetype">MIME-type</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">CameraX</string>
     <string name="mode_camera_desc">Overschakelen naar cameramodus</string>
     <string name="mode_panorama">Panorama</string>
     <string name="mode_panorama_desc">Overschakelen naar panoramamodus</string>

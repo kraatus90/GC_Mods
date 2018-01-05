@@ -57,7 +57,7 @@
     <string name="all_photos">ALL PHOTOS</string>
     <string name="animation">Animation</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">CameraX</string>
     <string name="authentication_error">Authentication Error</string>
     <string name="auto">Auto</string>
     <string name="auto_flash_indicator_chip">Flash will fire</string>
@@ -286,7 +286,7 @@ Clean your lens for better photo quality."</string>
     <string name="media_date_content_description">Media taken on %s</string>
     <string name="media_processing_content_description">Media processing</string>
     <string name="mimetype">MIME type</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">CameraX</string>
     <string name="mode_camera_desc">Switch to Camera Mode</string>
     <string name="mode_panorama">Panorama</string>
     <string name="mode_panorama_desc">Switch to Panorama Mode</string>

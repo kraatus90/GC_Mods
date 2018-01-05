@@ -137,9 +137,9 @@
 
     const/4 v3, 0x7
 
-    const/16 v4, 0xfc0
+    const/16 v4, 0xf00
 
-    const/16 v5, 0x8dc
+    const/16 v5, 0x870
 
     invoke-direct {v1, v2, v3, v4, v5}, Lhin;-><init>(Ljava/lang/String;III)V
 

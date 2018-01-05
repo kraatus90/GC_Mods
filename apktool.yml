@@ -1,8 +1,7 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: MGCB_7.0H_C2API_Full_PXL2_v.1.4_60FPS_noburst_v3.apk
+apkFileName: GoogleCamera_4.4_full_6p_30_fps_1.4_100jpg.apk
 compressionType: false
 doNotCompress:
-- arsc
 - apk
 - assets/com.google.android.vision.face/models/classification/frontal_face_classifiers.4/is_left_eye_open-y0.12-wmd.bin
 - assets/com.google.android.vision.face/models/classification/frontal_face_classifiers.4/is_right_eye_open-y0.12-wmd.bin
@@ -27,7 +26,7 @@ packageInfo:
   forcedPackageId: '127'
   renameManifestPackage: null
 sdkInfo:
-  minSdkVersion: '23'
+  minSdkVersion: '25'
   targetSdkVersion: '26'
 sharedLibrary: false
 unknownFiles: {}

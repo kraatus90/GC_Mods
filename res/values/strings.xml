@@ -73,7 +73,7 @@ Clean your lens for better photo quality."</string>
     <string name="all_photos">ALL PHOTOS</string>
     <string name="animation">Animation</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">CameraX</string>
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
@@ -302,7 +302,7 @@ Clean your lens for better photo quality."</string>
     <string name="hide_bottom_view_on_scroll_behavior">android.support.design.widget.HideBottomViewOnScrollBehavior</string>
     <string name="hit_target_to_start">To start, keep dot inside circle</string>
     <string name="horizontal_panorama_accessibility_peek">Horizontal Panorama taken</string>
-    <string name="image_intent_label">Camera</string>
+    <string name="image_intent_label">CameraX</string>
     <string name="iso">ISO</string>
     <string name="keep_the_camera_centered">Hold your device in a fixed position. Tilt or turn your hand as needed.</string>
     <string name="label_options">Settings</string>
@@ -317,7 +317,7 @@ Clean your lens for better photo quality."</string>
     <string name="media_date_content_description">Media taken on %s</string>
     <string name="media_processing_content_description">Media processing</string>
     <string name="mimetype">MIME type</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">CameraX</string>
     <string name="mode_camera_desc">Switch to Camera Mode</string>
     <string name="mode_gouda">Gouda</string>
     <string name="mode_gouda_desc">Switch to Gouda Mode</string>
