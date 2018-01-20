@@ -50,7 +50,7 @@
 .end method
 
 .method public static createCancelRequest(Lcom/android/camera/one/v2/core/RequestBuilder;)Lcom/android/camera/one/v2/core/RequestBuilder;
-    .locals 7
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/apps/camera/async/ResourceUnavailableException;
@@ -68,16 +68,6 @@
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
-
-    const-string v5, "Kenpachi raster cancel"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 

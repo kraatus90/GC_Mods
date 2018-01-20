@@ -104,7 +104,7 @@
 .end method
 
 .method private final processCaptureResult(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)V
-    .locals 10
+    .locals 8
 
     const/4 v1, 0x0
 
@@ -117,49 +117,15 @@
 
     invoke-interface {p1, v0}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    const/4 v0, 0x5
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
-
-    const-string v8, "Kenpachi FocusMonitor State"
-
-    const-string v9, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {p1}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->getFrameNumber()J
 
     move-result-wide v4
 
-    const-string v8, "Kenpachi FocusMonitor FrameNR"
-
-    const-string v9, "Optical black"
-
-    invoke-static {v9}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     iget-wide v6, p0, Lcom/android/camera/one/v2/autofocus/FocusMonitor;->triggeredFrameNumber:J
-
-    const-string v8, "Kenpachi FocusMonitor TruggerFR"
-
-    const-string v9, "Optical black"
-
-    invoke-static {v9}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sub-long/2addr v4, v6
 

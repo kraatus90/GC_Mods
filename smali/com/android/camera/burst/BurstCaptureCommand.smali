@@ -267,7 +267,7 @@
 .end method
 
 .method private final getRequestWithAdjustedFlash()Lcom/android/camera/one/v2/core/RequestBuilder;
-    .locals 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/apps/camera/async/ResourceUnavailableException;,
@@ -352,16 +352,6 @@
 
     move-result-object v6
 
-    const-string v12, "Kenpachi Burst Command AF Mode "
-
-    const-string v13, "Optical black"
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-direct {v1, v2, v6}, Lcom/android/camera/one/v2/core/Request$Parameter;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     aput-object v1, v5, v11
@@ -423,7 +413,7 @@
     :cond_0
     move v1, v3
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 

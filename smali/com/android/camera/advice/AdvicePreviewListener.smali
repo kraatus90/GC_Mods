@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final onCompleted(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)V
-    .locals 7
+    .locals 5
 
     iget-object v0, p0, Lcom/android/camera/advice/AdvicePreviewListener;->adviceManger:Lcom/android/camera/advice/AdviceManager;
 
@@ -97,16 +97,6 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    const-string v5, "Kenpachi AdvicePreviewListener AF Mode"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -115,23 +105,9 @@
 
     invoke-interface {p1, v0}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    const/4 v0, 0x5
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
-
-    const-string v5, "Kenpachi AdvicePreviewListener AFSTATE"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 

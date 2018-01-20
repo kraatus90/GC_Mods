@@ -225,7 +225,7 @@
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v1, "lge"
+    const-string v1, "huawei"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -285,7 +285,7 @@
 
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v1, "bullhead"
+    const-string v1, "angler"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -345,7 +345,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v1, "Nexus 5X"
+    const-string v1, "Nexus 6P"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -463,7 +463,7 @@
 
     sget-object v1, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    const-string v1, "bullhead"
+    const-string v1, "angler"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -746,7 +746,7 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v0, "lge"
+    const-string v0, "huawei"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -754,7 +754,7 @@
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v0, "bullhead"
+    const-string v0, "angler"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

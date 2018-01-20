@@ -57,7 +57,7 @@
 .end method
 
 .method public final transform3A(Lcom/android/camera/one/v2/core/Request;)Lcom/android/camera/one/v2/core/Request;
-    .locals 5
+    .locals 3
 
     new-instance v0, Lcom/android/camera/one/v2/core/RequestBuilder;
 
@@ -80,16 +80,6 @@
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     move-result-object v0
-
-    const-string v3, "Kenpachi FocusCachingConvergence3A$1"
-
-    const-string v4, "Focus Mode set to Auto"
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/android/camera/one/v2/core/RequestBuilder;->build()Lcom/android/camera/one/v2/core/Request;
 

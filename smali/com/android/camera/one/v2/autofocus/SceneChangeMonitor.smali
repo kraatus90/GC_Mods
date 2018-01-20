@@ -194,7 +194,7 @@
 .end method
 
 .method public final onCompleted(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)V
-    .locals 8
+    .locals 6
 
     const/4 v1, 0x1
 
@@ -205,16 +205,6 @@
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
-
-    const-string v6, "Kenpachi SceneChangeMonitor nr"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 

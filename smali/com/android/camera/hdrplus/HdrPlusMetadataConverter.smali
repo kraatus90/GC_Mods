@@ -647,7 +647,7 @@
 
     if-eq v7, v8, :cond_1
 
-    const/16 v0, 0x60e
+    const/16 v0, 0x64
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1482,19 +1482,19 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v0, "lge"
+    const-string v0, "huawei"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setMake(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v0, "Nexus 5X"
+    const-string v0, "Nexus 6P"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setModel(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v0, "bullhead"
+    const-string v0, "angler"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
 
@@ -3287,8 +3287,6 @@
 
     move-result-object v5
 
-    invoke-virtual {p0, v4, v5}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
-
     const/16 v9, 0xa
 
     new-array v9, v9, [F
@@ -3300,8 +3298,6 @@
     new-instance v5, Landroid/hardware/camera2/params/TonemapCurve;
 
     invoke-direct {v5, v9, v9, v9}, Landroid/hardware/camera2/params/TonemapCurve;-><init>([F[F[F)V
-
-    invoke-virtual {p0, v4, v5}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     const v4, 0x49742400    # 1000000.0f
 

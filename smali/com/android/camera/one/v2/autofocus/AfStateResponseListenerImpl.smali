@@ -31,7 +31,7 @@
 .end method
 
 .method public final onCompleted(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)V
-    .locals 7
+    .locals 5
 
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
@@ -46,16 +46,6 @@
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
-
-    const-string v5, "Kenpachi AfStateResponseListenerImpl STATE"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -75,10 +65,6 @@
 
     invoke-interface {p1, v1}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    const/4 v1, 0x5
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
@@ -88,16 +74,6 @@
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
-
-    const-string v5, "Kenpachi AfStateResponseListenerImpl STATE"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 

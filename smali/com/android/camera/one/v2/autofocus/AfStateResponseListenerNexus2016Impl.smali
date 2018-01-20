@@ -15,7 +15,7 @@
 
 # virtual methods
 .method protected final isSceneChangeDetected(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)Z
-    .locals 3
+    .locals 2
 
     const/4 v1, 0x1
 
@@ -26,16 +26,6 @@
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
-
-    const-string v2, "Kenpachi AfStateResponseListenerNexus2016Impl change"
-
-    const-string p0, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v2, p0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/google/common/base/ExtraObjectsMethodsForWeb;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 

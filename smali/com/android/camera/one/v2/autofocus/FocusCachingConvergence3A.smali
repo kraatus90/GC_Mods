@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final acquire(Lcom/android/camera/one/v2/core/FrameRequestProcessor;Lcom/android/camera/one/v2/autofocus/Convergence3ASpec;Lcom/android/camera/one/v2/core/Request;)Lcom/android/camera/one/v2/autofocus/Convergence3A$Lock3A;
-    .locals 9
+    .locals 7
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/android/apps/camera/async/ResourceUnavailableException;,
@@ -76,16 +76,6 @@
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
-
-    const-string v7, "Kenpachi FocusCachingConvergence3A AF MODe"
-
-    const-string v8, "Optical black"
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v7, v8}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 

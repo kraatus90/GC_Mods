@@ -70,11 +70,7 @@
 
     invoke-direct {v3, v1, v1, v1}, Landroid/hardware/camera2/params/TonemapCurve;-><init>([F[F[F)V
 
-    invoke-virtual {v0, v2, v3}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
     return-void
-
-    nop
 
     :array_0
     .array-data 4

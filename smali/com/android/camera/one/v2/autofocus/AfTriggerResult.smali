@@ -150,45 +150,21 @@
 .end method
 
 .method public final update(Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;)V
-    .locals 8
+    .locals 6
 
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p1, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    const/4 v0, 0x5
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
-
-    const-string v6, "Kenpachi AfTriggerResult State"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v2, p0, Lcom/android/camera/one/v2/autofocus/AfTriggerResult;->stateMachine:Lcom/android/camera/one/v2/autofocus/TriggerStateMachine;
 
     invoke-interface {p1}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->getFrameNumber()J
 
     move-result-wide v4
-
-    const-string v6, "Kenpachi AfTriggerResult FrmeNR"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v7}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {p1}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->getRequest()Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestProxy;
 
@@ -201,16 +177,6 @@
     move-result-object v1
 
     check-cast v1, Ljava/lang/Integer;
-
-    const-string v6, "Kenpachi AfTriggerResult Trigger"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v2, v4, v5, v1, v0}, Lcom/android/camera/one/v2/autofocus/TriggerStateMachine;->update(JLjava/lang/Integer;Ljava/lang/Integer;)Z
 

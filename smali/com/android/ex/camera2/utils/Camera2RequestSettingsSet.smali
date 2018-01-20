@@ -167,8 +167,6 @@
 
     move-result-object p0
 
-    invoke-virtual {v1, v0, p0}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
     goto :goto_0
 
     :cond_2

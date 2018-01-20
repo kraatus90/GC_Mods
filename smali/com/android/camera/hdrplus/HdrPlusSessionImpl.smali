@@ -717,6 +717,10 @@
 
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setFlash_mode(I)V
 
+    const/16 v0, 0x64
+
+    invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setFinal_jpg_quality(I)V
+
     iget-object v0, p0, Lcom/android/camera/hdrplus/HdrPlusSessionImpl;->whiteBalanceSetting:Lcom/android/camera/settings/WhiteBalanceSetting;
 
     invoke-virtual {v0}, Lcom/android/camera/settings/WhiteBalanceSetting;->get()Ljava/lang/Object;

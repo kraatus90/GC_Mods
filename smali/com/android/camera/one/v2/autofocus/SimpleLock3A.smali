@@ -149,7 +149,7 @@
 .end method
 
 .method private final addAfConvergence(Lcom/android/camera/one/v2/autofocus/Convergence3ASpec$Requirement;Lcom/android/camera/one/v2/core/RequestBuilder;Lcom/android/camera/one/v2/core/RequestBuilder;)Lcom/android/camera/one/v2/autofocus/Result3A;
-    .locals 8
+    .locals 6
 
     const/4 v5, 0x1
 
@@ -207,16 +207,6 @@
     :goto_0
     check-cast v0, Ljava/lang/Integer;
 
-    const-string v6, "Kenpachi addAfConvergence afmode"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -231,16 +221,6 @@
 
     move-result-object v3
 
-    const-string v6, "Kenpachi addAfConvergence afmode"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {p2, v2, v3}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     sget-object v2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -249,31 +229,11 @@
 
     move-result-object v3
 
-    const-string v6, "Kenpachi addAfConvergence afmode"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {p3, v2, v3}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     iget-object v2, p0, Lcom/android/camera/one/v2/autofocus/SimpleLock3A;->resetLockRepeating:Lcom/android/camera/one/v2/core/RequestBuilder;
 
     sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const-string v6, "Kenpachi addAfConvergence afmode"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v2, v3, v0}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
@@ -288,16 +248,6 @@
 
     move-result-object v3
 
-    const-string v6, "Kenpachi addAfConvergence trigger"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
-
     invoke-virtual {v0, v2, v3}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
@@ -305,16 +255,6 @@
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
-
-    const-string v6, "Kenpachi addAfConvergence trigger"
-
-    const-string v7, "Optical black"
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p2, v0, v2}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
@@ -335,7 +275,7 @@
     :cond_2
     const/4 v0, 0x0
 
-    goto/16 :goto_0
+    goto :goto_0
 .end method
 
 .method private static addAwbConvergence$51666RRD5TGMSP3IDTKM8BR3C5MMASJ15TNMSP9FEOP2UOBLEHNMCRR3ELPIUGRFDPR6ASJ7CLN66P9J859N0PB34H96ASBLD5P6ARB5DPQ3MJ33DTMIUOBECHP6UQB45THM2RB5E9GIURRECKNNCCHFCDNN4P9FA9IN2TB5EDQ44TB9DHI6ASHR9HHMUR9FC5N68SJFD5I2UOR1DLIN4O9FDTN6ABRM68NM6RRICKNL4PBHELIN6T22ELKMOP35E8TIIJ33DTMIUOBECHP6UQB45THM2RB5E9GIURRECKNNCCHFC5QN8RR6DTHNASPFA9IN6TBCEGPK2EO_(Lcom/android/camera/one/v2/core/RequestBuilder;Lcom/android/camera/one/v2/core/RequestBuilder;)Lcom/android/camera/one/v2/autofocus/Result3A;
@@ -454,7 +394,7 @@
 .end method
 
 .method public final transform3A(Lcom/android/camera/one/v2/core/Request;)Lcom/android/camera/one/v2/core/Request;
-    .locals 7
+    .locals 5
 
     const/4 v4, 0x0
 
@@ -469,16 +409,6 @@
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
-
-    const-string v5, "Kenpachi transform3A trigger"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
@@ -544,16 +474,6 @@
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
-
-    const-string v5, "Kenpachi transform3A afmode"
-
-    const-string v6, "Optical black"
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, v1, v2}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
