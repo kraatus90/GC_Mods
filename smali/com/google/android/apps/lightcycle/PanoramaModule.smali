@@ -3430,6 +3430,8 @@
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
+    const-string v0, "Nexus 5X"
+
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0

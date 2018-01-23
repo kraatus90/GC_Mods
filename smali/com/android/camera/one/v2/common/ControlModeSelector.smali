@@ -107,7 +107,7 @@
 
     check-cast v2, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 
-    sget-object v3, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->AUTO:Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
+    sget-object v3, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->CONTINUOUS_PICTURE:Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 
     if-ne v2, v3, :cond_0
 

@@ -101,6 +101,8 @@
 
     move-result v1
 
+    const/4 v1, 0x4
+
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p1, v0}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -115,11 +117,11 @@
 
     if-eqz v1, :cond_0
 
-    const/4 v1, 0x2
+    const/4 v1, 0x1
 
     if-eq v0, v1, :cond_0
 
-    const/4 v1, 0x4
+    const/4 v1, 0x1
 
     if-ne v0, v1, :cond_2
 

@@ -259,7 +259,7 @@
 
     iget-object v0, p0, Lcom/android/camera/one/v2/autofocus/TouchToFocusSmartImpl;->afModeState:Lcom/google/android/apps/camera/async/ConcurrentState;
 
-    sget-object v2, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->AUTO:Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
+    sget-object v2, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->CONTINUOUS_PICTURE:Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 
     invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/async/ConcurrentState;->update(Ljava/lang/Object;)V
 

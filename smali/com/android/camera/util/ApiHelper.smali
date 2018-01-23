@@ -95,7 +95,11 @@
 
     sget-object v3, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v3, "lge"
+
     sget-object v4, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v4, "bullhead"
 
     const-string v5, "6eKnTFnyFNI0ffj3mQvvlcmDe2KV"
 

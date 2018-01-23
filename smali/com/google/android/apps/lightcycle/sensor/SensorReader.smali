@@ -955,6 +955,8 @@
 
     sget-object v3, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
+    const-string v3, "Nexus 6"
+
     invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3

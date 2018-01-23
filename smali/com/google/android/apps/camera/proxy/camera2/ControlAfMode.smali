@@ -58,7 +58,7 @@
 
     const/4 v5, 0x1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     new-instance v1, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 

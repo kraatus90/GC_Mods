@@ -149,7 +149,7 @@
     if-eqz v1, :cond_2
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/one/v2/autofocus/FocusMonitor;->isTriggered:Z
 
@@ -258,7 +258,7 @@
 
     iput-object v0, p0, Lcom/android/camera/one/v2/autofocus/FocusMonitor;->focusScanFuture:Lcom/google/common/util/concurrent/SettableFuture;
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/one/v2/autofocus/FocusMonitor;->isTriggered:Z
 

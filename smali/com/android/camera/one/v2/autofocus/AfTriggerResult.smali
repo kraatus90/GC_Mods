@@ -178,6 +178,10 @@
 
     check-cast v1, Ljava/lang/Integer;
 
+    const/4 v1, 0x0
+
+    const/4 v0, 0x0
+
     invoke-virtual {v2, v4, v5, v1, v0}, Lcom/android/camera/one/v2/autofocus/TriggerStateMachine;->update(JLjava/lang/Integer;Ljava/lang/Integer;)Z
 
     move-result v0

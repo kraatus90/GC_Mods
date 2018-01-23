@@ -31,77 +31,23 @@
 .end method
 
 .method public final onCompleted(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)V
-    .locals 5
+    .locals 7
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v5, 0x4
 
-    invoke-interface {p1, v0}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    const/4 v6, 0x0
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-static {v0}, Lcom/google/common/base/ExtraObjectsMethodsForWeb;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->of(I)Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/base/ExtraObjectsMethodsForWeb;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v5}, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->of(I)Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v1}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-static {v1}, Lcom/google/common/base/ExtraObjectsMethodsForWeb;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;->of(I)Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/common/base/ExtraObjectsMethodsForWeb;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v6}, Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;->of(I)Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
-
-    sget-object v2, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v2}, Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Float;
-
-    invoke-static {v2}, Lcom/google/common/base/ExtraObjectsMethodsForWeb;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Float;
 
     invoke-virtual {p0, p1}, Lcom/android/camera/one/v2/autofocus/AfStateResponseListenerImpl;->isSceneChangeDetected(Lcom/google/android/apps/camera/proxy/camera2/TotalCaptureResultProxy;)Z
 
@@ -109,9 +55,7 @@
 
     new-instance v4, Lcom/google/android/apps/camera/aaa/AfState;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v2
+    const/high16 v2, 0x3f000000    # 0.5f
 
     invoke-direct {v4, v0, v1, v2, v3}, Lcom/google/android/apps/camera/aaa/AfState;-><init>(Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;FZ)V
 

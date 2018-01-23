@@ -35,7 +35,7 @@
 
     new-instance v0, Lcom/google/android/apps/camera/aaa/AfState;
 
-    sget-object v1, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->OFF:Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
+    sget-object v1, Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;->CONTINUOUS_PICTURE:Lcom/google/android/apps/camera/proxy/camera2/ControlAfMode;
 
     sget-object v2, Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;->INACTIVE:Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
 

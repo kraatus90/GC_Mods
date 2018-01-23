@@ -196,7 +196,7 @@
     packed-switch v0, :pswitch_data_0
 
     :cond_3
-    const/4 v0, 0x0
+    const/4 v0, 0x4
 
     :goto_0
     iput-object v0, p0, Lcom/android/ex/camera2/portability/AndroidCamera2Settings;->mCurrentFlashMode:Lcom/android/ex/camera2/portability/CameraCapabilities$FlashMode;
@@ -1315,8 +1315,6 @@
 
     sget-object v5, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-virtual {v2, v5, v0}, Lcom/android/ex/camera2/utils/Camera2RequestSettingsSet;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Z
-
     iget-object v0, p0, Lcom/android/ex/camera2/portability/AndroidCamera2Settings;->mCurrentSceneMode:Lcom/android/ex/camera2/portability/CameraCapabilities$SceneMode;
 
     if-eqz v0, :cond_2
@@ -1861,8 +1859,6 @@
     invoke-direct {p0, v0, v1}, Lcom/android/ex/camera2/portability/AndroidCamera2Settings;->updateRequestSettingOrForceToDefault(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     goto/16 :goto_7
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

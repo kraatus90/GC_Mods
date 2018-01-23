@@ -753,7 +753,7 @@
 
     iget-object v0, v0, Lcom/google/android/apps/camera/aaa/AfState;->controlAfState:Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
 
-    sget-object v3, Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;->PASSIVE_SCAN:Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
+    sget-object v3, Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;->INACTIVE:Lcom/google/android/apps/camera/proxy/camera2/ControlAfState;
 
     if-ne v0, v3, :cond_3
 

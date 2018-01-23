@@ -271,7 +271,7 @@
 .method public getLensBlurMegapixelCount()I
     .locals 3
 
-    const/4 v0, 0x3
+    const/4 v0, 0x5
 
     iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
 
@@ -403,66 +403,9 @@
 .method public getMaxAllowedHdrPlusImageReaderCount()I
     .locals 3
 
-    invoke-virtual {p0}, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->getMaxHdrPlusBurstFrameCount()I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    shl-int/lit8 v0, v0, 0x1
-
-    :cond_0
-    :goto_0
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->contentResolver:Landroid/content/ContentResolver;
-
-    const-string v2, "camera:max_hdr_plus_imagereader_image_count"
-
-    invoke-static {v1, v2, v0}, Lcom/google/android/gsf/Gservices;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
+    const/16 v0, 0x1e
 
     return v0
-
-    :cond_1
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus6P()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    mul-int/lit8 v0, v0, 0x3
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexusMarlin()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexusSailfish()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :cond_3
-    mul-int/lit8 v0, v0, 0x5
-
-    goto :goto_0
 .end method
 
 .method public getMaxAllowedImageReaderCount()I
@@ -511,19 +454,19 @@
 
     iget-object v0, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
 
-    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexusSailfish()Z
+    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
     :cond_1
-    const/16 v1, 0xe
+    const/16 v1, 0x1e
 
     :cond_2
     iget-object v0, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
 
-    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
+    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexusSailfish()Z
 
     move-result v0
 
@@ -586,59 +529,9 @@
 .method public getMaxHdrPlusBurstFrameCount()I
     .locals 3
 
-    const/16 v0, 0x8
-
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 v0, 0x5
-
-    :cond_0
-    :goto_0
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->contentResolver:Landroid/content/ContentResolver;
-
-    const-string v2, "camera:max_hdr_plus_burst_frame_count"
-
-    invoke-static {v1, v2, v0}, Lcom/google/android/gsf/Gservices;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
+    const/16 v0, 0x1e
 
     return v0
-
-    :cond_1
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus6P()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexusMarlin()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexusSailfish()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    :cond_2
-    const/4 v0, 0x7
-
-    goto :goto_0
 .end method
 
 .method public getMaxHfrTorchVideoDurationSeconds()I
@@ -700,7 +593,7 @@
 
     const-string v1, "camera:zsl_enabled"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-static {v0, v1, v2}, Lcom/google/android/gsf/Gservices;->getBoolean(Landroid/content/ContentResolver;Ljava/lang/String;Z)Z
 
