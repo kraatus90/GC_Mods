@@ -33,7 +33,7 @@
 
     if-eqz p7, :cond_0
 
-    invoke-static {}, Lgzz;->f()Z
+    invoke-virtual {p7, p6}, Lhab;->a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
     :cond_0
     iput-object p6, p0, Ldug;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;

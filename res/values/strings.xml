@@ -867,4 +867,14 @@ Move device slowly"</string>
     <string name="zoom_announcement">Zoom value is %.1f</string>
     <string name="zoom_minus_desc">Zoom out</string>
     <string name="zoom_plus_desc">Zoom in</string>
+    <string name="pref_parameters_camera_title">HDR+ parameters:</string>
+    <string name="pref_parameters_camera_default">0</string>
+    <string name="pref_parameters_camera_0">Default(lowest)</string>
+    <string name="pref_parameters_camera_1">Low</string>
+    <string name="pref_parameters_camera_2">Medium</string>
+    <string name="pref_parameters_camera_3">High</string>
+    <string name="pref_parameters_camera_4">Very High</string>
+    <string name="pref_parameters_camera_5">Super High</string>
+    <string name="pref_aemode_title">HDR+ Adaptive Shutter</string>
+    <string name="pref_aemode_summary">Decreases shutter speed with lower light</string>
 </resources>

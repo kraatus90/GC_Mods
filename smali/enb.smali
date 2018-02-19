@@ -25,6 +25,8 @@
 
 .field private G:Licz;
 
+.field private H:Lhab;
+
 .field public final a:Ljava/util/concurrent/Executor;
 
 .field public final b:Lgvp;
@@ -179,6 +181,10 @@
     iput-object p10, p0, Lenb;->G:Licz;
 
     iput-object p11, p0, Lenb;->t:Lbii;
+
+    move-object/from16 v0, p20
+
+    iput-object v0, p0, Lenb;->H:Lhab;
 
     move-object/from16 v0, p21
 
@@ -500,7 +506,9 @@
     :goto_1
     if-eqz v4, :cond_1
 
-    invoke-static {}, Lgzz;->f()Z
+    iget-object v1, p0, Lenb;->H:Lhab;
+
+    invoke-virtual {v1, v0}, Lhab;->a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
     :cond_1
     invoke-static {v4}, Ljht;->c(Ljava/lang/Object;)Ljht;

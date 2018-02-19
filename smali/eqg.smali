@@ -32,7 +32,5 @@
 
     sget-object v1, Lgdw;->b:Lgdw;
 
-    invoke-virtual {v0, v1}, Ldhh;->a(Ljava/lang/Object;)V
-
     return-void
 .end method

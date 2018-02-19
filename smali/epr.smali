@@ -112,14 +112,9 @@
 
     iget-boolean v0, v0, Lihk;->g:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
     :cond_2
-    sget-object v0, Lgdw;->b:Lgdw;
-
-    invoke-virtual {v4, v1, v0}, Laxo;->a(Liau;Ljava/lang/Object;)V
-
-    :cond_3
     const-string v0, "Cannot return null from a non-@Nullable @Provides method"
 
     invoke-static {v4, v0}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

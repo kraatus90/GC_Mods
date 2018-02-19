@@ -606,6 +606,12 @@
 
     invoke-virtual {v0, v4}, Lcom/google/googlex/gcam/ShotParams;->setImage_rotation(I)V
 
+    const/16 v4, 0x64
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v4}, Lcom/google/googlex/gcam/ShotParams;->setFinal_jpg_quality(I)V
+
     const/4 v4, 0x1
 
     move-object/from16 v0, v22
@@ -730,6 +736,16 @@
 
     :goto_5
     move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->setsAEMode()I
+
+    move-result v2
+
+    sput v2, Lcok;->sAEMode:I
 
     iget-object v2, v0, Lcoq;->i:Lgdq;
 
@@ -1100,6 +1116,8 @@
     const/4 v2, 0x0
 
     goto :goto_8
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1914,9 +1932,19 @@
 
     move-result v5
 
-    move-object v0, p3
-
     move-object/from16 v6, p6
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setsAEMode()I
+
+    move-result v0
+
+    sput v0, Lcok;->sAEMode:I
+
+    move-object v0, p3
 
     invoke-static/range {v0 .. v7}, Lcok;->a(Liic;Lgdq;Lcnx;Ljava/lang/String;ZF[Landroid/hardware/camera2/params/Face;Lcom/google/googlex/gcam/GyroSampleVector;)Lcom/google/googlex/gcam/FrameMetadata;
 
