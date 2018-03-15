@@ -18,6 +18,15 @@
 
 .field private static d:Ljava/lang/Integer;
 
+.field public static sAEMode:I
+
+.field public static sCountHDRFrame:I
+
+.field private static sDesiredAnalogGain:F
+
+.field private static sDesiredDigitalGain:F
+
+.field private static sDesiredExposure:J
 
 # direct methods
 .method static constructor <clinit>()V
@@ -2870,7 +2879,19 @@
 .end method
 
 .method public static a(Lggm;Lcom/google/googlex/gcam/FrameRequest;Lgdq;Lcnx;)V
-    .locals 9
+    .locals 12
+
+    const v6, 0x0
+
+    const/16 v0, 0x0
+
+    sput v0, Lcok;->sCountHDRFrame:I
+
+    sget-object v1, Lcok;->a:Ljava/lang/String;
+
+    const-string v4, "sCountHDRFrame set to 0."
+
+    invoke-static {v1, v4}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     iget v0, p3, Lcnx;->a:I
 
@@ -2910,13 +2931,29 @@
 
     move-result v0
 
+    const v4, 0x49742400    # 1000000.0f
+
+    mul-float v2, v0, v4
+
+    float-to-long v4, v2
+
+    sput-wide v4, Lcok;->sDesiredExposure:J
+
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getDesired_analog_gain()F
 
     move-result v2
 
+    move v10, v2
+
+    sput v2, Lcok;->sDesiredAnalogGain:F
+
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getDesired_digital_gain()F
 
     move-result v3
+
+    move v11, v3
+
+    sput v3, Lcok;->sDesiredDigitalGain:F
 
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -2928,6 +2965,33 @@
 
     invoke-virtual {p0, v4, v5}, Lggm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lggm;
 
+    const v7, 0x0
+
+    mul-float v4, v0, v2
+
+    mul-float/2addr v4, v3
+
+    const v5, 0x42200000    # 40.0f
+
+    sub-float/2addr v4, v5
+
+    float-to-int v5, v4
+
+    if-gtz v5, :cond_0
+
+    if-eqz v6, :cond_0
+
+    const v7, 0x1
+
+    sget-object v1, Lcok;->a:Ljava/lang/String;
+
+    const-string v4, "Front camera fix, skipping manual AE adjustment."
+
+    invoke-static {v1, v4}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    if-nez v7, :cond_4
+
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v5, 0x0
@@ -2938,12 +3002,40 @@
 
     invoke-virtual {p0, v4, v5}, Lggm;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lggm;
 
+    const/16 v8, 0x0
+
+    sget v4, Lcok;->sAEMode:I
+
+    if-eqz v4, :cond_1
+
+    invoke-static {p2, v4, v11, v10, v0}, Lcok;->calcAE(Lgdq;IFFF)LAEMode;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, LAEMode;->getCalculatedExposureTime()J
+
+    move-result-wide v4
+
+    invoke-virtual {v9}, LAEMode;->getCalculatedSensitivity()I
+
+    move-result v8
+
+    sget-object v0, Lcok;->a:Ljava/lang/String;
+
+    const-string v10, "Custom exposure calculation!"
+
+    invoke-static {v0, v10}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_0
+
+    :cond_1
     const v4, 0x49742400    # 1000000.0f
 
     mul-float/2addr v0, v4
 
     float-to-long v4, v0
 
+    :goto_0
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2954,7 +3046,7 @@
 
     sget-boolean v0, Lcok;->b:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcok;->a:Ljava/lang/String;
 
@@ -2980,7 +3072,16 @@
 
     invoke-static {v0, v4}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_0
+    :cond_2
+    sget v0, Lcok;->sAEMode:I
+
+    if-eqz v0, :cond_3
+
+    move v4, v8
+
+    goto/16 :goto_1
+
+    :cond_3
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_SENSITIVITY_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-interface {p2, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -3007,6 +3108,7 @@
 
     float-to-int v4, v4
 
+    :goto_1
     sget-object v5, Landroid/hardware/camera2/CaptureRequest;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3017,7 +3119,7 @@
 
     sget-boolean v5, Lcok;->b:Z
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_4
 
     sget-object v5, Lcok;->a:Ljava/lang/String;
 
@@ -3065,7 +3167,7 @@
 
     invoke-static {v5, v0}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1
+    :cond_4
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getTry_to_lock_black_level()Z
 
     move-result v0
@@ -3080,7 +3182,7 @@
 
     sget-boolean v0, Lcok;->b:Z
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_5
 
     sget-object v0, Lcok;->a:Ljava/lang/String;
 
@@ -3088,7 +3190,7 @@
 
     invoke-static {v0, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_5
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getAwb()Lcom/google/googlex/gcam/AwbInfo;
 
     move-result-object v2
@@ -3097,7 +3199,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_6
 
     sget-object v0, Lcok;->a:Ljava/lang/String;
 
@@ -3105,7 +3207,7 @@
 
     invoke-static {v0, v3}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_3
+    :cond_6
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v3, 0x0
@@ -3188,10 +3290,10 @@
 
     const/4 v0, 0x0
 
-    :goto_0
+    :goto_2
     const/16 v4, 0x9
 
-    if-ge v0, v4, :cond_4
+    if-ge v0, v4, :cond_7
 
     aget v4, v2, v0
 
@@ -3211,9 +3313,9 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto :goto_2
 
-    :cond_4
+    :cond_7
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_TRANSFORM:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/params/ColorSpaceTransform;
@@ -3224,13 +3326,13 @@
 
     sget-boolean v0, Lcok;->b:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_8
 
     sget-object v0, Lcok;->a:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_5
+    :cond_8
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_LENS_SHADING_MAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v1, 0x1
@@ -3243,7 +3345,7 @@
 
     sget-object v0, Lcok;->d:Ljava/lang/Integer;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_9
 
     invoke-interface {p2}, Lgdq;->i()Ligd;
 
@@ -3257,7 +3359,7 @@
 
     sput-object v0, Lcok;->d:Ljava/lang/Integer;
 
-    :cond_6
+    :cond_9
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     sget-object v1, Lcok;->d:Ljava/lang/Integer;
@@ -4320,4 +4422,80 @@
     mul-float/2addr v0, v1
 
     return v0
+.end method
+
+.method public static calcAE(Lgdq;IFFF)LAEMode;
+    .locals 9
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_SENSITIVITY_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p0, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Range;
+
+    invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Integer;
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_EXPOSURE_TIME_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p0, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Range;
+
+    invoke-virtual {v0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Long;
+
+    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    invoke-virtual {v0}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/Long;
+
+    invoke-virtual {v8}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v8
+
+    move v0, p1
+
+    move v1, p2
+
+    move v2, p3
+
+    move v3, p4
+
+    invoke-static/range {v0 .. v9}, LAEModeSelector;->SelectAEMode(IFFFIIJJ)LAEMode;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, LAEMode;->calculate()V
+
+    return-object v0
 .end method

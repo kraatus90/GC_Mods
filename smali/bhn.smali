@@ -501,3 +501,15 @@
 
     return v0
 .end method
+
+.method public setsAEMode()I
+    .locals 1
+
+    const-string v0, "pref_aemode_key"
+
+    invoke-virtual {p0, v0}, Lbhn;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
