@@ -605,6 +605,12 @@
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v4}, Lcom/google/googlex/gcam/ShotParams;->setImage_rotation(I)V
+	
+    const/16 v4, 0x64
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v0, v4}, Lcom/google/googlex/gcam/ShotParams;->setFinal_jpg_quality(I)V
 
     const/4 v4, 0x1
 
