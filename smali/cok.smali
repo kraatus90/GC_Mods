@@ -2594,33 +2594,6 @@
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setFrame_readout_time_ms(F)V
 
-    const-string v0, "angler"
-
-    invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
-
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-interface {p0, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-nez v0, :cond_b
-
-    const-string v0, "Huawei"
-
-    invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setMake(Ljava/lang/String;)V
-
-    const-string v0, "angler"
-
-    invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
-
-    :cond_b
     return-object v6
 
     :pswitch_1
@@ -2637,8 +2610,6 @@
     move v0, v4
 
     goto/16 :goto_6
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

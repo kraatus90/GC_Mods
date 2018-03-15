@@ -74,7 +74,7 @@
     <string name="all_photos">LAHAT NG LARAWAN</string>
     <string name="animation">Animation</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">Camera MX</string>
     <string name="authentication_error">Error sa Pagpapatotoo</string>
     <string name="auto">Auto</string>
     <string name="auto_flash_indicator_chip">Gagana ang flash</string>
@@ -334,7 +334,7 @@ Linisin ang iyong lente para sa mas magandang kalidad ng larawan."</string>
     <string name="hint_url">Website</string>
     <string name="hit_target_to_start">Upang magsimula, panatilihing nasa loob ng bilog ang tuldok</string>
     <string name="horizontal_panorama_accessibility_peek">Kumuha ng horizontal panorama</string>
-    <string name="image_intent_label">Camera</string>
+    <string name="image_intent_label">Camera MX</string>
     <string name="image_result_text">I-drag ang sulok upang palitan</string>
     <string name="image_result_text_accessibility_mode">Napiling larawan</string>
     <string name="info_button_content_description">Tuklasin ang maaaring piliin</string>
@@ -365,7 +365,7 @@ Linisin ang iyong lente para sa mas magandang kalidad ng larawan."</string>
     <string name="micro_tutorial_body">Kapag naka-on ang paggalaw, maaaring magsama ng maikling video ang bawat larawang kukunan mo bago at pagkatapos ng shot. Maaaring isama ang video kapag ibinahagi mo ang larawan.</string>
     <string name="micro_tutorial_title">Motion photo</string>
     <string name="mimetype">Uri ng MIME</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">Camera MX</string>
     <string name="mode_camera_desc">Lumipat sa Camera Mode</string>
     <string name="mode_gouda">Portrait</string>
     <string name="mode_gouda_desc">Lumipat sa Portrait Mode</string>

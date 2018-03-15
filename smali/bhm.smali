@@ -55,7 +55,7 @@
 
     const-string v1, "DOGFOOD"
 
-    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProvider"
+    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProviderMX"
 
     invoke-direct {v0, v1, v5, v2}, Lbhm;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -65,7 +65,7 @@
 
     const-string v1, "RELEASE"
 
-    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProvider"
+    const-string v2, "com.google.android.apps.camera.specialtypes.SpecialTypesProviderMX"
 
     invoke-direct {v0, v1, v6, v2}, Lbhm;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
