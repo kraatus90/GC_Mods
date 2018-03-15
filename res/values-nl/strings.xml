@@ -74,7 +74,7 @@
     <string name="all_photos">"ALLE FOTO'S"</string>
     <string name="animation">Animatie</string>
     <string name="aperture">Diafragma</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">Camera MX</string>
     <string name="authentication_error">Verificatiefout</string>
     <string name="auto">Autom.</string>
     <string name="auto_flash_indicator_chip">De flitser gaat af</string>
@@ -334,7 +334,7 @@ Maak je lens schoon voor een betere fotokwaliteit."</string>
     <string name="hint_url">Website</string>
     <string name="hit_target_to_start">Houd eerst de stip in de cirkel</string>
     <string name="horizontal_panorama_accessibility_peek">Horizontaal panorama gemaakt</string>
-    <string name="image_intent_label">Camera</string>
+    <string name="image_intent_label">Camera MX</string>
     <string name="image_result_text">Sleep hoeken om selectie te wijzigen.</string>
     <string name="image_result_text_accessibility_mode">Afbeelding geselecteerd</string>
     <string name="info_button_content_description">Ontdek wat je kunt selecteren</string>
@@ -365,7 +365,7 @@ Maak je lens schoon voor een betere fotokwaliteit."</string>
     <string name="micro_tutorial_body">Wanneer beweging is ingeschakeld, kan elke foto die je maakt, een korte video van vóór en na de opname bevatten. De video kan worden toegevoegd wanneer je de foto deelt.</string>
     <string name="micro_tutorial_title">Foto met beweging</string>
     <string name="mimetype">MIME-type</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">Camera MX</string>
     <string name="mode_camera_desc">Overschakelen naar cameramodus</string>
     <string name="mode_gouda">Staand</string>
     <string name="mode_gouda_desc">Overschakelen naar staande modus</string>

@@ -74,7 +74,7 @@
     <string name="all_photos">ALL PHOTOS</string>
     <string name="animation">Animation</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">Camera MX</string>
     <string name="authentication_error">Authentication Error</string>
     <string name="auto">Auto</string>
     <string name="auto_flash_indicator_chip">Flash will fire</string>
@@ -334,7 +334,7 @@ Clean your lens for better photo quality."</string>
     <string name="hint_url">Website</string>
     <string name="hit_target_to_start">To start, keep dot inside circle</string>
     <string name="horizontal_panorama_accessibility_peek">Horizontal Panorama taken</string>
-    <string name="image_intent_label">Camera</string>
+    <string name="image_intent_label">Camera MX</string>
     <string name="image_result_text">Drag corners to change selection.</string>
     <string name="image_result_text_accessibility_mode">Image selected</string>
     <string name="info_button_content_description">Discover what you can select</string>
@@ -365,7 +365,7 @@ Clean your lens for better photo quality."</string>
     <string name="micro_tutorial_body">When motion is on, each photo that you take can include a short video before and after the shot. The video may be included when you share the photo.</string>
     <string name="micro_tutorial_title">Motion photo</string>
     <string name="mimetype">MIME type</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">Camera MX</string>
     <string name="mode_camera_desc">Switch to Camera Mode</string>
     <string name="mode_gouda">Portrait</string>
     <string name="mode_gouda_desc">Switch to portrait mode</string>

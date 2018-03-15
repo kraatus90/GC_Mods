@@ -1,8 +1,7 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: GoogleCamera_5.1.018.177470874.apk
+apkFileName: Camera_MX.apk
 compressionType: false
 doNotCompress:
-- arsc
 - META-INF/services/com.google.protobuf.GeneratedExtensionRegistryLoader
 - apk
 - bin
