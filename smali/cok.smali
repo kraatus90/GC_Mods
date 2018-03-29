@@ -3247,23 +3247,25 @@
 
     if-eqz v10, :cond_12
 
-    const/16 v1, 0xa20
+    const/16 v1, 0x910
 
     invoke-virtual {v6, v1}, Lcom/google/googlex/gcam/StaticMetadata;->setPixel_array_width(I)V
 
-    const/16 v0, 0x794
+    const/16 v0, 0x6d0
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setPixel_array_height(I)V
 
     new-instance v7, Landroid/graphics/Rect;
 
-    const/16 v11, 0x0
+    const/16 v10, 0x8
 
-    const/16 v3, 0x918
+    const/16 v11, 0x8
 
-    const/16 v4, 0x6d4
+    const/16 v3, 0x908
 
-    invoke-direct {v7, v11, v11, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+    const/16 v4, 0x6c8
+
+    invoke-direct {v7, v10, v11, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
 
     move-object v0, v7
 
@@ -3295,11 +3297,11 @@
 
     move-result-object v1
 
-    const/16 v0, 0xa20
+    const/16 v0, 0x910
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setFrame_raw_max_width(I)V
 
-    const/16 v0, 0x794
+    const/16 v0, 0x6d0
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setFrame_raw_max_height(I)V
 

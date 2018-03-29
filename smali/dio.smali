@@ -411,7 +411,7 @@
 
     iget-object v0, p0, Ldio;->e:Lgzz;
 
-    invoke-virtual {v0}, Lgzz;->i()Z
+    invoke-virtual {v0}, Lgzz;->c()Z
 
     move-result v0
 
@@ -503,7 +503,7 @@
     :cond_1
     iget-object v0, p0, Ldio;->e:Lgzz;
 
-    invoke-virtual {v0}, Lgzz;->i()Z
+    invoke-virtual {v0}, Lgzz;->c()Z
 
     move-result v0
 

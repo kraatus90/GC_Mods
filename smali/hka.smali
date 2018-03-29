@@ -74,77 +74,11 @@
 .end method
 
 .method static varargs a(Landroid/content/pm/PackageInfo;[Lhmv;)Lhmv;
-    .locals 4
+    .locals 1
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
-
-    if-nez v2, :cond_0
-
-    move-object v0, v1
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v2, p0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
-
-    array-length v2, v2
-
-    const/4 v3, 0x1
-
-    if-eq v2, v3, :cond_1
-
-    const-string v0, "GoogleSignatureVerifier"
-
-    const-string v2, "Package has more than one signature."
-
-    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object v0, v1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v2, Lhmw;
-
-    iget-object v3, p0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
-
-    aget-object v3, v3, v0
-
-    invoke-virtual {v3}, Landroid/content/pm/Signature;->toByteArray()[B
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Lhmw;-><init>([B)V
-
-    :goto_1
-    array-length v3, p1
-
-    if-ge v0, v3, :cond_3
-
-    aget-object v3, p1, v0
-
-    invoke-virtual {v3, v2}, Lhmv;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
     aget-object v0, p1, v0
 
-    goto :goto_0
-
-    :cond_2
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    move-object v0, v1
-
-    goto :goto_0
+    return-object v0
 .end method

@@ -563,43 +563,6 @@
 .method public static a(Lgds;Ldii;Lcpb;Licz;Lbpv;Ldig;)Lcom/google/googlex/gcam/Gcam;
     .locals 10
 
-    iget-object v0, p4, Lbpv;->b:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    const-string v9, "pref_enable_noise_key"
-
-    invoke-interface {v2, v9}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result v4
-
-    const/4 v3, 0x0
-
-    if-eqz v4, :cond_0
-
-    invoke-static {v1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    const/4 v5, 0x0
-
-    invoke-interface {v2, v9, v5}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    :cond_0
-    sput v3, Lcok;->o:I
-
     const/4 v9, 0x2
 
     const/4 v0, 0x1
@@ -631,7 +594,7 @@
     move v2, v1
 
     :goto_0
-    if-ge v2, v9, :cond_2
+    if-ge v2, v9, :cond_1
 
     aget-object v6, v4, v2
 
@@ -641,17 +604,17 @@
 
     sget v8, Leh;->W:I
 
-    if-eq v7, v8, :cond_1
+    if-eq v7, v8, :cond_0
 
     invoke-virtual {p0, v6}, Lgds;->b(Lige;)Ligc;
 
     move-result-object v6
 
-    if-eqz v6, :cond_1
+    if-eqz v6, :cond_0
 
     iget-object v7, v6, Ligc;->b:Ljava/lang/String;
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_0
 
     invoke-virtual {p0, v6}, Lgds;->a(Ligc;)Lgdq;
 
@@ -663,12 +626,12 @@
 
     invoke-virtual {v5, v6}, Lcom/google/googlex/gcam/StaticMetadataVector;->add(Lcom/google/googlex/gcam/StaticMetadata;)V
 
-    :cond_1
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     invoke-static {p5}, Lcns;->a(Ldig;)Lcom/google/googlex/gcam/DebugParams;
 
     move-result-object v2
@@ -677,17 +640,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_2
 
     :try_start_0
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v6, 0x1a
 
-    if-lt v4, v6, :cond_4
+    if-lt v4, v6, :cond_3
 
     :goto_1
-    if-nez v0, :cond_5
+    if-nez v0, :cond_4
 
     iget-object v0, p4, Lbpv;->a:Licu;
 
@@ -750,7 +713,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_6
+    if-eqz v8, :cond_5
 
     invoke-virtual {v7, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
@@ -810,7 +773,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_7
+    if-eqz v7, :cond_6
 
     invoke-virtual {v6, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
@@ -828,7 +791,7 @@
     .catch Landroid/system/ErrnoException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    :cond_3
+    :cond_2
     :goto_5
     invoke-static {v3, v5, v2}, Lcom/google/googlex/gcam/Gcam;->Create(Lcom/google/googlex/gcam/InitParams;Lcom/google/googlex/gcam/StaticMetadataVector;Lcom/google/googlex/gcam/DebugParams;)Lcom/google/googlex/gcam/Gcam;
 
@@ -838,12 +801,12 @@
 
     return-object v0
 
-    :cond_4
+    :cond_3
     move v0, v1
 
     goto/16 :goto_1
 
-    :cond_5
+    :cond_4
     :try_start_3
     iget-object v0, p4, Lbpv;->a:Licu;
 
@@ -941,7 +904,7 @@
 
     goto :goto_5
 
-    :cond_6
+    :cond_5
     :try_start_5
     new-instance v0, Ljava/lang/String;
 
@@ -951,7 +914,7 @@
 
     goto/16 :goto_3
 
-    :cond_7
+    :cond_6
     :try_start_6
     new-instance v0, Ljava/lang/String;
 

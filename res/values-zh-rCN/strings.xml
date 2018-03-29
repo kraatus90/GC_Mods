@@ -782,11 +782,13 @@
     <string name="pref_enable_lowlight_title">增强低光表现</string>
     <string name="pref_enable_lowlight_summary">减少低光中的红色/粉色</string>
     <string name="pref_enable_noise_title">增强锐利度</string>
+    <string name="pref_enable_noise_0">默认</string>
+    <string name="pref_enable_noise_1">低</string>
+    <string name="pref_enable_noise_2">中等</string>
     <string name="pref_enable_noise_summary">增强锐利度， 但杂讯更多 （需重新开启）</string>
     <string name="pref_enable_front_hdr_title">关闭前置 HDR+</string>
     <string name="pref_enable_front_hdr_summary">关闭前置 HDR+， 前置人像模式将无法使用 （需重新开启）</string>
-    <string name="setting_google_feedback">发送反馈</string>
-    <string name="setting_google_help">帮助</string>
-    <string name="setting_google_help_and_feedback">帮助和反馈</string>
+    <string name="pref_hdrplus_settings_title">HDR+ 设定</string>
+    <string name="pref_misc_settings_title">其他设定</string>
     <string name="pref_enable_aemode_title">自动曝光模式</string>
 </resources>

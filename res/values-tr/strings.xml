@@ -780,11 +780,13 @@ Yavaş hareket ettirin"</string>
     <string name="pref_enable_lowlight_title">Düşük ışıkta iyileştirme</string>
     <string name="pref_enable_lowlight_summary">Düşük ışıkta pembe/kırmızımsı/magenta rengi tonlarını giderme</string>
     <string name="pref_enable_noise_title">İyileştirilmiş keskinlik</string>
+    <string name="pref_enable_noise_0">Varsayılan</string>
+    <string name="pref_enable_noise_1">Düşük</string>
+    <string name="pref_enable_noise_2">Orta</string>
     <string name="pref_enable_noise_summary">Keskinlik iyileştirilir fakat fotoğraflar biraz daha parazitli olur. Uygulamayı yeniden başlatın, değişiklikler gelecek başlangıçta etkili olacak.</string>
     <string name="pref_enable_front_hdr_title">"Ön kamerada HDR+'ı devre dışı bırak"</string>
     <string name="pref_enable_front_hdr_summary">"Eğer ön kamerada HDR+'ı devre dışı bırakırsanız portre modu çalışmayacak. Uygulamayı yeniden başlatın, değişiklikler gelecek başlangıçta etkili olacak."</string>
-    <string name="setting_google_feedback">Geri bildirim gönder</string>
-    <string name="setting_google_help">Yardım</string>
-    <string name="setting_google_help_and_feedback">Yardım ve geri bildirim</string>
+    <string name="pref_hdrplus_settings_title">HDR+ Ayarları</string>
+    <string name="pref_misc_settings_title">Diğer Ayarlar</string>
     <string name="pref_enable_aemode_title">Otomatik pozlama modu</string>
 </resources>

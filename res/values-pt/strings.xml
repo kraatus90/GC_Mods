@@ -43,8 +43,13 @@
     <string name="pref_enable_lowlight_title">Melhorar com pouca luz</string>
     <string name="pref_enable_lowlight_summary">Removendo tonalidade rosa/avermelhada/magenda com pouca luz</string>
     <string name="pref_enable_noise_title">Melhorar nitidez</string>
+    <string name="pref_enable_noise_0">Padrão</string>
+    <string name="pref_enable_noise_1">Baixo</string>
+    <string name="pref_enable_noise_2">Médio</string>
     <string name="pref_enable_noise_summary">As fotos tornam-se mais nítidas, mas com mais ruído. Reinicie a aplicação, as alterações terão efeito ao reabrir.</string>
     <string name="pref_enable_front_hdr_title">Desativar HDR+ da câmara frontal</string>
     <string name="pref_enable_front_hdr_summary">Ao desativar HDR+ da câmara frontal o modo retrato deixa de funcionar. Reinicie a aplicação, as alterações terão efeito ao reabrir.</string>
+    <string name="pref_hdrplus_settings_title">Definições HDR+</string>
+    <string name="pref_misc_settings_title">Definições diversas</string>
     <string name="pref_enable_aemode_title">Modo de alta exposição automática</string>
 </resources>

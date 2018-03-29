@@ -467,9 +467,13 @@
 
     move-result v3
 
+    const/16 v3, 0x1200
+
     invoke-interface {p0}, Liil;->c()I
 
     move-result v4
+
+    const/16 v4, 0xd80
 
     const/4 v5, 0x0
 
@@ -504,39 +508,4 @@
     move-result v2
 
     goto :goto_0
-.end method
-
-.method public static deleteParentDir(Ljava/io/File;)V
-    .locals 4
-
-    invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "Camera"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    array-length v2, v0
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
-
-    :cond_0
-    return-void
 .end method

@@ -784,8 +784,7 @@ Mova lentamente"</string>
     <string name="pref_enable_noise_summary">Melhora a nitidez, mas as fotos têm mais ruídos. Reinicie o aplicativo, as alterações entrarão em vigor na próxima inicialização.</string>
     <string name="pref_enable_front_hdr_title">Desativar HDR+ da câmera frontal</string>
     <string name="pref_enable_front_hdr_summary">Ao desativar o HDR+ da câmera frontal, o modo retrato não funciona mais. Reinicie o aplicativo, as alterações entrarão em vigor na próxima inicialização.</string>
-    <string name="setting_google_feedback">Enviar feedback</string>
-    <string name="setting_google_help">Ajuda</string>
-    <string name="setting_google_help_and_feedback">Ajuda e feedback</string>
+    <string name="pref_hdrplus_settings_title">Configurações do HDR+</string>
+    <string name="pref_misc_settings_title">Configurações variadas</string>
     <string name="pref_enable_aemode_title">Modo de exposição automática</string>
 </resources>

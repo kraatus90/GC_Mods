@@ -340,15 +340,15 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setThread_count(I)V
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setTuning_locked(Z)V
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setPlanning_to_provide_both_yuv_and_raw_for_metering(Z)V
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setPlanning_to_provide_both_yuv_and_raw_for_payload(Z)V
 

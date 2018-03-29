@@ -786,8 +786,7 @@
     <string name="pref_enable_noise_summary">Повышается резкость, но возрастают шумы. Чтобы изменения вступили в силу требуется перезапуск приложения.</string>
     <string name="pref_enable_front_hdr_title">Выключить HDR+ на фронтальной камере</string>
     <string name="pref_enable_front_hdr_summary">После выключения портретный режим на фронт.камере работать не будет. Чтобы изменения вступили в силу требуется перезапуск приложения</string>
-    <string name="setting_google_feedback">Отправить отзыв</string>
-    <string name="setting_google_help">Справка</string>
-    <string name="setting_google_help_and_feedback">Справка/отзыв</string>
+    <string name="pref_hdrplus_settings_title">Настройки HDR+</string>
+    <string name="pref_misc_settings_title">Другие настройки</string>
     <string name="pref_enable_aemode_title">Режим авто-экспозиции</string>
 </resources>

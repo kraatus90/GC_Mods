@@ -463,26 +463,6 @@
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v1, "OnePlus5T"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
-
-    const-string v1, "OnePlus5"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
-
     const-string v1, "Sagit"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

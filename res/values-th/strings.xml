@@ -788,8 +788,7 @@
     <string name="pref_enable_noise_summary">เพิ่มความคมของภาพทำให้มีน๊อยส์มากขึ้น มีผลเมื่อเริ่มใช้งานแอปใหม่อีกครั้ง</string>
     <string name="pref_enable_front_hdr_title">ปิดใช้งาน HDR+ กล้องหน้า</string>
     <string name="pref_enable_front_hdr_summary">การปิด HDR+ กล้องหน้าทำให้ใช้โหมดภาพถ่ายบุคคลไม่ได้ มีผลเมื่อเริ่มใช้งานแอปใหม่</string>
-    <string name="setting_google_feedback">ส่งความคิดเห็น</string>
-    <string name="setting_google_help">ความช่วยเหลือ</string>
-    <string name="setting_google_help_and_feedback">ช่วยเหลือและความคิดเห็น</string>
+    <string name="pref_hdrplus_settings_title">ตั้งค่า HDR+</string>
+    <string name="pref_misc_settings_title">การตั้งค่าอื่นๆ</string>
     <string name="pref_enable_aemode_title">ตั้งค่าความเร็วชัตเตอร์</string>
 </resources>

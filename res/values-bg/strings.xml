@@ -781,13 +781,13 @@
     <string name="pref_enable_lowlight_title">Подобряване на снимката при слаба светлина</string>
     <string name="pref_enable_lowlight_summary">Премахване на розов/червеникав/магента оттенък при слаба светлина</string>
     <string name="pref_enable_noise_title">Подобрена острота</string>
+    <string name="pref_enable_noise_0">Най-ниски</string>
+    <string name="pref_enable_noise_1">Ниски</string>
+    <string name="pref_enable_noise_2">Средни</string>
     <string name="pref_enable_noise_summary">Подобрява остротата, но снимките са с повече шум, използвайте при отчлино осветление. При активация е нужно да рестартирате приложението за да приеме новите настройки.</string>
     <string name="pref_enable_front_hdr_title">Деактивиране на HDR + (преднa камера)</string>
     <string name="pref_enable_front_hdr_summary">чрез деактивиране на предния режим HDR+ портретният режим не работи</string>
     <string name="pref_hdrplus_settings_title">HDR+ настройки</string>
     <string name="pref_misc_settings_title">Разни настройки</string>
-    <string name="setting_google_feedback">Изпращане на отзив</string>
-    <string name="setting_google_help">Помощ</string>
-    <string name="setting_google_help_and_feedback">Помощ и отзиви</string>
     <string name="pref_enable_aemode_title">Режим на автоматична експозиция</string>
 </resources>

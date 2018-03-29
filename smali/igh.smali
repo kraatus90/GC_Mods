@@ -287,11 +287,11 @@
 
     new-instance v0, Lici;
 
-    invoke-interface {p1}, Liil;->f()I
+    invoke-interface {p2}, Liil;->f()I
 
     move-result v1
 
-    invoke-interface {p1}, Liil;->c()I
+    invoke-interface {p2}, Liil;->c()I
 
     move-result v2
 

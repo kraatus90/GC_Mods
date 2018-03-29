@@ -147,7 +147,7 @@
 
     iget-object v0, p0, Ldii;->e:Lgzz;
 
-    invoke-virtual {v0}, Lgzz;->k()Z
+    invoke-virtual {v0}, Lgzz;->c()Z
 
     move-result v0
 

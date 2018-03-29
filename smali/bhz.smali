@@ -372,7 +372,7 @@
 .method public static d(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    const/4 v0, 0x6
+    const/4 v0, 0x2
 
     invoke-static {p0, v0}, Lbhz;->a(Ljava/lang/String;I)Z
 
@@ -389,7 +389,7 @@
 .method public static d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 1
 
-    const/4 v0, 0x6
+    const/4 v0, 0x2
 
     invoke-static {p0, v0}, Lbhz;->a(Ljava/lang/String;I)Z
 
@@ -434,57 +434,5 @@
     invoke-static {p0, p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    return-void
-.end method
-
-.method public static logConcat(Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 4
-
-    const/16 v1, 0x35
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static logConcat(Ljava/lang/String;Ljava/lang/String;J)V
-    .locals 4
-
-    const/16 v1, 0x35
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
-
     return-void
 .end method
