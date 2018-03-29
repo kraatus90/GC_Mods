@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">ಮುಂಬದಿ ಕ್ಯಾಮರಾ ಫೋಟೋ ರೆಸಲ್ಯೂಷನ್</string>
     <string name="setting_front_camera_video">ಮುಂಬದಿ ಕ್ಯಾಮರಾ ವೀಡಿಯೊ ರೆಸಲ್ಯೂಷನ್</string>
     <string name="setting_general">ಸಾಮಾನ್ಯ</string>
-    <string name="setting_google_feedback">ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ</string>
-    <string name="setting_google_help">ಸಹಾಯ</string>
-    <string name="setting_google_help_and_feedback">ಸಹಾಯ ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆ</string>
     <string name="setting_location">ಸ್ಥಳ</string>
     <string name="setting_off">ಆಫ್ ಆಗಿದೆ</string>
     <string name="setting_on">ಆನ್ ಆಗಿದೆ</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">ಝೂಮ್ ಮೌಲ್ಯ %.1f</string>
     <string name="zoom_minus_desc">ಝೂಮ್ ಔಟ್</string>
     <string name="zoom_plus_desc">ಝೂಮ್ ಇನ್</string>
+    <string name="setting_google_feedback">ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ</string>
+    <string name="setting_google_help">ಸಹಾಯ</string>
+    <string name="setting_google_help_and_feedback">ಸಹಾಯ ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆ</string>
 </resources>

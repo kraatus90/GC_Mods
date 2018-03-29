@@ -658,9 +658,6 @@ Giữ đối tượng ở chính giữa."</string>
     <string name="setting_front_camera_photo">Độ phân giải ảnh của máy ảnh trước</string>
     <string name="setting_front_camera_video">Độ phân giải video của máy ảnh trước</string>
     <string name="setting_general">Chung</string>
-    <string name="setting_google_feedback">Gửi phản hồi</string>
-    <string name="setting_google_help">Trợ giúp</string>
-    <string name="setting_google_help_and_feedback">Trợ giúp và phản hồi</string>
     <string name="setting_location">Vị trí</string>
     <string name="setting_off">Tắt</string>
     <string name="setting_on">Bật</string>
@@ -763,4 +760,7 @@ Hãy di chuyển thiết bị chậm"</string>
     <string name="zoom_announcement">Giá trị thu phóng là %.1f</string>
     <string name="zoom_minus_desc">Thu nhỏ</string>
     <string name="zoom_plus_desc">Phóng to</string>
+    <string name="setting_google_feedback">Gửi phản hồi</string>
+    <string name="setting_google_help">Trợ giúp</string>
+    <string name="setting_google_help_and_feedback">Trợ giúp và phản hồi</string>
 </resources>

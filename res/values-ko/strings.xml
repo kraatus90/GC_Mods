@@ -657,9 +657,6 @@
     <string name="setting_front_camera_photo">전면 카메라 사진 해상도</string>
     <string name="setting_front_camera_video">전면 카메라 동영상 해상도</string>
     <string name="setting_general">기본 설정</string>
-    <string name="setting_google_feedback">의견 보내기</string>
-    <string name="setting_google_help">도움말</string>
-    <string name="setting_google_help_and_feedback">고객센터</string>
     <string name="setting_location">위치</string>
     <string name="setting_off">OFF</string>
     <string name="setting_on">ON</string>
@@ -762,4 +759,7 @@
     <string name="zoom_announcement">현재 화면 배율은 %.1f입니다.</string>
     <string name="zoom_minus_desc">축소</string>
     <string name="zoom_plus_desc">확대</string>
+    <string name="setting_google_feedback">의견 보내기</string>
+    <string name="setting_google_help">도움말</string>
+    <string name="setting_google_help_and_feedback">고객센터</string>
 </resources>

@@ -677,7 +677,7 @@
 
     iget-object v8, v13, Lgpa;->f:Landroid/graphics/Rect;
 
-    invoke-static {v3, v0, v7, v8}, Lcom/android/camera/util/JpegUtilNative;->a(Liil;Ljava/nio/ByteBuffer;ILandroid/graphics/Rect;)I
+    invoke-static {v3, v0, v7, v8}, LUtil;->comressToJpeg(Liil;Ljava/nio/ByteBuffer;ILandroid/graphics/Rect;)I
 
     move-result v3
 

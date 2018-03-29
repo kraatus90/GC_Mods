@@ -656,9 +656,6 @@ Mantén o suxeito centrado."</string>
     <string name="setting_front_camera_photo">Resolución de foto da cámara dianteira</string>
     <string name="setting_front_camera_video">Resolución de vídeo da cámara dianteira</string>
     <string name="setting_general">Xeral</string>
-    <string name="setting_google_feedback">Enviar comentarios</string>
-    <string name="setting_google_help">Axuda</string>
-    <string name="setting_google_help_and_feedback">Axuda e comentarios</string>
     <string name="setting_location">Localización</string>
     <string name="setting_off">Desactivada</string>
     <string name="setting_on">Activada</string>
@@ -761,4 +758,7 @@ Move o dispos. lento"</string>
     <string name="zoom_announcement">O valor do zoom é %.1f</string>
     <string name="zoom_minus_desc">Afastar</string>
     <string name="zoom_plus_desc">Achegar</string>
+    <string name="setting_google_feedback">Enviar comentarios</string>
+    <string name="setting_google_help">Axuda</string>
+    <string name="setting_google_help_and_feedback">Axuda e comentarios</string>
 </resources>

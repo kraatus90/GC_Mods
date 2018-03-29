@@ -656,9 +656,6 @@ Obyektni markazda tuting."</string>
     <string name="setting_front_camera_photo">Old kamera (foto)</string>
     <string name="setting_front_camera_video">Old kamera (video)</string>
     <string name="setting_general">Umumiy</string>
-    <string name="setting_google_feedback">Fikr-mulohaza yuborish</string>
-    <string name="setting_google_help">Yordam</string>
-    <string name="setting_google_help_and_feedback">Yordam va fikr-mulohaza</string>
     <string name="setting_location">Joylashuv</string>
     <string name="setting_off">O‘chiq</string>
     <string name="setting_on">Yoniq</string>
@@ -761,4 +758,7 @@ Sekinroq siljiting"</string>
     <string name="zoom_announcement">Masshtab: %.1f</string>
     <string name="zoom_minus_desc">Kichiklashtirish</string>
     <string name="zoom_plus_desc">Kattalashtirish</string>
+    <string name="setting_google_feedback">Fikr-mulohaza yuborish</string>
+    <string name="setting_google_help">Yordam</string>
+    <string name="setting_google_help_and_feedback">Yordam va fikr-mulohaza</string>
 </resources>

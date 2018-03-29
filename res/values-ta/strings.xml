@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">முன்புறக் கேமராவின் படத் தெளிவுத்திறன்</string>
     <string name="setting_front_camera_video">முன்புறக் கேமராவின் வீடியோ தெளிவுத்திறன்</string>
     <string name="setting_general">பொது</string>
-    <string name="setting_google_feedback">கருத்து அனுப்பு</string>
-    <string name="setting_google_help">உதவி</string>
-    <string name="setting_google_help_and_feedback">உதவி &amp; கருத்து</string>
     <string name="setting_location">இருப்பிடம்</string>
     <string name="setting_off">முடக்கத்தில்</string>
     <string name="setting_on">இயக்கத்தில்</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">அளவு மாற்ற மதிப்பு %.1f</string>
     <string name="zoom_minus_desc">சிறிதாக்கும் பொத்தான்</string>
     <string name="zoom_plus_desc">பெரிதாக்கும் பொத்தான்</string>
+    <string name="setting_google_feedback">கருத்து அனுப்பு</string>
+    <string name="setting_google_help">உதவி</string>
+    <string name="setting_google_help_and_feedback">உதவி &amp; கருத்து</string>
 </resources>

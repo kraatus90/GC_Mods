@@ -21,7 +21,7 @@
 
 # virtual methods
 .method public final a(Lgfz;)V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lggi;->a:Lggg;
 
@@ -34,7 +34,9 @@
 
     iget v2, v0, Lggg;->f:I
 
-    add-int/lit8 v2, v2, -0x1
+    iget v3, v0, Lggg;->BadTF:I
+
+    add-int v2, v2, v3
 
     iput v2, v0, Lggg;->f:I
 

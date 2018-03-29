@@ -658,9 +658,8 @@ Hou onderwerp in die middel."</string>
     <string name="setting_front_camera_photo">Voorste kamera se fotoresolusie</string>
     <string name="setting_front_camera_video">Voorste kamera se videoresolusie</string>
     <string name="setting_general">Algemeen</string>
-    <string name="setting_google_feedback">Stuur terugvoer</string>
-    <string name="setting_google_help">Hulp</string>
-    <string name="setting_google_help_and_feedback">Hulp en terugvoer</string>
+    <string name="pref_developer_title">Ontfouting en gereedskap</string>
+    <string name="pref_parameters_camera_title">HDR+ grense</string>
     <string name="setting_location">Ligging</string>
     <string name="setting_off">Af</string>
     <string name="setting_on">Aan</string>
@@ -763,4 +762,23 @@ Beweeg toestel stadig"</string>
     <string name="zoom_announcement">Zoemwaarde is %.1f</string>
     <string name="zoom_minus_desc">Zoem uit</string>
     <string name="zoom_plus_desc">Zoem in</string>
+    <string name="pref_parameters_camera_0">Standaard (laagste)</string>
+    <string name="pref_parameters_camera_1">Lae</string>
+    <string name="pref_parameters_camera_2">Medium</string>
+    <string name="pref_parameters_camera_3">Hoë</string>
+    <string name="pref_parameters_camera_4">Baie hoog</string>
+    <string name="pref_parameters_camera_5">Super hoog</string>
+    <string name="pref_compress_jpeg_title">HDR+ beeld kwaliteit</string>
+    <string name="pref_compress_jpeg_summary">Finale kwaliteit van jpeg is %s</string>
+    <string name="pref_compress_dng_title">Druk RAW beelde</string>
+    <string name="pref_compress_dng_summary">Druk DNG om lêer grootte te verminder</string>
+    <string name="pref_enable_gouda_mode_title">Aktiveer portretmodus</string>
+    <string name="pref_enable_gouda_mode_summary">"Vervang Lens Vervaging met Portret af.
+Herbegin die aansoek, die veranderinge sal in werking tree by die volgende aanvang."</string>
+    <string name="pref_refocus_resolution_title">Lens vervaging resolusie</string>
+    <string name="pref_enable_zsl_title">Aktiveer ZSL</string>
+    <string name="pref_enable_zsl_summary">Aktiveer nul-sluiterlag op ondersteunde konfigurasies</string>
+    <string name="pref_config_camera_title">Konfigureer kamera HDR+</string>
+    <string name="pref_enable_lowlight_title">"Verbeter foto's in lae lig"</string>
+    <string name="pref_enable_lowlight_summary">Verwyder pienk/rooi/magenta kleure in lae lig</string>
 </resources>

@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">Առջևի ֆոտոխցիկի լուծաչափը</string>
     <string name="setting_front_camera_video">Առջևի տեսախցիկի լուծաչափը</string>
     <string name="setting_general">Ընդհանուր</string>
-    <string name="setting_google_feedback">Կարծիք հայտնել</string>
-    <string name="setting_google_help">Օգնություն</string>
-    <string name="setting_google_help_and_feedback">Օգնություն և հետադարձ կապ</string>
     <string name="setting_location">Տեղադրություն</string>
     <string name="setting_off">Անջատված է</string>
     <string name="setting_on">Միացված է</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">Մասշտաբավորման արժեքը %.1f է</string>
     <string name="zoom_minus_desc">Փոքրացնել</string>
     <string name="zoom_plus_desc">Խոշորացնել</string>
+    <string name="setting_google_feedback">Կարծիք հայտնել</string>
+    <string name="setting_google_help">Օգնություն</string>
+    <string name="setting_google_help_and_feedback">Օգնություն և հետադարձ կապ</string>
 </resources>

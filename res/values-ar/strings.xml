@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">دقة صورة الكاميرا الأمامية</string>
     <string name="setting_front_camera_video">دقة فيديو الكاميرا الأمامية</string>
     <string name="setting_general">عامة</string>
-    <string name="setting_google_feedback">إرسال تعليقات</string>
-    <string name="setting_google_help">مساعدة</string>
-    <string name="setting_google_help_and_feedback">المساعدة والتعليقات</string>
     <string name="setting_location">الموقع</string>
     <string name="setting_off">إيقاف</string>
     <string name="setting_on">تشغيل</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">قيمة التكبير/التصغير %.1f</string>
     <string name="zoom_minus_desc">تصغير</string>
     <string name="zoom_plus_desc">تكبير</string>
+    <string name="setting_google_feedback">إرسال تعليقات</string>
+    <string name="setting_google_help">مساعدة</string>
+    <string name="setting_google_help_and_feedback">المساعدة والتعليقات</string>
 </resources>

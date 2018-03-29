@@ -658,9 +658,6 @@ Panatilihing nasa gitna ang subject."</string>
     <string name="setting_front_camera_photo">Resolution ng larawan ng camera sa harap</string>
     <string name="setting_front_camera_video">Resolution ng video ng camera sa harap</string>
     <string name="setting_general">Pangkalahatan</string>
-    <string name="setting_google_feedback">Magpadala ng feedback</string>
-    <string name="setting_google_help">Tulong</string>
-    <string name="setting_google_help_and_feedback">Tulong at feedback</string>
     <string name="setting_location">Lokasyon</string>
     <string name="setting_off">Naka-off</string>
     <string name="setting_on">Naka-on</string>
@@ -763,4 +760,7 @@ Igalaw nang mas mabagal"</string>
     <string name="zoom_announcement">Ang value ng pag-zoom ay %.1f</string>
     <string name="zoom_minus_desc">Mag-zoom out</string>
     <string name="zoom_plus_desc">Mag-zoom in</string>
+    <string name="setting_google_feedback">Magpadala ng feedback</string>
+    <string name="setting_google_help">Tulong</string>
+    <string name="setting_google_help_and_feedback">Tulong at feedback</string>
 </resources>

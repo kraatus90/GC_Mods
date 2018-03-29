@@ -658,9 +658,6 @@ Motiv naj ostane v središču."</string>
     <string name="setting_front_camera_photo">Ločljivost sprednjega fotoaparata (foto.)</string>
     <string name="setting_front_camera_video">Ločljivost sprednjega fotoaparata (video)</string>
     <string name="setting_general">Splošno</string>
-    <string name="setting_google_feedback">Pošlji povratne informacije</string>
-    <string name="setting_google_help">Pomoč</string>
-    <string name="setting_google_help_and_feedback">Pomoč in povratne informacije</string>
     <string name="setting_location">Lokacija</string>
     <string name="setting_off">Izklopljeno</string>
     <string name="setting_on">Vklopljeno</string>
@@ -763,4 +760,7 @@ Premik. nap. počasi"</string>
     <string name="zoom_announcement">Stopnja povečave je %.1f</string>
     <string name="zoom_minus_desc">Pomanjšava</string>
     <string name="zoom_plus_desc">Povečava</string>
+    <string name="setting_google_feedback">Pošlji povratne informacije</string>
+    <string name="setting_google_help">Pomoč</string>
+    <string name="setting_google_help_and_feedback">Pomoč in povratne informacije</string>
 </resources>

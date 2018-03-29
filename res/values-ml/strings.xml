@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">മുൻ ക്യാമറ ഫോട്ടോ റെസല്യൂഷൻ</string>
     <string name="setting_front_camera_video">മുൻ ക്യാമറ വീഡിയോ റെസല്യൂഷൻ</string>
     <string name="setting_general">പൊതുവായത്</string>
-    <string name="setting_google_feedback">ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുക</string>
-    <string name="setting_google_help">സഹായം</string>
-    <string name="setting_google_help_and_feedback">സഹായവും പ്രതികരണവും</string>
     <string name="setting_location">ലൊക്കേഷൻ</string>
     <string name="setting_off">ഓഫാണ്</string>
     <string name="setting_on">ഓണാണ്</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">സൂം മൂല്യം %.1f ആണ്</string>
     <string name="zoom_minus_desc">സൂം ഔട്ട് ചെയ്യുക</string>
     <string name="zoom_plus_desc">സൂം ഇന്‍ ചെയ്യുക</string>
+    <string name="setting_google_feedback">ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുക</string>
+    <string name="setting_google_help">സഹായം</string>
+    <string name="setting_google_help_and_feedback">സഹായവും പ്രതികരണവും</string>
 </resources>

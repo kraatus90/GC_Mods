@@ -15,6 +15,8 @@
 
 .field private d:Lhda;
 
+.field private gotAF:I
+
 
 # direct methods
 .method public constructor <init>(Lasc;Lasf;Lasp;Lass;Latd;Lhdc;Lhda;Lhzt;Lase;Lgdq;Liau;Liau;)V
@@ -43,7 +45,8 @@
     :cond_0
     const/4 v3, 0x1
 
-    :goto_0
+    iput v3, p0, Lato;->gotAF:I
+
     invoke-static {v3}, Liya;->a(Z)V
 
     iput-object p2, p0, Lato;->b:Lasf;
@@ -162,7 +165,9 @@
     :cond_2
     const/4 v3, 0x0
 
-    goto :goto_0
+    iput v3, p0, Lato;->gotAF:I
+
+    return-void
 .end method
 
 .method public constructor <init>(Lasc;Lasf;Lasp;Lass;Latd;Lhdc;Lhda;Lhzt;Lase;Lgdq;Liau;Liau;B)V
@@ -178,9 +183,15 @@
 .method public final close()V
     .locals 2
 
+    return-void
+
     iget-object v0, p0, Lato;->a:Lhzr;
 
     invoke-virtual {v0}, Lhzr;->close()V
+
+    iget v0, p0, Lato;->gotAF:I
+
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lato;->b:Lasf;
 
@@ -192,5 +203,6 @@
 
     iput-object v1, v0, Lhdc;->a:Lhdl;
 
+    :cond_0
     return-void
 .end method

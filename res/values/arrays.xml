@@ -304,4 +304,102 @@
         <item>@string/torch_on_desc</item>
         <item>@string/torch_off_desc</item>
     </string-array>
+    <string-array name="pref_parameters_camera_entries">
+        <item>@string/pref_parameters_camera_0</item>
+        <item>@string/pref_parameters_camera_1</item>
+        <item>@string/pref_parameters_camera_2</item>
+        <item>@string/pref_parameters_camera_3</item>
+        <item>@string/pref_parameters_camera_4</item>
+        <item>@string/pref_parameters_camera_5</item>
+    </string-array>
+    <string-array name="pref_parameters_camera_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="pref_config_camera_entries">
+        <item>@string/pref_config_camera_0</item>
+        <item>@string/pref_config_camera_1</item>
+        <item>@string/pref_config_camera_2</item>
+        <item>@string/pref_config_camera_3</item>
+        <item>@string/pref_config_camera_4</item>
+    </string-array>
+    <string-array name="pref_config_camera_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="pref_compress_jpeg_entries">
+        <item>@string/pref_compress_jpeg_50</item>
+        <item>@string/pref_compress_jpeg_70</item>
+        <item>@string/pref_compress_jpeg_80</item>
+        <item>@string/pref_compress_jpeg_90</item>
+        <item>@string/pref_compress_jpeg_95</item>
+        <item>@string/pref_compress_jpeg_96</item>
+        <item>@string/pref_compress_jpeg_97</item>
+        <item>@string/pref_compress_jpeg_98</item>
+        <item>@string/pref_compress_jpeg_99</item>
+        <item>@string/pref_compress_jpeg_100</item>
+    </string-array>
+    <string-array name="pref_compress_jpeg_entryvalues">
+        <item>50</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
+    </string-array>
+    <string-array name="pref_refocus_resolution_entries">
+        <item>@string/pref_refocus_resolution_5</item>
+        <item>@string/pref_refocus_resolution_8</item>
+        <item>@string/pref_refocus_resolution_10</item>
+        <item>@string/pref_refocus_resolution_12</item>
+    </string-array>
+    <string-array name="pref_refocus_resolution_entryvalues">
+        <item>5</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="pref_enable_noise_entries">
+        <item>@string/pref_enable_noise_0</item>
+        <item>@string/pref_enable_noise_1</item>
+        <item>@string/pref_enable_noise_2</item>
+    </string-array>
+    <string-array name="pref_enable_noise_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="pref_aemode_entries">
+        <item>@string/pref_aemode_0</item>
+        <item>@string/pref_aemode_1</item>
+        <item>@string/pref_aemode_2</item>
+        <item>@string/pref_aemode_3</item>
+        <item>@string/pref_aemode_4</item>
+        <item>@string/pref_aemode_5</item>
+        <item>@string/pref_aemode_6</item>
+        <item>@string/pref_aemode_7</item>
+        <item>@string/pref_aemode_8</item>
+    </string-array>
+    <string-array name="pref_aemode_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
 </resources>

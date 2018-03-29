@@ -657,9 +657,6 @@ Držte objekt ve středu záběru."</string>
     <string name="setting_front_camera_photo">Rozlišení fotek z předního fotoaparátu</string>
     <string name="setting_front_camera_video">Rozlišení videí z předního fotoaparátu</string>
     <string name="setting_general">Obecná nastavení</string>
-    <string name="setting_google_feedback">Odeslat zpětnou vazbu</string>
-    <string name="setting_google_help">Nápověda</string>
-    <string name="setting_google_help_and_feedback">Nápověda a zpětná vazba</string>
     <string name="setting_location">Poloha</string>
     <string name="setting_off">VYP</string>
     <string name="setting_on">Zapnuto</string>
@@ -762,4 +759,7 @@ Pohybujte pomaleji"</string>
     <string name="zoom_announcement">Hodnota přiblížení je %.1f</string>
     <string name="zoom_minus_desc">Oddálit</string>
     <string name="zoom_plus_desc">Přiblížit</string>
+    <string name="setting_google_feedback">Odeslat zpětnou vazbu</string>
+    <string name="setting_google_help">Nápověda</string>
+    <string name="setting_google_help_and_feedback">Nápověda a zpětná vazba</string>
 </resources>

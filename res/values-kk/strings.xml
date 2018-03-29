@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">Алдыңғы камера фотосуретінің ажыратымдылығы</string>
     <string name="setting_front_camera_video">Алдыңғы камера бейнесінің ажыратымдылығы</string>
     <string name="setting_general">Жалпы</string>
-    <string name="setting_google_feedback">Пікір жіберу</string>
-    <string name="setting_google_help">Анықтама</string>
-    <string name="setting_google_help_and_feedback">Анықтама және пікір</string>
     <string name="setting_location">Орын</string>
     <string name="setting_off">Өшірулі</string>
     <string name="setting_on">Қосулы</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">Масштабтау мәні: %.1f</string>
     <string name="zoom_minus_desc">Кішірейту</string>
     <string name="zoom_plus_desc">Ұлғайту</string>
+    <string name="setting_google_feedback">Пікір жіберу</string>
+    <string name="setting_google_help">Анықтама</string>
+    <string name="setting_google_help_and_feedback">Анықтама және пікір</string>
 </resources>

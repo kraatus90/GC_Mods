@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">ရှေ့ကင်မရာ ဓာတ်ပုံ ပုံရိပ်ပြတ်သားကိန်း</string>
     <string name="setting_front_camera_video">ရှေ့ကင်မရာ ဗီဒီယိုပုံရိပ်ပြတ်သားကိန်း</string>
     <string name="setting_general">အထွေထွေ</string>
-    <string name="setting_google_feedback">အကြံပြုချက်ကို ပို့ပါ</string>
-    <string name="setting_google_help">အကူအညီ</string>
-    <string name="setting_google_help_and_feedback">အကူအညီနှင့် အကြံပြုချက်</string>
     <string name="setting_location">တည်နေရာ</string>
     <string name="setting_off">ပိတ်</string>
     <string name="setting_on">ဖွင့်ရန်</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">ဇူးမ်ကိန်းသည် %.1f ဖြစ်သည်</string>
     <string name="zoom_minus_desc">ဇူးမ်ဖြုတ်ရန်</string>
     <string name="zoom_plus_desc">ဇူးမ်ဆွဲရန်</string>
+    <string name="setting_google_feedback">အကြံပြုချက်ကို ပို့ပါ</string>
+    <string name="setting_google_help">အကူအညီ</string>
+    <string name="setting_google_help_and_feedback">အကူအညီနှင့် အကြံပြုချက်</string>
 </resources>

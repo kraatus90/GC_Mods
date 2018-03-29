@@ -658,9 +658,6 @@ Saglabājiet objektu centrētu."</string>
     <string name="setting_front_camera_photo">Priekšējās kameras foto izšķirtspēja</string>
     <string name="setting_front_camera_video">Priekšējās kameras video izšķirtspēja</string>
     <string name="setting_general">Vispārīgi</string>
-    <string name="setting_google_feedback">Sūtīt atsauksmes</string>
-    <string name="setting_google_help">Palīdzība</string>
-    <string name="setting_google_help_and_feedback">Palīdzība un atsauksmes</string>
     <string name="setting_location">Atrašanās vieta</string>
     <string name="setting_off">Izslēgts</string>
     <string name="setting_on">Ieslēgts</string>
@@ -763,4 +760,7 @@ Virziet lēnām"</string>
     <string name="zoom_announcement">Tālummaiņa: %.1f</string>
     <string name="zoom_minus_desc">Tālināt</string>
     <string name="zoom_plus_desc">Tuvināt</string>
+    <string name="setting_google_feedback">Sūtīt atsauksmes</string>
+    <string name="setting_google_help">Palīdzība</string>
+    <string name="setting_google_help_and_feedback">Palīdzība un atsauksmes</string>
 </resources>

@@ -658,9 +658,6 @@ Lenga unachopiga picha."</string>
     <string name="setting_front_camera_photo">Ubora wa picha ya kamera ya mbele</string>
     <string name="setting_front_camera_video">Ubora wa video ya kamera ya mbele</string>
     <string name="setting_general">Ya Jumla</string>
-    <string name="setting_google_feedback">Tuma maoni</string>
-    <string name="setting_google_help">Usaidizi</string>
-    <string name="setting_google_help_and_feedback">Usaidizi na maoni</string>
     <string name="setting_location">Mahali</string>
     <string name="setting_off">Imezimwa</string>
     <string name="setting_on">Imewashwa</string>
@@ -763,4 +760,7 @@ Sogeza kifaa polepole"</string>
     <string name="zoom_announcement">Thamani ya kukuza ni %.1f</string>
     <string name="zoom_minus_desc">Sogeza mbali</string>
     <string name="zoom_plus_desc">Vuta karibu</string>
+    <string name="setting_google_feedback">Tuma maoni</string>
+    <string name="setting_google_help">Usaidizi</string>
+    <string name="setting_google_help_and_feedback">Usaidizi na maoni</string>
 </resources>

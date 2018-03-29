@@ -79,7 +79,7 @@
 .method public static a(Ljxn;Lgzz;)Ljht;
     .locals 1
 
-    invoke-virtual {p1}, Lgzz;->c()Z
+    invoke-virtual {p1}, Lgzz;->i()Z
 
     move-result v0
 

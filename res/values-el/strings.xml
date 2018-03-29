@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">Ανάλυση φωτογραφιών μπροστινής κάμερας</string>
     <string name="setting_front_camera_video">Ανάλυση βίντεο μπροστινής κάμερας</string>
     <string name="setting_general">Γενικές</string>
-    <string name="setting_google_feedback">Αποστολή σχολίων</string>
-    <string name="setting_google_help">Βοήθεια</string>
-    <string name="setting_google_help_and_feedback">Βοήθεια και σχόλια</string>
     <string name="setting_location">Τοποθεσία</string>
     <string name="setting_off">Απενεργοποιημ.</string>
     <string name="setting_on">Ενεργοποιημ.</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">Η τιμή της εστίασης είναι %.1f</string>
     <string name="zoom_minus_desc">Σμίκρυνση</string>
     <string name="zoom_plus_desc">Μεγέθυνση</string>
+    <string name="setting_google_feedback">Αποστολή σχολίων</string>
+    <string name="setting_google_help">Βοήθεια</string>
+    <string name="setting_google_help_and_feedback">Βοήθεια και σχόλια</string>
 </resources>

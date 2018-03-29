@@ -658,9 +658,6 @@ Hold motivet sentrert."</string>
     <string name="setting_front_camera_photo">Frontkamera – bildeoppløsning</string>
     <string name="setting_front_camera_video">Frontkamera – videooppløsning</string>
     <string name="setting_general">Generelt</string>
-    <string name="setting_google_feedback">Send tilbakemelding</string>
-    <string name="setting_google_help">Hjelp</string>
-    <string name="setting_google_help_and_feedback">Hjelp og tilbakemelding</string>
     <string name="setting_location">Posisjon</string>
     <string name="setting_off">Av</string>
     <string name="setting_on">På</string>
@@ -763,4 +760,7 @@ Beveg enheten sakte"</string>
     <string name="zoom_announcement">Zoomnivået er %.1f</string>
     <string name="zoom_minus_desc">Zoom ut</string>
     <string name="zoom_plus_desc">Zoom inn</string>
+    <string name="setting_google_feedback">Send tilbakemelding</string>
+    <string name="setting_google_help">Hjelp</string>
+    <string name="setting_google_help_and_feedback">Hjelp og tilbakemelding</string>
 </resources>

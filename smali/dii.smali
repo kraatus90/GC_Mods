@@ -147,7 +147,7 @@
 
     iget-object v0, p0, Ldii;->e:Lgzz;
 
-    invoke-virtual {v0}, Lgzz;->c()Z
+    invoke-virtual {v0}, Lgzz;->k()Z
 
     move-result v0
 
@@ -179,6 +179,19 @@
     goto :goto_1
 
     :cond_3
+    sget-object v0, Lige;->c:Lige;
+
+    if-eq p1, v0, :cond_4
+
+    sget-object v0, Lige;->a:Lige;
+
+    if-ne p1, v0, :cond_4
+
+    sget v0, Leh;->W:I
+
+    goto :goto_1
+
+    :cond_4
     iget v0, p0, Ldii;->d:I
 
     goto :goto_1

@@ -94,63 +94,6 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Ldia;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->d:Z
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Ldia;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->b:Z
-
-    if-eqz v0, :cond_3
-
-    :cond_2
-    sget-object v0, Ldij;->e:Ldij;
-
-    goto :goto_1
-
-    :cond_3
-    iget-object v0, p0, Ldia;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->f:Z
-
-    if-nez v0, :cond_4
-
-    iget-object v0, p0, Ldia;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->g:Z
-
-    if-eqz v0, :cond_5
-
-    :cond_4
-    sget-object v0, Ldij;->e:Ldij;
-
-    goto :goto_1
-
-    :cond_5
-    iget-object v0, p0, Ldia;->b:Lgzz;
-
-    invoke-virtual {v0}, Lgzz;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    sget-object v0, Ldij;->e:Ldij;
-
-    goto :goto_1
-
-    :cond_6
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
     invoke-interface {p1, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
@@ -159,7 +102,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_2
 
     sget-object v0, Ldhz;->a:Ljava/lang/String;
 
@@ -171,76 +114,40 @@
 
     goto :goto_1
 
-    :cond_7
+    :cond_2
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_8
+    if-ne v1, v2, :cond_3
 
     sget-object v0, Ldij;->b:Ldij;
 
     goto :goto_1
 
-    :cond_8
-    iget-object v1, p0, Ldia;->b:Lgzz;
-
-    iget-object v1, v1, Lgzz;->b:Lihk;
-
-    iget-boolean v1, v1, Lihk;->a:Z
-
-    if-nez v1, :cond_a
-
-    iget-object v1, p0, Ldia;->b:Lgzz;
-
-    iget-object v1, v1, Lgzz;->c:Lihj;
-
-    iget-boolean v1, v1, Lihj;->b:Z
-
-    if-nez v1, :cond_9
-
-    iget-object v1, p0, Ldia;->b:Lgzz;
-
-    iget-object v1, v1, Lgzz;->b:Lihk;
-
-    iget-boolean v1, v1, Lihk;->c:Z
-
-    if-nez v1, :cond_a
-
-    :cond_9
-    iget-object v1, p0, Ldia;->b:Lgzz;
-
-    iget-object v1, v1, Lgzz;->b:Lihk;
-
-    invoke-virtual {v1}, Lihk;->b()Z
+    :cond_3
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    const/4 v2, 0x3
 
-    :cond_a
-    sget-object v0, Ldij;->c:Ldij;
+    if-ne v1, v2, :cond_4
+
+    sget-object v0, Ldij;->e:Ldij;
 
     goto :goto_1
 
-    :cond_b
-    iget-object v1, p0, Ldia;->b:Lgzz;
-
-    invoke-virtual {v1}, Lgzz;->d()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_d
-
+    :cond_4
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_d
+    if-ne v1, v2, :cond_6
 
     invoke-interface {p1, v3}, Lgdq;->a(I)Ljava/util/List;
 
@@ -254,35 +161,35 @@
 
     move-result v0
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_5
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_5
 
     sget-object v0, Ldij;->d:Ldij;
 
     goto/16 :goto_1
 
-    :cond_c
+    :cond_5
     sget-object v0, Ldij;->a:Ldij;
 
     goto/16 :goto_1
 
-    :cond_d
+    :cond_6
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_7
 
     sget-object v0, Ldij;->c:Ldij;
 
     goto/16 :goto_1
 
-    :cond_e
+    :cond_7
     sget-object v1, Ldhz;->a:Ljava/lang/String;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

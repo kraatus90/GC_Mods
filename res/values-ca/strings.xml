@@ -658,9 +658,6 @@ Mantén l'objecte centrat."</string>
     <string name="setting_front_camera_photo">Resolució de foto de la càmera frontal</string>
     <string name="setting_front_camera_video">Resolució de vídeo de la càmera frontal</string>
     <string name="setting_general">General</string>
-    <string name="setting_google_feedback">Envia suggeriments</string>
-    <string name="setting_google_help">Ajuda</string>
-    <string name="setting_google_help_and_feedback">Ajuda i suggeriments</string>
     <string name="setting_location">Ubicació</string>
     <string name="setting_off">Desactivat</string>
     <string name="setting_on">Activat</string>
@@ -763,4 +760,7 @@ Mou disp. a poc a poc"</string>
     <string name="zoom_announcement">El valor del zoom és %.1f</string>
     <string name="zoom_minus_desc">Allunya</string>
     <string name="zoom_plus_desc">Apropa</string>
+    <string name="setting_google_feedback">Envia suggeriments</string>
+    <string name="setting_google_help">Ajuda</string>
+    <string name="setting_google_help_and_feedback">Ajuda i suggeriments</string>
 </resources>

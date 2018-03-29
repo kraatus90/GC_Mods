@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">ფოტოების გარჩევადობა (წინა კამერა)</string>
     <string name="setting_front_camera_video">ვიდეოს გარჩევადობა (წინა კამერა)</string>
     <string name="setting_general">ძირითადი</string>
-    <string name="setting_google_feedback">გამოხმაურება</string>
-    <string name="setting_google_help">დახმარება</string>
-    <string name="setting_google_help_and_feedback">დახმარება &amp; გამოხმაურება</string>
     <string name="setting_location">მდებარეობა</string>
     <string name="setting_off">გამორთული</string>
     <string name="setting_on">ჩართული</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">მასშტაბის მნიშვნელობა არის %.1f</string>
     <string name="zoom_minus_desc">მასშტაბის შემცირება</string>
     <string name="zoom_plus_desc">მასშტაბის გადიდება</string>
+    <string name="setting_google_feedback">გამოხმაურება</string>
+    <string name="setting_google_help">დახმარება</string>
+    <string name="setting_google_help_and_feedback">დახმარება &amp; გამოხმაურება</string>
 </resources>

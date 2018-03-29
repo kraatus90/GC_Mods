@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">وضوح عکس دوربین جلو</string>
     <string name="setting_front_camera_video">وضوح ویدیوی دوربین جلو</string>
     <string name="setting_general">موارد کلی</string>
-    <string name="setting_google_feedback">ارسال بازخورد</string>
-    <string name="setting_google_help">راهنما</string>
-    <string name="setting_google_help_and_feedback">راهنما و بازخورد</string>
     <string name="setting_location">مکان</string>
     <string name="setting_off">غیرفعال</string>
     <string name="setting_on">فعال</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">مقدار بزرگ‌نمایی %.1f است</string>
     <string name="zoom_minus_desc">کوچک‌ کردن</string>
     <string name="zoom_plus_desc">بزرگ کردن</string>
+    <string name="setting_google_feedback">ارسال بازخورد</string>
+    <string name="setting_google_help">راهنما</string>
+    <string name="setting_google_help_and_feedback">راهنما و بازخورد</string>
 </resources>

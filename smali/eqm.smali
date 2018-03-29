@@ -25,7 +25,7 @@
 
     move-result-object v3
 
-    const-string v0, "pref_category_resolution_camera"
+    const-string v0, "pref_developer_and_help"
 
     invoke-virtual {p0, v0}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
@@ -33,7 +33,7 @@
 
     check-cast v0, Landroid/preference/PreferenceCategory;
 
-    const-string v1, "pref_lightcycle_quality_key"
+    const-string v1, "pref_category_about"
 
     invoke-virtual {p0, v1}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 

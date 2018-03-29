@@ -139,9 +139,17 @@
 .end method
 
 .method static a(Lgdq;Lbhn;)Ljht;
-    .locals 3
+    .locals 4
 
     const/4 v2, -0x1
+
+    sget-object v3, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p0, v3}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
 
     sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
@@ -182,47 +190,15 @@
     goto :goto_0
 
     :pswitch_0
-    iget-object v0, p1, Lbhn;->a:Landroid/content/ContentResolver;
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    const-string v1, "camera:capture_support_level_override_back"
+    move-result v3
 
-    invoke-static {v0, v1, v2}, Lhyx;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    const/4 v1, 0x0
 
-    move-result v0
+    if-ne v3, v1, :cond_1
 
-    invoke-static {v0}, Ldij;->a(I)Ljht;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :pswitch_1
-    iget-object v0, p1, Lbhn;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->c:Lihj;
-
-    iget-boolean v0, v0, Lihj;->b:Z
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p1, Lbhn;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->a:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p1, Lbhn;->b:Lgzz;
-
-    iget-object v0, v0, Lgzz;->b:Lihk;
-
-    iget-boolean v0, v0, Lihk;->c:Z
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
     :goto_1
     invoke-static {v0}, Ldij;->a(I)Ljht;
@@ -231,7 +207,90 @@
 
     goto :goto_0
 
+    :cond_1
+    const/4 v1, 0x1
+
+    if-ne v3, v1, :cond_2
+
+    const/4 v0, 0x4
+
+    goto :goto_1
+
     :cond_2
+    const/4 v1, 0x2
+
+    if-ne v3, v1, :cond_3
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v1, 0x3
+
+    if-ne v3, v1, :cond_4
+
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v0, p1, Lbhn;->a:Landroid/content/ContentResolver;
+
+    const-string v1, "camera:capture_support_level_override_back"
+
+    invoke-static {v0, v1, v2}, Lhyx;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    goto :goto_1
+
+    :pswitch_1
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    const/4 v1, 0x0
+
+    if-ne v3, v1, :cond_5
+
+    const/4 v0, 0x2
+
+    :goto_2
+    invoke-static {v0}, Ldij;->a(I)Ljht;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_5
+    const/4 v1, 0x1
+
+    if-ne v3, v1, :cond_6
+
+    const/4 v0, 0x4
+
+    goto :goto_2
+
+    :cond_6
+    const/4 v1, 0x2
+
+    if-ne v3, v1, :cond_7
+
+    const/4 v0, 0x1
+
+    goto :goto_2
+
+    :cond_7
+    const/4 v1, 0x3
+
+    if-ne v3, v1, :cond_8
+
+    const/4 v0, 0x0
+
+    goto :goto_2
+
+    :cond_8
     iget-object v0, p1, Lbhn;->a:Landroid/content/ContentResolver;
 
     const-string v1, "camera:capture_support_level_override_front"
@@ -240,7 +299,7 @@
 
     move-result v0
 
-    goto :goto_1
+    goto :goto_2
 
     :pswitch_data_0
     .packed-switch 0x0

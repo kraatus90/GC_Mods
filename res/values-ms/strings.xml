@@ -658,9 +658,6 @@ Pastikan subjek di tengah-tengah."</string>
     <string name="setting_front_camera_photo">Peleraian foto kamera depan</string>
     <string name="setting_front_camera_video">Peleraian video kamera depan</string>
     <string name="setting_general">Umum</string>
-    <string name="setting_google_feedback">Hantar maklum balas</string>
-    <string name="setting_google_help">Bantuan</string>
-    <string name="setting_google_help_and_feedback">Bantuan &amp; maklum balas</string>
     <string name="setting_location">Lokasi</string>
     <string name="setting_off">Matikan</string>
     <string name="setting_on">Hidupkan</string>
@@ -763,4 +760,7 @@ Perlahankan peranti"</string>
     <string name="zoom_announcement">Nilai zum ialah %.1f</string>
     <string name="zoom_minus_desc">Zum keluar</string>
     <string name="zoom_plus_desc">Zum masuk</string>
+    <string name="setting_google_feedback">Hantar maklum balas</string>
+    <string name="setting_google_help">Bantuan</string>
+    <string name="setting_google_help_and_feedback">Bantuan &amp; maklum balas</string>
 </resources>

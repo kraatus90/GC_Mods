@@ -526,6 +526,7 @@
     <string name="pref_category_general">Všeobecné nastavenia</string>
     <string name="pref_category_photo_sphere_and_panorama">Sférická fotka a panoráma</string>
     <string name="pref_category_resolution_quality">Rozlíšenie a kvalita</string>
+    <string name="pref_developer_settings">Vývojářské nastavení</string>
     <string name="pref_experimental">Experimentálne</string>
     <string name="pref_exposure_label">EXPOZÍCIA</string>
     <string name="pref_exposure_title">Expozícia</string>
@@ -657,9 +658,8 @@ Objekt držte v strede záberu."</string>
     <string name="setting_front_camera_photo">Rozlíšenie fotiek predného fotoaparátu</string>
     <string name="setting_front_camera_video">Rozlíšenie videí predného fotoaparátu</string>
     <string name="setting_general">Všeobecné</string>
-    <string name="setting_google_feedback">Odoslať spätnú väzbu</string>
-    <string name="setting_google_help">Pomocník</string>
-    <string name="setting_google_help_and_feedback">Pomocník a spätná väzba</string>
+    <string name="pref_developer_title">Ladění a nástroje</string>
+    <string name="pref_parameters_camera_title">Parametry HDR+</string>
     <string name="setting_location">Poloha</string>
     <string name="setting_off">Vypnuté</string>
     <string name="setting_on">Zapnuté</string>
@@ -762,4 +762,28 @@ Pohybujte pomalšie"</string>
     <string name="zoom_announcement">Hodnota priblíženia je %.1f</string>
     <string name="zoom_minus_desc">Oddialiť</string>
     <string name="zoom_plus_desc">Priblížiť</string>
+    <string name="pref_parameters_camera_0">Výchozí (Nejnižší)</string>
+    <string name="pref_parameters_camera_1">Nižší</string>
+    <string name="pref_parameters_camera_2">Střední</string>
+    <string name="pref_parameters_camera_3">Vyšší</string>
+    <string name="pref_parameters_camera_4">Velmi vysoké</string>
+    <string name="pref_parameters_camera_5">Maximální</string>
+    <string name="pref_compress_jpeg_title">Kvalita obrázku HDR+</string>
+    <string name="pref_compress_jpeg_summary">Konečná kvalita JPEGU =</string>
+    <string name="pref_compress_dng_title">Komprimovat RAW.</string>
+    <string name="pref_compress_dng_summary">Zkomprimuje DNG soubor pro nižší velikost.</string>
+    <string name="pref_refocus_resolution_title">Rozlišení efektu rozostření objektivu</string>
+    <string name="pref_enable_zsl_title">Povolit režim ZSL (okamžitá spoušť)</string>
+    <string name="pref_enable_zsl_summary">Odstraní prodlevu při stisku spouště u podporovaných zařízení</string>
+    <string name="pref_config_camera_title">Nastavení fotoaparátu HDR+</string>
+    <string name="pref_enable_lowlight_title">Vylepšit v tmavých podmínkách</string>
+    <string name="pref_enable_lowlight_summary">Opraví růžovo/červeno/modrý nádech u tmavších fotografií.</string>
+    <string name="pref_enable_noise_title">Vylepšit ostrost</string>
+    <string name="pref_enable_noise_summary">Vylepší ostrost za cenu vyššího šumu. Nutný restart aplikace.</string>
+    <string name="pref_enable_front_hdr_title">Zakázat režim HDR+ u předního fotoaparátu</string>
+    <string name="pref_enable_front_hdr_summary">Zakázáním HDR+ přestane fungovat Portrétní režim. Nutný restart aplikace.</string>
+    <string name="setting_google_feedback">Odoslať spätnú väzbu</string>
+    <string name="setting_google_help">Pomocník</string>
+    <string name="setting_google_help_and_feedback">Pomocník a spätná väzba</string>
+    <string name="pref_enable_aemode_title">Automatická změna expozice</string>
 </resources>

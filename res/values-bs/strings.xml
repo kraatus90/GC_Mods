@@ -656,9 +656,6 @@ Držite objekat centriranim."</string>
     <string name="setting_front_camera_photo">Rezolucija fotografija uslikanih prednjom kamerom</string>
     <string name="setting_front_camera_video">Rezolucija videozapisa snimljenih prednjom kamerom</string>
     <string name="setting_general">Općenito</string>
-    <string name="setting_google_feedback">Slanje povratnih informacija</string>
-    <string name="setting_google_help">Pomoć</string>
-    <string name="setting_google_help_and_feedback">Pomoć i povratne informacije</string>
     <string name="setting_location">Lokacija</string>
     <string name="setting_off">Isključeno</string>
     <string name="setting_on">Uključeno</string>
@@ -761,4 +758,7 @@ Polako pomjerajte uređaj"</string>
     <string name="zoom_announcement">Iznos uvećanja: %.1f</string>
     <string name="zoom_minus_desc">Smanji</string>
     <string name="zoom_plus_desc">Uvećaj</string>
+    <string name="setting_google_feedback">Slanje povratnih informacija</string>
+    <string name="setting_google_help">Pomoć</string>
+    <string name="setting_google_help_and_feedback">Pomoć i povratne informacije</string>
 </resources>

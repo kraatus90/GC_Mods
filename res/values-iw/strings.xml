@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">רזולוציית תמונה ממצלמה קדמית</string>
     <string name="setting_front_camera_video">רזולוציית וידאו ממצלמה קדמית</string>
     <string name="setting_general">כללי</string>
-    <string name="setting_google_feedback">שלח משוב</string>
-    <string name="setting_google_help">עזרה</string>
-    <string name="setting_google_help_and_feedback">עזרה ומשוב</string>
     <string name="setting_location">מיקום</string>
     <string name="setting_off">כבוי</string>
     <string name="setting_on">מופעל</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">ערך המרחק מהתצוגה הוא %.1f</string>
     <string name="zoom_minus_desc">להתרחק</string>
     <string name="zoom_plus_desc">להתקרב</string>
+    <string name="setting_google_feedback">שלח משוב</string>
+    <string name="setting_google_help">עזרה</string>
+    <string name="setting_google_help_and_feedback">עזרה ומשוב</string>
 </resources>

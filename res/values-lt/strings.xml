@@ -658,9 +658,6 @@ Laikykite objektą centre."</string>
     <string name="setting_front_camera_photo">Priekinio fotoaparato nuotraukų skyra</string>
     <string name="setting_front_camera_video">Priekinio fotoaparato vaizdo įrašų skyra</string>
     <string name="setting_general">Bendrieji</string>
-    <string name="setting_google_feedback">Siųsti atsiliepimą</string>
-    <string name="setting_google_help">Pagalba</string>
-    <string name="setting_google_help_and_feedback">Pagalba ir atsiliepimai</string>
     <string name="setting_location">Vietovė</string>
     <string name="setting_off">Išjungta</string>
     <string name="setting_on">Įjungta</string>
@@ -763,4 +760,7 @@ Judėkite lėtai"</string>
     <string name="zoom_announcement">Mastelio keitimo vertė yra %.1f</string>
     <string name="zoom_minus_desc">Tolinti</string>
     <string name="zoom_plus_desc">Artinti</string>
+    <string name="setting_google_feedback">Siųsti atsiliepimą</string>
+    <string name="setting_google_help">Pagalba</string>
+    <string name="setting_google_help_and_feedback">Pagalba ir atsiliepimai</string>
 </resources>

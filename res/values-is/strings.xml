@@ -658,9 +658,6 @@ Haltu myndefninu fyrir miðju."</string>
     <string name="setting_front_camera_photo">Upplausn mynda í fremri myndavél</string>
     <string name="setting_front_camera_video">Upplausn upptöku í fremri myndavél</string>
     <string name="setting_general">Almennt</string>
-    <string name="setting_google_feedback">Senda ábendingu</string>
-    <string name="setting_google_help">Hjálp</string>
-    <string name="setting_google_help_and_feedback">Hjálp og ábendingar</string>
     <string name="setting_location">Staðsetning</string>
     <string name="setting_off">Slökkt</string>
     <string name="setting_on">Kveikt</string>
@@ -763,4 +760,7 @@ Færðu tækið hægt"</string>
     <string name="zoom_announcement">Gildi aðdráttar er %.1f</string>
     <string name="zoom_minus_desc">Minnka aðdrátt</string>
     <string name="zoom_plus_desc">Auka aðdrátt</string>
+    <string name="setting_google_feedback">Senda ábendingu</string>
+    <string name="setting_google_help">Hjálp</string>
+    <string name="setting_google_help_and_feedback">Hjálp og ábendingar</string>
 </resources>

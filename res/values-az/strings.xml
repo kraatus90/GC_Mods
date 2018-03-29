@@ -656,9 +656,6 @@ Subyekti mərkəzdə saxlayın."</string>
     <string name="setting_front_camera_photo">Ön kamera foto dəqiqliyi</string>
     <string name="setting_front_camera_video">Ön kamera video dəqiqliyi</string>
     <string name="setting_general">Ümumi</string>
-    <string name="setting_google_feedback">Geri əlaqə göndərin</string>
-    <string name="setting_google_help">Yardım</string>
-    <string name="setting_google_help_and_feedback">Yardım və rəy</string>
     <string name="setting_location">Yer</string>
     <string name="setting_off">Deaktiv</string>
     <string name="setting_on">Aktiv</string>
@@ -761,4 +758,7 @@ Cihazı yavaş tərpədin"</string>
     <string name="zoom_announcement">Yaxınlaşdırma dəyəri %.1f</string>
     <string name="zoom_minus_desc">Uzaqlaşdırın</string>
     <string name="zoom_plus_desc">Yaxınlaşdırın</string>
+    <string name="setting_google_feedback">Geri əlaqə göndərin</string>
+    <string name="setting_google_help">Yardım</string>
+    <string name="setting_google_help_and_feedback">Yardım və rəy</string>
 </resources>

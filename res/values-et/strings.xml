@@ -657,9 +657,6 @@ Hoidke objekt kaadri keskel."</string>
     <string name="setting_front_camera_photo">Esikaamera fotode eraldusvõime</string>
     <string name="setting_front_camera_video">Esikaamera video eraldusvõime</string>
     <string name="setting_general">Üldine</string>
-    <string name="setting_google_feedback">Tagasiside saatmine</string>
-    <string name="setting_google_help">Abi</string>
-    <string name="setting_google_help_and_feedback">Abi ja tagasiside</string>
     <string name="setting_location">Asukoht</string>
     <string name="setting_off">Väljas</string>
     <string name="setting_on">Sees</string>
@@ -762,4 +759,7 @@ Liigut. seadet aeglaselt"</string>
     <string name="zoom_announcement">Suumi väärtus on %.1f</string>
     <string name="zoom_minus_desc">Väljasuumimine</string>
     <string name="zoom_plus_desc">Sissesuumimine</string>
+    <string name="setting_google_feedback">Tagasiside saatmine</string>
+    <string name="setting_google_help">Abi</string>
+    <string name="setting_google_help_and_feedback">Abi ja tagasiside</string>
 </resources>

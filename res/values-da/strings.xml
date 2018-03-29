@@ -658,9 +658,6 @@ Hold motivet i midten."</string>
     <string name="setting_front_camera_photo">Frontkameraets billedopløsning</string>
     <string name="setting_front_camera_video">Videoopløsning for kamera foran</string>
     <string name="setting_general">Generelt</string>
-    <string name="setting_google_feedback">Send feedback</string>
-    <string name="setting_google_help">Hjælp</string>
-    <string name="setting_google_help_and_feedback">Hjælp og feedback</string>
     <string name="setting_location">Placering</string>
     <string name="setting_off">Fra</string>
     <string name="setting_on">Til</string>
@@ -763,4 +760,7 @@ Flyt enheden langsomt"</string>
     <string name="zoom_announcement">Zoomværdien er %.1f</string>
     <string name="zoom_minus_desc">Zoom ud</string>
     <string name="zoom_plus_desc">Zoom ind</string>
+    <string name="setting_google_feedback">Send feedback</string>
+    <string name="setting_google_help">Hjælp</string>
+    <string name="setting_google_help_and_feedback">Hjælp og feedback</string>
 </resources>

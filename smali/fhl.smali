@@ -56,6 +56,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    iget-object v0, p0, Lfhl;->a:Ljava/util/List;
+
+    sget-object v1, Lfkf;->c:Lfkf;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
     if-eqz p3, :cond_2
 
     iget-object v0, p0, Lfhl;->a:Ljava/util/List;

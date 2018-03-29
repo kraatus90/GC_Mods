@@ -18,15 +18,54 @@
 
 # virtual methods
 .method public final a(IIII)Liin;
-    .locals 2
+    .locals 3
 
     new-instance v0, Lifi;
 
-    invoke-static {p1, p2, p3, p4}, Landroid/media/ImageReader;->newInstance(IIII)Landroid/media/ImageReader;
+    const/16 v1, 0x23
 
-    move-result-object v1
+    if-ne p3, v1, :cond_0
 
-    invoke-direct {v0, v1}, Lifi;-><init>(Landroid/media/ImageReader;)V
+    const/16 v1, 0x23
+
+    :goto_0
+    invoke-static {p1, p2, v1, p4}, Landroid/media/ImageReader;->newInstance(IIII)Landroid/media/ImageReader;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lifi;-><init>(Landroid/media/ImageReader;)V
 
     return-object v0
+
+    :cond_0
+    const/16 v1, 0x26
+
+    if-ne p3, v1, :cond_1
+
+    const/16 v1, 0x26
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v1, 0x25
+
+    if-ne p3, v1, :cond_2
+
+    const/16 v1, 0x25
+
+    goto :goto_0
+
+    :cond_2
+    const/16 v1, 0x20
+
+    if-ne p3, v1, :cond_3
+
+    const/16 v1, 0x20
+
+    goto :goto_0
+
+    :cond_3
+    move v1, p3
+
+    goto :goto_0
 .end method

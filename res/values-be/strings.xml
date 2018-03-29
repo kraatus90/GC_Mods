@@ -655,9 +655,6 @@
     <string name="setting_front_camera_photo">Раздзяляльнасць фота з пярэдняй камеры</string>
     <string name="setting_front_camera_video">Раздзяляльнасць відэа з пярэдняй камеры</string>
     <string name="setting_general">Агульныя</string>
-    <string name="setting_google_feedback">Адправіць водгук</string>
-    <string name="setting_google_help">Даведка</string>
-    <string name="setting_google_help_and_feedback">Даведка і водгукі</string>
     <string name="setting_location">Месцазнаходжанне</string>
     <string name="setting_off">Выключана</string>
     <string name="setting_on">Уключана</string>
@@ -760,4 +757,7 @@
     <string name="zoom_announcement">Значэнне маштабу: %.1f</string>
     <string name="zoom_minus_desc">Паменшыць</string>
     <string name="zoom_plus_desc">Павялічыць</string>
+    <string name="setting_google_feedback">Адправіць водгук</string>
+    <string name="setting_google_help">Даведка</string>
+    <string name="setting_google_help_and_feedback">Даведка і водгукі</string>
 </resources>

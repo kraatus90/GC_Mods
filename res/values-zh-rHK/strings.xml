@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">前置鏡頭相片解像度</string>
     <string name="setting_front_camera_video">前置鏡頭影片解像度</string>
     <string name="setting_general">一般</string>
-    <string name="setting_google_feedback">傳送意見</string>
-    <string name="setting_google_help">說明</string>
-    <string name="setting_google_help_and_feedback">說明和意見反映</string>
     <string name="setting_location">位置</string>
     <string name="setting_off">關閉</string>
     <string name="setting_on">開啟</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">縮放值係 %.1f</string>
     <string name="zoom_minus_desc">縮小</string>
     <string name="zoom_plus_desc">放大</string>
+    <string name="setting_google_feedback">傳送意見</string>
+    <string name="setting_google_help">說明</string>
+    <string name="setting_google_help_and_feedback">說明和意見反映</string>
 </resources>

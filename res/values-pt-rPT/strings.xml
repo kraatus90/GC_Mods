@@ -658,9 +658,6 @@ Mantenha o objeto centrado."</string>
     <string name="setting_front_camera_photo">Resolução de fotos da câmara frontal</string>
     <string name="setting_front_camera_video">Resolução de vídeos da câmara frontal</string>
     <string name="setting_general">Gerais</string>
-    <string name="setting_google_feedback">Enviar comentários</string>
-    <string name="setting_google_help">Ajuda</string>
-    <string name="setting_google_help_and_feedback">Ajuda e comentários</string>
     <string name="setting_location">Localização</string>
     <string name="setting_off">Desativado</string>
     <string name="setting_on">Ativado</string>
@@ -763,4 +760,7 @@ Mova o disp. lent."</string>
     <string name="zoom_announcement">O valor do zoom é %.1f</string>
     <string name="zoom_minus_desc">Diminuir zoom</string>
     <string name="zoom_plus_desc">Aumentar zoom</string>
+    <string name="setting_google_feedback">Enviar comentários</string>
+    <string name="setting_google_help">Ajuda</string>
+    <string name="setting_google_help_and_feedback">Ajuda e comentários</string>
 </resources>

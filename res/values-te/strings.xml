@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">ముందువైపు కెమెరా ఫోటో రిజల్యూషన్</string>
     <string name="setting_front_camera_video">ముందువైపు కెమెరా వీడియో రిజల్యూషన్</string>
     <string name="setting_general">సాధారణం</string>
-    <string name="setting_google_feedback">అభిప్రాయాన్ని పంపు</string>
-    <string name="setting_google_help">సహాయం</string>
-    <string name="setting_google_help_and_feedback">సహాయం &amp; అభిప్రాయం</string>
     <string name="setting_location">స్థానం</string>
     <string name="setting_off">ఆఫ్‌లో ఉంది</string>
     <string name="setting_on">ఆన్‌లో ఉంది</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">జూమ్ విలువ %.1f</string>
     <string name="zoom_minus_desc">దూరంగా జూమ్ చేస్తుంది</string>
     <string name="zoom_plus_desc">దగ్గరికి జూమ్ చేస్తుంది</string>
+    <string name="setting_google_feedback">అభిప్రాయాన్ని పంపు</string>
+    <string name="setting_google_help">సహాయం</string>
+    <string name="setting_google_help_and_feedback">సహాయం &amp; అభిప్రాయం</string>
 </resources>

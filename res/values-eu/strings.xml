@@ -656,9 +656,6 @@ objektua erdiratuta mantenduz."</string>
     <string name="setting_front_camera_photo">Aurreko kameraren argazkien bereizmena</string>
     <string name="setting_front_camera_video">Aurreko kameraren bideoen bereizmena</string>
     <string name="setting_general">Ezarpen orokorrak</string>
-    <string name="setting_google_feedback">Bidali iritzia</string>
-    <string name="setting_google_help">Laguntza</string>
-    <string name="setting_google_help_and_feedback">Laguntza eta iritziak</string>
     <string name="setting_location">Kokapena</string>
     <string name="setting_off">Desaktibatuta</string>
     <string name="setting_on">Aktibatuta</string>
@@ -761,4 +758,7 @@ Mugitu astiroago"</string>
     <string name="zoom_announcement">Zoom-maila %.1f da</string>
     <string name="zoom_minus_desc">Txikitu</string>
     <string name="zoom_plus_desc">Handitu</string>
+    <string name="setting_google_feedback">Bidali iritzia</string>
+    <string name="setting_google_help">Laguntza</string>
+    <string name="setting_google_help_and_feedback">Laguntza eta iritziak</string>
 </resources>

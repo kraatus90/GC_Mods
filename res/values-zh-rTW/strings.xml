@@ -527,6 +527,7 @@
     <string name="pref_category_general">一般設定</string>
     <string name="pref_category_photo_sphere_and_panorama">「Photo Sphere 球形全景拍攝」和「全景」模式</string>
     <string name="pref_category_resolution_quality">解析度與畫質</string>
+    <string name="pref_developer_settings">開發者設定</string>
     <string name="pref_experimental">實驗性</string>
     <string name="pref_exposure_label">曝光</string>
     <string name="pref_exposure_title">曝光</string>
@@ -658,9 +659,8 @@
     <string name="setting_front_camera_photo">前置鏡頭相片解析度</string>
     <string name="setting_front_camera_video">前置鏡頭影片解析度</string>
     <string name="setting_general">一般</string>
-    <string name="setting_google_feedback">提供意見</string>
-    <string name="setting_google_help">說明</string>
-    <string name="setting_google_help_and_feedback">說明與意見回饋</string>
+    <string name="pref_developer_title">調試／工具</string>
+    <string name="pref_parameters_camera_title">HDR+指數</string>
     <string name="setting_location">位置</string>
     <string name="setting_off">關閉</string>
     <string name="setting_on">開啟</string>
@@ -763,4 +763,25 @@
     <string name="zoom_announcement">縮放值為 %.1f</string>
     <string name="zoom_minus_desc">縮小</string>
     <string name="zoom_plus_desc">放大</string>
+    <string name="pref_parameters_camera_0">默認（最低）</string>
+    <string name="pref_parameters_camera_1">低</string>
+    <string name="pref_parameters_camera_2">中高</string>
+    <string name="pref_parameters_camera_3">高</string>
+    <string name="pref_parameters_camera_4">很高</string>
+    <string name="pref_parameters_camera_5">最高</string>
+    <string name="pref_compress_jpeg_title">HDR+照片質量</string>
+    <string name="pref_compress_jpeg_summary">JPEG最高質量是 %s</string>
+    <string name="pref_compress_dng_title">壓縮RAW照片</string>
+    <string name="pref_compress_dng_summary">壓縮 DNG 以減少容量</string>
+    <string name="pref_refocus_resolution_title">照片模糊指數</string>
+    <string name="pref_enable_zsl_title">開啟ZSL</string>
+    <string name="pref_enable_zsl_summary">在支持的配置開啟零延遲快門模式</string>
+    <string name="pref_config_camera_title">調整HDR+設定</string>
+    <string name="pref_enable_lowlight_title">增強低光源表現</string>
+    <string name="pref_enable_lowlight_summary">減少低光源的紅色／粉色</string>
+    <string name="pref_enable_noise_title">增強銳利度</string>
+    <string name="pref_enable_noise_summary">增強銳利度，但躁點更多（須重新開啟程式）</string>
+    <string name="pref_enable_front_hdr_title">關閉前置HDR+</string>
+    <string name="pref_enable_front_hdr_summary">關閉前置HDR+，前置肖像模式將無法使用（須重新開啟程式）</string>
+    <string name="pref_enable_aemode_title">自動曝光模式</string>
 </resources>

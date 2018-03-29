@@ -114,12 +114,6 @@
 
     move-result-object v0
 
-    const-string v1, "Cannot return null from a non-@Nullable @Provides method"
-
-    invoke-static {v0, v1}, Ljwd;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
     check-cast v0, Lcom/google/googlex/gcam/Gcam;
 
     return-object v0

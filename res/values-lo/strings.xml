@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">ຄວາມລະອຽດຮູບພາບກ້ອງໜ້າ</string>
     <string name="setting_front_camera_video">ຄວາມລະອຽດວິດີໂອກ້ອງໜ້າ</string>
     <string name="setting_general">ທົ່ວໄປ</string>
-    <string name="setting_google_feedback">ສົ່ງຄຳຕິຊົມ</string>
-    <string name="setting_google_help">ຊ່ວຍເຫຼືອ</string>
-    <string name="setting_google_help_and_feedback">ຊ່ວຍ​ເຫຼືອ &amp; ຄຳ​ຕິ​ຊົມ</string>
     <string name="setting_location">ສະ​ຖານ​ທີ່</string>
     <string name="setting_off">ປິດ</string>
     <string name="setting_on">ເປີດ</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">ຄ່າການຊູມແມ່ນ %.1f</string>
     <string name="zoom_minus_desc">ຊູມອອກ</string>
     <string name="zoom_plus_desc">ຊູມເຂົ້າ</string>
+    <string name="setting_google_feedback">ສົ່ງຄຳຕິຊົມ</string>
+    <string name="setting_google_help">ຊ່ວຍເຫຼືອ</string>
+    <string name="setting_google_help_and_feedback">ຊ່ວຍ​ເຫຼືອ &amp; ຄຳ​ຕິ​ຊົມ</string>
 </resources>

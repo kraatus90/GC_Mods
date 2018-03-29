@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">ਮੂਹਰਲੇ ਕੈਮਰੇ ਦਾ ਫ਼ੋਟੋ ਰੈਜ਼ੇਲਿਊਸ਼ਨ</string>
     <string name="setting_front_camera_video">ਮੂਹਰਲੇ ਕੈਮਰੇ ਦਾ ਵੀਡੀਓ ਰੈਜ਼ੇਲਿਊਸ਼ਨ</string>
     <string name="setting_general">ਆਮ</string>
-    <string name="setting_google_feedback">ਪ੍ਰਤੀਕਰਮ ਭੇਜੋ</string>
-    <string name="setting_google_help">ਮਦਦ</string>
-    <string name="setting_google_help_and_feedback">ਮਦਦ ਅਤੇ ਪ੍ਰਤੀਕਰਮ</string>
     <string name="setting_location">ਟਿਕਾਣਾ</string>
     <string name="setting_off">ਬੰਦ</string>
     <string name="setting_on">ਚਾਲੂ</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">ਜ਼ੂਮ ਮੁੱਲ %.1f ਹੈ</string>
     <string name="zoom_minus_desc">ਜ਼ੂਮ ਆਊਟ ਕਰੋ</string>
     <string name="zoom_plus_desc">ਜ਼ੂਮ ਇਨ ਕਰੋ</string>
+    <string name="setting_google_feedback">ਪ੍ਰਤੀਕਰਮ ਭੇਜੋ</string>
+    <string name="setting_google_help">ਮਦਦ</string>
+    <string name="setting_google_help_and_feedback">ਮਦਦ ਅਤੇ ਪ੍ਰਤੀਕਰਮ</string>
 </resources>

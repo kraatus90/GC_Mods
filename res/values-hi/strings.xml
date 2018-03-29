@@ -658,9 +658,8 @@
     <string name="setting_front_camera_photo">सामने वाले कैमरे का फ़ोटो रिज़ॉल्यूशन</string>
     <string name="setting_front_camera_video">सामने वाले कैमरे का वीडियो रिज़ॉल्यूशन</string>
     <string name="setting_general">सामान्य</string>
-    <string name="setting_google_feedback">फ़ीडबैक भेजें</string>
-    <string name="setting_google_help">सहायता</string>
-    <string name="setting_google_help_and_feedback">सहायता और फ़ीडबैक</string>
+    <string name="pref_developer_title">डिबगिंग और टूल्स</string>
+    <string name="pref_parameters_camera_title">HDR+ पैरामीटर</string>
     <string name="setting_location">स्थान</string>
     <string name="setting_off">बंद</string>
     <string name="setting_on">चालू</string>
@@ -763,4 +762,25 @@
     <string name="zoom_announcement">%.1f ज़ूम किया गया है</string>
     <string name="zoom_minus_desc">ज़ूम घटाएं</string>
     <string name="zoom_plus_desc">ज़ूम बढ़ाएं</string>
+    <string name="pref_parameters_camera_0">डिफ़ॉल्ट (सबसे कम)</string>
+    <string name="pref_parameters_camera_1">कम</string>
+    <string name="pref_parameters_camera_2">मध्यम</string>
+    <string name="pref_parameters_camera_3">उच्च</string>
+    <string name="pref_parameters_camera_4">बहुत ऊँचा</string>
+    <string name="pref_parameters_camera_5">सुपर हाई</string>
+    <string name="pref_compress_jpeg_title">HDR+ छवि गुणवत्ता</string>
+    <string name="pref_compress_jpeg_summary">जेपीईजी की अंतिम गुणवत्ता %s है</string>
+    <string name="pref_compress_dng_title">रॉ चित्रों को संकुचित करें</string>
+    <string name="pref_compress_dng_summary">फ़ाइल आकार को कम करने के लिए डीएनजी को संकुचित करें</string>
+    <string name="pref_enable_gouda_mode_title">लेंस ब्लर को सक्षम करें</string>
+    <string name="pref_enable_gouda_mode_summary">लेंस कलंक के साथ चित्र मोड को बदलें एप्लिकेशन को पुनरारंभ करें, परिवर्तनों को अगले शुरुआत में प्रभावी होगा।</string>
+    <string name="pref_refocus_resolution_title">लेंस ब्लर रेज़ोल्यूशन</string>
+    <string name="pref_enable_zsl_title">ZSL सक्षम करें</string>
+    <string name="pref_enable_zsl_summary">समर्थित कॉन्फ़िगरेशन पर Zero Shutter Lag सक्षम करें</string>
+    <string name="pref_config_camera_title">कॉन्फ़िग कैमरा HDR+</string>
+    <string name="pref_enable_lowlight_title">कम रोशनी में सुधार</string>
+    <string name="pref_enable_lowlight_summary">कम रोशनी में गुलाबी / लाल / मैजंटा रंग हटाना</string>
+    <string name="setting_google_feedback">फ़ीडबैक भेजें</string>
+    <string name="setting_google_help">सहायता</string>
+    <string name="setting_google_help_and_feedback">सहायता और फ़ीडबैक</string>
 </resources>

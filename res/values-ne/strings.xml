@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">अगाडिको क्यामेराको तस्बिरको रिजोल्युसन</string>
     <string name="setting_front_camera_video">अगाडिको क्यामेराको भिडियोको रिजोल्युसन</string>
     <string name="setting_general">सामान्य</string>
-    <string name="setting_google_feedback">प्रतिक्रिया पठाउनुहोस्</string>
-    <string name="setting_google_help">मद्दत</string>
-    <string name="setting_google_help_and_feedback">मद्दत र प्रतिक्रिया</string>
     <string name="setting_location">स्थान</string>
     <string name="setting_off">बन्द</string>
     <string name="setting_on">खुला</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">जुमको मान %.1f छ</string>
     <string name="zoom_minus_desc">जुम आउट गर्नुहोस्</string>
     <string name="zoom_plus_desc">जुम इन गर्नुहोस्</string>
+    <string name="setting_google_feedback">प्रतिक्रिया पठाउनुहोस्</string>
+    <string name="setting_google_help">मद्दत</string>
+    <string name="setting_google_help_and_feedback">मद्दत र प्रतिक्रिया</string>
 </resources>

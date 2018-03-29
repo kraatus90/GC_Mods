@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">የፊት ካሜራ ፎቶ ጥራት</string>
     <string name="setting_front_camera_video">የፊት ካሜራ ቪዲዮ ጥራት</string>
     <string name="setting_general">አጠቃላይ</string>
-    <string name="setting_google_feedback">ግብረመልስ ይላኩ</string>
-    <string name="setting_google_help">እገዛ</string>
-    <string name="setting_google_help_and_feedback">እገዛ እና ግብረመልስ</string>
     <string name="setting_location">አካባቢ</string>
     <string name="setting_off">ጠፍቷል</string>
     <string name="setting_on">በርቷል</string>

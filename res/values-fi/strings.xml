@@ -658,9 +658,6 @@ Pidä kohde keskitettynä."</string>
     <string name="setting_front_camera_photo">Etukameran kuvien resoluutio</string>
     <string name="setting_front_camera_video">Etukameran videoiden resoluutio</string>
     <string name="setting_general">Yleiset</string>
-    <string name="setting_google_feedback">Lähetä palautetta</string>
-    <string name="setting_google_help">Ohje</string>
-    <string name="setting_google_help_and_feedback">Ohje ja palaute</string>
     <string name="setting_location">Sijainti</string>
     <string name="setting_off">Pois käytöstä</string>
     <string name="setting_on">Käytössä</string>
@@ -763,4 +760,7 @@ Liiku hitaasti"</string>
     <string name="zoom_announcement">Zoomausarvo on %.1f.</string>
     <string name="zoom_minus_desc">Loitonna</string>
     <string name="zoom_plus_desc">Lähennä</string>
+    <string name="setting_google_feedback">Lähetä palautetta</string>
+    <string name="setting_google_help">Ohje</string>
+    <string name="setting_google_help_and_feedback">Ohje ja palaute</string>
 </resources>

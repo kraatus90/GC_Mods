@@ -35,6 +35,29 @@
 
 
 # virtual methods
+.method public BadTF()I
+    .locals 3
+
+    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v1, "sagit"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v1, "chiron"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    :cond_0
+    return v2
+.end method
+
 .method public final a()V
     .locals 13
 
@@ -45,10 +68,17 @@
 
     iget-object v0, v0, Legp;->a:Ldsg;
 
+    invoke-virtual {p0}, Legr;->BadTF()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
     iget-object v1, p0, Legr;->c:Legp;
 
     iget v1, v1, Legp;->h:I
 
+    :cond_0
     invoke-virtual {v0, v1}, Ldsg;->a(I)Lgig;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
@@ -128,12 +158,12 @@
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_1
     .catchall {:try_start_2 .. :try_end_2} :catchall_5
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     :try_start_3
     invoke-interface {v4}, Ldom;->close()V
 
-    :cond_0
+    :cond_1
     invoke-interface {v3}, Lgig;->a()Ljava/lang/Object;
 
     move-result-object v0
@@ -152,7 +182,7 @@
 
     check-cast v1, Liic;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Lgih;->e()J
 
@@ -226,12 +256,12 @@
 
     invoke-static {v4, v5}, Liya;->b(ZLjava/lang/Object;)V
 
-    :cond_1
+    :cond_2
     invoke-static {v1}, Lege;->a(Liic;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     iget-object v4, p0, Legr;->b:Lehu;
 
@@ -243,12 +273,12 @@
     move-object v0, v2
 
     :goto_1
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     :try_start_5
     invoke-virtual {v0}, Lgih;->close()V
 
-    :cond_2
+    :cond_3
     :goto_2
     iget-object v0, p0, Legr;->c:Legp;
 
@@ -287,7 +317,7 @@
     move-object v0, v12
 
     :goto_3
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
     :try_start_7
     invoke-interface {v3}, Lgig;->close()V
@@ -328,9 +358,9 @@
     move-object v0, v12
 
     :goto_5
-    if-eqz v4, :cond_3
+    if-eqz v4, :cond_4
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_5
 
     :try_start_a
     invoke-interface {v4}, Ldom;->close()V
@@ -338,7 +368,7 @@
     .catch Ljava/lang/Throwable; {:try_start_a .. :try_end_a} :catch_2
     .catchall {:try_start_a .. :try_end_a} :catchall_3
 
-    :cond_3
+    :cond_4
     :goto_6
     :try_start_b
     throw v0
@@ -357,7 +387,7 @@
 
     goto :goto_6
 
-    :cond_4
+    :cond_5
     invoke-interface {v4}, Ldom;->close()V
     :try_end_b
     .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_b} :catch_0
@@ -365,7 +395,7 @@
 
     goto :goto_6
 
-    :cond_5
+    :cond_6
     :try_start_c
     iget-object v1, p0, Legr;->c:Legp;
 
@@ -394,7 +424,7 @@
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_4
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     :try_start_e
     invoke-virtual {v0}, Lgih;->close()V
@@ -404,11 +434,11 @@
     :catchall_4
     move-exception v1
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     invoke-virtual {v0}, Lgih;->close()V
 
-    :cond_6
+    :cond_7
     throw v1
     :try_end_e
     .catch Ljava/lang/Throwable; {:try_start_e .. :try_end_e} :catch_0
@@ -422,7 +452,7 @@
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     invoke-interface {v3}, Lgig;->close()V
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_1

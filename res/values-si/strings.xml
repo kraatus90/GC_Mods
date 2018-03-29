@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">ඉදිරිපස කැමරා ඡායාරූප විභේදනය</string>
     <string name="setting_front_camera_video">ඉදිරිපස කැමරා වීඩියෝ විභේදනය</string>
     <string name="setting_general">පොදු</string>
-    <string name="setting_google_feedback">ප්‍රතිපෝෂණය යවන්න</string>
-    <string name="setting_google_help">උදවු</string>
-    <string name="setting_google_help_and_feedback">උදව් සහ ප්‍රතිපෝෂණ</string>
     <string name="setting_location">ස්ථානය</string>
     <string name="setting_off">අක්‍රිය කරන්න</string>
     <string name="setting_on">සක්‍රීයයි</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">විශාලන අගය %.1f</string>
     <string name="zoom_minus_desc">විශාලනය අඩු කරන්න</string>
     <string name="zoom_plus_desc">විශාලනය වැඩි කරන්න</string>
+    <string name="setting_google_feedback">ප්‍රතිපෝෂණය යවන්න</string>
+    <string name="setting_google_help">උදවු</string>
+    <string name="setting_google_help_and_feedback">උදව් සහ ප්‍රතිපෝෂණ</string>
 </resources>

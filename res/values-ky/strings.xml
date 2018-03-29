@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">Маңдайкы камеранын сүрөтүнүн тунуктугу</string>
     <string name="setting_front_camera_video">Маңдайкы камерадагы видеонун тунуктугу</string>
     <string name="setting_general">Жалпы</string>
-    <string name="setting_google_feedback">Пикир билдирүү</string>
-    <string name="setting_google_help">Жардам</string>
-    <string name="setting_google_help_and_feedback">Жардам/пикир билдирүү</string>
     <string name="setting_location">Жайгашкан жер</string>
     <string name="setting_off">Өчүк</string>
     <string name="setting_on">Күйүк</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">Чен өлчөмүн өзгөртүү мааниси – %.1f</string>
     <string name="zoom_minus_desc">Кичирейтүү</string>
     <string name="zoom_plus_desc">Чоңойтуу</string>
+    <string name="setting_google_feedback">Пикир билдирүү</string>
+    <string name="setting_google_help">Жардам</string>
+    <string name="setting_google_help_and_feedback">Жардам/пикир билдирүү</string>
 </resources>

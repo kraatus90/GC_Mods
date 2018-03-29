@@ -656,9 +656,6 @@ Mbaje subjektin në qendër."</string>
     <string name="setting_front_camera_photo">Rezolucioni i fotografisë i kamerës së përparme</string>
     <string name="setting_front_camera_video">Rezolucioni i videos i kamerës së përparme</string>
     <string name="setting_general">Të përgjithshme</string>
-    <string name="setting_google_feedback">Dërgo komentin</string>
-    <string name="setting_google_help">Ndihma</string>
-    <string name="setting_google_help_and_feedback">Ndihma dhe komentet</string>
     <string name="setting_location">Vendndodhja</string>
     <string name="setting_off">Joaktiv</string>
     <string name="setting_on">Aktiv</string>
@@ -761,4 +758,7 @@ Lëvize pajisjen ngadalë"</string>
     <string name="zoom_announcement">Vlera e zmadhimit është %.1f</string>
     <string name="zoom_minus_desc">Zvogëlo</string>
     <string name="zoom_plus_desc">Zmadho</string>
+    <string name="setting_google_feedback">Dërgo komentin</string>
+    <string name="setting_google_help">Ndihma</string>
+    <string name="setting_google_help_and_feedback">Ndihma dhe komentet</string>
 </resources>

@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">Урд талын камерын зургийн нарийвчлал</string>
     <string name="setting_front_camera_video">Урд талын камерын видеоны нягтаршил</string>
     <string name="setting_general">Ерөнхий</string>
-    <string name="setting_google_feedback">Санал хүсэлт илгээх</string>
-    <string name="setting_google_help">Тусламж</string>
-    <string name="setting_google_help_and_feedback">Тусламж &amp; санал хүсэлт</string>
     <string name="setting_location">Байршил</string>
     <string name="setting_off">Идэвхгүй</string>
     <string name="setting_on">Идэвхтэй</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">Томруулалтын хэмжээ %.1f</string>
     <string name="zoom_minus_desc">Жижигрүүлэх</string>
     <string name="zoom_plus_desc">Томруулах</string>
+    <string name="setting_google_feedback">Санал хүсэлт илгээх</string>
+    <string name="setting_google_help">Тусламж</string>
+    <string name="setting_google_help_and_feedback">Тусламж &amp; санал хүсэлт</string>
 </resources>

@@ -639,9 +639,6 @@ Neka objekat bude u sredini kadra."</string>
     <string name="setting_front_camera_photo">Rezolucija slika prednje kamere</string>
     <string name="setting_front_camera_video">Rezolucija videa prednje kamere</string>
     <string name="setting_general">Opšte</string>
-    <string name="setting_google_feedback">Pošalji povratne informacije</string>
-    <string name="setting_google_help">Pomoć</string>
-    <string name="setting_google_help_and_feedback">Pomoć i povr. informacije</string>
     <string name="setting_location">Lokacija</string>
     <string name="setting_off">Isključeno</string>
     <string name="setting_on">Uključeno</string>
@@ -744,4 +741,7 @@ Pomerajte sporo"</string>
     <string name="zoom_announcement">Vrednost zumiranja je %.1f</string>
     <string name="zoom_minus_desc">Umanji</string>
     <string name="zoom_plus_desc">Uvećaj</string>
+    <string name="setting_google_feedback">Pošalji povratne informacije</string>
+    <string name="setting_google_help">Pomoć</string>
+    <string name="setting_google_help_and_feedback">Pomoć i povr. informacije</string>
 </resources>

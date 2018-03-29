@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">সামনের ক্যামেরার ফটো রেজোলিউশন</string>
     <string name="setting_front_camera_video">সামনের ক্যামেরার ভিডিও রেজোলিউশন</string>
     <string name="setting_general">সাধারণ</string>
-    <string name="setting_google_feedback">প্রতিক্রিয়া পাঠান</string>
-    <string name="setting_google_help">সহায়তা</string>
-    <string name="setting_google_help_and_feedback">সহায়তা ও মতামত</string>
     <string name="setting_location">লোকেশন</string>
     <string name="setting_off">বন্ধ করুন</string>
     <string name="setting_on">চালু করুন</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">জুমের মান %.1f</string>
     <string name="zoom_minus_desc">জুম কমানো</string>
     <string name="zoom_plus_desc">জুম বাড়ানো</string>
+    <string name="setting_google_feedback">প্রতিক্রিয়া পাঠান</string>
+    <string name="setting_google_help">সহায়তা</string>
+    <string name="setting_google_help_and_feedback">সহায়তা ও মতামত</string>
 </resources>

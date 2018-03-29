@@ -658,9 +658,6 @@ Håll motivet centrerat."</string>
     <string name="setting_front_camera_photo">Bildupplösning – frontkamera</string>
     <string name="setting_front_camera_video">Videoupplösning – frontkamera</string>
     <string name="setting_general">Allmänt</string>
-    <string name="setting_google_feedback">Skicka feedback</string>
-    <string name="setting_google_help">Hjälp</string>
-    <string name="setting_google_help_and_feedback">Hjälp och feedback</string>
     <string name="setting_location">Plats</string>
     <string name="setting_off">Inaktiverad</string>
     <string name="setting_on">Aktiverad</string>
@@ -763,4 +760,7 @@ Rör kameran långsamt"</string>
     <string name="zoom_announcement">Zoomnivån är %.1f</string>
     <string name="zoom_minus_desc">Zooma ut</string>
     <string name="zoom_plus_desc">Zooma in</string>
+    <string name="setting_google_feedback">Skicka feedback</string>
+    <string name="setting_google_help">Hjälp</string>
+    <string name="setting_google_help_and_feedback">Hjälp och feedback</string>
 </resources>

@@ -656,9 +656,8 @@ Maintenez le sujet au centre."</string>
     <string name="setting_front_camera_photo">"Résolution photo de l'app. photo avant"</string>
     <string name="setting_front_camera_video">"Résolution vidéo de l'app. photo avant"</string>
     <string name="setting_general">Paramètres généraux</string>
-    <string name="setting_google_feedback">Envoyer des commentaires</string>
-    <string name="setting_google_help">Aide</string>
-    <string name="setting_google_help_and_feedback">Aide et commentaires</string>
+    <string name="pref_developer_title">Débogage et outils</string>
+    <string name="pref_parameters_camera_title">Paramètres HDR+</string>
     <string name="setting_location">Localisation</string>
     <string name="setting_off">DÉSACTIVÉE</string>
     <string name="setting_on">ACTIVÉE</string>
@@ -761,4 +760,26 @@ Allez moins vite"</string>
     <string name="zoom_announcement">Valeur de zoom : %.1f</string>
     <string name="zoom_minus_desc">Zoom arrière</string>
     <string name="zoom_plus_desc">Zoom avant</string>
+    <string name="pref_parameters_camera_0">Par défaut (le plus bas)</string>
+    <string name="pref_parameters_camera_1">Faible</string>
+    <string name="pref_parameters_camera_2">Moyen</string>
+    <string name="pref_parameters_camera_3">Haute</string>
+    <string name="pref_parameters_camera_4">Très haut</string>
+    <string name="pref_parameters_camera_5">Super haut</string>
+    <string name="pref_compress_jpeg_title">"Qualité d'image HDR+"</string>
+    <string name="pref_compress_jpeg_summary">La qualité finale de jpeg est %s</string>
+    <string name="pref_compress_dng_title">Compresser les images RAW</string>
+    <string name="pref_compress_dng_summary">Compresser DNG pour réduire la taille du fichier</string>
+    <string name="pref_enable_gouda_mode_title">Activer le mode portrait</string>
+    <string name="pref_enable_gouda_mode_summary">"Remplacez le flou de l'objectif avec le mode Portrait.
+Redémarrez l'application, les modifications prendront effet au prochain démarrage."</string>
+    <string name="pref_refocus_resolution_title">"Résolution de flou de l'objectif"</string>
+    <string name="pref_enable_zsl_title">Activer ZSL</string>
+    <string name="pref_enable_zsl_summary">Activer Zero Shutter Lag sur les configurations prises en charge</string>
+    <string name="pref_config_camera_title">Configuration HDR+</string>
+    <string name="pref_enable_lowlight_title">Améliorer les photos en basse lumière</string>
+    <string name="pref_enable_lowlight_summary">Suppression de la teinte rose/rougeâtre/magenta en basse lumière</string>
+    <string name="setting_google_feedback">Envoyer des commentaires</string>
+    <string name="setting_google_help">Aide</string>
+    <string name="setting_google_help_and_feedback">Aide et commentaires</string>
 </resources>

@@ -658,9 +658,6 @@ A téma maradjon középen."</string>
     <string name="setting_front_camera_photo">Elülső kamera felbontása fényképezéskor</string>
     <string name="setting_front_camera_video">Elülső kamera felbontása videórögzítéskor</string>
     <string name="setting_general">Általános</string>
-    <string name="setting_google_feedback">Visszajelzés küldése</string>
-    <string name="setting_google_help">Súgó</string>
-    <string name="setting_google_help_and_feedback">Súgó és visszajelzés</string>
     <string name="setting_location">Helyadatok</string>
     <string name="setting_off">Ki</string>
     <string name="setting_on">Be</string>
@@ -763,4 +760,7 @@ Lassan mozgassa"</string>
     <string name="zoom_announcement">A nagyítás értéke: %.1f</string>
     <string name="zoom_minus_desc">Kicsinyítés</string>
     <string name="zoom_plus_desc">Nagyítás</string>
+    <string name="setting_google_feedback">Visszajelzés küldése</string>
+    <string name="setting_google_help">Súgó</string>
+    <string name="setting_google_help_and_feedback">Súgó és visszajelzés</string>
 </resources>

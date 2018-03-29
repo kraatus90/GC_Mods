@@ -1631,7 +1631,7 @@
 .end method
 
 .method public final a(JLgry;)V
-    .locals 5
+    .locals 7
 
     new-instance v0, Ljpo;
 
@@ -1643,6 +1643,15 @@
 
     iput v1, v0, Ljpo;->a:I
 
+    const/16 v5, 0xd
+
+    if-ne v1, v5, :cond_1
+
+    const/4 v6, 0x1
+
+    sput v6, Lcok;->sHDRen:I
+
+    :goto_0
     new-instance v1, Lcom/google/common/logging/nano/eventprotos$CameraEvent;
 
     invoke-direct {v1}, Lcom/google/common/logging/nano/eventprotos$CameraEvent;-><init>()V
@@ -1687,7 +1696,7 @@
 
     move-result-object v0
 
-    :goto_0
+    :goto_1
     invoke-static {v2, v0}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0, v1}, Lesh;->a(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
@@ -1698,6 +1707,13 @@
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v6, 0x0
+
+    sput v6, Lcok;->sHDRen:I
 
     goto :goto_0
 .end method
@@ -1715,6 +1731,15 @@
 
     iput v1, v0, Ljpo;->a:I
 
+    const/16 v5, 0xd
+
+    if-ne v1, v5, :cond_1
+
+    const/4 v6, 0x1
+
+    sput v6, Lcok;->sHDRen:I
+
+    :goto_0
     new-instance v1, Lcom/google/common/logging/nano/eventprotos$CameraEvent;
 
     invoke-direct {v1}, Lcom/google/common/logging/nano/eventprotos$CameraEvent;-><init>()V
@@ -1775,7 +1800,7 @@
 
     move-result-object v0
 
-    :goto_0
+    :goto_1
     invoke-static {v2, v0}, Lbhz;->c(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0, v1}, Lesh;->a(Lcom/google/common/logging/nano/eventprotos$CameraEvent;)V
@@ -1786,6 +1811,13 @@
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v6, 0x0
+
+    sput v6, Lcok;->sHDRen:I
 
     goto :goto_0
 .end method

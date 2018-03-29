@@ -658,9 +658,6 @@ Zadržite fokus na objektu."</string>
     <string name="setting_front_camera_photo">Razlučivost fotografija prednje kamere</string>
     <string name="setting_front_camera_video">Razlučivost videozapisa prednje kamere</string>
     <string name="setting_general">Općenito</string>
-    <string name="setting_google_feedback">Slanje povratnih informacija</string>
-    <string name="setting_google_help">Pomoć</string>
-    <string name="setting_google_help_and_feedback">Pomoć i povratne inf.</string>
     <string name="setting_location">Lokacija</string>
     <string name="setting_off">Isključeno</string>
     <string name="setting_on">Uključeno</string>
@@ -763,4 +760,7 @@ Pomičite uređaj sporo"</string>
     <string name="zoom_announcement">Vrijednost zumiranja iznosi %.1f</string>
     <string name="zoom_minus_desc">Smanjivanje</string>
     <string name="zoom_plus_desc">Povećavanje</string>
+    <string name="setting_google_feedback">Slanje povratnih informacija</string>
+    <string name="setting_google_help">Pomoć</string>
+    <string name="setting_google_help_and_feedback">Pomoć i povratne inf.</string>
 </resources>

@@ -658,9 +658,6 @@
     <string name="setting_front_camera_photo">فرنٹ کیمرا تصویر کی ریزولیوشن</string>
     <string name="setting_front_camera_video">فرنٹ کیمرا ویڈیو کی ریزولیوشن</string>
     <string name="setting_general">عام</string>
-    <string name="setting_google_feedback">تاثرات بھیجیں</string>
-    <string name="setting_google_help">مدد</string>
-    <string name="setting_google_help_and_feedback">مدد اور تاثرات</string>
     <string name="setting_location">مقام</string>
     <string name="setting_off">آف</string>
     <string name="setting_on">آن</string>
@@ -763,4 +760,7 @@
     <string name="zoom_announcement">زوم کی قدر %.1f ہے</string>
     <string name="zoom_minus_desc">زوم آؤٹ کریں</string>
     <string name="zoom_plus_desc">زوم ان کریں</string>
+    <string name="setting_google_feedback">تاثرات بھیجیں</string>
+    <string name="setting_google_help">مدد</string>
+    <string name="setting_google_help_and_feedback">مدد اور تاثرات</string>
 </resources>

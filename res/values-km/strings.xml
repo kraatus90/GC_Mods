@@ -656,9 +656,6 @@
     <string name="setting_front_camera_photo">កម្រិតច្បាស់នៃរូបថតដោយកាមេរ៉ាខាងមុខ</string>
     <string name="setting_front_camera_video">កម្រិតច្បាស់នៃវីដេអូដោយកាមេរ៉ាខាងមុខ</string>
     <string name="setting_general">ទូទៅ</string>
-    <string name="setting_google_feedback">ផ្ដល់​មតិស្ថាបនា</string>
-    <string name="setting_google_help">ជំនួយ</string>
-    <string name="setting_google_help_and_feedback">ជំនួយ និងមតិស្ថាបនា</string>
     <string name="setting_location">ទីតាំង</string>
     <string name="setting_off">បិទ</string>
     <string name="setting_on">បើក</string>
@@ -761,4 +758,7 @@
     <string name="zoom_announcement">តម្លៃ​ពង្រីក/បង្រួម​គឺ %.1f</string>
     <string name="zoom_minus_desc">បង្រួម</string>
     <string name="zoom_plus_desc">ពង្រីក</string>
+    <string name="setting_google_feedback">ផ្ដល់​មតិស្ថាបនា</string>
+    <string name="setting_google_help">ជំនួយ</string>
+    <string name="setting_google_help_and_feedback">ជំនួយ និងមតិស្ថាបនា</string>
 </resources>

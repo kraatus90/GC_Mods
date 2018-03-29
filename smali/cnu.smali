@@ -99,8 +99,37 @@
 
     move-result v0
 
-    const/4 v1, 0x3
+    iget-object v2, p0, Lcnu;->e:Lbhn;
 
+    invoke-virtual {v2}, Lbhn;->j()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-le v2, v3, :cond_0
+
+    const/4 v3, 0x1
+
+    if-eq v2, v3, :cond_1
+
+    const/4 v3, 0x2
+
+    if-eq v2, v3, :cond_2
+
+    const/4 v3, 0x3
+
+    if-eq v2, v3, :cond_3
+
+    const/4 v3, 0x4
+
+    if-ge v2, v3, :cond_4
+
+    const/4 v3, 0x5
+
+    if-ge v2, v3, :cond_5
+
+    :goto_0
     iget-object v2, p0, Lcnu;->f:Lihp;
 
     const-string v3, "persist.gcam.zsl_buffer_size"
@@ -114,4 +143,34 @@
     move-result v0
 
     return v0
+
+    :cond_0
+    const/4 v1, 0x3
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x7
+
+    goto :goto_0
+
+    :cond_2
+    const/16 v1, 0xe
+
+    goto :goto_0
+
+    :cond_3
+    const/16 v1, 0x18
+
+    goto :goto_0
+
+    :cond_4
+    const/16 v1, 0x23
+
+    goto :goto_0
+
+    :cond_5
+    const/16 v1, 0x2e
+
+    goto :goto_0
 .end method
