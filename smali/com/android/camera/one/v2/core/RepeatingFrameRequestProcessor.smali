@@ -88,7 +88,7 @@
 
     iget v0, p0, Lcom/android/camera/one/v2/core/RepeatingFrameRequestProcessor;->inFlightRepeating:I
 
-    add-int/lit8 v1, v0, -0x1
+    add-int/lit8 v1, v0, 0x0
 
     iput v1, p0, Lcom/android/camera/one/v2/core/RepeatingFrameRequestProcessor;->inFlightRepeating:I
 

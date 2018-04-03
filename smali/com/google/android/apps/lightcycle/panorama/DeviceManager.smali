@@ -225,6 +225,8 @@
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v1, "lge"
+
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -283,6 +285,8 @@
 
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
+    const-string v1, "bullhead"
+
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -340,6 +344,8 @@
     move-result-object v0
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v1, "Nexus 5X"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -456,6 +462,8 @@
     move-result-object v0
 
     sget-object v1, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
+
+    const-string v1, "bullhead"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -738,11 +746,15 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v0, "lge"
+
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v0, "bullhead"
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -805,6 +817,8 @@
     .locals 2
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v0, "Nexus 5s"
 
     const-string v1, "Nexus 5"
 

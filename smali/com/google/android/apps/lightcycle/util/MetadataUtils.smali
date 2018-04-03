@@ -924,6 +924,8 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
+    const-string v1, "Nexus 6"
+
     invoke-virtual {v6, v0, v1}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
     if-eqz p2, :cond_8
