@@ -43,15 +43,15 @@
 .end method
 
 .method public static BlackShift(II)[F
-    .locals 5
+    .locals 4
 
-    const/16 v3, 0x960
+    const/16 v3, 0x2260
 
-    const/16 v2, 0x640
+    const/16 v2, 0x1900
 
     const/4 v1, 0x4
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
 
@@ -63,7 +63,7 @@
     return-object v0
 
     :cond_0
-    const/16 v0, 0x320
+    const/16 v0, 0xc80
 
     if-le p0, v0, :cond_1
 
@@ -89,7 +89,7 @@
     :cond_2
     if-le p0, v3, :cond_3
 
-    const/16 v0, 0xc80
+    const/16 v0, 0x3200
 
     if-ge p0, v0, :cond_3
 
@@ -100,96 +100,6 @@
     goto :goto_0
 
     :cond_3
-    const/16 v4, 0xc80
-
-    if-le p0, v4, :cond_4
-
-    const/16 v0, 0xd34
-
-    if-ge p0, v0, :cond_4
-
-    new-array v0, v1, [F
-
-    fill-array-data v0, :array_5
-
-    goto :goto_0
-
-    :cond_4
-    const/16 v4, 0xd34
-
-    if-le p0, v4, :cond_5
-
-    const/16 v0, 0xedc
-
-    if-ge p0, v0, :cond_5
-
-    new-array v0, v1, [F
-
-    fill-array-data v0, :array_6
-
-    goto :goto_0
-
-    :cond_5
-    const/16 v4, 0xedc
-
-    if-le p0, v4, :cond_6
-
-    const/16 v0, 0x1247
-
-    if-ge p0, v0, :cond_6
-
-    new-array v0, v1, [F
-
-    fill-array-data v0, :array_7
-
-    goto :goto_0
-
-    :cond_6
-    const/16 v4, 0x1247
-
-    if-le p0, v4, :cond_7
-
-    const/16 v0, 0x1493
-
-    if-ge p0, v0, :cond_7
-
-    new-array v0, v1, [F
-
-    fill-array-data v0, :array_8
-
-    goto :goto_0
-
-    :cond_7
-    const/16 v4, 0x1493
-
-    if-le p0, v4, :cond_8
-
-    const/16 v0, 0x1891
-
-    if-ge p0, v0, :cond_8
-
-    new-array v0, v1, [F
-
-    fill-array-data v0, :array_9
-
-    goto :goto_0
-
-    :cond_8
-    const/16 v4, 0x1891
-
-    if-le p0, v4, :cond_9
-
-    const/16 v0, 0x1d4c
-
-    if-ge p0, v0, :cond_9
-
-    new-array v0, v1, [F
-
-    fill-array-data v0, :array_a
-
-    goto :goto_0
-
-    :cond_9
     new-array v0, v1, [F
 
     fill-array-data v0, :array_4
@@ -206,26 +116,26 @@
 
     :array_1
     .array-data 4
-        0x42810000    # 64.5f
-        0x42814000    # 64.625f
-        0x427fc000    # 63.9375f
-        0x42802000    # 64.0625f
+        0x42820000    # 65.0f
+        0x42820000    # 65.0f
+        0x42800000    # 64.0f
+        0x42820000    # 65.0f
     .end array-data
 
     :array_2
     .array-data 4
-        0x4280e000    # 64.4375f
-        0x42808000    # 64.25f
-        0x42822000    # 65.0625f
-        0x4280c000    # 64.375f
+        0x42820000    # 65.0f
+        0x42820000    # 65.0f
+        0x42820000    # 65.0f
+        0x42800000    # 64.0f
     .end array-data
 
     :array_3
     .array-data 4
-        0x427e4000    # 63.5625f
-        0x42808000    # 64.25f
-        0x4281e000    # 64.9375f
-        0x4280e000    # 64.4375f
+        0x42840000    # 66.0f
+        0x42840000    # 66.0f
+        0x42840000    # 66.0f
+        0x42860000    # 67.0f
     .end array-data
 
     :array_4
@@ -234,54 +144,6 @@
         0x42800000    # 64.0f
         0x42800000    # 64.0f
         0x42800000    # 64.0f
-    .end array-data
-
-    :array_5
-    .array-data 4
-        0x427c4000    # 63.0625f
-        0x427b0000    # 62.75f
-        0x427fc000    # 63.9375f
-        0x42808000    # 64.25f
-    .end array-data
-
-    :array_6
-    .array-data 4
-        0x4280e000    # 64.4375f
-        0x4280e000    # 64.4375f
-        0x4280e000    # 64.4375f
-        0x4280e000    # 64.4375f
-    .end array-data
-
-    :array_7
-    .array-data 4
-        0x42840000    # 66.0f
-        0x42840000    # 66.0f
-        0x4280e000    # 64.4375f
-        0x4280e000    # 64.4375f
-    .end array-data
-
-    :array_8
-    .array-data 4
-        0x42880000    # 68.0f
-        0x42880000    # 68.0f
-        0x42860000    # 67.0f
-        0x42880000    # 68.0f
-    .end array-data
-
-    :array_9
-    .array-data 4
-        0x42880000    # 68.0f
-        0x42880000    # 68.0f
-        0x42880000    # 68.0f
-        0x42880000    # 68.0f
-    .end array-data
-
-    :array_a
-    .array-data 4
-        0x42900000    # 72.0f
-        0x42900000    # 72.0f
-        0x428e0000    # 71.0f
-        0x42900000    # 72.0f
     .end array-data
 .end method
 
@@ -1304,7 +1166,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const/16 v0, 0x1a
+    const/16 v0, 0x19
 
     :goto_0
     return v0
@@ -1316,7 +1178,7 @@
 
     if-ne v0, v1, :cond_1
 
-    const/16 v0, 0xc8
+    const/16 v0, 0x33
 
     goto :goto_0
 
@@ -1327,7 +1189,7 @@
 
     if-ne v0, v1, :cond_2
 
-    const/16 v0, 0x3200
+    const/16 v0, 0x65
 
     goto :goto_0
 
@@ -1338,7 +1200,7 @@
 
     if-ne v0, v1, :cond_3
 
-    const/16 v0, 0xa2
+    const/16 v0, 0xc8
 
     goto :goto_0
 
@@ -1376,7 +1238,7 @@
     if-ne v2, v3, :cond_1
 
     :cond_0
-    const-wide v2, 0x46c7cfe00L
+    const-wide v2, 0x77359400
 
     :goto_0
     return-wide v2
@@ -1435,92 +1297,92 @@
     return v0
 
     :pswitch_1
-    const/16 v0, 0x1a
+    const/16 v0, 0x19
 
     goto :goto_0
 
     :pswitch_2
-    const/16 v0, 0x27
+    const/16 v0, 0x33
 
     goto :goto_0
 
     :pswitch_3
-    const/16 v0, 0x32
-
-    goto :goto_0
-
-    :pswitch_4
-    const/16 v0, 0x4e
-
-    goto :goto_0
-
-    :pswitch_5
     const/16 v0, 0x64
 
     goto :goto_0
 
-    :pswitch_6
-    const/16 v0, 0x9c
-
-    goto :goto_0
-
-    :pswitch_7
+    :pswitch_4
     const/16 v0, 0xc8
 
     goto :goto_0
 
-    :pswitch_8
-    const/16 v0, 0xfa
-
-    goto :goto_0
-
-    :pswitch_9
-    const/16 v0, 0x132
-
-    goto :goto_0
-
-    :pswitch_a
+    :pswitch_5
     const/16 v0, 0x190
 
     goto :goto_0
 
-    :pswitch_b
+    :pswitch_6
     const/16 v0, 0x271
 
     goto :goto_0
 
-    :pswitch_c
+    :pswitch_7
     const/16 v0, 0x320
 
     goto :goto_0
 
-    :pswitch_d
+    :pswitch_8
+    const/16 v0, 0x3e8
+
+    goto :goto_0
+
+    :pswitch_9
     const/16 v0, 0x4e2
 
     goto :goto_0
 
-    :pswitch_e
+    :pswitch_a
     const/16 v0, 0x640
 
     goto :goto_0
 
-    :pswitch_f
-    const/16 v0, 0x960
+    :pswitch_b
+    const/16 v0, 0x9c4
 
     goto :goto_0
 
-    :pswitch_10
+    :pswitch_c
     const/16 v0, 0xc80
 
     goto :goto_0
 
-    :pswitch_11
+    :pswitch_d
+    const/16 v0, 0x1388
+
+    goto :goto_0
+
+    :pswitch_e
     const/16 v0, 0x1900
 
     goto :goto_0
 
+    :pswitch_f
+    const/16 v0, 0x2580
+
+    goto :goto_0
+
+    :pswitch_10
+    const/16 v0, 0x3200
+
+    goto :goto_0
+
+    :pswitch_11
+    const/16 v0, 0x6400
+
+    goto :goto_0
+
     :pswitch_12
-    const/16 v0, 0x1d4c
+    const/16 v0, 0x7530
 
     goto :goto_0
 

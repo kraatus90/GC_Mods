@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.GoogleCamerb" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.android.camera2" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
     <original-package android:name="com.android.camera2"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -30,7 +30,7 @@
     <uses-feature android:name="com.google.android.feature.GOOGLE_EXPERIENCE" android:required="true"/>
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="false"/>
     <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
-    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@mipmap/logo_google_camera" android:label="@string/app_name" android:largeHeap="true" android:name="com.android.camera.app.CameraApp" android:restoreAnyVersion="true" android:roundIcon="@mipmap/logo_google_camera_round" android:supportsRtl="true" android:theme="@style/Theme.Camera" android:usesCleartextTraffic="false">
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@mipmap/logo_google_camera" android:label="Camera v3s" android:largeHeap="true" android:name="com.android.camera.app.CameraApp" android:restoreAnyVersion="true" android:roundIcon="@mipmap/logo_google_camera_round" android:supportsRtl="true" android:theme="@style/Theme.Camera" android:usesCleartextTraffic="false">
         <uses-library android:name="com.google.android.gestureservice" android:required="false"/>
         <uses-library android:name="com.google.android.camera2" android:required="false"/>
         <uses-library android:name="com.google.android.camera.experimental2015" android:required="false"/>
@@ -65,7 +65,7 @@
         <service android:exported="false" android:name="com.android.camera.processing.ProcessingService"/>
         <service android:exported="true" android:name="com.android.camera.prewarm.NoOpPrewarmService"/>
         <service android:exported="false" android:name="com.android.camera.silentfeedback.SilentFeedbackService" android:process=":crash_report"/>
-        <provider android:authorities="com.google.android.apps.camera.specialtypes.SpecialTypesProviderxv" android:exported="true" android:name="com.google.android.apps.camera.specialtypes.CameraSpecialTypesProvider" android:syncable="false"/>
+        <provider android:authorities="com.google.android.apps.camera.specialtypes.SpecialTypesProvider32s" android:exported="true" android:name="com.google.android.apps.camera.specialtypes.CameraSpecialTypesProvider" android:syncable="false"/>
         <activity android:label="VideoPlayer" android:launchMode="standard" android:name="com.google.android.apps.camera.videoplayer.VideoPlayerActivity" android:theme="@style/Theme.SecureVideoPlayer"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <activity-alias android:name="com.android.camera.CameraLauncher" android:targetActivity="com.android.camera.activity.main.CameraActivity">

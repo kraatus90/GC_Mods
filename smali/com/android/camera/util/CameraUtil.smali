@@ -172,9 +172,40 @@
 .method public static getNumCpuCores()I
     .locals 3
 
-    const/16 v0, 0x8
+    :try_start_0
+    new-instance v0, Ljava/io/File;
 
+    const-string v1, "/sys/devices/system/cpu/"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    new-instance v1, Lcom/android/camera/util/CameraUtil$1CpuFilter;
+
+    invoke-direct {v1}, Lcom/android/camera/util/CameraUtil$1CpuFilter;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/io/File;->listFiles(Ljava/io/FileFilter;)[Ljava/io/File;
+
+    move-result-object v0
+
+    array-length v0, v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_0
     return v0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lcom/android/camera/util/CameraUtil;->TAG:Ljava/lang/String;
+
+    const-string v2, "Failed to count number of cores, defaulting to 1"
+
+    invoke-static {v1, v2, v0}, Lcom/android/camera/debug/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method
 
 .method public static getPhotoPreviewFpsRange(Lcom/android/ex/camera2/portability/CameraCapabilities;)[I

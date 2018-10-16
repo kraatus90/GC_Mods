@@ -275,7 +275,7 @@
 .end method
 
 .method public WriteRggb(IIIF)V
-    .locals 7
+    .locals 8
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/SpatialGainMap;->swigCPtr:J
 
@@ -288,6 +288,18 @@
     move v5, p3
 
     move v6, p4
+
+    const-string/jumbo v7, "*********** WriteRggb(IIIF)V ***********"
+
+    invoke-static {v7}, Ldeeznutz/lol;->logMSG(Ljava/lang/String;)V
+
+    invoke-static {v3}, Ldeeznutz/lol;->logInt(I)V
+
+    invoke-static {v4}, Ldeeznutz/lol;->logInt(I)V
+
+    invoke-static {v5}, Ldeeznutz/lol;->logInt(I)V
+
+    invoke-static {v6}, Ldeeznutz/lol;->logFloat(F)V
 
     invoke-static/range {v0 .. v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->SpatialGainMap_WriteRggb(JLcom/google/googlex/gcam/SpatialGainMap;IIIF)V
 

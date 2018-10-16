@@ -57,7 +57,7 @@
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string v0, "auto,101,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,12800,25600,30000,yamcha,vegeta,goku,milkyway"
+    const-string v0, "auto,25,64,100,200,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,12800,25600,30000,x25,x64,x100,x200"
 
     const-string v1, ","
 
@@ -109,7 +109,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const-string v0, "auto,101,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,12800,25600,30000,yamcha,vegeta,goku,milkyway"
+    const-string v0, "auto,25,64,100,200,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,12800,25600,30000,x25,x64,x100,x200"
 
     const-string v1, ","
 
@@ -159,7 +159,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const-string v0, "auto,101,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,12800,25600,30000,yamcha,vegeta,goku,milkyway"
+    const-string v0, "auto,25,64,100,200,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,12800,25600,30000,x25,x64,x100,x200"
 
     const-string v1, ","
 

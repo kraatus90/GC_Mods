@@ -697,7 +697,9 @@
 
     invoke-virtual {v7, v1}, Lcom/google/googlex/gcam/ShotParams;->setManually_rotate_final_image(Z)V
 
-    const/4 v0, 0x1
+    const/16 v1, 0x64
+
+    invoke-virtual {v7, v1}, Lcom/google/googlex/gcam/ShotParams;->setFinal_jpg_quality(I)V
 
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setSave_merged_dng(Z)V
 

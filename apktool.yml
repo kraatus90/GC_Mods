@@ -1,7 +1,8 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: GC42_52FPS.apk
+apkFileName: 32bit3-sign-Sav.apk
 compressionType: false
 doNotCompress:
+- arsc
 - assets/com.google.android.vision.face/models/classification/frontal_face_classifiers.4/is_left_eye_open-y0.12-wmd.bin
 - assets/com.google.android.vision.face/models/classification/frontal_face_classifiers.4/is_right_eye_open-y0.12-wmd.bin
 - assets/com.google.android.vision.face/models/classification/frontal_face_classifiers.4/is_smiling-y0.5-wmd.bin
@@ -354,7 +355,7 @@ doNotCompress:
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
-  renameManifestPackage: null
+  renameManifestPackage: com.google.android.GoogleCamera32S
 sdkInfo:
   minSdkVersion: '23'
   targetSdkVersion: '23'

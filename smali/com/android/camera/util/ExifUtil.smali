@@ -260,15 +260,11 @@
 
     sget-object v1, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v1, "lge"
-
     invoke-direct {p0, v0, v1}, Lcom/android/camera/util/ExifUtil;->addExifTag(ILjava/lang/Object;)V
 
     sget v0, Lcom/android/camera/exif/ExifInterface;->TAG_MODEL:I
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v1, "Nexus 5X"
 
     invoke-direct {p0, v0, v1}, Lcom/android/camera/util/ExifUtil;->addExifTag(ILjava/lang/Object;)V
 

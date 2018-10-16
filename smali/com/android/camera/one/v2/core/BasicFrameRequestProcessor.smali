@@ -15,11 +15,15 @@
 
 
 # instance fields
+.field private RunHolder:Z
+
 .field private final cameraHandler:Landroid/os/Handler;
 
 .field private final captureSession:Lcom/google/android/apps/camera/proxy/camera2/CameraCaptureSessionProxy;
 
 .field private final globalOnStartedIdCounter:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private final settingsManager:Lcom/android/camera/settings/SettingsManager;
 
 .field private tagCounter:J
 
@@ -39,6 +43,10 @@
     iput-wide v0, p0, Lcom/android/camera/one/v2/core/BasicFrameRequestProcessor;->tagCounter:J
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/android/camera/one/v2/core/BasicFrameRequestProcessor;->RunHolder:Z
 
     const/4 v1, 0x0
 
@@ -298,6 +306,8 @@
 
     move-result v6
 
+    const/4 v6, 0x5
+
     invoke-interface {v3, v6}, Lcom/google/android/apps/camera/proxy/camera2/CameraDeviceProxy;->createCaptureRequest(I)Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;
 
     move-result-object v3
@@ -362,6 +372,37 @@
 
     if-eqz v3, :cond_7
 
+    invoke-static {}, Ldeeznutz/lol;->getFocusMode()Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-lez v3, :cond_6
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_6
+    invoke-static {}, Ldeeznutz/lol;->getInstance()Ldeeznutz/lol;
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Ldeeznutz/lol;->getFocusDistance()Ljava/lang/Float;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
@@ -378,19 +419,7 @@
 
     invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    invoke-static {}, Ldeeznutz/lol;->getFocusMode()Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    const/4 v14, 0x1
-
-    if-lt v3, v14, :cond_6
-
-    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v3, 0x0
 
@@ -398,28 +427,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    invoke-static {}, Ldeeznutz/lol;->getFocusDistance()Ljava/lang/Float;
-
-    move-result-object v3
-
-    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    :cond_6
-    goto/16 :goto_6
+    goto :goto_6
 
     :cond_7
     invoke-static {v12}, Lcom/android/camera/one/v2/core/FrameServerModule;->forListeners(Ljava/util/Collection;)Lcom/android/camera/one/v2/core/ResponseListener;
