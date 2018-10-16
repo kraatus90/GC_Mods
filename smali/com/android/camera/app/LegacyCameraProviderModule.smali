@@ -246,7 +246,7 @@
     move-result-object v0
 
     :goto_1
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -369,7 +369,7 @@
 
     const-string v1, "Cannot edit null data."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -419,7 +419,7 @@
 
     const-string v1, "Cannot open null data."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -444,7 +444,7 @@
 
     const-string v1, "Cannot open empty URL."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -583,7 +583,7 @@
 
     const-string v1, "onProgressErrorClicked with empty item"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -631,7 +631,7 @@
 
     const-string v1, "Cannot share null data."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -683,7 +683,7 @@
 
     const-string v1, "Cannot edit tiny planet on null data."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void

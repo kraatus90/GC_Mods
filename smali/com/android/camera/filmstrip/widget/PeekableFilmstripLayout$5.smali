@@ -67,7 +67,7 @@
 
     const-string v1, "Filmstrip is ready to show."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout$5;->this$0:Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout;
 

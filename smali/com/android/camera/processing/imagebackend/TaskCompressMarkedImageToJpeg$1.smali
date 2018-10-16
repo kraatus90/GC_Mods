@@ -200,7 +200,7 @@
 
     const-string v1, "CaptureResults not added to photoCaptureDoneEvent event due to Execution Exception."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -234,7 +234,7 @@
 
     const-string v1, "CaptureResults unavailable to photoCaptureDoneEvent event."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/processing/imagebackend/TaskCompressMarkedImageToJpeg$1;->session:Lcom/android/camera/session/SessionBase;
 

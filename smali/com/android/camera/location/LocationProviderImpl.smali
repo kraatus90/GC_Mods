@@ -125,7 +125,7 @@
 
     const-string v1, "Using legacy location provider."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/android/camera/location/LegacyLocationController;
 
@@ -233,7 +233,7 @@
 
     const-string v1, "Using fused location provider."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v0, Lcom/android/camera/location/FusedLocationController;
 

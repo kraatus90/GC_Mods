@@ -66,7 +66,7 @@
 
     const-string v2, "Posting notification after timeout"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/processing/ProcessingService$2;->this$0:Lcom/android/camera/processing/ProcessingService;
 

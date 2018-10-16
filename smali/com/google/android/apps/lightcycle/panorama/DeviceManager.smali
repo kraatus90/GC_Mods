@@ -285,7 +285,7 @@
 
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v1, "bullhead"
+    const-string v1, "angler"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -345,7 +345,7 @@
 
     sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v1, "Nexus 5X"
+    const-string v1, "Nexus 6P"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -463,7 +463,7 @@
 
     sget-object v1, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    const-string v1, "bullhead"
+    const-string v1, "angler"
 
     invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -594,7 +594,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/google/android/apps/lightcycle/panorama/DeviceManager;->DEVICE_CONFIG:Ljava/util/Map;
 
@@ -734,7 +734,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/high16 p0, 0x425c0000    # 55.0f
 

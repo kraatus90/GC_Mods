@@ -289,7 +289,7 @@
 
     const-string v1, "onSnapshotButtonClicked"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/google/android/apps/camera/async/MainThread;->checkMainThread()V
 

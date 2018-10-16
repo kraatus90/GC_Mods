@@ -255,7 +255,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     iget v0, p0, Lcom/android/camera/util/ProcessingOutputStream$StateMachine;->bytesToForward:I
@@ -292,7 +292,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     iget v0, p0, Lcom/android/camera/util/ProcessingOutputStream$StateMachine;->bytesToSkip:I
@@ -329,7 +329,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
     iget-object v0, p0, Lcom/android/camera/util/ProcessingOutputStream$StateMachine;->outputStream:Ljava/io/OutputStream;

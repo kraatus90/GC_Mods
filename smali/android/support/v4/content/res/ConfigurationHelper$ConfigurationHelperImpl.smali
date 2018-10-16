@@ -5706,7 +5706,7 @@
 
     move-result-object v1
 
-    invoke-static {v2, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -5764,7 +5764,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2
 
@@ -5826,7 +5826,7 @@
 
     move-result-object v1
 
-    invoke-static {v2, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_4
 

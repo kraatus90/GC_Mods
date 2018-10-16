@@ -187,7 +187,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/burst/BurstFacadeRunner$GetBurstSessionDirectory;->this$0:Lcom/android/camera/burst/BurstFacadeRunner;
 

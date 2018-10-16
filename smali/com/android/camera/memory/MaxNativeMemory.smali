@@ -33,9 +33,9 @@
 .method public constructor <init>(Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;Lcom/android/camera/util/ApiHelper;Lcom/google/android/apps/camera/inject/app/AndroidServices;)V
     .locals 6
 
-    const-wide/16 v4, 0x3e8
+    const-wide/16 v4, 0x618
 
-    const/16 v0, 0x1a4
+    const/16 v0, 0x618
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -93,7 +93,7 @@
 
     if-eqz v1, :cond_2
 
-    const/16 v0, 0x20d
+    const/16 v0, 0x618
 
     :cond_1
     :goto_1
@@ -136,7 +136,7 @@
 
     if-eqz v1, :cond_3
 
-    const/16 v0, 0x400
+    const/16 v0, 0x618
 
     goto :goto_1
 
@@ -157,7 +157,7 @@
 
     if-eqz v1, :cond_4
 
-    const/16 v0, 0x172
+    const/16 v0, 0x618
 
     goto :goto_1
 

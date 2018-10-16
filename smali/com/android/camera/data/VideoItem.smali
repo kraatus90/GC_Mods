@@ -395,7 +395,7 @@
 
     const-string v3, "getView called with a view that is not compatible with VideoItem."
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2
 

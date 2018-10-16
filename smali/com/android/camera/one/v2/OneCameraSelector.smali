@@ -278,7 +278,7 @@
 .method private final createSmartMeteringLoopModule(Z)Lcom/android/camera/one/v2/smartmetering/SmartMeteringModules$SmartMeteringLoopModule;
     .locals 12
 
-    const/4 v4, 0x3
+    const/4 v4, 0x1
 
     const/4 v5, 0x2
 
@@ -352,7 +352,7 @@
 
     move-result-object v1
 
-    invoke-static {v8, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v8, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Lcom/android/camera/one/v2/smartmetering/SmartMeteringModules$SmartMeteringLoopModule;
 

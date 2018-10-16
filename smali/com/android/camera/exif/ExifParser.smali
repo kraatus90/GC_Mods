@@ -931,7 +931,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/exif/ExifParser;->mTiffStream:Lcom/android/camera/exif/CountedDataInputStream;
 
@@ -1245,7 +1245,7 @@
 
     const-string v2, "Invalid JPEG format."
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -1692,7 +1692,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move v0, v2
 
@@ -1756,7 +1756,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -1791,7 +1791,7 @@
 
     move-result-object v0
 
-    invoke-static {v3, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -1874,7 +1874,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
 
@@ -2079,7 +2079,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/exif/ExifParser;->mCorrespondingEvent:Ljava/util/TreeMap;
 
@@ -2125,7 +2125,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     :goto_1
@@ -2203,7 +2203,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_4
     :goto_3
@@ -2279,7 +2279,7 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1, v0}, Lcom/android/camera/exif/ExifTag;->forceSetComponentCount(I)V
 
@@ -2360,7 +2360,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_3
 

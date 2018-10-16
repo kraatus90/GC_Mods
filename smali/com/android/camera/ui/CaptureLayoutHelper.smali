@@ -210,7 +210,7 @@
 
     const-string v1, "Switching to multi-window mode"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     return-void

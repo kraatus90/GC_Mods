@@ -653,6 +653,20 @@
 
     move-result-object v0
 
+    invoke-static {}, Ldeeznutz/lol;->getIsoVal()I
+
+    move-result v8
+
+    if-lez v8, :cond_1
+
+    invoke-static {}, Ldeeznutz/lol;->getIsoVal()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
     :cond_1
     check-cast v0, Ljava/lang/Integer;
 
@@ -889,10 +903,6 @@
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
     move-result-object v0
 
     check-cast v0, Ljava/lang/Boolean;
@@ -1028,29 +1038,13 @@
 
     aget-object v1, v0, v2
 
-    iget-object v1, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Double;
-
-    invoke-virtual {v1}, Ljava/lang/Double;->floatValue()F
-
-    move-result v1
-
-    invoke-virtual {v5, v1}, Lcom/google/googlex/gcam/DngNoiseModel;->setScale(F)V
+    const/high16 v1, 0x0
 
     aget-object v5, v4, v2
 
     aget-object v1, v0, v2
 
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Double;
-
-    invoke-virtual {v1}, Ljava/lang/Double;->floatValue()F
-
-    move-result v1
-
-    invoke-virtual {v5, v1}, Lcom/google/googlex/gcam/DngNoiseModel;->setOffset(F)V
+    const/high16 v1, 0x0
 
     add-int/lit8 v1, v2, 0x1
 
@@ -1103,8 +1097,6 @@
     goto :goto_3
 
     :cond_b
-    invoke-virtual {v3, v4}, Lcom/google/googlex/gcam/FrameMetadata;->setDng_noise_model_bayer([Lcom/google/googlex/gcam/DngNoiseModel;)V
-
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_DYNAMIC_BLACK_LEVEL:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -1115,7 +1107,7 @@
 
     if-eqz v0, :cond_11
 
-    invoke-virtual {v3, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setBlack_levels_bayer([F)V
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
 
     :goto_5
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
@@ -1321,7 +1313,7 @@
 
     invoke-interface {p0, v0}, Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    const/4 v0, 0x5
+    const/4 v0, 0x2
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1421,7 +1413,9 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/hardware/camera2/params/BlackLevelPattern;->getOffsetForIndex(II)I
 
-    const/high16 v4, 0x42800000    # 64.0f
+    move-result v4
+
+    int-to-float v4, v4
 
     aput v4, v2, v1
 
@@ -1482,19 +1476,19 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v0, "huawei"
+    const-string v0, "lge"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setMake(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v0, "Nexus 6P"
+    const-string v0, "Nexus 5X"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setModel(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v0, "angler"
+    const-string v0, "bullhead"
 
     invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
 
@@ -1907,6 +1901,8 @@
 
     invoke-virtual {v4, v0}, Lcom/google/googlex/gcam/ColorCalibration;->setIlluminant(I)V
 
+    invoke-static {}, Ldeeznutz/lol;->getInstance()Ldeeznutz/lol;
+
     invoke-virtual {v4, v3}, Lcom/google/googlex/gcam/ColorCalibration;->setXyz_to_model_rgb([F)V
 
     invoke-virtual {v4, v14}, Lcom/google/googlex/gcam/ColorCalibration;->setModel_rgb_to_device_rgb([F)V
@@ -2090,6 +2086,8 @@
 
     goto/16 :goto_6
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -2113,7 +2111,7 @@
 .end method
 
 .method public static convertToSpatialGainMap(Lcom/google/android/apps/camera/proxy/camera2/CaptureResultProxy;Lcom/android/camera/one/OneCameraCharacteristics;)Lcom/google/googlex/gcam/SpatialGainMap;
-    .locals 11
+    .locals 12
 
     const/4 v3, 0x0
 
@@ -2147,6 +2145,12 @@
 
     move-result v7
 
+    const-string/jumbo v11, "Lenshade row"
+
+    invoke-static {v11}, Ldeeznutz/lol;->logMSG(Ljava/lang/String;)V
+
+    invoke-static {v7}, Ldeeznutz/lol;->logInt(I)V
+
     new-instance v2, Lcom/google/googlex/gcam/SpatialGainMap;
 
     const/4 v1, 0x1
@@ -2164,6 +2168,8 @@
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
+
+    invoke-static {v1}, Ldeeznutz/lol;->logInt(I)V
 
     invoke-static {v1}, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->getEvenOddSourceIndicesForCfa(I)[I
 
@@ -3211,7 +3217,7 @@
 .end method
 
 .method public static updateFromFrameRequest(Lcom/android/camera/one/v2/core/RequestBuilder;Lcom/google/googlex/gcam/FrameRequest;Lcom/android/camera/one/OneCameraCharacteristics;Lcom/android/camera/hdrplus/HdrPlusFrameMarker;)V
-    .locals 10
+    .locals 12
 
     iget v0, p3, Lcom/android/camera/hdrplus/HdrPlusFrameMarker;->frameType:I
 
@@ -3307,6 +3313,28 @@
 
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
+    const-string/jumbo v6, "GCAM Shutter"
+
+    invoke-static {v6}, Ldeeznutz/lol;->logMSG(Ljava/lang/String;)V
+
+    invoke-static {v4, v5}, Ldeeznutz/lol;->logLong(J)V
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v6
+
+    invoke-static {v6}, Ldeeznutz/lol;->setShutter_AE(Ljava/lang/Long;)V
+
+    invoke-static {}, Ldeeznutz/lol;->getShutter_Adjusted()J
+
+    move-result-wide v4
+
+    const-string/jumbo v6, "Adjusted Shutter"
+
+    invoke-static {v6}, Ldeeznutz/lol;->logMSG(Ljava/lang/String;)V
+
+    invoke-static {v4, v5}, Ldeeznutz/lol;->logLong(J)V
+
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v6
@@ -3374,6 +3402,23 @@
 
     move-result-object v6
 
+    invoke-static {v6}, Ldeeznutz/lol;->setIsoAe(Ljava/lang/Integer;)V
+
+    invoke-static {}, Ldeeznutz/lol;->getIsoVal()I
+
+    move-result v10
+
+    if-lez v10, :cond_1
+
+    invoke-static {}, Ldeeznutz/lol;->getIsoVal()I
+
+    move-result v11
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    :cond_1
     invoke-virtual {p0, v5, v6}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     sget-boolean v5, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
@@ -3434,9 +3479,11 @@
 
     move-result-object v0
 
+    invoke-virtual {p0, v2, v0}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
+
     sget-boolean v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
@@ -3444,7 +3491,7 @@
 
     invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1
+    :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/gcam/FrameRequest;->getAwb()Lcom/google/googlex/gcam/AwbInfo;
 
     move-result-object v2
@@ -3453,7 +3500,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
@@ -3461,7 +3508,7 @@
 
     invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_2
+    :cond_3
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v3, 0x0
@@ -3547,7 +3594,7 @@
     :goto_0
     const/16 v4, 0x9
 
-    if-ge v0, v4, :cond_3
+    if-ge v0, v4, :cond_4
 
     aget v4, v2, v0
 
@@ -3569,7 +3616,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_TRANSFORM:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/params/ColorSpaceTransform;
@@ -3580,13 +3627,13 @@
 
     sget-boolean v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->VERBOSE_LOG:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->TAG:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_4
+    :cond_5
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_LENS_SHADING_MAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v1, 0x1
@@ -3599,7 +3646,7 @@
 
     sget-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->sFaceDetectMode:Ljava/lang/Integer;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
     invoke-interface {p2}, Lcom/android/camera/one/OneCameraCharacteristics;->getHighestFaceDetectMode()Lcom/android/camera/one/OneCameraCharacteristics$FaceDetectMode;
 
@@ -3615,20 +3662,20 @@
 
     sput-object v0, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->sFaceDetectMode:Ljava/lang/Integer;
 
-    :cond_5
+    :cond_6
     iget v0, p3, Lcom/android/camera/hdrplus/HdrPlusFrameMarker;->frameType:I
 
     const/4 v1, 0x4
 
-    if-eq v0, v1, :cond_6
+    if-eq v0, v1, :cond_7
 
     iget v0, p3, Lcom/android/camera/hdrplus/HdrPlusFrameMarker;->frameType:I
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_7
+    if-ne v0, v1, :cond_8
 
-    :cond_6
+    :cond_7
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     sget-object v1, Lcom/android/camera/hdrplus/HdrPlusMetadataConverter;->sFaceDetectMode:Ljava/lang/Integer;
@@ -3668,7 +3715,7 @@
 
     return-void
 
-    :cond_7
+    :cond_8
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     const/4 v1, 0x0
@@ -3680,8 +3727,6 @@
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/one/v2/core/RequestBuilder;->setParam(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lcom/android/camera/one/v2/core/RequestBuilder;
 
     goto :goto_1
-
-    nop
 
     :array_0
     .array-data 4

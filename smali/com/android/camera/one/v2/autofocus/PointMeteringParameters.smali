@@ -163,7 +163,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     iget v0, p2, Landroid/graphics/Rect;->left:I

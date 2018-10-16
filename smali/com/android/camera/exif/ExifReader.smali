@@ -172,7 +172,7 @@
 
     const-string v3, "Failed to read the compressed thumbnail"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -204,7 +204,7 @@
 
     const-string v3, "Failed to read the strip bytes"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 

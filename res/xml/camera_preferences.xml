@@ -2,6 +2,11 @@
 <PreferenceScreen android:orderingFromXml="true" android:key="prefscreen_top"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/setting_general" android:key="pref_category_general">
+        <PreferenceScreen android:layout="@layout/preference_with_margin" android:title="Potter Extra" android:key="pref_potter_extra_key">
+            <ListPreference android:entries="@array/pref_burst_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_af_title" android:key="pref_af_key" android:summary="..." android:defaultValue="30" android:entryValues="@array/pref_burst_entryvalues" />
+            <ListPreference android:entries="@array/pref_jpgq_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_iso_title" android:key="pref_giso_key" android:summary="..." android:defaultValue="85" android:entryValues="@array/pref_jpgq_entryvalues" />
+            <com.android.camera.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_enable_dng_title" android:key="pref_enable_dng_key" android:defaultValue="true" />
+        </PreferenceScreen>
         <com.android.camera.settings.ManagedSwitchPreference android:title="@string/pref_camera_save_location_title" android:key="pref_camera_recordlocation_key" android:defaultValue="false" />
         <ListPreference android:entries="@array/pref_volume_action_entries" android:title="@string/pref_camera_volume_key_action_title" android:key="pref_volume_key_action" android:summary="%s" android:defaultValue="@string/volume_key_shutter" android:entryValues="@array/pref_volume_action_entryvalues" />
     </PreferenceCategory>

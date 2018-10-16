@@ -12,6 +12,10 @@
 .end annotation
 
 
+# static fields
+.field private static ctex:Landroid/content/Context;
+
+
 # instance fields
 .field buildSource:Lcom/android/camera/util/app/AppProperties$BuildSource;
 
@@ -42,6 +46,14 @@
     invoke-direct {p0}, Lcom/android/camera/util/lifecycle/ObservableApplication;-><init>()V
 
     return-void
+.end method
+
+.method public static getCtex()Landroid/content/Context;
+    .locals 1
+
+    sget-object v0, Lcom/android/camera/app/CameraApp;->ctex:Landroid/content/Context;
+
+    return-object v0
 .end method
 
 
@@ -248,6 +260,8 @@
     invoke-virtual {p0}, Lcom/android/camera/app/CameraApp;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
+
+    sput-object v2, Lcom/android/camera/app/CameraApp;->ctex:Landroid/content/Context;
 
     invoke-virtual {v1, v2}, Lcom/android/camera/settings/FirstRunDetector;->initializeTimeOfFirstRun(Landroid/content/Context;)V
 

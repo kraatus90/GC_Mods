@@ -47,7 +47,7 @@
 
     const-string v1, "Failed to close the CameraDeviceProxy."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

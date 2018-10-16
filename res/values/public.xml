@@ -876,6 +876,7 @@
     <public type="layout" name="viewfinder_cover" id="0x7f040082" />
     <public type="layout" name="viewfinder_labels_video" id="0x7f040083" />
     <public type="layout" name="white_balance_options" id="0x7f040084" />
+    <public type="layout" name="preference_with_margin" id="0x7f040085" />
     <public type="layout" name="on_screen_hint" id="0x7f040053" />
     <public type="layout" name="photosphere_tutorial" id="0x7f04005c" />
     <public type="layout" name="refocus_tutorial" id="0x7f040065" />
@@ -1769,6 +1770,37 @@
     <public type="string" name="preference_volume_key_shutter" id="0x7f0a02da" />
     <public type="string" name="preference_volume_key_zoom" id="0x7f0a02db" />
     <public type="string" name="preference_volume_key_do_nothing" id="0x7f0a02dc" />
+    <public type="string" name="pref_enable_dng_title" id="0x7f0a02dd" />
+    <public type="string" name="pref_af_title" id="0x7f0a02de" />
+    <public type="string" name="pref_af_label" id="0x7f0a02df" />
+    <public type="string" name="pref_af_auto" id="0x7f0a02e0" />
+    <public type="string" name="pref_af_inf" id="0x7f0a02e1" />
+    <public type="string" name="pref_af_5m" id="0x7f0a02e2" />
+    <public type="string" name="pref_af_2_5m" id="0x7f0a02e3" />
+    <public type="string" name="pref_af_1_25m" id="0x7f0a02e4" />
+    <public type="string" name="pref_af_62cm" id="0x7f0a02e5" />
+    <public type="string" name="pref_af_45cm" id="0x7f0a02e6" />
+    <public type="string" name="pref_af_20cm" id="0x7f0a02e7" />
+    <public type="string" name="pref_af_10cm" id="0x7f0a02e8" />
+    <public type="string" name="pref_iso_title" id="0x7f0a02e9" />
+    <public type="string" name="pref_iso_label" id="0x7f0a02ea" />
+    <public type="string" name="pref_iso_100" id="0x7f0a02eb" />
+    <public type="string" name="pref_iso_156" id="0x7f0a02ec" />
+    <public type="string" name="pref_iso_200" id="0x7f0a02ed" />
+    <public type="string" name="pref_iso_auto" id="0x7f0a02ee" />
+    <public type="string" name="pref_iso_312" id="0x7f0a02ef" />
+    <public type="string" name="pref_iso_400" id="0x7f0a02f0" />
+    <public type="string" name="pref_iso_625" id="0x7f0a02f1" />
+    <public type="string" name="pref_iso_800" id="0x7f0a02f2" />
+    <public type="string" name="pref_iso_1000" id="0x7f0a02f3" />
+    <public type="string" name="pref_iso_1250" id="0x7f0a02f4" />
+    <public type="string" name="pref_iso_1600" id="0x7f0a02f5" />
+    <public type="string" name="pref_iso_2500" id="0x7f0a02f6" />
+    <public type="string" name="pref_iso_3200" id="0x7f0a02f7" />
+    <public type="string" name="pref_iso_5000" id="0x7f0a02f8" />
+    <public type="string" name="pref_iso_6400" id="0x7f0a02f9" />
+    <public type="string" name="pref_iso_10000" id="0x7f0a02fa" />
+    <public type="string" name="pref_iso_12800" id="0x7f0a02fb" />
     <public type="color" name="grid_line" id="0x7f0b0000" />
     <public type="color" name="quantum_googred" id="0x7f0b0001" />
     <public type="color" name="quantum_pink" id="0x7f0b0002" />
@@ -3442,6 +3474,10 @@
     <public type="array" name="pref_refocus_quality_entries" id="0x7f100040" />
     <public type="array" name="pref_volume_action_entryvalues" id="0x7f100041" />
     <public type="array" name="pref_volume_action_entries" id="0x7f100042" />
+    <public type="array" name="pref_burst_entries" id="0x7f100043" />
+    <public type="array" name="pref_burst_entryvalues" id="0x7f100044" />
+    <public type="array" name="pref_jpgq_entries" id="0x7f100045" />
+    <public type="array" name="pref_jpgq_entryvalues" id="0x7f100046" />
     <public type="id" name="used_for_subgraph_package_name_retrieval" id="0x7f110000" />
     <public type="id" name="VIEW_ID" id="0x7f110001" />
     <public type="id" name="FILENAME" id="0x7f110002" />
@@ -3865,6 +3901,9 @@
     <public type="id" name="gallery_action_stitch_the_unstitched" id="0x7f1101a4" />
     <public type="id" name="options" id="0x7f1101a5" />
     <public type="id" name="test_stitch" id="0x7f1101a6" />
+    <public type="id" name="seekBar" id="0x7f1101a7" />
+    <public type="id" name="seekBar2" id="0x7f1101a8" />
+    <public type="id" name="seekBar3" id="0x7f1101a9" />
     <public type="bool" name="abc_action_bar_embed_tabs" id="0x7f120000" />
     <public type="bool" name="abc_config_showMenuShortcutsWhenKeyboardPresent" id="0x7f120001" />
     <public type="bool" name="abc_allow_stacked_button_bar" id="0x7f120002" />

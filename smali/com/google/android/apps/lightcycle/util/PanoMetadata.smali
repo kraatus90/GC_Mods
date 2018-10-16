@@ -474,7 +474,7 @@
 
     const-string v3, "Pano metadata does not match file dimensions."
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
@@ -627,7 +627,7 @@
 
     const-string v3, "Pano metadata invalid: Full pano dimension not 2:1."
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 

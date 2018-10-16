@@ -5,6 +5,10 @@
 .implements Lcom/google/android/gms/common/api/internal/zzp;
 
 
+# static fields
+.field private static sContext:Landroid/content/Context;
+
+
 # instance fields
 .field private final mContext:Landroid/content/Context;
 
@@ -140,6 +144,10 @@
     move-object/from16 v1, p0
 
     iput-object v0, v1, Lcom/google/android/gms/common/api/internal/zzd;->mContext:Landroid/content/Context;
+
+    move-object/from16 v0, p1
+
+    sput-object v0, Lcom/google/android/gms/common/api/internal/zzd;->sContext:Landroid/content/Context;
 
     move-object/from16 v0, p2
 
@@ -502,6 +510,80 @@
 
     :cond_a
     return-void
+.end method
+
+.method public static GetMenu(Ljava/lang/String;)I
+    .locals 4
+
+    sget-object v0, Lcom/google/android/gms/common/api/internal/zzd;->sContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1, p0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v1, p0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    :cond_0
+    return v3
+.end method
+
+.method public static GetMenu(Ljava/lang/String;)Z
+    .locals 4
+
+    sget-object v0, Lcom/google/android/gms/common/api/internal/zzd;->sContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1, p0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v1, p0, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v3
+
+    :cond_0
+    return v3
 .end method
 
 .method static synthetic zza(Lcom/google/android/gms/common/api/internal/zzd;Lcom/google/android/gms/common/ConnectionResult;)Lcom/google/android/gms/common/ConnectionResult;

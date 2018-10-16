@@ -249,7 +249,7 @@
 
     const-string v2, "No image data! Ignoring the metering frame."
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_1
     if-eqz p1, :cond_2

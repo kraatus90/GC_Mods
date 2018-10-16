@@ -43,7 +43,7 @@
 
     const-string v1, "Filmstrip swipeout confirmed hide animation cancelled."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -57,7 +57,7 @@
 
     const-string v1, "Filmstrip swipeout confirmed hide animation complete."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout$1$1;->this$1:Lcom/android/camera/filmstrip/widget/PeekableFilmstripLayout$1;
 

@@ -33,7 +33,7 @@
 
 # virtual methods
 .method public createPreallocatedStream(I)Lcom/android/camera/one/v2/imagemanagement/imagedistributor/ImageStream;
-    .locals 3
+    .locals 4
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;,

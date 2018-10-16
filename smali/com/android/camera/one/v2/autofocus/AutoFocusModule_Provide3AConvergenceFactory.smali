@@ -127,7 +127,7 @@
 
     iget-object v2, p0, Lcom/android/camera/one/v2/autofocus/AutoFocusModule_Provide3AConvergenceFactory;->simultaneousConvergence3AProvider:Ljavax/inject/Provider;
 
-    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
+    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexus6P()Z
 
     move-result v3
 

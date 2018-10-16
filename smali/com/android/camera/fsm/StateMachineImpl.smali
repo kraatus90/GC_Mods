@@ -129,7 +129,7 @@
 
     const-string v1, "No op since jump to the same state."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -202,7 +202,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/fsm/StateMachineImpl;->state:Lcom/android/camera/fsm/State;
 
@@ -279,7 +279,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/camera/fsm/StateMachineImpl;->state:Lcom/android/camera/fsm/State;
 
@@ -383,7 +383,7 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v0, p1}, Lcom/android/camera/fsm/EventHandler;->processEvent(Ljava/lang/Object;)Lcom/android/camera/fsm/State;
 

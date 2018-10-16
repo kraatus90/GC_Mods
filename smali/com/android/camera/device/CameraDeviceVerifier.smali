@@ -122,7 +122,7 @@
 
     const-string v4, "Attempting to reconnect to the camera service with a 7000ms timeout in 200ms increments."
 
-    invoke-static {v2, v4}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v5, Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -213,7 +213,7 @@
 
     move-result-object v4
 
-    invoke-static {v5, v4}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v4, p0, Lcom/android/camera/device/CameraDeviceVerifier;->usageStatistics:Lcom/android/camera/stats/UsageStatistics;
 

@@ -121,7 +121,7 @@
     move-result-object v1
 
     :goto_1
-    invoke-static {v2, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Landroid/app/Activity;->finish()V
 

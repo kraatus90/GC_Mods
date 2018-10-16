@@ -647,6 +647,12 @@
 
 .field public static final section_title:I = 0x7f1100a9
 
+.field public static final seekBar:I = 0x7f1101a7
+
+.field public static final seekBar2:I = 0x7f1101a8
+
+.field public static final seekBar3:I = 0x7f1101a9
+
 .field public static final select_dialog_listview:I = 0x7f110080
 
 .field public static final selection_circle:I = 0x7f1100ad

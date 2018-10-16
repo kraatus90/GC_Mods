@@ -99,7 +99,7 @@
 
     const-string v2, "RenderScript not configured"
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_2
     return-object v0
@@ -129,7 +129,7 @@
 
     const-string v2, "RenderScript already used"
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_2
 
@@ -153,7 +153,7 @@
 
     const-string v1, "RenderScript acquired"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/google/android/apps/refocus/renderscript/RenderScriptPool;->renderScript:Landroid/support/v8/renderscript/RenderScript;
 

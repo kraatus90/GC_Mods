@@ -3335,7 +3335,7 @@
 
     const-string v1, "Could not set SurfaceTexture default buffer dimensions, not yet setup"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void

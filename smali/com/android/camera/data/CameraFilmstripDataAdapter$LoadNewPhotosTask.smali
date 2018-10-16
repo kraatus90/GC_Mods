@@ -171,7 +171,7 @@
 
     const-string v1, "Activity is destroyed. Canceling load."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/data/CameraFilmstripDataAdapter$LoadNewPhotosTask;->this$0:Lcom/android/camera/data/CameraFilmstripDataAdapter;
 
@@ -193,7 +193,7 @@
 
     const-string v1, "null data returned from new photos query"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/data/CameraFilmstripDataAdapter$LoadNewPhotosTask;->this$0:Lcom/android/camera/data/CameraFilmstripDataAdapter;
 

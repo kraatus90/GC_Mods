@@ -955,7 +955,7 @@
 
     const-string v3, "startRecording"
 
-    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/module/video2/Video2ActiveCamcorderCaptureSession;->screenOnController:Lcom/android/camera/util/activity/ScreenOnController;
 

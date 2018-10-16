@@ -28,7 +28,7 @@
 
     iget-object v0, p0, Lcom/android/camera/debug/Writers$4;->val$tag:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

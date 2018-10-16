@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->activityOnCreateEndNs:J
 
@@ -181,7 +181,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->activityOnStartStartNs:J
 
@@ -205,7 +205,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->activityOnResumeStartNs:J
 
@@ -227,7 +227,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->activityOnResumeEndNs:J
 
@@ -249,7 +249,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->activityFirstPreviewFrameReceivedNs:J
 
@@ -273,7 +273,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->shutterButtonFirstDrawNs:J
 
@@ -297,7 +297,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-wide v0, p0, Lcom/android/camera/stats/CameraActivitySession;->shutterButtonFirstEnabledNs:J
 
@@ -321,7 +321,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-boolean v0, p0, Lcom/android/camera/stats/CameraActivitySession;->isColdStart:Z
 
@@ -345,7 +345,7 @@
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

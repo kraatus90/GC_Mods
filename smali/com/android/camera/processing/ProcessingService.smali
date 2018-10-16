@@ -226,7 +226,7 @@
 
     const-string v1, "Pausing"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/camera/processing/ProcessingService;->notificationLock:Ljava/lang/Object;
 
@@ -306,7 +306,7 @@
 
     const-string v2, "Posting notification"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/processing/ProcessingService;->notificationManager:Landroid/app/NotificationManager;
 
@@ -379,7 +379,7 @@
 
     const-string v1, "Resetting notification"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/processing/ProcessingService;->notificationBuilder:Landroid/app/Notification$Builder;
 
@@ -410,7 +410,7 @@
 
     const-string v1, "Processing start"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {p1, p0}, Lcom/android/camera/processing/ProcessingTask;->process(Landroid/content/Context;)V
 
@@ -418,7 +418,7 @@
 
     const-string v1, "Processing done"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -430,7 +430,7 @@
 
     const-string v1, "Resuming"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/android/camera/processing/ProcessingService;->notificationLock:Ljava/lang/Object;
 
@@ -670,7 +670,7 @@
 
     const-string v1, "Shutting down"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/processing/ProcessingService;->notificationUpdateTimeout:Lcom/google/android/apps/camera/async/DelayedExecutor;
 
@@ -729,7 +729,7 @@
 
     const-string v1, "Starting in foreground."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x2
 

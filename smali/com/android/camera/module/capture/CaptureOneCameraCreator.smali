@@ -686,7 +686,7 @@
 
     const-string v2, "Not opening camera because config did not change"
 
-    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-object v0
@@ -814,7 +814,7 @@
 
     const-string v2, "Active camera open future currently exists. Aborting the previous open."
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/module/capture/CaptureOneCameraCreator;->openingCamera:Lcom/google/common/util/concurrent/ListenableFuture;
 

@@ -363,4 +363,7 @@
     <item type="id" name="gallery_action_stitch_the_unstitched">false</item>
     <item type="id" name="options">false</item>
     <item type="id" name="test_stitch">false</item>
+    <item type="id" name="seekBar">false</item>
+    <item type="id" name="seekBar2">false</item>
+    <item type="id" name="seekBar3">false</item>
 </resources>

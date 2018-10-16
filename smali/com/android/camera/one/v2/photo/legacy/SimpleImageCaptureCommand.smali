@@ -212,8 +212,6 @@
     :try_start_2
     iget-object v0, p0, Lcom/android/camera/one/v2/photo/legacy/SimpleImageCaptureCommand;->imageReader:Lcom/android/camera/one/v2/imagemanagement/imagereader/ManagedImageReader;
 
-    const/4 v3, 0x1
-
     invoke-virtual {v0, v3}, Lcom/android/camera/one/v2/imagemanagement/imagereader/ManagedImageReader;->createPreallocatedStream(I)Lcom/android/camera/one/v2/imagemanagement/imagedistributor/ImageStream;
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_8

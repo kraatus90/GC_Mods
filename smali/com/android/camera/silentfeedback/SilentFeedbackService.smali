@@ -386,7 +386,7 @@
 
     const-string v1, "Not sending silent feedback. GMS version too low."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/android/camera/silentfeedback/SilentFeedbackService;->tryToStopSelf()V
 

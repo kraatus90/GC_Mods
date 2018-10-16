@@ -293,7 +293,7 @@
 
     const-string v4, "Creating Gcam init params"
 
-    invoke-static {v1, v4}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/android/camera/util/CameraUtil;->getNumCpuCores()I
 

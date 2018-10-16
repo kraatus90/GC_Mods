@@ -216,7 +216,7 @@
 
     const-string v2, "XMP parse: only jpeg file is supported"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -1068,7 +1068,7 @@
 
     const-string v2, "XMP parse: only jpeg file is supported"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move v0, v1
 

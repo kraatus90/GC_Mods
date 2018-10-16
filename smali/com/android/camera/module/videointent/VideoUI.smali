@@ -232,7 +232,7 @@
 
     const-string v1, "surfaceTexture is destroyed"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x1
 

@@ -928,7 +928,7 @@
 
     const-string v2, "Caught invalid update in removal animation."
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_f
     :goto_5
@@ -1134,7 +1134,7 @@
 
     const-string v2, "Activity destroyed, don\'t load data"
 
-    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v1
 
@@ -1419,7 +1419,7 @@
 
     const-string v1, "fadeAndScaleRightViewItem() - bufferIndex out of bound!"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -1462,7 +1462,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -2506,7 +2506,7 @@
 
     const-string v1, "onEnterFilmstrip()"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/FilmstripView;->listener:Lcom/android/camera/filmstrip/FilmstripViewController$FilmstripListener;
 
@@ -2768,7 +2768,7 @@
 
     const-string v1, "reload() - Ensure all items are loaded at max size."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/android/camera/filmstrip/widget/FilmstripView;->renderAllThumbnails()V
 
@@ -2837,7 +2837,7 @@
 
     const-string v1, "removeItem() - Trying to remove a null item!"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -3194,7 +3194,7 @@
 
     const-string v1, "translateLeftViewItem() - Index out of bound!"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :goto_0
     return-void
@@ -3237,7 +3237,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -3690,7 +3690,7 @@
 
     const-string v1, "unable to build inserted item from data"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -3897,7 +3897,7 @@
 
     const-string v1, "updateViewItem() - Trying to update an null item!"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     :goto_0
@@ -3920,7 +3920,7 @@
 
     const-string v1, "updateViewItem() - Trying to update item with null FilmstripItem!"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -4033,7 +4033,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/android/camera/filmstrip/widget/FilmstripView;->TAG:Ljava/lang/String;
 
@@ -4059,7 +4059,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     sget-object v0, Lcom/android/camera/filmstrip/widget/FilmstripView;->TAG:Ljava/lang/String;
 
@@ -4089,7 +4089,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/filmstrip/widget/FilmstripView;->controller:Lcom/android/camera/filmstrip/widget/FilmstripView$FilmstripViewControllerImpl;
 
@@ -4198,7 +4198,7 @@
 
     const-string v1, "FilmstripView.init"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -4599,7 +4599,7 @@
 
     const-string v6, "measureViewItem() - Trying to measure a null item!"
 
-    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v5, v6}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_2
     :goto_2

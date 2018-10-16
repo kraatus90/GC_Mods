@@ -571,41 +571,15 @@
 .method public final gcamSmartMeteringEnabled()Z
     .locals 2
 
-    const-string v1, "persist.gcam.sm.enabled"
-
-    iget-object v0, p0, Lcom/android/camera/one/v2/OneCameraDebugHelper;->apiHelper:Lcom/android/camera/util/ApiHelper;
-
-    invoke-virtual {v0}, Lcom/android/camera/util/ApiHelper;->isNexus5()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-direct {p0, v1, v0}, Lcom/android/camera/one/v2/OneCameraDebugHelper;->getBooleanValue(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    return v0
-
-    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_0
+    return v0
 .end method
 
 .method public final gcamSmartMeteringForce()Z
     .locals 2
 
-    const-string v0, "persist.gcam.sm.force"
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lcom/android/camera/one/v2/OneCameraDebugHelper;->getBooleanValue(Ljava/lang/String;Z)Z
-
-    move-result v0
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -613,13 +587,7 @@
 .method public final gcamSmartMeteringLogEveryFrame()Z
     .locals 2
 
-    const-string v0, "persist.gcam.sm.log"
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Lcom/android/camera/one/v2/OneCameraDebugHelper;->getBooleanValue(Ljava/lang/String;Z)Z
-
-    move-result v0
+    const/4 v0, 0x0
 
     return v0
 .end method

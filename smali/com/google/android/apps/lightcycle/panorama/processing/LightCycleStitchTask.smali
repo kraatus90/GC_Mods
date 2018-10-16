@@ -232,7 +232,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v3, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {v2}, Lcom/google/android/apps/lightcycle/panorama/LightCycle;->renderNextSession(I)Z
 

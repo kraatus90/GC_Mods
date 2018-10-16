@@ -208,7 +208,7 @@
     move-result-object v0
 
     :goto_0
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/storage/detachablefile/DcimFolderStartTask;->activity:Ljava/lang/ref/WeakReference;
 
@@ -257,7 +257,7 @@
 
     const-string v1, "Could not display error dialog for Camera Storage Access Failure."
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 

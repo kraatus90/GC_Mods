@@ -73,7 +73,7 @@
 
     const-string v4, "isToyboxHfrVideoSupported"
 
-    invoke-static {v3, v4}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v3, p0, Lcom/android/camera/module/video2/Video2HfrBottomBarUISpecProvider;->camcorderCaptureRate:Lcom/android/camera/camcorder/CamcorderCaptureRate;
 

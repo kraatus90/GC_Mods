@@ -170,6 +170,8 @@
 
     invoke-interface {v1, p1, v6}, Lcom/android/camera/camcorder/media/CamcorderProfileFactory;->hasHfrProfile(Lcom/google/android/apps/camera/device/CameraId;Lcom/android/camera/camcorder/media/CamcorderProfileHfrQuality;)Z
 
+    invoke-static {}, Ldeeznutz/lol;->onVaar()Z
+
     move-result v1
 
     if-nez v1, :cond_2
@@ -381,6 +383,8 @@
     iget-object v6, p0, Lcom/android/camera/camcorder/CamcorderCharacteristicsFactory;->camcorderProfileFactory:Lcom/android/camera/camcorder/media/CamcorderProfileFactory;
 
     invoke-interface {v6, p1, v5}, Lcom/android/camera/camcorder/media/CamcorderProfileFactory;->hasHfrProfile(Lcom/google/android/apps/camera/device/CameraId;Lcom/android/camera/camcorder/media/CamcorderProfileHfrQuality;)Z
+
+    invoke-static {}, Ldeeznutz/lol;->onVaar()Z
 
     move-result v6
 

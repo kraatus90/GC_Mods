@@ -302,7 +302,7 @@
 
     sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v2, "bullhead"
+    const-string v2, "angler"
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 

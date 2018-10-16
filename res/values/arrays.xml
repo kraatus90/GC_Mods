@@ -347,4 +347,64 @@
         <item>@string/volume_key_zoom</item>
         <item>@string/volume_key_do_nothing</item>
     </string-array>
+    <string-array name="pref_burst_entries">
+        <item>@string/pref_af_auto</item>
+        <item>@string/pref_af_inf</item>
+        <item>@string/pref_af_5m</item>
+        <item>@string/pref_af_2_5m</item>
+        <item>@string/pref_af_1_25m</item>
+        <item>@string/pref_af_62cm</item>
+        <item>@string/pref_af_45cm</item>
+        <item>@string/pref_af_20cm</item>
+        <item>@string/pref_af_10cm</item>
+    </string-array>
+    <string-array name="pref_burst_entryvalues">
+        <item>4</item>
+        <item>7</item>
+        <item>9</item>
+        <item>12</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="pref_jpgq_entries">
+        <item>@string/pref_iso_auto</item>
+        <item>@string/pref_iso_100</item>
+        <item>@string/pref_iso_156</item>
+        <item>@string/pref_iso_200</item>
+        <item>@string/pref_iso_312</item>
+        <item>@string/pref_iso_400</item>
+        <item>@string/pref_iso_625</item>
+        <item>@string/pref_iso_800</item>
+        <item>@string/pref_iso_1000</item>
+        <item>@string/pref_iso_1250</item>
+        <item>@string/pref_iso_1600</item>
+        <item>@string/pref_iso_2500</item>
+        <item>@string/pref_iso_3200</item>
+        <item>@string/pref_iso_5000</item>
+        <item>@string/pref_iso_6400</item>
+        <item>@string/pref_iso_10000</item>
+        <item>@string/pref_iso_12800</item>
+    </string-array>
+    <string-array name="pref_jpgq_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
 </resources>

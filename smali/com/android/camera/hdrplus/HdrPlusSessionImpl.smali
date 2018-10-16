@@ -611,7 +611,7 @@
 
     const-string v1, "startShotCapture()"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/android/camera/hdrplus/HdrPlusSessionImpl;->exposureCompensationSteps:Lcom/google/android/apps/camera/async/Observable;
 
@@ -701,7 +701,7 @@
 
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setSave_merged_dng(Z)V
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setCompress_merged_dng(Z)V
 
@@ -716,10 +716,6 @@
     move-result v0
 
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setFlash_mode(I)V
-
-    const/16 v0, 0x64
-
-    invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setFinal_jpg_quality(I)V
 
     iget-object v0, p0, Lcom/android/camera/hdrplus/HdrPlusSessionImpl;->whiteBalanceSetting:Lcom/android/camera/settings/WhiteBalanceSetting;
 
@@ -1592,7 +1588,7 @@
 
     const-string v1, "endMeteringFrames"
 
-    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Lcom/android/camera/hdrplus/HdrPlusShot;->getGcamShot()Lcom/google/googlex/gcam/IShot;
 

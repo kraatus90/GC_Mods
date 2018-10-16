@@ -136,7 +136,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/google/android/apps/refocus/renderscript/RenderScriptPool;->release()V
 
@@ -225,7 +225,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 .end method

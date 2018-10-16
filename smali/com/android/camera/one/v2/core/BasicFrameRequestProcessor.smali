@@ -15,11 +15,15 @@
 
 
 # instance fields
+.field private RunHolder:Z
+
 .field private final cameraHandler:Landroid/os/Handler;
 
 .field private final captureSession:Lcom/google/android/apps/camera/proxy/camera2/CameraCaptureSessionProxy;
 
 .field private final globalOnStartedIdCounter:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private final settingsManager:Lcom/android/camera/settings/SettingsManager;
 
 .field private tagCounter:J
 
@@ -39,6 +43,10 @@
     iput-wide v0, p0, Lcom/android/camera/one/v2/core/BasicFrameRequestProcessor;->tagCounter:J
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcom/android/camera/one/v2/core/BasicFrameRequestProcessor;->RunHolder:Z
 
     const/4 v1, 0x0
 
@@ -60,7 +68,7 @@
 
 # virtual methods
 .method public final declared-synchronized submitRequest(Ljava/util/List;Lcom/android/camera/one/v2/core/FrameServer$RequestType;)V
-    .locals 16
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,7 +123,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_9
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -298,6 +306,8 @@
 
     move-result v6
 
+    const/4 v6, 0x5
+
     invoke-interface {v3, v6}, Lcom/google/android/apps/camera/proxy/camera2/CameraDeviceProxy;->createCaptureRequest(I)Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;
 
     move-result-object v3
@@ -360,7 +370,56 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_8
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    invoke-static {}, Ldeeznutz/lol;->getFocusMode()Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-gtz v3, :cond_6
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x4
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_6
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    invoke-static {}, Ldeeznutz/lol;->getFocusDistance()Ljava/lang/Float;
+
+    move-result-object v3
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     invoke-interface {v13}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -378,9 +437,68 @@
 
     invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    goto :goto_6
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    :cond_6
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    invoke-static {}, Ldeeznutz/lol;->getFocusMode()Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    if-gtz v3, :cond_7
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x5
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_7
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x2
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    sget-object v14, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v3, 0x0
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v6, v14, v3}, Lcom/google/android/apps/camera/proxy/camera2/CaptureRequestBuilderProxy;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    goto/16 :goto_6
+
+    :cond_8
     invoke-static {v12}, Lcom/android/camera/one/v2/core/FrameServerModule;->forListeners(Ljava/util/Collection;)Lcom/android/camera/one/v2/core/ResponseListener;
 
     move-result-object v3
@@ -402,19 +520,19 @@
 
     goto/16 :goto_0
 
-    :cond_7
+    :cond_9
     :try_start_3
     invoke-interface {v9}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_a
 
     sget-object v2, Lcom/android/camera/one/v2/core/FrameServer$RequestType;->REPEATING:Lcom/android/camera/one/v2/core/FrameServer$RequestType;
 
     move-object/from16 v0, p2
 
-    if-ne v0, v2, :cond_a
+    if-ne v0, v2, :cond_c
 
     move-object/from16 v0, p0
 
@@ -435,7 +553,7 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    :cond_8
+    :cond_a
     :goto_7
     :try_start_4
     move-object v0, v4
@@ -452,8 +570,8 @@
 
     move v4, v3
 
-    :cond_9
-    if-ge v4, v5, :cond_e
+    :cond_b
+    if-ge v4, v5, :cond_10
 
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -476,7 +594,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_b
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -493,7 +611,7 @@
 
     goto :goto_8
 
-    :cond_a
+    :cond_c
     :try_start_5
     move-object/from16 v0, p0
 
@@ -549,7 +667,7 @@
     move v5, v3
 
     :goto_9
-    if-ge v5, v7, :cond_b
+    if-ge v5, v7, :cond_d
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -563,7 +681,7 @@
 
     goto :goto_9
 
-    :cond_b
+    :cond_d
     check-cast v4, Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -574,8 +692,8 @@
 
     move v3, v2
 
-    :cond_c
-    if-ge v3, v5, :cond_d
+    :cond_e
+    if-ge v3, v5, :cond_f
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -598,7 +716,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_e
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -612,13 +730,13 @@
 
     goto :goto_a
 
-    :cond_d
+    :cond_f
     throw v6
     :try_end_7
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    :cond_e
+    :cond_10
     monitor-exit p0
 
     return-void

@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 13
+    .locals 14
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/InterruptedException;,
@@ -94,6 +94,8 @@
     invoke-static {v1}, Lcom/android/camera/one/v2/smartmetering/SmartMeteringLoopStarter;->access$200(Lcom/android/camera/one/v2/smartmetering/SmartMeteringLoopStarter;)I
 
     move-result v1
+
+    const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/camera/one/v2/imagemanagement/imagereader/ManagedImageReader;->createPreallocatedStream(I)Lcom/android/camera/one/v2/imagemanagement/imagedistributor/ImageStream;
     :try_end_0

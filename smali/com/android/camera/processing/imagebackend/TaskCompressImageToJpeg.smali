@@ -324,7 +324,7 @@
 
     const-string v4, "Cannot parse EXIF for image dimensions, passing 0x0 dimensions"
 
-    invoke-static {v2, v4}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v4}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v5, 0x0
 
@@ -1096,7 +1096,7 @@
 
     const-string v3, "CaptureResults not added to photoCaptureDoneEvent event due to Execution Exception."
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
@@ -1132,7 +1132,7 @@
 
     const-string v3, "CaptureResults unavailable to photoCaptureDoneEvent event."
 
-    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->w(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lcom/android/camera/debug/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
     move-object/from16 v0, p0
 
