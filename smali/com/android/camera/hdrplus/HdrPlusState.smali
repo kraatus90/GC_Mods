@@ -360,7 +360,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/InitParams;->setMax_full_metering_sweep_frames(I)V
 
-    const/4 v1, 0x3
+    const/16 v1, 0x23
 
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/InitParams;->setMin_payload_frames(I)V
 
