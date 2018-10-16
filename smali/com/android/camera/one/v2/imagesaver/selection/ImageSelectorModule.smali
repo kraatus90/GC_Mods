@@ -403,7 +403,7 @@
 .method public getMaxAllowedHdrPlusImageReaderCount()I
     .locals 3
 
-    const/16 v0, 0x23
+    const/16 v0, 0x34
 
     return v0
 .end method
@@ -461,7 +461,7 @@
     if-eqz v0, :cond_2
 
     :cond_1
-    const/16 v1, 0x23
+    const/16 v1, 0x34
 
     :cond_2
     iget-object v0, p0, Lcom/android/camera/one/v2/imagesaver/selection/ImageSelectorModule;->apiHelper:Lcom/android/camera/util/ApiHelper;
@@ -529,7 +529,7 @@
 .method public getMaxHdrPlusBurstFrameCount()I
     .locals 3
 
-    const/16 v0, 0x23
+    const/16 v0, 0x34
 
     return v0
 .end method
