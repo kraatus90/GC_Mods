@@ -130,20 +130,20 @@
     :cond_2
     iget-object v1, p0, Lcom/android/camera/memory/MaxNativeMemory;->apiHelper:Lcom/android/camera/util/ApiHelper;
 
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus6()Z
+    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    const/16 v0, 0x244
+    const/16 v0, 0x400
 
     goto :goto_1
 
     :cond_3
     iget-object v1, p0, Lcom/android/camera/memory/MaxNativeMemory;->apiHelper:Lcom/android/camera/util/ApiHelper;
 
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus6P()Z
+    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus6()Z
 
     move-result v1
 
@@ -151,7 +151,7 @@
 
     iget-object v1, p0, Lcom/android/camera/memory/MaxNativeMemory;->apiHelper:Lcom/android/camera/util/ApiHelper;
 
-    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus5X()Z
+    invoke-virtual {v1}, Lcom/android/camera/util/ApiHelper;->isNexus6P()Z
 
     move-result v1
 

@@ -697,6 +697,8 @@
 
     invoke-virtual {v7, v1}, Lcom/google/googlex/gcam/ShotParams;->setManually_rotate_final_image(Z)V
 
+    const/4 v0, 0x1
+
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setSave_merged_dng(Z)V
 
     const/4 v0, 0x1
@@ -714,6 +716,10 @@
     move-result v0
 
     invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setFlash_mode(I)V
+
+    const/16 v0, 0x64
+
+    invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/ShotParams;->setFinal_jpg_quality(I)V
 
     iget-object v0, p0, Lcom/android/camera/hdrplus/HdrPlusSessionImpl;->whiteBalanceSetting:Lcom/android/camera/settings/WhiteBalanceSetting;
 
