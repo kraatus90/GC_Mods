@@ -5365,6 +5365,8 @@
     :try_start_0
     sget-object v0, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
+    const-string v0, "bullhead"
+
     const-string v1, "sdk_google"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z

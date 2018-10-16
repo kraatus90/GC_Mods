@@ -1514,6 +1514,8 @@
 
     sget-object v2, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v2, "lge"
+
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1524,6 +1526,8 @@
 
     sget-object v2, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
+    const-string v2, "bullhead"
+
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -1533,6 +1537,8 @@
     move-result-object v0
 
     sget-object v2, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v2, "Nexus 5X"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
