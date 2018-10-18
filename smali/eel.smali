@@ -437,17 +437,19 @@
 
     invoke-static {}, Lfzl;->c()Z
 
+    goto/16 :goto_2
+
     iget-object v4, p0, Leel;->b:Lisv;
 
     iget-object v4, v4, Lisv;->c:Lkvd;
 
     iget-boolean v5, v4, Lkvd;->c:Z
 
-    if-nez v5, :cond_12
+    if-nez v5, :cond_11
 
     iget-boolean v4, v4, Lkvd;->l:Z
 
-    if-nez v4, :cond_12
+    if-nez v4, :cond_11
 
     :cond_0
     iget-object v4, p0, Leel;->b:Lisv;
@@ -456,7 +458,7 @@
 
     iget-boolean v5, v4, Lkvd;->c:Z
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_10
 
     :cond_1
     :goto_0
@@ -766,13 +768,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_f
 
     invoke-interface {p2}, Lfxo;->x()Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_e
 
     :cond_d
     iget-object v3, p0, Leel;->e:Lbtj;
@@ -781,8 +783,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_f
 
+    :goto_2
     invoke-static {p4, p2}, Leel;->a(Lfzs;Lfxo;)Lggn;
 
     move-result-object v3
@@ -792,8 +795,6 @@
     invoke-virtual {v1, v4}, Lfzt;->equals(Ljava/lang/Object;)Z
 
     move-result v1
-
-    if-eqz v1, :cond_e
 
     sget-object v1, Leel;->a:Ljava/lang/String;
 
@@ -811,7 +812,6 @@
 
     goto/16 :goto_1
 
-    :cond_e
     sget-object v1, Leel;->a:Ljava/lang/String;
 
     const-string v4, "Selected Pixel 2018 ZslR Hdr+ OneCamera configuration."
@@ -828,14 +828,14 @@
 
     goto/16 :goto_1
 
-    :cond_f
+    :cond_e
     invoke-direct {p0}, Leel;->b()Z
 
     move-result v3
 
     if-eqz v3, :cond_d
 
-    :cond_10
+    :cond_f
     invoke-virtual {v1}, Lfzt;->ordinal()I
 
     move-result v3
@@ -934,7 +934,7 @@
 
     goto/16 :goto_1
 
-    :cond_11
+    :cond_10
     iget-boolean v5, v4, Lkvd;->l:Z
 
     if-nez v5, :cond_1
@@ -959,7 +959,7 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_11
     iget-object v4, p0, Leel;->f:Lfzl;
 
     const-string v5, "persist.camera.cam_component"

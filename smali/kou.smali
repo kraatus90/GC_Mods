@@ -57,7 +57,7 @@
 
 # virtual methods
 .method protected final a(Lkvp;Lkpc;Ljava/util/List;Landroid/hardware/camera2/params/InputConfiguration;Landroid/os/Handler;)V
-    .locals 6
+    .locals 5
 
     :try_start_0
     new-instance v1, Ljava/util/ArrayList;
@@ -77,103 +77,34 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_0
 
-    invoke-static {}, Lkwa;->g()Lkwb;
-
-    move-result-object v0
-
-    new-instance v2, Ljzy;
-
-    invoke-direct {v2, p5}, Ljzy;-><init>(Landroid/os/Handler;)V
-
-    invoke-virtual {v0, v2}, Lkwb;->a(Ljava/util/concurrent/Executor;)Lkwb;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Lkwb;->a(Ljava/util/List;)Lkwb;
+    check-cast v0, Lkpm;
 
-    move-result-object v1
-
-    iget-object v0, p0, Lkou;->d:Lklp;
-
-    iget v0, v0, Lklp;->c:I
-
-    invoke-interface {p1, v0}, Lkvp;->a(I)Lkvr;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lkou;->c:Lksi;
-
-    invoke-interface {v0}, Lksi;->A()Ljava/util/Set;
+    invoke-virtual {v0}, Lkpm;->a()Lkvz;
 
     move-result-object v0
 
-    invoke-static {}, Lmjy;->j()Lmjz;
-
-    move-result-object v3
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :goto_1
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {v3}, Lmjz;->a()Lmjy;
-
-    move-result-object v3
-
-    iget-object v0, p0, Lkou;->e:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :cond_0
-    :goto_2
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0}, Lmef;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lklk;
+    check-cast v0, Lkvz;
 
-    iget-object v5, v0, Lklk;->a:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-virtual {v5}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v3, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    iget-object v5, v0, Lklk;->a:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    iget-object v0, v0, Lklk;->b:Ljava/lang/Object;
-
-    invoke-virtual {v2, v5, v0}, Lkvr;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2
+    goto :goto_0
 
     :catchall_0
     move-exception v0
 
-    iget-object v1, p0, Lkou;->a:Lkic;
+    iget-object v1, p0, Lkos;->a:Lkic;
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -207,84 +138,21 @@
 
     invoke-virtual {p2}, Lkpc;->close()V
 
-    :goto_3
+    :goto_1
     return-void
 
-    :cond_1
+    :cond_0
+    if-nez p4, :cond_1
+
     :try_start_1
-    invoke-virtual {v2}, Lkvr;->a()Lkvs;
+    invoke-interface {p1, v1, p2, p5}, Lkvp;->c(Ljava/util/List;Lkvn;Landroid/os/Handler;)V
 
-    move-result-object v0
+    goto :goto_1
 
-    invoke-virtual {v1, v0}, Lkwb;->a(Lkvs;)Lkwb;
-
-    move-result-object v1
-
-    iget-object v0, p0, Lkou;->b:Lklj;
-
-    sget-object v2, Lklj;->a:Lklj;
-
-    if-eq v0, v2, :cond_2
-
-    const/4 v0, 0x0
-
-    :goto_4
-    invoke-virtual {v1, v0}, Lkwb;->a(I)Lkwb;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lkwb;->a(Lkvn;)Lkwb;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lkwb;->a()Lkwa;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lkvp;->a(Lkwa;)V
-
-    goto :goto_3
-
-    :cond_2
-    const/4 v0, 0x1
-
-    goto :goto_4
-
-    :cond_3
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v0}, Lmjz;->c(Ljava/lang/Object;)Lmjz;
-
-    goto/16 :goto_1
-
-    :cond_4
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkpm;
-
-    invoke-virtual {v0}, Lkpm;->a()Lkvz;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmef;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkvz;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :cond_1
+    invoke-interface {p1, p4, v1, p2, p5}, Lkvp;->b(Landroid/hardware/camera2/params/InputConfiguration;Ljava/util/List;Lkvn;Landroid/os/Handler;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto/16 :goto_0
+    goto :goto_1
 .end method

@@ -257,7 +257,11 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v0, "google"
+
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v1, "crosshatch"
 
     sget-object v2, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 

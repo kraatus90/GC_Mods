@@ -393,6 +393,8 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
+    const-string v0, "Huawei"
+
     invoke-virtual {v4, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setMake(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
@@ -400,6 +402,8 @@
     invoke-virtual {v4, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setModel(Ljava/lang/String;)V
 
     sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v0, "Angler"
 
     invoke-virtual {v4, v0}, Lcom/google/googlex/gcam/StaticMetadata;->setDevice(Ljava/lang/String;)V
 
@@ -421,7 +425,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_9
+    if-nez v5, :cond_7
 
     new-instance v0, Ljava/lang/String;
 
@@ -512,7 +516,7 @@
 
     array-length v5, v0
 
-    if-lez v5, :cond_8
+    if-lez v5, :cond_6
 
     move v1, v2
 
@@ -528,33 +532,35 @@
     move v1, v3
 
     :goto_3
-    if-lt v1, v5, :cond_7
+    if-lt v1, v5, :cond_5
 
     invoke-virtual {v4, v6}, Lcom/google/googlex/gcam/StaticMetadata;->setAvailable_f_numbers(Lcom/google/googlex/gcam/FloatVector;)V
 
-    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_BLACK_LEVEL_PATTERN:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-interface {p0, v0}, Lksi;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/camera2/params/BlackLevelPattern;
-
-    if-eqz v0, :cond_6
-
-    move v1, v2
-
-    :goto_4
-    const-string v5, "SENSOR_BLACK_LEVEL_PATTERN is required."
-
-    invoke-static {v1, v5}, Lmef;->a(ZLjava/lang/Object;)V
-
     new-array v5, v8, [F
 
-    move v1, v3
+    const/4 v1, 0x0
 
-    :goto_5
-    if-lt v1, v8, :cond_5
+    const v6, 0x42800000    # 64.0f
+
+    aput v6, v5, v1
+
+    const/4 v1, 0x1
+
+    const v6, 0x42806666    # 64.2f
+
+    aput v6, v5, v1
+
+    const/4 v1, 0x2
+
+    const v6, 0x42803333    # 64.1f
+
+    aput v6, v5, v1
+
+    const/4 v1, 0x3
+
+    const v6, 0x42800000    # 64.0f
+
+    aput v6, v5, v1
 
     invoke-virtual {v4, v5}, Lcom/google/googlex/gcam/StaticMetadata;->setBlack_levels_bayer([F)V
 
@@ -590,7 +596,7 @@
 
     move v1, v3
 
-    :goto_6
+    :goto_4
     if-ge v1, v6, :cond_1
 
     aget-object v7, v0, v1
@@ -619,7 +625,7 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_4
 
     :cond_1
     invoke-virtual {v4, v5}, Lcom/google/googlex/gcam/StaticMetadata;->setOptically_black_regions(Lcom/google/googlex/gcam/PixelRectVector;)V
@@ -928,28 +934,6 @@
     return-object v4
 
     :cond_5
-    rem-int/lit8 v6, v1, 0x2
-
-    div-int/lit8 v7, v1, 0x2
-
-    invoke-virtual {v0, v6, v7}, Landroid/hardware/camera2/params/BlackLevelPattern;->getOffsetForIndex(II)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    aput v6, v5, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto/16 :goto_5
-
-    :cond_6
-    move v1, v3
-
-    goto/16 :goto_4
-
-    :cond_7
     aget v7, v0, v1
 
     invoke-virtual {v6, v7}, Lcom/google/googlex/gcam/FloatVector;->add(F)V
@@ -958,12 +942,12 @@
 
     goto/16 :goto_3
 
-    :cond_8
+    :cond_6
     move v1, v3
 
     goto/16 :goto_2
 
-    :cond_9
+    :cond_7
     invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1147,46 +1131,66 @@
 .end method
 
 .method private static getAwbGains(Lkvt;[I)[F
-    .locals 5
+    .locals 7
 
     const/4 v4, 0x4
 
     new-array v1, v4, [F
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_GAINS:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_NEUTRAL_COLOR_POINT:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p0, v0}, Lkvt;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/hardware/camera2/params/RggbChannelVector;
+    check-cast v0, [Landroid/util/Rational;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x0
+    new-array v2, v4, [F
+
+    const v6, 0x3f800000    # 1.0f
+
+    const/4 v1, 0x0
+
+    aget-object v5, v0, v1
+
+    invoke-virtual {v5}, Landroid/util/Rational;->floatValue()F
+
+    move-result v5
+
+    div-float v5, v6, v5
+
+    aput v5, v2, v1
+
+    const/4 v1, 0x1
+
+    aput v6, v2, v1
+
+    const/4 v1, 0x2
+
+    aput v6, v2, v1
+
+    const/4 v1, 0x2
+
+    aget-object v5, v0, v1
+
+    invoke-virtual {v5}, Landroid/util/Rational;->floatValue()F
+
+    move-result v5
+
+    div-float v5, v6, v5
+
+    const/4 v1, 0x3
+
+    aput v5, v2, v1
+
+    move-object v0, v2
 
     :goto_0
-    if-ge v2, v4, :cond_0
-
-    aget v3, p1, v2
-
-    invoke-virtual {v0, v3}, Landroid/hardware/camera2/params/RggbChannelVector;->getComponent(I)F
-
-    move-result v3
-
-    aput v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v1
-
-    :goto_1
     return-object v0
 
-    :cond_1
+    :cond_0
     sget-object v0, Lcom/google/googlex/gcam/hdrplus/MetadataConverter;->TAG:Ljava/lang/String;
 
     const-string v2, "CaptureResult missing COLOR_CORRECTION_GAINS."
@@ -1199,7 +1203,7 @@
 
     move-object v0, v1
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method private static getAwbRgb2Rgb(Lkvt;)[F
@@ -1871,6 +1875,12 @@
 .method private static oisMetadataFromCamera2(Lkvt;)Ljava/util/Optional;
     .locals 10
 
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1c
+
+    if-lt v0, v1, :cond_0
+
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {p0, v0}, Lkvt;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -1985,7 +1995,7 @@
 .method private static oisMetadataFromExperimental(Lkvt;)Ljava/util/Optional;
     .locals 6
 
-    sget-object v0, Ljfe;->r:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v0, 0x0
 
     if-eqz v0, :cond_0
 
@@ -3029,6 +3039,8 @@
 
     check-cast v0, [F
 
+    const/4 v0, 0x0
+
     if-eqz v0, :cond_10
 
     invoke-virtual {v4, v0}, Lcom/google/googlex/gcam/FrameMetadata;->setBlack_levels_bayer([F)V
@@ -3468,6 +3480,8 @@
 
     goto/16 :goto_0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2
@@ -3876,10 +3890,17 @@
 
     invoke-virtual {p2, v0, v4}, Lklo;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lklo;
 
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1c
+
+    if-lt v0, v1, :cond_1
+
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p2, v0, v4}, Lklo;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lklo;
 
+    :cond_1
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget v1, p0, Lcom/google/googlex/gcam/hdrplus/MetadataConverter;->faceDetectMode:I
