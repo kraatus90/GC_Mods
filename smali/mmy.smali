@@ -1,0 +1,176 @@
+.class final Lmmy;
+.super Lmmh;
+.source "PG"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final a:Lmmy;
+
+.field public static final serialVersionUID:J
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lmmy;
+
+    invoke-direct {v0}, Lmmy;-><init>()V
+
+    sput-object v0, Lmmy;->a:Lmmy;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lmmh;-><init>()V
+
+    return-void
+.end method
+
+.method private final readResolve()Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lmmy;->a:Lmmy;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic a(Ljava/lang/Iterable;)Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    invoke-virtual {v0, p1}, Lmme;->b(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    check-cast p2, Ljava/lang/Comparable;
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    invoke-virtual {v0, p1, p2}, Lmme;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final synthetic a(Ljava/util/Iterator;)Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    invoke-virtual {v0, p1}, Lmme;->b(Ljava/util/Iterator;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final a()Lmmh;
+    .locals 1
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    return-object v0
+.end method
+
+.method public final synthetic b(Ljava/lang/Iterable;)Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    invoke-virtual {v0, p1}, Lmme;->a(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final synthetic b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    check-cast p2, Ljava/lang/Comparable;
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    invoke-virtual {v0, p1, p2}, Lmme;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final synthetic b(Ljava/util/Iterator;)Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lmme;->a:Lmme;
+
+    invoke-virtual {v0, p1}, Lmme;->a(Ljava/util/Iterator;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public final synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    check-cast p2, Ljava/lang/Comparable;
+
+    invoke-static {p1}, Lmef;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    if-eq p1, p2, :cond_0
+
+    invoke-interface {p2, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    move-result v0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "Ordering.natural().reverse()"
+
+    return-object v0
+.end method
