@@ -138,6 +138,8 @@
 
     const/4 v7, 0x1
 
+    const/4 v5, 0x2
+
     invoke-interface/range {v0 .. v7}, Lgfg;->a(Lkac;Lkaw;Lkhq;IILksv;Z)Lgey;
 
     move-result-object v0

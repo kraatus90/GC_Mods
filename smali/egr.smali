@@ -128,6 +128,8 @@
 
     iget-object v1, v5, Lehb;->e:Lehv;
 
+    iget-object v0, v5, Lehb;->b:Lgnw;
+
     invoke-virtual {v1, v4, v0, v6}, Lehv;->a(Lclp;Lgnw;Lfyb;)Lgnw;
 
     move-result-object v4

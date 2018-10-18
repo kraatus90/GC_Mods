@@ -100,7 +100,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -117,6 +117,8 @@
     invoke-static {v1, v2}, Lbwx;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Leld;
+
+    const/4 v0, 0x1
 
     invoke-direct {v1, v0}, Leld;-><init>(I)V
 
@@ -202,7 +204,6 @@
 
     throw v0
 
-    :pswitch_0
     :try_start_1
     iget-object v0, p2, Lgou;->a:Lkhq;
 
@@ -253,7 +254,7 @@
 
     goto :goto_1
 
-    :pswitch_1
+    :pswitch_0
     :try_start_2
     iget-object v0, p2, Lgou;->a:Lkhq;
 
@@ -265,7 +266,7 @@
 
     goto :goto_0
 
-    :pswitch_2
+    :pswitch_1
     iget-object v0, p2, Lgou;->a:Lkhq;
 
     const/16 v1, 0x23
@@ -282,9 +283,9 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
         :pswitch_1
-        :pswitch_1
+        :pswitch_0
+        :pswitch_0
         :pswitch_0
         :pswitch_0
     .end packed-switch
@@ -437,17 +438,19 @@
 
     invoke-static {}, Lfzl;->c()Z
 
+    goto/16 :goto_2
+
     iget-object v4, p0, Leel;->b:Lisv;
 
     iget-object v4, v4, Lisv;->c:Lkvd;
 
     iget-boolean v5, v4, Lkvd;->c:Z
 
-    if-nez v5, :cond_12
+    if-nez v5, :cond_11
 
     iget-boolean v4, v4, Lkvd;->l:Z
 
-    if-nez v4, :cond_12
+    if-nez v4, :cond_11
 
     :cond_0
     iget-object v4, p0, Leel;->b:Lisv;
@@ -456,7 +459,7 @@
 
     iget-boolean v5, v4, Lkvd;->c:Z
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_10
 
     :cond_1
     :goto_0
@@ -766,13 +769,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_f
 
     invoke-interface {p2}, Lfxo;->x()Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_e
 
     :cond_d
     iget-object v3, p0, Leel;->e:Lbtj;
@@ -781,8 +784,9 @@
 
     move-result v3
 
-    if-eqz v3, :cond_10
+    if-eqz v3, :cond_f
 
+    :goto_2
     invoke-static {p4, p2}, Leel;->a(Lfzs;Lfxo;)Lggn;
 
     move-result-object v3
@@ -792,8 +796,6 @@
     invoke-virtual {v1, v4}, Lfzt;->equals(Ljava/lang/Object;)Z
 
     move-result v1
-
-    if-eqz v1, :cond_e
 
     sget-object v1, Leel;->a:Ljava/lang/String;
 
@@ -811,7 +813,6 @@
 
     goto/16 :goto_1
 
-    :cond_e
     sget-object v1, Leel;->a:Ljava/lang/String;
 
     const-string v4, "Selected Pixel 2018 ZslR Hdr+ OneCamera configuration."
@@ -828,14 +829,14 @@
 
     goto/16 :goto_1
 
-    :cond_f
+    :cond_e
     invoke-direct {p0}, Leel;->b()Z
 
     move-result v3
 
     if-eqz v3, :cond_d
 
-    :cond_10
+    :cond_f
     invoke-virtual {v1}, Lfzt;->ordinal()I
 
     move-result v3
@@ -934,7 +935,7 @@
 
     goto/16 :goto_1
 
-    :cond_11
+    :cond_10
     iget-boolean v5, v4, Lkvd;->l:Z
 
     if-nez v5, :cond_1
@@ -959,7 +960,7 @@
 
     goto/16 :goto_0
 
-    :cond_12
+    :cond_11
     iget-object v4, p0, Leel;->f:Lfzl;
 
     const-string v5, "persist.camera.cam_component"

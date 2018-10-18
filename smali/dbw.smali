@@ -285,12 +285,12 @@
     return-object v0
 .end method
 
-.method public final a(Lggn;Leld;)Lefh;
+.method public final a(Lggn;Leld;Lggc;)Lefh;
     .locals 1
 
     new-instance v0, Lefh;
 
-    invoke-direct {v0, p0, p1, p2}, Lefh;-><init>(Ldbw;Lggn;Leld;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lefh;-><init>(Ldbw;Lggn;Leld;Lggc;)V
 
     return-object v0
 .end method

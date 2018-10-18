@@ -31,6 +31,8 @@
 
     const/4 v3, 0x0
 
+    if-eqz v3, :cond_b
+
     iget-object v4, p0, Lcku;->a:Lckt;
 
     iget-object v5, p0, Lcku;->b:Lkvw;

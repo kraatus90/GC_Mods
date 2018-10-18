@@ -17,9 +17,9 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const/16 v0, 0x400
+    const/16 v0, 0x500
 
-    const/16 v1, 0x300
+    const/16 v1, 0x3c0
 
     invoke-static {v0, v1}, Lkhq;->a(II)Lkhq;
 

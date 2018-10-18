@@ -84,6 +84,8 @@
 
     move-result v9
 
+    const/4 v9, 0x0
+
     if-eqz v9, :cond_2
 
     :cond_0
@@ -169,6 +171,8 @@
     invoke-virtual {v3}, Lmed;->a()Z
 
     move-result v9
+
+    const/4 v9, 0x0
 
     if-nez v9, :cond_0
 

@@ -618,7 +618,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_6
 
     iget-object v0, p0, Lktr;->f:Lkvc;
 
@@ -666,12 +666,6 @@
 
     invoke-interface {v0, v1}, Lkih;->a(Ljava/lang/String;)V
 
-    invoke-virtual {p3}, Lmed;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_6
-
     iget-object v0, p0, Lktr;->d:Lkic;
 
     const-string v1, "Creating regular capture session from output configurations."
@@ -686,7 +680,6 @@
 
     goto :goto_4
 
-    :cond_6
     iget-object v0, p0, Lktr;->d:Lkic;
 
     const-string v1, "Creating regular capture session from session configuration."
@@ -739,12 +732,12 @@
 
     goto :goto_4
 
-    :cond_7
+    :cond_6
     iget-object v0, p0, Lktr;->f:Lkvc;
 
     iget-boolean v0, v0, Lkvc;->c:Z
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_7
 
     iget-object v0, p0, Lktr;->d:Lkic;
 
@@ -778,7 +771,7 @@
 
     goto :goto_4
 
-    :cond_8
+    :cond_7
     iget-object v0, p0, Lktr;->d:Lkic;
 
     const-string v1, "Creating reprocessable capture session from output configurations."

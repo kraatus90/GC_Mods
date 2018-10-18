@@ -16,7 +16,7 @@
 .method public abstract a(Lgfj;)Lefb;
 .end method
 
-.method public abstract a(Lggn;Leld;)Lefh;
+.method public abstract a(Lggn;Leld;Lggc;)Lefh;
 .end method
 
 .method public abstract a(Lggn;Lggh;Leld;)Lefi;

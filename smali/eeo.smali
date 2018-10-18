@@ -98,7 +98,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -113,6 +113,8 @@
     invoke-static {v1, v2}, Lbwx;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Leld;
+
+    const/4 v0, 0x1
 
     invoke-direct {v1, v0}, Leld;-><init>(I)V
 
@@ -171,7 +173,7 @@
     :try_start_0
     iget-object v0, p1, Lgou;->a:Lkhq;
 
-    const/16 v1, 0x25
+    const/16 v1, 0x100
 
     invoke-static {p0, v0, v1}, Lgqi;->a(Lksi;Lkhq;I)Lgqi;
     :try_end_0
@@ -330,6 +332,8 @@
 
     invoke-interface {v2}, Lkih;->a()V
 
+    goto/16 :goto_2
+
     iget-object v2, p0, Leeo;->b:Lisv;
 
     iget-object v2, v2, Lisv;->c:Lkvd;
@@ -466,6 +470,7 @@
 
     if-eqz v2, :cond_5
 
+    :goto_2
     sget-object v1, Leeo;->a:Ljava/lang/String;
 
     const-string v2, "Selected Pixel Portrait Zsl Hdr No PD OneCamera configuration."
@@ -476,11 +481,17 @@
 
     move-result-object v1
 
+    new-instance v3, Lggc;
+
+    iget v2, p4, Lfzs;->c:I
+
+    invoke-direct {v3, v2}, Lggc;-><init>(I)V
+
     invoke-direct {p0}, Leeo;->a()Leld;
 
     move-result-object v2
 
-    invoke-interface {v0, v1, v2}, Leey;->a(Lggn;Leld;)Lefh;
+    invoke-interface {v0, v1, v2, v3}, Leey;->a(Lggn;Leld;Lggc;)Lefh;
 
     move-result-object v0
 
