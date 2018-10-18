@@ -2582,6 +2582,46 @@
 
     move-result-object v2
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->ey:Lfmy;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->ez:Lfnj;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->dR:Lfqs;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->eA:Lckp;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->ep:Lidl;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
     invoke-virtual {v2}, Lobh;->a()Lobg;
 
     move-result-object v2
@@ -2846,9 +2886,17 @@
 
     const/4 v2, 0x2
 
-    const/4 v3, 0x0
+    const/4 v3, 0x2
 
     invoke-static {v2, v3}, Lobg;->a(II)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->dO:Lggs;
+
+    invoke-virtual {v2, v3}, Lobh;->a(Lobl;)Lobh;
 
     move-result-object v2
 
@@ -2862,9 +2910,15 @@
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Leff;->dO:Lggs;
+    iget-object v3, v0, Leff;->eV:Lobl;
 
-    invoke-virtual {v2, v3}, Lobh;->a(Lobl;)Lobh;
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    sget-object v3, Ldcz;->a:Ldcz;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
 
     move-result-object v2
 
@@ -4756,6 +4810,14 @@
 
     move-result-object v2
 
+    sget-object v3, Lefg;->a:Lefg;
+
+    invoke-virtual {v2, v3}, Lobh;->a(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
     iget-object v3, v0, Leff;->ei:Lcnm;
 
     invoke-virtual {v2, v3}, Lobh;->a(Lobl;)Lobh;
@@ -4781,6 +4843,38 @@
     iget-object v3, v0, Leff;->dC:Lobl;
 
     invoke-virtual {v2, v3}, Lobh;->a(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->aZ:Lobl;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->di:Lchc;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->dj:Lfnf;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Leff;->cX:Lckm;
+
+    invoke-virtual {v2, v3}, Lobh;->b(Lobl;)Lobh;
 
     move-result-object v2
 

@@ -235,7 +235,7 @@
     .locals 5
 
     :try_start_0
-    new-instance v1, Lcom/android/hardware/camera2/params/SessionConfiguration;
+    new-instance v1, Landroid/hardware/camera2/params/SessionConfiguration;
 
     invoke-virtual {p1}, Lkwa;->a()I
 

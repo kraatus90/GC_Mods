@@ -49,7 +49,7 @@
 
     iput p8, p0, Lekz;->g:I
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
     iput v0, p0, Lekz;->f:I
 

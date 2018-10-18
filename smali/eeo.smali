@@ -98,7 +98,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -113,8 +113,6 @@
     invoke-static {v1, v2}, Lbwx;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Leld;
-
-    const/4 v0, 0x1
 
     invoke-direct {v1, v0}, Leld;-><init>(I)V
 

@@ -36,7 +36,7 @@
 .method public final synthetic a()Ljava/lang/Object;
     .locals 2
 
-    sget-object v0, Lgpf;->c:Lgpf;
+    sget-object v0, Lgpf;->a:Lgpf;
 
     invoke-static {v0}, Lkbr;->a(Ljava/lang/Object;)Lkbq;
 

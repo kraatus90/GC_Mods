@@ -100,7 +100,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
@@ -117,8 +117,6 @@
     invoke-static {v1, v2}, Lbwx;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     new-instance v1, Leld;
-
-    const/4 v0, 0x1
 
     invoke-direct {v1, v0}, Leld;-><init>(I)V
 
@@ -204,6 +202,7 @@
 
     throw v0
 
+    :pswitch_0
     :try_start_1
     iget-object v0, p2, Lgou;->a:Lkhq;
 
@@ -254,7 +253,7 @@
 
     goto :goto_1
 
-    :pswitch_0
+    :pswitch_1
     :try_start_2
     iget-object v0, p2, Lgou;->a:Lkhq;
 
@@ -266,7 +265,7 @@
 
     goto :goto_0
 
-    :pswitch_1
+    :pswitch_2
     iget-object v0, p2, Lgou;->a:Lkhq;
 
     const/16 v1, 0x23
@@ -283,9 +282,9 @@
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_2
         :pswitch_1
-        :pswitch_0
-        :pswitch_0
+        :pswitch_1
         :pswitch_0
         :pswitch_0
     .end packed-switch

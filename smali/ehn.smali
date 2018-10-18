@@ -46,9 +46,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, p4, v1, v2}, Lehv;->a(Lclp;Lgnw;Lfyb;)Lgnw;
-
-    move-result-object v2
+    iget-object v2, p3, Leid;->b:Lgnw;
 
     new-instance v7, Lehh;
 

@@ -89,6 +89,12 @@
 
     invoke-direct {v9, v2}, Leke;-><init>(Lfvr;)V
 
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v3, 0x1c
+
+    if-lt v2, v3, :cond_1
+
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lehv;->a:Lisv;

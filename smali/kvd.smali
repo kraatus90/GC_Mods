@@ -261,7 +261,7 @@
 
     sget-object v1, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    const-string v1, "taimen"
+    const-string v1, "crosshatch"
 
     sget-object v2, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 

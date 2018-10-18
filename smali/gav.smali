@@ -56,7 +56,7 @@
 
     iput v1, p0, Lgav;->f:I
 
-    const/16 v0, 0x1
+    const/16 v0, 0x78
 
     iput v0, p0, Lgav;->b:I
 
@@ -220,11 +220,25 @@
 .method public final a(Ljava/util/List;Lgbi;)V
     .locals 5
 
+    const/4 v0, 0x0
+
+    :goto_0
+    const/16 v1, 0x8
+
+    if-ge v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lgav;->a()V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_3
 
     sget-object v0, Lgbi;->a:Lgbi;
 
@@ -232,7 +246,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -251,12 +265,12 @@
 
     move-result-object v3
 
-    :goto_0
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -270,11 +284,11 @@
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_1
 
     :catchall_0
     move-exception v0
@@ -285,7 +299,7 @@
 
     throw v0
 
-    :cond_0
+    :cond_1
     :try_start_1
     iget v4, p0, Lgav;->f:I
 
@@ -311,9 +325,9 @@
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_1
+    :cond_2
     monitor-exit v2
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -324,18 +338,18 @@
 
     invoke-interface {v0, v1, v2}, Lgbc;->a(Ljava/util/List;Lgbi;)V
 
-    :cond_2
-    :goto_1
+    :cond_3
+    :goto_2
     return-void
 
-    :cond_3
+    :cond_4
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-le v0, v1, :cond_4
+    if-le v0, v1, :cond_5
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -345,7 +359,7 @@
 
     throw v0
 
-    :cond_4
+    :cond_5
     iget-object v1, p0, Lgav;->d:Ljava/lang/Object;
 
     monitor-enter v1
@@ -393,7 +407,7 @@
 
     invoke-interface {v1, v0, v2}, Lgbc;->a(Ljava/util/List;Lgbi;)V
 
-    goto :goto_1
+    goto :goto_2
 
     :catchall_1
     move-exception v0

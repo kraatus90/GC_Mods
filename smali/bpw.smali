@@ -102,6 +102,8 @@
 
     move-result v0
 
+    const/4 v0, 0x0
+
     if-nez v0, :cond_1
 
     iget-object v0, p0, Lbpw;->a:Lbpv;
