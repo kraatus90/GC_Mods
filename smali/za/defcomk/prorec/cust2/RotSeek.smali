@@ -57,7 +57,7 @@
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string v0, "A-ISO,100,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,10000,12800,25600"
+    const-string v0, "auto,100,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,10000,12800,25600"
 
     const-string v1, ","
 
@@ -109,7 +109,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const-string v0, "A-ISO,100,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,10000,12800,25600"
+    const-string v0, "auto,100,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,10000,12800,25600"
 
     const-string v1, ","
 
@@ -159,7 +159,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const-string v0, "A-ISO,100,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,10000,12800,25600"
+    const-string v0, "auto,100,156,200,312,400,625,800,1000,1250,1600,2500,3200,5000,6400,9600,10000,12800,25600"
 
     const-string v1, ","
 

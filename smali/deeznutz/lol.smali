@@ -6,9 +6,9 @@
 # static fields
 .field private static LOL:Ldeeznutz/lol;
 
-.field private static focusDistance:F
+.field public static focusDistance:F
 
-.field private static focusMode:I
+.field public static focusMode:I
 
 .field private static isoVal:I
 
@@ -50,488 +50,432 @@
     :goto_0
     return-void
 
+    sput v0, Ldeeznutz/lol;->focusDistance:F
+
+    goto :goto_0
+
     :pswitch_0
+    const v0, 0x0
+
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
     :pswitch_1
+    const v0, 0x41680000    # 14.5f
+
+    sput v0, Ldeeznutz/lol;->focusDistance:F
+
+    goto :goto_0
+
     const v0, 0x3a83126f    # 0.001f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_2
     const v0, 0x3b03126f    # 0.002f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_3
     const v0, 0x3b449ba6    # 0.003f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_4
     const v0, 0x3ba3d70a    # 0.005f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_5
     const v0, 0x3bc49ba6    # 0.006f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_6
     const v0, 0x3be56042    # 0.007f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_7
     const v0, 0x3c03126f    # 0.008f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_8
     const v0, 0x3c1374bc    # 0.009f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_9
     const v0, 0x3c23d70a    # 0.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_a
     const v0, 0x3cf5c28f    # 0.03f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_b
     const v0, 0x3d4ccccd    # 0.05f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_c
     const v0, 0x3d8f5c29    # 0.07f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_d
     const v0, 0x3db851ec    # 0.09f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_e
     const v0, 0x3de147ae    # 0.11f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_f
     const v0, 0x3e570a3d    # 0.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_10
     const v0, 0x3e9eb852    # 0.31f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_11
     const v0, 0x3ed1eb85    # 0.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_12
     const v0, 0x3f028f5c    # 0.51f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto :goto_0
 
-    :pswitch_13
     const v0, 0x3f1c28f6    # 0.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :pswitch_14
     const v0, 0x3f35c28f    # 0.71f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :pswitch_15
     const v0, 0x3f4f5c29    # 0.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_16
     const v0, 0x3f68f5c3    # 0.91f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_17
     const v0, 0x3f733333    # 0.95f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_18
     const v0, 0x3f8147ae    # 1.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_19
     const v0, 0x3f9ae148    # 1.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_1a
     const v0, 0x3fb47ae1    # 1.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_1b
     const v0, 0x3fce147b    # 1.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_1c
     const v0, 0x3fe7ae14    # 1.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_1d
     const v0, 0x4000a3d7    # 2.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_1e
     const v0, 0x400d70a4    # 2.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_1f
     const v0, 0x401a3d71    # 2.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_20
     const v0, 0x40270a3d    # 2.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_21
     const v0, 0x4033d70a    # 2.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_22
     const v0, 0x4040a3d7    # 3.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_23
     const v0, 0x404d70a4    # 3.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_24
     const v0, 0x405a3d71    # 3.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_25
     const v0, 0x40670a3d    # 3.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_26
     const v0, 0x4073d70a    # 3.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_27
     const v0, 0x408051ec    # 4.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_28
     const v0, 0x4086b852    # 4.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_29
     const v0, 0x408d1eb8    # 4.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_2a
     const v0, 0x4093851f    # 4.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_2b
     const v0, 0x4099eb85    # 4.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_2c
     const v0, 0x40a051ec    # 5.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_2d
     const v0, 0x40a6b852    # 5.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_2e
     const v0, 0x40ad1eb8    # 5.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_2f
     const v0, 0x40b3851f    # 5.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_30
     const v0, 0x40b9eb85    # 5.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_31
     const v0, 0x40c051ec    # 6.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_32
     const v0, 0x40c6b852    # 6.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_33
     const v0, 0x40cd1eb8    # 6.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_34
     const v0, 0x40d3851f    # 6.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_35
     const v0, 0x40d9eb85    # 6.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_36
     const v0, 0x40e051ec    # 7.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_37
     const v0, 0x40e6b852    # 7.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_38
     const v0, 0x40ed1eb8    # 7.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_39
     const v0, 0x40f3851f    # 7.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_3a
     const v0, 0x40f9eb85    # 7.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_3b
     const v0, 0x410028f6    # 8.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_3c
     const v0, 0x41035c29    # 8.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_3d
     const v0, 0x41068f5c    # 8.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_3e
     const v0, 0x4109c28f    # 8.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_3f
     const v0, 0x411028f6    # 9.01f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_40
     const v0, 0x41135c29    # 9.21f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_41
     const v0, 0x41168f5c    # 9.41f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_42
     const v0, 0x4119c28f    # 9.61f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_43
     const v0, 0x411cf5c3    # 9.81f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_44
     const v0, 0x411e6666    # 9.9f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
 
     goto/16 :goto_0
 
-    :pswitch_45
     const/high16 v0, 0x41200000    # 10.0f
 
     sput v0, Ldeeznutz/lol;->focusDistance:F
@@ -542,74 +486,6 @@
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-        :pswitch_9
-        :pswitch_a
-        :pswitch_b
-        :pswitch_c
-        :pswitch_d
-        :pswitch_e
-        :pswitch_f
-        :pswitch_10
-        :pswitch_11
-        :pswitch_12
-        :pswitch_13
-        :pswitch_14
-        :pswitch_15
-        :pswitch_16
-        :pswitch_17
-        :pswitch_18
-        :pswitch_19
-        :pswitch_1a
-        :pswitch_1b
-        :pswitch_1c
-        :pswitch_1d
-        :pswitch_1e
-        :pswitch_1f
-        :pswitch_20
-        :pswitch_21
-        :pswitch_22
-        :pswitch_23
-        :pswitch_24
-        :pswitch_25
-        :pswitch_26
-        :pswitch_27
-        :pswitch_28
-        :pswitch_29
-        :pswitch_2a
-        :pswitch_2b
-        :pswitch_2c
-        :pswitch_2d
-        :pswitch_2e
-        :pswitch_2f
-        :pswitch_30
-        :pswitch_31
-        :pswitch_32
-        :pswitch_33
-        :pswitch_34
-        :pswitch_35
-        :pswitch_36
-        :pswitch_37
-        :pswitch_38
-        :pswitch_39
-        :pswitch_3a
-        :pswitch_3b
-        :pswitch_3c
-        :pswitch_3d
-        :pswitch_3e
-        :pswitch_3f
-        :pswitch_40
-        :pswitch_41
-        :pswitch_42
-        :pswitch_43
-        :pswitch_44
-        :pswitch_45
     .end packed-switch
 .end method
 
@@ -922,7 +798,7 @@
     return v0
 
     :pswitch_0
-    const/16 v0, 0x64
+    const/4 v0, 0x0
 
     goto :goto_0
 
@@ -1015,6 +891,8 @@
     const/16 v0, 0x6400
 
     goto :goto_0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

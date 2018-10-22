@@ -57,7 +57,7 @@
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string v0, "A-FOCUS,\u221e,999m,499m,333m,249m,199m,166m,142m,124m,111m,99m,33m,20m,14m,9m,4m,3.225m,2.439m,1.960m,1.639m,1.408m,1.234m,1.98m,99cm,82.6cm,70.9cm,62.1cm,55.2cm,49.7cm,45.2cm,41.4cm,38.3cm,33.2cm,31.1cm,29cm,27cm,26cm,24cm,22cm,21cm,20cm,19.9cm,19.1cm,18.4cm,17.8cm,17.2cm,16.6cm,16.1cm,15.6cm,15.1cm,14.6cm,14.1cm,13.8cm,13.4cm,12.8cm,12.4cm,12.1cm,11.8cm,11.6cm,11.3cm,11cm,10.8cm,10.6cm,10.4cm,10.1cm,10cm"
+    const-string v0, "A,\u221e,\ud83c\udf37"
 
     const-string v1, ","
 
@@ -71,7 +71,7 @@
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->currentValue:I
 
-    const/16 v0, 0x8
+    const/16 v0, 0x10
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->textsize:I
 
@@ -109,7 +109,7 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const-string v0, "A-FOCUS,\u221e,999m,499m,333m,249m,199m,166m,142m,124m,111m,99m,33m,20m,14m,9m,4m,3.225m,2.439m,1.960m,1.639m,1.408m,1.234m,1.98m,99cm,82.6cm,70.9cm,62.1cm,55.2cm,49.7cm,45.2cm,41.4cm,38.3cm,33.2cm,31.1cm,29cm,27cm,26cm,24cm,22cm,21cm,20cm,19.9cm,19.1cm,18.4cm,17.8cm,17.2cm,16.6cm,16.1cm,15.6cm,15.1cm,14.6cm,14.1cm,13.8cm,13.4cm,12.8cm,12.4cm,12.1cm,11.8cm,11.6cm,11.3cm,11cm,10.8cm,10.6cm,10.4cm,10.1cm,10cm"
+    const-string v0, "A,\u221e,\ud83c\udf37"
 
     const-string v1, ","
 
@@ -123,7 +123,7 @@
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->currentValue:I
 
-    const/16 v0, 0x8
+    const/16 v0, 0x10
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->textsize:I
 
@@ -159,7 +159,7 @@
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const-string v0, "A-FOCUS,\u221e,999m,499m,333m,249m,199m,166m,142m,124m,111m,99m,33m,20m,14m,9m,4m,3.225m,2.439m,1.960m,1.639m,1.408m,1.234m,1.98m,99cm,82.6cm,70.9cm,62.1cm,55.2cm,49.7cm,45.2cm,41.4cm,38.3cm,33.2cm,31.1cm,29cm,27cm,26cm,24cm,22cm,21cm,20cm,19.9cm,19.1cm,18.4cm,17.8cm,17.2cm,16.6cm,16.1cm,15.6cm,15.1cm,14.6cm,14.1cm,13.8cm,13.4cm,12.8cm,12.4cm,12.1cm,11.8cm,11.6cm,11.3cm,11cm,10.8cm,10.6cm,10.4cm,10.1cm,10cm"
+    const-string v0, "A,\u221e,\ud83c\udf37"
 
     const-string v1, ","
 
@@ -173,7 +173,7 @@
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->currentValue:I
 
-    const/16 v0, 0x8
+    const/16 v0, 0x10
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->textsize:I
 
@@ -481,7 +481,7 @@
 
     iget-object v0, p0, Lza/defcomk/prorec/cust/RotSeek;->paint:Landroid/graphics/Paint;
 
-    sget-object v1, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
+    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
 
@@ -626,7 +626,7 @@
 
     iget v0, p0, Lza/defcomk/prorec/cust/RotSeek;->viewHeight:I
 
-    div-int/lit8 v0, v0, 0x10
+    div-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->itemHeight:I
 
@@ -736,7 +736,7 @@
 
     iget-object v0, p0, Lza/defcomk/prorec/cust/RotSeek;->paint:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v1, 0x40000000    # 2.0f
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -768,7 +768,7 @@
 
     int-to-float v0, v0
 
-    const/16 v1, 0x1e
+    const/16 v1, 0x2d
 
     invoke-direct {p0, v1}, Lza/defcomk/prorec/cust/RotSeek;->convertDpiToPixel(I)F
 
@@ -786,7 +786,7 @@
 
     iget v0, p0, Lza/defcomk/prorec/cust/RotSeek;->viewWidth:I
 
-    add-int/lit8 v0, v0, -0x14
+    add-int/lit8 v0, v0, 0x20
 
     int-to-float v3, v0
 
@@ -806,7 +806,7 @@
 
     if-eqz v8, :cond_1
 
-    const/high16 v0, 0x42a00000    # 80.0f
+    const/high16 v0, 0x42200000    # 40.0f
 
     int-to-float v1, v9
 
@@ -828,7 +828,7 @@
 
     iget-object v0, p0, Lza/defcomk/prorec/cust/RotSeek;->paint:Landroid/graphics/Paint;
 
-    const/high16 v1, 0x41200000    # 10.0f
+    const/high16 v1, 0x41a00000    # 20.0f
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
@@ -836,7 +836,7 @@
 
     int-to-float v0, v0
 
-    const/16 v1, 0x14
+    const/16 v1, 0x28
 
     invoke-direct {p0, v1}, Lza/defcomk/prorec/cust/RotSeek;->convertDpiToPixel(I)F
 
@@ -892,7 +892,7 @@
 
     iget v0, p0, Lza/defcomk/prorec/cust/RotSeek;->viewHeight:I
 
-    div-int/lit8 v0, v0, 0x10
+    div-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lza/defcomk/prorec/cust/RotSeek;->itemHeight:I
 

@@ -872,22 +872,15 @@ Move device slowly"</string>
     <string name="pref_all_title_summary">%s</string>
     <string name="pref_input_model_title">Model:</string>
     <string name="pref_input_model_default">5</string>
-    <string name="pref_input_model_Def">"-= Default =-
+    <string name="pref_input_model_Def">"Default
    Values from BUILD.PROP"</string>
-    <string name="pref_input_model_N5">"-= Nexus 5 =-
-   Hammerhead(LGE)"</string>
-    <string name="pref_input_model_N6">"-= Nexus 6 =-
-   Shamu(Motorola)"</string>
-    <string name="pref_input_model_N5X">"-= Nexus 5X =-
-   Bullhead(LGE)"</string>
-    <string name="pref_input_model_N6P">"-= Nexus 6P =-
-   Angler(Huawei)"</string>
-    <string name="pref_input_model_PxlXLTai">"-= Pixel XL =-
-   Marlin(Google)"</string>
-    <string name="pref_input_model_Tai">"-= Pixel II XL =-
-   Taimen(Google)"</string>
-    <string name="pref_input_model_Wall">"-= Pixel II =-
-   Walleye(Google)"</string>
+    <string name="pref_input_model_N5">Nexus 5</string>
+    <string name="pref_input_model_N6">Nexus 6</string>
+    <string name="pref_input_model_N5X">Nexus 5X</string>
+    <string name="pref_input_model_N6P">Nexus 6P</string>
+    <string name="pref_input_model_PxlXLTai">Pixel XL</string>
+    <string name="pref_input_model_Tai">Pixel II XL</string>
+    <string name="pref_input_model_Wall">Pixel II</string>
     <string name="pref_config_camera_title">Config camera HDR+:</string>
     <string name="pref_config_camera_default">9</string>
     <string name="pref_config_camera_0">AUTO</string>
@@ -1037,9 +1030,9 @@ If enabled, the config of the Nexus6P or Pixels will be used"</string>
     <string name="pref_refocusmb_summary">"%s
 The value should not exceed the actual size of the camera module"</string>
     <string name="pref_all_title_summary_switch">It is necessary to completely close the application, the changes will take effect at the next start.</string>
-    <string name="pref_parameters_camera_6">Pixel 2017 stable (8/10/10 burst, 1497 MB)</string>
-    <string name="pref_parameters_camera_7">Pixel 2017 fast zsl (8/10/8 burst, 1497 MB)</string>
-    <string name="pref_parameters_camera_8">Pixel 2017 faster zsl (8/10/8 burst, 1521 MB)</string>
+    <string name="pref_parameters_camera_6">Pixel 2017 stable (8/10/10 burst)</string>
+    <string name="pref_parameters_camera_7">Pixel 2017 fast zsl (8/10/8 burst)</string>
+    <string name="pref_parameters_camera_8">Pixel 2017 faster zsl (8/10/8 burst)</string>
     <string name="pref_qhdrf_title">HDR+ Front camera</string>
     <string name="pref_qhdrf_summary">Turn on auto HDR+ for front camera.</string>
     <string name="pref_aemode_title">NonZSL HDR+ Auto-exposure mode</string>
@@ -1055,9 +1048,9 @@ The value should not exceed the actual size of the camera module"</string>
     <string name="pref_aemode_7">1/10 sec min</string>
     <string name="pref_antibandingmode_title">NonZSL HDR+ antibanding mode</string>
     <string name="pref_antibandingmode_default">1</string>
-    <string name="pref_abmode_0">Controlled by GCam (=off on S7)</string>
-    <string name="pref_abmode_1">50 Hz</string>
-    <string name="pref_abmode_2">60 Hz</string>
+    <string name="pref_abmode_0">Turn-off</string>
+    <string name="pref_abmode_1">50Hz</string>
+    <string name="pref_abmode_2">60Hz</string>
     <string name="pref_awbmode_title">Apply custom white balance multipliers</string>
     <string name="pref_awbmode_default">0</string>
     <string name="pref_fronthdrfix_title">HDR+ Front camera fix</string>
@@ -1349,7 +1342,7 @@ The value should not exceed the actual size of the camera module"</string>
     <string name="about_mod_1_title">Check for updates</string>
     <string name="about_mod_1_summary" />
     <string name="pref_aemode_8">1/20 sec min</string>
-    <string name="pref_aemode_9">1/30 sec min</string>
+    <string name="pref_aemode_9">1/33 sec min</string>
     <string name="pref_aemode_10">1/50 sec min</string>
     <string name="pref_aemode_11">1/100 sec min</string>
     <string name="pref_aemode_12">1/200 sec min</string>
@@ -1365,7 +1358,7 @@ The value should not exceed the actual size of the camera module"</string>
     <string name="pref_smas_2200">2200</string>
     <string name="pref_smas_3300">3300</string>
     <string name="pref_tuningsettings_title">Advanced settings</string>
-    <string name="pref_portrait_mode">Mode setting \"Portrait\"</string>
+    <string name="pref_portrait_mode">Mode \"Portrait\"</string>
     <string name="raw_mode">RAW Functions</string>
     <string name="pref_category_tuningfront">Front-camera</string>
     <string name="pref_category_tuningback">Main camera</string>
@@ -1381,4 +1374,16 @@ The value should not exceed the actual size of the camera module"</string>
     <string name="setting_front_noise_model_bs_default">90900</string>
     <string name="pref_category_tuning1">Adjusting the Noise Model</string>
     <string name="pref_category_tuning2">Noise Canceling Setting</string>
+    <string name="pref_input_mf_enabled_macro_hint">Float number of distance (Infinity: 0.0, Shortest: 15.0, Default: 14.29).</string>
+    <string name="pref_input_mf_enabled_portrait_hint">Float number of distance (Infinity: 0.0, Shortest: 15.0, Default: 2.21).</string>
+    <string name="pref_input_mf_enabled_infinity_hint">Float number of distance (Infinity: 0.0, Shortest: 15.0, Default: 0.0).</string>
+    <string name="pref_screen_manual_focus_title">Manual Focus</string>
+    <string name="pref_checkbox_mf_enabled_macro">Support Macro mode</string>
+    <string name="pref_checkbox_mf_enabled_portrait">Support Portrait mode</string>
+    <string name="pref_checkbox_mf_enabled_infinity">Support Infinity mode</string>
+    <string name="pref_input_mf_enabled_macro_title">Distance</string>
+    <string name="pref_input_mf_enabled_portrait_title">Distance</string>
+    <string name="pref_input_mf_enabled_infinity_title">Distance</string>
+    <string name="pref_screen_manual_focus_summary">Enabling and adjusting the focal length</string>
+    <string name="pref_portrait_mode_summary">Advanced settings</string>
 </resources>

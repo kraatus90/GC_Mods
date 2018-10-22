@@ -785,6 +785,8 @@
     <public type="drawable" name="quantum_ic_place_grey600_24" id="0x7f020181" />
     <public type="drawable" name="quantum_ic_touch_app_grey600_24" id="0x7f020182" />
     <public type="drawable" name="quantum_ic_volume_up_grey600_24" id="0x7f020183" />
+    <public type="drawable" name="ic_center_focus_strong_black_48dp" id="0x7f020184" />
+    <public type="drawable" name="mf" id="0x7f020185" />
     <public type="mipmap" name="adaptiveproduct_pixelcamera" id="0x7f030006" />
     <public type="mipmap" name="adaptiveproduct_pixelcamera_launcher" id="0x7f030002" />
     <public type="mipmap" name="adaptiveproduct_pixelcamera_background_color_108" id="0x7f030000" />
@@ -2796,6 +2798,11 @@
     <public type="id" name="seekBar" id="0x7f0e01f1" />
     <public type="id" name="seekBar2" id="0x7f0e01f2" />
     <public type="id" name="seekBar3" id="0x7f0e01f3" />
+    <public type="id" name="buttonAuto" id="0x7f0e01f4" />
+    <public type="id" name="buttonInfinity" id="0x7f0e01f5" />
+    <public type="id" name="buttonMacro" id="0x7f0e01f6" />
+    <public type="id" name="buttonPortrait" id="0x7f0e01f7" />
+    <public type="id" name="buttonSpace" id="0x7f0e01f8" />
     <public type="integer" name="abc_config_activityDefaultDur" id="0x7f0f0000" />
     <public type="integer" name="abc_config_activityShortDur" id="0x7f0f0001" />
     <public type="integer" name="album_rows_land" id="0x7f0f0002" />
@@ -4178,6 +4185,18 @@
     <public type="string" name="setting_front_noise_model_bs_default" id="0x7f110537" />
     <public type="string" name="pref_category_tuning1" id="0x7f110538" />
     <public type="string" name="pref_category_tuning2" id="0x7f110539" />
+    <public type="string" name="pref_input_mf_enabled_macro_hint" id="0x7f11053a" />
+    <public type="string" name="pref_input_mf_enabled_portrait_hint" id="0x7f11053b" />
+    <public type="string" name="pref_input_mf_enabled_infinity_hint" id="0x7f11053c" />
+    <public type="string" name="pref_screen_manual_focus_title" id="0x7f11053d" />
+    <public type="string" name="pref_checkbox_mf_enabled_macro" id="0x7f11053e" />
+    <public type="string" name="pref_checkbox_mf_enabled_portrait" id="0x7f11053f" />
+    <public type="string" name="pref_checkbox_mf_enabled_infinity" id="0x7f110540" />
+    <public type="string" name="pref_input_mf_enabled_macro_title" id="0x7f110541" />
+    <public type="string" name="pref_input_mf_enabled_portrait_title" id="0x7f110542" />
+    <public type="string" name="pref_input_mf_enabled_infinity_title" id="0x7f110543" />
+    <public type="string" name="pref_screen_manual_focus_summary" id="0x7f110544" />
+    <public type="string" name="pref_portrait_mode_summary" id="0x7f110545" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f120000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f120001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f120002" />

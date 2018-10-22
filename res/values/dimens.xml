@@ -528,6 +528,6 @@
     <dimen name="plus_filter_button_selected_height">85.0dip</dimen>
     <dimen name="plus_filter_button_selected_width">85.0dip</dimen>
     <dimen name="plus_filter_button_width">75.0dip</dimen>
-    <dimen name="manuel_ui_seekbar_margin">10.0dip</dimen>
-    <dimen name="manuel_ui_seekbar_margin_top">255.0dip</dimen>
+    <dimen name="manuel_ui_seekbar_margin">36.0dip</dimen>
+    <dimen name="manuel_ui_seekbar_margin_top">210.0dip</dimen>
 </resources>
