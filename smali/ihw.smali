@@ -168,8 +168,6 @@
 
     :try_start_0
     iget-object v0, p0, Lihw;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
-
-    invoke-virtual {v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->abortCaptures()V
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -277,8 +275,6 @@
     .locals 1
 
     iget-object v0, p0, Lihw;->a:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
-
-    invoke-virtual {v0}, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;->close()V
 
     return-void
 .end method

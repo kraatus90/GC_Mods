@@ -45,7 +45,7 @@
     <string name="accessibility_switch_to_camera">Режим \"Фото\"</string>
     <string name="accessibility_switch_to_gcam">Высокое качество</string>
     <string name="accessibility_switch_to_panorama">Режим \"Панорама\"</string>
-    <string name="accessibility_switch_to_photo_sphere">Photo Sphere</string>
+    <string name="accessibility_switch_to_photo_sphere">Фотосфера</string>
     <string name="accessibility_switch_to_refocus">Рефокусировка</string>
     <string name="accessibility_switch_to_video">Режим \"Видео\"</string>
     <string name="accessibility_switch_video_mode">Включить режим видео</string>
@@ -87,7 +87,7 @@
     <string name="btn_zoom_plus">Увеличить</string>
     <string name="burst">Серия снимков (%1$s)</string>
     <string name="burst_date_content_description">Серия снимков. Количество: %1$s. Время съемки: %2$s.</string>
-    <string name="burst_description">Нажмите кнопку SmartBurst, чтобы показать только лучшие фото</string>
+    <string name="burst_description">Нажмите кнопку Серийная съемка, чтобы показать только лучшие фото</string>
     <string name="burst_editor_best_frame_description">Лучший кадр серии</string>
     <string name="burst_editor_close_speed_dial_description">Закрыть меню автоснимков</string>
     <string name="burst_editor_frame_description">Номер кадра в серии: %1$s</string>
@@ -95,11 +95,12 @@
     <string name="burst_editor_open_speed_dial_description">Добавить автоснимки</string>
     <string name="burst_editor_section_header_all">Все фото</string>
     <string name="burst_editor_section_header_best">Лучшие фото</string>
-    <string name="burst_name">SmartBurst</string>
+    <string name="burst_name">Серийная съемка</string>
     <string name="burst_process_creation">Сохранение…</string>
     <string name="burst_process_done">Обработка завершена</string>
     <string name="burst_process_start">Обработка серии снимков…</string>
     <string name="burst_process_x_of_y_items">Обработано: %1$s из %2$s фото</string>
+    <string name="burst_text">Серийная съемка</string>
     <string name="camera_active_back">Включена основная камера</string>
     <string name="camera_active_front">Включена фронтальная камера</string>
     <string name="camera_error_title">Ошибка камеры</string>
@@ -118,7 +119,7 @@
     <string name="camera_preview_area_long_press_label">Google Объектив</string>
     <string name="cancel_button_description">Отмена</string>
     <string name="cancel_panorama">Отменить создание панорамы</string>
-    <string name="cancel_photo_sphere">Отменить создание Photo Sphere</string>
+    <string name="cancel_photo_sphere">Отменить создание Фотосферы</string>
     <string name="cannot_load_image">Не удалось загрузить изображение</string>
     <string name="capital_off">O</string>
     <string name="capital_on">I</string>
@@ -373,8 +374,8 @@
     <string name="mode_ornament_desc">Перейти в режим дополненной реальности</string>
     <string name="mode_panorama">Панорама</string>
     <string name="mode_panorama_desc">Включить режим панорамы</string>
-    <string name="mode_photosphere">Photo Sphere</string>
-    <string name="mode_photosphere_desc">Включить режим Photo Sphere</string>
+    <string name="mode_photosphere">Фотосфера</string>
+    <string name="mode_photosphere_desc">Включить режим Фотосферы</string>
     <string name="mode_refocus">Размытие</string>
     <string name="mode_refocus_desc">Сделать снимок с размытием</string>
     <string name="mode_settings">Настройки</string>
@@ -431,7 +432,7 @@
     <string name="photosphere_description">Используйте перетаскивание, чтобы ощутить эффект присутствия в интерактивном фото</string>
     <string name="photosphere_dialog_process">Обработать</string>
     <string name="photosphere_fisheye_confirm_dialog">Снимок с эффектом рыбьего глаза не готов. Все равно обработать?</string>
-    <string name="photosphere_name">Photo Sphere</string>
+    <string name="photosphere_name">Фотосфера</string>
     <string name="photosphere_no_back_camera">На устройстве нет задней камеры</string>
     <string name="photosphere_tutorial_next">ДАЛЕЕ</string>
     <string name="photosphere_tutorial_ok_got_it">ЗАКРЫТЬ</string>
@@ -440,7 +441,7 @@
     <string name="pref_auto_generate_artifacts_toggle">Создавать анимацию и коллажи</string>
     <string name="pref_boolean_false">0</string>
     <string name="pref_boolean_true">1</string>
-    <string name="pref_burst_settings">Настройки Burst</string>
+    <string name="pref_burst_settings">Серийная съемка</string>
     <string name="pref_camcorder_settings_category">Настройки видеокамеры</string>
     <string name="pref_camera_countdown_label_fifteen">15 СЕКУНД</string>
     <string name="pref_camera_countdown_label_off">АВТОСПУСК ОТКЛЮЧЕН</string>
@@ -523,21 +524,23 @@
     <string name="pref_camera_whitebalance_label_incandescent">ЛАМПА НАКАЛИВАНИЯ</string>
     <string name="pref_camera_whitebalance_title">Баланс белого</string>
     <string name="pref_category_about">О приложении</string>
-    <string name="pref_category_advanced">Расширенные настройки</string>
+    <string name="pref_category_advanced">Другие настройки</string>
     <string name="pref_category_general">Общие</string>
-    <string name="pref_category_photo_sphere_and_panorama">Photo Sphere и панорамные снимки</string>
+    <string name="pref_category_photo_sphere_and_panorama">Фотосфера и панорамные снимки</string>
     <string name="pref_category_resolution_quality">Разрешение и качество</string>
-    <string name="pref_experimental">Экспериментальная версия</string>
+    <string name="pref_developer_settings">Отладка и инструменты</string>
+    <string name="pref_experimental">Расширенные настройки</string>
     <string name="pref_exposure_label">ЭКСПОЗИЦИЯ</string>
     <string name="pref_exposure_title">Экспозиция</string>
-    <string name="pref_gcam_hdr_raw_summary">Сохранять фотографии HDR+ в формате RAW DNG в дополнение к обычному JPG</string>
-    <string name="pref_gcam_hdr_raw_title">HDR+ RAW+JPEG</string>
+    <string name="pref_gcam_hdr_raw_summary">"Сохранение файла RAW \".dng\"
+в дополнение к обычному \".jpg\""</string>
+    <string name="pref_gcam_hdr_raw_title">JPEG+RAW</string>
     <string name="pref_gestures_summary">%1$s, %2$s</string>
     <string name="pref_hdr_plus_control_summary">Показывать ручное управление HDR+. Когда оно скрыто, режим HDR+ включен.</string>
     <string name="pref_hdr_plus_control_title">Значок HDR+</string>
-    <string name="pref_photosphere_picturesize_entry_12mp">12 Мпикс.</string>
-    <string name="pref_photosphere_picturesize_entry_16mp">16 Мпикс.</string>
-    <string name="pref_photosphere_picturesize_entry_8mp">8 Мпикс.</string>
+    <string name="pref_photosphere_picturesize_entry_12mp">12 Мп</string>
+    <string name="pref_photosphere_picturesize_entry_16mp">16 Мп</string>
+    <string name="pref_photosphere_picturesize_entry_8mp">8 Мп</string>
     <string name="pref_photosphere_picturesize_title">Размер картинки</string>
     <string name="pref_photosphere_settings_category">Настройки панорамы</string>
     <string name="pref_smartburst_summary">Сохранять только 8 лучших фотографий из серии</string>
@@ -606,9 +609,9 @@
     <string name="processing_notification">Обработка размытия…</string>
     <string name="processing_notification_channel">Обработка в фоновом режиме</string>
     <string name="processing_panorama">Создание панорамы...</string>
-    <string name="processing_photo_sphere">Создание Photo Sphere…</string>
+    <string name="processing_photo_sphere">Создание Фотосферы…</string>
     <string name="reason_storage_failure">Ошибка хранилища фотографий.</string>
-    <string name="record_location_notification">Добавление геотегов включено</string>
+    <string name="record_location_notification">Добавление геотегов включено.</string>
     <string name="refocus_accessibility_peek">Сделан снимок с эффектом размытия.</string>
     <string name="refocus_action_name">Измените фокус фотографии</string>
     <string name="refocus_action_promote">Перетащите, чтобы настроить размытие</string>
@@ -652,19 +655,19 @@
     <string name="set_image">Установить картинку как</string>
     <string name="set_time_interval">Задайте интервал</string>
     <string name="set_time_interval_help">Сначала включите режим замедленной съемки.</string>
-    <string name="setting_back_camera_photo">Разрешение основной камеры (фото)</string>
-    <string name="setting_back_camera_video">Разрешение основной камеры (видео)</string>
+    <string name="setting_back_camera_photo">Разрешение основной камеры</string>
+    <string name="setting_back_camera_video">Разрешение основной камеры</string>
     <string name="setting_default_camera">Камера по умолчанию</string>
-    <string name="setting_front_camera_photo">Разрешение фронтальной камеры (фото)</string>
-    <string name="setting_front_camera_video">Разрешение фронтальной камеры (видео)</string>
+    <string name="setting_front_camera_photo">Разрешение фронтальной камеры</string>
+    <string name="setting_front_camera_video">Разрешение фронтальной камеры</string>
     <string name="setting_general">Общие</string>
     <string name="setting_google_feedback">Отправить отзыв</string>
     <string name="setting_google_help">Справка</string>
-    <string name="setting_google_help_and_feedback">Справка/отзыв</string>
+    <string name="setting_google_help_and_feedback">Другое</string>
     <string name="setting_location">Местоположение</string>
     <string name="setting_off">Выкл.</string>
     <string name="setting_on">Вкл.</string>
-    <string name="setting_summary_aspect_ratio_and_megapixels">(%1$d:%2$d) %3$s Мпикс.</string>
+    <string name="setting_summary_aspect_ratio_and_megapixels">(%1$d:%2$d) %3$s Мп</string>
     <string name="setting_video_encoding">Кодирование видео</string>
     <string name="setting_wallpaper">Установка обоев…</string>
     <string name="settings_close_desc">Закрыть настройки</string>
@@ -751,16 +754,187 @@
 Помедленнее."</string>
     <string name="warning_viewport">Сохраняйте объект в центре</string>
     <string name="white_balance">Баланс белого</string>
-    <string name="white_balance_auto_desc">Авто</string>
-    <string name="white_balance_cloudy_desc">Облачно</string>
-    <string name="white_balance_fluorescent_desc">Лампа дневного света</string>
-    <string name="white_balance_incandescent_desc">Лампа накаливания</string>
+    <string name="white_balance_auto_desc">"Авто
+"</string>
+    <string name="white_balance_cloudy_desc">"Облачно
+"</string>
+    <string name="white_balance_fluorescent_desc">"Лампа 
+днев.света"</string>
+    <string name="white_balance_incandescent_desc">"Лампа 
+накаливания"</string>
     <string name="white_balance_options_desc">Настройки баланса белого</string>
-    <string name="white_balance_sunny_desc">Солнечно</string>
+    <string name="white_balance_sunny_desc">"Солнечно
+"</string>
     <string name="wide_angle_accessibility_peek">Сделан снимок в режиме широкоугольной съемки.</string>
     <string name="width">Ширина</string>
     <string name="works_best_distance_away">Стойте на расстоянии не менее 9 м от объектов.</string>
     <string name="zoom_announcement">Масштаб: %.1f</string>
     <string name="zoom_minus_desc">Уменьшить</string>
     <string name="zoom_plus_desc">Увеличить</string>
+    <string name="pref_bsg_mod_title">Дополнительные настройки</string>
+    <string name="pref_all_title_summary">%s</string>
+    <string name="pref_input_model_title">Модель:</string>
+    <string name="pref_input_model_Def">"По умолчанию.
+   Значение берется из build.prop"</string>
+    <string name="pref_input_model_N5">Nexus 5</string>
+    <string name="pref_input_model_N6">Nexus 6</string>
+    <string name="pref_input_model_N5X">Nexus 5X</string>
+    <string name="pref_input_model_N6P">Nexus 6P</string>
+    <string name="pref_input_model_PxlXLTai">Pixel XL</string>
+    <string name="pref_input_model_Tai">Pixel 2 XL</string>
+    <string name="pref_input_model_Wall">Pixel 2</string>
+    <string name="pref_config_camera_title">Конфигурация</string>
+    <string name="pref_config_camera_0">АВТО</string>
+    <string name="pref_config_camera_1">Pixel 2016 Tuning</string>
+    <string name="pref_config_camera_2">Experimental Features (Pixel)</string>
+    <string name="pref_config_camera_3">Nexus 6 HDR+ AUTO</string>
+    <string name="pref_config_camera_4">Nexus 6 Hdr+ Auto NoZsl</string>
+    <string name="pref_config_camera_5">Nexus 5X Zsl</string>
+    <string name="pref_config_camera_6">Nexus 5X No Zsl</string>
+    <string name="pref_config_camera_7">Nexus 6P</string>
+    <string name="pref_config_camera_8">Pixel 2016 Zsl Hdr</string>
+    <string name="pref_config_camera_9">Pixel 2017 ZSL HDR+</string>
+    <string name="pref_all_title_summary_config">"%s
+В режиме AUTO, конфиг выставляется в зависимости от выбранной модели."</string>
+    <string name="pref_parameters_camera_title">Буфер</string>
+    <string name="pref_parameters_camera_0">По умолчанию</string>
+    <string name="pref_parameters_camera_1">Очень низкий</string>
+    <string name="pref_parameters_camera_2">Низкий</string>
+    <string name="pref_parameters_camera_3">Средний</string>
+    <string name="pref_parameters_camera_4">Высокий</string>
+    <string name="pref_parameters_camera_5">Очень высокий</string>
+    <string name="setting_sblpf_title">Установленное значение</string>
+    <string name="pref_sblpf_p13">64.00 (по умолчанию)</string>
+    <string name="pref_sblp_title">Регулировка уровня черного</string>
+    <string name="pref_enable_sblp_title">Включить</string>
+    <string name="pref_all_title_summary_sblp">Если выключено, используются авто значения</string>
+    <string name="setting_dg_title">"Малиновый
+... - ...
+Нейтральный = 64.00
+... + ...
+Ярко-зеленый"</string>
+    <string name="setting_r_title">"Темно-зеленый
+... - ...
+Нейтральный = 64.00
+... + ...
+Красный"</string>
+    <string name="setting_lg_title">"Темно-зеленый
+... - ...
+Нейтральный = 64.00
+... + ...
+Красный"</string>
+    <string name="setting_b_title">"Синий
+... - ...
+Нейтральный = 64.00
+... + ...
+Желтый"</string>
+    <string name="pref_sblp_0">64.00 (по умолчанию)</string>
+    <string name="pref_qjpg_title">Качество сжатия фото</string>
+    <string name="pref_qjpg_97">97% (по умолчанию)</string>
+    <string name="pref_compress_dng_title">Сжатие RAW-изображений</string>
+    <string name="pref_sbe_title">Включить</string>
+    <string name="pref_all_title_summary_sbe">При удержании кнопки спуска, камера сделает серию фотоснимков</string>
+    <string name="pref_pmode_title">Режим Портрет на всех моделях</string>
+    <string name="pref_all_title_summary_pmode">Работает только на задней камере. Размытие на конфиге Nexus 6.</string>
+    <string name="pref_refocusmb_title">Разрешение в режиме \"Размытие\"</string>
+    <string name="pref_refocusmb_5">5 Мп</string>
+    <string name="pref_refocusmb_8">8 Мп</string>
+    <string name="pref_refocusmb_10">10 Мп</string>
+    <string name="pref_refocusmb_12">12 Мп (по умолчанию)</string>
+    <string name="pref_refocusmb_summary">"%s
+Значение не должно превышать реальный размер модуля камеры"</string>
+    <string name="pref_all_title_summary_switch">Необходимо полностью закрыть приложение, изменения вступят в силу при следующем запуске.</string>
+    <string name="pref_parameters_camera_6">Pixel 2017 стабильный</string>
+    <string name="pref_parameters_camera_7">Pixel 2017 быстрый</string>
+    <string name="pref_parameters_camera_8">Pixel 2017 быстрейший</string>
+    <string name="pref_qhdrf_title">HDR+ на фронтальной камере</string>
+    <string name="pref_qhdrf_summary">Включить авто HDR+ для фронтальной камеры.</string>
+    <string name="pref_aemode_title">Коррекция авто-экспозиции</string>
+    <string name="pref_aemode_0">По умолчанию</string>
+    <string name="pref_aemode_100">Сток Сamera2 API</string>
+    <string name="pref_aemode_1">ISO 750</string>
+    <string name="pref_aemode_2">ISO 525</string>
+    <string name="pref_aemode_3">ISO 350</string>
+    <string name="pref_aemode_4">ISO 225</string>
+    <string name="pref_aemode_5">Время макс.</string>
+    <string name="pref_aemode_6">Время 1/2 макс.</string>
+    <string name="pref_aemode_7">Время 1/10 сек.</string>
+    <string name="pref_antibandingmode_title">Устранение мерцания</string>
+    <string name="pref_abmode_0">Авто</string>
+    <string name="pref_abmode_1">50 Гц</string>
+    <string name="pref_abmode_2">60 Гц</string>
+    <string name="pref_awbmode_title">Включить пользовательские настройки баланса белого</string>
+    <string name="pref_fronthdrfix_title">Исправить HDR+ на фронтальная камера</string>
+    <string name="pref_fronthdrfix_summary">Обходной путь для включения HDR+ на фронтальной камере на Galaxy S7.</string>
+    <string name="pref_extrazslbuffers_title">Количество дополнительных буферов ZSL(24МБ каждый)</string>
+    <string name="pref_meteringmode_title">Режим Экспозамера (Samsung)</string>
+    <string name="pref_meteringmode_0">Центрально-взвешенный</string>
+    <string name="pref_meteringmode_1">Место</string>
+    <string name="pref_meteringmode_2">Матрица</string>
+    <string name="pref_meteringmode_3">Контролируется камерой</string>
+    <string name="pref_livehdr_title">Живой HDR (Samsung)</string>
+    <string name="pref_phaseaf_title">Фазовый AF (Samsung)</string>
+    <string name="pref_portraitzsl_title">Съемка без задержки</string>
+    <string name="pref_hdrplusmulti_title">Недоэкспонирование</string>
+    <string name="pref_hdrdenoiseback_title">Понижение уровня шума</string>
+    <string name="pref_hdrdenoisefront_title">Понижение уровня шума</string>
+    <string name="pref_awb_title">Регулировка баланса белого</string>
+    <string name="setting_wbred_title">Красный</string>
+    <string name="setting_wbgreen1_title">Зеленый А</string>
+    <string name="setting_wbgreen2_title">Зеленый Б</string>
+    <string name="setting_wbblue_title">Синий</string>
+    <string name="pref_tuningback_title">Тонкие настройки</string>
+    <string name="pref_tuningfront_title">Тонкие настройки</string>
+    <string name="setting_basemodel_title">Базовая модель</string>
+    <string name="pref_tuningmode_title">Включить дополнительное улучшение</string>
+    <string name="setting_noise_model_ao_title">Смещение шума А</string>
+    <string name="setting_noise_model_bo_title">Смещение шума Б</string>
+    <string name="setting_noise_model_as_title">Шкала шума А</string>
+    <string name="setting_noise_model_bs_title">Шкала шума Б</string>
+    <string name="pref_customnoisemodel_title">Включить пользовательскую модель шума</string>
+    <string name="pref_customdenoiseparam_title">Включить пользовательские параметры шумоподавления</string>
+    <string name="setting_denoise_luma_0_title">Шумоподавление при плохом свете</string>
+    <string name="setting_denoise_luma_1_title">Шумоподавление при среднем свете</string>
+    <string name="setting_denoise_luma_2_title">Шумоподавление при хорошем свете</string>
+    <string name="setting_denoise_chroma_0_title">Шумоподавление цветного шума при плохом свете</string>
+    <string name="setting_denoise_chroma_1_title">Шумоподавление цветного шума при среднем свете</string>
+    <string name="setting_denoise_chroma_2_title">Шумоподавление цветного шума при хорошем свете</string>
+    <string name="setting_denoise_revert_0_title">Коэффициент отмены шумоподавления при плохом свете</string>
+    <string name="setting_denoise_revert_1_title">Коэффициент отмены шумоподавления при среднем свете</string>
+    <string name="setting_denoise_revert_2_title">Коэффициент отмены шумоподавления при хорошем свете</string>
+    <string name="pref_portraitzoom_title">Увеличенный масштаб съемки</string>
+    <string name="pref_front_fixbayerpattern_title">Correct bayer pattern on S7 Exynos front cam</string>
+    <string name="pref_front_fixwhitelevel_title">Correct white level on S7 Exynos front cam</string>
+    <string name="pref_portraitsinglefolder_title">Сохранять фото в общую папку</string>
+    <string name="pref_all_title_summary_psinglefolder">Если да, рекомендуется включить camera.use_photos в настройках разработчика</string>
+    <string name="pref_opticalstabi_title">Оптическая стабилизация (Samsung)</string>
+    <string name="about_mod_1_title">Проверить обновления</string>
+    <string name="about_mod_1_summary" />
+    <string name="pref_aemode_8">Время 1/20 сек.</string>
+    <string name="pref_aemode_9">Время 1/30 сек.</string>
+    <string name="pref_aemode_10">Время 1/50 сек.</string>
+    <string name="pref_aemode_11">Время 1/100 сек.</string>
+    <string name="pref_aemode_12">Время 1/200 сек.</string>
+    <string name="pref_siwl_title">Минимальное сглаживание</string>
+    <string name="pref_smas_title">Максимальная чувствительность аналогового усиления</string>
+    <string name="pref_smas_0">Авто</string>
+    <string name="pref_smas_110">110</string>
+    <string name="pref_smas_500">500</string>
+    <string name="pref_smas_1000">1000</string>
+    <string name="pref_smas_1550">1550</string>
+    <string name="pref_smas_1600">1600</string>
+    <string name="pref_smas_2200">2200</string>
+    <string name="pref_smas_3300">3300</string>
+    <string name="pref_tuningsettings_title">Расширенные настройки HDR+</string>
+    <string name="pref_portrait_mode">Настройка режима \"Портрет\"</string>
+    <string name="raw_mode">Функции RAW</string>
+    <string name="pref_category_tuningfront">Фронтальная камера</string>
+    <string name="pref_category_tuningback">Основная камера</string>
+    <string name="pref_burst_settings_summary">Включение и настройка функции</string>
+    <string name="pref_compress_dng_title_summary">Сжатие \".dng\" для уменьшения размера файла</string>
+    <string name="pref_all_title__tuningsettings_summary">После изменения настроек, необходим полный перезапуск приложения</string>
+    <string name="pref_siwl_title_summary">Алгоритм минимального «замыливания» фото</string>
+    <string name="pref_sblp_title_summary">Ручная настройка цветокоррекции</string>
+    <string name="pref_category_tuning1">Настройка модели шума</string>
+    <string name="pref_category_tuning2">Настройка шумоподавления</string>
 </resources>

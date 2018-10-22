@@ -665,21 +665,33 @@
 .method final c()V
     .locals 3
 
+    invoke-static {}, Lbhn;->getPortraitZoom()I
+
+    move-result v2
+
     iget-object v0, p0, Lczt;->c:Leqd;
 
     invoke-virtual {v0}, Leqd;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Lczt;->x:Lhem;
 
+    if-eqz v2, :cond_0
+
     const/high16 v1, 0x3fc00000    # 1.5f
 
-    invoke-interface {v0, v1}, Lhem;->b(F)V
+    goto/16 :goto_0
+
+    :cond_0
+    const/high16 v1, 0x3f800000    # 1.0f
 
     :goto_0
+    invoke-interface {v0, v1}, Lhem;->b(F)V
+
+    :goto_1
     iget-object v0, p0, Lczt;->x:Lhem;
 
     invoke-interface {v0}, Lhem;->f()V
@@ -712,14 +724,22 @@
 
     return-void
 
-    :cond_0
+    :cond_1
     iget-object v0, p0, Lczt;->x:Lhem;
+
+    if-eqz v2, :cond_2
 
     const v1, 0x3f99999a    # 1.2f
 
+    goto/16 :goto_2
+
+    :cond_2
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    :goto_2
     invoke-interface {v0, v1}, Lhem;->b(F)V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public final close()V

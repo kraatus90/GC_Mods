@@ -440,7 +440,7 @@
 
     if-eqz v2, :cond_1
 
-    const/16 v1, 0x9
+    const/16 v1, 0xc
 
     :cond_0
     :goto_0
@@ -1194,6 +1194,12 @@
     iget-object v1, p0, Lhfp;->G:Lbhn;
 
     const/4 v0, 0x3
+
+    invoke-virtual {v1}, Lbhn;->refocusmp()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
 
     iget-object v2, v1, Lbhn;->b:Lgzz;
 

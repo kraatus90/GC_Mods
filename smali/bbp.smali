@@ -815,6 +815,10 @@
 
     invoke-interface {v0, v2}, Licz;->a(Ljava/lang/String;)V
 
+    const v0, 0x1
+
+    sput v0, Lbco;->sFirstPreviewCommand:I
+
     iget-object v0, p0, Lbbp;->j:Lbdb;
 
     invoke-virtual {v0, p3, p2, p1}, Lbdb;->a(Liht;Landroid/view/Surface;Lbcv;)Ljuw;

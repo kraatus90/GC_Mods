@@ -63,7 +63,7 @@
 
     new-instance v0, Lcom/google/android/gms/common/api/Scope;
 
-    const-string v1, "https://www.googleapis.com/auth/games"
+    const-string v1, "="
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
 

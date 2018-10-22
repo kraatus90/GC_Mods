@@ -8,6 +8,10 @@
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
+    const/4 v0, 0x0
+
+    return v0
+
     invoke-static {p0}, Lhjz;->c(Landroid/content/Context;)I
 
     move-result v0

@@ -148,7 +148,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_9
 
     new-instance v2, Lbcs;
 
@@ -240,6 +240,8 @@
 
     if-nez v10, :cond_4
 
+    if-eqz v10, :cond_4
+
     iget-object v10, v15, Ldbn;->E:Lgzz;
 
     iget-object v10, v10, Lgzz;->b:Lihk;
@@ -268,8 +270,6 @@
 
     if-eqz v10, :cond_6
 
-    const/4 v6, 0x0
-
     :cond_6
     const/4 v10, 0x0
 
@@ -296,22 +296,9 @@
 
     if-ne v11, v12, :cond_8
 
-    const/4 v10, 0x1
-
     :cond_8
-    const/4 v11, 0x0
-
-    iget-object v12, v15, Ldbn;->E:Lgzz;
-
-    invoke-virtual {v12}, Lgzz;->c()Z
-
-    move-result v12
-
-    if-eqz v12, :cond_9
-
     const/4 v11, 0x1
 
-    :cond_9
     invoke-static {}, Lbbt;->g()Lbbu;
 
     move-result-object v12
@@ -382,7 +369,7 @@
 
     return-object v1
 
-    :cond_a
+    :cond_9
     new-instance v2, Lbcq;
 
     iget-object v3, v15, Ldbn;->C:Lhzn;

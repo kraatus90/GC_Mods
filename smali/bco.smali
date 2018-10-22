@@ -12,6 +12,8 @@
 # static fields
 .field public static final a:Ljava/lang/String;
 
+.field public static sFirstPreviewCommand:I
+
 
 # instance fields
 .field public final b:Lbby;
@@ -97,7 +99,7 @@
 
     iget-object v0, p0, Lbco;->b:Lbby;
 
-    invoke-interface {v0}, Lbby;->a()Landroid/util/Range;
+    invoke-interface {v0}, Lbby;->b()Landroid/util/Range;
 
     move-result-object v0
 
@@ -155,7 +157,18 @@
 
     sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    if-eqz v2, :cond_0
+    sget v4, Lbco;->sFirstPreviewCommand:I
+
+    if-eqz v4, :cond_0
+
+    const v4, 0x0
+
+    sput v4, Lbco;->sFirstPreviewCommand:I
+
+    const/4 v2, 0x0
+
+    :cond_0
+    if-eqz v2, :cond_1
 
     const/4 v0, 0x4
 
@@ -192,7 +205,7 @@
 
     return-object v1
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x1
 
     goto :goto_0
@@ -711,6 +724,31 @@
 
     invoke-virtual {p1, v0, v3}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
+    goto :goto_5
+
+    sget-object v0, LSamsungKeys;->LENS_OPTICAL_STABILIZATION_OPERATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v4, 0x1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v0, v3}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    sget-object v0, LSamsungKeys;->CONTROL_LIVE_HDR_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Lbhn;->getLiveHDRVideo()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v0, v3}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :goto_5
     iget-object v0, p0, Lbco;->d:Lbbt;
 
     invoke-virtual {v0}, Lbbt;->f()Z
@@ -719,7 +757,7 @@
 
     if-eqz v0, :cond_6
 
-    :goto_5
+    :goto_6
     sget-object v0, Lbco;->a:Ljava/lang/String;
 
     const/16 v2, 0x20
@@ -782,7 +820,7 @@
     :cond_6
     move v1, v2
 
-    goto :goto_5
+    goto :goto_6
 .end method
 
 .method public final b(Liht;)Liia;

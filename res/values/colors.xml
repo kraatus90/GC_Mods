@@ -538,7 +538,7 @@
     <color name="tooltip_background_light">#e6ffffff</color>
     <color name="tooltip_container_shadow">#00000000</color>
     <color name="toybox_button_disabled_color">#ff9e9e9e</color>
-    <color name="toybox_notification_dot">#fff44336</color>
+    <color name="toybox_notification_dot">#00f44336</color>
     <color name="transparent">#00000000</color>
     <color name="transparentBlack">#d0000000</color>
     <color name="video_mode_color">#ffdb4437</color>

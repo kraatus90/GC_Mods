@@ -1605,6 +1605,12 @@
     goto :goto_1
 
     :cond_3
+    sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v6, 0x1b
+
+    if-lt v5, v6, :cond_5
+
     iget-object v5, v4, Lbej;->a:Lgzz;
 
     invoke-virtual {v5}, Lgzz;->c()Z

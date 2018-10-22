@@ -1161,6 +1161,18 @@
 
     move-result v10
 
+    sget v0, LcokMod;->sCountHDRFrame:I
+
+    add-int v1, v0, v10
+
+    sput v1, LcokMod;->sCountHDRFrame:I
+
+    const-string v3, "eev"
+
+    const-string v4, "sCountHDRFrame incremented"
+
+    invoke-static {v3, v4}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+
     invoke-virtual/range {p4 .. p5}, Lggm;->a(Lgga;)Lggm;
 
     if-eqz p6, :cond_0

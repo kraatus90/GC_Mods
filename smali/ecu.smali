@@ -258,6 +258,22 @@
 
     invoke-interface {v2, v3, v6}, Lcop;->a(Lcpa;Lcom/google/googlex/gcam/BurstSpec;)V
 
+    invoke-interface/range {p3 .. p3}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    sget v0, LcokMod;->sCountZSLFrame:I
+
+    add-int/2addr v0, v2
+
+    sput v0, LcokMod;->sCountZSLFrame:I
+
+    const-string v0, "ecu"
+
+    const-string v2, "sCountZSLFrame incremented"
+
+    invoke-static {v0, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
+
     const/4 v2, 0x0
 
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
