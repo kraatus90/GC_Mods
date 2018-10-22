@@ -25,6 +25,8 @@
 
 .field public final buttonColorLight:I
 
+.field public c:Landroid/content/Context;
+
 .field public clickEnabled:Z
 
 .field public currentButtonColor:I
@@ -69,6 +71,8 @@
     iput v0, p0, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->currentButtonColor:I
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->initialize()V
+
+    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->c:Landroid/content/Context;
 
     return-void
 .end method
@@ -160,6 +164,8 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-static {p0}, Lcom/custom/switch;->setLongClickListener(Landroid/view/View;)V
+
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->setFocusable(Z)V
@@ -199,8 +205,6 @@
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4

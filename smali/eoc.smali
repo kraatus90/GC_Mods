@@ -19,8 +19,6 @@
 
 .field private D:Z
 
-.field private E:Lhab;
-
 .field public final b:Leoy;
 
 .field public final c:Lgvp;
@@ -213,10 +211,6 @@
     sget-object v2, Leol;->a:Leol;
 
     iput-object v2, p0, Leoc;->B:Leol;
-
-    move-object/from16 v0, p18
-
-    iput-object v0, p0, Leoc;->E:Lhab;
 
     return-void
 .end method
@@ -446,9 +440,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    iget-object v1, p0, Leoc;->E:Lhab;
-
-    invoke-virtual {v1, v0}, Lhab;->a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+    invoke-static {}, Lgzz;->f()Z
 
     :cond_2
     invoke-static {v0}, Ljht;->c(Ljava/lang/Object;)Ljht;

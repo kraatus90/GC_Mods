@@ -175,7 +175,7 @@
 
     const-string v1, "cameraprogress_overlay"
 
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     sput-object v0, Lbip;->o:Lbku;
 
@@ -237,10 +237,17 @@
 
     const-string v1, "camera.use_photos"
 
+    invoke-virtual {p2}, Lgzz;->g()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
     invoke-virtual {p2}, Lgzz;->c()Z
 
     move-result v2
 
+    :cond_0
     invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     iput-object v0, p0, Lbip;->u:Lbku;
@@ -249,10 +256,22 @@
 
     const-string v1, "camera.diet_burst"
 
+    invoke-virtual {p2}, Lgzz;->k()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_1
     invoke-virtual {p2}, Lgzz;->c()Z
 
     move-result v2
 
+    :goto_0
     invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     iput-object v0, p0, Lbip;->v:Lbku;

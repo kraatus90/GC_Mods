@@ -671,6 +671,12 @@
 
     invoke-direct {p0, v1, v2, v3}, Lglx;->a(Liau;Ljjq;Lgla;)V
 
+    invoke-static {}, Lbhn;->getgrid()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     iget-object v1, p0, Lglx;->o:Liau;
 
     iget-object v2, p0, Lglx;->P:Ljjq;
@@ -679,6 +685,7 @@
 
     invoke-direct {p0, v1, v2, v3}, Lglx;->a(Liau;Ljjq;Lgla;)V
 
+    :cond_0
     iget-object v1, p0, Lglx;->p:Liau;
 
     iget-object v2, p0, Lglx;->Q:Ljjq;
@@ -1478,6 +1485,12 @@
 
     invoke-direct {p0, v0, v1, v2, v10}, Lglx;->a(Ljjq;Liau;Lgla;Z)V
 
+    invoke-static {}, Lbhn;->getgrid()I
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
     iget-object v0, p0, Lglx;->P:Ljjq;
 
     iget-object v1, p0, Lglx;->o:Liau;
@@ -1486,6 +1499,7 @@
 
     invoke-direct {p0, v0, v1, v2, v5}, Lglx;->a(Ljjq;Liau;Lgla;Z)V
 
+    :cond_11
     iget-object v0, p0, Lglx;->Q:Ljjq;
 
     iget-object v1, p0, Lglx;->p:Liau;
@@ -1510,7 +1524,7 @@
 
     invoke-direct {p0, v0, v1, v2, v8}, Lglx;->a(Ljjq;Liau;Lgla;Z)V
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_12
 
     iget-object v0, p0, Lglx;->b:Lcom/google/android/apps/camera/optionsbar/OptionsBarView;
 
@@ -1558,7 +1572,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_11
+    :cond_12
     return-void
 .end method
 

@@ -296,7 +296,7 @@
 
     iget-object v2, p0, Lcpb;->c:Lcom/google/googlex/gcam/InitParams;
 
-    if-nez v2, :cond_2
+    if-nez v2, :cond_3
 
     sget-object v0, Lcpb;->a:Ljava/lang/String;
 
@@ -340,7 +340,7 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setThread_count(I)V
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setTuning_locked(Z)V
 
@@ -388,27 +388,27 @@
 
     const/4 v3, 0x0
 
-    if-le v2, v3, :cond_3
+    if-le v2, v3, :cond_4
 
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_4
+    if-eq v2, v3, :cond_5
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_5
+    if-eq v2, v3, :cond_6
 
     const/4 v3, 0x3
 
-    if-eq v2, v3, :cond_6
+    if-eq v2, v3, :cond_7
 
     const/4 v3, 0x4
 
-    if-ge v2, v3, :cond_7
+    if-ge v2, v3, :cond_8
 
     const/4 v3, 0x5
 
-    if-ge v2, v3, :cond_8
+    if-ge v2, v3, :cond_9
 
     :goto_1
     iget-object v2, p0, Lcpb;->D:Lcnu;
@@ -451,17 +451,31 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    sget v4, Lbhn;->sHexagon:I
+
+    if-eqz v4, :cond_1
+
+    const v3, 0x1
+
+    if-eq v3, v4, :cond_a
+
+    const v3, 0x2
+
+    if-eq v3, v4, :cond_b
+
+    :cond_1
+    if-eqz v2, :cond_2
 
     const/4 v2, 0x0
 
+    :goto_2
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setUse_hexagon(Z)V
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setSimultaneous_merge_and_finish(Z)V
 
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcpb;->x:Lcom/google/googlex/gcam/MemoryStateCallback;
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/InitParams;->setMemory_callback(Lcom/google/googlex/gcam/MemoryStateCallback;)V
@@ -494,38 +508,38 @@
 
     invoke-virtual {v2, v3}, Lfun;->a(Lfuj;)Z
 
-    :cond_2
+    :cond_3
     monitor-exit v1
 
     goto/16 :goto_0
 
-    :cond_3
+    :cond_4
     const/4 v4, 0x3
 
     goto/16 :goto_1
 
-    :cond_4
-    const/4 v4, 0x7
-
-    goto/16 :goto_1
-
     :cond_5
-    const/16 v4, 0xe
+    const/4 v4, 0x3
 
     goto/16 :goto_1
 
     :cond_6
-    const/16 v4, 0x18
+    const/16 v4, 0x3
 
     goto/16 :goto_1
 
     :cond_7
-    const/16 v4, 0x23
+    const/16 v4, 0x3
 
     goto/16 :goto_1
 
     :cond_8
-    const/16 v4, 0x2e
+    const/16 v4, 0x3
+
+    goto/16 :goto_1
+
+    :cond_9
+    const/16 v4, 0x3
 
     goto/16 :goto_1
 
@@ -537,4 +551,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+
+    :cond_a
+    const v2, 0x1
+
+    goto :goto_2
+
+    :cond_b
+    const v2, 0x0
+
+    goto :goto_2
 .end method

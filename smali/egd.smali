@@ -134,7 +134,7 @@
 
     cmpl-float v2, v2, v3
 
-    if-ltz v2, :cond_4
+    if-ltz v2, :cond_5
 
     sget-object v2, Legd;->a:Ljava/lang/String;
 
@@ -290,6 +290,13 @@
 
     move-result v0
 
+    const/16 v6, 0x44c
+
+    if-le v6, v0, :cond_4
+
+    const/16 v0, 0x44c
+
+    :cond_4
     int-to-float v2, v0
 
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_POST_RAW_SENSITIVITY_BOOST:Landroid/hardware/camera2/CaptureResult$Key;
@@ -353,7 +360,7 @@
 
     goto/16 :goto_0
 
-    :cond_4
+    :cond_5
     if-eqz v0, :cond_2
 
     :try_start_4

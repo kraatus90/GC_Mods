@@ -805,11 +805,7 @@
 
     check-cast v0, Lcdy;
 
-    iget-object v0, v0, Lfvj;->g:Ljava/lang/String;
-
-    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v1}, Lcdx;->a(Ljava/io/File;)V
+    invoke-virtual {v0}, Lcdy;->deleteBurstFiles()V
 
     invoke-super {p0}, Lcfb;->b()Z
 

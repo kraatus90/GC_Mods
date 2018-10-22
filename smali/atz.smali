@@ -44,8 +44,6 @@
     const/4 v0, 0x1
 
     :goto_0
-    invoke-static {v0}, Liya;->a(Z)V
-
     iput-object p2, p0, Latz;->b:Lasf;
 
     iput-object p5, p0, Latz;->c:Lhdc;

@@ -7,7 +7,9 @@
 
 
 # static fields
-.field private static g:Ljava/lang/String;
+.field private static final g:Ljava/lang/String;
+
+.field public static isbackground:Z
 
 
 # instance fields
@@ -51,8 +53,242 @@
     return-void
 .end method
 
+.method private static byte(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+
+    return-object v0
+.end method
+
+.method public static getPath()Ljava/lang/String;
+    .locals 3
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v1
+
+    new-instance v0, Ljava/io/File;
+
+    const-string v2, "DCIM/Camera"
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private refreshBrightness(F)V
+    .locals 3
+
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "max_brigtness"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
+
+    const/high16 v1, 0x42c80000    # 100.0f
+
+    div-float/2addr p1, v1
+
+    iput p1, v0, Landroid/view/WindowManager$LayoutParams;->screenBrightness:F
+
+    invoke-virtual {v2, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    const/16 v0, 0x80
+
+    invoke-virtual {v2, v0}, Landroid/view/Window;->addFlags(I)V
+
+    :cond_0
+    return-void
+.end method
+
 
 # virtual methods
+.method public X()V
+    .locals 4
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "def_folder"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {v3}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "pref_custom_folder"
+
+    invoke-static {}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getPath()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    invoke-static {v3}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "def_folder"
+
+    const/4 v2, 0x1
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public Z()V
+    .locals 4
+
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "reminder"
+
+    const/4 v3, 0x1
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    goto :goto_0
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "Info"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "PGZvbnQgY29sb3I9IzAwMDAwMD48Yj7QndCwINCg0YPRgdGB0LrQvtC8PC9iPjo8L2ZvbnQ+PGJyPg0KPGZvbnQgY29sb3I9IzAwMDAwMD7QlNCy0L7QudC90L7QtSDQvdCw0LbQsNGC0LjQtSDQvdCwINC90LjQttC90LjQuSDQsdCw0YAsINC90LAg0LrQvtGC0L7RgNC+0Lwg0YDQsNGB0L/QvtC70L7QttC10L3RiyDQutC90L7Qv9C60Lg6INC30LDRgtCy0L7RgCAvINC/0LXRgNC10LrQu9GO0YfQtdC90LjQtSDQutCw0LzQtdGA0YsgLyDQs9Cw0LvQtdGA0LXRjyAvINCy0LjQtNC10L4sINC+0YLQutGA0YvQstCw0LXRgiDQvdCw0YHRgtGA0L7QudC60Lgg0JDQstGC0L4t0JLRi9C00LXRgNC20LrQuCBIRFIrPC9mb250Pjxicj48YnI+DQo8Zm9udCBjb2xvcj0jMDAwMDAwPjxiPkluIEVuZ2xpc2g8L2I+OjwvZm9udD48YnI+DQo8Zm9udCBjb2xvcj0jMDAwMDAwPkRvdWJsZSBjbGljayBvbiB0aGUgYm90dG9tIGJhciwgb24gd2hpY2ggdGhlIGJ1dHRvbnMgYXJlIGxvY2F0ZWQ6IHNodXR0ZXIgLyDRgWFtZXJhIHN3aXRjaCAvIGdhbGxlcnkgLyB2aWRlbywgb3BlbnMgdGhlIHNldHRpbmdzIEF1dG8tRXhwb3N1cmUgSERSKzwvZm9udD4="
+
+    invoke-static {v1}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->byte(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "Ok"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setCanceledOnTouchOutside(Z)V
+
+    const/4 v1, -0x2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Landroid/widget/Button;->setAllCaps(Z)V
+
+    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const-string v2, "reminder"
+
+    const/4 v3, 0x0
+
+    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_0
+    :goto_0
+    return-void
+.end method
+
 .method public final d()Lbtf;
     .locals 1
 
@@ -69,6 +305,24 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 10
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->X()V
+
+    const v0, 0x64
+
+    int-to-float v1, v0
+
+    invoke-direct {p0, v1}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->refreshBrightness(F)V
+
+    new-instance v0, Landroid/os/StrictMode$VmPolicy$Builder;
+
+    invoke-direct {v0}, Landroid/os/StrictMode$VmPolicy$Builder;-><init>()V
+
+    invoke-virtual {v0}, Landroid/os/StrictMode$VmPolicy$Builder;->build()Landroid/os/StrictMode$VmPolicy;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/StrictMode;->setVmPolicy(Landroid/os/StrictMode$VmPolicy;)V
 
     const/4 v3, 0x1
 
@@ -523,6 +777,8 @@
 
     move-result v1
 
+    invoke-static {p0, v1}, Lcom/google/android/apps/camera/legacy/app/processing/ProcessingService;->setProcessing(Landroid/content/Context;I)V
+
     if-eqz v1, :cond_3
 
     new-instance v0, Lbih;
@@ -608,6 +864,25 @@
     goto :goto_2
 .end method
 
+.method protected onPause()V
+    .locals 1
+
+    invoke-super {p0}, Lbsj;->onPause()V
+
+    invoke-static {p0}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->checkProcessing(Landroid/content/Context;)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    sput-boolean v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->isbackground:Z
+
+    :cond_0
+    return-void
+.end method
+
 .method protected onResume()V
     .locals 10
 
@@ -686,7 +961,45 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/android/apps/camera/legacy/app/stats/CameraActivitySession;->a(Ljava/lang/String;JJ)V
 
+    invoke-static {p0}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->checkProcessing(Landroid/content/Context;)I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-boolean v0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->isrestart:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->isrestart:Z
+
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
+
+    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const v1, 0x8000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    const/high16 v1, 0x10000000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/System;->exit(I)V
+
     :cond_1
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->isbackground:Z
+
     return-void
 .end method
 
@@ -750,6 +1063,8 @@
 
     :cond_1
     invoke-super {p0}, Lbsj;->onStart()V
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->Z()V
 
     return-void
 .end method

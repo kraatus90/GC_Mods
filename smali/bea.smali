@@ -31,6 +31,8 @@
 
     iput-object p2, p0, Lbea;->b:Libp;
 
+    sget p3, Lbhn;->sBitrate:I
+
     iput p3, p0, Lbea;->h:I
 
     iput p4, p0, Lbea;->c:I

@@ -205,7 +205,7 @@
 
     new-instance v0, Lief;
 
-    const-string v1, "Not enough capacity."
+    const-string v1, "\u041d\u0435\u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u043e \u043c\u0435\u0441\u0442\u0430"
 
     invoke-direct {v0, v1}, Lief;-><init>(Ljava/lang/String;)V
 

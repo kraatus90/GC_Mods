@@ -211,6 +211,55 @@
     goto :goto_0
 .end method
 
+.method private final MenuValue(Ljava/lang/String;)I
+    .locals 3
+
+    invoke-static {}, Landroid/app/AppGlobals;->getInitialApplication()Landroid/app/Application;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Application;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    :cond_0
+    return v2
+.end method
+
 .method private final a(Liil;)Landroid/util/Pair;
     .locals 4
 
@@ -292,7 +341,7 @@
 .end method
 
 .method private final a(Lici;FLcom/google/googlex/gcam/AeResults;)Lcom/google/googlex/gcam/AeShotParams;
-    .locals 3
+    .locals 5
 
     const/4 v2, 0x1
 
@@ -324,23 +373,53 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/AeShotParams;->setProcess_bayer_for_payload(Z)V
 
+    const/16 v4, 0x64
+
+    iget-object v1, p0, Lcoq;->k:Lici;
+
+    iget v1, v1, Lici;->a:I
+
+    iget-object v3, p0, Lcoq;->l:Lici;
+
+    iget v3, v3, Lici;->a:I
+
+    sub-int v3, v1, v3
+
+    if-lt v3, v4, :cond_1
+
     iget-object v1, p0, Lcoq;->l:Lici;
 
     iget v1, v1, Lici;->a:I
 
+    :cond_1
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/AeShotParams;->setTarget_width(I)V
+
+    const/16 v4, 0x64
+
+    iget-object v1, p0, Lcoq;->k:Lici;
+
+    iget v1, v1, Lici;->b:I
+
+    iget-object v3, p0, Lcoq;->l:Lici;
+
+    iget v3, v3, Lici;->b:I
+
+    sub-int v3, v1, v3
+
+    if-lt v3, v4, :cond_2
 
     iget-object v1, p0, Lcoq;->l:Lici;
 
     iget v1, v1, Lici;->b:I
 
+    :cond_2
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/AeShotParams;->setTarget_height(I)V
 
     goto :goto_0
 .end method
 
 .method private final declared-synchronized a(ILeaq;Lgdv;Lcom/google/googlex/gcam/AeResults;Liic;Z)Lcpa;
-    .locals 23
+    .locals 25
 
     monitor-enter p0
 
@@ -568,6 +647,23 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotCallbacks;->setFinished_callback(Lcom/google/googlex/gcam/BurstCallback;)V
 
+    iget-object v2, v5, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->qjpg()I
+
+    move-result v23
+
+    if-nez v23, :cond_3
+
+    const/16 v23, 0x5f
+
+    :cond_3
+    iget-object v2, v5, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->cdng()I
+
+    move-result v24
+
     sget-object v2, Lcnv;->e:Lcnv;
 
     invoke-interface {v4, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -606,7 +702,7 @@
 
     invoke-virtual {v0, v4}, Lcom/google/googlex/gcam/ShotParams;->setImage_rotation(I)V
 
-    const/16 v4, 0x64
+    move/from16 v4, v23
 
     move-object/from16 v0, v22
 
@@ -622,7 +718,7 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setSave_merged_dng(Z)V
 
-    const/4 v2, 0x1
+    move/from16 v2, v24
 
     move-object/from16 v0, v22
 
@@ -648,15 +744,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    move-object/from16 v0, p0
 
-    const/4 v2, 0x0
+    const-string v2, "resampling_method_override_key"
+
+    invoke-direct {v0, v2}, Lcoq;->MenuValue(Ljava/lang/String;)I
+
+    move-result v2
 
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setResampling_method_override(I)V
 
-    :cond_3
     invoke-static/range {p3 .. p3}, Lcok;->a(Lgdv;)I
 
     move-result v2
@@ -683,6 +782,8 @@
 
     :goto_2
     move-object/from16 v0, v22
+
+    const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setAllow_temporal_binning(Z)V
 
@@ -737,6 +838,76 @@
     :goto_5
     move-object/from16 v0, p0
 
+    iget-object v2, v0, Lcoq;->c:Lcom/google/googlex/gcam/Gcam;
+
+    move/from16 v0, p1
+
+    invoke-virtual {v2, v0}, Lcom/google/googlex/gcam/Gcam;->GetTuning(I)Lcom/google/googlex/gcam/Tuning;
+
+    move-result-object v7
+
+    move-object/from16 v0, p0
+
+    const-string v4, "ignore_black_pixels_key"
+
+    invoke-direct {v0, v4}, Lcoq;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/Tuning;->setIgnore_black_pixels(Z)V
+
+    move-object/from16 v0, p0
+
+    const-string v4, "suppress_hot_pixels_key"
+
+    invoke-direct {v0, v4}, Lcoq;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {v7, v0}, Lcom/google/googlex/gcam/Tuning;->setSuppress_hot_pixels(Z)V
+
+    invoke-virtual {v7}, Lcom/google/googlex/gcam/Tuning;->getRaw_finish_params()Lcom/google/googlex/gcam/RawFinishParams;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlex/gcam/RawFinishParams;->getSaturation()Lcom/google/googlex/gcam/ColorSatParams;
+
+    move-result-object v9
+
+    move-object/from16 v0, p0
+
+    const-string v4, "ssat_key"
+
+    invoke-direct {v0, v4}, Lcoq;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const v4, 0x41200000    # 10.0f
+
+    div-float/2addr v0, v4
+
+    invoke-virtual {v9, v0}, Lcom/google/googlex/gcam/ColorSatParams;->setShadow_saturation(F)V
+
+    move-object/from16 v0, p0
+
+    const-string v4, "hlsat_key"
+
+    invoke-direct {v0, v4}, Lcoq;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const v4, 0x41200000    # 10.0f
+
+    div-float/2addr v0, v4
+
+    invoke-virtual {v9, v0}, Lcom/google/googlex/gcam/ColorSatParams;->setHighlight_saturation(F)V
+
+    move-object/from16 v0, p0
+
     iget-object v2, v0, Lcoq;->b:Lcpb;
 
     iget-object v2, v2, Lcpb;->B:Lbhn;
@@ -745,11 +916,113 @@
 
     move-result v2
 
-    sput v2, Lcok;->sAEMode:I
+    sput v2, LcokMod;->sAEMode:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->setsAWBMode()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sAWBMode:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getWBRed()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sWBRedMult:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getWBGreen1()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sWBGreen1Mult:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getWBGreen2()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sWBGreen2Mult:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getWBBlue()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sWBBlueMult:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->setsFrontHDRFix()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sFrontHDRFix:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->setsAntibandingMode()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sAntibandingMode:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getHDRPlusMulti()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sHDRPlusMulti:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getHDRPlusDenoiseFront()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sHDRPlusDenoiseFront:I
+
+    iget-object v2, v0, Lcoq;->b:Lcpb;
+
+    iget-object v2, v2, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->getHDRPlusDenoiseBack()I
+
+    move-result v2
+
+    sput v2, LcokMod;->sHDRPlusDenoiseBack:I
 
     iget-object v2, v0, Lcoq;->i:Lgdq;
 
     move-object/from16 v0, p5
+
+    invoke-static {v0}, LcokMod;->setPreviousViewfinderAEComp(Liic;)V
 
     invoke-static {v0, v2}, Lcok;->c(Liic;Lgdq;)F
 
@@ -957,6 +1230,8 @@
 
     if-eqz v10, :cond_d
 
+    invoke-static {v10}, LcokMod;->testTuningCoq(Lcom/google/googlex/gcam/IShot;)V
+
     move-object/from16 v0, p0
 
     invoke-direct {v0, v10}, Lcoq;->a(Lcom/google/googlex/gcam/IShot;)V
@@ -1117,8 +1392,6 @@
 
     goto :goto_8
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1132,6 +1405,56 @@
 
 .method private final a(ZLiil;Liic;FLici;Lici;Lgdq;Lcom/google/android/apps/camera/legacy/app/hdrplus/HdrPlusInFlightImages;)Lcpq;
     .locals 7
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setsAWBMode()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sAWBMode:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBRed()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBRedMult:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBGreen1()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBGreen1Mult:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBGreen2()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBGreen2Mult:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBBlue()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBBlueMult:I
 
     const/4 v2, 0x0
 
@@ -1938,11 +2261,121 @@
 
     iget-object v0, v0, Lcpb;->B:Lbhn;
 
-    invoke-virtual {v0}, Lbhn;->setsAEMode()I
+    invoke-virtual {v0}, Lbhn;->setsmas()I
 
     move-result v0
 
-    sput v0, Lcok;->sAEMode:I
+    sput v0, Lcok;->smas:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setsblpf()I
+
+    move-result v0
+
+    sput v0, Lcok;->sblpf:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setDGreen()I
+
+    move-result v0
+
+    sput v0, Lcok;->sDGreen:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setRed()I
+
+    move-result v0
+
+    sput v0, Lcok;->sRed:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setLGreen()I
+
+    move-result v0
+
+    sput v0, Lcok;->sLGreen:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setBlue()I
+
+    move-result v0
+
+    sput v0, Lcok;->sBlue:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setMBLEnable()I
+
+    move-result v0
+
+    sput v0, Lcok;->sMBLEnable:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->setsAWBMode()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sAWBMode:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBRed()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBRedMult:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBGreen1()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBGreen1Mult:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBGreen2()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBGreen2Mult:I
+
+    iget-object v0, p0, Lcoq;->b:Lcpb;
+
+    iget-object v0, v0, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->getWBBlue()I
+
+    move-result v0
+
+    sput v0, LcokMod;->sWBBlueMult:I
 
     move-object v0, p3
 

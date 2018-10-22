@@ -106,7 +106,7 @@
 
     invoke-static {}, Lcnu;->a()I
 
-    invoke-virtual {v3}, Lcnu;->b()I
+    invoke-virtual {v3}, Lcnu;->getZslBufferLength()I
 
     move-result v4
 

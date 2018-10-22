@@ -419,4 +419,12 @@
     <item type="id" name="action_delete">false</item>
     <item type="id" name="tiny_planet_editor">false</item>
     <item type="id" name="photo_editor">false</item>
+    <item type="id" name="seekBar">false</item>
+    <item type="id" name="seekBar2">false</item>
+    <item type="id" name="seekBar3">false</item>
+    <item type="id" name="buttonAuto">false</item>
+    <item type="id" name="buttonInfinity">false</item>
+    <item type="id" name="buttonMacro">false</item>
+    <item type="id" name="buttonPortrait">false</item>
+    <item type="id" name="buttonSpace">false</item>
 </resources>

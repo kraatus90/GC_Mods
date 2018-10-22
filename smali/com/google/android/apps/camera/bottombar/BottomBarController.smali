@@ -1246,7 +1246,17 @@
 .end method
 
 .method public wireListeners()V
-    .locals 2
+    .locals 3
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    iget-object v1, v0, Lcom/google/android/apps/camera/bottombar/BottomBar;->c:Landroid/content/Context;
+
+    const-string v2, "custom_viewer"
+
+    invoke-static {v1, v2}, Lcom/eclipse/short;->getValue(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v2
 
     invoke-static {}, Lhzt;->a()V
 
@@ -1262,6 +1272,19 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->setOnStateChangeListener(Lcom/google/android/apps/camera/bottombar/OnStateChangeListener;)V
 
+    if-eqz v2, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/eclipse/short;->setOnClickListener(Landroid/view/View;)V
+
+    goto :goto_0
+
+    :cond_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
@@ -1274,6 +1297,9 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-static {v0}, Lcom/eclipse/long;->setLongClickListener(Landroid/view/View;)V
+
+    :goto_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;

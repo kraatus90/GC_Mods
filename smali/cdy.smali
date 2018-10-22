@@ -1322,6 +1322,73 @@
     throw v0
 .end method
 
+.method public final declared-synchronized deleteBurstFiles()V
+    .locals 6
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-static {}, Ljej;->a()Ljeq;
+
+    move-result-object v1
+
+    iget-object v0, p0, Lcdy;->n:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcdw;
+
+    new-instance v3, Ljava/io/File;
+
+    iget-object v4, v0, Lcfq;->c:Lcfo;
+
+    iget-object v4, v4, Lcfb;->e:Lfvj;
+
+    iget-object v4, v4, Lfvj;->g:Ljava/lang/String;
+
+    invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v1, v3}, Ljeq;->c(Ljava/io/File;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v3}, Ljava/io/File;->delete()Z
+
+    invoke-static {v3}, LUtil;->deleteParentDir(Ljava/io/File;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+.end method
+
 .method public final e()Ljht;
     .locals 19
 

@@ -65,7 +65,7 @@
 
     const-string v2, "camera:max_gouda_inflight_shots"
 
-    const/4 v3, 0x5
+    const/4 v3, 0x7
 
     invoke-static {v1, v2, v3}, Lhyx;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
@@ -83,13 +83,18 @@
 
     move-result v0
 
-    const/4 v0, 0x1
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Lgzz;->i()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     sget-object v0, Lhit;->b:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljxn;->a()Ljava/lang/Object;
 
@@ -100,7 +105,7 @@
     :goto_0
     return-object v0
 
-    :cond_0
+    :cond_1
     sget-object v0, Ljhi;->a:Ljhi;
 
     goto :goto_0

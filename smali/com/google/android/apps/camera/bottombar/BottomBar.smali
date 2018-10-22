@@ -3,6 +3,14 @@
 .source "PG"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/android/apps/camera/bottombar/DLock$GestureListener;
+    }
+.end annotation
+
+
 # static fields
 .field public static final RECORDING_BACKGROUND_FADE_ANIM_DELAY_MS:I = 0xd9
 
@@ -18,6 +26,8 @@
 # instance fields
 .field public final backgroundColor:I
 
+.field public c:Landroid/content/Context;
+
 .field public cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
 .field public cancelButton:Landroid/widget/ImageButton;
@@ -30,11 +40,17 @@
 
 .field public currentRightButton:Landroid/view/View;
 
+.field gestureDetector:Landroid/view/GestureDetector;
+
 .field public hfrButton:Lcom/google/android/apps/camera/bottombar/HfrButton;
 
 .field public final inProgressAnimators:Ljava/util/List;
 
+.field isDoubleClick:Z
+
 .field public isReversed:Z
+
+.field lastTouchUpTime:J
 
 .field public orientation:Lgzl;
 
@@ -59,7 +75,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+    .locals 3
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -82,6 +98,28 @@
     iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->inProgressAnimators:Ljava/util/List;
 
     invoke-direct {p0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->inflate(Landroid/content/Context;)V
+
+    const/4 v2, 0x0
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->lastTouchUpTime:J
+
+    iput-boolean v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->isDoubleClick:Z
+
+    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->c:Landroid/content/Context;
+
+    new-instance v0, Landroid/view/GestureDetector;
+
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/DLock$GestureListener;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/google/android/apps/camera/bottombar/DLock$GestureListener;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBar;Lcom/google/android/apps/camera/bottombar/DLock$GestureListener;)V
+
+    invoke-direct {v0, p1, v1}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->gestureDetector:Landroid/view/GestureDetector;
 
     return-void
 .end method
@@ -814,12 +852,6 @@
 
     iget v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->verticalOffset:I
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x18
-
-    if-lt v0, v3, :cond_4
-
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -906,6 +938,18 @@
     move v0, v2
 
     goto :goto_0
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBar;->gestureDetector:Landroid/view/GestureDetector;
+
+    invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public setClickable(Z)V

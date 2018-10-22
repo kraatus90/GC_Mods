@@ -150,27 +150,62 @@
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x7
+    const/4 v1, 0x3
 
     goto :goto_0
 
     :cond_2
-    const/16 v1, 0xe
+    const/16 v1, 0x3
 
     goto :goto_0
 
     :cond_3
-    const/16 v1, 0x18
+    const/16 v1, 0x3
 
     goto :goto_0
 
     :cond_4
-    const/16 v1, 0x23
+    const/16 v1, 0x3
 
     goto :goto_0
 
     :cond_5
-    const/16 v1, 0x2e
+    const/16 v1, 0x3
+
+    goto :goto_0
+.end method
+
+.method public final getZslBufferLength()I
+    .locals 4
+
+    invoke-virtual {p0}, Lcnu;->b()I
+
+    move-result v0
+
+    iget-object v2, p0, Lcnu;->e:Lbhn;
+
+    invoke-virtual {v2}, Lbhn;->cpc()I
+
+    move-result v2
+
+    const/16 v3, 0x7
+
+    if-eq v2, v3, :cond_0
+
+    const/16 v3, 0x8
+
+    if-eq v2, v3, :cond_1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/16 v0, 0x8
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v0, 0x8
 
     goto :goto_0
 .end method

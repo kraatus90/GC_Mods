@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wearableApp package="com.google.android.GoogleCamera">
+<wearableApp package="com.google.android.Redmi4X">
     <path>camera_wear_app_PlaystoreRelease.apk</path>
 </wearableApp>

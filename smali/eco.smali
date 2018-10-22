@@ -208,7 +208,67 @@
     :pswitch_0
     const/4 v0, 0x2
 
-    invoke-static {v0}, Lfsp;->a(I)Lggq;
+    new-array v0, v0, [Lggq;
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x5
+
+    invoke-static {v6}, Lfsp;->a(I)Lggq;
+
+    move-result-object v6
+
+    aput-object v6, v0, v5
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x2
+
+    new-array v6, v6, [Lggl;
+
+    const/4 v7, 0x0
+
+    new-instance v8, Lggl;
+
+    sget-object v9, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v10, 0x1
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    aput-object v8, v6, v7
+
+    const/4 v7, 0x1
+
+    new-instance v8, Lggl;
+
+    sget-object v9, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v10, 0x1
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    aput-object v8, v6, v7
+
+    invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lfsp;->a(Ljava/util/List;)Lggq;
+
+    move-result-object v6
+
+    aput-object v6, v0, v5
+
+    invoke-static {v0}, Lfsp;->a([Lggq;)Lggq;
 
     move-result-object v0
 
@@ -228,7 +288,67 @@
     :pswitch_1
     const/4 v0, 0x2
 
-    invoke-static {v0}, Lfsp;->a(I)Lggq;
+    new-array v0, v0, [Lggq;
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x5
+
+    invoke-static {v6}, Lfsp;->a(I)Lggq;
+
+    move-result-object v6
+
+    aput-object v6, v0, v5
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x2
+
+    new-array v6, v6, [Lggl;
+
+    const/4 v7, 0x0
+
+    new-instance v8, Lggl;
+
+    sget-object v9, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v10, 0x1
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    aput-object v8, v6, v7
+
+    const/4 v7, 0x1
+
+    new-instance v8, Lggl;
+
+    sget-object v9, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v10, 0x1
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lggl;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    aput-object v8, v6, v7
+
+    invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lfsp;->a(Ljava/util/List;)Lggq;
+
+    move-result-object v6
+
+    aput-object v6, v0, v5
+
+    invoke-static {v0}, Lfsp;->a([Lggq;)Lggq;
 
     move-result-object v0
 
@@ -261,7 +381,7 @@
 
     sget-object v9, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    const/4 v10, 0x3
+    const/4 v10, 0x1
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -277,7 +397,7 @@
 
     sget-object v9, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    const/4 v10, 0x4
+    const/4 v10, 0x1
 
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -301,7 +421,7 @@
 
     move-result-object v0
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :cond_0
     new-instance v2, Lggm;
@@ -335,8 +455,6 @@
     invoke-interface {p1, v1, v0}, Ldom;->a(Ljava/util/List;Lggt;)V
 
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static a:J
+.field public static a:J
 
 
 # instance fields

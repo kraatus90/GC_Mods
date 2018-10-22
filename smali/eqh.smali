@@ -549,8 +549,6 @@
 
     move-result v0
 
-    const/4 v0, 0x1
-
     if-eqz v0, :cond_2
 
     :cond_0
@@ -992,7 +990,13 @@
 
     move-result v3
 
-    const/4 v3, 0x1
+    iget-object v3, p0, Leqh;->e:Lbir;
+
+    iget-object v3, v3, Lbir;->b:Lbhn;
+
+    invoke-virtual {v3}, Lbhn;->ims()I
+
+    move-result v3
 
     const-string v0, "is_smartburst_supported"
 
@@ -1014,7 +1018,13 @@
 
     move-result v0
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Leqh;->e:Lbir;
+
+    iget-object v0, v0, Lbir;->b:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->ims()I
+
+    move-result v0
 
     move v7, v4
 
@@ -1126,8 +1136,6 @@
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
 
     :cond_3
-    const/4 v5, 0x1
-
     if-nez v5, :cond_4
 
     const-string v2, "pref_category_experimental"
@@ -1354,8 +1362,6 @@
 
     move-result v0
 
-    const/4 v0, 0x1
-
     if-eqz v0, :cond_8
 
     sget-object v0, Lbip;->m:Lbku;
@@ -1426,7 +1432,7 @@
     move v3, v6
 
     :goto_4
-    if-ge v3, v5, :cond_12
+    if-ge v3, v5, :cond_13
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1596,6 +1602,17 @@
     throw v0
 
     :cond_12
+    const-string v2, "pref_category_help_and_feedback"
+
+    invoke-virtual {p0, v2}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/preference/PreferenceCategory;
+
+    invoke-virtual {v2, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
+
+    :cond_13
     const-string v0, "pref_video_stabilization_key"
 
     invoke-virtual {p0, v0}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1614,13 +1631,13 @@
 
     check-cast v0, Landroid/preference/PreferenceGroup;
 
-    if-nez v8, :cond_13
+    if-nez v8, :cond_14
 
     iget-object v2, p0, Leqh;->r:Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;
 
     invoke-virtual {v0, v2}, Landroid/preference/PreferenceGroup;->removePreference(Landroid/preference/Preference;)Z
 
-    :cond_13
+    :cond_14
     iput-boolean v6, p0, Leqh;->p:Z
 
     iget-object v0, p0, Leqh;->b:Lbqn;
@@ -1663,7 +1680,7 @@
 
     iput-object v0, p0, Leqh;->m:Lacd;
 
-    if-eqz v10, :cond_14
+    if-eqz v10, :cond_15
 
     const-string v0, "pref_open_setting_page"
 
@@ -1671,7 +1688,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
     const-string v0, "prefscreen_top"
 
@@ -1685,7 +1702,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_15
 
     invoke-virtual {v2}, Landroid/preference/Preference;->getOrder()I
 
@@ -1697,7 +1714,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/preference/PreferenceScreen;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
 
-    :cond_14
+    :cond_15
     const-string v0, "pref_camera_recordlocation_key"
 
     invoke-virtual {p0, v0}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -1724,37 +1741,6 @@
 
     check-cast v0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;
 
-    iget-object v1, p0, Leqh;->f:Lgds;
-
-    invoke-virtual {v1}, Lgds;->d()Z
-
-    move-result v1
-
-    const/4 v1, 0x1
-
-    if-nez v1, :cond_15
-
-    const-string v1, "pref_category_general"
-
-    invoke-virtual {p0, v1}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/PreferenceCategory;
-
-    invoke-virtual {v1, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_15
-
-    sget-object v0, Leqh;->k:Ljava/lang/String;
-
-    const-string v1, "Could not remove preference to disable sounds"
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_15
     iget-object v0, p0, Leqh;->i:Ljht;
 
     invoke-virtual {v0}, Ljht;->a()Z
@@ -2131,6 +2117,36 @@
     invoke-direct {p0, v0}, Leqh;->a(Landroid/preference/PreferenceScreen;)V
 
     :cond_2
+    const-string v0, "pref_folder_key"
+
+    invoke-virtual {p0, v0}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Leqh;->readFromFile()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+    new-instance v2, Leqj;
+
+    invoke-direct {v2, v1}, Leqj;-><init>(Landroid/app/Activity;)V
+
+    invoke-virtual {v0, v2}, Landroid/preference/Preference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+
+    const-string v0, "pref_launch_feedback"
+
+    invoke-virtual {p0, v0}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    new-instance v2, Leqk;
+
+    invoke-direct {v2, v1}, Leqk;-><init>(Landroid/app/Activity;)V
+
+    invoke-virtual {v0, v2}, Landroid/preference/Preference;->setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+
     invoke-virtual {p0}, Leqh;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
@@ -2156,7 +2172,11 @@
 .end method
 
 .method public final onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 1
+    .locals 3
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x1
 
     const-string v0, "pref_video_quality_back_key"
 
@@ -2169,5 +2189,45 @@
     invoke-direct {p0}, Leqh;->c()V
 
     :cond_0
+    const-string v0, "pref_folder_key"
+
+    invoke-virtual {p0, v0}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Leqh;->readFromFile()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+
+    sput-boolean v2, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->isrestart:Z
+
     return-void
+.end method
+
+.method public readFromFile()Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p0}, Leqh;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "pref_custom_folder"
+
+    const-string v2, ""
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

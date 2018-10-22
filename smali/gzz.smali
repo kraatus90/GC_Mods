@@ -383,6 +383,66 @@
 .end method
 
 .method public final g()Z
+    .locals 2
+
+    invoke-virtual {p0}, Lgzz;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgzz;->c:Lihj;
+
+    iget-boolean v0, v0, Lihj;->e:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgzz;->b:Lihk;
+
+    iget v0, v0, Lihk;->lphoto:I
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    iget-object v0, p0, Lgzz;->b:Lihk;
+
+    iget v0, v0, Lihk;->lphoto:I
+
+    const/4 v1, 0x2
+
+    if-eq v1, v0, :cond_2
+
+    const/16 v1, 0x8
+
+    if-eq v1, v0, :cond_2
+
+    const/16 v1, 0x9
+
+    if-eq v1, v0, :cond_2
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lgzz;->c:Lihj;
+
+    iget-boolean v0, v0, Lihj;->e:Z
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method public final h()Z
     .locals 1
 
     invoke-virtual {p0}, Lgzz;->c()Z
@@ -408,18 +468,32 @@
     goto :goto_0
 .end method
 
-.method public final h()Z
+.method public final i()Z
     .locals 1
 
-    invoke-virtual {p0}, Lgzz;->c()Z
+    iget-object v0, p0, Lgzz;->b:Lihk;
 
-    move-result v0
+    iget-boolean v0, v0, Lihk;->m:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lgzz;->c:Lihj;
+    const/4 v0, 0x1
 
-    iget-boolean v0, v0, Lihj;->e:Z
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public final k()Z
+    .locals 1
+
+    iget-object v0, p0, Lgzz;->b:Lihk;
+
+    iget-boolean v0, v0, Lihk;->n:Z
 
     if-eqz v0, :cond_0
 

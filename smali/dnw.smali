@@ -373,6 +373,10 @@
 
 .field private z:Ljxn;
 
+.field private z_aS:Ljxn;
+
+.field private z_aT:Ljxn;
+
 
 # direct methods
 .method public constructor <init>(Ldoc;Ldpz;Ldql;Legu;)V
@@ -3730,51 +3734,35 @@
 
     iget-object v4, v4, Ldoc;->b:Ljxn;
 
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Ldnw;->bS:Ljxn;
-
-    invoke-static {v2, v3, v4, v5}, Leav;->a(Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
+    invoke-static {v2, v3, v4}, Lduk;->a(Ljxn;Ljxn;Ljxn;)Ljxn;
 
     move-result-object v2
 
     move-object/from16 v0, p0
 
-    iput-object v2, v0, Ldnw;->bT:Ljxn;
+    iput-object v2, v0, Ldnw;->z_aS:Ljxn;
 
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Ldnw;->aL:Ljxn;
+    iget-object v2, v0, Ldnw;->z_aS:Ljxn;
+
+    invoke-static {v2}, Ldtv;->a(Ljxn;)Ljxn;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljxg;->a(Ljxn;)Ljxn;
+
+    move-result-object v2
 
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Ldnw;->cA:Ldoc;
-
-    iget-object v3, v3, Ldoc;->p:Lbva;
-
-    iget-object v3, v3, Lbva;->h:Ljxn;
+    iput-object v2, v0, Ldnw;->z_aT:Ljxn;
 
     move-object/from16 v0, p0
 
-    iget-object v4, v0, Ldnw;->cA:Ldoc;
+    iget-object v2, v0, Ldnw;->z_aT:Ljxn;
 
-    iget-object v4, v4, Ldoc;->p:Lbva;
-
-    iget-object v4, v4, Lbva;->aO:Ljxn;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Ldnw;->bT:Ljxn;
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Ldnw;->cA:Ldoc;
-
-    iget-object v6, v6, Ldoc;->p:Lbva;
-
-    iget-object v6, v6, Lbva;->t:Ljxn;
-
-    invoke-static {v2, v3, v4, v5, v6}, Ldud;->a(Ljxn;Ljxn;Ljxn;Ljxn;Ljxn;)Ljxn;
+    invoke-static {v2}, Ldtw;->a(Ljxn;)Ljxn;
 
     move-result-object v2
 

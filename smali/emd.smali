@@ -13,8 +13,6 @@
 # instance fields
 .field private A:I
 
-.field private B:Lhab;
-
 .field public final b:Leoy;
 
 .field public final c:Lgvs;
@@ -209,10 +207,6 @@
     check-cast v1, Lgvs;
 
     iput-object v1, p0, Lemd;->c:Lgvs;
-
-    move-object/from16 v0, p13
-
-    iput-object v0, p0, Lemd;->B:Lhab;
 
     move-object/from16 v0, p14
 
@@ -462,9 +456,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    iget-object v1, p0, Lemd;->B:Lhab;
-
-    invoke-virtual {v1, v0}, Lhab;->a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+    invoke-static {}, Lgzz;->f()Z
 
     :cond_2
     iget-object v1, p0, Lemd;->i:Lavl;

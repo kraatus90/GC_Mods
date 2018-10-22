@@ -24,44 +24,114 @@
 
 # virtual methods
 .method public final a(I)Liia;
-    .locals 2
+    .locals 6
 
+    const v4, 0x0
+
+    const v5, 0x0
+
+    :goto_0
     :try_start_0
-    new-instance v0, Liia;
-
     iget-object v1, p0, Lifa;->a:Landroid/hardware/camera2/CameraDevice;
+
+    new-instance v0, Liia;
 
     invoke-virtual {v1, p1}, Landroid/hardware/camera2/CameraDevice;->createCaptureRequest(I)Landroid/hardware/camera2/CaptureRequest$Builder;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Liia;-><init>(Landroid/hardware/camera2/CaptureRequest$Builder;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_2
 
+    goto :goto_1
+
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Lbhn;->getOpticalStabi()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v3, v2}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    sget-object v3, LSamsungKeys;->METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Lbhn;->getMeteringMode()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v3, v2}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    sget-object v3, LSamsungKeys;->PHASE_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Lbhn;->getPhaseAF()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v3, v2}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    sget-object v3, LSamsungKeys;->CONTROL_LIVE_HDR_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Lbhn;->getLiveHDR()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v3, v2}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
     return-object v0
 
     :catch_0
     move-exception v0
 
-    :goto_0
+    add-int/lit8 v4, v4, 0x1
+
+    if-gt v4, v5, :cond_1
+
+    if-gtz p1, :cond_0
+
+    move v1, p1
+
+    add-int/lit8 v1, v1, 0x1
+
+    move p1, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v1, p1
+
+    add-int/lit8 v1, v1, -0x1
+
+    move p1, v1
+
+    goto :goto_0
+
+    :cond_1
     new-instance v1, Lief;
 
     invoke-direct {v1, v0}, Lief;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_0
-
-    :catch_2
-    move-exception v0
-
-    goto :goto_0
 .end method
 
 .method public final a(Liic;)Liia;

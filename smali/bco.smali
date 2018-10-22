@@ -711,6 +711,31 @@
 
     invoke-virtual {p1, v0, v3}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
+    goto :goto_5
+
+    sget-object v0, LSamsungKeys;->LENS_OPTICAL_STABILIZATION_OPERATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v4, 0x1
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v0, v3}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    sget-object v0, LSamsungKeys;->CONTROL_LIVE_HDR_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Lbhn;->getLiveHDRVideo()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v0, v3}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :goto_5
     iget-object v0, p0, Lbco;->d:Lbbt;
 
     invoke-virtual {v0}, Lbbt;->f()Z
@@ -719,7 +744,7 @@
 
     if-eqz v0, :cond_6
 
-    :goto_5
+    :goto_6
     sget-object v0, Lbco;->a:Ljava/lang/String;
 
     const/16 v2, 0x20
@@ -782,7 +807,7 @@
     :cond_6
     move v1, v2
 
-    goto :goto_5
+    goto :goto_6
 .end method
 
 .method public final b(Liht;)Liia;

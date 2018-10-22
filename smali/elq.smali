@@ -174,6 +174,15 @@
 
     move-object/from16 v0, p17
 
+    invoke-static {}, Lbhn;->getPortraitSingleFolder()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const-string/jumbo v0, ""
+
+    :cond_0
     invoke-interface {p7, v0}, Lgvz;->a(Ljava/lang/String;)Lgvz;
 
     move-result-object v2

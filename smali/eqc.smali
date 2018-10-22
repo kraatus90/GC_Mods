@@ -800,7 +800,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_0
+    if-eqz v4, :cond_0
 
     const-string v4, "pref_camera_recordlocation_key"
 
@@ -1100,7 +1100,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-eqz v0, :cond_c
 
     const-string v0, "default_scope"
 
