@@ -92,7 +92,7 @@ Clean your lens for better photo quality."</string>
     <string name="all_photos">ALL PHOTOS</string>
     <string name="animation">Animation</string>
     <string name="aperture">Aperture</string>
-    <string name="app_name">Camera</string>
+    <string name="app_name">Camera MX</string>
     <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="authentication_error">Authentication Error</string>
     <string name="auto">Auto</string>
@@ -367,7 +367,7 @@ Clean your lens for better photo quality."</string>
     <string name="hint_url">Website</string>
     <string name="hit_target_to_start">To start, keep dot inside circle</string>
     <string name="horizontal_panorama_accessibility_peek">Horizontal Panorama taken</string>
-    <string name="image_intent_label">Camera</string>
+    <string name="image_intent_label">Camera MX</string>
     <string name="image_result_text">Drag corners to change selection.</string>
     <string name="image_result_text_accessibility_mode">Image selected</string>
     <string name="info_button_content_description">Discover what you can select</string>
@@ -398,7 +398,7 @@ Clean your lens for better photo quality."</string>
     <string name="micro_tutorial_body">When motion is on, each photo you take could include a short video before and after the shot. The video may be included when you share the photo.</string>
     <string name="micro_tutorial_title">Motion photo</string>
     <string name="mimetype">MIME type</string>
-    <string name="mode_camera">Camera</string>
+    <string name="mode_camera">Camera MX</string>
     <string name="mode_camera_desc">Switch to Camera Mode</string>
     <string name="mode_gouda">Portrait</string>
     <string name="mode_gouda_desc">Switch to Portrait Mode</string>
@@ -867,4 +867,14 @@ Move device slowly"</string>
     <string name="zoom_announcement">Zoom value is %.1f</string>
     <string name="zoom_minus_desc">Zoom out</string>
     <string name="zoom_plus_desc">Zoom in</string>
+    <string name="pref_parameters_camera_title">HDR+ parameters:</string>
+    <string name="pref_parameters_camera_default">0</string>
+    <string name="pref_parameters_camera_0">Default(lowest)</string>
+    <string name="pref_parameters_camera_1">Low</string>
+    <string name="pref_parameters_camera_2">Medium</string>
+    <string name="pref_parameters_camera_3">High</string>
+    <string name="pref_parameters_camera_4">Very High</string>
+    <string name="pref_parameters_camera_5">Super High</string>
+    <string name="pref_aemode_title">HDR+ Adaptive Shutter</string>
+    <string name="pref_aemode_summary">Decreases shutter speed with lower light</string>
 </resources>

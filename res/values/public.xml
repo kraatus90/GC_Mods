@@ -1094,6 +1094,8 @@
     <public type="array" name="toybox_hfr_mode_rates" id="0x7f0a003a" />
     <public type="array" name="trusted_certificates" id="0x7f0a003b" />
     <public type="array" name="video_flash_descriptions" id="0x7f0a003c" />
+    <public type="array" name="pref_parameters_camera_entries" id="0x7f0a003d" />
+    <public type="array" name="pref_parameters_camera_entryvalues" id="0x7f0a003e" />
     <public type="bool" name="abc_action_bar_embed_tabs" id="0x7f0b0000" />
     <public type="bool" name="abc_allow_stacked_button_bar" id="0x7f0b0001" />
     <public type="bool" name="abc_config_actionMenuItemAllCaps" id="0x7f0b0002" />
@@ -3606,6 +3608,16 @@
     <public type="string" name="zoom_announcement" id="0x7f110353" />
     <public type="string" name="zoom_minus_desc" id="0x7f110354" />
     <public type="string" name="zoom_plus_desc" id="0x7f110355" />
+    <public type="string" name="pref_parameters_camera_title" id="0x7f110356" />
+    <public type="string" name="pref_parameters_camera_default" id="0x7f110357" />
+    <public type="string" name="pref_parameters_camera_0" id="0x7f110358" />
+    <public type="string" name="pref_parameters_camera_1" id="0x7f110359" />
+    <public type="string" name="pref_parameters_camera_2" id="0x7f11035a" />
+    <public type="string" name="pref_parameters_camera_3" id="0x7f11035b" />
+    <public type="string" name="pref_parameters_camera_4" id="0x7f11035c" />
+    <public type="string" name="pref_parameters_camera_5" id="0x7f11035d" />
+    <public type="string" name="pref_aemode_title" id="0x7f11035e" />
+    <public type="string" name="pref_aemode_summary" id="0x7f11035f" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f120000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f120001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f120002" />
