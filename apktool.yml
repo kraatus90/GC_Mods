@@ -1,21 +1,11 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: com.google.android.GoogleCamera_6.1.013.216795316-45789781_minAPI28(arm64-v8a)(nodpi)_apkmirror.com.apk
+apkFileName: NightEnabled_GoogleCamera_6.1.013_cstark27.apk
 compressionType: false
 doNotCompress:
 - arsc
-- META-INF/services/com.fasterxml.jackson.core.JsonFactory
-- META-INF/services/com.google.protobuf.GeneratedExtensionRegistryLoader
-- bloomfilter
-- apk
-- assets/tflite_vakunov_multi-subject_2018-06-09.fb.enc
-- assets/photo-ocr/assist_recognizer_0.2.bincfg
-- data_fp16
-- assets/photo-ocr/tfmini_lstm_recognizer_ja_0.1.bincfg
-- assets/photo-ocr/tfmini_lstm_recognizer_latin_0.3_batch24.bincfg
-- assets/photo-ocr/tfmini_lstm_recognizer_zh_0.1.bincfg
-- jpg
-- res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
+- res/drawable/actionbar_translucent.9.png
 - png
+- res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png
 - res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png
 - res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png
 - res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png
@@ -124,10 +114,18 @@ doNotCompress:
 - res/drawable-xxxhdpi-v4/abc_spinner_mtrl_am_alpha.9.png
 - res/drawable-xxxhdpi-v4/abc_switch_track_mtrl_alpha.9.png
 - res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png
-- res/drawable/actionbar_translucent.9.png
 - ogg
 - res/raw/easel_finish_resources_fingerprint
 - zip
+- bloomfilter
+- apk
+- assets/tflite_vakunov_multi-subject_2018-06-09.fb.enc
+- assets/photo-ocr/assist_recognizer_0.2.bincfg
+- data_fp16
+- assets/photo-ocr/tfmini_lstm_recognizer_ja_0.1.bincfg
+- assets/photo-ocr/tfmini_lstm_recognizer_latin_0.3_batch24.bincfg
+- assets/photo-ocr/tfmini_lstm_recognizer_zh_0.1.bincfg
+- jpg
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
