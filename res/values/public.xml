@@ -2196,6 +2196,8 @@
     <public type="dimen" name="zoom_thumb_offset" id="0x7f0d01f3" />
     <public type="dimen" name="zoom_ui_height" id="0x7f0d01f4" />
     <public type="dimen" name="zoom_ui_seekbar_height" id="0x7f0d01f5" />
+    <public type="dimen" name="manuel_ui_seekbar_margin" id="0x7f0d0218" />
+    <public type="dimen" name="manuel_ui_seekbar_margin_top" id="0x7f0d0219" />
     <public type="dimen" name="category_panel_height" id="0x7f0d01f6" />
     <public type="dimen" name="category_panel_icon_size" id="0x7f0d01f7" />
     <public type="dimen" name="category_panel_margin" id="0x7f0d01f8" />
@@ -2727,6 +2729,9 @@
     <public type="id" name="action_delete" id="0x7f0e01ee" />
     <public type="id" name="tiny_planet_editor" id="0x7f0e01ef" />
     <public type="id" name="photo_editor" id="0x7f0e01f0" />
+    <public type="id" name="seekBar" id="0x7f0e01f1" />
+    <public type="id" name="seekBar2" id="0x7f0e01f2" />
+    <public type="id" name="seekBar3" id="0x7f0e01f3" />
     <public type="integer" name="abc_config_activityDefaultDur" id="0x7f0f0000" />
     <public type="integer" name="abc_config_activityShortDur" id="0x7f0f0001" />
     <public type="integer" name="album_rows_land" id="0x7f0f0002" />

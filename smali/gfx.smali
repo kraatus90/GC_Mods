@@ -136,7 +136,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_9
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -370,7 +370,38 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
+
+    invoke-static {}, Ldeeznutz/lol;->getFocusMode()Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    if-lez v1, :cond_7
+
+    sget-object v11, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v5, v11, v1}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_7
+    invoke-static {}, Ldeeznutz/lol;->getInstance()Ldeeznutz/lol;
+
+    sget-object v11, Landroid/hardware/camera2/CaptureRequest;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {}, Ldeeznutz/lol;->getFocusDistance()Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-virtual {v5, v11, v1}, Liia;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -386,7 +417,7 @@
 
     goto :goto_6
 
-    :cond_7
+    :cond_8
     invoke-static {v10}, Lfsp;->b(Ljava/util/Collection;)Lggu;
 
     move-result-object v1
@@ -406,19 +437,19 @@
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_9
     :try_start_5
     invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_a
 
     sget-object v1, Lggt;->a:Lggt;
 
     move-object/from16 v0, p2
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_c
 
     iget-object v1, p0, Lgfx;->c:Liht;
 
@@ -433,7 +464,7 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_5} :catch_1
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    :cond_9
+    :cond_a
     :goto_7
     :try_start_6
     move-object v0, v3
@@ -450,8 +481,8 @@
 
     move v3, v2
 
-    :cond_a
-    if-ge v3, v4, :cond_f
+    :cond_b
+    if-ge v3, v4, :cond_10
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -472,7 +503,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_b
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -489,7 +520,7 @@
 
     goto :goto_8
 
-    :cond_b
+    :cond_c
     :try_start_7
     iget-object v1, p0, Lgfx;->c:Liht;
 
@@ -539,7 +570,7 @@
     move v4, v2
 
     :goto_9
-    if-ge v4, v6, :cond_c
+    if-ge v4, v6, :cond_d
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -553,7 +584,7 @@
 
     goto :goto_9
 
-    :cond_c
+    :cond_d
     check-cast v3, Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -564,8 +595,8 @@
 
     move v2, v1
 
-    :cond_d
-    if-ge v2, v4, :cond_e
+    :cond_e
+    if-ge v2, v4, :cond_f
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -586,7 +617,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_e
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -600,13 +631,13 @@
 
     goto :goto_a
 
-    :cond_e
+    :cond_f
     throw v5
     :try_end_9
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_9 .. :try_end_9} :catch_0
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    :cond_f
+    :cond_10
     :try_start_a
     iget-object v1, p0, Lgfx;->b:Licz;
 

@@ -502,4 +502,6 @@
     <dimen name="zoom_thumb_offset">6.0dip</dimen>
     <dimen name="zoom_ui_height">100.0dip</dimen>
     <dimen name="zoom_ui_seekbar_height">72.0dip</dimen>
+    <dimen name="manuel_ui_seekbar_margin">36.0dip</dimen>
+    <dimen name="manuel_ui_seekbar_margin_top">210.0dip</dimen>
 </resources>
