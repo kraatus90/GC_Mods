@@ -883,6 +883,7 @@
     <public type="layout" name="viewfinder_labels_video" id="0x7f040084" />
     <public type="layout" name="white_balance_options" id="0x7f040085" />
     <public type="layout" name="zoom_ui_layout" id="0x7f040086" />
+    <public type="layout" name="hide" id="0x7f040087" />
     <public type="layout" name="on_screen_hint" id="0x7f04005b" />
     <public type="layout" name="photosphere_tutorial" id="0x7f040062" />
     <public type="layout" name="portrait_tutorial" id="0x7f040064" />
@@ -3774,19 +3775,20 @@
     <public type="string" name="pref_smas_2200" id="0x7f1103e9" />
     <public type="string" name="pref_smas_3300" id="0x7f1103ea" />
     <public type="string" name="pref_siwl_title" id="0x7f1103eb" />
-    <public type="string" name="APKTOOL_DUMMY_3ec" id="0x7f1103ec" />
-    <public type="string" name="APKTOOL_DUMMY_3ed" id="0x7f1103ed" />
-    <public type="string" name="APKTOOL_DUMMY_3ee" id="0x7f1103ee" />
-    <public type="string" name="APKTOOL_DUMMY_3ef" id="0x7f1103ef" />
-    <public type="string" name="APKTOOL_DUMMY_3f0" id="0x7f1103f0" />
-    <public type="string" name="APKTOOL_DUMMY_3f1" id="0x7f1103f1" />
-    <public type="string" name="APKTOOL_DUMMY_3f2" id="0x7f1103f2" />
+    <public type="string" name="pref_siwl_title_summary" id="0x7f1103ec" />
+    <public type="string" name="pref_pmode_title_summary" id="0x7f1103ed" />
+    <public type="string" name="pref_pmdf_title_summary" id="0x7f1103ee" />
+    <public type="string" name="pref_compress_dng_title_summary" id="0x7f1103ef" />
+    <public type="string" name="pref_sblp_title_summary" id="0x7f1103f0" />
+    <public type="string" name="pref_parameters_camera_title_summary" id="0x7f1103f1" />
+    <public type="string" name="pref_input_model_title_summary" id="0x7f1103f2" />
     <public type="string" name="pref_aemode_title" id="0x7f1103f3" />
+    <public type="string" name="pref_aemode_default" id="0x7f1103f4" />
+    <public type="string" name="pref_aemode_0" id="0x7f1103f5" />
+    <public type="string" name="pref_aemode_1" id="0x7f1103f6" />
     <public type="string" name="pref_portrait_hdrenh_title" id="0x7f1103f7" />
     <public type="string" name="pref_portrait_hdrenh_summary" id="0x7f1103f8" />
-    <public type="string" name="APKTOOL_DUMMY_3f4" id="0x7f1103f4" />
-    <public type="string" name="APKTOOL_DUMMY_3f5" id="0x7f1103f5" />
-    <public type="string" name="APKTOOL_DUMMY_3f6" id="0x7f1103f6" />
+    <public type="string" name="pref_pmode_summary" id="0x7f1103f9" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f120000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f120001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f120002" />

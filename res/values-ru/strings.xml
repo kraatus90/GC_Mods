@@ -528,7 +528,7 @@
     <string name="pref_category_photo_sphere_and_panorama">Photo Sphere и панорамные снимки</string>
     <string name="pref_category_resolution_quality">Разрешение и качество</string>
     <string name="pref_developer_settings">Настройки для разработчиков</string>
-    <string name="pref_experimental">Экспериментальная версия</string>
+    <string name="pref_experimental">Настройки RAW</string>
     <string name="pref_exposure_label">ЭКСПОЗИЦИЯ</string>
     <string name="pref_exposure_title">Экспозиция</string>
     <string name="pref_gcam_hdr_raw_summary">Сохранять фотографии HDR+ в формате RAW DNG в дополнение к обычному JPG</string>
@@ -609,9 +609,7 @@
     <string name="processing_panorama">Создание панорамы...</string>
     <string name="processing_photo_sphere">Создание Photo Sphere…</string>
     <string name="reason_storage_failure">Ошибка хранилища фотографий.</string>
-    <string name="record_location_notification">"Добавление геотегов включено.
-HDR+ выключен.
-Для включения HDR+ выберите модель в настройках мода B-S-G"</string>
+    <string name="record_location_notification">Добавление геотегов включено.</string>
     <string name="refocus_accessibility_peek">Сделан снимок с эффектом размытия.</string>
     <string name="refocus_action_name">Измените фокус фотографии</string>
     <string name="refocus_action_promote">Перетащите, чтобы настроить размытие</string>
@@ -663,7 +661,7 @@ HDR+ выключен.
     <string name="setting_general">Общие</string>
     <string name="setting_google_feedback">Отправить отзыв</string>
     <string name="setting_google_help">Справка</string>
-    <string name="setting_google_help_and_feedback">Справка/отзыв</string>
+    <string name="setting_google_help_and_feedback">Другое</string>
     <string name="setting_location">Местоположение</string>
     <string name="setting_off">Выкл.</string>
     <string name="setting_on">Вкл.</string>
@@ -766,49 +764,42 @@ HDR+ выключен.
     <string name="zoom_announcement">Масштаб: %.1f</string>
     <string name="zoom_minus_desc">Уменьшить</string>
     <string name="zoom_plus_desc">Увеличить</string>
-    <string name="pref_bsg_mod_title">Настройки мода B-S-G :</string>
+    <string name="pref_bsg_mod_title">Расширенные настройки</string>
     <string name="pref_all_title_summary">Чтобы изменения вступили в силу требуется перезапуск приложения</string>
     <string name="pref_input_model_title">Модель:</string>
-    <string name="pref_input_model_Def">"-= По умолчанию =-
-Values from BUILD.PROP"</string>
-    <string name="pref_input_model_N5">"-= Nexus 5 =-
-Hammerhead(LGE)"</string>
-    <string name="pref_input_model_N6">"-= Nexus 6 =-
-Shamu(Motorola)"</string>
-    <string name="pref_input_model_N5X">"-= Nexus 5X =-
-Bullhead(LGE)"</string>
-    <string name="pref_input_model_N6P">"-= Nexus 6P =-
-Angler(Huawei)"</string>
-    <string name="pref_input_model_PxlXLTai">"-= Pixel XL =-
-Marlin+taimen(Google)"</string>
-    <string name="pref_input_model_Tai">"-= Pixel II XL =-
-Taimen(Google)"</string>
-    <string name="pref_input_model_Wall">"-= Pixel II =-
-Walleye(Google)"</string>
+    <string name="pref_input_model_default">0</string>
+    <string name="pref_input_model_Def">По умолчанию</string>
+    <string name="pref_input_model_N5">Nexus 5</string>
+    <string name="pref_input_model_N6">Nexus 6</string>
+    <string name="pref_input_model_N5X">Nexus 5X</string>
+    <string name="pref_input_model_N6P">Nexus 6P</string>
+    <string name="pref_input_model_PxlXLTai">Pixel XL</string>
+    <string name="pref_input_model_Tai">Pixel II XL</string>
+    <string name="pref_input_model_Wall">Pixel II</string>
     <string name="pref_config_camera_title">Конфигурация HDR+:</string>
     <string name="pref_config_camera_0">Авто</string>
     <string name="pref_config_camera_1">Pixel 2016 Tuning</string>
     <string name="pref_config_camera_2">Experimental Features (Pixel)</string>
-    <string name="pref_config_camera_3">Nexus 6 Hdr+ Auto</string>
-    <string name="pref_config_camera_4">Nexus 6 Hdr+ Auto NoZsl</string>
-    <string name="pref_config_camera_5">Nexus 5X Zsl</string>
-    <string name="pref_config_camera_6">Nexus 5X No Zsl</string>
+    <string name="pref_config_camera_3">Nexus 6 Hdr+ Авто</string>
+    <string name="pref_config_camera_4">Nexus 6 Hdr+ Авто (ZSL выкл.)</string>
+    <string name="pref_config_camera_5">Nexus 5X ZSL</string>
+    <string name="pref_config_camera_6">Nexus 5X (ZSL выкл.)</string>
     <string name="pref_config_camera_7">Nexus 6P</string>
-    <string name="pref_config_camera_8">Pixel 2016 Zsl Hdr</string>
-    <string name="pref_config_camera_9">Pixel 2017 Zsl Hdr+</string>
+    <string name="pref_config_camera_8">Pixel 2016 ZSL</string>
+    <string name="pref_config_camera_9">Pixel 2017 ZSL</string>
     <string name="pref_all_title_summary_config">"%s
-В режиме AUTO, конфиг выставляется в зависимости от выбранной модели."</string>
+В режиме авто, конфиг выставляется в зависимости от выбранной модели."</string>
     <string name="pref_parameters_camera_title">Параметры HDR+:</string>
-    <string name="pref_parameters_camera_0">Самые низкие (по умолчанию)</string>
+    <string name="pref_parameters_camera_0">Минимальные</string>
     <string name="pref_parameters_camera_1">Низкие</string>
     <string name="pref_parameters_camera_2">Средние</string>
     <string name="pref_parameters_camera_3">Высокие</string>
     <string name="pref_parameters_camera_4">Очень высокие</string>
     <string name="pref_parameters_camera_5">Супер высокие</string>
-    <string name="setting_sblpf_title">Настройка баланса белого фронтальной камеры:</string>
-    <string name="pref_sblpf_0">16.00(По умолчанию)</string>
-    <string name="pref_sblp_title">Ручная настройка баланса белого:</string>
-    <string name="pref_enable_sblp_title">Включить</string>
+    <string name="setting_sblpf_title">Настройка фронтальной камеры:</string>
+    <string name="pref_sblpf_0">16.00 (По умолчанию)</string>
+    <string name="pref_sblp_title">Настройка уровня черного</string>
+    <string name="pref_enable_sblp_title">Включить для основной камеры</string>
     <string name="pref_all_title_summary_sblp">Если выключено, используются настройки по умолчанию.</string>
     <string name="setting_dg_title">"Малиновый
 ... - ...
@@ -830,16 +821,16 @@ Walleye(Google)"</string>
 Нейтральный = 64.00
 ... + ...
 Желтый"</string>
-    <string name="pref_sblp_0">64.00(По умолчанию)</string>
+    <string name="pref_sblp_0">64.00 (По умолчанию)</string>
     <string name="pref_qjpg_title">Итоговое качество jpg HDR+:</string>
     <string name="pref_qjpg_95">95% (По умолчанию)</string>
     <string name="pref_compress_dng_title">Сжатие RAW(*.DNG)</string>
     <string name="pref_sbe_title">Выключить SmartBurst</string>
     <string name="pref_all_title_summary_sbe">Для корректной работы тач-фокуса. Если включено, будет использоваться конфигурация N6P или Pixel.</string>
-    <string name="pref_pmdf_title">Увеличить детализацию HDR+ на фронт.камере (не работает на моделях N5 и N6)</string>
-    <string name="pref_pmode_title">Использовать портретный режим (вместо размытия)</string>
+    <string name="pref_pmdf_title">Увеличить детализацию HDR+ на фронт.камере</string>
+    <string name="pref_pmode_title">Использовать портретный режим для всех моделей</string>
     <string name="pref_refocusmb_title">Разрешение фото в режиме размытия:</string>
-    <string name="pref_refocusmb_5">5 Мп (По умолчанию)</string>
+    <string name="pref_refocusmb_5">5 Мп</string>
     <string name="pref_refocusmb_8">8 Мп</string>
     <string name="pref_refocusmb_10">10 Мп</string>
     <string name="pref_refocusmb_12">12 Мп</string>
@@ -847,15 +838,18 @@ Walleye(Google)"</string>
 Значение не должно превышать реальный размер модуля камеры"</string>
     <string name="pref_smas_title">Максимальная чувствительность аналогового усиления:</string>
     <string name="pref_smas_0">Авто</string>
-    <string name="pref_smas_110">110 (для RN4X)</string>
+    <string name="pref_smas_110">110</string>
     <string name="pref_smas_500">500</string>
     <string name="pref_smas_1000">1000</string>
     <string name="pref_smas_1550">1550</string>
-    <string name="pref_smas_1600">1600 (Макс. для N5 и N6)</string>
-    <string name="pref_smas_2200">2200 (MI5S по умолчанию)</string>
+    <string name="pref_smas_1600">1600</string>
+    <string name="pref_smas_2200">2200</string>
     <string name="pref_smas_3300">3300</string>
     <string name="pref_siwl_title">Мин.сглаживание фото HDR+</string>
+    <string name="pref_pmdf_title_summary">Не работает при выборе моделей N5 и N6</string>
+    <string name="pref_sblp_title_summary">Ручные настройки уровня черного для основной и фронтальной камеры</string>
     <string name="pref_aemode_title">Расширенная авто-экспозиция HDR+</string>
     <string name="pref_portrait_hdrenh_title">Использовать расширенный HDR+ для портретного режима</string>
-    <string name="pref_portrait_hdrenh_summary">Расширенный динамический диапазон, но выключается ZSL</string>
+    <string name="pref_portrait_hdrenh_summary">Расширенный динамический диапазон, но ZSL не используется</string>
+    <string name="pref_pmode_summary">Заменяет режим размытия</string>
 </resources>

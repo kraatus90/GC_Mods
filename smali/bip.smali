@@ -119,7 +119,7 @@
 
     const-string v1, "camera.af.debug.show"
 
-    invoke-direct {v0, v1, v3}, Lbku;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, v1, v2}, Lbku;-><init>(Ljava/lang/String;Z)V
 
     sput-object v0, Lbip;->i:Lbku;
 

@@ -600,7 +600,7 @@ Clean your lens for better photo quality."</string>
     <string name="pref_category_photo_sphere_and_panorama">Photo sphere and panorama</string>
     <string name="pref_category_resolution_quality">Resolution &amp; quality</string>
     <string name="pref_developer_settings">Developer Settings</string>
-    <string name="pref_experimental">Experimental</string>
+    <string name="pref_experimental">RAW settings</string>
     <string name="pref_exposure_default">0</string>
     <string name="pref_exposure_label">EXPOSURE</string>
     <string name="pref_exposure_title">Exposure</string>
@@ -706,9 +706,7 @@ Clean your lens for better photo quality."</string>
     <string name="processing_panorama">Processing Panorama</string>
     <string name="processing_photo_sphere">Processing Photo Sphere</string>
     <string name="reason_storage_failure">Photo storage failure.</string>
-    <string name="record_location_notification">"Save Location is On.
-HDR+ is turned off.
-To enable HDR+, select the model in the B-S-G MOD settings."</string>
+    <string name="record_location_notification">Save Location is On.</string>
     <string name="refocus_accessibility_peek">Lens blur taken</string>
     <string name="refocus_action_name">Change where the photo is focused</string>
     <string name="refocus_action_promote">Drag to adjust lens blur</string>
@@ -761,7 +759,7 @@ Keep subject centered."</string>
     <string name="setting_general">General</string>
     <string name="setting_google_feedback">Send feedback</string>
     <string name="setting_google_help">Help</string>
-    <string name="setting_google_help_and_feedback">Help &amp; feedback</string>
+    <string name="setting_google_help_and_feedback">Others</string>
     <string name="setting_location">Location</string>
     <string name="setting_none_value">none</string>
     <string name="setting_off">Off</string>
@@ -869,26 +867,18 @@ Move device slowly"</string>
     <string name="zoom_announcement">Zoom value is %.1f</string>
     <string name="zoom_minus_desc">Zoom out</string>
     <string name="zoom_plus_desc">Zoom in</string>
-    <string name="pref_bsg_mod_title">B-S-G MOD settings:</string>
+    <string name="pref_bsg_mod_title">Advanced settings</string>
     <string name="pref_all_title_summary">After changing any setting, you must completely close the application, the changes will take effect the next time you start.</string>
     <string name="pref_input_model_title">Model:</string>
     <string name="pref_input_model_default">0</string>
-    <string name="pref_input_model_Def">"-= Default =-
-Values from BUILD.PROP"</string>
-    <string name="pref_input_model_N5">"-= Nexus 5 =-
-Hammerhead(LGE)"</string>
-    <string name="pref_input_model_N6">"-= Nexus 6 =-
-Shamu(Motorola)"</string>
-    <string name="pref_input_model_N5X">"-= Nexus 5X =-
-Bullhead(LGE)"</string>
-    <string name="pref_input_model_N6P">"-= Nexus 6P =-
-Angler(Huawei)"</string>
-    <string name="pref_input_model_PxlXLTai">"-= Pixel XL =-
-Marlin+taimen(Google)"</string>
-    <string name="pref_input_model_Tai">"-= Pixel II XL =-
-Taimen(Google)"</string>
-    <string name="pref_input_model_Wall">"-= Pixel II =-
-Walleye(Google)"</string>
+    <string name="pref_input_model_Def">Default</string>
+    <string name="pref_input_model_N5">Nexus 5</string>
+    <string name="pref_input_model_N6">Nexus 6</string>
+    <string name="pref_input_model_N5X">Nexus 5X</string>
+    <string name="pref_input_model_N6P">Nexus 6P</string>
+    <string name="pref_input_model_PxlXLTai">Pixel XL</string>
+    <string name="pref_input_model_Tai">Pixel II XL</string>
+    <string name="pref_input_model_Wall">Pixel II</string>
     <string name="pref_config_camera_title">Config camera HDR+:</string>
     <string name="pref_config_camera_default">0</string>
     <string name="pref_config_camera_0">AUTO</string>
@@ -943,11 +933,9 @@ In AUTO mode, the config depends on the Model."</string>
     <string name="pref_sblpf_p15">64.00</string>
     <string name="pref_sblpf_p16">64.50</string>
     <string name="pref_sblpf_p17">65.00</string>
-    <string name="pref_sblp_title">Manual fixed black level offset:</string>
+    <string name="pref_sblp_title">Black level settings</string>
     <string name="pref_enable_sblp_title">Enable</string>
-    <string name="pref_all_title_summary_sblp">"If disabled, auto values are used.
-Arnova8G2 Mod Removing the pinkish/reddish:
-[63.25, 63.5, 63.25, 63.5]"</string>
+    <string name="pref_all_title_summary_sblp">If disabled, auto values are used.</string>
     <string name="setting_dg_title">"Crimson
 ... - ...
 Neutral = 64.00
@@ -1027,8 +1015,7 @@ Yellow"</string>
     <string name="pref_sbe_title">SmartBurst enabled</string>
     <string name="pref_all_title_summary_sbe">"Incorrect work of touch-focus is possible.
 If enabled, the config of the Nexus6P or Pixels will be used"</string>
-    <string name="pref_pmdf_title">"Increase the detail of the HDR+ in the front camera
-(Does not work on Model: Nexus5 and Nexus6)"</string>
+    <string name="pref_pmdf_title">Increase the detail of the HDR+</string>
     <string name="pref_pmode_title">Portrait mode on all models</string>
     <string name="pref_refocusmb_title">Lens blur megapixels:</string>
     <string name="pref_refocusmb_default">5</string>
@@ -1041,25 +1028,30 @@ The value should not exceed the actual size of the camera module"</string>
     <string name="pref_smas_title">Max.sensitivity analog gain:</string>
     <string name="pref_smas_default">0</string>
     <string name="pref_smas_0">Auto</string>
-    <string name="pref_smas_110">110(need for mido ov)</string>
+    <string name="pref_smas_110">110</string>
     <string name="pref_smas_500">500</string>
     <string name="pref_smas_1000">1000</string>
     <string name="pref_smas_1550">1550</string>
-    <string name="pref_smas_1600">1600(Max for N5 and N6)</string>
-    <string name="pref_smas_2200">2200(MI5S default)</string>
+    <string name="pref_smas_1600">1600</string>
+    <string name="pref_smas_2200">2200</string>
     <string name="pref_smas_3300">3300</string>
     <string name="pref_siwl_title">Minimal HDR+ smoothing</string>
-    <item type="string" name="APKTOOL_DUMMY_3ec">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3ed">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3ee">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3ef">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3f0">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3f1">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3f2">false</item>
+    <string name="pref_siwl_title_summary">Turning off the software noise</string>
+    <string name="pref_pmode_title_summary">If enabled, Blur mode is replaced by Portrait mode</string>
+    <string name="pref_pmdf_title_summary">"Increasing the detail of HDR + on the front camera
+(Does not work on the model: Nexus 5 and Nexus 6)"</string>
+    <string name="pref_compress_dng_title_summary">Allows you to compress the RAW file from 24.9MB to 12.5MB</string>
+    <string name="pref_sblp_title_summary">Manual black level settings for the main and front camera</string>
+    <string name="pref_parameters_camera_title_summary">"%s
+Responsible for the number of photos taken to get one picture.
+Affects the quality of the photo in poor lighting conditions"</string>
+    <string name="pref_input_model_title_summary">"%s
+Affects the color palette, the power of noise, sharpness and processing of small parts"</string>
     <string name="pref_aemode_title">Auto-exposure mode</string>
+    <string name="pref_aemode_default">0</string>
+    <string name="pref_aemode_0">Default</string>
+    <string name="pref_aemode_1">Slow shutter</string>
     <string name="pref_portrait_hdrenh_title">HDR+ Enhanced Portrait Mode</string>
     <string name="pref_portrait_hdrenh_summary">Increases dynamic range with Portrait Mode but disables ZSL</string>
-    <item type="string" name="APKTOOL_DUMMY_3f4">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3f5">false</item>
-    <item type="string" name="APKTOOL_DUMMY_3f6">false</item>
+    <string name="pref_pmode_summary">Replace Lens Blur with Portrait Mode</string>
 </resources>
