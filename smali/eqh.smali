@@ -962,7 +962,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_1b
+    if-eqz v10, :cond_1a
 
     const-string v0, "pref_screen_extra"
 
@@ -990,6 +990,14 @@
 
     move-result v3
 
+    iget-object v3, p0, Leqh;->e:Lbir;
+
+    iget-object v3, v3, Lbir;->b:Lbhn;
+
+    invoke-virtual {v3}, Lbhn;->ims()I
+
+    move-result v3
+
     const-string v0, "is_smartburst_supported"
 
     invoke-virtual {v10, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
@@ -1007,6 +1015,14 @@
     const-string v0, "is_developer_settings_supported"
 
     invoke-virtual {v10, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    iget-object v0, p0, Leqh;->e:Lbir;
+
+    iget-object v0, v0, Lbir;->b:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->ims()I
 
     move-result v0
 
@@ -1725,42 +1741,13 @@
 
     check-cast v0, Lcom/google/android/apps/camera/legacy/app/settings/ManagedSwitchPreference;
 
-    iget-object v1, p0, Leqh;->f:Lgds;
-
-    invoke-virtual {v1}, Lgds;->d()Z
-
-    move-result v1
-
-    if-nez v1, :cond_16
-
-    const-string v1, "pref_category_general"
-
-    invoke-virtual {p0, v1}, Leqh;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/preference/PreferenceCategory;
-
-    invoke-virtual {v1, v0}, Landroid/preference/PreferenceCategory;->removePreference(Landroid/preference/Preference;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_16
-
-    sget-object v0, Leqh;->k:Ljava/lang/String;
-
-    const-string v1, "Could not remove preference to disable sounds"
-
-    invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_16
     iget-object v0, p0, Leqh;->i:Ljht;
 
     invoke-virtual {v0}, Ljht;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_16
 
     iget-object v0, p0, Leqh;->i:Ljht;
 
@@ -1778,7 +1765,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_16
 
     const-string v0, "pref_category_general"
 
@@ -1840,7 +1827,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_16
 
     sget-object v0, Leqh;->k:Ljava/lang/String;
 
@@ -1848,7 +1835,7 @@
 
     invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_17
+    :cond_16
     invoke-virtual {v11}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -1863,7 +1850,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_17
 
     const-string v1, "android.permission.ACCESS_FINE_LOCATION"
 
@@ -1875,13 +1862,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_18
 
-    :cond_18
+    :cond_17
     move v6, v9
 
-    :cond_19
-    if-eqz v6, :cond_1a
+    :cond_18
+    if-eqz v6, :cond_19
 
     invoke-virtual {p0}, Leqh;->a()V
 
@@ -1899,7 +1886,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_19
 
     sget-object v0, Leqh;->k:Ljava/lang/String;
 
@@ -1907,10 +1894,10 @@
 
     invoke-static {v0, v1}, Lbhz;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_1a
+    :cond_19
     return-void
 
-    :cond_1b
+    :cond_1a
     move v4, v6
 
     move v2, v6

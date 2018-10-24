@@ -169,23 +169,6 @@
     :try_start_0
     iget-object v2, p0, Lgdj;->g:Lbip;
 
-    iget-object v3, v2, Lbip;->b:Lgzz;
-
-    invoke-virtual {v3}, Lgzz;->b()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    iget-object v3, v2, Lbip;->b:Lgzz;
-
-    invoke-virtual {v3}, Lgzz;->c()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    :cond_0
     iget-object v2, v2, Lbip;->a:Lbli;
 
     sget-object v3, Lbip;->k:Lbku;
@@ -194,19 +177,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_1
-    if-nez v0, :cond_2
+    :cond_0
+    if-nez v0, :cond_1
 
     monitor-exit v1
 
     :goto_0
     return-void
 
-    :cond_2
+    :cond_1
     iget-object v0, p0, Lgdj;->d:Liag;
 
     const/4 v2, 0x0
@@ -225,13 +208,13 @@
 
     iget-object v2, p0, Lgdj;->j:Lich;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     iget-object v2, p0, Lgdj;->j:Lich;
 
     invoke-interface {v2}, Lich;->close()V
 
-    :cond_3
+    :cond_2
     new-instance v2, Lgct;
 
     invoke-direct {v2, p0}, Lgct;-><init>(Lgdj;)V

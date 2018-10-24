@@ -1195,6 +1195,12 @@
 
     const/4 v0, 0x3
 
+    invoke-virtual {v1}, Lbhn;->refocusmp()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     iget-object v2, v1, Lbhn;->b:Lgzz;
 
     iget-object v2, v2, Lgzz;->b:Lihk;

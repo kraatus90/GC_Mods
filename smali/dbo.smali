@@ -240,6 +240,8 @@
 
     if-nez v10, :cond_4
 
+    if-eqz v10, :cond_4
+
     iget-object v10, v15, Ldbn;->E:Lgzz;
 
     iget-object v10, v10, Lgzz;->b:Lihk;

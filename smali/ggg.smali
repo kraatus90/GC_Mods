@@ -27,10 +27,12 @@
 
 .field private j:Lggk;
 
+.field public k:I
+
 
 # direct methods
 .method public constructor <init>(Licv;Licz;Lggn;)V
-    .locals 2
+    .locals 3
 
     const/4 v1, 0x0
 
@@ -58,6 +60,15 @@
 
     const/16 v0, 0x78
 
+    sget v2, Lbhn;->k:I
+
+    if-eqz v2, :cond_0
+
+    const/16 v0, 0x0
+
+    const/4 v1, 0x0
+
+    :cond_0
     iput v0, p0, Lggg;->a:I
 
     const/4 v0, 0x6

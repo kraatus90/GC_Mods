@@ -747,8 +747,8 @@
     <public type="drawable" name="zoom_slider_thumb" id="0x7f020153" />
     <public type="drawable" name="menu_bg_pressed" id="0x7f020116" />
     <public type="drawable" name="common_full_open_on_phone" id="0x7f02006c" />
-    <public type="mipmap" name="adaptiveproduct_pixelcamera_launcher" id="0x7f030002" />
     <public type="mipmap" name="adaptiveproduct_pixelcamera" id="0x7f030006" />
+    <public type="mipmap" name="adaptiveproduct_pixelcamera_launcher" id="0x7f030002" />
     <public type="mipmap" name="adaptiveproduct_pixelcamera_background_color_108" id="0x7f030000" />
     <public type="mipmap" name="adaptiveproduct_pixelcamera_foreground_color_108" id="0x7f030001" />
     <public type="mipmap" name="logo_google_camera" id="0x7f030003" />
@@ -1094,6 +1094,24 @@
     <public type="array" name="toybox_hfr_mode_rates" id="0x7f0a003a" />
     <public type="array" name="trusted_certificates" id="0x7f0a003b" />
     <public type="array" name="video_flash_descriptions" id="0x7f0a003c" />
+    <public type="array" name="pref_input_model_entries" id="0x7f0a003d" />
+    <public type="array" name="pref_input_model_entryvalues" id="0x7f0a003e" />
+    <public type="array" name="pref_config_camera_entries" id="0x7f0a003f" />
+    <public type="array" name="pref_config_camera_entryvalues" id="0x7f0a0040" />
+    <public type="array" name="pref_parameters_camera_entries" id="0x7f0a0041" />
+    <public type="array" name="pref_parameters_camera_entryvalues" id="0x7f0a0042" />
+    <public type="array" name="pref_sblpf_entries" id="0x7f0a0043" />
+    <public type="array" name="pref_sblpf_entryvalues" id="0x7f0a0044" />
+    <public type="array" name="pref_sblp_entries" id="0x7f0a0045" />
+    <public type="array" name="pref_sblp_entryvalues" id="0x7f0a0046" />
+    <public type="array" name="pref_qjpg_entries" id="0x7f0a0047" />
+    <public type="array" name="pref_qjpg_entryvalues" id="0x7f0a0048" />
+    <public type="array" name="pref_refocusmb_entries" id="0x7f0a0049" />
+    <public type="array" name="pref_refocusmb_entryvalues" id="0x7f0a004a" />
+    <public type="array" name="pref_smas_entries" id="0x7f0a004b" />
+    <public type="array" name="pref_smas_entryvalues" id="0x7f0a004c" />
+    <public type="array" name="pref_aemode_entries" id="0x7f0a004d" />
+    <public type="array" name="pref_aemode_entryvalues" id="0x7f0a004e" />
     <public type="bool" name="abc_action_bar_embed_tabs" id="0x7f0b0000" />
     <public type="bool" name="abc_allow_stacked_button_bar" id="0x7f0b0001" />
     <public type="bool" name="abc_config_actionMenuItemAllCaps" id="0x7f0b0002" />
@@ -3606,6 +3624,169 @@
     <public type="string" name="zoom_announcement" id="0x7f110353" />
     <public type="string" name="zoom_minus_desc" id="0x7f110354" />
     <public type="string" name="zoom_plus_desc" id="0x7f110355" />
+    <public type="string" name="pref_bsg_mod_title" id="0x7f110356" />
+    <public type="string" name="pref_all_title_summary" id="0x7f110357" />
+    <public type="string" name="pref_input_model_title" id="0x7f110358" />
+    <public type="string" name="pref_input_model_default" id="0x7f110359" />
+    <public type="string" name="pref_input_model_Def" id="0x7f11035a" />
+    <public type="string" name="pref_input_model_N5" id="0x7f11035b" />
+    <public type="string" name="pref_input_model_N6" id="0x7f11035c" />
+    <public type="string" name="pref_input_model_N5X" id="0x7f11035d" />
+    <public type="string" name="pref_input_model_N6P" id="0x7f11035e" />
+    <public type="string" name="pref_input_model_PxlXLTai" id="0x7f11035f" />
+    <public type="string" name="pref_input_model_Tai" id="0x7f110360" />
+    <public type="string" name="pref_input_model_Wall" id="0x7f110361" />
+    <public type="string" name="pref_config_camera_title" id="0x7f110362" />
+    <public type="string" name="pref_config_camera_default" id="0x7f110363" />
+    <public type="string" name="pref_config_camera_0" id="0x7f110364" />
+    <public type="string" name="pref_config_camera_1" id="0x7f110365" />
+    <public type="string" name="pref_config_camera_2" id="0x7f110366" />
+    <public type="string" name="pref_config_camera_3" id="0x7f110367" />
+    <public type="string" name="pref_config_camera_4" id="0x7f110368" />
+    <public type="string" name="pref_config_camera_5" id="0x7f110369" />
+    <public type="string" name="pref_config_camera_6" id="0x7f11036a" />
+    <public type="string" name="pref_config_camera_7" id="0x7f11036b" />
+    <public type="string" name="pref_config_camera_8" id="0x7f11036c" />
+    <public type="string" name="pref_config_camera_9" id="0x7f11036d" />
+    <public type="string" name="pref_all_title_summary_config" id="0x7f11036e" />
+    <public type="string" name="pref_parameters_camera_title" id="0x7f11036f" />
+    <public type="string" name="pref_parameters_camera_default" id="0x7f110370" />
+    <public type="string" name="pref_parameters_camera_0" id="0x7f110371" />
+    <public type="string" name="pref_parameters_camera_1" id="0x7f110372" />
+    <public type="string" name="pref_parameters_camera_2" id="0x7f110373" />
+    <public type="string" name="pref_parameters_camera_3" id="0x7f110374" />
+    <public type="string" name="pref_parameters_camera_4" id="0x7f110375" />
+    <public type="string" name="pref_parameters_camera_5" id="0x7f110376" />
+    <public type="string" name="setting_sblpf_title" id="0x7f110377" />
+    <public type="string" name="pref_sblpf_default" id="0x7f110378" />
+    <public type="string" name="pref_sblpf_m12" id="0x7f110379" />
+    <public type="string" name="pref_sblpf_m11" id="0x7f11037a" />
+    <public type="string" name="pref_sblpf_m10" id="0x7f11037b" />
+    <public type="string" name="pref_sblpf_m9" id="0x7f11037c" />
+    <public type="string" name="pref_sblpf_m8" id="0x7f11037d" />
+    <public type="string" name="pref_sblpf_m7" id="0x7f11037e" />
+    <public type="string" name="pref_sblpf_m6" id="0x7f11037f" />
+    <public type="string" name="pref_sblpf_m5" id="0x7f110380" />
+    <public type="string" name="pref_sblpf_m4" id="0x7f110381" />
+    <public type="string" name="pref_sblpf_m3" id="0x7f110382" />
+    <public type="string" name="pref_sblpf_m2" id="0x7f110383" />
+    <public type="string" name="pref_sblpf_m1" id="0x7f110384" />
+    <public type="string" name="pref_sblpf_0" id="0x7f110385" />
+    <public type="string" name="pref_sblpf_p1" id="0x7f110386" />
+    <public type="string" name="pref_sblpf_p2" id="0x7f110387" />
+    <public type="string" name="pref_sblpf_p3" id="0x7f110388" />
+    <public type="string" name="pref_sblpf_p4" id="0x7f110389" />
+    <public type="string" name="pref_sblpf_p5" id="0x7f11038a" />
+    <public type="string" name="pref_sblpf_p6" id="0x7f11038b" />
+    <public type="string" name="pref_sblpf_p7" id="0x7f11038c" />
+    <public type="string" name="pref_sblpf_p8" id="0x7f11038d" />
+    <public type="string" name="pref_sblpf_p9" id="0x7f11038e" />
+    <public type="string" name="pref_sblpf_p10" id="0x7f11038f" />
+    <public type="string" name="pref_sblpf_p11" id="0x7f110390" />
+    <public type="string" name="pref_sblpf_p12" id="0x7f110391" />
+    <public type="string" name="pref_sblpf_p13" id="0x7f110392" />
+    <public type="string" name="pref_sblpf_p14" id="0x7f110393" />
+    <public type="string" name="pref_sblpf_p15" id="0x7f110394" />
+    <public type="string" name="pref_sblpf_p16" id="0x7f110395" />
+    <public type="string" name="pref_sblpf_p17" id="0x7f110396" />
+    <public type="string" name="pref_sblp_title" id="0x7f110397" />
+    <public type="string" name="pref_enable_sblp_title" id="0x7f110398" />
+    <public type="string" name="pref_all_title_summary_sblp" id="0x7f110399" />
+    <public type="string" name="setting_dg_title" id="0x7f11039a" />
+    <public type="string" name="setting_r_title" id="0x7f11039b" />
+    <public type="string" name="setting_lg_title" id="0x7f11039c" />
+    <public type="string" name="setting_b_title" id="0x7f11039d" />
+    <public type="string" name="pref_sblp_default" id="0x7f11039e" />
+    <public type="string" name="pref_sblp_m20" id="0x7f11039f" />
+    <public type="string" name="pref_sblp_m19" id="0x7f1103a0" />
+    <public type="string" name="pref_sblp_m18" id="0x7f1103a1" />
+    <public type="string" name="pref_sblp_m17" id="0x7f1103a2" />
+    <public type="string" name="pref_sblp_m16" id="0x7f1103a3" />
+    <public type="string" name="pref_sblp_m15" id="0x7f1103a4" />
+    <public type="string" name="pref_sblp_m14" id="0x7f1103a5" />
+    <public type="string" name="pref_sblp_m13" id="0x7f1103a6" />
+    <public type="string" name="pref_sblp_m12" id="0x7f1103a7" />
+    <public type="string" name="pref_sblp_m11" id="0x7f1103a8" />
+    <public type="string" name="pref_sblp_m10" id="0x7f1103a9" />
+    <public type="string" name="pref_sblp_m9" id="0x7f1103aa" />
+    <public type="string" name="pref_sblp_m8" id="0x7f1103ab" />
+    <public type="string" name="pref_sblp_m8a" id="0x7f1103ac" />
+    <public type="string" name="pref_sblp_m7" id="0x7f1103ad" />
+    <public type="string" name="pref_sblp_m6" id="0x7f1103ae" />
+    <public type="string" name="pref_sblp_m5" id="0x7f1103af" />
+    <public type="string" name="pref_sblp_m4" id="0x7f1103b0" />
+    <public type="string" name="pref_sblp_m3" id="0x7f1103b1" />
+    <public type="string" name="pref_sblp_m2" id="0x7f1103b2" />
+    <public type="string" name="pref_sblp_m1" id="0x7f1103b3" />
+    <public type="string" name="pref_sblp_0" id="0x7f1103b4" />
+    <public type="string" name="pref_sblp_p1" id="0x7f1103b5" />
+    <public type="string" name="pref_sblp_p2" id="0x7f1103b6" />
+    <public type="string" name="pref_sblp_p3" id="0x7f1103b7" />
+    <public type="string" name="pref_sblp_p4" id="0x7f1103b8" />
+    <public type="string" name="pref_sblp_p5" id="0x7f1103b9" />
+    <public type="string" name="pref_sblp_p6" id="0x7f1103ba" />
+    <public type="string" name="pref_sblp_p7" id="0x7f1103bb" />
+    <public type="string" name="pref_sblp_p8" id="0x7f1103bc" />
+    <public type="string" name="pref_sblp_p9" id="0x7f1103bd" />
+    <public type="string" name="pref_sblp_p10" id="0x7f1103be" />
+    <public type="string" name="pref_sblp_p11" id="0x7f1103bf" />
+    <public type="string" name="pref_sblp_p12" id="0x7f1103c0" />
+    <public type="string" name="pref_sblp_p13" id="0x7f1103c1" />
+    <public type="string" name="pref_sblp_p14" id="0x7f1103c2" />
+    <public type="string" name="pref_sblp_p15" id="0x7f1103c3" />
+    <public type="string" name="pref_sblp_p16" id="0x7f1103c4" />
+    <public type="string" name="pref_sblp_p17" id="0x7f1103c5" />
+    <public type="string" name="pref_sblp_p18" id="0x7f1103c6" />
+    <public type="string" name="pref_sblp_p19" id="0x7f1103c7" />
+    <public type="string" name="pref_sblp_p20" id="0x7f1103c8" />
+    <public type="string" name="pref_qjpg_title" id="0x7f1103c9" />
+    <public type="string" name="pref_qjpg_default" id="0x7f1103ca" />
+    <public type="string" name="pref_qjpg_50" id="0x7f1103cb" />
+    <public type="string" name="pref_qjpg_70" id="0x7f1103cc" />
+    <public type="string" name="pref_qjpg_80" id="0x7f1103cd" />
+    <public type="string" name="pref_qjpg_90" id="0x7f1103ce" />
+    <public type="string" name="pref_qjpg_95" id="0x7f1103cf" />
+    <public type="string" name="pref_qjpg_96" id="0x7f1103d0" />
+    <public type="string" name="pref_qjpg_97" id="0x7f1103d1" />
+    <public type="string" name="pref_qjpg_98" id="0x7f1103d2" />
+    <public type="string" name="pref_qjpg_99" id="0x7f1103d3" />
+    <public type="string" name="pref_qjpg_100" id="0x7f1103d4" />
+    <public type="string" name="pref_compress_dng_title" id="0x7f1103d5" />
+    <public type="string" name="pref_sbe_title" id="0x7f1103d6" />
+    <public type="string" name="pref_all_title_summary_sbe" id="0x7f1103d7" />
+    <public type="string" name="pref_pmdf_title" id="0x7f1103d8" />
+    <public type="string" name="pref_pmode_title" id="0x7f1103d9" />
+    <public type="string" name="pref_refocusmb_title" id="0x7f1103da" />
+    <public type="string" name="pref_refocusmb_default" id="0x7f1103db" />
+    <public type="string" name="pref_refocusmb_5" id="0x7f1103dc" />
+    <public type="string" name="pref_refocusmb_8" id="0x7f1103dd" />
+    <public type="string" name="pref_refocusmb_10" id="0x7f1103de" />
+    <public type="string" name="pref_refocusmb_12" id="0x7f1103df" />
+    <public type="string" name="pref_refocusmb_summary" id="0x7f1103e0" />
+    <public type="string" name="pref_smas_title" id="0x7f1103e1" />
+    <public type="string" name="pref_smas_default" id="0x7f1103e2" />
+    <public type="string" name="pref_smas_0" id="0x7f1103e3" />
+    <public type="string" name="pref_smas_110" id="0x7f1103e4" />
+    <public type="string" name="pref_smas_500" id="0x7f1103e5" />
+    <public type="string" name="pref_smas_1000" id="0x7f1103e6" />
+    <public type="string" name="pref_smas_1550" id="0x7f1103e7" />
+    <public type="string" name="pref_smas_1600" id="0x7f1103e8" />
+    <public type="string" name="pref_smas_2200" id="0x7f1103e9" />
+    <public type="string" name="pref_smas_3300" id="0x7f1103ea" />
+    <public type="string" name="pref_siwl_title" id="0x7f1103eb" />
+    <public type="string" name="APKTOOL_DUMMY_3ec" id="0x7f1103ec" />
+    <public type="string" name="APKTOOL_DUMMY_3ed" id="0x7f1103ed" />
+    <public type="string" name="APKTOOL_DUMMY_3ee" id="0x7f1103ee" />
+    <public type="string" name="APKTOOL_DUMMY_3ef" id="0x7f1103ef" />
+    <public type="string" name="APKTOOL_DUMMY_3f0" id="0x7f1103f0" />
+    <public type="string" name="APKTOOL_DUMMY_3f1" id="0x7f1103f1" />
+    <public type="string" name="APKTOOL_DUMMY_3f2" id="0x7f1103f2" />
+    <public type="string" name="pref_aemode_title" id="0x7f1103f3" />
+    <public type="string" name="pref_portrait_hdrenh_title" id="0x7f1103f7" />
+    <public type="string" name="pref_portrait_hdrenh_summary" id="0x7f1103f8" />
+    <public type="string" name="APKTOOL_DUMMY_3f4" id="0x7f1103f4" />
+    <public type="string" name="APKTOOL_DUMMY_3f5" id="0x7f1103f5" />
+    <public type="string" name="APKTOOL_DUMMY_3f6" id="0x7f1103f6" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f120000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f120001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f120002" />

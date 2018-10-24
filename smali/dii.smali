@@ -113,13 +113,30 @@
 .method public final a(Lige;)I
     .locals 2
 
+    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v1, "capricorn"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1b
+
+    if-lt v0, v1, :cond_5
+
+    :cond_0
     iget-object v0, p0, Ldii;->e:Lgzz;
 
     iget-object v0, v0, Lgzz;->b:Lihk;
 
     iget-boolean v0, v0, Lihk;->b:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Ldii;->e:Lgzz;
 
@@ -127,7 +144,7 @@
 
     iget-boolean v0, v0, Lihk;->d:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Ldii;->e:Lgzz;
 
@@ -135,7 +152,7 @@
 
     iget-boolean v0, v0, Lihk;->f:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Ldii;->e:Lgzz;
 
@@ -143,7 +160,7 @@
 
     iget-boolean v0, v0, Lihk;->g:Z
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Ldii;->e:Lgzz;
 
@@ -151,34 +168,52 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    :cond_0
+    :cond_1
     const/4 v0, 0x1
 
     :goto_0
     sget-object v1, Lige;->a:Lige;
 
-    if-ne p1, v1, :cond_3
+    if-ne p1, v1, :cond_4
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     iget v0, p0, Ldii;->d:I
 
     :goto_1
     return v0
 
-    :cond_1
+    :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     sget v0, Leh;->W:I
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
+    iget v0, p0, Ldii;->d:I
+
+    goto :goto_1
+
+    :cond_5
+    sget-object v0, Lige;->c:Lige;
+
+    if-eq p1, v0, :cond_6
+
+    sget-object v0, Lige;->a:Lige;
+
+    if-ne p1, v0, :cond_6
+
+    sget v0, Leh;->W:I
+
+    goto :goto_1
+
+    :cond_6
     iget v0, p0, Ldii;->d:I
 
     goto :goto_1

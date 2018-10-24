@@ -262,6 +262,26 @@
 .method public final w_()Z
     .locals 2
 
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p0, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_2
+
     iget-object v0, p0, Lgdr;->e:Lgzz;
 
     iget-object v0, v0, Lgzz;->b:Lihk;
@@ -309,6 +329,14 @@
     iget-boolean v0, v0, Lihk;->c:Z
 
     if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgdr;->e:Lgzz;
+
+    iget-object v0, v0, Lgzz;->b:Lihk;
+
+    iget v0, v0, Lihk;->lphoto:I
+
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Lgdr;->b()Lige;
 

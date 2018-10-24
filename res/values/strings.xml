@@ -706,7 +706,9 @@ Clean your lens for better photo quality."</string>
     <string name="processing_panorama">Processing Panorama</string>
     <string name="processing_photo_sphere">Processing Photo Sphere</string>
     <string name="reason_storage_failure">Photo storage failure.</string>
-    <string name="record_location_notification">Save Location is On</string>
+    <string name="record_location_notification">"Save Location is On.
+HDR+ is turned off.
+To enable HDR+, select the model in the B-S-G MOD settings."</string>
     <string name="refocus_accessibility_peek">Lens blur taken</string>
     <string name="refocus_action_name">Change where the photo is focused</string>
     <string name="refocus_action_promote">Drag to adjust lens blur</string>
@@ -867,4 +869,197 @@ Move device slowly"</string>
     <string name="zoom_announcement">Zoom value is %.1f</string>
     <string name="zoom_minus_desc">Zoom out</string>
     <string name="zoom_plus_desc">Zoom in</string>
+    <string name="pref_bsg_mod_title">B-S-G MOD settings:</string>
+    <string name="pref_all_title_summary">After changing any setting, you must completely close the application, the changes will take effect the next time you start.</string>
+    <string name="pref_input_model_title">Model:</string>
+    <string name="pref_input_model_default">0</string>
+    <string name="pref_input_model_Def">"-= Default =-
+Values from BUILD.PROP"</string>
+    <string name="pref_input_model_N5">"-= Nexus 5 =-
+Hammerhead(LGE)"</string>
+    <string name="pref_input_model_N6">"-= Nexus 6 =-
+Shamu(Motorola)"</string>
+    <string name="pref_input_model_N5X">"-= Nexus 5X =-
+Bullhead(LGE)"</string>
+    <string name="pref_input_model_N6P">"-= Nexus 6P =-
+Angler(Huawei)"</string>
+    <string name="pref_input_model_PxlXLTai">"-= Pixel XL =-
+Marlin+taimen(Google)"</string>
+    <string name="pref_input_model_Tai">"-= Pixel II XL =-
+Taimen(Google)"</string>
+    <string name="pref_input_model_Wall">"-= Pixel II =-
+Walleye(Google)"</string>
+    <string name="pref_config_camera_title">Config camera HDR+:</string>
+    <string name="pref_config_camera_default">0</string>
+    <string name="pref_config_camera_0">AUTO</string>
+    <string name="pref_config_camera_1">Pixel 2016 Tuning</string>
+    <string name="pref_config_camera_2">Experimental Features (Pixel)</string>
+    <string name="pref_config_camera_3">Nexus 6 Hdr+ Auto</string>
+    <string name="pref_config_camera_4">Nexus 6 Hdr+ Auto NoZsl</string>
+    <string name="pref_config_camera_5">Nexus 5X Zsl</string>
+    <string name="pref_config_camera_6">Nexus 5X No Zsl</string>
+    <string name="pref_config_camera_7">Nexus 6P</string>
+    <string name="pref_config_camera_8">Pixel 2016 Zsl Hdr</string>
+    <string name="pref_config_camera_9">Pixel 2017 Zsl Hdr+</string>
+    <string name="pref_all_title_summary_config">"%s
+In AUTO mode, the config depends on the Model."</string>
+    <string name="pref_parameters_camera_title">HDR+ parameters:</string>
+    <string name="pref_parameters_camera_default">0</string>
+    <string name="pref_parameters_camera_0">Default(lowest)</string>
+    <string name="pref_parameters_camera_1">Low</string>
+    <string name="pref_parameters_camera_2">Medium</string>
+    <string name="pref_parameters_camera_3">High</string>
+    <string name="pref_parameters_camera_4">Very High</string>
+    <string name="pref_parameters_camera_5">Super High</string>
+    <string name="setting_sblpf_title">Fix black level Front camera:</string>
+    <string name="pref_sblpf_default">1600</string>
+    <string name="pref_sblpf_m12">11.00</string>
+    <string name="pref_sblpf_m11">12.00</string>
+    <string name="pref_sblpf_m10">13.00</string>
+    <string name="pref_sblpf_m9">14.00</string>
+    <string name="pref_sblpf_m8">15.00</string>
+    <string name="pref_sblpf_m7">15.10</string>
+    <string name="pref_sblpf_m6">15.30</string>
+    <string name="pref_sblpf_m5">15.50</string>
+    <string name="pref_sblpf_m4">15.60</string>
+    <string name="pref_sblpf_m3">15.70</string>
+    <string name="pref_sblpf_m2">15.80</string>
+    <string name="pref_sblpf_m1">15.90</string>
+    <string name="pref_sblpf_0">16.00(default)</string>
+    <string name="pref_sblpf_p1">16.10</string>
+    <string name="pref_sblpf_p2">16.20</string>
+    <string name="pref_sblpf_p3">16.30</string>
+    <string name="pref_sblpf_p4">16.40</string>
+    <string name="pref_sblpf_p5">16.50</string>
+    <string name="pref_sblpf_p6">16.70</string>
+    <string name="pref_sblpf_p7">16.90</string>
+    <string name="pref_sblpf_p8">17.00</string>
+    <string name="pref_sblpf_p9">18.00</string>
+    <string name="pref_sblpf_p10">19.00</string>
+    <string name="pref_sblpf_p11">20.00</string>
+    <string name="pref_sblpf_p12">21.00</string>
+    <string name="pref_sblpf_p13">63.00</string>
+    <string name="pref_sblpf_p14">63.50</string>
+    <string name="pref_sblpf_p15">64.00</string>
+    <string name="pref_sblpf_p16">64.50</string>
+    <string name="pref_sblpf_p17">65.00</string>
+    <string name="pref_sblp_title">Manual fixed black level offset:</string>
+    <string name="pref_enable_sblp_title">Enable</string>
+    <string name="pref_all_title_summary_sblp">"If disabled, auto values are used.
+Arnova8G2 Mod Removing the pinkish/reddish:
+[63.25, 63.5, 63.25, 63.5]"</string>
+    <string name="setting_dg_title">"Crimson
+... - ...
+Neutral = 64.00
+... + ...
+BrightGreen"</string>
+    <string name="setting_r_title">"DarkGreen
+... - ...
+Neutral = 64.00
+... + ...
+Red"</string>
+    <string name="setting_lg_title">"DarkGreen
+... - ...
+Neutral = 64.00
+... + ...
+Red"</string>
+    <string name="setting_b_title">"Blue
+... - ...
+Neutral = 64.00
+... + ...
+Yellow"</string>
+    <string name="pref_sblp_default">6400</string>
+    <string name="pref_sblp_m20">62.00</string>
+    <string name="pref_sblp_m19">62.10</string>
+    <string name="pref_sblp_m18">62.20</string>
+    <string name="pref_sblp_m17">62.30</string>
+    <string name="pref_sblp_m16">62.40</string>
+    <string name="pref_sblp_m15">62.50</string>
+    <string name="pref_sblp_m14">62.60</string>
+    <string name="pref_sblp_m13">62.70</string>
+    <string name="pref_sblp_m12">62.80</string>
+    <string name="pref_sblp_m11">62.90</string>
+    <string name="pref_sblp_m10">63.00</string>
+    <string name="pref_sblp_m9">63.10</string>
+    <string name="pref_sblp_m8">63.20</string>
+    <string name="pref_sblp_m8a">63.25</string>
+    <string name="pref_sblp_m7">63.30</string>
+    <string name="pref_sblp_m6">63.40</string>
+    <string name="pref_sblp_m5">63.50</string>
+    <string name="pref_sblp_m4">63.60</string>
+    <string name="pref_sblp_m3">63.70</string>
+    <string name="pref_sblp_m2">63.80</string>
+    <string name="pref_sblp_m1">63.90</string>
+    <string name="pref_sblp_0">64.00(default)</string>
+    <string name="pref_sblp_p1">64.10</string>
+    <string name="pref_sblp_p2">64.20</string>
+    <string name="pref_sblp_p3">64.30</string>
+    <string name="pref_sblp_p4">64.40</string>
+    <string name="pref_sblp_p5">64.50</string>
+    <string name="pref_sblp_p6">64.60</string>
+    <string name="pref_sblp_p7">64.70</string>
+    <string name="pref_sblp_p8">64.80</string>
+    <string name="pref_sblp_p9">64.90</string>
+    <string name="pref_sblp_p10">65.00</string>
+    <string name="pref_sblp_p11">65.10</string>
+    <string name="pref_sblp_p12">65.20</string>
+    <string name="pref_sblp_p13">65.30</string>
+    <string name="pref_sblp_p14">65.40</string>
+    <string name="pref_sblp_p15">65.50</string>
+    <string name="pref_sblp_p16">65.60</string>
+    <string name="pref_sblp_p17">65.70</string>
+    <string name="pref_sblp_p18">65.80</string>
+    <string name="pref_sblp_p19">65.90</string>
+    <string name="pref_sblp_p20">66.00</string>
+    <string name="pref_qjpg_title">Final jpg quality HDR+:</string>
+    <string name="pref_qjpg_default">95</string>
+    <string name="pref_qjpg_50">50%</string>
+    <string name="pref_qjpg_70">70%</string>
+    <string name="pref_qjpg_80">80%</string>
+    <string name="pref_qjpg_90">90%</string>
+    <string name="pref_qjpg_95">95% (default)</string>
+    <string name="pref_qjpg_96">96%</string>
+    <string name="pref_qjpg_97">97%</string>
+    <string name="pref_qjpg_98">98%</string>
+    <string name="pref_qjpg_99">99%</string>
+    <string name="pref_qjpg_100">100%</string>
+    <string name="pref_compress_dng_title">Compress RAW(*.DNG)</string>
+    <string name="pref_sbe_title">SmartBurst enabled</string>
+    <string name="pref_all_title_summary_sbe">"Incorrect work of touch-focus is possible.
+If enabled, the config of the Nexus6P or Pixels will be used"</string>
+    <string name="pref_pmdf_title">"Increase the detail of the HDR+ in the front camera
+(Does not work on Model: Nexus5 and Nexus6)"</string>
+    <string name="pref_pmode_title">Portrait mode on all models</string>
+    <string name="pref_refocusmb_title">Lens blur megapixels:</string>
+    <string name="pref_refocusmb_default">5</string>
+    <string name="pref_refocusmb_5">5 megapixels (default)</string>
+    <string name="pref_refocusmb_8">8 megapixels</string>
+    <string name="pref_refocusmb_10">10 megapixels</string>
+    <string name="pref_refocusmb_12">12 megapixels</string>
+    <string name="pref_refocusmb_summary">"%s
+The value should not exceed the actual size of the camera module"</string>
+    <string name="pref_smas_title">Max.sensitivity analog gain:</string>
+    <string name="pref_smas_default">0</string>
+    <string name="pref_smas_0">Auto</string>
+    <string name="pref_smas_110">110(need for mido ov)</string>
+    <string name="pref_smas_500">500</string>
+    <string name="pref_smas_1000">1000</string>
+    <string name="pref_smas_1550">1550</string>
+    <string name="pref_smas_1600">1600(Max for N5 and N6)</string>
+    <string name="pref_smas_2200">2200(MI5S default)</string>
+    <string name="pref_smas_3300">3300</string>
+    <string name="pref_siwl_title">Minimal HDR+ smoothing</string>
+    <item type="string" name="APKTOOL_DUMMY_3ec">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3ed">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3ee">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3ef">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3f0">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3f1">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3f2">false</item>
+    <string name="pref_aemode_title">Auto-exposure mode</string>
+    <string name="pref_portrait_hdrenh_title">HDR+ Enhanced Portrait Mode</string>
+    <string name="pref_portrait_hdrenh_summary">Increases dynamic range with Portrait Mode but disables ZSL</string>
+    <item type="string" name="APKTOOL_DUMMY_3f4">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3f5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_3f6">false</item>
 </resources>

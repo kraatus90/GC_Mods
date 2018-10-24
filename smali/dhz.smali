@@ -232,6 +232,26 @@
     goto :goto_0
 
     :cond_2
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p0, v0}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eq v0, v1, :cond_3
+
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_3
+
     iget-object v0, p1, Lbhn;->a:Landroid/content/ContentResolver;
 
     const-string v1, "camera:capture_support_level_override_front"
@@ -239,6 +259,32 @@
     invoke-static {v0, v1, v2}, Lhyx;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
     move-result v0
+
+    goto :goto_1
+
+    :cond_3
+    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v1, "capricorn"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1a
+
+    if-ge v0, v1, :cond_4
+
+    const/4 v0, 0x4
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v0, 0x3
 
     goto :goto_1
 

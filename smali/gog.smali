@@ -83,11 +83,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
+    invoke-virtual {p1}, Lgzz;->i()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
     sget-object v0, Lhit;->b:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
     invoke-interface {p0}, Ljxn;->a()Ljava/lang/Object;
 
@@ -98,7 +105,7 @@
     :goto_0
     return-object v0
 
-    :cond_0
+    :cond_1
     sget-object v0, Ljhi;->a:Ljhi;
 
     goto :goto_0
