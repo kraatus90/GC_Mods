@@ -1,6 +1,6 @@
-.class public LSlowShutterAEMode;
+.class public LSlowShutterAEModeOld;
 .super LAEMode;
-.source "SlowShutterAEMode.java"
+.source "SlowShutterAEModeOld.java"
 
 
 # direct methods
@@ -17,13 +17,11 @@
 .method public calculate()V
     .locals 8
 
+    const-wide v6, 0x412e848000000000L    # 1000000.0
+
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivity:D
 
     iget-wide v4, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
-
-    const-wide v6, 0x4004000000000000L    # 2.5
-
-    mul-double/2addr v2, v6
 
     sub-double/2addr v2, v4
 
@@ -41,10 +39,6 @@
 
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
 
-    const-wide v6, 0x4004000000000000L    # 2.5
-
-    mul-double/2addr v2, v6
-
     div-double v2, v0, v2
 
     iget-wide v4, p0, LSlowShutterAEMode;->exposureRangeHighMs:D
@@ -54,8 +48,6 @@
     if-lez v2, :cond_0
 
     iget-wide v2, p0, LSlowShutterAEMode;->exposureRangeHighMs:D
-
-    const-wide v6, 0x412e848000000000L    # 1000000.0
 
     mul-double/2addr v2, v6
 
@@ -81,13 +73,7 @@
     :cond_0
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
 
-    const-wide v6, 0x4004000000000000L    # 2.5
-
-    mul-double/2addr v2, v6
-
     div-double v2, v0, v2
-
-    const-wide v6, 0x412e848000000000L    # 1000000.0
 
     mul-double/2addr v2, v6
 
@@ -98,10 +84,6 @@
     iput-wide v2, p0, LSlowShutterAEMode;->calculatedExposureTime:J
 
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
-
-    const-wide v6, 0x4004000000000000L    # 2.5
-
-    mul-double/2addr v2, v6
 
     double-to-int v2, v2
 
@@ -117,8 +99,6 @@
     iput v2, p0, LSlowShutterAEMode;->calculatedSensitivity:I
 
     iget-wide v2, p0, LSlowShutterAEMode;->exposure_time_ms:D
-
-    const-wide v6, 0x412e848000000000L    # 1000000.0
 
     mul-double/2addr v2, v6
 

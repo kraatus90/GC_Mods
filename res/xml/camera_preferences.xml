@@ -30,9 +30,10 @@
             <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_sbe_title" android:key="pref_sbe_key" android:summary="@string/pref_all_title_summary_sbe" android:defaultValue="false" />
             <ListPreference android:entries="@array/pref_smas_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_smas_title" android:key="pref_smas_key" android:summary="%s" android:defaultValue="@string/pref_smas_default" android:entryValues="@array/pref_smas_entryvalues" />
             <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_siwl_title" android:key="pref_siwl_key" android:defaultValue="false" />
+            <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_frot_title" android:key="pref_frot_key" android:defaultValue="false" />
         </PreferenceScreen>
         <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_hdr_plus_control_title" android:key="pref_camera_hdrplus_option_available_key" android:summary="@string/pref_hdr_plus_control_summary" android:defaultValue="false" />
-        <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_aemode_title" android:key="pref_aemode_key" android:defaultValue="false" />
+        <ListPreference android:entries="@array/pref_aemode_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_aemode_title" android:key="pref_aemode_key" android:summary="%s" android:defaultValue="@string/pref_aemode_default" android:entryValues="@array/pref_aemode_entryvalues" />
         <ListPreference android:layout="@layout/preference_with_margin" android:title="@string/setting_back_camera_photo" android:key="pref_camera_picturesize_back_key" android:summary="%s" android:defaultValue="@string/pref_camera_picturesize_default" android:entryValues="@array/pref_camera_picturesize_entryvalues" />
         <ListPreference android:layout="@layout/preference_with_margin" android:title="@string/setting_front_camera_photo" android:key="pref_camera_picturesize_front_key" android:summary="%s" android:defaultValue="@string/pref_camera_picturesize_default" android:entryValues="@array/pref_camera_picturesize_entryvalues" />
         <PreferenceScreen android:layout="@layout/preference_with_margin" android:title="@string/pref_burst_settings" android:key="pref_category_smartburst">
@@ -45,7 +46,7 @@
         </PreferenceScreen>
         <PreferenceScreen android:layout="@layout/preference_with_margin" android:title="@string/pref_experimental" android:key="pref_category_experimental">
             <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_gcam_hdr_raw_title" android:key="pref_camera_hdr_plus_raw_out_key" android:summary="@string/pref_gcam_hdr_raw_summary" android:defaultValue="false" />
-            <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_compress_dng_title" android:key="pref_compress_dng_key" android:defaultValue="false" />
+            <com.google.android.apps.camera.legacy.app.settings.ManagedSwitchPreference android:layout="@layout/preference_with_margin" android:title="@string/pref_compress_dng_title" android:key="pref_compress_dng_key" android:summary="@string/pref_compress_dng_summary" android:defaultValue="false" />
         </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/mode_video" android:key="pref_category_resolution_video">

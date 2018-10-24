@@ -370,7 +370,7 @@
 .end method
 
 .method private final declared-synchronized a(ILeaq;Lgdv;Lcom/google/googlex/gcam/AeResults;Liic;Z)Lcpa;
-    .locals 25
+    .locals 26
 
     monitor-enter p0
 
@@ -615,6 +615,62 @@
 
     move-result v24
 
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcoq;->i:Lgdq;
+
+    sget-object v2, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {v0, v2}, Lgdq;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    iget-object v0, v5, Lcpb;->B:Lbhn;
+
+    invoke-virtual {v0}, Lbhn;->frot()I
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-static/range {v20 .. v20}, Lcns;->a(I)I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    if-eq v0, v2, :cond_10
+
+    const/4 v2, 0x1
+
+    if-eq v0, v2, :cond_11
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_12
+
+    const/4 v2, 0x3
+
+    if-eq v0, v2, :cond_13
+
+    goto :goto_2
+
+    :cond_4
+    invoke-static/range {v20 .. v20}, Lcns;->a(I)I
+
+    move-result v0
+
+    :goto_2
+    move/from16 v25, v0
+
     sget-object v2, Lcnv;->e:Lcnv;
 
     invoke-interface {v4, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -645,9 +701,7 @@
 
     invoke-virtual {v0, v4}, Lcom/google/googlex/gcam/ShotParams;->setFull_metering_sweep_frame_count(I)V
 
-    invoke-static/range {v20 .. v20}, Lcns;->a(I)I
-
-    move-result v4
+    move/from16 v4, v25
 
     move-object/from16 v0, v22
 
@@ -695,7 +749,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     const/4 v2, 0x0
 
@@ -703,7 +757,7 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setResampling_method_override(I)V
 
-    :cond_4
+    :cond_5
     invoke-static/range {p3 .. p3}, Lcok;->a(Lgdv;)I
 
     move-result v2
@@ -724,11 +778,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8
+    if-eqz v2, :cond_9
 
     const/4 v2, 0x1
 
-    :goto_2
+    :goto_3
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setAllow_temporal_binning(Z)V
@@ -743,20 +797,20 @@
 
     sget-object v3, Lgmt;->a:Lgmt;
 
-    if-ne v2, v3, :cond_9
+    if-ne v2, v3, :cond_a
 
     const/4 v2, 0x0
 
-    :goto_3
+    :goto_4
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setWb_mode(I)V
 
-    if-eqz p6, :cond_a
+    if-eqz p6, :cond_b
 
     const-string v2, "z"
 
-    :goto_4
+    :goto_5
     move-object/from16 v0, v22
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setSoftware_suffix(Ljava/lang/String;)V
@@ -767,7 +821,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/ShotParams;->setZsl(Z)V
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_c
 
     const/4 v2, 0x1
 
@@ -781,7 +835,7 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ShotParams;->setZsl_base_frame_index_hint(I)V
 
-    :goto_5
+    :goto_6
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcoq;->b:Lcpb;
@@ -830,7 +884,7 @@
 
     invoke-static {v3, v2}, Lbhz;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-nez p4, :cond_5
+    if-nez p4, :cond_6
 
     invoke-virtual/range {v22 .. v22}, Lcom/google/googlex/gcam/ShotParams;->getAe()Lcom/google/googlex/gcam/AeShotParams;
 
@@ -870,7 +924,7 @@
 
     invoke-static/range {v2 .. v7}, Lcok;->a(Lcom/google/googlex/gcam/AeShotParams;Landroid/graphics/Rect;[Landroid/hardware/camera2/params/MeteringRectangle;Lici;Lgdq;F)V
 
-    :cond_5
+    :cond_6
     const/16 v18, 0x0
 
     move-object/from16 v0, p0
@@ -891,7 +945,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_7
 
     move-object/from16 v0, p0
 
@@ -901,7 +955,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_7
 
     move-object/from16 v0, p0
 
@@ -911,19 +965,19 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c
+    if-eqz v3, :cond_d
 
-    :cond_6
+    :cond_7
     const/4 v3, 0x1
 
-    :goto_6
-    if-eqz v3, :cond_7
+    :goto_7
+    if-eqz v3, :cond_8
 
     invoke-virtual {v2}, Ljht;->a()Z
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     new-instance v18, Lcom/google/googlex/gcam/ImageSaverParams;
 
@@ -961,7 +1015,7 @@
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/gcam/ImageSaverParams;->setDest_folder(Ljava/lang/String;)V
 
-    :cond_7
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcoq;->c:Lcom/google/googlex/gcam/Gcam;
@@ -1002,7 +1056,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_e
+    if-eqz v10, :cond_f
 
     move-object/from16 v0, p0
 
@@ -1046,7 +1100,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_e
 
     move-object/from16 v0, p0
 
@@ -1064,7 +1118,7 @@
 
     move-result-object v7
 
-    :goto_7
+    :goto_8
     move-object/from16 v0, p0
 
     iget-object v8, v0, Lcoq;->t:Ljht;
@@ -1105,28 +1159,28 @@
 
     move-object v2, v3
 
-    :goto_8
+    :goto_9
     monitor-exit p0
 
     return-object v2
 
-    :cond_8
-    const/4 v2, 0x0
-
-    goto/16 :goto_2
-
     :cond_9
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     goto/16 :goto_3
 
     :cond_a
-    :try_start_2
-    const-string v2, "n"
+    const/4 v2, 0x1
 
     goto/16 :goto_4
 
     :cond_b
+    :try_start_2
+    const-string v2, "n"
+
+    goto/16 :goto_5
+
+    :cond_c
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcoq;->i:Lgdq;
@@ -1147,22 +1201,44 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    goto/16 :goto_5
-
-    :cond_c
-    const/4 v3, 0x0
-
     goto/16 :goto_6
 
     :cond_d
-    const/4 v7, 0x0
+    const/4 v3, 0x0
 
-    goto :goto_7
+    goto/16 :goto_7
 
     :cond_e
-    const/4 v2, 0x0
+    const/4 v7, 0x0
 
     goto :goto_8
+
+    :cond_f
+    const/4 v2, 0x0
+
+    goto :goto_9
+
+    :cond_10
+    const/4 v0, 0x2
+
+    goto/16 :goto_2
+
+    :cond_11
+    const/4 v0, 0x3
+
+    goto/16 :goto_2
+
+    :cond_12
+    const/4 v0, 0x0
+
+    goto/16 :goto_2
+
+    :cond_13
+    const/4 v0, 0x1
+
+    goto/16 :goto_2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

@@ -1,6 +1,6 @@
-.class public LSlowShutterAEMode;
+.class public LSlowShutterAEModeNew;
 .super LAEMode;
-.source "SlowShutterAEMode.java"
+.source "SlowShutterAEModeNew.java"
 
 
 # direct methods
@@ -21,7 +21,7 @@
 
     iget-wide v4, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
 
-    const-wide v6, 0x4004000000000000L    # 2.5
+    const-wide v6, 0x400e000000000000L    # 3.75
 
     mul-double/2addr v2, v6
 
@@ -41,7 +41,7 @@
 
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
 
-    const-wide v6, 0x4004000000000000L    # 2.5
+    const-wide v6, 0x400e000000000000L    # 3.75
 
     mul-double/2addr v2, v6
 
@@ -81,7 +81,7 @@
     :cond_0
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
 
-    const-wide v6, 0x4004000000000000L    # 2.5
+    const-wide v6, 0x400e000000000000L    # 3.75
 
     mul-double/2addr v2, v6
 
@@ -99,7 +99,7 @@
 
     iget-wide v2, p0, LSlowShutterAEMode;->sensitivityRangeLow:D
 
-    const-wide v6, 0x4004000000000000L    # 2.5
+    const-wide v6, 0x400e000000000000L    # 3.75
 
     mul-double/2addr v2, v6
 

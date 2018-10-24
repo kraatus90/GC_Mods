@@ -1012,7 +1012,7 @@ Yellow"</string>
     <string name="pref_qjpg_99">99%</string>
     <string name="pref_qjpg_100">100%</string>
     <string name="pref_compress_dng_title">Compress RAW(*.DNG)</string>
-    <string name="pref_sbe_title">SmartBurst enabled</string>
+    <string name="pref_sbe_title">Enable SmartBurst</string>
     <string name="pref_all_title_summary_sbe">"Incorrect work of touch-focus is possible.
 If enabled, the config of the Nexus6P or Pixels will be used"</string>
     <string name="pref_pmdf_title">Increase the detail of the HDR+</string>
@@ -1050,8 +1050,11 @@ Affects the color palette, the power of noise, sharpness and processing of small
     <string name="pref_aemode_title">Auto-exposure mode</string>
     <string name="pref_aemode_default">0</string>
     <string name="pref_aemode_0">Default</string>
-    <string name="pref_aemode_1">Slow shutter</string>
+    <string name="pref_aemode_1">Middle shutter</string>
+    <string name="pref_aemode_2">Slow shutter</string>
+    <string name="pref_aemode_3">Very slow shutter</string>
     <string name="pref_portrait_hdrenh_title">HDR+ Enhanced Portrait Mode</string>
     <string name="pref_portrait_hdrenh_summary">Increases dynamic range with Portrait Mode but disables ZSL</string>
     <string name="pref_pmode_summary">Replace Lens Blur with Portrait Mode</string>
+    <string name="pref_frot_title">Flip image from the front camera</string>
 </resources>

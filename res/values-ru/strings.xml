@@ -824,10 +824,10 @@
     <string name="pref_sblp_0">64.00 (По умолчанию)</string>
     <string name="pref_qjpg_title">Итоговое качество jpg HDR+:</string>
     <string name="pref_qjpg_95">95% (По умолчанию)</string>
-    <string name="pref_compress_dng_title">Сжатие RAW(*.DNG)</string>
-    <string name="pref_sbe_title">Выключить SmartBurst</string>
-    <string name="pref_all_title_summary_sbe">Для корректной работы тач-фокуса. Если включено, будет использоваться конфигурация N6P или Pixel.</string>
-    <string name="pref_pmdf_title">Увеличить детализацию HDR+ на фронт.камере</string>
+    <string name="pref_compress_dng_title">Сжатие RAW изображений</string>
+    <string name="pref_sbe_title">Включить SmartBurst</string>
+    <string name="pref_all_title_summary_sbe">Возможна некорректная работа тач-фокуса. Если включено, будет использоваться конфигурация N6P или Pixel.</string>
+    <string name="pref_pmdf_title">Увеличить детализацию HDR+ на фронтальной камере</string>
     <string name="pref_pmode_title">Использовать портретный режим для всех моделей</string>
     <string name="pref_refocusmb_title">Разрешение фото в режиме размытия:</string>
     <string name="pref_refocusmb_5">5 Мп</string>
@@ -848,8 +848,15 @@
     <string name="pref_siwl_title">Мин.сглаживание фото HDR+</string>
     <string name="pref_pmdf_title_summary">Не работает при выборе моделей N5 и N6</string>
     <string name="pref_sblp_title_summary">Ручные настройки уровня черного для основной и фронтальной камеры</string>
-    <string name="pref_aemode_title">Расширенная авто-экспозиция HDR+</string>
+    <string name="pref_aemode_title">Режим выдержки HDR+</string>
+    <string name="pref_aemode_default">0</string>
+    <string name="pref_aemode_0">Обычная</string>
+    <string name="pref_aemode_1">Средняя</string>
+    <string name="pref_aemode_2">Длинная</string>
+    <string name="pref_aemode_3">Очень длинная</string>
     <string name="pref_portrait_hdrenh_title">Использовать расширенный HDR+ для портретного режима</string>
     <string name="pref_portrait_hdrenh_summary">Расширенный динамический диапазон, но ZSL не используется</string>
     <string name="pref_pmode_summary">Заменяет режим размытия</string>
+    <string name="pref_frot_title">Перевернуть фото с фронтальной камеры</string>
+    <string name="pref_compress_dng_summary">Сжатие DNG для уменьшения размера файла</string>
 </resources>

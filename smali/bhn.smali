@@ -576,6 +576,18 @@
     goto :goto_0
 .end method
 
+.method public frot()I
+    .locals 1
+
+    const-string v0, "pref_frot_key"
+
+    invoke-virtual {p0, v0}, Lbhn;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public final g()I
     .locals 3
 
