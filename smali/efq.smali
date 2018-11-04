@@ -55,6 +55,20 @@
 
 .field private final X:Lfxj;
 
+.field private final XXa:Lggz;
+
+.field private final XXb:Lghf;
+
+.field private final XXc:Lghh;
+
+.field private final XXd:Lghg;
+
+.field private final XXe:Locz;
+
+.field private final XXf:Lghc;
+
+.field private final XXg:Lghe;
+
 .field private final Y:Leil;
 
 .field private final Z:Lcqa;
@@ -401,7 +415,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ldce;Lghq;Lelk;)V
+.method public constructor <init>(Ldce;Lghq;Lelk;Lghf;)V
     .locals 29
 
     move-object/from16 v0, p1
@@ -482,6 +496,114 @@
 
     iput-object v2, v0, Lefq;->cK:Locz;
 
+    new-instance v2, Lggz;
+
+    invoke-direct {v2}, Lggz;-><init>()V
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXa:Lggz;
+
+    invoke-static/range {p4 .. p4}, Loct;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lghf;
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXb:Lghf;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lefq;->XXb:Lghf;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lefq;->cK:Locz;
+
+    invoke-static {v2, v3}, Lghh;->a(Lghf;Locz;)Lghh;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXc:Lghh;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lefq;->XXb:Lghf;
+
+    invoke-static {v2}, Lghg;->a(Lghf;)Lghg;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXd:Lghg;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lefq;->XXa:Lggz;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lefq;->XXc:Lghh;
+
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lefq;->cG:Ldce;
+
+    iget-object v6, v8, Ldce;->p:Ldbs;
+
+    iget-object v4, v6, Ldbs;->cE:Locz;
+
+    iget-object v5, v8, Ldce;->k:Lgru;
+
+    iget-object v6, v6, Ldbs;->G:Locz;
+
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lefq;->XXd:Lghg;
+
+    iget-object v8, v8, Ldce;->c:Lgcu;
+
+    invoke-static/range {v2 .. v8}, Lghd;->a(Lggz;Locz;Locz;Locz;Locz;Locz;Locz;)Lghd;
+
+    move-result-object v2
+
+    invoke-static {v2}, Locm;->a(Locz;)Locz;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXe:Locz;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lefq;->XXe:Locz;
+
+    invoke-static {v2}, Lghc;->a(Locz;)Lghc;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXf:Lghc;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lefq;->XXf:Lghc;
+
+    invoke-static {v2}, Lghe;->a(Locz;)Lghe;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iput-object v2, v0, Lefq;->XXg:Lghe;
+
     invoke-static/range {p2 .. p2}, Loct;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object/from16 v0, p0
@@ -538,11 +660,19 @@
 
     iput-object v2, v0, Lefq;->bS:Lghv;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x2
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Locu;->a(II)Locv;
+
+    move-result-object v2
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lefq;->XXg:Lghe;
+
+    invoke-virtual {v2, v3}, Locv;->a(Locz;)Locv;
 
     move-result-object v2
 

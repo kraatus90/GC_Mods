@@ -289,12 +289,12 @@
     return-object v0
 .end method
 
-.method public final a(Lghq;Lelk;)Lefq;
+.method public final a(Lghq;Lelk;Lghf;)Lefq;
     .locals 1
 
     new-instance v0, Lefq;
 
-    invoke-direct {v0, p0, p1, p2}, Lefq;-><init>(Ldce;Lghq;Lelk;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lefq;-><init>(Ldce;Lghq;Lelk;Lghf;)V
 
     return-object v0
 .end method

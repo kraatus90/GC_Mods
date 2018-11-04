@@ -72,7 +72,7 @@
 
     iget v7, v4, Lkfm;->a:I
 
-    invoke-static {v6, v7}, Landroid/media/CamcorderProfile;->hasProfile(II)Z
+    invoke-static {p1, v4}, Lkfi;->c(Lkuf;Lkfm;)Z
 
     move-result v6
 

@@ -87,6 +87,8 @@
 
     iget-boolean v1, v0, Liiu;->f:Z
 
+    const/4 v1, 0x1
+
     if-eqz v1, :cond_3
 
     iget-object v0, v0, Liiu;->k:Lijq;

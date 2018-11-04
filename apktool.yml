@@ -1,10 +1,8 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: GoogleCamera_6.1.013.apk
+apkFileName: GCcamMod-6.1.013.apk
 compressionType: false
 doNotCompress:
 - arsc
-- META-INF/services/com.fasterxml.jackson.core.JsonFactory
-- META-INF/services/com.google.protobuf.GeneratedExtensionRegistryLoader
 - bloomfilter
 - apk
 - assets/tflite_vakunov_multi-subject_2018-06-09.fb.enc
@@ -128,12 +126,13 @@ doNotCompress:
 - ogg
 - res/raw/easel_finish_resources_fingerprint
 - zip
+- xml
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
   renameManifestPackage: null
 sdkInfo:
-  minSdkVersion: '28'
+  minSdkVersion: '26'
   targetSdkVersion: '28'
 sharedLibrary: false
 sparseResources: false

@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 10
+    .locals 11
 
     iget-object v1, p0, Lbpo;->a:Lbpn;
 
@@ -80,6 +80,12 @@
     invoke-direct {v8, v2}, Lbpp;-><init>(Lncf;)V
 
     :try_start_0
+    sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v9, 0x1c
+
+    if-lt v10, v9, :cond_2
+
     invoke-virtual {v0}, Lmfr;->a()Z
 
     move-result v9
@@ -166,12 +172,19 @@
 
     :cond_2
     :try_start_1
+    sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v9, 0x1c
+
+    if-lt v10, v9, :cond_3
+
     invoke-virtual {v3}, Lmfr;->a()Z
 
     move-result v9
 
     if-nez v9, :cond_0
 
+    :cond_3
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -184,7 +197,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     :goto_1
     iget-object v0, v1, Lbpn;->b:Lkwy;
@@ -195,7 +208,7 @@
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     invoke-virtual {v6}, Lmfr;->b()Ljava/lang/Object;
 
     move-result-object v0

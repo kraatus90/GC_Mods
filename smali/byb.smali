@@ -666,6 +666,8 @@
 
     move-result v0
 
+    const v0, 0x1
+
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
@@ -825,6 +827,8 @@
 
     move-result v0
 
+    const v0, 0x1
+
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
@@ -896,6 +900,8 @@
     invoke-virtual {v0}, Lkwm;->b()Z
 
     move-result v0
+
+    const v0, 0x0
 
     if-nez v0, :cond_0
 

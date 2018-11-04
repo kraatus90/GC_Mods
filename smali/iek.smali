@@ -60,6 +60,8 @@
 
     move-result v2
 
+    const v2, 0x1
+
     if-eqz v2, :cond_1
 
     iget-object v0, v0, Liue;->b:Lkwl;

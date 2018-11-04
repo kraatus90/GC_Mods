@@ -60,7 +60,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 6
 
     new-instance v0, Lkmy;
 
@@ -88,8 +88,15 @@
 
     move-result-object v3
 
+    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v5, 0x1c
+
+    if-lt v4, v5, :cond_0
+
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
+    :goto_0
     invoke-static {v4, v2}, Ljzk;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lkmt;
 
     move-result-object v2
@@ -103,6 +110,11 @@
     sput-object v0, Lfgm;->m:Lkmy;
 
     return-void
+
+    :cond_0
+    sget-object v4, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    goto :goto_0
 .end method
 
 .method constructor <init>(Landroid/content/Context;Landroid/view/WindowManager;Lkbn;Lkmu;Lkwh;Lguw;Lmfr;Libz;Libr;Lkjl;Lkjq;)V

@@ -21,7 +21,7 @@
 
     const/4 v2, 0x0
 
-    sget-object v0, Ljgm;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v0, 0x0
 
     if-eqz v0, :cond_1
 

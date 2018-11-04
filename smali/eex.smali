@@ -163,7 +163,7 @@
     :try_start_0
     iget-object v0, p1, Lgpx;->a:Lkiz;
 
-    const/16 v1, 0x25
+    const/16 v1, 0x100
 
     invoke-static {p0, v0, v1}, Lgrr;->a(Lktr;Lkiz;I)Lgrr;
     :try_end_0
@@ -322,6 +322,8 @@
 
     invoke-interface {v2}, Lkjq;->a()V
 
+    goto/16 :goto_2
+
     iget-object v2, p0, Leex;->b:Liue;
 
     iget-object v2, v2, Liue;->c:Lkwm;
@@ -458,6 +460,7 @@
 
     if-eqz v2, :cond_5
 
+    :goto_2
     sget-object v1, Leex;->a:Ljava/lang/String;
 
     const-string v2, "Selected Pixel Portrait Zsl Hdr No PD OneCamera configuration."
@@ -468,11 +471,17 @@
 
     move-result-object v1
 
+    new-instance v3, Lghf;
+
+    iget v2, p4, Lgav;->c:I
+
+    invoke-direct {v3, v2}, Lghf;-><init>(I)V
+
     invoke-direct {p0}, Leex;->a()Lelk;
 
     move-result-object v2
 
-    invoke-interface {v0, v1, v2}, Lefh;->a(Lghq;Lelk;)Lefq;
+    invoke-interface {v0, v1, v2, v3}, Lefh;->a(Lghq;Lelk;Lghf;)Lefq;
 
     move-result-object v0
 

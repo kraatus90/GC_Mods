@@ -62,6 +62,12 @@
 
     if-eqz v0, :cond_1
 
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x1c
+
+    if-lt v1, v2, :cond_6
+
     sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_SCENE_CHANGE:Landroid/hardware/camera2/CaptureResult$Key;
 
     :cond_0
@@ -110,4 +116,9 @@
     move-object v0, v1
 
     goto :goto_0
+
+    :cond_6
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_SCENE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    goto :goto_1
 .end method

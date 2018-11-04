@@ -28,7 +28,7 @@
 
 # virtual methods
 .method public final synthetic a()Ljava/lang/Object;
-    .locals 2
+    .locals 4
 
     iget-object v1, p0, Lhop;->b:Locz;
 
@@ -46,7 +46,30 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v3, "blueline"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    sget-object v2, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+    const-string v3, "crosshatch"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const v0, 0x1
+
+    :cond_0
+    if-nez v0, :cond_1
 
     sget-object v0, Lmev;->a:Lmev;
 
@@ -61,7 +84,7 @@
 
     return-object v0
 
-    :cond_0
+    :cond_1
     invoke-interface {v1}, Locz;->a()Ljava/lang/Object;
 
     move-result-object v0

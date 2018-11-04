@@ -133,7 +133,7 @@
 .method public final a_(Lkxf;)V
     .locals 4
 
-    sget-object v0, Ljgm;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v0, 0x0
 
     if-eqz v0, :cond_0
 

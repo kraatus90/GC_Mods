@@ -226,7 +226,9 @@
 
     invoke-direct {v7}, Lcom/google/googlex/gcam/GeometricCalibrationVector;-><init>()V
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_DISTORTION:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {p0}, Lcmp;->fixDistrucrionCR()Landroid/hardware/camera2/CaptureResult$Key;
+
+    move-result-object v0
 
     invoke-interface {p1, v0}, Lkxc;->a(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
@@ -246,7 +248,9 @@
 
     if-nez v1, :cond_0
 
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LENS_DISTORTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    invoke-virtual {p0}, Lcmp;->fixDistrucrionCC()Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    move-result-object v1
 
     invoke-interface {v5, v1}, Lktr;->a(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
@@ -952,10 +956,17 @@
 
     invoke-virtual {p2, v0, v4}, Lgce;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lgce;
 
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1c
+
+    if-lt v0, v1, :cond_4
+
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-virtual {p2, v0, v4}, Lgce;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lgce;
 
+    :cond_4
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     iget v1, p0, Lcmp;->g:I
@@ -985,4 +996,44 @@
     invoke-virtual {p2, v0, v1}, Lgce;->a(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lgce;
 
     return-void
+.end method
+
+.method public fixDistrucrionCC()Landroid/hardware/camera2/CameraCharacteristics$Key;
+    .locals 3
+
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x1c
+
+    if-lt v1, v2, :cond_0
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_DISTORTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_RADIAL_DISTORTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    goto :goto_0
+.end method
+
+.method public fixDistrucrionCR()Landroid/hardware/camera2/CaptureResult$Key;
+    .locals 3
+
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x1c
+
+    if-lt v1, v2, :cond_0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_DISTORTION:Landroid/hardware/camera2/CaptureResult$Key;
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_RADIAL_DISTORTION:Landroid/hardware/camera2/CaptureResult$Key;
+
+    goto :goto_0
 .end method

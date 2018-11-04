@@ -161,6 +161,8 @@
 
     move-result v0
 
+    const v0, 0x1
+
     if-nez v0, :cond_1
 
     sget-object v0, Lmev;->a:Lmev;

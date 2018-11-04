@@ -23,7 +23,7 @@
 
     move-result-object v0
 
-    const-string v1, "com.google.android.GoogleCamera"
+    const-string v1, "com.google.android.GoogleCameraP3"
 
     const-string v2, "camera"
 

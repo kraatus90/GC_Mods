@@ -640,6 +640,8 @@
 
     move-result v36
 
+    const v36, 0x1
+
     invoke-direct/range {v1 .. v36}, Lgtd;-><init>(Lkdt;Lkbn;Lkjq;Lkap;Lgst;Lbtp;Lkdt;Lkdt;Lkdt;Lkdt;ZLkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;Lkdt;ZLkdt;ZLkdt;Lkdt;Lkdt;ZLkdt;ZZLkdt;Lkdt;Z)V
 
     const-string v2, "Cannot return null from a non-@Nullable @Provides method"

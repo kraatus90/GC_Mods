@@ -151,9 +151,16 @@
 
     invoke-direct {v4, v6, v5}, Lgcd;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    new-instance v6, Lgcd;
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v7, 0x1c
+
+    if-lt v6, v7, :cond_3
 
     sget-object v7, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    :goto_1
+    new-instance v6, Lgcd;
 
     invoke-direct {v6, v7, v5}, Lgcd;-><init>(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
@@ -161,7 +168,7 @@
 
     move-result-object v14
 
-    :goto_1
+    :goto_2
     new-instance v2, Leja;
 
     new-instance v3, Leib;
@@ -281,7 +288,7 @@
 
     move-result-object v14
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_2
     invoke-virtual {v2}, Lkwm;->b()Z
@@ -291,4 +298,9 @@
     if-eqz v2, :cond_1
 
     goto/16 :goto_0
+
+    :cond_3
+    sget-object v7, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    goto/16 :goto_1
 .end method

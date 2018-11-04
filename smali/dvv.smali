@@ -911,7 +911,7 @@
 
     iget-object v1, p0, Ldvv;->K:Ljaw;
 
-    const/high16 v2, 0x3fc00000    # 1.5f
+    const v2, 0x3f99999a    # 1.2f
 
     mul-float/2addr v0, v2
 
